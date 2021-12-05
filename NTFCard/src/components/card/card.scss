@@ -1,0 +1,157 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100&display=swap');
+
+$fontSize: 20px;
+$fontFamily: 'Outfit';
+$cardColor: hsl(216, 50%, 16%);
+
+.card-container {
+   box-shadow: 1px 0px 20px 0px darken($cardColor, 8);
+   background-color: $cardColor;
+   border-radius: 10px;
+   width: 380px;
+   height: 650px;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   font-family: $fontFamily;
+
+   .eq-image {
+      margin-top: 25px;
+      width: 85%;
+      border-radius: 10px;
+
+      &:hover {
+         cursor: pointer;
+      }
+   }
+
+   .hover {
+      margin-top: 25px;
+      position: absolute;
+      padding: 138px 160px;
+      width: 5%;
+      border-radius: 10px;
+      opacity: 0;
+      background-color: #00FFF8;
+
+      .eq-view {
+         position: relative;
+         left: -20px;
+         opacity: 0;
+      }
+
+      &:hover {
+         cursor: pointer;
+         opacity: 0.4;
+         
+         .eq-view {
+            opacity: 1;
+         }
+      }
+
+   }
+
+   h2 {
+      font-size: $fontSize;
+      font-weight: bold;
+      color: white;
+      padding: 30px 30px 0 30px;
+      position: relative;
+      left: -80px;
+
+      &:hover {
+         color: #00FFF8;
+         cursor: pointer;
+      }
+   }
+
+   h3 {
+      color: hsl(215, 51%, 70%);
+      padding: 10px 20px 10px 30px;
+      font-size: $fontSize;
+      font-weight: bold;
+   }
+
+   .icons-container {
+      display: flex;
+      flex-wrap: nowrap;
+      color: white;
+      justify-content: space-around;
+      width: 100%;
+
+      .eth-container {
+         display: flex;
+         width: 40%;
+         align-items: end;
+
+         img {
+            width: 7%;
+            margin: 10px;
+            cursor: pointer;
+         }
+
+         h4 {
+            color: #00FFF8;
+            font-weight: bold;
+         }
+      }
+
+      .clock-container {
+         display: flex;
+         width: 40%;
+         align-items: end;
+
+         img {
+            width: 11%;
+            margin: 10px;
+            cursor: pointer;
+         }
+
+         h4 {
+            color: #8BACD9;
+            font-weight: bold;
+         }
+      }
+
+      h4 {
+         font-size: 15px;
+      }
+   }
+
+   .line {
+      width: 85%;
+      border: 1px solid lighten($cardColor, 10);
+      margin: 20px 0px;
+   }
+
+   .creator-container {
+      display: flex;
+      flex-wrap: nowrap;
+      color: white;
+      width: 100%;
+      align-items: end;
+      padding: 0 20px;
+
+      img {
+         width: 7%;
+         margin: 10px;
+         border-radius: 50%;
+         border: 1px solid white;
+      }
+
+      h4 {
+         font-size: 17px;
+         font-weight: bold;
+         color: #8BACD9;
+
+         b {
+            color: white;
+
+            &:hover {
+               color: #00FFF8;
+               cursor: pointer;
+            }
+         }
+      }
+   }
+}

@@ -57,13 +57,14 @@ module.exports = {
      ],
    },
    devServer: {
-     port: 8080,
-     watchFiles: './src'
+    port: 8080,
+    watchFiles: './src'
    },
    plugins: [
        new HtmlWebpackPlugin({
          filename: 'index.html', 
          template: 'index.html', 
+         favicon: "./assets/favicon-32x32.png"
         }),
         new MiniCssExtractPlugin({
           filename: "[name].css",
