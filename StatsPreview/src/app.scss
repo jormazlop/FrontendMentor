@@ -1,0 +1,11 @@
+$backgroundColor: hsl(233, 47%, 7%);
+
+.app-container {
+   background-color: $backgroundColor;
+   height: 100vh;
+
+   display: flex;
+   justify-content: center;
+   align-items: center;
+
+}

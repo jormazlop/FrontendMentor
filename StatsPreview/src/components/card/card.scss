@@ -1,0 +1,105 @@
+$color: hsl(277, 64%, 61%);
+$cardColor: hsl(244, 38%, 16%);
+$mainParagraph: hsla(0, 0%, 100%, 0.75);
+
+.card-container {
+
+   border-radius: 20px;
+   font-family: 'Lexend Deca';
+   display: flex;
+
+
+   .left-container {
+
+      display: flex;
+      flex-direction: column;
+      padding: 5% 10% 5% 5%;
+
+      background-color: $cardColor;
+      color: white;
+
+      h2 span {
+         color: $color;
+      }
+
+      h6 {
+         padding: 10% 0;
+         font-size: 15px;
+         color: $mainParagraph;
+      }
+
+      .numbers {
+         display: flex;
+         width: 90%;
+         justify-content: space-between;
+         padding-top: 5%;
+
+         h3 {
+            width: 50px;
+            text-transform: uppercase;
+            line-height: 0.8;
+
+            span {
+               font-size: 11px;
+               color: $mainParagraph;
+            }
+         }
+
+      }
+   }
+
+   .right-container {
+
+      background-color: darken($color, 30);
+
+      img {
+         height: 100%;
+         width: 100%;
+         opacity: 0.5;
+      }
+   }
+
+   @media (min-width: 1000px) {
+
+      width: 60%;
+      height: 45%;
+
+      .left-container {
+         width: 50%;
+         border-radius: 20px 0 0 20px;
+      }
+
+      .right-container {
+
+         width: 50%;
+         border-radius: 0 20px 20px 0;
+
+         img {
+            border-radius: 0 20px 20px 0;
+         }
+      }
+
+   }
+
+   @media (max-width: 1000px) {
+
+      flex-direction: column-reverse;
+      width: 70%;
+      height: 70%;
+
+      .left-container {
+         width: 100%;
+         border-radius: 0 0 20px 20px;
+      }
+
+      .right-container {
+         width: 100%;
+         height: 50%;
+         border-radius: 20px 20px 0 0;
+
+         img {
+            border-radius: 20px 20px 0 0;
+         }
+      }
+   }
+}
