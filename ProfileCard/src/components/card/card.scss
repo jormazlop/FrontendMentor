@@ -1,0 +1,56 @@
+.card-container {
+
+   position: absolute;
+   font-family: 'Kumbh Sans', sans-serif;
+   top: 27vh;
+   left: calc((100vw - 400px) / 2);
+
+   width: 400px;
+   height: 450px;
+   background-color: white;
+   border-radius: 10px;
+   display: flex;
+   flex-direction: column;
+   text-align: center;
+
+   img {
+      position: relative;
+      border-radius: 10px 10px 0 0;
+      height: 40%;
+   }
+
+   p {
+      margin: 20% 0 5% 0;
+      color: hsl(0, 0%, 59%);
+      font-size: 18px;
+
+      strong {
+         color: black;
+      }
+   }
+
+   .numbers-container {
+      display: flex;
+      justify-content: space-around;
+
+      h5 {
+         font-weight: bold;
+      }
+
+      p {
+         margin: 0;
+         font-size: 13px;
+      }
+   }
+
+   .image-user {
+      position: absolute;
+      left: 150px;
+      top: 120px;
+      border-radius: 50%;
+      width: 25%;
+      height: 25%;
+      box-shadow: 0 0 0px 3px white;
+   }
+
+}
