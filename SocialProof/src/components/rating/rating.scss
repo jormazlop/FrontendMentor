@@ -1,0 +1,42 @@
+.rating-container {
+   width: 50vw;
+   height: 40vh;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   gap: 35px;
+
+   @media (min-width: 900px) {
+
+      div:nth-child(1) {
+         position: relative;
+         left: -30px;
+      }
+
+      div:nth-child(2) {
+         position: relative;
+         left: 30px;
+      }
+
+      div:nth-child(3) {
+         position: relative;
+         left: 90px;
+      }
+   }
+   
+   .rating {
+      display: flex;
+      width: 500px;
+      height: 15%;
+      justify-content: space-evenly;
+      background-color: hsl(300, 24%, 96%);
+      padding: 15px;
+      border-radius: 10px;
+
+      h2 {
+         font-size: 15px;
+         font-weight: bold;
+         line-height: 2;
+      }
+   }
+}

@@ -1,0 +1,14 @@
+.products-container {
+   width: 400px;
+   height: 40vh;
+
+   h1 {
+      font-weight: bold;
+   }
+
+   @media (max-width: 1468px) {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+   }
+}
