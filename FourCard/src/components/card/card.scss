@@ -1,0 +1,31 @@
+.card-container {
+   width: 350px;
+   height: 250px;
+   background-color: white;
+   border-radius: 10px;
+   box-shadow: 0 0 3px 0px hsl(229, 6%, 66%);
+   overflow: hidden;
+   border-top: 2px solid #ea5353;
+
+
+   .card-text {
+      padding: 25px;
+
+      .card-title {
+         font-size: 20px;
+         font-weight: bold;
+      }
+
+      .card-body {
+         padding: 15px 0;
+         font-size: 15px;
+         color: hsl(229, 6%, 66%);
+      }
+
+      img {
+         position: relative;
+         left: 70%;
+         cursor: pointer;
+      }
+   }
+}
