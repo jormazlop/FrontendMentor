@@ -1,0 +1,114 @@
+$textColor: hsl(0, 36%, 70%);
+$buttonColorPrimary: linear-gradient(135deg, hsl(0, 80%, 86%) 0%,hsl(0, 74%, 74%) 100%);
+$buttonColorHover: linear-gradient(300deg, hsl(0, 80%, 86%) 0%,hsl(0, 74%, 74%) 100%);
+
+.app-container {
+
+   font-family: 'Josefin Sans', sans-serif;
+
+   .logo-container {
+      padding: 50px 15%;
+   }
+
+   .info-container {
+      display: flex;
+      flex-direction: column;
+      padding: 0 15%;
+      color: $textColor;
+
+      h1 {
+         text-transform: uppercase;
+         font-size: 70px;
+         letter-spacing: 20px;
+         font-weight: 100;
+         margin-bottom: 0;
+
+         span {
+            font-weight: bold;
+            color: black;
+         }
+      }
+
+      p {
+         line-height: 1.8;
+         font-size: 20px;
+      }
+
+      input {
+         margin-top: 25px;
+         border-radius: 30px;
+         padding: 20px;
+         border: 1px solid $textColor;
+         outline-color: $textColor;
+         width: 450px;
+
+         &::placeholder { 
+            color: $textColor;
+            opacity: 0.5; 
+         }
+      }
+
+      button {
+         width: 100px;
+         height: 55px;
+         border-radius: 50px;
+         border: none;
+         background: $buttonColorPrimary;
+         position: relative;
+         top: -56px;
+         left: 392px;
+         cursor: pointer;
+         transition-duration: 0.5s;
+
+         &:hover { 
+            background: $buttonColorHover;
+            transform: translateX(20px);
+            transition-duration: 0.5s;
+         }
+      }
+   }
+
+   @media(min-width: 1200px) {
+
+      display: grid;
+      grid-template-columns: 0.65fr;
+      grid-template-rows: 75vh;
+      grid-auto-rows: 25vh;
+
+      .logo-container {
+         grid-column-end: 1;
+         grid-row-end: 1;
+      }
+      
+      .info-container {
+         grid-row: 1 / 2;
+         max-width: 30vw;
+      }
+
+      .image-container {
+         grid-column: 1 / 2;
+
+         img {
+            height: 100vh;
+            width: 100%;
+         }
+
+      }
+
+   }
+
+   @media(max-width: 1199.98px) {
+      display: flex;
+      flex-direction: column;
+
+      .image-container {
+
+         img {
+            height: 30vh;
+            width: 100%;
+         }
+
+      }
+   }
+
+}
