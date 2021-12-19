@@ -1,0 +1,11 @@
+$backgroundColor: hsl(204, 43%, 93%);
+
+@import url('https://fonts.googleapis.com/css2?family=Karla:wght@400;700&display=swap');
+
+html {
+   background-color: $backgroundColor;
+
+   body {
+      margin: 0;
+   }
+}
