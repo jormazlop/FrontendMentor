@@ -1,0 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
+$backgroundColor: hsl(257, 40%, 49%);
+
+body {
+   background-image: url('./assets/bg-desktop.svg');
+   background-repeat: no-repeat;
+   background-color: $backgroundColor;
+   height: 100vh;
+   margin: 0;
+
+   @media (max-width: 1400px) { 
+      background-image: url('./assets/bg-mobile.svg');
+   }
+}
