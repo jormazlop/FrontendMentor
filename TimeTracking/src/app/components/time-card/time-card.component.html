@@ -1,0 +1,10 @@
+<div appTimeCardDirective [image]="card.image" [color]="card.color" class="time-card-container">
+  <div class="card-container">
+    <div class="menu">
+      <h2>{{card.title}}</h2>
+      <fa-icon [icon]="faEllipsis"></fa-icon>
+    </div>
+    <h1 class="hours">{{finalCard.current}}hrs</h1>
+    <h2 class="historical">Last week - {{card.previous}}h</h2>
+  </div>
+</div>

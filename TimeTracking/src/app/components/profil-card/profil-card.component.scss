@@ -1,0 +1,59 @@
+@import '../../../assets/variables.scss';
+
+.profil-card-container {
+  width: 250px;
+  height: 470px;
+  border-radius: 20px;
+  background-color: $cardBackground;
+
+  .profil-container {
+    width: calc(100% - 60px);
+    height: 250px;
+    border-radius: 20px;
+    background-color: darken($profilBackground, 20);
+    transition-duration: 1s;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    padding: 30px;
+
+    img {
+      border: 2px solid $fontColor;
+      border-radius: 50%;
+      width: 80px;
+      margin-bottom: 25px;
+    }
+
+    h1 {
+      margin: 0;
+      font-weight: normal;
+    }
+
+    h2 {
+      margin: 0;
+      font-weight: normal;
+      font-size: 15px;
+      color: $secondaryColor;
+    }
+  }
+
+  .profil-titles {
+
+    display: flex;
+    flex-direction: column;
+    margin: 10px 0 0 35px;
+
+    h3 {
+      font-weight: normal;
+      font-size: 15px;
+      color: $secondaryColor;
+
+      &:hover {
+        cursor: pointer;
+        color: $fontColor;
+      }
+
+    }
+  }
+
+}

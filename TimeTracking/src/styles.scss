@@ -1,0 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500&display=swap');
+@import './assets/variables.scss';
+
+body {
+  background-color: $pageBackground;
+  color: $fontColor;
+  font-family: 'Rubik', sans-serif;
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+
+  app-root {
+    display: flex;
+    gap: 30px;
+  }
+}

@@ -1,0 +1,57 @@
+@import '../../../assets/variables.scss';
+
+.time-card-container {
+  width: 200px;
+  height: 220px;
+  background-repeat: no-repeat;
+  background-position: 100px top;
+  border-radius: 20px;
+
+  .card-container {
+    width: calc(100% - 60px);
+    height: calc(80% - 60px);
+    padding: 30px;
+    position: relative;
+    top: 20%;
+    background-color: $cardBackground;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    transition-duration: 1s;
+
+    &:hover {
+      top: 0%;
+      height: calc(100% - 59px);
+      transition-duration: 1s;
+    }
+
+    .menu {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+
+      h2 {
+        font-weight: normal;
+        font-size: 15px;
+      }
+
+      .ng-fa-icon:hover{
+        cursor: pointer;
+      }
+    }
+
+    .hours {
+      font-weight: normal;
+      font-size: 45px;
+      margin: 0;
+    }
+
+    .historical {
+      font-weight: normal;
+      font-size: 14px;
+      color: $secondaryColor;
+    }
+  }
+}
