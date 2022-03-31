@@ -1,0 +1,19 @@
+@import './assets/variables.scss';
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@800&display=swap');
+
+body {
+  background-color: $backgroundColor;
+  margin: 0;
+  height: 100vh;
+  font-family: 'Manrope', sans-serif;
+
+  app-root {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+  }
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

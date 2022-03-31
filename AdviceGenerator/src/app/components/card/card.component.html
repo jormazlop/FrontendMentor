@@ -1,0 +1,14 @@
+<div class="card-container" *ngIf="!loading">
+  <div class="card-id">ADVICE #{{advice.slip.id}}</div>
+  <div class="card-advice">"{{advice.slip.advice}}"</div>
+  <img class="card-divider" src="../../../assets/pattern-divider-desktop.svg" alt="divider">
+  <div class="card-button">
+    <img src="../../../assets/icon-dice.svg" alt="button" (click)="onClickAdvice()">
+  </div>
+</div>
+<div *ngIf="loading">
+  <mat-spinner
+        [mode]="'indeterminate'"
+        [value]="50">
+    </mat-spinner>
+</div>

@@ -1,0 +1,46 @@
+@import '../../../assets/variables.scss';
+
+.card-container {
+  background-color: $backgroundCard;
+  width: 400px;
+  height: 200px;
+  padding: 40px 30px 0px 30px;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  position : relative;
+
+  .card-id {
+    color: $idColor;
+    font-weight: normal;
+    font-size: 12px;
+    letter-spacing: 3px;
+  }
+
+  .card-advice {
+    color: white;
+    font-size: 20px;
+    text-align: center;
+  }
+
+  .card-divider {
+    width: 100%;
+  }
+
+  .card-button {
+    background-color: $idColor;
+    padding: 15px;
+    border-radius: 50%;
+    display: flex;
+    position : absolute;
+    top: 210px;
+
+    &:hover {
+      cursor: pointer;
+      background-color: darken($idColor, 50);
+      transition-duration: 1s;
+    }
+  }
+}
