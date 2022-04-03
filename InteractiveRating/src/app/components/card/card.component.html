@@ -1,0 +1,26 @@
+<div>
+  <div class="card-container" *ngIf="!submitted">
+    <img class="star-img" src="../../../assets/icon-star.svg" alt="Star">
+    <h1 class="feedback-title">How did we do?</h1>
+    <h2 class="feedback-opinion"> Please let us know how we did with your support request. All feedback is appreciated
+        to help us improve our offering!
+    </h2>
+    <div class="review-buttons">
+      <div (click)="selectValue(1)" [ngClass]="{'active': this.points == 1}">1</div>
+      <div (click)="selectValue(2)" [ngClass]="{'active': this.points == 2}">2</div>
+      <div (click)="selectValue(3)" [ngClass]="{'active': this.points == 3}">3</div>
+      <div (click)="selectValue(4)" [ngClass]="{'active': this.points == 4}">4</div>
+      <div (click)="selectValue(5)" [ngClass]="{'active': this.points == 5}">5</div>
+    </div>
+    <button class="submit-button" (click)="submit()">Submit</button>
+  </div>
+
+  <div class="submitted" *ngIf="submitted">
+    <img src="../../../assets/illustration-thank-you.svg" alt="Thanks">
+    <h2 class="points">You selected {{points}} out of 5</h2>
+    <h1 class="thanks-title">Thank you!</h1>
+    <h2 class="thanks-opinion">We appreciate you taking the time to give a rating. If you ever need more support,
+        don’t hesitate to get in touch!
+    </h2>
+  </div>
+</div>
