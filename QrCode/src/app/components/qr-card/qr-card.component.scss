@@ -1,0 +1,29 @@
+@import '../../../assets/variables.scss';
+
+.card-container {
+  width: 250px;
+  height: 400px;
+  background-color: $white;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  text-align: center;
+
+  .card-image {
+    width: 100%;
+    border-radius: 20px;
+  }
+
+  .card-title {
+    font-size: 20px;
+    margin-bottom: 0;
+  }
+
+  .card-description {
+    font-size: 15px;
+    color: $grayishBlue;
+    font-weight: normal;
+  }
+}
