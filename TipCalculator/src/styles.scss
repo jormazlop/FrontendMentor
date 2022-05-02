@@ -1,0 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@700&display=swap');
+@import './assets/variables.scss';
+
+
+body {
+  font-family: 'Space Mono', monospace;
+  background-color: $lightGrayishCyan;
+  height: 100vh;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

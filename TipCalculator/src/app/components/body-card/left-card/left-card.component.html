@@ -1,0 +1,20 @@
+<div class="left-card-container">
+  <div class="bill-input">
+    <label class="bill-label" for="bill">Bill</label>
+    <br>
+    <input type="number" id="bill" name="bill" dir="rtl" [(ngModel)]="billInput" (keypress)="onlyDigits($event)">
+    <label class="static-value">$</label>
+    <h3 class="bill-error" *ngIf="billError">*The bill must be 0 or greater</h3>
+  </div>
+  <div class="tip-input">
+    <label class="tip-label" for="tip">Select Tip %</label>
+    <div class="tip-grid">
+      <button>5%</button>
+      <button>10%</button>
+      <button>15%</button>
+      <button>25%</button>
+      <button>50%</button>
+      <input type="text">
+    </div>
+  </div>
+</div>

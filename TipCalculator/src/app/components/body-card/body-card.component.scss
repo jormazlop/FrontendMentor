@@ -1,0 +1,11 @@
+@import '../../../assets/variables.scss';
+
+.body-card-container {
+  background-color: $white;
+  width: 800px;
+  height: 400px;
+  border-radius: 20px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}

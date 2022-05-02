@@ -1,0 +1,83 @@
+@import '../../../../assets/variables.scss';
+
+.left-card-container {
+
+  font-size: 15px;
+  display: flex;
+  flex-direction: column;
+
+  .bill-input {
+
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+
+    padding-bottom: 30px;
+
+    label {
+      color: lighten($darkGrayishCyan, 30);
+
+      &.bill-label {
+        color: $darkGrayishCyan;
+      }
+    }
+
+    #bill {
+      padding: 5px 5px 5px 50px;
+    }
+
+    input {
+
+      font-size: 24px;
+      color: $veryDarkCyan;
+
+      &:hover {
+        cursor: pointer;
+      }
+
+      &:focus {
+        outline: none;
+        border: 2px solid $strongCyan;
+        border-radius: 5px;
+      }
+    }
+
+    .static-value {
+      position: relative;
+      left: -340px;
+      top: -3px;
+      font-size: 15px;
+      font-family: cursive;
+    }
+
+  }
+
+  .tip-input {
+
+    .tip-label {
+      color: $darkGrayishCyan;
+    }
+
+    .tip-grid {
+      display: grid;
+      grid-template-columns: 33% 33% 33%;
+      grid-template-rows: 50px 50px;
+
+      button {
+        font-size: 20px;
+        color: $white;
+        padding: 10px;
+        width: 75%;
+        height: 80%;
+        background-color: $veryDarkCyan;
+        border: none;
+        border-radius: 5px;
+      }
+
+    }
+
+  }
+
+}
