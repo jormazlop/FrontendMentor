@@ -8,19 +8,21 @@
 
   .bill-input {
 
+    padding-bottom: 30px;
+
     input::-webkit-outer-spin-button,
     input::-webkit-inner-spin-button {
       -webkit-appearance: none;
       margin: 0;
     }
 
-    padding-bottom: 30px;
-
     label {
       color: lighten($darkGrayishCyan, 30);
 
       &.bill-label {
         color: $darkGrayishCyan;
+        display: block;
+        padding-bottom: 10px;
       }
     }
 
@@ -31,6 +33,7 @@
     input {
 
       font-size: 24px;
+      width: 75%;
       color: $veryDarkCyan;
 
       &:hover {
@@ -46,18 +49,19 @@
 
     .static-value {
       position: relative;
-      left: -340px;
+      left: -325px;
       top: -3px;
       font-size: 15px;
       font-family: cursive;
     }
-
   }
 
   .tip-input {
 
     .tip-label {
       color: $darkGrayishCyan;
+      display: block;
+      padding-bottom: 10px;
     }
 
     .tip-grid {
@@ -74,10 +78,97 @@
         background-color: $veryDarkCyan;
         border: none;
         border-radius: 5px;
+
+        &:hover {
+          cursor: pointer;
+        }
+
+        &.active {
+          background-color: lighten($strongCyan, 30);
+          color: $veryDarkCyan;
+        }
       }
 
-    }
+      input {
+        font-size: 20px;
+        width: 70%;
+        height: 70%;
+        color: $veryDarkCyan;
 
+        &:hover {
+          cursor: pointer;
+        }
+
+        &:focus {
+          outline: none;
+          border: 2px solid $strongCyan;
+          border-radius: 5px;
+        }
+      }
+    }
   }
 
+  .number-input {
+
+    padding-bottom: 30px;
+
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+
+    .number-header {
+      display: flex;
+      gap: 60px;
+    }
+
+    .number-error {
+      color: lighten(red, 20);
+      margin: 0;
+    }
+
+    label {
+      color: lighten($darkGrayishCyan, 30);
+
+      &.number-label {
+        color: $darkGrayishCyan;
+        display: block;
+        padding-bottom: 10px;
+      }
+    }
+
+    #bill {
+      padding: 5px 5px 5px 50px;
+    }
+
+    input {
+
+      font-size: 24px;
+      width: 90%;
+      color: $veryDarkCyan;
+
+      &:hover {
+        cursor: pointer;
+      }
+
+      &:focus {
+        outline: none;
+        border: 2px solid $strongCyan;
+        border-radius: 5px;
+      }
+
+      &.error {
+        border: 1px solid lighten(red, 20);
+      }
+    }
+
+    .static-value {
+      position: relative;
+      left: -335px;
+      top: 3px;
+      font-size: 15px;
+      font-family: cursive;
+    }
+  }
 }

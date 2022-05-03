@@ -1,1 +1,13 @@
-<p>right-card works!</p>
+<div class="right-card-container">
+  <div class="tips">
+    <div class="amount">
+      <h4>Tip Amount</h4>
+      <div class="quantity">${{tipAmount | number : '1.2-2'}}</div>
+    </div>
+    <div class="amount">
+      <h4>Total</h4>
+      <div class="quantity">${{totalPerson | number : '1.2-2'}}</div>
+    </div>
+  </div>
+  <button class="reset-button" (click)="resetButton()">RESET</button>
+</div>

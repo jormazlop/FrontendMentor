@@ -1,20 +1,46 @@
 <div class="left-card-container">
   <div class="bill-input">
     <label class="bill-label" for="bill">Bill</label>
-    <br>
-    <input type="number" id="bill" name="bill" dir="rtl" [(ngModel)]="billInput" (keypress)="onlyDigits($event)">
+    <input type="number"
+           id="bill"
+           name="bill"
+           dir="rtl"
+           [(ngModel)]="billInput"
+           (ngModelChange)="valueChange()"
+           (keypress)="onlyDigits($event)">
     <label class="static-value">$</label>
     <h3 class="bill-error" *ngIf="billError">*The bill must be 0 or greater</h3>
   </div>
   <div class="tip-input">
     <label class="tip-label" for="tip">Select Tip %</label>
     <div class="tip-grid">
-      <button>5%</button>
-      <button>10%</button>
-      <button>15%</button>
-      <button>25%</button>
-      <button>50%</button>
-      <input type="text">
+      <button (click)="clickTip(5)" [ngClass]="{'active': billTip == '5'}">5%</button>
+      <button (click)="clickTip(10)" [ngClass]="{'active': billTip == '10'}">10%</button>
+      <button (click)="clickTip(15)" [ngClass]="{'active': billTip == '15'}">15%</button>
+      <button (click)="clickTip(25)" [ngClass]="{'active': billTip == '25'}">25%</button>
+      <button (click)="clickTip(50)" [ngClass]="{'active': billTip == '50'}">50%</button>
+      <input type="text"
+             dir="rtl"
+             [(ngModel)]="billTip"
+             (keypress)="onlyDigitsTip($event)"
+             (ngModelChange)="valueChange()">
     </div>
   </div>
+  <br>
+  <div class="number-input">
+    <div class="number-header">
+      <label class="number-label" for="number">Number of People</label>
+      <h4 class="number-error" *ngIf="numberError">*Can't be zero</h4>
+    </div>
+    <input type="number"
+           id="number"
+           name="number"
+           dir="rtl"
+           [(ngModel)]="numberInput"
+           (keypress)="onlyDigitsNumber($event)"
+           (ngModelChange)="valueChange()"
+           [ngClass]="{'error': numberError}" >
+    <label class="static-value"><mat-icon>perm_identity</mat-icon></label>
+  </div>
+
 </div>

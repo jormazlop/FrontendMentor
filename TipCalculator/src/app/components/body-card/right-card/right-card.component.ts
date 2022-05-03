@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-right-card',
@@ -7,9 +7,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RightCardComponent implements OnInit {
 
+  @Input() tipAmount: number = 0.00;
+
+  @Input() totalPerson: number = 0.00;
+
+  @Output() resetEvent = new EventEmitter();
+
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  resetButton() {
+    this.resetEvent.emit();
   }
 
 }

@@ -1,0 +1,41 @@
+@import '../../../../assets/variables.scss';
+
+.right-card-container {
+  background-color: $veryDarkCyan;
+  width: 280px;
+  height: 280px;
+  border-radius: 10px;
+  padding: 40px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  .amount {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    h4 {
+      color: $white;
+    }
+
+    .quantity {
+      font-size: 40px;
+      color: $strongCyan;
+    }
+  }
+
+  .reset-button {
+    border: none;
+    padding: 12px;
+    border-radius: 5px;
+    background-color: lighten($strongCyan, 30);
+    color: $veryDarkCyan;
+    font-weight: bold;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}

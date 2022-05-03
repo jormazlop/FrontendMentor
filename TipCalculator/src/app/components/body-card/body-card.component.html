@@ -1,4 +1,11 @@
 <div class="body-card-container">
-  <app-left-card></app-left-card>
-  <app-right-card></app-right-card>
+  <app-left-card (valuesEvent)="onValueChange($event)"
+                 [billInput]="billInput"
+                 [billTip]="billTip"
+                 [numberInput]="numberInput">
+  </app-left-card>
+  <app-right-card [tipAmount]="tipAmount"
+                  [totalPerson]="totalPerson"
+                  (resetEvent)="resetValues()">
+  </app-right-card>
 </div>
