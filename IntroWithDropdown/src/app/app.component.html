@@ -1,0 +1,64 @@
+<div class="app-container">
+  <div class="menu-mobile" *ngIf="menuOpen">
+    <img src="../assets/icon-close-menu.svg" alt="Close" (click)="clickMenu()">
+    <div class="section-container">
+      <div class="dropdown-flex" (click)="displayFeatures()">
+        <h4>Features</h4>
+        <img src="../../../assets/icon-arrow-down.svg" *ngIf="!showFeatures" alt="Arrow">
+        <img src="../../../assets/icon-arrow-up.svg" *ngIf="showFeatures" alt="Arrow">
+      </div>
+      <div class="dropdown-menu" *ngIf="showFeatures">
+        <div class="item-menu">
+          <img src="../../../assets/icon-todo.svg" alt="Todo">
+          <h4>Todo List</h4>
+        </div>
+        <div class="item-menu">
+          <img src="../../../assets/icon-calendar.svg" alt="Calendar">
+          <h4>Calendar</h4>
+        </div>
+        <div class="item-menu">
+          <img src="../../../assets/icon-reminders.svg" alt="Reminders">
+          <h4>Reminders</h4>
+        </div>
+        <div class="item-menu">
+          <img src="../../../assets/icon-planning.svg" alt="Planning">
+          <h4>Planning</h4>
+        </div>
+      </div>
+      <div class="section-container">
+        <div class="dropdown-flex" (click)="displayCompany()">
+          <h4>Company</h4>
+          <img src="../../../assets/icon-arrow-down.svg" *ngIf="!showCompanys" alt="Arrow">
+          <img src="../../../assets/icon-arrow-up.svg" *ngIf="showCompanys" alt="Arrow">
+        </div>
+        <div class="dropdown-menu" *ngIf="showCompanys">
+          <div class="item-menu">
+            <h4>History</h4>
+          </div>
+          <div class="item-menu">
+            <h4>Our Team</h4>
+          </div>
+          <div class="item-menu">
+            <h4>Blog</h4>
+          </div>
+        </div>
+      </div>
+      <div class="section-container">
+        <h4>Careers</h4>
+      </div>
+      <div class="section-container">
+        <h4>About</h4>
+      </div>
+    </div>
+    <div class="login-section">
+      <div>Login</div>
+      <div>Register</div>
+    </div>
+  </div>
+  <app-header (menuEmitter)="clickMenu()"></app-header>
+  <div class="body-container">
+    <app-left></app-left>
+    <app-right></app-right>
+  </div>
+</div>
+

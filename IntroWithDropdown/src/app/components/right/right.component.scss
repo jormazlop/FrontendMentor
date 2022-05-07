@@ -1,0 +1,28 @@
+@import '../../../assets/variables.scss';
+
+:host {
+  display: contents;
+}
+
+.right-container {
+  width: 50%;
+  height: calc(100vh - 90px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .background {
+    width: 80%;
+    height: 80%;
+    background-image: url('../../../assets/image-hero-desktop.png');
+    background-size: 50vh;
+    background-repeat: no-repeat;
+
+    @media (max-width: $mobileScreen) {
+      background-image: url('../../../assets/image-hero-mobile.png');
+      background-size: 100%;
+    }
+  }
+}
+
+

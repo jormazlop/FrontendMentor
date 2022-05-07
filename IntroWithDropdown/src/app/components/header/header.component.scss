@@ -1,0 +1,113 @@
+@import '../../../assets/variables.scss';
+
+:host {
+  display: contents;
+}
+
+.header-container {
+  padding: 30px 50px;
+  width: 100%;
+  height: 30px;
+  display: flex;
+  justify-content: space-between;
+
+  .left-section {
+
+    display: flex;
+    align-items: center;
+    gap: 30px;
+
+    .logo {
+      position: relative;
+      top: 3px;
+    }
+
+    .section-container {
+      display: flex;
+      align-items: center;
+      color: $mediumGray;
+      gap: 10px;
+
+      @media (max-width: $mobileScreen) {
+        display: none;
+      }
+
+      img {
+        width: 10px;
+        height: 7px;
+      }
+
+      .dropdown-menu {
+        position: fixed;
+        width: 150px;
+        background: white;
+        height: 150px;
+        top: 70px;
+        border-radius: 10px;
+        box-shadow: 6px 5px 5px $mediumGray;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        padding: 10px;
+
+        .item-menu {
+
+          display: flex;
+          align-items: flex-end;
+          gap: 10px;
+
+          img {
+            width: 20px;
+            height: 20px;
+          }
+
+          h4 {
+            font-size: 15px;
+            margin: 0;
+          }
+        }
+      }
+
+      &:hover {
+        cursor: pointer;
+        color: $almostBlack;
+      }
+    }
+  }
+
+  .right-section {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+
+    @media (max-width: $mobileScreen) {
+      display: none;
+    }
+
+    div {
+      padding: 10px;
+
+      &:hover {
+        cursor: pointer;
+        border: 1px solid $mediumGray;
+        border-radius: 10px;
+      }
+    }
+  }
+
+  .right-menu {
+
+    display: flex;
+
+    &:hover {
+      cursor: pointer;
+    }
+
+    @media (min-width: calc($mobileScreen + 1px)) {
+      display: none;
+    }
+
+  }
+
+}
