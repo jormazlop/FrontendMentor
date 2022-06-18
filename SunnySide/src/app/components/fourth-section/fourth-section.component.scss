@@ -1,0 +1,40 @@
+@import '../../../assets/variables.scss';
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@600&display=swap');
+
+.fourth-section-container {
+  height: 60vh;
+  display: flex;
+  font-family: 'Barlow', sans-serif;
+
+  .section {
+    width: calc(50% - 300px);
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex-direction: column;
+    padding: 150px;
+    padding-bottom: 50px;
+
+    h1 {
+      text-align: left;
+    }
+
+    p {
+      text-align: center;
+    }
+  }
+
+  .stand-logo {
+    width: 50%;
+  }
+
+  .graphic {
+    background-image: url('../../../assets/desktop/image-graphic-design.jpg');
+    background-repeat: round;
+  }
+
+  .photography {
+    background-image: url('../../../assets/desktop/image-photography.jpg');
+    background-repeat: round;
+  }
+}

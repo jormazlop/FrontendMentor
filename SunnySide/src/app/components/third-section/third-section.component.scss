@@ -1,0 +1,42 @@
+@import '../../../assets/variables.scss';
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@600&display=swap');
+
+.third-section-container {
+  height: 60vh;
+  display: flex;
+  font-family: 'Barlow', sans-serif;
+
+  .transform-description {
+    width: calc(50% - 300px);
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding: 150px;
+
+    h1 {
+      text-align: left;
+    }
+
+    p {
+      text-align: justify;
+    }
+
+    button {
+      background: none;
+      border: none;
+      text-transform: uppercase;
+      font-weight: bold;
+      width: 102px;
+      margin-top: 20px;
+
+      &:hover {
+        cursor: pointer;
+        box-shadow: inset 0px -7px 0px 0px $softRed;
+      }
+    }
+  }
+
+  .stand-logo {
+    width: 50%;
+  }
+}

@@ -1,0 +1,30 @@
+@import '../../../assets/variables.scss';
+
+.seventh-section-container {
+  height: 60vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: lighten($darkModerateCyan, 20);
+
+
+  h2 {
+    color: $darkDesaturatedCyan;
+    font-size: 40px;
+  }
+
+  .menu {
+    display: flex;
+    width: 500px;
+    justify-content: space-around;
+    color: $darkDesaturatedCyan;
+    font-size: 13px;
+
+    h3:hover {
+      cursor: pointer;
+      color: $white;
+      transition-duration: 0.5s;
+    }
+  }
+}
