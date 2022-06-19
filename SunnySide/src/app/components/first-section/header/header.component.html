@@ -6,4 +6,22 @@
     <menu class="menu-item">Projects</menu>
     <menu class="menu-item">Contact</menu>
   </div>
+
+  <div class="row" class="menu-mobile">
+    <div class="col">
+      <div ngbDropdown class="d-inline-block">
+        <button type="button" class="btn" id="dropdownBasic1" ngbDropdownToggle>
+          <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="white" class="bi bi-list" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/>
+          </svg>
+        </button>
+        <div ngbDropdownMenu aria-labelledby="dropdownBasic1" class="menu-items">
+          <button ngbDropdownItem>About</button>
+          <button ngbDropdownItem>Services</button>
+          <button ngbDropdownItem>Projects</button>
+          <button ngbDropdownItem>CONTACT</button>
+        </div>
+      </div>
+    </div>
+
 </div>

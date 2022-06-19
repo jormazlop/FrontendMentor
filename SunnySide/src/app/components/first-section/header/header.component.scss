@@ -2,7 +2,7 @@
 
 .header-container {
   position: absolute;
-  width: calc(100vw - 120px);
+  width: 100%;
   height: 70px;
   display: flex;
   justify-content: space-between;
@@ -14,9 +14,29 @@
     height: 20px;
   }
 
+  .menu-mobile {
+    @media(min-width: 901px) {
+      display: none;
+    }
+
+    &:hover {
+      cursor: pointer;
+    }
+
+    .menu-items {
+      width: 85vw;
+      text-align: center;
+    }
+
+  }
+
   .menu {
     display: flex;
     color: $white;
+
+    @media(max-width: 900px) {
+      display: none;
+    }
 
     .menu-item {
       cursor: pointer;

@@ -10,6 +10,7 @@ import { FourthSectionComponent } from './components/fourth-section/fourth-secti
 import { FifthSectionComponent } from './components/fifth-section/fifth-section.component';
 import { SixthSectionComponent } from './components/sixth-section/sixth-section.component';
 import { SeventhSectionComponent } from './components/seventh-section/seventh-section.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { SeventhSectionComponent } from './components/seventh-section/seventh-se
     SeventhSectionComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]

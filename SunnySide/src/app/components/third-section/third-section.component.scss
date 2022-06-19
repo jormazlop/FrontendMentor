@@ -6,15 +6,27 @@
   display: flex;
   font-family: 'Barlow', sans-serif;
 
+  @media(max-width: 900px) {
+    width: 100%;
+    flex-direction: column;
+    height: 100%;
+    align-items: center;
+  }
+
   .transform-description {
-    width: calc(50% - 300px);
+    width: 50%;
     display: flex;
     justify-content: center;
     flex-direction: column;
     padding: 150px;
 
+    @media(max-width: 900px) {
+      width: 100%;
+    }
+
     h1 {
       text-align: left;
+      padding-bottom: 20px;
     }
 
     p {
@@ -26,17 +38,20 @@
       border: none;
       text-transform: uppercase;
       font-weight: bold;
-      width: 102px;
+      width: 106px;
       margin-top: 20px;
 
       &:hover {
         cursor: pointer;
-        box-shadow: inset 0px -7px 0px 0px $softRed;
+        box-shadow: inset 0px -11px 0px 0px $softRed;
       }
     }
   }
 
   .stand-logo {
     width: 50%;
+    @media(max-width: 900px) {
+      width: 100%;
+    }
   }
 }
