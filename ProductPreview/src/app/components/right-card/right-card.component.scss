@@ -1,0 +1,81 @@
+@import '../../../assets/variables.scss';
+
+
+.right-container {
+  width: 290px;
+  height: calc(100% - 60px);
+  background-color: $white;
+  border-radius: 0 20px 20px 0;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding: 30px;
+
+  @media (max-width: 700px) {
+    border-radius: 0 0 20px 20px;
+    gap: 20px;
+  }
+
+  .title {
+    font-family: $montserrat;
+    text-transform: uppercase;
+    font-size: 16px;
+    font-weight: lighter;
+    color: $darkGrayishBlue;
+    letter-spacing: 5px;
+    margin: 0;
+  }
+
+  .subtitle {
+    font-family: $fraunces;
+    font-size: 35px;
+    margin: 0;
+  }
+
+  .description {
+    font-family: $montserrat;
+    color: $darkGrayishBlue;
+    margin: 0;
+  }
+
+  .prices {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    .principal {
+      font-family: $fraunces;
+      color: $darkCyan;
+      font-weight: bold;
+      font-size: 30px;
+    }
+
+    .subprice {
+      color: $darkGrayishBlue;
+      font-weight: bold;
+      text-decoration: line-through;
+    }
+  }
+
+  .cart-button {
+    font-family: $montserrat;
+    background-color: $darkCyan;
+    color: $white;
+    border: none;
+    border-radius: 5px;
+    padding: 15px;
+    font-weight: bold;
+
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+
+    transition-duration: 0.5s;
+
+    &:hover {
+      cursor: pointer;
+      background-color: lighten($darkCyan, 20);
+    }
+  }
+}

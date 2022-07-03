@@ -1,0 +1,11 @@
+.card-container {
+  display: flex;
+
+  @media (max-width: 700px) {
+    flex-direction: column;
+
+    app-left-card {
+      height: 350px;
+    }
+  }
+}
