@@ -1,0 +1,84 @@
+@import '../../../assets/variables.scss';
+
+.left-container {
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  gap: 60px;
+
+  .front-card {
+    background-image: url('../../../assets/bg-card-front.png');
+    width: 397px;
+    height: 195px;
+
+    padding: 25px;
+
+
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    img {
+      width: 80px;
+    }
+
+    p {
+      color: $white;
+
+      &.card-number {
+        letter-spacing: 3px;
+        font-size: 28px;
+        position: relative;
+        top: 30px;
+      }
+    }
+
+    .card-owner {
+      display: flex;
+      justify-content: space-between;
+      position: relative;
+      top: 10px;
+    }
+  }
+
+  .back-card {
+    background-image: url('../../../assets/bg-card-back.png');
+    width: 447px;
+    height: 245px;
+    position: relative;
+    left: 100px;
+
+    p {
+      color: white;
+
+      position: relative;
+      top: 95px;
+      left: 350px;
+    }
+  }
+
+  @media (max-width: $mobile) {
+    flex-direction: column-reverse;
+
+    .front-card {
+      position: absolute;
+      top: 17%;
+      z-index: 1;
+    }
+
+    .back-card {
+      position: absolute;
+      left: calc(100vw - 600px);
+    }
+
+
+  }
+
+
+}
+
+

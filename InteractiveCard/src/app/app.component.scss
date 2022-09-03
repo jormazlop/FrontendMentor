@@ -1,0 +1,31 @@
+@import '../assets/variables.scss';
+
+.main-container {
+  background-image: url('../assets/bg-main-desktop.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  height: 100%;
+
+  display: flex;
+  justify-content: center;
+
+  .left-container, .right-container {
+    width: 50%;
+  }
+
+  @media (max-width: $mobile) {
+    flex-direction: column;
+    align-items: center;
+    background-image: url('../assets/bg-main-mobile.png');
+    background-size: 100% 300px;
+
+    .left-container {
+      height: 30%;
+    }
+
+    .right-container {
+      height: 70%;
+    }
+
+  }
+}

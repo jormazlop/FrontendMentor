@@ -1,0 +1,141 @@
+@import '../../../assets/variables.scss';
+
+%label {
+  font-size: 13px;
+  letter-spacing: 2px;
+  color: $veryDarkViolet;
+  font-weight: bold;
+}
+
+%button {
+  color: $white;
+  background-color: $veryDarkViolet;
+  width: 320px;
+  border-radius: 5px;
+  padding: 10px 0;
+  font-family: 'Space Grotesk', sans-serif;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+%input {
+
+  display: flex;
+  flex-direction: column;
+
+  label {
+    @extend %label;
+  }
+
+  input {
+
+    width: 300px;
+    height: 30px;
+    padding-left: 10px;
+    color: $veryDarkViolet;
+    margin-top: 5px;
+    border-radius: 5px;
+    border-color: $lightGrayishViolet;
+    border-width: 1px;
+    font-family: 'Space Grotesk', sans-serif;
+
+    &::placeholder {
+      color: darken($lightGrayishViolet, 20);
+    }
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  .error {
+    color: red;
+    margin: 2px 0 0 0;
+    font-size: 12px;
+  }
+}
+
+.right-container {
+
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  height: 100%;
+
+  form {
+
+    gap: 20px;
+    display: flex;
+    flex-direction: column;
+    padding-left: 80px;
+
+    .name-input {
+      @extend %input;
+    }
+
+    .card-input {
+      @extend %input;
+    }
+
+    .date-cvc-input {
+      @extend %input;
+
+      flex-direction: row;
+      align-items: baseline;
+
+      input {
+        width: 60px;
+        margin-right: 10px;
+      }
+
+      .cvc-input {
+        display: flex;
+        flex-direction: column;
+
+        input {
+          width: 135px;
+        }
+      }
+    }
+
+    button {
+      @extend %button;
+    }
+  }
+
+  .completed-container {
+
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 30px;
+    position: relative;
+    right: calc(5vw);
+
+    img {
+      width: 60px;
+    }
+
+    h1 {
+      font-weight: lighter;
+      font-size: 30px;
+      margin: 0;
+    }
+
+    h2 {
+      font-size: 18px;
+      font-weight: lighter;
+      color: $darkGrayishViolet;
+      margin: 0;
+    }
+
+    .continue-button {
+      @extend %button;
+    }
+  }
+
+}
+
+
