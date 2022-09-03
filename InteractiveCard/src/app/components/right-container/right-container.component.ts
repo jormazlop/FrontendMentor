@@ -11,7 +11,7 @@ export class RightContainerComponent implements OnInit {
 
   @Output() newCard = new EventEmitter<CardModel>();
 
-  completed = true;
+  completed = false;
 
   nameError = false;
   numberError = false;
