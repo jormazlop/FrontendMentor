@@ -1,0 +1,21 @@
+<div class="balance-container">
+  <div class="balance-amount">
+    <h1>My balance</h1>
+    <h2>$921.48</h2>
+  </div>
+  <img src="../assets/logo.svg" alt="Logo">
+</div>
+<div class="chart-container">
+  <h1 class="title">Spending - Last 7 days</h1>
+  <canvas baseChart
+        [data]="barChartData"
+        [options]="barChartOptions"
+        [type]="barChartType">
+  </canvas>
+  <hr>
+  <h2 class="amount-title">Total this month</h2>
+  <div class="amount-container">
+    <h1>$478.33</h1>
+    <p><strong>+2,4%</strong><br>from last month</p>
+  </div>
+</div>
