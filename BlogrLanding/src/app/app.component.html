@@ -1,0 +1,138 @@
+<div class="page-container">
+  <header class="page-header">
+    <menu class="menu-header">
+      <div class="menu-block">
+        <img src="../assets/logo.svg" alt="Logo">
+        <li class="menu-element" [ngbPopover]="popoverProduct" popoverClass="popover-header-element" [autoClose]="'outside'">Product <img src="../assets/icon-arrow-light.svg" alt="Open"></li>
+        <li class="menu-element" [ngbPopover]="popoverCompany" popoverClass="popover-header-element" [autoClose]="'outside'">Company <img src="../assets/icon-arrow-light.svg" alt="Open"></li>
+        <li class="menu-element" [ngbPopover]="popoverConnect" popoverClass="popover-header-element" [autoClose]="'outside'">Connect <img src="../assets/icon-arrow-light.svg" alt="Open"></li>
+      </div>
+      <div class="menu-block">
+        <li class="menu-button-element">Login</li>
+        <li class="menu-button-element">Sign Up</li>
+        <img [ngbPopover]="popoverResponsive" class="menu-button-responsive" popoverClass="popover-header-element" [autoClose]="'outside'" src="../assets/icon-hamburger.svg" alt="Menu-mobile">
+      </div>
+    </menu>
+    <title class="title-header">A modern publishing platform</title>
+    <sub class="subtitle-header">Grow your audience and build your online brand</sub>
+    <div class="menu-block-secondary">
+      <li class="menu-button-element">Start for Free</li>
+      <li class="menu-button-element">Learn More</li>
+    </div>
+  </header>
+  <main class="page-main-first">
+    <title class="title-main-first">Designed for the future</title>
+    <sub class="subtitle-main-first-1">Introducing an extensible editor</sub>
+    <p class="description-main-first-1">Blogr features an exceedingly intuitive interface which lets you focus on one thing: creating content.
+      The editor supports management of multiple blogs and allows easy manipulation of embeds such as images,
+      videos, and Markdown. Extensibility with plugins and themes provide easy ways to add functionality or
+      change the looks of a blog.
+    </p>
+    <sub class="subtitle-main-first-2">Robust content management</sub>
+    <p class="description-main-first-2">Blogr features an exceedingly intuitive interface which lets you focus on one thing: creating content.
+      Flexible content management enables users to easily move through posts. Increase the usability of your blog
+      by adding customized categories, sections, format, or flow. With this functionality, you’re in full control.
+    </p>
+  </main>
+
+  <main class="page-main-second">
+    <img class="phone-logo" src="../assets/illustration-phones.svg" alt="Phones">
+    <div class="page-main-second-text">
+      <title class="title-main-second">State of the Art Infrastructure</title>
+      <p class="subtitle-main-first-2">With reliability and speed in mind, worldwide data centers provide the backbone for ultra-fast connectivity.
+        This ensures your site will load instantly, no matter where your readers are, keeping your site competitive.
+      </p>
+    </div>
+  </main>
+
+  <main class="page-main-third">
+    <sub class="subtitle-main-third-1">Free, open, simple</sub>
+    <p class="description-main-third-1">
+      Blogr is a free and open source application backed by a large community of helpful developers. It supports
+      features such as code syntax highlighting, RSS feeds, social media integration, third-party commenting tools,
+      and works seamlessly with Google Analytics. The architecture is clean and is relatively easy to learn.
+    </p>
+    <sub class="subtitle-main-third-2">Powerful tooling</sub>
+    <p class="description-main-third-2">
+      Batteries included. We built a simple and straightforward CLI tool that makes customization and deployment a breeze, but
+      capable of producing even the most complicated sites.
+    </p>
+  </main>
+
+  <footer class="page-footer">
+    <section class="footer-section">
+      <img src="../assets/logo.svg" alt="Footer-Logo">
+    </section>
+    <section class="footer-section">
+      <title class="footer-sub-title">Product</title>
+      <ul class="footer-sub-element">Overview</ul>
+      <ul class="footer-sub-element">Pricing</ul>
+      <ul class="footer-sub-element">Marketplace</ul>
+      <ul class="footer-sub-element">Features</ul>
+      <ul class="footer-sub-element">Integrations</ul>
+    </section>
+    <section class="footer-section">
+      <title class="footer-sub-title">Company</title>
+      <ul class="footer-sub-element">About</ul>
+      <ul class="footer-sub-element">Team</ul>
+      <ul class="footer-sub-element">Blog</ul>
+      <ul class="footer-sub-element">Careers</ul>
+    </section>
+    <section class="footer-section">
+      <title class="footer-sub-title">Connect</title>
+      <ul class="footer-sub-element">Contact</ul>
+      <ul class="footer-sub-element">Newsletter</ul>
+      <ul class="footer-sub-element">LinkedIn</ul>
+    </section>
+  </footer>
+</div>
+
+<!-- Popover Header elements -->
+<ng-template #popoverProduct>
+  <ul class="popover-element">Overview</ul>
+  <ul class="popover-element">Pricing</ul>
+  <ul class="popover-element">Marketplace</ul>
+  <ul class="popover-element">Features</ul>
+  <ul class="popover-element">Integrations</ul>
+</ng-template>
+
+<ng-template #popoverCompany>
+  <ul class="popover-element">About</ul>
+  <ul class="popover-element">Team</ul>
+  <ul class="popover-element">Blog</ul>
+  <ul class="popover-element">Careers</ul>
+</ng-template>
+
+<ng-template #popoverConnect>
+  <ul class="popover-element">Contact</ul>
+  <ul class="popover-element">Newsletter</ul>
+  <ul class="popover-element">LinkedIn</ul>
+</ng-template>
+
+<!-- Popover Responsive menu -->
+<ng-template #popoverResponsive>
+  <ul class="popover-element" (click)="productMenu = !productMenu">Product&nbsp;&nbsp;<img src="../assets/icon-arrow-dark.svg" alt="Open-menu"></ul>
+  <menu *ngIf="productMenu" class="sub-menu-responsive">
+    <ul class="popover-element">Overview</ul>
+    <ul class="popover-element">Pricing</ul>
+    <ul class="popover-element">Marketplace</ul>
+    <ul class="popover-element">Features</ul>
+    <ul class="popover-element">Integrations</ul>
+  </menu>
+  <ul class="popover-element" (click)="companyMenu = !companyMenu">Company&nbsp;&nbsp;<img src="../assets/icon-arrow-dark.svg" alt="Open-menu"></ul>
+  <menu *ngIf="companyMenu" class="sub-menu-responsive">
+    <ul class="popover-element">About</ul>
+    <ul class="popover-element">Team</ul>
+    <ul class="popover-element">Blog</ul>
+    <ul class="popover-element">Careers</ul>
+  </menu>
+  <ul class="popover-element" (click)="connectMenu = !connectMenu">Connect&nbsp;&nbsp;<img src="../assets/icon-arrow-dark.svg" alt="Open-menu"></ul>
+  <menu *ngIf="connectMenu" class="sub-menu-responsive">
+    <ul class="popover-element">Contact</ul>
+    <ul class="popover-element">Newsletter</ul>
+    <ul class="popover-element">LinkedIn</ul>
+  </menu>
+  <hr>
+  <ul class="popover-element login">Login</ul>
+  <ul class="popover-element login">Sign Up</ul>
+</ng-template>

@@ -1,0 +1,51 @@
+/* You can add global styles to this file, and also import other style files */
+html, body {
+  margin: 0;
+}
+
+/* Importing Bootstrap SCSS file. */
+@import '~bootstrap/scss/bootstrap';
+
+
+.popover-header-element {
+  border-radius: 5px;
+  text-align: center;
+  padding: 0 10px;
+  font-family: 'Overpass', sans-serif;
+
+  .popover-arrow::before, .popover-arrow::after {
+    display: none;
+  }
+
+  .popover-element {
+    padding: 0;
+
+    &:hover {
+      cursor: url('./assets/pointer.png'), pointer;
+      font-weight: bold;
+    }
+
+    &.login {
+
+      padding: 10px 20px;
+      border-radius: 30px;
+
+      &:hover {
+        color: white;
+        background: linear-gradient(90deg, hsl(355, 100%, 74%) 0%, hsl(356, 100%, 66%) 100%);
+      }
+    }
+  }
+
+  .sub-menu-responsive {
+    display: flex;
+    flex-direction: column;
+    padding: 10px 10px 0 10px;
+    background-color: lighten(hsl(240, 2%, 79%), 15);
+    border-radius: 5px;
+
+    .popover-element {
+      padding: 0;
+    }
+  }
+}

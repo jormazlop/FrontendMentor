@@ -1,0 +1,389 @@
+@import '../assets/variables.scss';
+@import url('https://fonts.googleapis.com/css2?family=Overpass:ital,wght@0,300;0,600;1,300;1,600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap');
+
+%cursor {
+  cursor: url('../assets/pointer.png'), pointer;
+}
+
+%cursor-footer {
+  cursor: url('../assets/pointer-footer.png'), pointer;
+}
+
+%menu-block {
+  padding: 10px 25px;
+  border-radius: 20px;
+  transition-duration: 0.5s;
+  min-width: max-content;
+
+  &:hover {
+    @extend %cursor;
+    color: $lightRed;
+    background-color: $white;
+    font-weight: bold;
+  }
+}
+
+%title {
+  display: block;
+  color: $white;
+  display: flex;
+  justify-content: center;
+  font-family: 'Ubuntu', sans-serif;
+}
+
+%subtitle-main {
+  color: $veryDarkBlue;
+  font-size: 25px;
+  font-weight: bold;
+  position: relative;
+}
+
+%description-main {
+  position: relative;
+  width: 440px;
+  color: $veryDarkBlue;
+  word-spacing: 4px;
+}
+
+%menu-element-desktop {
+  @media (max-width: $mobile) {
+    display: none;
+  }
+}
+
+%menu-element-mobile {
+  @media (min-width: $mobile) {
+    display: none;
+  }
+}
+
+.page-container {
+
+  font-family: 'Overpass', sans-serif;
+
+  /* Header */
+  .page-header {
+    background-color: $lightRed;
+    background-image: url('../assets/bg-pattern-intro-desktop.svg');
+    height: 40vh;
+    border-radius: 0 0 0 30px;
+    background-size: cover;
+    background-position-y: 45%;
+
+    .menu-header {
+      display: flex;
+      list-style: none;
+      padding: 50px 100px;
+      color: $white;
+      justify-content: space-between;
+      margin: 0;
+
+      .menu-block {
+        display: flex;
+        gap: 30px;
+        align-items: center;
+
+        .menu-element {
+          min-width: 90px;
+          @extend %menu-element-desktop;
+          &:hover {
+            @extend %cursor;
+            text-underline-offset: 5px;
+            text-decoration: underline;
+          }
+        }
+
+        .menu-button-element {
+          @extend %menu-block;
+          @extend %menu-element-desktop;
+        }
+
+        .menu-button-responsive {
+          @extend %menu-element-mobile;
+
+          &:hover {
+            @extend %cursor;
+          }
+        }
+      }
+    }
+
+    .title-header{
+      @extend %title;
+      font-size: 45px;
+    }
+
+    .subtitle-header {
+      @extend %title;
+      margin-top: 15px;
+      font-size: 15px;
+      opacity: 0.8;
+    }
+
+  }
+
+  .menu-block-secondary {
+      margin-top: 30px;
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+      color: $white;
+      list-style: none;
+    .menu-button-element {
+      border: 1px solid $white;
+      @extend %menu-block;
+    }
+  }
+
+  /* Main Page 1 */
+  .page-main-first {
+    height: 90vh;
+    background-image: url('../assets/illustration-editor-desktop.svg');
+    background-repeat: no-repeat;
+    background-size: 600px;
+    background-position-x: calc(100vw - 450px);
+    background-position-y: 100px;
+
+    .title-main-first {
+      @extend %title;
+      color: $veryDarkBlue;
+      font-size: 35px;
+      font-weight: bold;
+      font-family: 'Overpass', sans-serif;
+      position: relative;
+      top: 140px;
+    }
+
+    .subtitle-main-first-1 {
+      @extend %subtitle-main;
+      top: 210px;
+      left: 10vw;
+    }
+
+    .description-main-first-1 {
+      @extend %description-main;
+      top: 220px;
+      left: 10vw;
+    }
+
+    .subtitle-main-first-2 {
+      @extend %subtitle-main;
+      top: 250px;
+      left: 10vw;
+    }
+
+    .description-main-first-2 {
+      @extend %description-main;
+      top: 260px;
+      left: 10vw;
+    }
+
+    @media (max-width: $mobile) {
+      background-image: url('../assets/illustration-editor-mobile.svg');
+      background-position-x: 100px;
+      background-position-y: 260px;
+      height: 165vh;
+
+      .subtitle-main-first-1 {
+        top: 810px;
+        left: 25vw;
+      }
+
+      .description-main-first-1 {
+        top: 820px;
+        left: 20vw;
+        text-align: center;
+      }
+
+      .subtitle-main-first-2 {
+        top: 850px;
+        left: 25vw;
+      }
+
+      .description-main-first-2 {
+        top: 860px;
+        left: 20vw;
+        text-align: center;
+      }
+    }
+  }
+
+  /* Main Page 2 */
+  .page-main-second {
+    height: 25vh;
+    background-image: url('../assets/bg-pattern-circles.svg');
+    background-color: $veryDarkBlackBlue;
+    border-radius: 0 70px 0 70px;
+    background-repeat: no-repeat;
+    background-position-y: -40vh;
+    background-size: 700px;
+
+    display: grid;
+    grid-template-columns: 50vw 50vw;
+
+    .phone-logo {
+      position: relative;
+      width: 350px;
+      top: -60px;
+      left: 150px;
+    }
+
+    .page-main-second-text {
+      color: $white;
+      width: 70%;
+      height: inherit;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 20px;
+      font-family: 'Overpass', sans-serif;
+
+      .title-main-second {
+        @extend %title;
+        justify-content: flex-start;
+        font-size: 35px;
+      }
+    }
+
+    @media (max-width: $mobile) {
+      height: 65vh;
+      display: block;
+
+      .phone-logo {
+        top: -160px;
+      }
+
+      .page-main-second-text {
+        width: 100%;
+        height: 200px;
+        padding: 0 10vw;
+        text-align: center;
+
+        .title-main-second {
+          justify-content: center;
+        }
+      }
+    }
+  }
+
+  /* Main Page 3 */
+  .page-main-third {
+    height: 90vh;
+    background-image: url('../assets/illustration-laptop-desktop.svg');
+    background-repeat: no-repeat;
+    background-size: 600px;
+    background-position-x: -170px;
+    background-position-y: 100px;
+
+    .subtitle-main-third-1 {
+      @extend %subtitle-main;
+      top: 190px;
+      left: 50vw;
+    }
+
+    .description-main-third-1 {
+      @extend %description-main;
+      top: 200px;
+      left: 50vw;
+    }
+
+    .subtitle-main-third-2 {
+      @extend %subtitle-main;
+      top: 230px;
+      left: 50vw;
+    }
+
+    .description-main-third-2 {
+      @extend %description-main;
+      top: 240px;
+      left: 50vw;
+    }
+
+    @media (max-width: $mobile) {
+      background-image: url('../assets/illustration-laptop-mobile.svg');
+      background-position-x: 10vw;
+      background-position-y: 40px;
+      height: 100vh;
+
+      .subtitle-main-third-1 {
+        top: 490px;
+        left: 40vw;
+      }
+
+      .description-main-third-1 {
+        top: 500px;
+        left: 20vw;
+        text-align: center;
+      }
+
+      .subtitle-main-third-2 {
+        top: 530px;
+        left: 40vw;
+      }
+
+      .description-main-third-2 {
+        top: 540px;
+        left: 20vw;
+        text-align: center;
+      }
+    }
+  }
+
+  /* Footer */
+  .page-footer {
+    background-color: $veryDarkBlackBlue;
+    height: 40vh;
+    border-radius: 0 70px 0 0;
+    color: $white;
+    display: flex;
+    justify-content: space-around;
+
+    .footer-section {
+
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      top: 70px;
+      height: calc(100% - 70px);
+
+      .footer-sub-element {
+        padding: 0;
+        margin: 10px 0;
+        color: $grayishBlue;
+
+        &:hover {
+          @extend %cursor-footer;
+          font-weight: bold;
+          color: $white;
+          position: relative;
+          left: 2px;
+        }
+      }
+
+      .footer-sub-title {
+        display: block;
+        margin-bottom: 30px;
+        font-weight: bold;
+      }
+    }
+
+    @media (max-width: $mobile) {
+      flex-direction: column;
+      height: 1200px;
+      align-items: center;
+      justify-content: space-evenly;
+
+      .footer-section {
+        height: 200px;
+
+        &:first-child {
+          height: 0;
+        }
+      }
+
+    }
+
+  }
+}
+
