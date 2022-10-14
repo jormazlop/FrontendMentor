@@ -1,0 +1,15 @@
+<div class="notification-container"
+    [ngClass]="{ 'notification-disabled' : !notification.actived }"
+     (click)="clickNotification()">
+  <img class="notification-image" [src]="notification.image" alt="User">
+  <div class="notification-text">
+    <h1 class="notification-description">
+      <strong class="notification-name">{{ notification.name }}</strong>
+      <div class="notification-description" [innerHTML]="notification.action"></div>
+      <div [ngClass]="{ 'notification-actived' : notification.actived }"></div>
+    </h1>
+    <h2 class="notification-time">{{ notification.time }}</h2>
+    <div *ngIf="notification.privateMessage" class="notification-private">{{ notification.privateMessage }}</div>
+  </div>
+
+</div>

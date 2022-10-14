@@ -1,0 +1,94 @@
+@import '../../../assets/variables.scss';
+
+.notification-container {
+
+  background-color: $lightGrayishBlue1;
+  padding: 20px;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  transition-duration: 0.2s;
+  margin-bottom: 10px;
+  max-width: 900px;
+
+  &:hover {
+    padding: 25px;
+  }
+
+  &.notification-disabled {
+    background-color: $white;
+
+    .notification-private {
+      background-color: $lightGrayishBlue1;
+    }
+  }
+
+  .notification-image {
+    width: 60px;
+    height: 60px;
+  }
+
+  .notification-text {
+
+    display: flex;
+    flex-direction: column;
+
+    .notification-description {
+
+      font-size: 18px;
+      font-weight: lighter;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      flex-wrap: wrap;
+
+      .notification-name:hover {
+        cursor: pointer;
+        color: $darkBlue;
+      }
+
+      .notification-action {
+        display: flex;
+        align-items: baseline;
+        gap: 5px;
+        font-style: normal;
+        color: $darkGrayishBlue;
+        font-weight: bold;
+
+        &:hover {
+          cursor: pointer;
+          color: $darkBlue;
+        }
+      }
+
+      .notification-actived {
+        background-color: red;
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+      }
+
+      .chess-image {
+        margin-left: 250px;
+      }
+    }
+
+  }
+
+  .notification-time {
+    font-size: 18px;
+    font-weight: lighter;
+    color: $grayishBlue;
+    margin: 0;
+  }
+
+  .notification-private {
+    background-color: $white;
+    padding: 15px;
+    border-radius: 5px;
+    margin-top: 15px;
+    color: $darkGrayishBlue;
+  }
+
+}

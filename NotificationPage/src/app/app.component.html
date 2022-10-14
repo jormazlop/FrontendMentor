@@ -1,0 +1,14 @@
+<div class="notifications-container">
+  <header class="notifications-header">
+      <h1>Notifications <strong class="notifications-total">{{ notifications | notificationsCount }}</strong></h1>
+      <h4 class="notifications-button" (click)="onClickAll()">Mark all as read</h4>
+  </header>
+  <app-notification
+      *ngFor="let notification of notifications; let i = index"
+      [notification]="notification"
+      (notificationClicked)="onClickNotification(i)">
+  </app-notification>
+</div>
+
+
+

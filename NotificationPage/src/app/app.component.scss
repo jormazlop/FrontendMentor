@@ -1,0 +1,32 @@
+@import '../assets/variables.scss';
+
+.notifications-container {
+  padding: 20px 30px;
+  background-color: $white;
+  border-radius: 5px;
+  margin: 230px 10px 10px 10px;
+
+  .notifications-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .notifications-total {
+      font-size: 25px;
+      margin-left: 10px;
+      color: $white;
+      padding: 0 10px;
+      background-color: $darkBlue;
+      border-radius: 5px;
+    }
+
+    .notifications-button {
+      font-weight: lighter;
+
+      &:hover {
+        color: $darkBlue;
+        cursor: pointer;
+      }
+    }
+  }
+}
