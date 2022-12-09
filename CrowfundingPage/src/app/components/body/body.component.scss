@@ -1,0 +1,148 @@
+@import '../../../assets/variables.scss';
+
+.mastercraft-container {
+
+  background-color: white;
+  width: 60vw;
+  height: 30vh;
+  border-radius: 20px;
+  position: relative;
+  z-index: 2;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  .mastercraft-logo {
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    top: -20px;
+    transition-duration: 0.5s;
+
+    &:hover {
+      width: 50px;
+      height: 50px;
+      top: -25px;
+    }
+  }
+
+  .mastercraft-body {
+    position: absolute;
+    padding: 20px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .mastercraft-subtitre {
+      font-size: 20px;
+      color: $darkGray;
+      margin-top: 0;
+      margin-bottom: 40px;
+    }
+
+    .mastercraft-buttons {
+      display: flex;
+      width: 100%;
+      justify-content: space-between;
+
+      .button-back {
+        background-color: $moderateCyan;
+        color: white;
+        padding: 15px 40px;
+        border-radius: 40px;
+        font-weight: 500;
+        font-size: 15px;
+        border: none;
+        transition-duration: 0.5s;
+        font-family: 'Commissioner', sans-serif;
+        font-weight: bold;
+
+        &:hover {
+          cursor: url('../../../assets/cursor-pointer-hover.png'), auto;
+          background-color: darken($moderateCyan, 15);
+        }
+      }
+
+      .bookmark {
+
+        display: flex;
+
+        img {
+          z-index: 1;
+        }
+
+        .button-bookmark {
+          background-color: lighten($darkGray, 40);
+          color: $darkGray;
+          padding: 15px 40px 15px 80px;
+          border-radius: 40px;
+          font-weight: 500;
+          font-size: 15px;
+          border: none;
+          transition-duration: 0.5s;
+          font-family: 'Commissioner', sans-serif;
+          position: relative;
+          right: 50px;
+          width: 200px;
+          font-weight: bold;
+
+          &:hover {
+            cursor: url('../../../assets/cursor-pointer-hover.png'), auto;
+            background-color: lighten($darkGray, 20);
+          }
+        }
+
+        &.actived {
+          .button-bookmark {
+            color: $darkCyan;
+          }
+        }
+      }
+    }
+  }
+}
+
+.collect-project-container {
+  background-color: white;
+  width: 60vw;
+  height: 30vh;
+  border-radius: 20px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.info-project-container {
+  background-color: white;
+  width: 60vw;
+  height: 120vh;
+  border-radius: 20px;
+  padding: 40px 40px 20px 40px;
+
+  @media(max-width: 900px) {
+    height: 150vh;
+  }
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+
+  margin-bottom: 50px;
+
+  .info-title {
+    font-size: 20px;
+    width: 100%;
+  }
+
+  .info-description {
+    text-align: justify;
+    color: $darkGray;
+    font-weight: 500;
+    line-height: 2;
+  }
+}

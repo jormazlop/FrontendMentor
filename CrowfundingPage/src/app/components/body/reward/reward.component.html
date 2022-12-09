@@ -1,0 +1,13 @@
+<div class="reward-container" [ngClass]="{'disabled': !left}">
+  <div class="reward-header">
+    <h1 class="reward-title">{{title}}</h1>
+    <h2 class="reward-pledge">Pledge ${{quantity}} or more</h2>
+  </div>
+  <p class="reward-body">
+    {{description}}
+  </p>
+  <div class="reward-footer">
+    <h1 class="reward-left">{{left}} <p>left</p></h1>
+    <button class="reward-button" [disabled]="!left" (click)="openModal()">Select reward</button>
+  </div>
+</div>

@@ -1,0 +1,52 @@
+.header-container {
+  height: 400px;
+  background-image: url('../../../assets/image-hero-desktop.jpg');
+  background-repeat: round;
+
+  display: flex;
+  justify-content: space-between;
+  padding: 40px 170px;
+
+  .header-options {
+
+    display: flex;
+    width: 300px;
+    justify-content: space-around;
+
+    @media(max-width: 899px) {
+      display: none;
+    }
+
+    .header-option {
+      color: white;
+      height: 20px;
+      transition-duration: 0.2s;
+
+      &:hover {
+        cursor: url('../../../assets/cursor-pointer-hover.png'), auto;
+        font-size: 20px;
+        font-weight: bold;
+      }
+    }
+  }
+
+  .header-options-responsive {
+
+    width: 20px;
+    height: 20px;
+    background-image: url('../../../assets/icon-hamburger.svg');
+    background-repeat: round;
+
+    @media(min-width: 900px) {
+      display: none;
+    }
+
+    &:hover {
+      cursor: url('../../../assets/cursor-pointer-hover.png'), auto;
+    }
+
+    &.opened {
+      background-image: url('../../../assets/icon-close-menu.svg');
+    }
+  }
+}

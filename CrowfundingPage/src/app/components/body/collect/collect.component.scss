@@ -1,0 +1,51 @@
+@import '../../../../assets/variables.scss';
+
+:host {
+  width: 100%;
+  height: 100%;
+}
+
+.collected-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 80%;
+
+  h2 {
+    font-size: 20px;
+    font-weight: 500;
+    color: $darkGray;
+  }
+
+  .item {
+    padding: 0 10%;
+    line-height: 20px;
+
+    &:first-of-type {
+      border-right: 1px solid $darkGray;
+    }
+
+    &:last-of-type {
+      border-left: 1px solid $darkGray;
+    }
+  }
+
+}
+
+progress {
+  width: 80%;
+  height: 10px;
+  position: relative;
+  left: 10%;
+  -webkit-appearance: none;
+}
+
+::-webkit-progress-bar {
+  background-color: lighten($darkGray, 40);
+  border-radius: 10px;
+}
+
+::-webkit-progress-value {
+  background-color: $moderateCyan;
+  border-radius: 10px;
+}

@@ -1,0 +1,39 @@
+<div class="mastercraft-container">
+  <img class="mastercraft-logo" src="../../../assets/logo-mastercraft.svg" alt="Mastercraft">
+  <div class="mastercraft-body">
+    <h1>Mastercraft Bamboo Monitor Riser</h1>
+    <h2 class="mastercraft-subtitre">A beautiful & handcrafted monitor stand to reduce neck and eye strain.</h2>
+    <div class="mastercraft-buttons">
+      <button class="button-back" (click)="openModal()">Back this project</button>
+      <div class="bookmark" (click)="onClickBookmark()" [ngClass]="{'actived' : bookmark}">
+        <img src="../../../assets/icon-bookmark.svg" alt="Bookmark" *ngIf="!bookmark">
+        <img src="../../../assets/icon-bookmark-check.svg" alt="Bookmark" *ngIf="bookmark">
+        <button class="button-bookmark"> {{bookmark? 'Bookmarked' : 'Bookmark'}}</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="collect-project-container">
+  <app-collect></app-collect>
+</div>
+
+<div class="info-project-container">
+  <h1 class="info-title">About this project</h1>
+  <p class="info-description">
+    The Mastercraft Bamboo Monitor Riser is a sturdy and stylish platform that elevates your screen
+    to a more comfortable viewing height. Placing your monitor at eye level has the potential to improve
+    your posture and make you more comfortable while at work, helping you stay focused on the task at hand.
+    <br>
+    <br>
+    Featuring artisan craftsmanship, the simplicity of design creates extra desk space below your computer
+    to allow notepads, pens, and USB sticks to be stored under the stand.
+  </p>
+
+  <app-reward *ngFor="let reward of rewards"
+              [title]="reward.title"
+              [quantity]="reward.quantity"
+              [description]="reward.description"
+              [left]="reward.left">
+  </app-reward>
+</div>

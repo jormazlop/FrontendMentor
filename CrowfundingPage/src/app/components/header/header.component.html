@@ -1,0 +1,22 @@
+<header class="header-container">
+  <div>
+    <img src="../../../assets/logo.svg" alt="Logo">
+  </div>
+  <nav class="header-options">
+    <a class="header-option">About</a>
+    <a class="header-option">Discover</a>
+    <a class="header-option">Get started</a>
+  </nav>
+  <nav class="header-options-responsive"
+       (click)="isOpened = !isOpened"
+       [ngClass]="{ 'opened': isOpened }"
+       [tooltip]="tooltipMenu"
+       triggers="click">
+  </nav>
+</header>
+
+<ng-template #tooltipMenu>
+  <a class="header-option">About</a>
+  <a class="header-option">Discover</a>
+  <a class="header-option">Get started</a>
+</ng-template>
