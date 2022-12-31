@@ -1,0 +1,33 @@
+<header class="header-container">
+   <img src="../../../assets/logo.svg" alt="Logo">
+   <nav class="menu">
+      <li class="menu-item">Home</li>
+      <li class="menu-item">New</li>
+      <li class="menu-item">Popular</li>
+      <li class="menu-item">Trending</li>
+      <li class="menu-item">Categories</li>
+      <img class="menu-image"
+           src="../../../assets/icon-menu.svg"
+           alt="menu-icon"
+           cButton cOffcanvasToggle="menuMobile">
+   </nav>
+</header>
+
+<c-offcanvas placement="end" id="menuMobile" class="offcanvas-container">
+  <c-offcanvas-header class="offcanvas-header">
+    <img class="menu-image"
+      src="../../../assets/icon-menu-close.svg"
+      alt="menu-icon-close"
+      cButtonClose
+      cOffcanvasToggle="menuMobile">
+  </c-offcanvas-header>
+  <c-offcanvas-body>
+    <nav class="menu">
+      <li class="menu-item">Home</li>
+      <li class="menu-item">New</li>
+      <li class="menu-item">Popular</li>
+      <li class="menu-item">Trending</li>
+      <li class="menu-item">Categories</li>
+   </nav>
+  </c-offcanvas-body>
+</c-offcanvas>

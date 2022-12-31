@@ -1,0 +1,75 @@
+@import '../../../assets/variables.scss';
+
+.header-container {
+   padding: 100px 150px 20px;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+
+   .menu {
+      display: flex;
+      gap: 20px;
+
+      .menu-item {
+         display: block;
+         transition: 0.2s;
+
+         &:hover {
+            transform: scale(1.2);
+            color: $softRed;
+            cursor: url('../../../assets/cursor.png'), auto;
+         }
+
+         @media(max-width: 1253px) {
+          display: none;
+         }
+      }
+
+      .menu-image {
+        display: none;
+
+        @media(max-width: 1253px) {
+          display: block;
+
+          &:hover {
+            cursor: url('../../../assets/cursor.png'), auto;
+          }
+         }
+      }
+   }
+}
+
+.offcanvas-container {
+
+  .offcanvas-header {
+    display: flex;
+    justify-content: flex-end;
+    padding: 30px 50px;
+
+    .menu-image {
+      display: block;
+      width: 20px;
+      &:hover {
+        cursor: url('../../../assets/cursor.png'), auto;
+      }
+    }
+  }
+
+  .menu {
+
+    padding: 20px;
+
+    .menu-item {
+      display: block;
+      font-weight: bold;
+      transition: 0.2s;
+      width: fit-content;
+
+      &:hover {
+         transform: translateX(3px);
+         color: $softRed;
+         cursor: url('../../../assets/cursor.png'), auto;
+      }
+    }
+  }
+}
