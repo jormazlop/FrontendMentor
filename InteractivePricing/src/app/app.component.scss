@@ -1,0 +1,31 @@
+@import '../assets/variables.scss';
+
+.app-container {
+  background-image: url('../assets/bg-pattern.svg');
+  background-repeat: no-repeat;
+  background-size: 100vw;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+
+  .title-container {
+    text-align: center;
+    background-image: url('../assets/pattern-circles.svg');
+    background-repeat: no-repeat;
+    background-position: top;
+    height: 200px;
+
+    .title-principal {
+      color: $darkDesaturatedBlue;
+      margin: 50px 0 0;
+    }
+
+    .title-secondary {
+      color: $grayishBlue;
+      font-size: 17px;
+      font-weight: normal;
+    }
+  }
+}

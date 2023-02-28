@@ -1,0 +1,25 @@
+<div class="slider-container">
+  <header class="header-slider">
+    <h2 class="pageviews">100K PAGEVIEWS</h2>
+    <h2 class="quantity">${{ value | number : '1.2-2' }} <span class="quantity-sub">/ month</span></h2>
+  </header>
+  <ngx-slider [(value)]="value" [options]="options"></ngx-slider>
+
+  <div class="billing-container">
+    <label class="label-switch" [ngClass]="{'actived': !switchValue}">Monthly Billing</label>
+    <ui-switch [(ngModel)]="switchValue" size="small" color="hsl(174, 86%, 45%)"></ui-switch>
+    <label class="label-switch" [ngClass]="{'actived': switchValue}">Yearly Billing</label>
+    <mark class="discount-mark">25% discount</mark>
+  </div>
+
+  <hr class="separator">
+
+  <div class="trial-container">
+    <ul>
+      <li class="list-item">Unlimited websites</li>
+      <li class="list-item">100% data ownership</li>
+      <li class="list-item">Email reports</li>
+    </ul>
+    <button class="trial-button">Start my trial</button>
+  </div>
+</div>
