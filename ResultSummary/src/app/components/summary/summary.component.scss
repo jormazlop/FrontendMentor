@@ -1,0 +1,101 @@
+@import './../../../assets/variables.scss';
+
+:host {
+  display: contents;
+}
+
+.summary-container {
+  align-items: center;
+  border-radius:  0 30px 30px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  margin: 0 0 0 10%;
+  position: relative;
+  right: 30px;
+  width: 40%;
+
+  @media (max-width: $responsive) {
+    height: 100%;
+    margin: 0 0 0 5%;
+    width: 100%;
+  }
+
+  .summary-title {
+    align-self: start;
+    font-size: 25px;
+    margin: 0;
+
+    @media (max-width: $responsive) {
+      margin: 0 5%;
+    }
+  }
+
+  @mixin summary-elements($color, $quantity) {
+    background-color: lighten($color, $quantity);
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    padding: 5% 5%;
+    width: 90%;
+
+    @media (max-width: $responsive) {
+      width: 80%;
+    }
+
+    .image {
+      display: flex;
+      font-weight: 700;
+      gap: 10px;
+      color: $color;
+    }
+
+    .quantity {
+      font-size: 18px;
+      font-weight: 700;
+
+      span {
+        color: lighten(grey, 10);
+      }
+    }
+
+  }
+
+  .reaction-container {
+    @include summary-elements($lightRed, 30);
+  }
+
+  .memory-container {
+    @include summary-elements($orangeYellow, 40);
+  }
+
+  .verbal-container {
+    @include summary-elements($greenTeal, 59);
+  }
+
+  .visual-container {
+    @include summary-elements($cobaltBlue, 50);
+  }
+
+  .continue-button {
+    background-image: linear-gradient($lightSlateBlue, $lightRoyalBlue);
+    border: none;
+    border-radius: 30px;
+    color: $white;
+    font-family: 'Hanken Grotesk', sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 5% 40%;
+    transition-duration: 0.3s;
+
+    &:hover {
+      cursor: pointer;
+      transform: scale(1.05)
+    }
+
+    @media (max-width: $responsive) {
+      padding: 3% 40%;
+    }
+  }
+
+}

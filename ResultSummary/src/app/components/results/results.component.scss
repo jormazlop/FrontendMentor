@@ -1,0 +1,59 @@
+@import './../../../assets/variables.scss';
+
+:host {
+  display: contents;
+}
+
+.result-container {
+  align-items: center;
+  background: linear-gradient($lightSlateBlue, $lightRoyalBlue);
+  border-radius: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  width: 60%;
+
+  @media (max-width: $responsive) {
+    width: 100%;
+  }
+
+  @media (max-width: $mobile) {
+    border-radius: 0 0 30px 30px;
+  }
+
+  .result-title {
+    color: $lightLavender;
+    font-size: 26px;
+  }
+
+  .result-quantity {
+
+    background-color: $violetBlue;
+    border-radius: 50%;
+    color: $lightLavender;
+    display: flex;
+    flex-direction: column;
+    height: 50px;
+    justify-content: center;
+    padding: 50px;
+    width: 50px;
+
+    .result-number {
+      color: $white;
+      font-size: 50px;
+      text-align: center;
+    }
+  }
+
+  .result-subtitle {
+    color: $white;
+    margin-bottom: 0;
+  }
+
+  .result-description {
+    color: $lightLavender;
+    margin-top: 0;
+    padding: 0 22%;
+    text-align: center;
+  }
+}
