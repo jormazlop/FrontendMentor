@@ -1,0 +1,83 @@
+@import 'variables';
+
+.header-container {
+  background-image: url('./../../../assets/desktop/image-hero.jpg');
+  background-repeat: round;
+  flex-direction: column;
+  font-family: $fontJosefin;
+  height: fit-content;
+  padding: 5% 10%;
+
+  @media(max-width: $desktop) {
+    display: flex;
+    padding: 5% 5%;
+  }
+
+  .menu-section {
+    display: flex;
+    justify-content: space-between;
+
+    .logo-header {
+      height: 30px;
+      width: 180px;
+    }
+
+    .menu-header {
+      align-items: center;
+      color: $white;
+      display: flex;
+      gap: 20px;
+      height: 30px;
+      margin: 0;
+
+      .menu-element {
+        display: inline-block;
+        font-size: 20px;
+        font-weight: 700;
+
+        &:hover {
+          cursor: pointer;
+          border-bottom: 2px solid $white;
+          padding: 0 0 4px;
+          transform: scale(1.05);
+        }
+      }
+    }
+
+    .menu-icon {
+      display: none;
+    }
+
+    @media(max-width: $desktop) {
+      .menu-header {
+        display: none;
+      }
+
+      .menu-icon {
+        display: block;
+        transition-duration: 0.5s;
+
+        &:hover {
+          cursor: pointer;
+          transform: scale(1.1);
+        }
+      }
+    }
+  }
+
+  .menu-title {
+    border: 1px solid $white;
+    color: $white;
+    font-size: 3.8em;
+    font-weight: normal;
+    margin-top: 90px;
+    padding: 10px;
+    width: 35vw;
+
+    @media(max-width: $desktop) {
+      font-size: 3em;
+      text-align: center;
+      width: 95%;
+    }
+  }
+}

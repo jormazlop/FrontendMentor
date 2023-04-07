@@ -1,0 +1,29 @@
+<header class="header-container">
+  <section class="menu-section">
+    <img class="logo-header" src="../../../assets/logo.svg" alt="Logo">
+    <menu class="menu-header">
+      <li class="menu-element">About</li>
+      <li class="menu-element">Careers</li>
+      <li class="menu-element">Events</li>
+      <li class="menu-element">Products</li>
+      <li class="menu-element">Support</li>
+    </menu>
+    <img class="menu-icon" src="../../../assets/icon-hamburger.svg" alt="Menu" (click)="openRight(menuCanvas)">
+  </section>
+  <h1 class="menu-title">IMMERSIVE EXPERIENCES THAT DELIVER</h1>
+</header>
+
+<ng-template #menuCanvas let-offcanvas>
+	<div class="offcanvas-header">
+		<img class="logo-header" src="../../../assets/logo.svg" alt="Logo">
+		<button type="button" class="btn-close btn-close-white" aria-label="Close" (click)="offcanvas.dismiss('Cross click')"></button>
+	</div>
+	<div class="offcanvas-body">
+      <li class="offcanvas-menu-element">About</li>
+      <li class="offcanvas-menu-element">Careers</li>
+      <li class="offcanvas-menu-element">Events</li>
+      <li class="offcanvas-menu-element">Products</li>
+      <li class="offcanvas-menu-element">Support</li>
+	</div>
+</ng-template>
+

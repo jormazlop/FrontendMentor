@@ -1,0 +1,27 @@
+@import "bootstrap/scss/bootstrap";
+@import 'variables';
+
+body {
+  margin: 0;
+}
+
+.offcanvas {
+  background-color: #000;
+  color: #fff;
+  font-family: $fontJosefin;
+  padding: 20px;
+
+  .offcanvas-menu-element {
+    display: block;
+    font-size: 30px;
+    font-weight: normal;
+    text-transform: uppercase;
+    width: fit-content;
+
+    &:hover {
+      cursor: pointer;
+      transform: scale(1.1);
+    }
+  }
+
+}
