@@ -1,0 +1,11 @@
+@import 'variables.scss';
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,700;1,400;1,800&display=swap');
+
+body {
+  align-items: center;
+  background-color: $lightGrey;
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  margin: 0;
+}

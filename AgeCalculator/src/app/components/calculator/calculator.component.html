@@ -1,0 +1,54 @@
+<div class="calculator-container">
+  <form [formGroup]="ageForm">
+    <header class="calculator-header">
+        <div class="day-container">
+          <label for="day">DAY</label>
+          <input type="text"
+                 maxlength="2"
+                 name="day"
+                 placeholder="DD"
+                 formControlName="day"
+                 [ngClass]="{'disabled': invalidDay()}"
+                 oninput="this.value=this.value.replace(/[^0-9]/g,'')">
+          <p class="error-message" *ngIf="invalidDay()">Must be a valid day</p>
+        </div>
+        <div class="month-container">
+          <label for="month">MONTH</label>
+          <input type="text"
+                 maxlength="2"
+                 name="month"
+                 placeholder="MM"
+                 formControlName="month"
+                 [ngClass]="{'disabled': invalidMonth()}"
+                 oninput="this.value=this.value.replace(/[^0-9]/g,'')">
+          <p class="error-message" *ngIf="invalidMonth()">Must be a valid month</p>
+        </div>
+        <div class="year-container">
+          <label for="year">YEAR</label>
+          <input type="text"
+                 maxlength="4"
+                 name="year"
+                 placeholder="YYYY"
+                 formControlName="year"
+                 [ngClass]="{'disabled': invalidYear()}"
+                 oninput="this.value=this.value.replace(/[^0-9]/g,'')">
+          <p class="error-message" *ngIf="invalidYear()">Must be a valid year</p>
+          <p class="error-message" *ngIf="pastDateError">Must be in the past</p>
+          <p class="error-message" *ngIf="incorrectDateError">Must be a valid date</p>
+        </div>
+    </header>
+  </form>
+  <div class="calculator-line">
+    <hr>
+    <img class="arrow-button"
+         src="../../../assets/images/icon-arrow.svg"
+         alt="Arrow"
+         (click)="calculateAge()"
+         [ngClass]="{'disabled': !enabledButton()}">
+  </div>
+  <div class="age-container">
+    <h1><strong>{{ outputYears }}</strong>years</h1>
+    <h1><strong>{{ outputMonths }}</strong>months</h1>
+    <h1><strong>{{ outputDays }}</strong>days</h1>
+  </div>
+</div>
