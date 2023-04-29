@@ -1,0 +1,14 @@
+<div class="storage-container">
+  <p class="storage-description">You've used <strong>80 GB</strong> of your storage</p>
+  <mat-slider class="storage-bar" min="0" max="1000" [tooltip]="tooltip" placement="top right">
+    <input value="815" disabled matSliderThumb>
+  </mat-slider>
+  <div class="total-storage">
+    <p>0 GB</p>
+    <p>1000 GB</p>
+  </div>
+</div>
+
+<ng-template #tooltip>
+  <p class="tooltip-info"><strong>185</strong> GB LEFT</p>
+</ng-template>

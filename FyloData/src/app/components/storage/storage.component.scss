@@ -1,0 +1,48 @@
+@import 'variables.scss';
+
+.storage-container {
+  background-color: $darkBlue;
+  border-radius: 10px;
+  bottom: 2vw;
+  padding: 40px;
+  position: relative;
+
+  .storage-description {
+    color: $paleBlue;
+  }
+
+  .storage-bar {
+    width: 350px;
+  }
+
+  .total-storage {
+
+    display: flex;
+    justify-content: space-between;
+    width: 350px;
+
+    p {
+      color: $paleBlue;
+      font-size: 14px;
+      font-weight: bold;
+      margin: 0;
+    }
+  }
+}
+
+.tooltip-info {
+  align-items: center;
+  color: $grayishBlue;
+  display: flex;
+  font-family: 'Raleway', sans-serif;
+  font-size: 12px;
+  font-weight: bold;
+  gap: 10px;
+  margin: 0;
+  padding: 0px 15px;
+
+  strong {
+    color: #000;
+    font-size: 40px;
+  }
+}
