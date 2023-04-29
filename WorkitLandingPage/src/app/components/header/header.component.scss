@@ -1,0 +1,114 @@
+@import 'variables.scss';
+
+.header-container {
+  align-items: center;
+  background-image: url('../../../assets/header-bg.png');
+  background-repeat: round;
+  color: $white;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  height: 730px;
+
+  @media(max-width: $mobile) {
+    height: 540.24px;
+  }
+
+  .header-menu {
+    display: flex;
+    justify-content: space-between;
+    padding: 30px 10%;
+    width: 80%;
+
+    .header-menu-logo {
+      width: 100px;
+    }
+
+    .header-menu-access {
+      border-bottom: 2px solid $eucalyptus;
+      font-size: 20px;
+      font-weight: 100;
+      padding: 2px;
+      transition-duration: 0.3s;
+
+      &:hover {
+        color: $eucalyptus;
+        cursor: pointer;
+      }
+    }
+  }
+
+  .header-description {
+
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    width: 635px;
+
+    .header-title {
+      font-size: 70px;
+      font-weight: 400;
+      margin-top: 0;
+      text-align: center;
+
+      .underlined {
+        border-bottom: 2px solid $eucalyptus;
+      }
+
+      @media(max-width: $mobile) {
+        font-size: 40px;
+        width: 343px;
+      }
+    }
+
+    .header-button {
+      background-color: $eucalyptus;
+      border: none;
+      font-family: 'Manrope', serif;
+      font-size: 16px;
+      font-weight: bold;
+      height: 61px;
+      transition-duration: 0.3s;
+      width: 161px;
+
+      &:hover {
+        background-color: $darkPurple;
+        color: $eucalyptus;
+        cursor: pointer;
+        border: 1px solid $eucalyptus;
+      }
+    }
+  }
+
+  .header-hero-logo {
+    width: 700px;
+
+    @media(max-width: $mobile) {
+      margin-top: 50px;
+      width: 300px;
+    }
+  }
+}
+
+.pattern-1 {
+  bottom: 55%;
+  position: absolute;
+  left: -120px;
+  width: 270.29px;
+
+  @media(max-width: $mobile) {
+    display: none;
+  }
+}
+
+.pattern-2 {
+  bottom: 45%;
+  position: absolute;
+  width: 141.7px;
+  left: calc(100vw - 90px);
+
+  @media(max-width: $mobile) {
+    display: none;
+  }
+}
+

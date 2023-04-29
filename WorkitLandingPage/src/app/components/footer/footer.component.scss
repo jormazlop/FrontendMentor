@@ -1,0 +1,61 @@
+@import 'variables.scss';
+
+.footer-container {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  height: 350px;
+  justify-content: center;
+
+  .footer-logo {
+    width: 95.76px;
+  }
+
+  .footer-icons {
+    display: flex;
+    gap: 20px;
+
+    %icon {
+      background-repeat: round;
+      height: 20px;
+      width: 20px;
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+
+    .footer-icon-facebook {
+      background-image: url('../../../assets/icon-facebook.svg');
+      @extend %icon;
+
+      &:hover {
+        background-image: url('../../../assets/icon-facebook-hover.svg');
+      }
+    }
+
+    .footer-icon-twitter {
+      background-image: url('../../../assets/icon-twitter.svg');
+      @extend %icon;
+
+      &:hover {
+        background-image: url('../../../assets/icon-twitter-hover.svg');
+      }
+    }
+
+    .footer-icon-instagram {
+      background-image: url('../../../assets/icon-instagram.svg');
+      @extend %icon;
+
+      &:hover {
+        background-image: url('../../../assets/icon-instagram-hover.svg');
+      }
+    }
+  }
+
+  @media(max-width: $mobile) {
+    position: relative;
+    top: 200px;
+  }
+}

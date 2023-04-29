@@ -1,0 +1,82 @@
+@import 'variables.scss';
+
+:host {
+  display: block;
+  height: 760px;
+
+  @media(max-width: $mobile) {
+    height: 720.73px;
+  }
+}
+
+.actions-container {
+  background-image: url('../../../assets/actions-bg.png');
+  background-repeat: round;
+  bottom: 226px;
+  position: relative;
+  height: 960px;
+  z-index: -1;
+
+  @media(max-width: $mobile) {
+    bottom: 137.24px;
+    height: 920.73px;
+  }
+
+  .actions-list {
+    display: flex;
+    justify-content: space-around;
+    padding: 0 6vw;
+    position: relative;
+    top: 50%;
+
+    .action {
+      align-items: center;
+      color: $darkPurple;
+      display: flex;
+      flex-direction: column;
+
+      .number {
+        align-items: center;
+        border: 1px solid $black;
+        border-radius: 50%;
+        display: flex;
+        height: 50px;
+        justify-content: center;
+        width: 50px;
+      }
+
+      .title {
+        font-size: 32px;
+        font-weight: 500;
+        text-align: center;
+      }
+
+      .description {
+        font-size: 18px;
+        text-align: center;
+        width: 20vw;
+      }
+
+      @media(max-width: $mobile) {
+        flex-direction: column;
+
+        .title {
+          font-size: 28px;
+          margin: 0;
+        }
+
+        .description {
+          font-size: 16px;
+          width: 95vw;
+        }
+      }
+    }
+
+    @media(max-width: $mobile) {
+      flex-direction: column;
+      top: 25%;
+    }
+
+
+  }
+}
