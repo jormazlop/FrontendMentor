@@ -1,0 +1,98 @@
+@import 'variables.scss';
+
+%button {
+  border: none;
+  border-radius: 40px;
+  color: $white;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  padding: 15px 35px;
+  transition-duration: 0.3s;
+}
+
+.header-container {
+  background-image: url('../../../assets/image-hero-desktop@2x.png');
+  background-repeat: no-repeat;
+  background-size: 60vw;
+  background-position: 60vw;
+  background-position-y: -10vw;
+  height: 790px;
+
+  .header-menu {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    margin: 0;
+    padding: 2vw 6vw;
+    width: 80vw;
+
+    .header-menu-logo {
+      height: 27.68px;
+      width: 111px;
+    }
+
+    .header-menu-button {
+      background-color: $darkPurple;
+      @extend %button;
+
+      &:hover {
+        background-color: $lightPurple;
+        cursor: pointer;
+      }
+    }
+  }
+
+  .header-description {
+    padding: 5vw 10vw;
+    width: 30vw;
+
+    .header-description-title {
+      font-size: 56px;
+      color: $darkPurple;
+    }
+
+    .header-description-content {
+      font-size: 18px;
+      color: $grey;
+      margin-bottom: 30px;
+      width: 24vw;
+    }
+
+    .header-description-button {
+      background: $linearPink;
+      @extend %button;
+
+      &:hover {
+        cursor: pointer;
+        opacity: 0.5;
+      }
+    }
+
+    @media(max-width: $mobile) {
+      padding: 5vw 3vw;
+      text-align: left;
+      width: 85vw;
+
+      .header-description-title {
+        font-size: 40px;
+      }
+
+      .header-description-content {
+        font-size: 16px;
+      }
+
+      .header-description-content {
+        width: 100%;
+      }
+    }
+  }
+
+  @media(max-width: $mobile) {
+    background-image: url('../../../assets/image-hero-mobile@2x.png');
+    background-repeat: no-repeat;
+    background-size: 80vw;
+    background-position: 10vw;
+    background-position-y: calc(65vh - 35vw);
+  }
+
+}
+

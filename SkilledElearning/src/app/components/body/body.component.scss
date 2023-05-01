@@ -1,0 +1,228 @@
+@import 'variables.scss';
+
+.body-container {
+  background: $linearGrey;
+  height: 888px;
+
+  @media (max-width: $mobile) {
+    height: 1695px;
+  }
+
+  .courses-list {
+    display: grid;
+    gap: 10% 5%;
+    grid-template-columns: 30% 30% 30%;
+    grid-template-rows: 45% 45%;
+    height: 89%;
+    padding: 5vh 10vw;
+
+    %course {
+      background-color: $white;
+      border-radius: 15px;
+      box-shadow: 0px 0px 10px 0px lighten($grey, 40);
+
+      .logo {
+        height: 56px;
+        left: 50px;
+        position: relative;
+        top: -30px;
+        width: 56px;
+      }
+
+      .content {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        justify-content: center;
+        padding: 0 15%;
+        position: relative;
+        top: -70px;
+
+        .title {
+          color: $darkPurple;
+          font-size: 24px;
+        }
+
+        .description {
+          color: $grey;
+          font-size: 18px;
+        }
+
+        .button-started {
+          background-color: $white;
+          border: none;
+          color: $pink;
+          font-family: 'Plus Jakarta Sans', sans-serif;
+          font-size: 18px;
+          font-weight: 700;
+          padding: 0;
+          text-align: initial;
+          transition-duration: 0.3s;
+
+          &:hover {
+            cursor: pointer;
+            color: $lightPink;
+          }
+        }
+
+        @media (min-width:$mobile) and (max-width: $tablet) {
+
+          justify-content: center;
+          margin-top: 10px;
+
+          .title {
+            font-size: 20px;
+          }
+
+          .description {
+            font-size: 16px;
+            margin: 10px 0;
+          }
+
+          .button-started {
+            margin-bottom: 10px;
+          }
+        }
+
+        @media (max-width: $mobile) {
+
+          .title {
+            margin: 0;
+            margin-top: 30px;
+          }
+        }
+      }
+    }
+
+    .most-popular {
+
+      border-radius: 15px;
+      background: $linearPink;
+      grid-column: 1/2;
+      grid-row: 1/2;
+
+      .most-popular-content {
+        color: $white;
+        font-size: 32px;
+        font-weight: 800;
+        margin: 0;
+        padding: 15% 20%;
+      }
+    }
+
+    .animation {
+
+      @extend %course;
+      grid-column: 2/3;
+      grid-row: 1/2;
+    }
+
+    .design {
+
+      @extend %course;
+      grid-column: 3/4;
+      grid-row: 1/2;
+    }
+
+    .photography {
+
+      @extend %course;
+      grid-column: 1/2;
+      grid-row: 2/3;
+    }
+
+    .crypto {
+
+      @extend %course;
+      grid-column: 2/3;
+      grid-row: 2/3;
+    }
+
+    .business {
+
+      @extend %course;
+      grid-column: 3/4;
+      grid-row: 2/3;
+    }
+
+    @media (min-width:$mobile) and (max-width: $tablet) {
+
+      gap: 5%;
+      grid-template-columns: 47% 47%;
+      grid-template-rows: 30% 30% 30%;
+      padding: 5vh 1vw;
+
+      .most-popular {
+        grid-column: 1/2;
+        grid-row: 1/2;
+      }
+
+      .animation {
+        grid-column: 2/3;
+        grid-row: 1/2;
+      }
+
+      .design {
+        grid-column: 1/2;
+        grid-row: 2/3;
+      }
+
+      .photography {
+        grid-column: 2/3;
+        grid-row: 2/3;
+      }
+
+      .crypto {
+        grid-column: 1/2;
+        grid-row: 3/4;
+      }
+
+      .business {
+        grid-column: 2/3;
+        grid-row: 3/4;
+      }
+    }
+
+    @media (max-width: $mobile) {
+
+      gap: 3%;
+      grid-template-columns: 100%;
+      grid-template-rows: 16% 16% 16% 16% 16% 16%;
+      padding: 1vh 3vw;
+
+      .most-popular {
+        grid-column: 1/2;
+        grid-row: 1/2;
+      }
+
+      .animation {
+        grid-column: 1/2;
+        grid-row: 2/3;
+      }
+
+      .design {
+        grid-column: 1/2;
+        grid-row: 3/4;
+      }
+
+      .photography {
+        grid-column: 1/2;
+        grid-row: 4/5;
+      }
+
+      .crypto {
+        grid-column: 1/2;
+        grid-row: 5/6;
+      }
+
+      .business {
+        grid-column: 1/2;
+        grid-row: 6/7;
+      }
+    }
+  }
+
+  @media(max-width: $mobile) {
+    height: 1695px;
+  }
+}

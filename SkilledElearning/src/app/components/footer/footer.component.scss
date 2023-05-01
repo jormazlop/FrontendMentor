@@ -1,0 +1,32 @@
+@import 'variables.scss';
+
+.footer-container {
+  align-items: center;
+  background-color: $darkPurple;
+  display: flex;
+  height: 80px;
+  justify-content: space-between;
+  padding: 20px 15vw;
+
+  .footer-logo {
+    height: 27.68px;
+    width: 111.17px;
+
+  }
+
+  .footer-button {
+    background: $linearPurple;
+    border: none;
+    border-radius: 40px;
+    color: $white;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 18px;
+    padding: 15px 35px;
+    transition-duration: 0.3s;
+
+    &:hover {
+      cursor: pointer;
+      background: $linearPurpleLight;
+    }
+  }
+}
