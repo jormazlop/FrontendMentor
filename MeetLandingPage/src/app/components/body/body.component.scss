@@ -1,0 +1,80 @@
+@import 'variables.scss';
+
+.body-container {
+
+  margin-top: 64px;
+
+  .image-container {
+    display: flex;
+    justify-content: space-around;
+    padding: 0 5%;
+    width: 90%;
+
+    .image {
+      border-radius: 5px;
+      width: 20%;
+    }
+
+    @media (max-width: $mobile) {
+
+      flex-wrap: wrap;
+      gap: 45px;
+
+      .image {
+        width: 40%;
+      }
+    }
+  }
+
+  .body-main {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    padding: 48px 10%;
+    width: 80%;
+
+    .body-subtitle {
+      color: $darkBlue;
+      font-size: 16px;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+    }
+
+    .body-title {
+      color: $blackPurple;
+      font-size: 40px;
+      font-weight: 900;
+      line-height: 44px;
+      margin: 16px 0 32px;
+      text-align: center;
+      width: 445px;
+    }
+
+    .body-description {
+      color: $grey;
+      font-size: 16px;
+      font-weight: 500;
+      line-height: 26px;
+      text-align: center;
+      width: 576px;
+    }
+
+    @media (max-width: $tablet) {
+      .body-description {
+        width: 480px;
+      }
+    }
+
+    @media (max-width: $mobile) {
+
+      .body-subtitle {
+        text-align: center;
+      }
+
+      .body-title,
+      .body-description {
+        width: 90%;
+      }
+    }
+  }
+}

@@ -1,0 +1,82 @@
+@import 'variables.scss';
+
+.footer-container {
+  align-items: center;
+  background-image: url('../../../assets/desktop/image-footer.jpg');
+  background-repeat: round;
+  display: flex;
+  height: 308px;
+  justify-content: space-around;
+
+
+  @media(max-width: $tablet) {
+    background-image: url('../../../assets/tablet/image-footer-tablet.jpg');
+    height: 428px;
+  }
+
+  @media(max-width: $mobile) {
+    background-image: url('../../../assets/mobile/image-footer-mobile.jpg');
+    height: 428px;
+  }
+
+  &::before {
+    background-color: $darkBlue;
+    content: '';
+    display: block;
+    height: 308px;
+    opacity: 0.8;
+    position: absolute;
+    width: 100%;
+
+    @media(max-width: $tablet) {
+      height: 428px;
+    }
+
+    @media(max-width: $mobile) {
+      height: 428px;
+    }
+  }
+
+  .footer-title {
+    color: $white;
+    position: relative;
+    width: 350px;
+  }
+
+  .footer-description {
+    color: $white;
+    font-size: 18px;
+    line-height: 26px;
+    position: relative;
+    width: 350px;
+  }
+
+  .footer-body-download-button {
+    background-color: $darkPurple;
+    border: none;
+    border-radius: 50px;
+    color: $white;
+    font-family: 'Red Hat Display', sans-serif;
+    font-size: 16px;
+    font-weight: 900;
+    padding: 16px 40px;
+    position: relative;
+    transition-duration: 0.3s;
+
+    &:hover {
+      background-color: lighten($darkPurple, 15);
+      cursor: pointer;
+    }
+
+    span {
+      color: $lightPurple;
+    }
+
+  }
+
+  @media(max-width:$tablet) {
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+  }
+}
