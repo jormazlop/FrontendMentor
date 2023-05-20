@@ -1,0 +1,70 @@
+@use 'variables' as variables;
+
+.main-container {
+  background-image: url(../assets/desktop/image-host.jpg);
+  background-color: variables.$black;
+  background-position: 45vw 15vh;
+  background-repeat: no-repeat;
+  background-size: 55vw 70vh;
+  height: 100vh;
+  width: 100vw;
+
+  @media(max-width: variables.$tablet) {
+    background-position: 30vw 0vh;
+    background-size: 70vw 75vh;
+  }
+
+  @media(max-width: variables.$mobile) {
+
+    align-items: center;
+    background-image: none;
+    display: flex;
+    flex-direction: column;
+
+    &::after {
+      content: ' ';
+      align-items: center;
+      background-image: url(../assets/desktop/image-host.jpg);
+      background-position: 0vw 0vh;
+      background-size: 100vw 100vh;
+      bottom: 0vh;
+      display: flex;
+      flex-direction: column;
+      height: 100vh;
+      position: absolute;
+      width: 100vw;
+      opacity: 0.1;
+
+    }
+  }
+
+  .logo {
+    padding: 11vh 11vw;
+
+    @media(max-width: variables.$tablet) {
+      padding: 7vh 5vw;
+    }
+
+    @media(max-width: variables.$mobile) {
+      padding: 10vh 0 5vh;
+    }
+  }
+
+  .dots {
+    bottom: 52px;
+    height: 104px;
+    left: calc(100vw - 232px);
+    position: relative;
+    width: 232px;
+
+    @media(max-width: variables.$tablet) {
+      position: absolute;
+      left: 5vw;
+      top: calc(100vh - 104px);
+    }
+
+    @media(max-width: variables.$mobile) {
+      display: none;
+    }
+  }
+}

@@ -1,0 +1,112 @@
+@use 'variables' as variables;
+
+.body-container {
+  background-color: variables.$black;
+  height: 47vh;
+  padding: 5vh 11vw;
+  width: 44vw;
+
+  @media(max-width: variables.$tablet) {
+    height: 43vh;
+    padding: 5vh 3vw 5vh 5vw;
+    position: relative;
+    top: 2vh;
+    width: 70vw;
+  }
+
+  @media(max-width: variables.$mobile) {
+    text-align: center;
+    width: 90vw;
+  }
+
+  .body-title {
+    color: variables.$green;
+    font-size: 52px;
+    font-weight: 100;
+    line-height: 64px;
+    margin: 0;
+    text-transform: uppercase;
+
+    span {
+      color: variables.$white;
+    }
+
+    @media(max-width: variables.$mobile) {
+      font-size: 26px;
+    }
+  }
+
+  .body-description {
+    color: variables.$grey;
+    font-size: 18px;
+    font-weight: 100;
+    margin: 0;
+    padding: 3% 0 5%;
+    width: 50%;
+
+    @media(max-width: variables.$tablet) {
+      width: 90%;
+    }
+
+    @media(max-width: variables.$mobile) {
+      font-size: 15px;
+    }
+  }
+
+  @keyframes horizontal-shake {
+    0% { transform: translateX(0) }
+    25% { transform: translateX(5px) }
+    50% { transform: translateX(-5px) }
+    75% { transform: translateX(5px) }
+    100% { transform: translateX(0) }
+  }
+
+  .body-mail-error {
+    animation: horizontal-shake 0.4s 0s;
+    color: variables.$lightRed;
+    font-size: 12px;
+    padding-left: 32px;
+    position: absolute;
+
+    @media(max-width: variables.$mobile) {
+      position: relative;
+      top: 70px;
+      z-index: 1;
+    }
+  }
+
+  .body-icons-1 {
+
+    display: none;
+
+    @media(max-width: variables.$mobile) {
+
+      display: flex;
+      justify-content: space-around;
+      padding: 3vh 0 5vh;
+      width: 100%;
+
+      .body-icon {
+        height: 20px;
+        width: 70px;
+      }
+    }
+  }
+
+  .body-icons-2 {
+    display: flex;
+    gap: 40px;
+    position: relative;
+    top: 30%;
+    width: 80%;
+
+    .body-icon {
+      height: 28px;
+    }
+
+    @media(max-width: variables.$mobile) {
+
+      display: none;
+    }
+  }
+}

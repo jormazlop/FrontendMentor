@@ -1,0 +1,21 @@
+<div class="body-container">
+  <h1 class="body-title">Publish your podcasts <span>everywhere.</span></h1>
+  <h2 class="body-description">
+    Upload your audio to Pod with a single click. We’ll then distribute your podcast to Spotify,
+    Apple Podcasts, Google Podcasts, Pocket Casts and more!
+  </h2>
+  <div class="body-icons-1">
+    <img class="body-icon" src="../../../assets/desktop/spotify.svg" alt="Spotify">
+    <img class="body-icon" src="../../../assets/desktop/apple-podcast.svg" alt="Apple">
+    <img class="body-icon" src="../../../assets/desktop/google-podcasts.svg" alt="Google">
+    <img class="body-icon" src="../../../assets/desktop/pocket-casts.svg" alt="Pockets">
+  </div>
+  <app-mail (mailControl)="onClickMailControl($event)"/>
+  <p class="body-mail-error" *ngIf="invalidMail && !loading">Oops! Please check your email</p>
+  <div class="body-icons-2">
+    <img class="body-icon" src="../../../assets/desktop/spotify.svg" alt="Spotify">
+    <img class="body-icon" src="../../../assets/desktop/apple-podcast.svg" alt="Apple">
+    <img class="body-icon" src="../../../assets/desktop/google-podcasts.svg" alt="Google">
+    <img class="body-icon" src="../../../assets/desktop/pocket-casts.svg" alt="Pockets">
+  </div>
+</div>
