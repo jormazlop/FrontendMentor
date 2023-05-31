@@ -1,0 +1,69 @@
+<div class="bmi-calculator-container">
+  <h1 class="bmi-calculator-title">Enter your details below</h1>
+  <div class="bmi-calculator-options">
+    <div class="bmi-calculator-radio">
+      <input type="radio" id="metric" [(ngModel)]="typeBmi" value="metric" (ngModelChange)="changeTypeBMI()">
+      <label for="metric">Metric</label>
+    </div>
+    <div class="bmi-calculator-radio">
+      <input type="radio" id="imperial" [(ngModel)]="typeBmi" value="imperial" (ngModelChange)="changeTypeBMI()">
+      <label for="imperial">Imperial</label>
+    </div>
+  </div>
+  <div class="bmi-calculator-inputs" [ngSwitch]="typeBmi">
+    <div class="bmi-calculator-input">
+      <label class="bmi-label" for="height">Height</label>
+      <input class="bmi-input"
+             id="height"
+             type="text"
+             placeholder="0"
+             [(ngModel)]="height1"
+             (ngModelChange)="calculateBMI()"
+             onkeyup="this.value=this.value.replace(/[^\d]/,'')">
+      <span class="bmi-span" *ngSwitchCase="'metric'">cm</span>
+      <span class="bmi-span" *ngSwitchCase="'imperial'">ft</span>
+    </div>
+    <div class="bmi-calculator-input" *ngSwitchCase="'imperial'">
+      <input class="bmi-input-2"
+             type="text"
+             placeholder="0"
+             [(ngModel)]="height2"
+             (ngModelChange)="calculateBMI()"
+             onkeyup="this.value=this.value.replace(/[^\d]/,'')">
+      <span class="bmi-span-2">in</span>
+    </div>
+    <div class="bmi-calculator-input">
+      <label class="bmi-label" for="weight">Weight</label>
+      <input class="bmi-input"
+             id="weight"
+             type="text"
+             placeholder="0"
+             [(ngModel)]="weight1"
+             (ngModelChange)="calculateBMI()"
+             onkeyup="this.value=this.value.replace(/[^\d]/,'')">
+      <span class="bmi-span" *ngSwitchCase="'metric'">kg</span>
+      <span class="bmi-span" *ngSwitchCase="'imperial'">st</span>
+    </div>
+    <div class="bmi-calculator-input" *ngSwitchCase="'imperial'">
+      <input class="bmi-input-2"
+             type="text"
+             placeholder="0"
+             [(ngModel)]="weight2"
+             (ngModelChange)="calculateBMI()"
+             onkeyup="this.value=this.value.replace(/[^\d]/,'')">
+      <span class="bmi-span-2">lbs</span>
+    </div>
+  </div>
+  <div class="bmi-info" *ngIf="classification !== 'welcome'">
+    <h1 class="bmi-results"><span>Your BMI is...</span><br>{{ bmi | number: '2.1-1'}}</h1>
+    <h2 class="bmi-description">
+      Your BMI suggests you’re a {{ classification }}. Your ideal weight is between <strong>{{ range }}</strong>
+    </h2>
+  </div>
+  <div class="bmi-info-welcome" *ngIf="classification === 'welcome'">
+    <h1 class="bmi-welcome">Welcome!</h1>
+    <h2 class="bmi-description">
+      Enter your height and weight and you’ll see your BMI result here
+    </h2>
+  </div>
+</div>

@@ -1,0 +1,108 @@
+@use 'variables' as variables;
+
+.limitations-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5%;
+  justify-content: center;
+  padding: 0 140px 50px;
+  width: calc(100% - 280px);
+
+  @media(max-width: variables.$tablet) {
+    padding: 0 40px 50px;
+    width: calc(100% - 80px);
+  }
+
+  @media(max-width: variables.$mobile) {
+    padding: 0 20px 50px;
+    width: calc(100% - 40px);
+  }
+
+  .limitation-description {
+    width: 40%;
+
+    h1 {
+      color: variables.$gunMetal;
+      font-size: 48px;
+      font-weight: 600;
+    }
+
+    p {
+      color: variables.$darkElectricBlue;
+      font-size: 16px;
+      line-height: 24px;
+    }
+
+    @media(max-width: variables.$tablet) {
+      margin-bottom: 50px;
+      text-align: center;
+      width: 100%;
+    }
+  }
+
+  %limitation {
+    border-radius: 15px;
+    box-shadow: 5px 5px 10px 0px lighten(variables.$darkElectricBlue, 40);
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 100px;
+    padding: 2%;
+    width: 25%;
+
+    h2 {
+      align-items: center;
+      display: flex;
+      color: variables.$gunMetal;
+      font-size: 20px;
+      font-weight: 600;
+      gap: 20px;
+      line-height: 24px;
+      margin: 0;
+    }
+
+    p {
+      color: variables.$darkElectricBlue;
+      font-size: 16px;
+    }
+
+    @media(max-width: variables.$tablet) {
+      width: 40%;
+    }
+
+    @media(max-width: variables.$mobile) {
+      margin-bottom: 30px;
+      width: 80%;
+    }
+  }
+
+  .limitation-gender {
+    @extend %limitation;
+  }
+
+  .limitation-line {
+    display: flex;
+    justify-content: center;
+    padding: 5%;
+    width: 20%;
+
+    @media(max-width: variables.$tablet) {
+      display: none;
+    }
+  }
+
+  .limitation-age {
+    @extend %limitation;
+  }
+
+  .limitation-muscle {
+    @extend %limitation;
+  }
+
+  .limitation-pregnancy {
+    @extend %limitation;
+  }
+
+  .limitation-race {
+    @extend %limitation;
+  }
+}

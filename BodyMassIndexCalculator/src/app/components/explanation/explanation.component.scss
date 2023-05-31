@@ -1,0 +1,67 @@
+@use 'variables' as variables;
+
+.explanation-container {
+  align-items: center;
+  display: flex;
+  justify-content: space-around;
+  margin-top: 65px;
+
+  .explanation-description {
+    width: 35%;
+
+    img {
+      bottom: 30px;
+      left: 70%;
+      position: relative;
+    }
+
+    h1 {
+      color: variables.$gunMetal;
+      font-size: 48px;
+    }
+
+    p {
+      color: variables.$darkElectricBlue;
+      font-size: 16px;
+      line-height: 24px;
+    }
+  }
+
+  @media(max-width:variables.$tablet) {
+
+    justify-content: space-between;
+
+    .explanation-image {
+      height: 411px;
+      position: relative;
+      right: 50px;
+      width: 360px;
+    }
+
+    .explanation-description {
+      padding-right: 50px;
+      width: 45%;
+
+      img {
+        display: none;
+      }
+    }
+
+  }
+
+  @media(max-width:variables.$mobile) {
+
+    flex-direction: column;
+    text-align: left;
+
+    .explanation-image {
+      right: 0;
+      width: 100%;
+    }
+
+    .explanation-description {
+      padding: 0;
+      width: 90%;
+    }
+  }
+}

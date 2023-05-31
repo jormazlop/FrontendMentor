@@ -1,0 +1,188 @@
+@use 'variables' as variables;
+
+.bmi-calculator-container {
+  background-color: variables.$pureWhite;
+  border-radius: 16px;
+  box-shadow: 0px 0px 20px 5px variables.$borders;
+  display: flex;
+  flex-direction: column;
+  left: 55vw;
+  padding: 32px;
+  position: absolute;
+  top: 166px;
+  width: calc(35vw - 64px);
+
+  @media(max-width: variables.$tablet) {
+    position: inherit;
+    width: 85vw;
+  }
+
+  @media(max-width: variables.$mobile) {
+    width: 75vw;
+  }
+
+  .bmi-calculator-title {
+    color: variables.$gunMetal;
+    font-size: 24px;
+    font-weight: 600;
+
+    @media(max-width: variables.$tablet) {
+      text-align: left;
+    }
+  }
+
+  .bmi-calculator-options {
+    display: flex;
+    justify-content: space-between;
+
+    .bmi-calculator-radio {
+
+      align-items: center;
+      display: flex;
+      width: 48%;
+
+      label {
+
+        transition-duration: 0.3s;
+
+        &:hover {
+          color: variables.$blue;
+          cursor: pointer;
+          transform: translateX(2px)
+        }
+      }
+
+      input {
+
+        margin: 0 15px;
+        height: 22px;
+        width: 22px;
+
+        &:before {
+          opacity: 0;
+          border-radius: 50%;
+          content: '';
+          display: block;
+          height: 22px;
+          transition-duration: 0.3s;
+          width: 22px;
+        }
+
+        &:hover::before {
+          background-color: lighten(variables.$blue, 15);
+          cursor: pointer;
+          opacity: 0.35;
+          transform: scale(1.6);
+        }
+      }
+    }
+  }
+
+  .bmi-calculator-inputs {
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: 32px;
+
+    .bmi-calculator-input {
+
+      margin-bottom: 24px;
+      width: 45%;
+
+      .bmi-label {
+        color: variables.$darkElectricBlue;
+        display: block;
+        font-size: 14px;
+        margin-bottom: 8px;
+        width: fit-content;
+      }
+
+      .bmi-input {
+        border: 1px solid variables.$darkElectricBlue;
+        border-radius: 12px;
+        color: variables.$gunMetal;
+        font-size: 24px;
+        padding: 20px 24px;
+        width: calc(100% - 48px);
+
+        &:focus {
+          outline: none;
+        }
+
+        &::placeholder {
+          color: variables.$darkElectricBlue;
+        }
+
+        &:hover {
+          border: 1px solid variables.$blue;
+          cursor: pointer;
+        }
+      }
+
+      .bmi-input-2 {
+        @extend .bmi-input;
+        position: relative;
+        top: 24px;
+      }
+
+      .bmi-span {
+        color: variables.$blue;
+        font-size: 24px;
+        font-weight: 600;
+        margin-left:-50px;
+      }
+
+      .bmi-span-2 {
+        @extend .bmi-span;
+        position: relative;
+        top: 24px;
+      }
+    }
+  }
+
+  .bmi-info {
+
+    align-items: center;
+    background: linear-gradient(variables.$blue, variables.$lightBlue);
+    border-radius: 5px 110px 110px 5px;
+    color: variables.$pureWhite;
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 30px;
+
+    .bmi-results {
+      bottom: 15px;
+      font-size: 64px;
+      font-weight: 600;
+      margin: 0;
+      position: relative;
+
+      span {
+        font-size: 16px;
+      }
+    }
+
+    .bmi-description {
+      font-size: 14px;
+      font-weight: 400;
+      width: 45%;
+    }
+  }
+
+  .bmi-info-welcome {
+    @extend .bmi-info;
+    align-items: flex-start;
+    flex-direction: column;
+    padding: 32px;
+    text-align: left;
+
+    .bmi-welcome {
+      margin: 5px;
+    }
+
+    .bmi-description {
+      width: 100%;
+    }
+  }
+}
