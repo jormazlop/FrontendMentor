@@ -1,0 +1,141 @@
+@use 'variables' as variables;
+
+.main-modal-container {
+  align-items: center;
+  background-color: variables.$white;
+  border-radius: 50px;
+  display: flex;
+  height: 650px;
+  justify-content: space-between;
+  padding: 24px;
+  width: 1000px;
+
+  @media(max-width: variables.$responsive) {
+    flex-direction: column-reverse;
+    height: 100vh;
+    gap: 50px;
+    justify-content: flex-end;
+    width: 100vw;
+  }
+
+  .main-modal-content {
+    color: variables.$darkNavy;
+    display: flex;
+    flex-direction: column;
+    padding: 2%;
+    width: 45%;
+
+    @media(max-width: variables.$responsive) {
+      align-items: flex-start;
+      width: 90%;
+    }
+
+    .main-modal-title {
+      font-size: 58px;
+      margin: 0;
+    }
+
+    .main-modal-description {
+      color: variables.$darkNavy;
+      font-size: 20px;
+      line-height: 34px;
+    }
+
+    .main-modal-list {
+      color: variables.$darkNavy;
+      font-size: 20px;
+      margin: 0;
+      padding: 0;
+
+      .main-modal-list-item {
+        align-items: center;
+        display: flex;
+        list-style-type: none;
+        margin: 16px;
+
+        &::before {
+          background-image: url('../../assets/icon-success.svg');
+          content: "";
+          width: 21px;
+          height: 21px;
+          display: block;
+          position: relative;
+          right: 16px;
+          background-repeat: round;
+        }
+      }
+    }
+
+    .main-modal-mail-label {
+      color: variables.$darkNavy;
+      font-size: 18px;
+      padding: 15px 0;
+    }
+
+    .main-modal-mail-input {
+      border: 1px solid lighten(grey, 25);
+      border-radius: 5px;
+      font-family: 'Roboto', sans-serif;
+      font-size: 18px;
+      padding: 20px;
+
+      &:focus {
+        outline: none;
+      }
+    }
+
+    .main-modal-error-mail {
+      color: red;
+    }
+
+    .main-modal-mail-button {
+      background-color: variables.$darkNavy;
+      border: none;
+      border-radius: 5px;
+      color: variables.$white;
+      font-family: 'Roboto', sans-serif;
+      font-size: 18px;
+      margin-top: 30px;
+      padding: 15px;
+
+      &:hover {
+        background: variables.$buttonGradient;
+        cursor: pointer;
+      }
+
+      &:active {
+        transform: scale(0.98) translateX(1px) translateY(1px);
+      }
+    }
+
+    @media(max-width: variables.$responsive) {
+      .main-modal-mail-label {
+        width: 95%;
+      }
+
+      .main-modal-mail-input {
+        width: 90%;
+      }
+
+      .main-modal-mail-button {
+        width: 97%;
+      }
+    }
+  }
+
+  .main-modal-image {
+    background-image: url('../../assets/illustration-sign-up-desktop.svg');
+    background-repeat: no-repeat;
+    background-size: 100%;
+    border-radius: 15px;
+    height: 100%;
+    width: 450px;
+
+    @media(max-width: variables.$responsive) {
+      background-image: url('../../assets/illustration-sign-up-mobile.svg');
+      border-radius: 0 0 15px 15px;
+      height: 80vw;
+      width: 100%;
+    }
+  }
+}

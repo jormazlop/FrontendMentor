@@ -1,0 +1,59 @@
+@use 'variables' as variables;
+
+.dismiss-modal-container {
+  background-color: variables.$white;
+  border-radius: 50px;
+  font-family: 'Roboto', sans-serif;
+  height: 450px;
+  padding: 48px 64px;
+  width: 450px;
+
+  @media(max-width: variables.$responsive) {
+    border-radius: 0;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    justify-content: center;
+    padding: 0 5vw;
+    width: 90vw;
+  }
+
+  .dismiss-modal-title {
+    color: variables.$darkNavy;
+    font-size: 56px;
+    font-weight: 700;
+  }
+
+  .dismiss-modal-description {
+    color: variables.$darkNavy;
+    font-size: 20px;
+  }
+
+  .dismiss-modal-mail-button {
+    background-color: variables.$darkNavy;
+    border: none;
+    border-radius: 5px;
+    color: variables.$white;
+    font-family: 'Roboto', sans-serif;
+    font-size: 18px;
+    margin-top: 30px;
+    padding: 15px;
+    width: 100%;
+
+    &:hover {
+      background: variables.$buttonGradient;
+      cursor: pointer;
+    }
+
+    &:active {
+      outline: none;
+      transform: scale(0.98) translateX(1px) translateY(1px);
+    }
+
+    @media(max-width: variables.$responsive) {
+      position: absolute;
+      top: 90%;
+      width: 90vw;
+    }
+  }
+}

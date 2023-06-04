@@ -1,0 +1,16 @@
+<div class="main-modal-container">
+  <div class="main-modal-content">
+    <h1 class="main-modal-title">Stay updated!</h1>
+    <p class="main-modal-description">Join 60,000+ product managers receiving monthly updates on:</p>
+    <ul class="main-modal-list">
+      <li class="main-modal-list-item">Product discovery and building what matters</li>
+      <li class="main-modal-list-item">Measuring to ensure updates are a success</li>
+      <li class="main-modal-list-item">And much more!</li>
+    </ul>
+    <label class="main-modal-mail-label" for="mail">Email adress</label>
+    <input class="main-modal-mail-input" type="text" id="mail" placeholder="email@company.com" [(ngModel)] = "mail">
+    <p class="main-modal-error-mail" *ngIf="incorrectMail">*Please check your email</p>
+    <button class="main-modal-mail-button" (click)="onClickSubscription()">Subscribe to monthly newsletter</button>
+  </div>
+  <div class="main-modal-image"></div>
+</div>

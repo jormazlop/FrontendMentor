@@ -1,0 +1,16 @@
+@use 'variables' as variables;
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+body {
+  background-color: variables.$darkNavy;
+  font-family: 'Roboto', sans-serif;
+  height: 100vh;
+  margin: 0;
+}
+
+.modal {
+  align-items: center;
+  display: flex;
+  height: 100%;
+  justify-content: center;
+}
