@@ -2,6 +2,9 @@
 
 .footer-container {
   background-color: variables.$darkGrey;
+  background-image: url('../../../assets/pattern-rings.svg');
+  background-position: -200px 55%;
+  background-repeat: no-repeat;
   color: variables.$white;
   display: flex;
   justify-content: space-between;
@@ -9,7 +12,12 @@
   padding: 5% 10%;
 
   @media(max-width: variables.$tablet) {
+    background-position: -400px 80%;
     justify-content: center;
+  }
+
+  @media(max-width: variables.$mobile) {
+    background-position: -400px 67%;
   }
 
   .contact-information {
