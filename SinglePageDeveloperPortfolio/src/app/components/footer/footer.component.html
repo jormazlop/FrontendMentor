@@ -1,0 +1,28 @@
+<div class="footer-container">
+  <div class="contact-information">
+    <h1 class="contact-title">Contact</h1>
+    <p class="contact-description">
+      I would love to hear about your project and how I could help. Please
+      fill in the form, and I’ll get back to you as soon as possible.
+    </p>
+  </div>
+
+  <div class="contact-form">
+    <input type="text" placeholder="NAME">
+    <fa-icon class="incorrect-icon" [icon]="faExclamation" *ngIf="mailIncorrect"></fa-icon>
+    <input [ngClass]="{ 'invalid': mailIncorrect }" type="text" placeholder="EMAIL" [(ngModel)]="mail">
+    <p class="incorrect-email" *ngIf="mailIncorrect">Sorry, invalid format here</p>
+    <textarea cols="30" rows="5" placeholder="MESSAGE"></textarea>
+    <h2 class="send-button" (click)="onClickMessage()">SEND MESSAGE</h2>
+  </div>
+
+  <footer class="footer-footer">
+    <h2 class="footer-logo">adamykeyes</h2>
+    <div class="footer-icons">
+      <span class="github-icon"></span>
+      <span class="frontend-icon"></span>
+      <span class="linkedin-icon"></span>
+      <span class="twitter-icon"></span>
+    </div>
+  </footer>
+</div>

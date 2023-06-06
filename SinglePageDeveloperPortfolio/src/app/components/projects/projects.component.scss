@@ -1,0 +1,198 @@
+@use 'variables' as variables;
+
+.projects-container {
+  padding: 0% 10% 5%;
+
+  .project-header {
+
+    align-items: center;
+    color: variables.$white;
+    display: flex;
+    justify-content: space-between;
+
+    .projects-title {
+      font-size: 88px;
+      letter-spacing: -2.5px;
+
+      @media(max-width: variables.$mobile) {
+        font-size: 40px;
+      }
+    }
+
+    .projects-contact {
+      border-bottom: 2px solid variables.$green;
+      font-size: 16px;
+      padding-bottom: 10px;
+
+      &:hover {
+        color: variables.$green;
+        cursor: pointer;
+      }
+    }
+  }
+
+  .project-list {
+
+    display: grid;
+    grid-template: 1fr 1fr 1fr/ 1fr 1fr;
+
+    @media(max-width: variables.$mobile) {
+      grid-template: 1fr 1fr 1fr 1fr 1fr 1fr/1fr;
+    }
+
+    .project-item {
+      &:nth-of-type(1) {
+        .project-content {
+          background-image: url('../../../assets/thumbnail-project-1-large.webp');
+          background-repeat: round;
+        }
+      }
+
+      &:nth-of-type(2) {
+        .project-content {
+          background-image: url('../../../assets/thumbnail-project-2-large.webp');
+          background-repeat: round;
+        }
+      }
+
+      &:nth-of-type(3) {
+        .project-content {
+          background-image: url('../../../assets/thumbnail-project-3-large.webp');
+          background-repeat: round;
+        }
+      }
+
+      &:nth-of-type(4) {
+        .project-content {
+          background-image: url('../../../assets/thumbnail-project-4-large.webp');
+          background-repeat: round;
+        }
+      }
+
+      &:nth-of-type(5) {
+        .project-content {
+          background-image: url('../../../assets/thumbnail-project-5-large.webp');
+          background-repeat: round;
+        }
+      }
+
+      &:nth-of-type(6) {
+        .project-content {
+          background-image: url('../../../assets/thumbnail-project-6-large.webp');
+          background-repeat: round;
+        }
+      }
+    }
+
+    .project-content {
+
+      align-items: center;
+      color: variables.$white;
+      display: flex;
+      flex-direction: column;
+      height: 500px;
+      justify-content: center;
+      margin: 10px;
+
+      &:before {
+        background-color: #000;
+        content: '';
+        height: 500px;
+        opacity: 0;
+        position: relative;
+        width: -webkit-fill-available;
+      }
+
+      @media(max-width: variables.$tablet) {
+        height: 300px;
+
+        &:before {
+          display: none;
+        }
+      }
+
+      .project-buttons {
+
+        opacity: 0;
+        position: absolute;
+
+        h2 {
+          border-bottom: 2px solid variables.$green;
+          font-size: 16px;
+          text-align: center;
+          padding-bottom: 10px;
+
+          &:hover {
+            color: variables.$green;
+          }
+        }
+
+        @media(max-width: variables.$tablet) {
+          display: none;
+        }
+      }
+
+      &:hover {
+        cursor: pointer;
+        .project-buttons {
+          opacity: 1;
+        }
+
+        &:before {
+          opacity: 0.5;
+        }
+
+        @media(max-width: variables.$tablet) {
+          cursor: auto;
+        }
+      }
+    }
+
+    .project-subtitle {
+      color: variables.$white;
+
+      h2 {
+        font-size: 24px;
+        font-weight: 700;
+        margin: 5px 10px;
+      }
+
+      .project-skills {
+        display: flex;
+        gap: 18px;
+        margin-bottom: 30px;
+
+        h2 {
+          font-size: 18px;
+          font-weight: 400;
+        }
+
+        @media(max-width: variables.$tablet) {
+          gap: 9px;
+          margin-bottom: 10px;
+        }
+      }
+
+      .project-buttons-2 {
+        display: flex;
+
+        h2 {
+          font-size: 16px;
+          font-weight: 700;
+          margin-bottom: 20px;
+          padding-bottom: 10px;
+          border-bottom: 2px solid variables.$green;
+
+          &:hover {
+            color: variables.$green;
+            cursor: pointer;
+          }
+
+          @media(min-width: variables.$tablet) {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+}

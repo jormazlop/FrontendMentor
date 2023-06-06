@@ -1,0 +1,168 @@
+@use 'variables' as variables;
+
+.header-container {
+
+  color: variables.$white;
+
+  background-image:
+    url('../../../assets/pattern-rings.svg'),
+    url('../../../assets/pattern-circle.svg'),
+    url('../../../assets/image-profile-desktop.webp');
+  background-repeat:
+    no-repeat,
+    no-repeat,
+    no-repeat;
+  background-position:
+    -100px 25%,
+    62.5% 85%,
+    88%;
+  background-size:
+    500px,
+    129px,
+    30% 100%;
+  height: 720px;
+  padding: 2% 10% 0;
+
+  @media(max-width: variables.$tablet) {
+    background-image:
+      url('../../../assets/pattern-rings.svg'),
+      url('../../../assets/pattern-circle.svg'),
+      url('../../../assets/image-profile-tablet.webp');
+    background-position:
+      -250px 25%,
+      calc(100vw - 64px) 100%,
+      100%;
+    background-size:
+      500px,
+      129px,
+      50% 100%;
+  }
+
+  @media(max-width: variables.$mobile) {
+
+    height: 900px;
+
+    background-image:
+      url('../../../assets/pattern-rings.svg'),
+      url('../../../assets/pattern-circle.svg'),
+      url('../../../assets/image-profile-mobile.webp');
+    background-position:
+      -250px 35%,
+      calc(100vw - 64px) 100%,
+      50% 0%;
+    background-size:
+      500px,
+      129px,
+      60% 564px;
+  }
+
+  .header-header {
+
+    align-items: center;
+    display: flex;
+    height: 95px;
+    justify-content: space-between;
+
+    @media(max-width: variables.$mobile) {
+      flex-direction: column;
+    }
+
+    .header-logo {
+      font-size: 32px;
+    }
+
+    .header-icons {
+      display: flex;
+      justify-content: space-around;
+      width: 250px;
+
+      %icon {
+        background: variables.$white;
+        width: 28px;
+        height: 26px;
+
+        &:hover {
+          background: variables.$green;
+          cursor: pointer;
+        }
+      }
+
+      .github-icon {
+        @extend %icon;
+        mask: url('../../../assets/icon-github.svg');
+        mask-size: cover;
+      }
+
+      .frontend-icon {
+        @extend %icon;
+        mask: url('../../../assets/icon-frontend-mentor.svg');
+        mask-size: cover;
+      }
+
+      .linkedin-icon {
+        @extend %icon;
+        mask: url('../../../assets/icon-linkedin.svg');
+        mask-size: cover;
+      }
+
+      .twitter-icon {
+        @extend %icon;
+        mask: url('../../../assets/icon-twitter.svg');
+        mask-size: cover;
+      }
+    }
+  }
+
+  .header-body {
+    display: flex;
+    flex-direction: column;
+    height: calc(100% - 95px);
+    justify-content: space-between;
+    width: 55%;
+
+    @media(max-width: variables.$mobile) {
+      align-items: center;
+      justify-content: flex-end;
+      text-align: center;
+      width: 100%;
+    }
+
+    .header-title {
+      font-size: 5vw;
+
+      span {
+        border-bottom: 5px solid variables.$green;
+      }
+
+      @media(max-width: variables.$tablet) {
+        font-size: 7vw;
+      }
+    }
+
+    .header-description {
+      font-size: 18px;
+      line-height: 28px;
+      width: 50%;
+
+      @media(max-width: variables.$tablet) {
+        width: 100%;
+      }
+    }
+
+    .header-contact {
+      border-bottom: 3px solid variables.$green;
+      font-size: 16px;
+      letter-spacing: 2.29px;
+      padding-bottom: 10px;
+      text-transform: uppercase;
+      width: fit-content;
+
+      &:hover {
+        color: variables.$green;
+        cursor: pointer;
+      }
+    }
+  }
+
+
+}

@@ -1,0 +1,179 @@
+@use 'variables' as variables;
+
+.footer-container {
+  background-color: variables.$darkGrey;
+  color: variables.$white;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 5% 10%;
+
+  @media(max-width: variables.$tablet) {
+    justify-content: center;
+  }
+
+  .contact-information {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    width: 40%;
+
+    @media(max-width: variables.$tablet) {
+      text-align: center;
+      width: 90%;
+    }
+
+    .contact-title {
+      font-size: 88px;
+      font-weight: 700;
+      line-height: 88px;
+      margin: 0 0 35px;
+
+      @media(max-width: variables.$tablet) {
+        margin: 5px 0;
+      }
+
+      @media(max-width: variables.$mobile) {
+        font-size: 40px;
+      }
+    }
+
+    .contact-description {
+      color: variables.$grey;
+      font-size: 18px;
+      margin: 0;
+
+      @media(max-width: variables.$tablet) {
+        margin-bottom: 40px;
+      }
+    }
+  }
+
+  .contact-form {
+    align-items: flex-end;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    width: 40%;
+
+    @media(max-width: variables.$tablet) {
+      width: 90%;
+    }
+
+    input,
+    textarea {
+      background: none;
+      border: none;
+      border-bottom: 1px solid white;
+      color: variables.$grey;
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 16px;
+      font-weight: 500;
+      padding: 16px;
+      resize: none;
+      width: 100%;
+
+      &:focus {
+        outline: none;
+        border-bottom: 1px solid variables.$green;
+      }
+
+      &.invalid {
+        border-bottom: 1px solid #FF6F5B;
+      }
+    }
+
+    .incorrect-icon {
+      align-items: center;
+      border: 1px solid #FF6F5B;
+      border-radius: 50%;
+      top: 70px;
+      color: #FF6F5B;
+      display: flex;
+      height: 5px;
+      justify-content: center;
+      padding: 10px;
+      position: relative;
+      width: 5px;
+    }
+
+    .incorrect-email {
+      bottom: 20px;
+      color: #FF6F5B;
+      font-size: 12px;
+      margin: 0;
+      position: relative;
+    }
+
+    .send-button {
+      border-bottom: 2px solid variables.$green;
+      font-size: 16px;
+      font-weight: 700;
+      padding-bottom: 10px;
+
+      &:hover {
+        color: variables.$green;
+        cursor: pointer;
+      }
+    }
+  }
+
+  .footer-footer {
+
+    align-items: center;
+    border-top: 1px solid variables.$grey;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 92px;
+    width: 100%;
+
+    @media(max-width: variables.$mobile) {
+      flex-direction: column;
+    }
+
+    .footer-logo {
+      font-size: 32px;
+    }
+
+    .footer-icons {
+      display: flex;
+      justify-content: space-around;
+      width: 250px;
+
+      %icon {
+        background: variables.$white;
+        width: 28px;
+        height: 26px;
+
+        &:hover {
+          background: variables.$green;
+          cursor: pointer;
+        }
+      }
+
+      .github-icon {
+        @extend %icon;
+        mask: url('../../../assets/icon-github.svg');
+        mask-size: cover;
+      }
+
+      .frontend-icon {
+        @extend %icon;
+        mask: url('../../../assets/icon-frontend-mentor.svg');
+        mask-size: cover;
+      }
+
+      .linkedin-icon {
+        @extend %icon;
+        mask: url('../../../assets/icon-linkedin.svg');
+        mask-size: cover;
+      }
+
+      .twitter-icon {
+        @extend %icon;
+        mask: url('../../../assets/icon-twitter.svg');
+        mask-size: cover;
+      }
+    }
+  }
+}
