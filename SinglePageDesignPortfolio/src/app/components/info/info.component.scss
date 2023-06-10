@@ -1,0 +1,86 @@
+@use 'variables' as variables;
+
+.info-container {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  padding: 5% 10%;
+
+  .info-amy {
+    width: 445px;
+  }
+
+  .info-explanation {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    width: 40%;
+
+    h1 {
+      color: variables.$black;
+      font-size: 40px;
+      margin: 0;
+    }
+
+    p {
+      color: variables.$mediumBrown;
+      font-size: 18px;
+      font-weight: 500;
+      line-height: 28px;
+      margin: 0;
+    }
+
+    button {
+      background-color: variables.$lightRed;
+      border: none;
+      border-radius: 30px;
+      color: variables.$lightCream;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 14px;
+      padding: 14px 45px;
+      transition-duration: 0.3s;
+      width: 228px;
+
+      &:hover {
+        cursor: pointer;
+        background-color: variables.$summerYellow;
+      }
+    }
+  }
+
+  @media(max-width: variables.$tablet) {
+    padding: 5% 10% 5% 0%;
+
+    .info-amy {
+      transform: translateX(-44px);
+      width: 344px;
+    }
+
+    .info-explanation {
+      h1 {
+        font-size: 32px;
+      }
+
+      button {
+        width: 208px;
+      }
+
+    }
+  }
+
+  @media(max-width: variables.$mobile) {
+    flex-direction: column;
+    gap: 32px;
+    padding: 15% 0;
+
+    .info-amy {
+      transform: none;
+    }
+
+    .info-explanation {
+      align-items: center;
+      text-align: center;
+      width: 90%;
+    }
+  }
+}

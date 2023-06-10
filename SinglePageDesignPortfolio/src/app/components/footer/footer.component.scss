@@ -1,0 +1,94 @@
+@use 'variables' as variables;
+
+.footer-container {
+
+  padding: 5% 10%;
+
+  .footer-book {
+    align-items: center;
+    background-color: variables.$black;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    padding: 10%;
+    width: 80%;
+
+    .book-main {
+      color: variables.$lightCream;
+      width: 55%;
+
+      h1 {
+        font-size: 40px;
+        font-weight: 700;
+        line-height: 50px;
+      }
+
+      p {
+        font-size: 18px;
+        line-height: 28px;
+      }
+    }
+
+    button {
+      background-color: variables.$lightRed;
+      border: none;
+      border-radius: 30px;
+      color: variables.$lightCream;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 14px;
+      height: 50px;
+      padding: 14px 45px;
+      transition-duration: 0.3s;
+      width: 228px;
+
+      &:hover {
+        cursor: pointer;
+        background-color: variables.$summerYellow;
+      }
+    }
+
+    @media(max-width: variables.$tablet) {
+      flex-direction: column;
+      gap: 20px;
+
+      .book-main {
+        text-align: center;
+        width: 90%;
+      }
+    }
+
+    @media(max-width: variables.$mobile) {
+
+      .book-main {
+        h1 {
+          font-size: 26px;
+        }
+        p {
+          font-size: 16px;
+        }
+      }
+    }
+  }
+
+  .footer-icons {
+
+    display: flex;
+    justify-content: space-between;
+    margin-top: 50px;
+
+    .header-button {
+      background-color: variables.$black;
+      border: none;
+      border-radius: 30px;
+      color: variables.$lightCream;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 14px;
+      padding: 14px 45px;
+      transition-duration: 0.3s;
+
+      &:active {
+        transform: translateY(10px);
+      }
+    }
+  }
+}

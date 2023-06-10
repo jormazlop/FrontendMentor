@@ -1,0 +1,19 @@
+@use 'variables' as variables;
+
+.work-container {
+
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+
+  h1 {
+    color: variables.$black;
+    font-size: 32px;
+    margin-bottom: 50px;
+  }
+
+  ng-image-slider {
+    width: 100%;
+  }
+
+}

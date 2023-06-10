@@ -1,0 +1,123 @@
+@use 'variables' as variables;
+
+.skills-container {
+  display: grid;
+  gap: 20px;
+  grid-template: repeat(2, 1fr)/ repeat(6, 1fr);
+  height: 400px;
+  padding: 2.5% 10%;
+
+  @mixin skillContent($color) {
+    background-color: $color;
+    background-repeat: no-repeat;
+    background-position: 90% 10%;
+    border-radius: 8px;
+    padding: 24px;
+
+    p {
+      align-items: flex-end;
+      color: variables.$lightCream;
+      display: flex;
+      font-size: 24px;
+      font-weight: 700;
+      height: 100%;
+      margin: 0;
+    }
+  }
+
+  .graphic-skill {
+    @include skillContent(variables.$galacticBlue);
+    background-image: url('../../../assets/pattern-graphic-design.svg');
+    grid-area: 1 / 1 / 3 / 3;
+  }
+
+  .ui-skill {
+    @include skillContent(variables.$summerYellow);
+    background-image: url('../../../assets/pattern-ui-ux.svg');
+    grid-area: 1 / 3 / 2 / 4;
+  }
+
+  .apps-skill {
+    @include skillContent(variables.$lightPink);
+    background-image: url('../../../assets/pattern-apps.svg');
+    grid-area: 1 / 4 / 2 / 5;
+  }
+
+  .photography-skill {
+    @include skillContent(variables.$cyan);
+    background-image: url('../../../assets/pattern-photography.svg');
+    grid-area: 1 / 5 / 2 / 7;
+  }
+
+  .illustrations-skill {
+    @include skillContent(variables.$lightRed);
+    background-image: url('../../../assets/pattern-illustrations.svg');
+    grid-area: 2 / 3 / 3 / 5;
+  }
+
+  .motion-skill {
+    @include skillContent(variables.$magenta);
+    background-image: url('../../../assets/pattern-motion-graphics.svg');
+    grid-area: 2 / 5 / 3 / 7;
+  }
+
+  @media(max-width: variables.$tablet) {
+
+    grid-template: repeat(3, 1fr)/ repeat(4, 1fr);
+    height: 600px;
+
+    .graphic-skill {
+      grid-area: 1 / 1 / 3 / 3;
+    }
+
+    .ui-skill {
+      grid-area: 1 / 3 / 2 / 4;
+    }
+
+    .apps-skill {
+      grid-area: 1 / 4 / 2 / 5;
+    }
+
+    .photography-skill {
+      grid-area: 3 / 1 / 4 / 3;
+    }
+
+    .illustrations-skill {
+      grid-area: 2 / 3 / 3 / 5;
+    }
+
+    .motion-skill {
+      grid-area: 3 / 3 / 4 / 5;
+    }
+  }
+
+  @media(max-width: variables.$mobile) {
+
+    grid-template: repeat(6, 1fr)/ repeat(2, 1fr);
+    height: 1200px;
+
+    .graphic-skill {
+      grid-area: 1 / 1 / 3 / 3;
+    }
+
+    .ui-skill {
+      grid-area: 3 / 1 / 4 / 2;
+    }
+
+    .apps-skill {
+      grid-area: 3 / 2 / 4 / 3;
+    }
+
+    .photography-skill {
+      grid-area: 5 / 1 / 6 / 3;
+    }
+
+    .illustrations-skill {
+      grid-area: 4 / 1 / 5 / 3;
+    }
+
+    .motion-skill {
+      grid-area: 6 / 1 / 7 / 3;
+    }
+  }
+}
