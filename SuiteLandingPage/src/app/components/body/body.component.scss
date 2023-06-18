@@ -1,0 +1,99 @@
+@use 'variables' as *;
+
+.body-container {
+  background-color: $darkBlue;
+  border-radius: 10px;
+  display: flex;
+  gap: 10%;
+  height: 550px;
+  justify-content: center;
+  margin: 5% 10%;
+  width: 80%;
+
+  background-image: url('../../../assets/pattern-blur.svg'), url('../../../assets/pattern-curved-line-2.svg');
+  background-repeat: no-repeat, no-repeat;
+  background-position: 10% 100px, 43% 40%;
+
+  @media(max-width:$tablet) {
+    align-items: center;
+    background-position: 40% -200px, 48% 43%;
+    flex-direction: column;
+    height: 680px;
+    justify-content: flex-start;
+    margin-top: 150px;
+  }
+
+  @media(max-width:$mobile) {
+    background-image:  url('../../../assets/pattern-curved-line-2.svg');
+    background-repeat: no-repeat;
+    background-position: 48% 37%;
+    height: 750px;
+    margin-top: 180px;
+  }
+
+  .body-image {
+    height: 110%;
+    position: relative;
+    bottom: 10%;
+    width: 350px;
+
+    @media(max-width:$tablet) {
+      bottom: 25%;
+      width: 252px;
+    }
+  }
+
+  .body-info {
+    color: $creamWhite;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 40%;
+
+    @media(max-width:$tablet) {
+      align-items: center;
+      bottom: 25%;
+      position: relative;
+      text-align: center;
+      width: 90%;
+    }
+
+    h1 {
+      font-size: 48px;
+      font-weight: 400;
+
+      span {
+        font-weight: 700;
+      }
+
+      @media(max-width:$tablet) {
+        font-size: 40px;
+      }
+    }
+
+    p {
+      font-size: 20px;
+      font-weight: 400;
+      line-height: 35px;
+
+      @media(max-width:$tablet) {
+        font-size: 18px;
+      }
+    }
+
+    h2 {
+      font-size: 18px;
+      font-weight: 700;
+      letter-spacing: -0.18px;
+      line-height: 32px;
+      text-transform: uppercase;
+
+      span {
+        font-weight: 400;
+        letter-spacing: 2.5px;
+        line-height: 26px;
+      }
+    }
+
+  }
+}

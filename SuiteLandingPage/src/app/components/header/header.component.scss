@@ -1,0 +1,201 @@
+@use 'variables' as *;
+
+.header-container {
+
+  padding: 5% 10%;
+
+  .header-main {
+    display: flex;
+    justify-content: space-between;
+
+    figure {
+      margin: 0;
+    }
+
+    .button-access {
+      background-color: $creamWhite;
+      border: 1px solid $darkBlue;
+      border-radius: 5px;
+      color: $darkBlue;
+      font-family: 'Epilogue', sans-serif;
+      font-size: 16px;
+      font-weight: 700;
+      padding: 15px 20px;
+      transition-duration: 0.3s;
+
+      &:hover {
+        animation-name: shakeButton;
+        animation-duration: 0.2s;
+        animation-iteration-count: 3;
+        background-color: $darkBlue;
+        color: $creamWhite;
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+.header-body-container {
+  display: flex;
+  height: 700px;
+  gap: 10%;
+  margin-top: 60px;
+
+  @media(max-width: $tablet) {
+    flex-direction: column;
+    height: 700px;
+    justify-content: flex-start;
+  }
+
+  @media(max-width: $mobile) {
+    height: 1200px;
+    gap: 5%;
+  }
+
+  .header-body-left {
+    background-image:
+      url('../../../assets/pattern-curved-line-1.svg'),
+      url('../../../assets/image-hero-portrait@2x.webp');
+    background-repeat:
+      no-repeat,
+      no-repeat;
+    background-size:
+      30% 5%,
+      50% 100%;
+    background-position:
+      45% 10%,
+      100%;
+    justify-content: center;
+    width: 70%;
+
+    @media(max-width: $tablet) {
+      background-image:
+      url('../../../assets/pattern-curved-line-1.svg'),
+      url('../../../assets/image-hero-landscape@2x.webp');
+      background-repeat:
+        no-repeat,
+        no-repeat;
+      background-size:
+        30% 5%,
+        50% 100%;
+      background-position:
+        45% 10%,
+        100%;
+      justify-content: center;
+      width: 100%;
+    }
+
+    @media(max-width: $mobile) {
+      background-size:
+        40% 3%,
+        100% 45%;
+      background-position:
+        75% 7%,
+        100% 100%;
+      justify-content: center;
+      height: 80%;
+      width: 100%;
+    }
+
+    .header-body-title {
+      color: $darkBlue;
+      font-size: 72px;
+      font-weight: 300;
+      margin: 120px 0 40px 0;
+      width: 80%;
+
+      span {
+        font-weight: 700;
+      }
+
+      @media(max-width: $tablet) {
+        font-size: 56px;
+        margin: 100px 0 40px 0;
+      }
+
+      @media(max-width: $mobile) {
+        font-size: 38px;
+        width: 100%;
+      }
+    }
+
+    .header-body-description {
+      color: $grey;
+      line-height: 30px;
+      margin-bottom: 40px;
+      width: 40%;
+
+      @media(max-width: $mobile) {
+        width: 100%;
+      }
+    }
+
+    .button-access {
+      background-color: $darkBlue;
+      border: none;
+      border-radius: 5px;
+      color: $creamWhite;
+      font-family: 'Epilogue', sans-serif;
+      font-size: 16px;
+      font-weight: 700;
+      padding: 15px 20px;
+      width: fit-content;
+
+      &:hover {
+        animation-name: shakeButton;
+        animation-duration: 0.2s;
+        animation-iteration-count: 3;
+        background: linear-gradient($purple, $pink, $orange);
+        color: $creamWhite;
+        cursor: pointer;
+      }
+    }
+  }
+
+  .header-body-right {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    gap: 10%;
+    justify-content: center;
+    width: 30%;
+
+    h1 {
+      color: $grey;
+      font-size: 16px;
+      font-weight: 400;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+
+      span {
+        color: $darkBlue;
+        font-size: 48px;
+        font-weight: 700;
+      }
+    }
+
+    @media(max-width: $tablet) {
+      flex-direction: row;
+      width: 100%;
+    }
+
+    @media(max-width: $mobile) {
+      flex-direction: column;
+      width: 100%;
+    }
+  }
+}
+
+@keyframes shakeButton {
+  0% {
+    transform: translateX(0px);
+  }
+
+  50% {
+    transform: translateX(2px);
+  }
+
+  100% {
+    transform: translateX(-2px);
+  }
+}

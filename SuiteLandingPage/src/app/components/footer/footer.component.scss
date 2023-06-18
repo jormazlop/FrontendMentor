@@ -1,0 +1,27 @@
+@use 'variables' as *;
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 0% 10% 5%;
+
+  @media(max-width: $mobile) {
+    align-items: center;
+    flex-direction: column;
+  }
+
+  p {
+    color: $grey;
+    font-size: 15px;
+    font-weight: 400;
+  }
+
+  .footer-icons {
+    display: flex;
+    gap: 20px;
+
+    img:hover {
+      cursor: pointer;
+    }
+  }
+}
