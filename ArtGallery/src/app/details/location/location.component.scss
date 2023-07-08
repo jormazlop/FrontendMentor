@@ -1,0 +1,52 @@
+@use 'variables' as *;
+
+.location-container {
+  background-color: $almostBlack;
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+
+  @media(max-width: $mobile) {
+    flex-direction: column;
+  }
+
+  .location-title {
+    color: $white;
+    font-size: 55px;
+    font-weight: 800;
+    padding: 5%;
+    width: 200px;
+
+    @media(max-width: $mobile) {
+      margin-bottom: 0;
+      padding-bottom: 0;
+      width: fit-content;
+    }
+  }
+
+  .location-description {
+    display: flex;
+    flex-direction: column;
+
+    padding: 5%;
+    width: 35%;
+
+    @media(max-width: $mobile) {
+      width: fit-content;
+    }
+
+    .location-description-title {
+      color: $gold;
+      font-size: 30px;
+      font-weight: 800;
+    }
+
+    p {
+      color: $white;
+      font-family: 'Outfit', sans-serif;
+      font-size: 18px;
+      font-weight: 100;
+    }
+  }
+
+}

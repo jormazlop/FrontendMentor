@@ -1,0 +1,42 @@
+@use 'variables' as *;
+
+.footer-container {
+  align-items: center;
+  background-color: $gold;
+  display: flex;
+  justify-content: space-around;
+  padding: 5%;
+
+  &.dark {
+    background-color: $almostBlack;
+    color: $white;
+  }
+
+  @media(max-width: $mobile) {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 20px;
+
+    h1 {
+      font-size: 28px;
+      font-weight: 900;
+      line-height: 26px;
+      margin: 0;
+    }
+  }
+
+  p {
+    font-family: 'Outfit', sans-serif;
+    line-height: 26px;
+    width: 30%;
+
+    @media(max-width: $mobile) {
+      width: 80%;
+    }
+  }
+
+  div {
+    display: flex;
+    gap: 20px;
+  }
+}

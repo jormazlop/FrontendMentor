@@ -1,0 +1,124 @@
+@use 'variables' as *;
+
+.body-container {
+
+  display: grid;
+  gap: 2%;
+  grid-template: repeat(3, 1fr) / repeat(10, 1fr);
+  height: 1200px;
+  padding: 5%;
+
+  @media(max-width: $mobile) {
+    grid-template: repeat(5, 1fr) / 1fr;
+    height: 1700px;
+  }
+
+  .text-grid-1 {
+    grid-column: 1/5;
+    grid-row: 1/2;
+
+    h1 {
+      font-size: 50px;
+      font-weight: 900;
+      line-height: 50px;
+      text-transform: uppercase;
+    }
+
+    p {
+      font-family: 'Outfit', sans-serif;
+      font-size: 20px;
+      font-weight: 300;
+      width: 60%;
+    }
+
+    @media(max-width: $mobile) {
+      grid-column: 1/2;
+      grid-row: 2/3;
+
+      p {
+        width: 100%;
+      }
+    }
+  }
+
+  .image-grid-1 {
+    background-image: url('../../../assets/desktop/image-grid-1.jpg');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    grid-column: 5/11;
+    grid-row: 1/2;
+
+    @media(max-width: $tablet) {
+      background-image: url('../../../assets/mobile/image-grid-1.jpg');
+    }
+
+    @media(max-width: $mobile) {
+      background-image: url('../../../assets/tablet/image-grid-1.jpg');
+      grid-column: 1/2;
+      grid-row: 1/2;
+    }
+  }
+
+  .image-grid-2 {
+    background-image: url('../../../assets/desktop/image-grid-2.jpg');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    grid-column: 1/6;
+    grid-row: 2/4;
+
+    @media(max-width: $tablet) {
+      background-image: url('../../../assets/mobile/image-grid-2.jpg');
+    }
+
+    @media(max-width: $mobile) {
+      background-image: url('../../../assets/tablet/image-grid-2.jpg');
+      grid-column: 1/2;
+      grid-row: 3/4;
+    }
+  }
+
+  .image-grid-3 {
+    background-image: url('../../../assets/desktop/image-grid-3.jpg');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    grid-column: 6/11;
+    grid-row: 2/3;
+
+    @media(max-width: $tablet) {
+      background-image: url('../../../assets/mobile/image-grid-3.jpg');
+    }
+
+    @media(max-width: $mobile) {
+      background-image: url('../../../assets/tablet/image-grid-3.jpg');
+      grid-column: 1/2;
+      grid-row: 4/5;
+    }
+  }
+
+  .text-grid-2 {
+    background-color: $almostBlack;
+    color: $white;
+    grid-column: 6/11;
+    grid-row: 3/4;
+    padding: 5%;
+
+    h1 {
+      font-size: 50px;
+      font-weight: 900;
+      line-height: 50px;
+      text-transform: uppercase;
+    }
+
+    p {
+      font-family: 'Outfit', sans-serif;
+      font-size: 20px;
+      font-weight: 300;
+      width: 60%;
+    }
+
+    @media(max-width: $mobile) {
+      grid-column: 1/2;
+      grid-row: 5/6;
+    }
+  }
+}

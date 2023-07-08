@@ -1,0 +1,25 @@
+<div class="footer-container" [class.dark]="section === 1">
+  <h1>
+    MODERN
+    <br>
+    ART GALLERY
+  </h1>
+  <p>
+    The Modern Art Gallery is free to all visitors and open seven days a week
+    from 8am to 9pm. Find us at 99 King Street, Newport, USA.
+  </p>
+  <div>
+    <ng-container *ngIf="section === 2; else lightIcons">
+      <img ngSrc="../../../../assets/icon-facebook.svg" width="20" height="20" appIcon [section]="section">
+      <img ngSrc="../../../../assets/icon-instagram.svg" width="20" height="20" appIcon [section]="section">
+      <img ngSrc="../../../../assets/icon-twitter.svg" width="20" height="17" appIcon [section]="section">
+    </ng-container>
+    <ng-template #lightIcons>
+      <img ngSrc="../../../../assets/icon-facebook-light.svg" width="20" height="20" appIcon [section]="section">
+      <img ngSrc="../../../../assets/icon-instagram-light.svg" width="20" height="20" appIcon [section]="section">
+      <img ngSrc="../../../../assets/icon-twitter-light.svg" width="20" height="17" appIcon [section]="section">
+    </ng-template>
+  </div>
+</div>
+
+
