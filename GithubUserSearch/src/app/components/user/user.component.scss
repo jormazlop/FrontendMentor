@@ -1,0 +1,184 @@
+@use 'variables' as *;
+
+:host {
+  display: contents;
+}
+
+@mixin themeContent($backgroundColor, $nameColor, $dateColor, $bioColor, $repoColor) {
+  .user-container {
+
+    background-color: $backgroundColor;
+    border-radius: 15px;
+    display: flex;
+    height: fit-content;
+    width: 50%;
+
+    @media(max-width: $tablet) {
+      width: 70%;
+    }
+
+    @media(max-width: $mobile) {
+      width: 90%;
+    }
+
+    .user-logo {
+      border-radius: 50%;
+      height: 110px;
+      margin: 5% 0% 0% 5%;
+
+      @media(max-width: $tablet) {
+        display: none;
+      }
+    }
+
+    .user-detail {
+      width: calc(100% - 160px);
+      align-items: flex-start;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      justify-content: center;
+      padding: 5%;
+
+      @media(max-width: $tablet) {
+        width: 100%;
+      }
+
+      .user-header {
+        display: flex;
+        gap: 40px;
+        width: 100%;
+
+        .user-logo-header {
+          border-radius: 50%;
+          height: 110px;
+
+          @media(min-width: $tablet) {
+            display: none;
+          }
+        }
+
+        .user-info-header {
+          display: flex;
+          justify-content: space-between;
+          width: 100%;
+
+          @media(max-width: $tablet) {
+            flex-direction: column;
+          }
+        }
+
+        h2 {
+          color: $nameColor;
+          margin: 0;
+
+          span {
+            color: #0079FF;
+            font-size: 18px;
+          }
+        }
+
+        p {
+          color: $dateColor;
+          margin-top: 5px;
+        }
+      }
+
+      .user-bio {
+        color: $bioColor;
+      }
+
+      .user-repos {
+        background-color: $repoColor;
+        border-radius: 15px;
+        display: flex;
+        justify-content: space-between;
+        padding: 5%;
+        width: 90%;
+
+        h2 {
+          color: $bioColor;
+          font-size: 15px;
+          font-weight: 100;
+          margin: 0;
+
+          span {
+            color: $nameColor;
+            font-size: 25px;
+            font-weight: 600;
+          }
+        }
+      }
+
+      .user-icons {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        width: 100%;
+
+        @media(max-width: $mobile) {
+          flex-direction: column;
+        }
+
+        %icon {
+          background-color: $bioColor;
+          height: 20px;
+          width: 20px;
+        }
+
+        .icon-location {
+          @extend %icon;
+          mask: url('../../../assets/icon-location.svg') no-repeat center;
+        }
+
+        .icon-twitter {
+          @extend %icon;
+          mask: url('../../../assets/icon-twitter.svg') no-repeat center;
+        }
+
+        .icon-website {
+          @extend %icon;
+          mask: url('../../../assets/icon-website.svg') no-repeat center;
+        }
+
+        .icon-company {
+          @extend %icon;
+          mask: url('../../../assets/icon-company.svg') no-repeat center;
+        }
+
+        .icon {
+          align-items: center;
+          display: flex;
+          gap: 15px;
+          width: 40%;
+
+          &.not-available {
+            opacity: 0.5;
+          }
+
+          img {
+            height: 20px;
+            width: 20px;
+          }
+
+          p {
+            color: $bioColor;
+          }
+        }
+      }
+    }
+  }
+}
+
+:host-context(.theme-light) {
+  @include themeContent($lightWhite, $lightAlmostBlack, $lightGrey, $lightDarkBlue, $lightAlmostWhite);
+
+  .user-container {
+    box-shadow: 5px 5px 8px 2px darken($lightWhite, 10);
+  }
+}
+
+:host-context(.theme-dark) {
+  @include themeContent($darkDarkBlue, $darkWhite, $darkWhite, $darkWhite, $darkAlmostBlack);
+}
+

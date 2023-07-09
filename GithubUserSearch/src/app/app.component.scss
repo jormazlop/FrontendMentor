@@ -1,0 +1,20 @@
+@use 'variables' as *;
+
+.page-container {
+  align-items: center;
+
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  justify-content: center;
+  height: 100vh;
+
+  &.theme-dark {
+    background-color: $darkAlmostBlack;
+  }
+
+  &.theme-light {
+    background-color: $lightAlmostWhite;
+  }
+}
+

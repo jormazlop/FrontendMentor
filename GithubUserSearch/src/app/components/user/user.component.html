@@ -1,0 +1,66 @@
+<div class="user-container">
+  <img class="user-logo" [src]="user.avatar_url" alt="Avatar">
+  <div class="user-detail">
+    <header class="user-header">
+      <img class="user-logo-header" [src]="user.avatar_url" alt="Avatar">
+        <div class="user-info-header">
+        <h2>
+          {{ user.name || user.login }}
+          <br>
+          <span>{{ user.company || '@' + user.login }}</span>
+        </h2>
+        <p>Joined {{ user.created_at | date: 'd MMM y' }}</p>
+      </div>
+    </header>
+    <ng-container *ngIf="user.bio; else noBio">
+      <p class="user-bio">{{ user.bio }}</p>
+    </ng-container>
+    <ng-template #noBio>
+      <p class="user-bio">This profile has no bio</p>
+    </ng-template>
+    <div class="user-repos">
+      <h2>
+        Repos
+        <br>
+        <span>
+          {{ user.public_repos }}
+        </span>
+      </h2>
+      <h2>
+        Followers
+        <br>
+        <span>
+          {{ user.followers }}
+        </span>
+      </h2>
+      <h2>
+        Following
+        <br>
+        <span>
+          {{ user.following }}
+        </span>
+      </h2>
+    </div>
+    <div class="user-icons">
+      <div class="icon" [class.not-available]="!user.location">
+        <div class="icon-location"></div>
+        <p *ngIf="user.location; else noIcon">{{ user.location }}</p>
+      </div>
+      <div class="icon" [class.not-available]="!user.twitter_username">
+        <div class="icon-twitter"></div>
+        <p *ngIf="user.twitter_username; else noIcon">{{ user.twitter_username }}</p>
+      </div>
+      <div class="icon" [class.not-available]="!user.blog">
+        <div class="icon-website"></div>
+        <p *ngIf="user.blog; else noIcon">{{ user.blog }}</p>
+      </div>
+      <div class="icon" [class.not-available]="!user.company">
+        <div class="icon-company"></div>
+        <p *ngIf="user.company; else noIcon">{{ user.company }}</p>
+      </div>
+      <ng-template #noIcon>
+        <p>Not available</p>
+      </ng-template>
+    </div>
+  </div>
+</div>

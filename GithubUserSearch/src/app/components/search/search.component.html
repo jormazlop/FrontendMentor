@@ -1,0 +1,12 @@
+<div class="search-container">
+  <div [class.not-found]="userNotFound">
+    <img src="../../../assets/icon-search.svg" alt="Search">
+    <input type="text"
+           placeholder="Search Github username..."
+           [(ngModel)]="searchInput">
+  </div>
+  <div [class.not-found]="userNotFound">
+    <p *ngIf="userNotFound">No results</p>
+    <button (click)="searchUser()">Search</button>
+  </div>
+</div>

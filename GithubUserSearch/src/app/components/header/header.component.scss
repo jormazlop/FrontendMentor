@@ -1,0 +1,49 @@
+@use 'variables' as *;
+
+:host {
+  display: contents;
+}
+
+@mixin themeContent($logoColor, $iconColor, $iconHoverColor) {
+  .page-header {
+    align-items: center;
+    display: flex;
+    height: 30px;
+    justify-content: space-between;
+    width: 50%;
+
+    @media(max-width: $tablet) {
+      width: 70%;
+    }
+
+    @media(max-width: $mobile) {
+      width: 90%;
+    }
+
+    h1 {
+      color: $logoColor;
+      pointer-events: none;
+    }
+
+    .theme-icon {
+      align-items: center;
+      color: $iconColor;
+      display: flex;
+      font-weight: 600;
+      gap: 20px;
+
+      &:hover {
+        cursor: pointer;
+        color: $iconHoverColor;
+      }
+    }
+  }
+}
+
+:host-context(.theme-light) {
+  @include themeContent($lightBlack, $lightGrey, $lightBlack);
+}
+
+:host-context(.theme-dark) {
+  @include themeContent($darkWhite, $darkWhite, $darkGrey);
+}

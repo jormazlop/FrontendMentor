@@ -1,0 +1,9 @@
+<div class="page-container" [ngClass]="theme">
+  <app-header />
+  <app-search (onSearch)="onSearch($event)" [userNotFound]="userNotFound"/>
+  <ng-container *ngIf="userSearched">
+    <app-user [user]="userSearched"/>
+  </ng-container>
+</div>
+
+

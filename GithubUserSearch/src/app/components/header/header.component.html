@@ -1,0 +1,13 @@
+<header class="page-header">
+  <h1>devfinder</h1>
+  <ng-container [ngSwitch]="theme">
+    <div *ngSwitchCase="'theme-light'" class="theme-icon" (click)="onChangeTheme()">
+      DARK
+      <img src="../assets/icon-moon.svg" alt="Dark">
+    </div>
+    <div *ngSwitchCase="'theme-dark'" class="theme-icon" (click)="onChangeTheme()">
+      LIGHT
+      <img src="../assets/icon-sun.svg" alt="Light">
+    </div>
+  </ng-container>
+</header>

@@ -1,0 +1,112 @@
+@use 'variables' as *;
+
+:host {
+  display: contents;
+}
+
+@mixin themeContent($backgroundColor, $buttonColor, $placeholderColor, $inputColor) {
+  .search-container {
+    align-items: center;
+    background-color: $backgroundColor;
+    border-radius: 20px;
+    display: flex;
+    height: 70px;
+    justify-content: space-between;
+    width: 50%;
+
+    @media(max-width: $tablet) {
+      width: 70%;
+    }
+
+    @media(max-width: $mobile) {
+      width: 90%;
+    }
+
+    img {
+      height: 22px;
+      padding: 0 32px;
+      width: 22px;
+    }
+
+    div {
+      &:nth-child(1) {
+
+        align-items: center;
+        display: flex;
+        width: calc(100% - 120px);
+        height: 100%;
+
+        &.not-found {
+          width: calc(100% - 280px);
+        }
+
+        input {
+          background-color: $backgroundColor;
+          border: none;
+          color: $inputColor;
+          font-family: 'Space Mono', monospace;
+          font-size: 20px;
+          height: 90%;
+          width: 100%;
+
+          &:focus {
+            outline: none;
+          }
+
+          &::placeholder {
+            color: $placeholderColor;
+          }
+        }
+      }
+
+      &:nth-child(2) {
+
+        display: flex;
+        gap: 48px;
+        height: 70%;
+        justify-content: flex-end;
+        width: 112px;
+
+        &.not-found {
+          width: 280px;
+        }
+
+        p {
+          color:  #F74646;
+          font-weight: 600;
+        }
+
+        button {
+          background-color: $buttonColor;
+          border-radius: 10px;
+          border: none;
+          color: #FFF;
+          font-family: 'Space Mono', monospace;
+          font-weight: 600;
+          margin-right: 12px;
+          width: 100px;
+
+          &:hover {
+            cursor: pointer;
+          }
+
+          &:active {
+            transform: translate(1px, 1px);
+          }
+        }
+      }
+    }
+  }
+}
+
+:host-context(.theme-light) {
+  @include themeContent($lightWhite, $lightBlue, $lightDarkBlue, $lightBlack);
+
+  .search-container {
+    box-shadow: 5px 5px 8px 2px darken($lightWhite, 10);
+  }
+}
+
+:host-context(.theme-dark) {
+  @include themeContent($darkDarkBlue, $lightBlue, $darkWhite, $darkWhite);
+}
