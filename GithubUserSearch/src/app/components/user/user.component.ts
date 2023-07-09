@@ -10,8 +10,4 @@ export class UserComponent {
 
   @UserInput() user!: User;
 
-  ngOnInit(): void {
-    console.log(this.user);
-  }
-
 }
