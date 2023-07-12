@@ -1,5 +1,8 @@
 @import './assets/variables.scss';
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&display=swap');
+@font-face {
+  font-family: 'Outfit';
+  src: url('./assets/fonts/Outfit.ttf') format("opentype");
+}
 
 body {
   margin: 0;
