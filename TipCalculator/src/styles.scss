@@ -1,5 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@700&display=swap');
 @import './assets/variables.scss';
+
+@font-face {
+  font-family: 'Space Mono';
+  src: url('./assets/fonts/SpaceMono.ttf') format("opentype");
+}
 
 body {
   font-family: 'Space Mono', monospace;
