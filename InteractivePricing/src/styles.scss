@@ -1,6 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@600;800&display=swap');
 @import './../node_modules/ngx-ui-switch/ui-switch.component.scss';
 @import './assets/variables.scss';
+
+@font-face {
+  font-family: 'Manrope';
+  src: url('./assets/fonts/Manrope.ttf') format("opentype");
+}
 
 body {
   height: 100vh;
