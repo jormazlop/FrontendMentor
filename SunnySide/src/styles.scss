@@ -1,4 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Fraunces:wght@700;900&display=swap');
+@font-face {
+  font-family: 'Fraunces';
+  src: url('./assets/fonts/Fraunces.ttf') format("opentype");
+}
 
 html, body {
   margin: 0;
