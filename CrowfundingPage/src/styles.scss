@@ -1,4 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Commissioner:wght@400;500;700&display=swap');
+@font-face {
+  font-family: 'Commissioner';
+  src: url('./assets/fonts/Commissioner.ttf') format("opentype");
+}
 
 body {
   margin: 0;
