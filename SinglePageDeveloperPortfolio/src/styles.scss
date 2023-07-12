@@ -1,6 +1,11 @@
 @use 'variables' as variables;
 @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
 
+@font-face {
+  font-family: 'Space Grotesk';
+  src: url('./assets/fonts/SpaceGrotesk.ttf') format("opentype");
+}
+
 body {
   background-color: variables.$black;
   font-family: 'Space Grotesk', sans-serif;
