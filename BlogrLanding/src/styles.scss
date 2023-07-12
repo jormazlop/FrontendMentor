@@ -1,4 +1,14 @@
-/* You can add global styles to this file, and also import other style files */
+
+@font-face {
+  font-family: 'Overpass';
+  src: url('./assets/fonts/Overpass.ttf') format("opentype");
+}
+
+@font-face {
+  font-family: 'Ubuntu';
+  src: url('./assets/fonts/Ubuntu.ttf') format("opentype");
+}
+
 html, body {
   margin: 0;
 }
