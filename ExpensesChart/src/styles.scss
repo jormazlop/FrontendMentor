@@ -1,5 +1,9 @@
 @import 'assets/variables.scss';
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap');
+
+@font-face {
+  font-family: 'DM Sans';
+  src: url('./assets/fonts/DMSans.ttf') format("opentype");
+}
 
 body {
   background-color: $cream;
