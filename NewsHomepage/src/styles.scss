@@ -1,5 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap');
+
 @import '@coreui/coreui/scss/coreui.scss';
+
+@font-face {
+  font-family: 'Inter';
+  src: url('./assets/fonts/Inter.ttf') format("opentype");
+}
 
 body {
    font-family: 'Inter', sans-serif;
