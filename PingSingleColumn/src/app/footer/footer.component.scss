@@ -1,0 +1,37 @@
+@use 'variables' as *;
+
+.footer-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 2%;
+  width: max-content;
+
+  .footer-icons {
+    display: flex;
+    justify-content: space-around;
+
+    fa-icon {
+      align-items: center;
+      display: flex;
+      border: 1px solid lighten($darkBlue, 15);
+      border-radius: 50%;
+      color: $darkBlue;
+      height: 32px;
+      justify-content: center;
+      width: 32px;
+
+      &:hover {
+        background-color: $darkBlue;
+        cursor: pointer;
+        color: $white;
+      }
+    }
+  }
+
+  p {
+    color: $grey;
+    font-size: 14px;
+  }
+
+}

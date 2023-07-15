@@ -1,0 +1,11 @@
+.app-container {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 5%;
+
+  img {
+    width: 70vw;
+  }
+}

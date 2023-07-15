@@ -1,0 +1,5 @@
+<div class="notification-container">
+  <input type="text" placeholder="Your email address..." [(ngModel)]="email">
+  <button (click)="onClickNotify()">Notify Me</button>
+</div>
+<p class="email-error" *ngIf="emailError">Please provide a valid email address</p>

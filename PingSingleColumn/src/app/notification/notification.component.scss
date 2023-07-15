@@ -1,0 +1,92 @@
+@use 'variables' as *;
+
+:host {
+  padding: 2%;
+}
+
+.notification-container {
+  display: flex;
+  gap: 16px;
+
+  @media(max-width: $mobile) {
+    flex-direction: column;
+  }
+
+  input {
+    border: 1px solid $lightBlue;
+    border-radius: 28px;
+    color: $blue;
+    font-family: 'Libre Franklin', sans-serif;
+    padding: 15px 25px;
+    width: 20vw;
+
+    &::placeholder {
+      color: $blue;
+    }
+
+    &:focus {
+      outline: none;
+    }
+
+    @media(max-width: $mobile) {
+      width: 80vw;
+    }
+  }
+
+  button {
+    background-color: $darkBlue;
+    border: none;
+    border-radius: 28px;
+    box-shadow: 1px 1px 6px $grey;
+    color: $white;
+    font-family: 'Libre Franklin', sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    padding: 19px 60px;
+
+    &:hover {
+      background-color: lighten($darkBlue, 10);
+      cursor: pointer;
+    }
+
+    &:active {
+      background-color: $darkBlue;
+      box-shadow: inset 0px 0px 7px 0px $almostBlack;
+      outline: none;
+    }
+
+    &:focus {
+      outline: none;
+    }
+  }
+}
+
+.email-error {
+  animation: shake-horizontal 1s both;
+  color: $red;
+  font-style: italic;
+}
+
+@keyframes shake-horizontal {
+  0%,
+  100% {
+            transform: translateX(0);
+  }
+  10%,
+  30%,
+  50%,
+  70% {
+            transform: translateX(-5px);
+  }
+  20%,
+  40%,
+  60% {
+            transform: translateX(5px);
+  }
+  80% {
+            transform: translateX(2px);
+  }
+  90% {
+            transform: translateX(-2px);
+  }
+}
