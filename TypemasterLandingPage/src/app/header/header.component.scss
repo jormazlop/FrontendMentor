@@ -4,16 +4,36 @@
 
   display: flex;
   justify-content: space-between;
+  padding: 2% 10%;
+
+  @media(max-width: $mobile) {
+    padding: 5%;
+  }
 
   .header-logo {
     background-color: $darkOrange;
     color: $white;
     font-size: 15px;
     font-weight: 800;
+    height: 20px;
     padding: 4px 16px 18px 4px;
   }
 
   .header-button {
+    background-color: $lightGrey;
+    border: none;
+    border-radius: 8px;
+    color: $almostBlack;
+    font-weight: 600;
+    font-family: 'Barlow', sans-serif;
+    padding: 16px 27px;
+    text-transform: uppercase;
+    transition-duration: 0.25s;
 
+    &:hover {
+      background-color: $almostBlack;
+      color: $white;
+      cursor: pointer;
+    }
   }
 }

@@ -1,0 +1,116 @@
+@use 'variables' as *;
+
+.description-container {
+  background-image: url('../../assets/shared/pattern-square.svg');
+  background-repeat: no-repeat;
+  background-position: -15% 92%;
+  background-size: 20% 40%;
+  display: flex;
+  height: 550px;
+  padding: 2% 10% 2%;
+
+  @media(max-width: $tablet) {
+    background-image: none;
+    flex-direction: column;
+    height: 650px;
+    justify-content: space-between;
+  }
+
+  .description-images {
+    display: flex;
+    gap: 5%;
+    width: 60%;
+
+    @media(max-width: $tablet) {
+      height: 80%;
+      width: 100%;
+    }
+
+    @media(max-width: $mobile) {
+      height: 50%;
+      position: relative;
+      right: 20%;
+      width: 120%;
+    }
+
+    .image-1 {
+
+      background-color: $darkOrange;
+      border-radius: 10px;
+      width: 35%;
+      &::before {
+        content: ' ';
+        background-image:  url('../../assets/desktop/image-phone-and-keyboard.jpg');
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        border-radius: 8px;
+        display: block;
+        mix-blend-mode: multiply;
+        height: 100%;
+        position: relative;
+        width: 100%;
+      }
+    }
+
+    .image-2 {
+      background-image:  url('../../assets/desktop/image-glass-and-keyboard.jpg');
+      background-repeat: no-repeat;
+      background-size: 100% 100%;
+      border-radius: 10px;
+      width: 70%;
+    }
+  }
+
+  .description-info {
+    display: flex;
+    flex-direction: column;
+    padding: 5% 0% 5% 20%;
+    width: 30%;
+
+    @media(max-width: $tablet) {
+      align-items: center;
+      flex-direction: row;
+      gap: 40px;
+      padding: 5% 2%;
+      width: 100%;
+    }
+
+    @media(max-width: $mobile) {
+      align-items: center;
+      flex-direction: column;
+      gap: 20px;
+      padding: 5% 2%;
+      width: 100%;
+    }
+
+    h1 {
+      color: $almostBlack;
+      font-family: 'Barlow-Black', sans-serif;
+      font-size: 50px;
+      font-weight: 600;
+      margin: 0;
+      text-transform: uppercase;
+
+      @media(max-width: $tablet) {
+        font-size: 40px;
+      }
+    }
+
+    p {
+      color: $grey;
+      font-size: 20px;
+      line-height: 30px;
+      width: 70%;
+
+      @media(max-width: $tablet) {
+        font-size: 15px;
+        line-height: 20px;
+      }
+
+      @media(max-width: $mobile) {
+        text-align: center;
+        width: 100%;
+      }
+    }
+  }
+}

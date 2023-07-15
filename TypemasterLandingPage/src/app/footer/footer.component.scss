@@ -1,0 +1,17 @@
+@use 'variables' as *;
+
+.footer-container {
+  display: flex;
+  justify-content: center;
+  padding: 2% 10% 2%;
+
+  p {
+    color: $grey;
+    font-size: 16px;
+    line-height: 30px;
+
+    span {
+      font-weight: 600;
+    }
+  }
+}

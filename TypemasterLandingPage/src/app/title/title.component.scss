@@ -1,0 +1,130 @@
+@use 'variables' as *;
+
+.title-container {
+
+  background-image: url('../../assets/shared/pattern-square.svg');
+  background-repeat: no-repeat;
+  background-position: 115% 30%;
+  background-size: 20% 50%;
+  display: flex;
+  height: 500px;
+  padding: 5% 10% 2%;
+
+  @media(max-width: $tablet) {
+    background-image: none;
+    overflow: hidden;
+    padding: 2% 0% 2% 5%;
+  }
+
+  @media(max-width: $mobile) {
+    flex-direction: column;
+    gap: 50px;
+    padding: 5% 0% 2% 5%;
+    height: 800px;
+  }
+
+  .title-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 30px;
+    width: 50%;
+
+    @media(max-width: $mobile) {
+      align-items: center;
+      gap: 20px;
+      width: 100%;
+    }
+
+    h1 {
+      color: $almostBlack;
+      font-family: 'Barlow-Black', sans-serif;
+      font-size: 50px;
+      font-weight: 600;
+      margin: 0;
+      text-transform: uppercase;
+
+      @media(max-width: $mobile) {
+        font-size: 40px;
+      }
+    }
+
+    p {
+      color: $grey;
+      font-size: 20px;
+      line-height: 30px;
+      width: 70%;
+
+      @media(max-width: $mobile) {
+        font-size: 15px;
+        line-height: 20px;
+      }
+    }
+
+    .title-button {
+      align-items: center;
+      display: flex;
+      gap: 35px;
+
+      button {
+        background-color: $darkOrange;
+        border: none;
+        border-radius: 8px;
+        color: $white;
+        font-weight: 600;
+        font-family: 'Barlow', sans-serif;
+        height: fit-content;
+        min-width: fit-content;
+        padding: 16px 27px;
+        text-transform: uppercase;
+        transition-duration: 0.25s;
+        width: fit-content;
+
+        &:hover {
+          background-color: $lightOrange;
+          color: $white;
+          cursor: pointer;
+        }
+
+        &:active {
+          outline: none;
+        }
+      }
+
+      p {
+        font-weight: 600;
+        font-size: 18px;
+        text-transform: uppercase;
+        text-wrap: nowrap;
+
+        @media(max-width: $tablet) {
+          font-size: 14px;
+        }
+      }
+    }
+
+
+  }
+
+  .title-keyboard {
+    background-image: url('../../assets/desktop/image-keyboard.jpg');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    border-radius: 5px;
+    height: 100%;
+    width: 50%;
+
+    @media(max-width: $tablet) {
+      background-image: url('../../assets/tablet/image-keyboard.jpg');
+      left: 10%;
+      position: relative;
+    }
+
+    @media(max-width: $mobile) {
+      background-image: url('../../assets/mobile/image-keyboard.jpg');
+      background-size: 110% 100%;
+      left: 0%;
+      width: 100%;
+    }
+  }
+}

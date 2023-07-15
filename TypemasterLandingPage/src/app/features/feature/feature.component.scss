@@ -1,0 +1,54 @@
+@use 'variables' as *;
+
+.feature-container {
+  display: flex;
+  gap: 45px;
+  flex-direction: column;
+
+  @media(max-width: $mobile) {
+    align-items: center;
+    text-align: center;
+  }
+
+  .feature-image {
+    background-color: $darkOrange;
+    border-radius: 10px;
+    height: 65px;
+    width: 65px;
+
+    &::before {
+      display: block;
+      background-color: $white;
+      mask: var( --image) no-repeat center;
+      content: '';
+      height: 100%;
+      position: relative;
+      width: 100%;
+    }
+  }
+
+  h1 {
+    color: $almostBlack;
+    font-family: 'Barlow-Black', sans-serif;
+    font-size: 30px;
+    font-weight: 600;
+    margin: 0;
+
+    @media(max-width: $mobile) {
+      font-size: 40px;
+    }
+  }
+
+  p {
+    color: $grey;
+    font-size: 15px;
+    line-height: 30px;
+    margin: 0;
+    width: 70%;
+
+    @media(max-width: $mobile) {
+      font-size: 15px;
+      line-height: 20px;
+    }
+  }
+}
