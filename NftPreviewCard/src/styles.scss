@@ -1,0 +1,12 @@
+@use 'variables' as *;
+
+@font-face {
+  font-family: 'Outfit';
+  src: url('./assets/fonts/Outfit.ttf') format("opentype");
+}
+
+body {
+  background-color: $veryDarkBlue;
+  font-family: 'Outfit', sans-serif;
+  margin: 0;
+}
