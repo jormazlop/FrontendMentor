@@ -1,0 +1,9 @@
+<div class="info-container">
+  <ng-container *ngFor="let element of elements">
+    <app-info-element>
+      <img [src]="element.img" alt="Info-Element">
+      <h2>{{ element.title }}</h2>
+      <p> {{ element.description }}</p>
+    </app-info-element>
+  </ng-container>
+</div>

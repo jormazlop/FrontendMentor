@@ -1,0 +1,78 @@
+@use 'variables' as *;
+
+.footer-container {
+  align-items: center;
+  background-image: url('../../assets/bg-footer-squiggle.svg');
+  background-repeat: round;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 5%;
+  padding: 2.5% 5% 0;
+
+  h2 {
+    color: $white;
+  }
+
+  .footer-button {
+    display: flex;
+    gap: 20px;
+
+    @media(max-width: $mobile) {
+      flex-direction: column;
+      width: 80%;
+    }
+
+    input {
+      background-color: $darkBlue;
+      border-radius: 24px;
+      color: $white;
+      font-family: 'Manrope', sans-serif;
+      padding: 3% 5%;
+      width: 320px;
+
+      @media(max-width: $mobile) {
+        width: 90%;
+      }
+
+      &:focus {
+        outline: none;
+      }
+
+      &::placeholder {
+        color: $grey;
+        font-weight: 900;
+      }
+    }
+
+    button {
+      background-color: $cyan;
+      border: 1px transparent;
+      border-radius: 24px;
+      color: $darkBlue;
+      font-family: 'Manrope', sans-serif;
+      font-weight: 900;
+      width: 150px;
+
+
+    @media(max-width: $mobile) {
+      padding: 3% 5%;
+      width: 100%;
+    }
+
+      &:hover {
+        cursor: pointer;
+      }
+
+      &:active {
+        background-color: $almostBlack;
+        border: 1px solid $cyan;
+        color: $white;
+      }
+    }
+  }
+
+  p {
+    color: $red;
+    height: 22px;
+  }
+}

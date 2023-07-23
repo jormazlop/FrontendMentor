@@ -1,0 +1,8 @@
+<div class="footer-container">
+  <h2>Get notified when we launch</h2>
+  <div class="footer-button">
+    <input type="text" placeholder="Email address" [(ngModel)]="email" [style.border]="error? '1px solid red' : '1px transparent'">
+    <button (click)="onClickNotification()">Get Notified</button>
+  </div>
+  <p>{{ error? 'Oops! That doesn’t look like an email address': '' }}</p>
+</div>

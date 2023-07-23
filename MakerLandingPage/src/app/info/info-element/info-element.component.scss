@@ -1,0 +1,22 @@
+@use 'variables' as *;
+
+
+.info-element-container {
+
+  img {
+    background-color: $darkBlue;
+    border-radius: 45px;
+    padding: 30px;
+    width: 80px;
+  }
+
+  h2 {
+    color: $white;
+    width: 100%;
+
+  }
+
+  p {
+    color: $grey;
+  }
+}

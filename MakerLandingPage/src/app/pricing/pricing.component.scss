@@ -1,0 +1,107 @@
+@use 'variables' as *;
+
+.pricing-container {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  padding: 5%;
+
+  .pricing-title {
+    color: $white;
+    font-size: 32px;
+  }
+
+  .pricing-decription {
+    text-align: center;
+    color: $grey;
+    width: 600px;
+
+    @media(max-width: $tablet) {
+      width: 580px;
+    }
+
+    @media(max-width: $mobile) {
+      width: 100%;
+    }
+  }
+
+  .pricing-plans {
+    display: flex;
+    justify-content: space-around;
+    height: 500px;
+    margin-top: 5%;
+    width: 100%;
+
+    @media(max-width: $tablet) {
+      align-items: center;
+      flex-direction: column;
+      height: 1000px;
+    }
+
+    @mixin plan($backgroundColor, $textColor, $svgColor) {
+      background-color: $backgroundColor;
+      border-radius: 8px;
+      color: $textColor;
+      display: flex;
+      gap: 20px;
+      flex-direction: column;
+      padding: 2.5% 5%;
+      position: relative;
+      width: 35%;
+
+      @media(max-width: $tablet) {
+        width: 60%;
+      }
+
+      @media(max-width: $mobile) {
+        width: 90%;
+      }
+
+      img {
+        height: 50px;
+        position: absolute;
+        top: -25px;
+        width: 50px;
+      }
+
+      p {
+        font-weight: 300;
+        margin: 0;
+      }
+
+      h3 {
+        font-size: 40px;
+        margin: 0;
+      }
+
+      ul {
+
+        li {
+          margin: 2%;
+          list-style-type: none;
+          position: relative;
+
+          &::before {
+            background: $svgColor;
+            content: '';
+            display: block;
+            height: 10px;
+            left: -30px;
+            mask: url('../../assets/icon-check.svg');
+            position: absolute;
+            top: 5px;
+            width: 10px;
+          }
+        }
+      }
+    }
+
+    .free-plan {
+      @include plan($darkBlue, $white, $cyan);
+    }
+
+    .priced-plan {
+      @include plan($cyan, $almostBlack, $darkBlue);
+    }
+  }
+}

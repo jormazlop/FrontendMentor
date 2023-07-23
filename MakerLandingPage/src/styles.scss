@@ -1,0 +1,12 @@
+@use 'variables' as *;
+
+@font-face {
+  font-family: 'Manrope';
+  src: url('./assets/fonts/Manrope.ttf') format("opentype");
+}
+
+body {
+  background-color: $almostBlack;
+  font-family: 'Manrope', sans-serif;
+  margin: 0;
+}
