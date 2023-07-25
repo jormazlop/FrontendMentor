@@ -1,0 +1,79 @@
+@use 'variables' as *;
+
+.app-container {
+  align-items: center;
+  animation: background-movement 50s linear infinite;
+  background-color: $red;
+  background-image: url('../assets/bg-intro-desktop.png');
+  background-size: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 0% 10%;
+  height: 100vh;
+
+  @media(max-width: $tablet) {
+    padding: 0% 5%;
+  }
+
+  @media(max-width: $mobile) {
+    background-image: url('../assets/bg-intro-mobile.png');
+    flex-direction: column;
+  }
+
+  .app-description {
+    color: $white;
+    width: 47.5%;
+
+    h2 {
+      font-size: 3rem;
+      letter-spacing: -0.52px;
+    }
+
+    p {
+      font-size: 1.2rem;
+    }
+
+    @media(max-width: $tablet) {
+      width: 30%;
+      h2 {
+        font-size: 2rem;
+      }
+
+      p {
+        font-size: 1rem;
+      }
+    }
+
+    @media(max-width: $mobile) {
+      text-align: center;
+      width: 90%;
+    }
+  }
+
+  .app-form {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    height: 70%;
+    width: 47.5%;
+
+    @media(max-width: $tablet) {
+      width: 65%;
+    }
+
+    @media(max-width: $mobile) {
+      width: 90%;
+    }
+  }
+}
+
+
+@keyframes background-movement {
+  from {
+    background-position-x: 0vw;
+  }
+
+  to {
+    background-position-x: 100vw;
+  }
+}

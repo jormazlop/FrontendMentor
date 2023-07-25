@@ -1,0 +1,16 @@
+@use 'variables' as *;
+
+.form-title {
+  background-color: $purple;
+  border-radius: 10px;
+  box-shadow: 0px 5px 4px rgb(0 0 0 / 0.5);
+  color: $white;
+  display: flex;
+  justify-content: center;
+  letter-spacing: 0.27px;
+  padding: 2%;
+
+  span {
+    font-weight: 600;
+  }
+}

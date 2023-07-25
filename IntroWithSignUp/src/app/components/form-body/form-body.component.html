@@ -1,0 +1,42 @@
+<div class="form-body">
+  <form [formGroup]="bodyForm" (ngSubmit)="onSubmit()">
+    <div class="control-form">
+      <input id="first-name"
+            type="text"
+            formControlName="firstName"
+            placeholder="First Name"
+            [class.not-valid]="getControlError('firstName')">
+      <img src="../../../assets/icon-error.svg" alt="Error" *ngIf="getControlError('firstName')">
+    </div>
+    <p class="error-message" *ngIf="getControlError('firstName')">{{ getMessageError('firstName') }}</p>
+    <div class="control-form">
+      <input id="last-name"
+            type="text"
+            formControlName="lastName"
+            placeholder="Last Name"
+            [class.not-valid]="getControlError('lastName')">
+      <img src="../../../assets/icon-error.svg" alt="Error" *ngIf="getControlError('lastName')">
+    </div>
+    <p class="error-message" *ngIf="getControlError('lastName')">{{ getMessageError('lastName') }}</p>
+    <div class="control-form">
+      <input id="email"
+            type="text"
+            formControlName="email"
+            placeholder="Email Address"
+            [class.not-valid]="getControlError('email')">
+      <img src="../../../assets/icon-error.svg" alt="Error" *ngIf="getControlError('email')">
+    </div>
+    <p class="error-message" *ngIf="getControlError('email')">{{ getMessageError('email') }}</p>
+    <div class="control-form">
+      <input id="password"
+            type="password"
+            formControlName="password"
+            placeholder="Password"
+            [class.not-valid]="getControlError('password')">
+      <img src="../../../assets/icon-error.svg" alt="Error" *ngIf="getControlError('password')">
+    </div>
+    <p class="error-message" *ngIf="getControlError('password')">{{ getMessageError('password') }}</p>
+    <button type="submit" [disabled]="!bodyForm.valid">Claim your free trial</button>
+    <p>By clicking the button, you are agreeing to our <span>Terms and Services</span></p>
+  </form>
+</div>
