@@ -1,0 +1,27 @@
+@use 'variables' as *;
+
+.app-container {
+  align-items: center;
+  animation: background-movement 10s linear infinite;
+  background-color: $blueBackground;
+  background-image: url('../assets/pattern-background-desktop.svg');
+  background-repeat: repeat-x;
+  background-size: 100% 50%;
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+
+  @media(max-width: $mobile) {
+    background-image: url('../assets/pattern-background-mobile.svg');
+  }
+}
+
+@keyframes background-movement {
+  from {
+    background-position-x: 0vw;
+  }
+
+  to {
+    background-position-x: 100vw;
+  }
+}
