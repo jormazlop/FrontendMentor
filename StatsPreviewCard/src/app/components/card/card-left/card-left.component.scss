@@ -1,0 +1,65 @@
+@use 'variables' as *;
+
+:host {
+  height: 100%;
+  width: 50%;
+
+  @media(max-width: $mobile) {
+    width: 100%;
+  }
+}
+
+.card-left-container {
+  background-color: $bgCardColor;
+  border-radius: 8px 0 0 8px;
+  color: $white;
+  display: flex;
+  flex-direction: column;
+  font-family: 'Inter';
+  height: calc(100% - 140px);
+  justify-content: space-around;
+  padding: 70px;
+
+  @media(max-width: $mobile) {
+    border-radius: 0 0 8px 8px;
+    text-align: center;
+    padding: 50px 30px;
+  }
+
+  @media(max-width: $tablet) {
+    h1 {
+      font-size: 1.5rem;
+    }
+  }
+
+  .card-left-description {
+    font-size: 15px;
+    font-weight: 200;
+    line-height: 25px;
+    width: 80%;
+
+    @media(max-width: $mobile) {
+      width: 100%;
+    }
+  }
+
+  .card-left-benefits {
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+
+    @media(max-width: $mobile) {
+      flex-direction: column;
+    }
+
+    h2 {
+
+      font-size: 24px;
+
+      span {
+        font-size: 12px;
+        font-weight: 200;
+      }
+    }
+  }
+}

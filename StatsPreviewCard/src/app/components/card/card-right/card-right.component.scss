@@ -1,0 +1,38 @@
+@use 'variables' as *;
+
+:host {
+  height: 100%;
+  width: 50%;
+
+  @media(max-width: $mobile) {
+    width: 100%;
+  }
+}
+
+.card-right-container {
+  background-color: $filterImage;
+  border-radius: 0 8px 8px 0;
+  height: 100%;
+  position: relative;
+
+  @media(max-width: $mobile) {
+    border-radius: 8px 8px 0 0;
+  }
+
+  &::after {
+    background-image: url('../../../../assets/image-header-desktop.jpg');
+    background-repeat: round;
+    border-radius: 0 8px 8px 0;
+    content: '';
+    display: block;
+    height: 100%;
+    mix-blend-mode: multiply;
+    opacity: 0.75;
+    position: absolute;
+    width: 100%;
+
+    @media(max-width: $mobile) {
+      border-radius: 8px 8px 0 0;
+    }
+  }
+}
