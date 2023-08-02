@@ -1,0 +1,87 @@
+@use 'variables' as *;
+
+:host {
+  width: 25%;
+
+  @media(max-width: $mobile) {
+    width: 90%;
+  }
+}
+
+.card-container {
+  border-radius: inherit;
+  background-color: var(--bgColor);
+  display: flex;
+  flex-direction: column;
+  height: 50vh;
+  justify-content: space-between;
+  padding: 15%;
+
+  @media(max-width: $mobile) {
+    padding: 10%;
+  }
+
+  @media(max-width: $mobile) {
+    height: fit-content;
+  }
+
+  img {
+    height: 40px;
+    width: 64px;
+  }
+
+  h1 {
+    color: $mainColor;
+    font-family: 'Big Shoulders Display';
+    font-size: 2.7em;
+    margin: 0;
+
+    @media(max-width: $tablet) {
+      font-size: 2.2em;
+    }
+  }
+
+  p {
+    color: $secondaryColor;
+    font-family: 'Lexend Deca';
+    font-weight: 200;
+    line-height: 1.7em;
+    width: 80%;
+
+    @media(max-width: $tablet) {
+      font-size: 0.9em;
+    }
+
+    @media(max-width: $mobile) {
+      font-size: 1em;
+    }
+  }
+
+  button {
+    background-color: $mainColor;
+    border: 1px solid $mainColor;
+    border-radius: 25px;
+    color: var(--bgColor);
+    font-family: 'Lexend Deca';
+    font-size: 1em;
+    justify-self: flex-end;
+    margin-top: 25%;
+    padding: 5%;
+    transition-duration: 0.3s;
+    width: 60%;
+
+    @media(max-width: $tablet) {
+      width: 80%;
+    }
+
+    @media(max-width: $mobile) {
+      margin: 0;
+    }
+
+    &:hover {
+      background-color: var(--bgColor);
+      color: $secondaryColor;
+      cursor: pointer;
+    }
+  }
+}

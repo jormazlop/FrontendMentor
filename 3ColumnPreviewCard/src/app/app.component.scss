@@ -1,0 +1,32 @@
+@use 'variables' as *;
+
+.app-container {
+  align-items: center;
+  background-color: $mainColor;
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+
+  @media(max-width: $mobile) {
+    flex-direction: column;
+    height: auto;
+    padding: 5%;
+  }
+
+  app-card:first-child {
+      border-radius: 8px 0 0 8px;
+
+      @media(max-width: $mobile) {
+        border-radius: 8px 8px 0 0;
+      }
+  }
+
+  app-card:last-child {
+    border-radius: 0 8px 8px 0;
+
+    @media(max-width: $mobile) {
+      border-radius: 0 0 8px 8px;
+    }
+  }
+
+}

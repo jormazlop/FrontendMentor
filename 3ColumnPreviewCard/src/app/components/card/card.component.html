@@ -1,0 +1,6 @@
+<div class="card-container" [style.--bgColor]="card.color">
+  <img [src]="card.image" alt="Image">
+  <h1>{{ card.title | upperCustom }}</h1>
+  <p>{{ card.description }}</p>
+  <button>Learn More</button>
+</div>
