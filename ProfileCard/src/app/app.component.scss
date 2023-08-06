@@ -1,0 +1,12 @@
+@use 'variables' as *;
+
+.app-container {
+  align-items: center;
+  background-color: $bgColor;
+  background-image: url('../assets/bg-pattern-top.svg'), url('../assets/bg-pattern-bottom.svg');
+  background-position: calc(50vw - 1050px) -50vh, 50vw 50vh;
+  background-repeat: no-repeat, no-repeat;
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+}
