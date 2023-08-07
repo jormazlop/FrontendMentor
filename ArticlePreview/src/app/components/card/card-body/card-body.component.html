@@ -1,0 +1,53 @@
+<div class="card-body-container">
+  <h3>
+    Shift the overall look and feel by adding these wonderful
+    touches to furniture in your home
+  </h3>
+  <p>
+    Ever been in a room and felt like something was missing? Perhaps
+    it felt slightly bare and uninviting. I’ve got some simple tips
+    to help you make any room feel complete.
+  </p>
+  <footer *ngIf="!showSubMenu; else subMenu">
+    <div class="card-footer-avatar">
+      <img src="../../../../assets/avatar-michelle.jpg" alt="Avatar">
+      <h4>
+        Michelle Appleton
+        <br>
+        <span>28 Jun 2020</span>
+      </h4>
+    </div>
+    <div *responsiveIf="true"
+         class="share-button"
+         placement="top"
+         [ngbTooltip]="tooltipShareFullScreen"
+         tooltipClass="share-tooltip"
+         triggers="click"
+			   [autoClose]="'outside'">
+    </div>
+    <div *responsiveIf="false"
+          class="share-button"
+          (click)="subMenuResponsive()">
+    </div>
+  </footer>
+</div>
+
+<ng-template #tooltipShareFullScreen>
+  <h4>Share</h4>
+  <img src="../../../../assets/icon-facebook.svg" alt="Facebook">
+  <img src="../../../../assets/icon-twitter.svg" alt="Twitter">
+  <img src="../../../../assets/icon-pinterest.svg" alt="Pinterest">
+</ng-template>
+
+<ng-template #subMenu>
+  <footer class="sub-menu">
+    <h4>Share</h4>
+    <img src="../../../../assets/icon-facebook.svg" alt="Facebook">
+    <img src="../../../../assets/icon-twitter.svg" alt="Twitter">
+    <img src="../../../../assets/icon-pinterest.svg" alt="Pinterest">
+    <div *responsiveIf="false"
+          class="share-button"
+          (click)="subMenuResponsive()">
+    </div>
+  </footer>
+</ng-template>

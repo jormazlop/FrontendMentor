@@ -1,0 +1,40 @@
+@use 'variables' as *;
+
+.card-container {
+  border-radius: 10px;
+  display: flex;
+  height: 40vh;
+  width: 60vw;
+
+  @media(max-width: $tablet) {
+    width: 90vw;
+  }
+
+  @media(max-width: $mobile) {
+    flex-direction: column;
+    height: 85vh;
+  }
+
+  .card-image {
+    border-radius: 10px 0 0 10px;
+    width: 40%;
+
+    @media(max-width: $mobile) {
+      border-radius: 10px 10px 0 0;
+      height: 40%;
+      width: 100%;
+    }
+  }
+
+  app-card-body {
+    background-color: $white;
+    border-radius: 0 10px 10px 0;
+    width: 60%;
+
+    @media(max-width: $mobile) {
+      border-radius: 0 0 10px 10px;
+      height: 60%;
+      width: 100%;
+    }
+  }
+}

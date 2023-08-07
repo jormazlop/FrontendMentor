@@ -1,0 +1,150 @@
+@use 'variables' as *;
+
+.card-body-container {
+  display: flex;
+  flex-direction: column;
+  font-family: 'Manrope';
+  height: 100%;
+  justify-content: space-between;
+
+  h3 {
+    color: $mainTextColor;
+    font-size: 20px;
+    margin: 0;
+    padding: 7% 10% 0%;
+  }
+
+  p {
+    color: $secondaryTextColor;
+    font-size: 15px;
+    padding: 0% 10%;
+  }
+
+  footer {
+
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    padding: 0% 10% 7%;
+
+    .card-footer-avatar {
+      align-items: center;
+      display: flex;
+      gap: 15px;
+
+      img {
+        border-radius: 50%;
+        height: 40px;
+        width: 40px;
+      }
+
+      h4 {
+        color: $mainTextColor;
+        font-size: 15px;
+
+        span {
+          color: $tertiaryTextColor;
+          font-weight: 400;
+        }
+      }
+    }
+
+    .share-button {
+      align-items: center;
+      background-color: $mainBgColor;
+      border-radius: 50%;
+      display: flex;
+      height: 40px;
+      justify-content: center;
+      transition-duration: 0.5s;
+      width: 40px;
+
+      &::after {
+        background-color: $secondaryTextColor;
+        border-radius: 50%;
+        content: '';
+        display: block;
+        height: 40px;
+        mask: url('../../../../assets/icon-share.svg');
+        mask-repeat: no-repeat;
+        mask-size: 50%;
+        mask-position: 50% 50%;
+        width: 40px;
+      }
+
+      &:hover {
+        background-color: $secondaryTextColor;
+        cursor: pointer;
+
+        &::after {
+          background-color: $mainBgColor;
+        }
+      }
+    }
+  }
+
+  .sub-menu {
+    align-items: center;
+    background-color: $mainTextColor;
+    border-radius: 0 0 10px 10px;
+    display: flex;
+    justify-content: space-around;
+    padding: 8% 5%;
+
+    h4 {
+      color: $tertiaryTextColor;
+      font-size: 12px;
+      font-weight: 300;
+      letter-spacing: 5px;
+      margin: 0;
+      text-transform: uppercase;
+    }
+
+    img {
+      height: 20px;
+      width: 20px;
+    }
+  }
+}
+
+.share-tooltip {
+
+  bottom: 15px !important;
+  border-radius: 10px;
+
+  @media(max-width: $tablet) {
+    left: -50px !important;
+  }
+
+  .tooltip-inner {
+    align-items: center;
+    background-color: $mainTextColor;
+    display: flex;
+    justify-content: space-around;
+    padding: 15px 20px;
+    width: 220px;
+
+    h4 {
+      color: $tertiaryTextColor;
+      font-size: 12px;
+      font-weight: 300;
+      letter-spacing: 5px;
+      margin: 0;
+      text-transform: uppercase;
+    }
+
+    img {
+      height: 20px;
+      width: 20px;
+    }
+
+  }
+
+  .tooltip-arrow::before {
+    border-top-color: $mainTextColor;
+
+    @media(max-width: $tablet) {
+      right: -50px;
+    }
+  }
+}
