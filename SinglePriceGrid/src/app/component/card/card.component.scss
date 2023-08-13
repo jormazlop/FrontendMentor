@@ -1,0 +1,36 @@
+@use 'variables' as *;
+
+.card-container {
+  border-radius: 8px;
+  box-shadow: 0 0 10px 0 #F2F2F2;
+  display: grid;
+  height: 650px;
+  width: 1050px;
+  grid-template-areas: "join join" "monthly why";
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+
+  @media(max-width: $tablet) {
+    height: 850px;
+    width: 600px;
+  }
+
+  @media(max-width: $mobile) {
+    grid-template-areas: "join" "monthly" "why";
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    width: 95vw;
+  }
+
+  app-join {
+    grid-area: join;
+  }
+
+  app-monthly {
+    grid-area: monthly;
+  }
+
+  app-why {
+    grid-area: why;
+  }
+}

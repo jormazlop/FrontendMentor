@@ -1,0 +1,9 @@
+@use 'variables' as *;
+
+.app-container {
+  align-items: center;
+  background-color: $mainBgColor;
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+}

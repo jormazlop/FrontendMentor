@@ -1,0 +1,84 @@
+@use 'variables' as *;
+
+.monthly-container {
+  background-color: $mainColor;
+  border-radius: 0 0 0 8px;
+  display: flex;
+  flex-direction: column;
+  height: calc(100% - 100px);
+  justify-content: space-between;
+  padding: 50px;
+
+  @media(max-width: $mobile) {
+    border-radius: 0 0 0 0;
+  }
+
+  h2 {
+    color: $white;
+    margin: 0;
+  }
+
+  h1 {
+    align-items: center;
+    display: flex;
+    color: $white;
+    gap: 10px;
+    margin: 0;
+
+    span {
+      font-size: 18px;
+      font-weight: 400;
+      opacity: 0.5;
+    }
+  }
+
+  p {
+    color: $white;
+    font-size: 18px;
+  }
+
+  button {
+    background-color: $lemonColor;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 0 10px 0 #979797;
+    color: $white;
+    font-family: 'Karla';
+    font-size: 20px;
+    padding: 20px;
+
+    &:hover {
+      animation: heartbeat 0.5s linear 0s both;
+      cursor: pointer;
+    }
+  }
+}
+
+
+@keyframes heartbeat {
+  0% {
+            transform: scale(1);
+            transform-origin: center center;
+            animation-timing-function: ease-out;
+  }
+
+  25% {
+            transform: scale(0.95);
+            animation-timing-function: ease-in;
+  }
+
+  50% {
+            transform: scale(0.98);
+            animation-timing-function: ease-out;
+  }
+
+  75% {
+            transform: scale(0.95);
+            animation-timing-function: ease-in;
+  }
+
+  100% {
+            transform: scale(1);
+            animation-timing-function: ease-out;
+  }
+}
