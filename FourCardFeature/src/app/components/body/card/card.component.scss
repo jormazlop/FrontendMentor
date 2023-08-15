@@ -1,0 +1,36 @@
+@use 'variables' as *;
+
+.card-container {
+  align-items: flex-start;
+  background-color: $white;
+  box-shadow: 8px 8px 16px lighten($shadow, 25);
+  border-radius: 8px;
+  border-top: 3px solid var(--color);
+  color: $textColor;
+  display: flex;
+  flex-direction: column;
+  height: 190px;
+  justify-content: center;
+  padding: 30px;
+  transition-duration: 0.25s;
+  width: 290px;
+
+  .card-title {
+    font-size: 20px;
+    margin: 0;
+  }
+
+  .card-description {
+    font-size: 15px;
+    opacity: 0.8;
+  }
+
+  .card-image {
+    align-self: flex-end;
+  }
+
+  &:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+  }
+}

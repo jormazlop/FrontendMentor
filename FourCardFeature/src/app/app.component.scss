@@ -1,0 +1,15 @@
+@use 'variables' as *;
+
+.app-component {
+  align-items: center;
+  background-color: $mainBgColor;
+  display: flex;
+  gap: 5%;
+  flex-direction: column;
+  height: 100vh;
+  justify-content: center;
+
+  @media(max-width: $mobile) {
+    height: fit-content;
+  }
+}

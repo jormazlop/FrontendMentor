@@ -1,0 +1,42 @@
+@use 'variables' as *;
+
+.header-container {
+  align-items: center;
+  color: $textColor;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  %title {
+    font-size: 36px;
+    margin: 0;
+
+    @media(max-width: $mobile) {
+      font-size: 25px;
+      text-align: center;
+    }
+  }
+
+  .header-subtitle {
+    @extend %title;
+    font-weight: 100;
+    font-family: 'Poppins-ExtraLight';
+  }
+
+  .header-title {
+    @extend %title;
+  }
+
+  .header-description {
+    font-family: 'Poppins-Light';
+    font-size: 18px;
+    opacity: 0.8;
+    text-align: center;
+    width: 600px;
+
+    @media(max-width: $mobile) {
+      font-size: 15px;
+      width: fit-content;
+    }
+  }
+}

@@ -1,0 +1,19 @@
+@font-face {
+  font-family: 'Poppins';
+  src: url('./fonts/Poppins.ttf') format("opentype");
+}
+
+@font-face {
+  font-family: 'Poppins-Light';
+  src: url('./fonts/Poppins-Light.ttf') format("opentype");
+}
+
+@font-face {
+  font-family: 'Poppins-ExtraLight';
+  src: url('./fonts/Poppins-ExtraLight.ttf') format("opentype");
+}
+
+body {
+  font-family: 'Poppins';
+  margin: 0;
+}

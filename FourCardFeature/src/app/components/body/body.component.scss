@@ -1,0 +1,31 @@
+@use 'variables' as *;
+
+.body-container {
+  display: grid;
+  height: 60vh;
+
+  gap: 30px;
+  grid-template-areas: ". n2 ." "n1 n2 n4" "n1 n3 n4" ". n3 .";
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+
+  @for $i from 1 through 4 {
+    app-card:nth-child(#{$i}) {
+      grid-area: n#{$i};
+    }
+  }
+
+  @media(max-width: $tablet) {
+    grid-template-areas: "n1 n2" "n3 n4";
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+  }
+
+  @media(max-width: $mobile) {
+    grid-template-areas: "n1" "n2" "n3" "n4";
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    height: fit-content;
+    padding: 50px 0;
+  }
+}
