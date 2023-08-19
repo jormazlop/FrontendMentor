@@ -1,0 +1,7 @@
+<div class="profile-container">
+  <img class="profile-image" src="../../../assets/{{ profile.image }}" alt="Tanya" [ngClass]="{ 'transition': transition }">
+  <div class="profile-buttons">
+    <img src="../../../assets/icon-prev.svg" (click)="onClickPreviousProfile()" alt="Previous-Profile">
+    <img src="../../../assets/icon-next.svg" (click)="onClickNextProfile()" alt="Next-Profile">
+  </div>
+</div>

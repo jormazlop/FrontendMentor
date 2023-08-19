@@ -1,0 +1,27 @@
+@use 'variables' as *;
+
+.app-container {
+  align-items: center;
+  background-image: url('../assets/pattern-curve.svg');
+  background-position: 0% 100%;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-wrap: nowrap;
+  height: 60vh;
+  justify-content: center;
+  padding: 20vh;
+
+  @media(max-width: $tablet) {
+    height: 90vh;
+    padding: 5vh;
+  }
+
+  @media(max-width: $mobile) {
+    background-size: 70%;
+    flex-direction: column-reverse;
+    gap: 50px;
+    height: fit-content;
+    justify-content: flex-end;
+    min-height: 100vh;
+  }
+}

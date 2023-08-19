@@ -1,0 +1,81 @@
+@use 'variables' as *;
+
+:host {
+  height: 100%;
+  width: 50%;
+
+  @media(max-width: $mobile) {
+    width: 90%;
+  }
+}
+
+.testimony-container {
+  background-image: url('../../../assets/pattern-quotes.svg');
+  background-position: 15% 15%;
+  background-repeat: no-repeat;
+  color: $darkBlue;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: center;
+  position: relative;
+  z-index: 1;
+
+  @media(max-width: $mobile) {
+    background-size: 30%;
+    background-position: 50% 0%;
+  }
+
+  h2 {
+    font-size: 32px;
+    font-weight: 300;
+    line-height: 44px;
+    width: 115%;
+
+    @media(max-width: $mobile) {
+      font-size: 20px;
+      width: 100%;
+    }
+  }
+
+  p {
+    font-size: 20px;
+    font-weight: 900;
+
+    span {
+      color: $grayishBlue;
+      font-weight: 400;
+    }
+  }
+
+  &.transition {
+    animation: transition 1s linear 0s;
+  }
+
+  @keyframes transition {
+    0% {
+      opacity: 1;
+      transform: translateY(0px);
+    }
+
+    25% {
+      opacity: 0.15;
+      transform: translateY(20px);
+    }
+
+    50% {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+
+    75% {
+      opacity: 0.15;
+      transform: translateY(20px);
+    }
+
+    100% {
+      opacity: 1;
+      transform: translateY(0px);
+    }
+  }
+}
