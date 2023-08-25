@@ -1,0 +1,141 @@
+@use 'variables' as *;
+
+.plans-container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 5%;
+
+  @media(max-width: $tablet) {
+    flex-direction: column;
+    gap: 25px;
+  }
+
+  .plan {
+    align-items: center;
+    background-color: #FAFAFA;
+    color: $almostBlack;
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
+    height: fit-content;
+    border-radius: 8px;
+    padding: 2.5%;
+    width: 25%;
+
+    h6 {
+      font-size: 20px;
+      margin: 0;
+    }
+
+    h3 {
+      font-size: 56px;
+      margin: 0;
+    }
+
+    h5 {
+      font-size: 16px;
+      font-weight: 400;
+      margin: 0;
+    }
+
+    p {
+      color: $grey;
+      font-size: 16px;
+      font-weight: 400;
+      margin: 0;
+    }
+
+    button {
+      background-color: lighten($blue, 25);
+      border: none;
+      border-radius: 28px;
+      color: $blue;
+      font-family: inherit;
+      font-weight: 700;
+      padding: 20px 35px;
+      transition-duration: 0.5s;
+
+      &:hover {
+        background-color: lighten($blue, 17);
+        cursor: pointer;
+      }
+    }
+
+    &:nth-child(2) {
+      background-color: $blue;
+      background-image: url('../../../assets/home/bg-pattern-pricing.svg');
+      background-size: 175%;
+      background-position: 50% 125%;
+      background-repeat: no-repeat;
+      color: $white;
+
+      @media(max-width: $tablet) {
+        background-size: 150%;
+        background-position: 100% 50%;
+      }
+
+      @media(max-width: $mobile) {
+        background-size: 150%;
+        background-position: 50% 150%;
+      }
+
+      p {
+        color: inherit;
+      }
+
+      button {
+        background-color: $white;
+
+        &:hover {
+          background-color: darken($white, 17);
+        }
+      }
+    }
+
+    @media(max-width: $tablet) and (min-width: $mobile) {
+      width: 90%;
+
+      display: grid;
+      gap: 10px;
+      grid-template-areas: "h6 p1" "h3 p2" "h5 p3" "button .";
+      grid-template-rows: 1fr 1fr 1fr 1fr;
+      padding: 5%;
+
+      h6 {
+        grid-area: h6;
+      }
+
+      h3 {
+        grid-area: h3;
+      }
+
+      h5 {
+        grid-area: h5;
+      }
+
+      p:nth-of-type(1) {
+        grid-area: p1;
+        margin-top: 35px;
+      }
+
+      p:nth-of-type(2) {
+        grid-area: p2;
+        margin-top: 35px;
+      }
+
+      p:nth-of-type(3) {
+        grid-area: p3;
+        margin-top: 35px;
+      }
+
+      button {
+        grid-area: button;
+      }
+    }
+
+    @media(max-width: $mobile) {
+      padding: 5% 0%;
+      width: 95%;
+    }
+  }
+}

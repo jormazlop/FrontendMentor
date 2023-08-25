@@ -1,0 +1,30 @@
+@use 'variables' as *;
+
+.footer-container {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  padding: 10% 5% 0%;
+
+  @media(max-width: $tablet) {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  button {
+    background-color: $blue;
+    border: none;
+    border-radius: 28px;
+    color: $white;
+    font-family: inherit;
+    max-height: 60px;
+    padding: 20px;
+    transition-duration: 0.5s;
+    width: 140px;
+
+    &:hover {
+      cursor: pointer;
+      background-color: $lightBlue;
+    }
+  }
+}

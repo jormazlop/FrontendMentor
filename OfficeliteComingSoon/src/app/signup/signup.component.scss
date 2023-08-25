@@ -1,0 +1,41 @@
+@use 'variables' as *;
+
+.signup-container {
+  background-color: $white;
+  height: calc(100vh - 100px);
+  padding: 50px;
+  position: relative;
+
+  @media(max-width: $tablet) {
+    height: fit-content;
+  }
+
+  &::after {
+    background-color: $black;
+    background-image: url('../../assets/sign-up/bg-pattern-side.svg');
+    background-position: 50% 125%;
+    background-repeat: no-repeat;
+    background-size: 300%;
+    content: '';
+    display: block;
+    height: 100%;
+    position: absolute;
+    left: 80%;
+    top: 0%;
+    width: 20%;
+    z-index: 1;
+
+    @media(max-width: $tablet) {
+      background-position: 0% 50%;
+      background-size: 100%;
+      height: 30%;
+      left: 0%;
+      top: 70%;
+      width: 100%;
+    }
+
+    @media(max-width: $mobile) {
+
+    }
+  }
+}

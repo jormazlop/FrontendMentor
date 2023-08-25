@@ -1,0 +1,39 @@
+@use 'variables' as *;
+
+.body-container {
+
+  display: flex;
+  justify-content: space-between;
+
+  @media(max-width: $tablet) {
+    align-items: center;
+    flex-direction: column;
+    gap: 50px;
+    margin-top: 100px;
+  }
+
+  .body-info {
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
+    width: 50%;
+
+    @media(max-width: $mobile) {
+      width: 80%;
+    }
+
+    h2 {
+      color: $almostBlack;
+      font-size: 56px;
+      margin: 0;
+
+      @media(max-width: $mobile) {
+        font-size: 35px;
+      }
+    }
+
+    p {
+      color: $grey;
+    }
+  }
+}

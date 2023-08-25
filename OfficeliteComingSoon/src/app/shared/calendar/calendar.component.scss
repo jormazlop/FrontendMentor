@@ -1,0 +1,102 @@
+@use 'variables' as *;
+
+@mixin themeCalendar($theme) {
+  .calendar-container {
+    display: flex;
+    flex-direction: column;
+
+    @media(max-width: $tablet) {
+      align-items: center;
+    }
+
+    .calendar-title {
+
+      @if $theme == 'dark' {
+        color: $white;
+      } @else if $theme == 'light' {
+        color: $almostBlack;
+      }
+
+      letter-spacing: 5px;
+
+      span {
+        color: $blue;
+      }
+    }
+
+    .calendar-items {
+      display: flex;
+      gap: 15px;
+
+      %calendar-item {
+
+
+        @if $theme == 'dark' {
+          background-color: $almostBlack;
+          color: $white;
+        } @else if $theme == 'light' {
+          background-color: lighten($blue, 25);
+          color: $blue;
+
+          span {
+            color: $almostBlack;
+          }
+        }
+
+        border-radius: 8px;
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        padding: 20px;
+        text-align: center;
+
+        h2 {
+          font-size: 56px;
+          margin: 0;
+          min-width: 5vw;
+        }
+
+        span {
+          font-size: 16px;
+          opacity: 0.5;
+        }
+
+        @media(max-width: $mobile) {
+          padding: 15px;
+
+          h2 {
+            font-size: 25px;
+          }
+
+        }
+      }
+
+      .calendar-days {
+        @extend %calendar-item;
+      }
+
+      .calendar-hours {
+        @extend %calendar-item;
+      }
+
+      .calendar-min {
+        @extend %calendar-item;
+      }
+
+      .calendar-sec {
+        @extend %calendar-item;
+      }
+    }
+  }
+}
+
+:host-context(.home-container) {
+  @include themeCalendar(dark);
+}
+
+:host-context(.signup-container) {
+  @include themeCalendar(light);
+}
+
+
+

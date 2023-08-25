@@ -1,0 +1,15 @@
+@use 'variables' as *;
+
+header {
+  margin-bottom: 5%;
+
+  @media(max-width: $mobile) {
+    display: flex;
+    justify-content: center;
+  }
+
+  img:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+  }
+}

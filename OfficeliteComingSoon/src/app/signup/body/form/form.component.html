@@ -1,0 +1,31 @@
+<section class="form-container">
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <input type="text"
+           formControlName="name"
+           placeholder="Name"
+           [class.invalid]="this.form.controls['name'].touched && this.form.controls['name'].invalid"/>
+    <input type="text"
+           formControlName="email"
+           placeholder="Email Address"
+           [class.invalid]="this.form.controls['email'].touched && this.form.controls['email'].invalid"/>
+    <mat-select formControlName="pack" [value]="form.controls['pack'].value">
+      <mat-option *ngFor="let pack of packs" [value]="pack.value">
+        <p>{{ pack.viewValue }} <span>{{ pack.viewPrice }}</span>
+      </mat-option>
+    </mat-select>
+    <input type="text"
+           formControlName="phone"
+           placeholder="Phone Number"
+           [class.invalid]="this.form.controls['phone'].touched && this.form.controls['phone'].invalid"/>
+    <input type="text"
+           formControlName="company"
+           placeholder="Company"
+           [class.invalid]="this.form.controls['company'].touched && this.form.controls['company'].invalid"/>
+    <ng-container *ngIf="loading">
+      <button type="submit" [disabled]="true"><mat-spinner></mat-spinner></button>
+    </ng-container>
+    <ng-container *ngIf="!loading">
+      <button type="submit" [disabled]="!form.valid">Get on the list</button>
+    </ng-container>
+  </form>
+</section>
