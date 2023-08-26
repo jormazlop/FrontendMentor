@@ -1,0 +1,62 @@
+@use 'variables' as *;
+
+@font-face {
+  font-family: 'JosefinSans';
+  src: url('./fonts/JosefinSans.ttf') format("opentype");
+}
+
+body {
+  font-family: 'JosefinSans';
+  margin: 0;
+}
+
+mat-slide-toggle {
+
+  label {
+    color: $darkPink;
+    font-weight: bold !important;
+    margin-left: 10px !important;
+  }
+
+  .mdc-switch__track {
+    &::before {
+      background-color: $darkPink !important;
+    }
+
+    &::after {
+      background-color: $lightPink !important;
+    }
+  }
+
+  &.mat-mdc-slide-toggle-checked:not(.mat-disabled) .mdc-switch__shadow {
+    background-color: $darkPink;
+  }
+
+  .mdc-switch--unselected .mdc-switch__shadow {
+    background-color: $lightPink;
+  }
+}
+
+
+.angular-light-snackbar {
+  .mdc-snackbar__surface {
+    background-color: $darkPink !important;
+  }
+
+  .mat-mdc-snack-bar-label {
+    color: $almostBlack !important;
+    font-family: inherit !important;
+  }
+}
+
+.angular-dark-snackbar {
+  .mdc-snackbar__surface {
+    background-color: $almostWhite !important;
+  }
+
+  .mat-mdc-snack-bar-label {
+    color: $darkPurple !important;
+    font-family: inherit !important;
+  }
+}
+

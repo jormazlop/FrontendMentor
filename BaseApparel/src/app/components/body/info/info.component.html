@@ -1,0 +1,26 @@
+<div class="info-container">
+
+  <h1 class="info-title">
+    WE'RE
+    <br>
+    <span>COMING SOON</span>
+  </h1>
+
+  <p class="info-description">
+    Hello fellow shoppers! We're currently building our new fashion store.
+    Add your email below to stay up-to-date with announcements and our launch deals.
+  </p>
+
+  <form class="info-email"
+        [formGroup]="mailForm"
+        (ngSubmit)="submitForm()"
+        [class.error] = "!mailForm.controls['mail'].valid && mailForm.controls['mail'].touched">
+    <input type="text"
+           placeholder="Email Address"
+           [formControlName]="'mail'">
+    <button type="submit" [disabled]="!mailForm.valid">
+      <img src="../../../../assets/icon-arrow.svg" alt="Arrow">
+    </button>
+    <p *ngIf="!mailForm.controls['mail'].valid && mailForm.controls['mail'].touched">Please provide a valid email</p>
+  </form>
+</div>

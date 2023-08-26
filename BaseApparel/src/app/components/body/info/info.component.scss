@@ -1,0 +1,171 @@
+@use 'variables' as *;
+
+@mixin mode($mode) {
+
+  .info-container {
+
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    height: fit-content;
+    margin-top: 20%;
+
+    @media (max-width: $tablet) {
+      padding: 10%;
+      margin-top: 0%;
+    }
+
+    .info-title {
+
+      @if ($mode == 'light') {
+        color: $darkPink;
+      } @else {
+        color: $darkPurple;
+      }
+
+      font-size: 64px;
+      font-weight: 300;
+      letter-spacing: 15px;
+      line-height: 70px;
+      margin: 0;
+
+      @media (max-width: $mobile) {
+        font-size: 35px;
+      }
+
+      span {
+        font-weight: bold;
+
+        @if ($mode == 'light') {
+          color: $almostBlack;
+        } @else {
+          color: $almostWhite;
+        }
+      }
+    }
+
+    .info-description {
+      font-size: 16px;
+      font-weight: 500;
+      line-height: 28px;
+
+      @if ($mode == 'light') {
+        color: $darkPink;
+      } @else {
+        color: $almostWhite;
+      }
+    }
+
+    .info-email {
+
+      position: relative;
+      width: 80%;
+
+      input {
+
+        @if ($mode == 'light') {
+          border: 1px solid $darkPink;
+          color: $darkPink;
+        } @else {
+          border: 1px solid lighten($lightPurple, 25);
+          color: lighten($lightPurple, 25)
+        }
+
+        background-color: transparent;
+        border-radius: 28px;
+        font-family: inherit;
+        font-size: 18px;
+        padding: 18px 180px 18px 30px;
+        width: calc(100% - 180px);
+
+        &:focus {
+          outline: none;
+        }
+
+        &::placeholder {
+          color: inherit;
+        }
+      }
+
+      button {
+
+        @if ($mode == 'light') {
+          background-color: $darkPink;
+          border: 1px solid $darkPink;
+          box-shadow: 1px 1px 20px $darkPink;
+        } @else {
+          background-color: lighten($lightPurple, 25);
+          border: 1px solid lighten($lightPurple, 25);
+          box-shadow: 1px 1px 20px lighten($lightPurple, 25);
+        }
+
+        border-radius: 28px;
+        height: 57px;
+        left: calc(100% - 85px);
+        position: absolute;
+        top: 0%;
+        transition-duration: 0.5s;
+        width: 120px;
+
+        &:hover {
+          cursor: pointer;
+          transform: translateX(5px)
+        }
+
+        &:active {
+          @if ($mode == 'light') {
+            box-shadow: inset 1px 1px 20px lighten($darkPink, 10);
+          } @else {
+            box-shadow: inset 1px 1px 20px lighten($lightPurple, 10);
+          }
+        }
+
+        &:disabled {
+          cursor: not-allowed;
+
+          &:hover {
+            transform: none;
+          }
+
+          &:active {
+            @if ($mode == 'light') {
+              box-shadow: 1px 1px 20px $darkPink;
+            } @else {
+              box-shadow: 1px 1px 20px lighten($lightPurple, 25);
+            }
+          }
+        }
+      }
+
+      &.error {
+        &::after {
+          background-image: url('../../../../assets/icon-error.svg');
+          content: '';
+          display: block;
+          height: 24px;
+          left: calc(100% - 130px);
+          position: absolute;
+          top: 15px;
+          width: 24px;
+        }
+
+        input {
+          border: 1px solid #F96464;
+        }
+      }
+    }
+
+    p {
+      color: #F96464;
+    }
+  }
+}
+
+:host-context(.light) {
+  @include mode('light');
+}
+
+:host-context(.dark) {
+  @include mode('dark');
+}
+

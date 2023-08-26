@@ -1,0 +1,13 @@
+<section class="body-container">
+  <header>
+    <img class="light-logo" ngSrc="../../../assets/light/logo.svg" width="158" height="33" alt="Logo">
+    <img class="dark-logo" ngSrc="../../../assets/dark/logo.svg" width="158" height="33" alt="Logo">
+    <mat-slide-toggle color="primary" [(ngModel)]="darkMode" (ngModelChange)="changeMode()">Dark Mode</mat-slide-toggle>
+  </header>
+
+  <div class="hero-image">
+    <img src="../assets/hero-mobile.jpg" alt="Hero-Image">
+  </div>
+
+  <app-info />
+</section>

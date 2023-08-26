@@ -1,0 +1,55 @@
+@use 'variables' as *;
+
+.app-container {
+
+  display: flex;
+  height: 100vh;
+
+  @media(max-width: $tablet) {
+    height: fit-content;
+  }
+
+
+  app-body {
+    width: 57%;
+
+    @media(max-width: $tablet) {
+      width: 100%;
+    }
+  }
+
+  .hero-image {
+    display: flex;
+    width: 43%;
+
+    img {
+      width: 100%;
+    }
+
+    @media(max-width: $tablet) {
+      display: none;
+    }
+  }
+
+  &.dark {
+
+    .hero-image {
+
+      position: relative;
+
+      &::after {
+        background-color: $lightPurple;
+        content: '';
+        display: block;
+        height: 100%;
+        position: absolute;
+        width: 100%;
+        z-index: -1;
+      }
+
+      img {
+        mix-blend-mode: luminosity;
+      }
+    }
+  }
+}

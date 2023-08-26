@@ -1,0 +1,94 @@
+@use 'variables' as *;
+
+@mixin mode($mode) {
+
+  .body-container {
+
+    @if ($mode == 'light') {
+      background-color: $lightPink;
+      background-image: url('../../../assets/light/bg-pattern-desktop.svg');
+    } @else {
+      background-color: $lightPurple;
+      background-image: url('../../../assets/dark/bg-pattern-desktop.svg');
+    }
+
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    height: calc(100% - 150px);
+    justify-content: flex-start;
+
+    @media not (max-width: $tablet) {
+      padding: 75px 150px;
+    }
+
+    @media (max-width: $tablet) {
+      height: fit-content;
+    }
+
+    header {
+      align-items: center;
+      display: flex;
+      justify-content: space-between;
+
+      @if ($mode == 'light') {
+        .dark-logo {
+          display: none;
+        }
+      } @else {
+        .light-logo {
+          display: none;
+        }
+      }
+
+      @media (max-width: $tablet) {
+        padding: 10%;
+      }
+    }
+
+    @media not (max-width: $tablet) {
+      .hero-image {
+        display: none;
+      }
+    }
+
+    .hero-image {
+
+      position: relative;
+
+      @if ($mode == 'dark') {
+        &::after {
+          background-color: $lightPurple;
+          content: '';
+          display: block;
+          height: 100%;
+          position: absolute;
+          width: 100%;
+          z-index: -1;
+        }
+      }
+
+      img {
+        width: 100%;
+
+        @if ($mode == 'dark') {
+          mix-blend-mode: luminosity;
+        }
+      }
+    }
+
+  }
+
+}
+
+:host-context(.light) {
+  @include mode('light');
+}
+
+:host-context(.dark) {
+  @include mode('dark');
+}
+
+
+
