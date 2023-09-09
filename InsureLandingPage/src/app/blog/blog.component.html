@@ -1,0 +1,9 @@
+<section class="blog-container">
+  <ng-container *ngFor="let blog of blogs">
+    <mat-card>
+      <mat-card-title>{{ blog.title }}</mat-card-title>
+      <img [src]="blog.image" mat-card-image>
+      <mat-card-footer> {{ blog.date | date: 'YYYY-MM-dd'}}</mat-card-footer>
+    </mat-card>
+  </ng-container>
+</section>

@@ -1,0 +1,14 @@
+<header class="header-container">
+  <img ngSrc="../../../../assets/shared/logo.svg" width="112" height="18" alt="Logo" priority="true" (click)="onClickHome()">
+  <div class="header-menu" *responsiveIf="false">
+    <h6 (click)="onClickWork()">How we work</h6>
+    <h6 (click)="onClickBlog()">Blog</h6>
+    <h6 (click)="onClickAccount()">Account</h6>
+    <h6 (click)="onClickPlans()">View Plans</h6>
+  </div>
+  <div class="header-menu-responsive"
+      *responsiveIf="true"
+      (click)="OnClickMenuResponsive()"
+      [class.opened]="menuResponsiveOpen">
+  </div>
+</header>

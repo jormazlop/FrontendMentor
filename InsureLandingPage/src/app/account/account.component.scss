@@ -1,0 +1,64 @@
+@use 'variables' as *;
+
+.account-container {
+  display: flex;
+  flex-direction: column;
+  padding: 5%;
+
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    margin-top: 45px;
+
+    input {
+      border: 1px solid $almostBlack;
+      border-radius: 18px;
+      font-family: inherit;
+      font-size: 18px;
+      padding: 10px 25px;
+      width: 300px;
+
+      @media (max-width: $mobile) {
+        width: 80%;
+      }
+
+      &:focus {
+        outline: none;
+      }
+    }
+
+    button {
+      color: $white;
+      border: none;
+      border-radius: 25px;
+      background-color: $pink;
+      font-family: inherit;
+      font-weight: 600;
+      margin-top: 25px;
+      padding: 15px;
+      width: 150px;
+
+      &:hover {
+        cursor: pointer;
+      }
+
+      &:active {
+        box-shadow: inset 0px 0px 7px darken($pink, 25);
+      }
+
+      &:disabled {
+
+        background-color: $grey;
+
+        &:hover {
+          cursor: not-allowed;
+        }
+
+        &:active {
+          box-shadow: none;
+        }
+      }
+    }
+  }
+}

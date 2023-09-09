@@ -1,0 +1,16 @@
+<section class="plans-container">
+  <h1>Pricing Table</h1>
+  <p>
+    Whether you're new to insure or using it to run your entire business, there's a plan for you.
+  </p>
+  <div class="plans-list">
+    <ng-container *ngFor="let plan of plans">
+      <app-plan [plan]="plan" (order)="onClickOrder()"/>
+    </ng-container>
+  </div>
+</section>
+
+
+<div class="loading" *ngIf="loading">
+  <mat-spinner></mat-spinner>
+</div>

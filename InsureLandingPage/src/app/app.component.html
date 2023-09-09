@@ -1,0 +1,19 @@
+<div class="app-container">
+  <app-header/>
+
+  <mat-drawer-container [class.menu-opened]="menuResponsiveOpen">
+    <router-outlet/>
+    <mat-drawer mode="push" #drawer class="responsive-drawer">
+      <div class="responsive-container">
+        <h6 (click)="onClickWork()">How we work</h6>
+        <h6 (click)="onClickBlog()">Blog</h6>
+        <h6 (click)="onClickAccount()">Account</h6>
+        <h6 (click)="onClickPlans()">View Plans</h6>
+      </div>
+    </mat-drawer>
+
+    <app-footer />
+  </mat-drawer-container>
+</div>
+
+

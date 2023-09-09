@@ -1,0 +1,20 @@
+@use 'variables' as *;
+
+@font-face {
+  font-family: 'Karla';
+  src: url('./assets/fonts/Karla.ttf') format("opentype");
+}
+
+@font-face {
+  font-family: 'DMSerifDisplay';
+  src: url('./assets/fonts/DMSerifDisplay.ttf') format("opentype");
+}
+
+body {
+  font-family: 'Karla';
+  margin: 0;
+}
+
+.mat-drawer-content {
+  min-height: calc(100vh - 80px);
+}

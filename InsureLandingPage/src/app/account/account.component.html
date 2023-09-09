@@ -1,0 +1,12 @@
+<section class="account-container">
+  <h1>My account</h1>
+  <form [formGroup]="loginForm" (ngSubmit)="loginSubmit()">
+    <label for="name">Name</label>
+    <input type="text" formControlName="name" id="name" placeholder="Name..." maxlength="30">
+    <label for="mail">Mail</label>
+    <input type="text" formControlName="mail" id="mail" placeholder="Mail..." maxlength="30">
+    <label for="password">Password</label>
+    <input type="password" formControlName="password" id="password" placeholder="Password...">
+    <button type="submit" [disabled]="!loginForm.valid">Login</button>
+  </form>
+</section>

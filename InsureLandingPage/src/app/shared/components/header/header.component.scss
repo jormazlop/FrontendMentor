@@ -1,0 +1,66 @@
+@use 'variables' as *;
+
+.header-container {
+  align-items: center;
+  display: flex;
+  height: 30px;
+  justify-content: space-between;
+  padding: 25px 10%;
+
+  img:hover {
+    cursor: pointer;
+  }
+
+  .header-menu {
+    align-items: center;
+    display: flex;
+    gap: 30px;
+
+    h6 {
+      color: $grey;
+      font-size: 13px;
+      font-weight: 500;
+      text-transform: uppercase;
+      transition-duration: 0.5s;
+
+      &:hover {
+        color: $black;
+        cursor: pointer;
+      }
+
+      &:last-of-type {
+        border: 1px solid $black;
+        color: $black;
+        padding: 12px 25px;
+
+        &:hover {
+          background-color: $black;
+          color: $white;
+        }
+      }
+    }
+  }
+
+  .header-menu-responsive {
+    height: 32px;
+    transition-duration: 0.5s;
+    width: 32px;
+
+    &::after {
+      content: '';
+      display: block;
+      height: 100%;
+      background-image: url('../../../../assets/shared/icon-hamburger.svg');
+      width: 100%;
+    }
+
+    &:hover {
+      cursor: pointer;
+      filter: contrast(0.8);
+    }
+
+    &.opened::after {
+      background-image: url('../../../../assets/shared/icon-close.svg');
+    }
+  }
+}

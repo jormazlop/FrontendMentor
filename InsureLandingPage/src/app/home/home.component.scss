@@ -1,0 +1,261 @@
+@use 'variables' as *;
+
+
+.home-component {
+
+  display: flex;
+  flex-direction: column;
+  font-family: 'DMSerifDisplay';
+
+  .home-image-intro-responsive {
+
+    max-height: 550px;
+
+    @media (min-width: $tablet) {
+      display: none;
+    }
+  }
+
+  .home-section-1 {
+    background-color: $almostBlack;
+    color: $white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 500px;
+    padding: 50px 100px;
+    position: relative;
+
+    @media (max-width: $tablet) {
+      align-items: center;
+      padding: 50px 10px;
+      text-align: center;
+    }
+
+    .line {
+      border: 1px solid $white;
+      width: 150px;
+
+      @media (max-width: $tablet) {
+        display: none;
+      }
+    }
+
+    h1 {
+      font-size: 4vw;
+      font-weight: 400;
+      margin: 20px 0;
+
+      @media (max-width: $tablet) {
+        font-size: 10vw;
+      }
+    }
+
+    p {
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 26px;
+      width: 40%;
+
+      @media (max-width: $tablet) {
+        font-size: 18px;
+        width: 90%;
+      }
+    }
+
+    h6 {
+      border: 1px solid $white;
+      color: $white;
+      font-size: 13px;
+      font-weight: 500;
+      padding: 12px 25px;
+      text-transform: uppercase;
+      transition-duration: 0.5s;
+      text-wrap: nowrap;
+      width: min-content;
+
+      &:hover {
+        background-color: $white;
+        color: $almostBlack;
+        cursor: pointer;
+      }
+    }
+
+    @media (max-width: $tablet) {
+
+      &::before {
+        content: '';
+        display: block;
+        background-image: url('../../assets/home/bg-pattern-intro-left-mobile.svg');
+        background-repeat: no-repeat;
+        background-position: 0% 0%;
+        background-size: 100% 100%;
+        left: 0%;
+        position: absolute;
+        top: 0%;
+        height: 35%;
+        width: 50%;
+      }
+
+      &::after {
+        background-image: url('../../assets/home/bg-pattern-intro-right-mobile.svg');
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        content: '';
+        display: block;
+        left: 70%;
+        position: absolute;
+        top: 70%;
+        height: 60%;
+        width: 30%;
+      }
+    }
+
+    @media (min-width: $tablet) {
+
+      &::before {
+        content: '';
+        display: block;
+        background-image: url('../../assets/home/bg-pattern-intro-right-desktop.svg'),
+                          url('../../assets/home/image-intro-desktop.jpg');
+        background-repeat: no-repeat, no-repeat;
+        background-position: 100% 0%, 50% 60%;
+        background-size: 50% 70%, 50% 80%;
+        left: 40%;
+        position: absolute;
+        top: 0%;
+        height: 130%;
+        width: 60%;
+      }
+
+      &::after {
+        background-image: url('../../assets/home/bg-pattern-intro-left-desktop.svg');
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        content: '';
+        display: block;
+        left: 0%;
+        position: absolute;
+        top: 80%;
+        height: 60%;
+        width: 10%;
+      }
+    }
+  }
+
+  .home-section-2 {
+    color: $black;
+    display: flex;
+    flex-direction: column;
+    margin: 200px 150px;
+
+    @media(max-width: $tablet) {
+      margin: 200px 50px;
+    }
+
+    @media(max-width: $mobile) {
+      align-items: center;
+    }
+
+    .line-2 {
+      border: 1px solid $pink;
+      width: 150px;
+    }
+
+    h1 {
+      font-size: 5vw;
+      font-weight: 500;
+      margin: 50px 0;
+
+      @media(max-width: $mobile) {
+        font-size: 48px;
+        text-align: center;
+      }
+    }
+
+    .home-descriptions {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+
+      @media(max-width: $mobile) {
+        align-items: center;
+        flex-direction: column;
+        gap: 50px;
+        text-align: center;
+      }
+
+      .description {
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+        width: 30%;
+
+        @media(max-width: $mobile) {
+          align-items: center;
+          width: 100%;
+        }
+
+        img {
+          height: 86px;
+          width: 86px;
+        }
+
+        h4 {
+          font-size: 28px;
+          margin: 0;
+        }
+
+        p {
+          color: $grey;
+          font-size: 16px;
+          margin: 0;
+        }
+      }
+    }
+  }
+
+  .home-section-3 {
+    align-items: center;
+    background-color: $almostBlack;
+    background-image: url('../../assets/home/bg-pattern-how-we-work-desktop.svg');
+    background-repeat: no-repeat;
+    background-position: 100%;
+    background-size: 50% 100%;
+    color: $white;
+    display: flex;
+    justify-content: space-between;
+    margin: 5%;
+    padding: 5% 10%;
+    width: 70%;
+
+    @media(max-width: $mobile) {
+      flex-direction: column;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 56px;
+      font-weight: 500;
+    }
+
+    h6 {
+      border: 1px solid $white;
+      color: $white;
+      font-size: 13px;
+      font-weight: 500;
+      padding: 12px 25px;
+      text-transform: uppercase;
+      transition-duration: 0.5s;
+      text-wrap: nowrap;
+      width: min-content;
+
+      &:hover {
+        background-color: $white;
+        color: $almostBlack;
+        cursor: pointer;
+      }
+    }
+
+  }
+}
