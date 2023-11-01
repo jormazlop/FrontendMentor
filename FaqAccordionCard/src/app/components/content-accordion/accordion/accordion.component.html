@@ -1,0 +1,12 @@
+<section class="accordion">
+  <div class="accordion-header" [class.opened]="opened" (click)="onOpen()">
+    <ng-content select="[id=header]"></ng-content>
+    <ng-container [ngSwitch]="opened">
+      <img *ngSwitchCase="false" src="../../../../assets/icon-arrow-down.svg" alt="Arrow-Down">
+      <img *ngSwitchCase="true" src="../../../../assets/icon-arrow-up.svg" alt="Arrow-Up">
+    </ng-container>
+  </div>
+  <div class="accordion-body" [class.closed]="!opened">
+    <ng-content select="[id=body]"></ng-content>
+  </div>
+</section>

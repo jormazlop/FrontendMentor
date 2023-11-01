@@ -1,0 +1,63 @@
+@use 'variables' as *;
+
+:host {
+  display: flex;
+  width: 100%;
+  overflow: hidden;
+}
+
+.accordion {
+
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  flex: 1;
+
+  .accordion-header {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+
+    @media (max-width: $mobile) {
+      width: 100%;
+    }
+
+    &:hover {
+      color: #F47B56;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    &.opened {
+      font-weight: bold;
+    }
+
+    img {
+      height: 12px;
+      width: 15px;
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+
+  .accordion-body {
+    display: flex;
+    height: min-content;
+    transition: 0.5s;
+    width: 80%;
+
+    @media (max-width: $mobile) {
+      width: 100%;
+    }
+
+    &.closed {
+      opacity: 0;
+      transform: translateY(50px);
+      height: 0;
+    }
+  }
+
+}

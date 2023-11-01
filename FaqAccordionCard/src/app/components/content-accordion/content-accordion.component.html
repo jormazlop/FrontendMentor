@@ -1,0 +1,8 @@
+<section class="accordion-container">
+  <ng-container *ngFor="let content of contents; let i = index; trackBy: trackByOpened">
+    <app-accordion [opened]="content.opened" (changeOpened)="closeOpened($event, i)">
+      <div id="header">{{ content.header }}</div>
+      <div id="body">{{ content.body }}</div>
+    </app-accordion>
+  </ng-container>
+</section>

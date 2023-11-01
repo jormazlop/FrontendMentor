@@ -1,0 +1,22 @@
+@use 'variables' as *;
+
+:host {
+  display: flex;
+  justify-content: center;
+  width: 50%;
+
+  @media (max-width: $mobile) {
+    width: 80%;
+  }
+}
+
+.accordion-container {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  flex: 1;
+
+  @media (max-width: $mobile) {
+    gap: 50px;
+  }
+}

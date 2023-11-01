@@ -1,0 +1,77 @@
+@use 'variables' as *;
+
+:host {
+  align-items: center;
+  display: flex;
+  height: 100%;
+  position: relative;
+  width: 40%;
+
+  @media (max-width: $mobile) {
+    height: 120px;
+    width: 100%;
+  }
+}
+
+.image-container {
+
+  .image-desktop {
+    position: relative;
+    left: -60px;
+    z-index: 1;
+  }
+
+  .image-mobile {
+    bottom: 70px;
+    left: calc(50% - 40px);
+    position: relative;
+  }
+
+  @media(min-width: $mobile) {
+
+    &::after {
+      background-image: url('../../../assets/bg-pattern-desktop.svg');
+      background-position: -50px 10%;
+      background-repeat: no-repeat;
+      background-size: 100%;
+      content: '';
+      display: flex;
+      height: 100%;
+      position: absolute;
+      top: 0vh;
+      z-index: 0;
+      width: 450px;
+    }
+
+    &::before {
+      background-image: url('../../../assets/illustration-box-desktop.svg');
+      background-repeat: no-repeat;
+      background-size: 100%;
+      content: '';
+      display: flex;
+      height: 150px;
+      position: absolute;
+      left: -55px;
+      top: 23vh;
+      z-index: 2;
+      width: 150px;
+    }
+  }
+
+  @media(max-width: $mobile) {
+    &::before {
+      background-image: url('../../../assets/bg-pattern-mobile.svg');
+      background-repeat: no-repeat;
+      background-size: 100%;
+      content: '';
+      display: flex;
+      height: 100px;
+      position: absolute;
+      left: calc(50% - 110px);
+      top: 0px;
+      z-index: 0;
+      width: 200px;
+    }
+  }
+}
+

@@ -1,0 +1,19 @@
+@import 'bootstrap/scss/bootstrap-reboot';
+@import 'bootstrap/scss/bootstrap-grid';
+@import 'bootstrap/scss/tables';
+@import 'bootstrap/scss/utilities';
+@import 'bootstrap/scss/mixins';
+
+@font-face {
+  font-family: 'KumbhSans';
+  src: url('./fonts/KumbhSans.ttf') format("opentype");
+}
+
+body {
+
+  --main-bg-color: #FFF;
+
+  background: linear-gradient(#B068E9, #6463E7);
+  font-family: 'KumbhSans';
+  height: 100vh;
+}
