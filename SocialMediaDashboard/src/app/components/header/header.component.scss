@@ -1,0 +1,76 @@
+@use "variables" as *;
+
+@mixin header($background, $text, $sub-text) {
+  .header-container {
+    align-items: center;
+    background-color: $background;
+    display: flex;
+    justify-content: space-between;
+
+    .line {
+      display: none;
+    }
+
+    @media(max-width: 767px) {
+      align-items: flex-start;
+      flex-direction: column;
+      gap: 20px;
+      text-align: left;
+
+      .line {
+        color: 	hsl(229, 19%, 59%);
+        display: block;
+        width: 100%;
+      }
+    }
+
+    .header-logo {
+      .header-title {
+        color: $text;
+      }
+
+      .header-followers {
+        color: $sub-text;
+      }
+    }
+
+    .form-switch {
+      align-items: center;
+      display: flex;
+      font-family: "Inter";
+      gap: 10px;
+      padding: 0;
+
+      .form-label {
+        color: $sub-text;
+        margin: 0;
+      }
+
+      .form-check-input {
+
+
+
+        &:hover {
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}
+
+:host-context(.light-mode) {
+  @include header($veryPaleBlue, $veryDarkBlue, $darkGrayishBlue);
+
+  .form-check-input {
+    background: url('../../../assets/light-toggle.svg') no-repeat left center, $toggleLight;
+  }
+}
+
+:host-context(.dark-mode) {
+  @include header($veryDarkBlue, $white, $desaturatedBlue);
+  .form-check-input {
+    background: url('../../../assets/dark-toggle.svg') no-repeat right center, $toggleDark;
+  }
+}
+
+

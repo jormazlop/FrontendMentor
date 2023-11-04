@@ -1,0 +1,25 @@
+@use "variables" as *;
+
+@mixin container($background, $hover-color) {
+  .card {
+    background-color: $background;
+    border-radius: 5px;
+    border: none;
+    border-top: 2px solid $cardBorderFacebook;
+    margin-bottom: 15px;
+    padding: 15px 0;
+
+    &:hover {
+      background-color: $hover-color;
+      cursor: pointer;
+    }
+  }
+}
+
+:host-context(.light-mode) {
+  @include container($lightGrayishBlue, $lightGrayishBlueHover);
+}
+
+:host-context(.dark-mode) {
+  @include container($darkDesaturatedBlue, $darkDesaturatedBlueHover);
+}

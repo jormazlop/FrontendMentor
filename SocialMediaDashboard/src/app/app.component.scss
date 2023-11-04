@@ -1,0 +1,29 @@
+@use "variables" as *;
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  gap: 4%;
+  height: 100%;
+  padding: 2.5% 10%;
+
+  &.dark-mode {
+    background: linear-gradient(
+      to bottom,
+      $veryDarkBlue 0%,
+      $veryDarkBlue 25%,
+      $darkBackground 25%,
+      $darkBackground 100%
+    );
+  }
+
+  &.light-mode {
+    background: linear-gradient(
+      to bottom,
+      $veryPaleBlue 0%,
+      $veryPaleBlue 25%,
+      $lightBackground 25%,
+      $lightBackground 100%
+    );
+  }
+}

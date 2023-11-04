@@ -1,0 +1,24 @@
+<section class="overview-today-container">
+  <h1 class="overview-today-title">Overview - Today</h1>
+  <div class="row">
+    <ng-container *ngFor="let card of cards">
+      <app-card class="col-12 col-md-6 col-lg-3">
+        <div class="card-container">
+          <div class="header">
+            <p>{{ card.section }}</p>
+            <img src="../../../assets/icon-{{card.type}}.svg" alt="card.type">
+          </div>
+          <div class="body">
+            <p>{{ card.quantity | followers }}</p>
+            <div class="card-percentage">
+              <img *ngIf="card.percentage < 0" src="../../../assets/icon-down.svg" alt="Down"/>
+              <img *ngIf="card.percentage >= 0" src="../../../assets/icon-up.svg" alt="Up"/>
+              <h6 [percentage]="card.percentage"></h6>
+            </div>
+
+          </div>
+        </div>
+      </app-card>
+    </ng-container>
+  </div>
+</section>

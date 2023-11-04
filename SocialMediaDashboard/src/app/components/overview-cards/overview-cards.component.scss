@@ -1,0 +1,73 @@
+@use 'variables' as *;
+
+@mixin container($user-color, $follower-color-1) {
+  .overview-cards-container {
+    .card-container {
+      align-items: center;
+      display: flex;
+      flex-direction: column;
+      font-family: "Inter";
+      gap: 25px;
+
+      .card-icon {
+        align-items: center;
+        display: flex;
+        gap: 5px;
+
+        img {
+          height: 20px;
+          width: 20px;
+        }
+
+        p {
+          color: $user-color;
+          font-size: 12px;
+          font-weight: bold;
+          margin: 0;
+        }
+      }
+
+      .card-followers {
+        text-align: center;
+
+        h2 {
+          color: $follower-color-1;
+          font-size: 56px;
+          font-weight: bold;
+        }
+
+        p {
+          color: $user-color;
+          font-size: 12px;
+          letter-spacing: 5px;
+          text-transform: uppercase;
+        }
+      }
+
+      .card-today {
+        align-items: center;
+        display: flex;
+        gap: 5px;
+
+        img {
+          height: 4px;
+          width: 8px;
+        }
+
+        h6 {
+          font-size: 12px;
+          font-weight: bold;
+          margin: 0;
+        }
+      }
+    }
+  }
+}
+
+:host-context(.light-mode) {
+  @include container($darkGrayishBlue, $veryDarkBlue);
+}
+
+:host-context(.dark-mode) {
+  @include container($desaturatedBlue, $white);
+}

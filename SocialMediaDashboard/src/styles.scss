@@ -1,0 +1,20 @@
+@import 'bootstrap/scss/bootstrap-reboot';
+@import 'bootstrap/scss/bootstrap-grid';
+@import 'bootstrap/scss/tables';
+@import 'bootstrap/scss/utilities';
+@import 'bootstrap/scss/mixins';
+
+@font-face {
+  font-family: 'Inter';
+  src: url('./fonts/Inter.ttf') format("opentype");
+}
+
+body {
+  font-family: 'Inter';
+  height: 100vh;
+
+  @media(max-width: 991px) {
+    height: fit-content;
+  }
+}
+
