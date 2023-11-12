@@ -1,0 +1,29 @@
+.app-pofiles-container {
+  height: 100%;
+
+  img {
+    border: 1px solid white;
+    border-radius: 50%;
+  }
+
+  app-profile {
+    animation: fadeReview ease 1s;
+    position: relative;
+
+    @for $i from 1 through 3 {
+      &:nth-child(#{$i}) {
+        top: calc(10% * #{$i - 1});
+      }
+    }
+  }
+}
+
+@keyframes fadeReview {
+  0% {
+      opacity: 0;
+      top: 0%;
+  }
+  100% {
+      opacity: 1;
+  }
+}

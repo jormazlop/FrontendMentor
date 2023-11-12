@@ -1,0 +1,23 @@
+@use 'variables' as *;
+
+.app-review-container {
+  background-color: $review;
+  border-radius: 8px;
+  width: 445px;
+
+  @media(max-width: $lg) {
+    width: 100%;
+  }
+
+  .app-icon-stars {
+    gap: 5px;
+    height: 16px;
+  }
+
+  .app-review-rating {
+    color: $main;
+    font-weight: bold;
+    position: relative;
+    top: 3px;
+  }
+}

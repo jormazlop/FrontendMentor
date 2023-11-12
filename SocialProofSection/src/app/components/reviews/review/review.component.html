@@ -1,0 +1,8 @@
+<div class="app-review-container d-flex justify-content-around align-items-center p-3 flex-sm-row flex-column">
+  <div class="app-icon-stars d-flex">
+    @for(item of [0,1,2,3,4]; track item) {
+      <img src="../../../../assets/icon-star.svg" alt="Star" />
+    }
+  </div>
+  <p class="app-review-rating m-0">Rated 5 Stars in {{ review }}</p>
+</div>

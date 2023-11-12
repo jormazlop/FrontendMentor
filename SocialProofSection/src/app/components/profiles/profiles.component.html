@@ -1,0 +1,7 @@
+<section class="app-pofiles-container row gx-5">
+  @for(profile of profiles; track profile;) {
+      <app-profile class="col-lg-4 col-12 pb-4 pb-lg-0" [name]="profile.name" [description]="profile.description">
+        <img id="profile-image" [src]="profile.image" [alt]="profile.name">
+      </app-profile>
+  }
+</section>

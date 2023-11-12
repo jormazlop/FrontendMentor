@@ -1,0 +1,28 @@
+@use 'variables' as *;
+
+.app-title {
+  animation: fadeTitle ease 1.5s;
+  color: $main;
+  font-size: 56px;
+  font-weight: bold;
+}
+
+
+
+.app-description {
+  animation: fadeTitle ease 1.5s;
+  font-size: 19px;
+  font-weight: normal;
+  color: $description;
+}
+
+@keyframes fadeTitle {
+  0% {
+      opacity: 0;
+  }
+  100% {
+      opacity: 1;
+  }
+}
+
+

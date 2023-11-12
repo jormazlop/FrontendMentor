@@ -1,0 +1,5 @@
+<section class="app-reviews-container d-flex flex-column justify-content-start">
+  @for(review of reviews; track review;) {
+    <app-review [review]="review"/>
+  }
+</section>

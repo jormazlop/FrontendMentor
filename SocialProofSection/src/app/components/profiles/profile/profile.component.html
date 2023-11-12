@@ -1,0 +1,11 @@
+<div class="app-profile-container d-flex flex-column justify-content-around align-items-center px-lg-5 py-lg-2">
+  <div class="app-profile-header d-flex align-items-center pb-5 pb-lg-0">
+    <ng-content select="#profile-image"></ng-content>
+    <p class="m-0">
+      {{ name }}
+      <br/>
+      <span>Verified Buyer</span>
+    </p>
+  </div>
+  <p style="color: white;"> {{ description }} </p>
+</div>

@@ -1,0 +1,26 @@
+@use 'variables' as *;
+
+:host {
+  height: 80%;
+}
+
+.app-profile-container {
+  background-color: $main;
+  border-radius: 8px;
+  height: 100%;
+
+  @media(max-width: $lg) {
+    padding: 5%;
+    text-align: left;
+  }
+
+  .app-profile-header {
+    align-self: flex-start;
+    color: white;
+    gap: 15px;
+
+    span {
+      color: #EE69A4;
+    }
+  }
+}
