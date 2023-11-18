@@ -1,0 +1,59 @@
+@use 'variables' as *;
+@use "sass:map";
+
+$md: map.get($breakpoints, "md");
+$xl: map.get($breakpoints, "xl");
+
+:host {
+  height: 100%;
+}
+
+.body-container {
+  align-items: center;
+  display: flex;
+  gap: 5em;
+  height: 100%;
+
+  @media (max-width: $md) {
+    flex-direction: column;
+    gap: 25px;
+    text-align: center;
+  }
+
+  .body-image {
+    flex: 0 0 auto;
+
+    @media (max-width: $xl) {
+      height: 50%;
+      width: 50%;
+    }
+
+    @media (max-width: $md) {
+      height: 50%;
+      width: 90%;
+    }
+  }
+
+  .body-description {
+    justify-content: space-around;
+    color: oklch(100% 0 0);
+    display: flex;
+    flex-direction: column;
+    height: 50%;
+
+    @media (max-width: $md) {
+      align-items: center;
+    }
+
+    h1 {
+      font-family: 'Poppins';
+      font-weight: 40px;
+    }
+
+    p {
+      font-family: 'OpenSans';
+      font-weight: 18px;
+    }
+
+  }
+}

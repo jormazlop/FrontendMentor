@@ -1,0 +1,19 @@
+.twitter-icon-wrapper {
+  border: 1px solid oklch(100% 0 0);
+  border-radius: 50%;
+  width: fit-content;
+  padding: 5px 8px 8px 8px;
+
+  svg {
+    fill: oklch(100% 0 0);
+  }
+
+  &:hover {
+    border: 1px solid oklch(70.88% 0.2339356616927775 345.29899048787706);
+    cursor: pointer;
+
+    svg {
+      fill: oklch(70.88% 0.2339356616927775 345.29899048787706);
+    }
+  }
+}

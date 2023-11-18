@@ -1,0 +1,14 @@
+@use 'variables' as *;
+@use "sass:map";
+
+$md: map.get($breakpoints, "md");
+
+.app-footer {
+  display: flex;
+  gap: 15px;
+  justify-content: flex-end;
+
+  @media (max-width: $md) {
+    justify-content: center;
+  }
+}

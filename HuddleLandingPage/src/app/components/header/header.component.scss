@@ -1,0 +1,10 @@
+@use 'variables' as *;
+@use "sass:map";
+
+$md: map.get($breakpoints, "md");
+
+@media (max-width: $md) {
+  img {
+    width: 120px;
+  }
+}

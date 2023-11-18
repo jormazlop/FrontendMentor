@@ -1,0 +1,16 @@
+@use 'variables' as *;
+@use "sass:map";
+
+$md: map.get($breakpoints, "md");
+
+.main-page-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 5em;
+
+  @media (max-width: $md) {
+    gap: 25px;
+    padding: 1.5em;
+  }
+}
