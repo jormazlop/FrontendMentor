@@ -1,0 +1,36 @@
+.form-switch {
+
+  align-items: center;
+  display: flex;
+  font-family: 'Montserrat';
+  gap: 10px;
+  padding: 0;
+
+  .form-label {
+    color: oklch(55.9% 0.044 278.52);
+    font-size: 15px;
+    font-weight: bold;
+    margin: 0;
+    opacity: 0.5;
+  }
+
+  .form-check-input {
+
+    height: 1.5em;
+    margin: 0 1em;
+    width: 3em;
+
+    &.annualy {
+      background: url('../../../assets/light-toggle.svg') no-repeat left center, linear-gradient(oklch(75.21% 0.105 280.53), oklch(58.99% 0.166 278.07));
+    }
+
+    &.monthly {
+      background: url('../../../assets/light-toggle.svg') no-repeat right center, linear-gradient(oklch(75.21% 0.105 280.53), oklch(58.99% 0.166 278.07));
+    }
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+}

@@ -1,0 +1,15 @@
+@defer(when plan) {
+  <section [class]="class">
+    <h3 class="p-2">{{ plan.type }}</h3>
+    <h2><span>$</span>{{ plan.price }}</h2>
+    <hr>
+    <p>{{ plan.storage | storage }}</p>
+    <hr>
+    <p>{{ plan.users }} Users Allowed</p>
+    <hr>
+    <p>Send up to {{ plan.send }}Gb</p>
+    <hr>
+    <app-button>Learn More</app-button>
+  </section>
+}
+

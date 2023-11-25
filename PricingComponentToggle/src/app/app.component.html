@@ -1,0 +1,14 @@
+<app-page-container>
+  <app-title>Our Pricing</app-title>
+  <app-toggle/>
+  <div class="plans">
+    @for(plan of plans; track plan.type) {
+      <app-container [plan]="plan"/>
+    } @empty {
+        <ngx-skeleton-loader appearance="line" count="12" animation="progress-dark"></ngx-skeleton-loader>
+        <ngx-skeleton-loader appearance="line" count="12" animation="progress-dark"></ngx-skeleton-loader>
+        <ngx-skeleton-loader appearance="line" count="12" animation="progress-dark"></ngx-skeleton-loader>
+    }
+  </div>
+
+</app-page-container>

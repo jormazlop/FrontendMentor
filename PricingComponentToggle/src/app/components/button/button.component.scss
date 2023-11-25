@@ -1,0 +1,45 @@
+:host {
+
+  --blue: linear-gradient(oklch(75.21% 0.105 280.53), oklch(58.99% 0.166 278.07));
+  --white: oklch(100% 0 0);
+
+  display: contents;
+}
+
+@mixin button($bgColor, $text-color) {
+  background: $bgColor;
+  border: none;
+  border: 1px solid transparent;
+  border-radius: 0.5em;
+  color: $text-color;
+  font-size: 1em;
+  font-weight: bold;
+  padding: 0.5em;
+  width: 100%;
+}
+
+:host-context(.blue) {
+  button {
+    @include button(var(--white), oklch(60.09% 0.161 278.37));
+
+    &:hover {
+      background: oklch(60.09% 0.161 278.37);
+      color: var(--white);
+      border: 1px solid var(--white);
+    }
+  }
+}
+
+:host-context(.white) {
+  button {
+    @include button(var(--blue), var(--white));
+
+
+    &:hover {
+      background: var(--white);
+      color: oklch(58.99% 0.166 278.07);
+      border: 1px solid oklch(58.99% 0.166 278.07);
+    }
+  }
+}
+

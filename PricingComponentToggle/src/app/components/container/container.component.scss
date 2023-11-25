@@ -1,0 +1,61 @@
+@mixin container($bgColor, $textColor) {
+  align-items: center;
+  background: $bgColor;
+  border-radius: 1em;
+  display: flex;
+  flex-direction: column;
+  font-family: 'Montserrat';
+  padding: 1.6em 3em;
+  width: 30vw;
+
+  p {
+    color: $textColor;
+    font-size: 0.9em;
+    font-weight: bold;
+    margin: 1em
+  }
+
+  h3 {
+    @extend p;
+    font-size: 0.8em;
+  }
+
+  h2 {
+    align-items: center;
+    display: flex;
+    color: $textColor;
+    font-size: 3em;
+    font-weight: bold;
+    gap: 0.2em;
+    letter-spacing: -3px;
+
+    span {
+      font-size: 0.6em;
+    }
+  }
+
+  hr {
+    width: 100%;
+  }
+
+  @media(max-width: 1000px) {
+    width: 90vw;
+  }
+}
+
+.blue {
+
+  --blue: linear-gradient(oklch(75.21% 0.105 280.53), oklch(58.99% 0.166 278.07));
+  --text: oklch(100% 0 0);
+
+  @include container(var(--blue), var(--text));
+}
+
+.white {
+
+  --white: oklch(100% 0 0);
+  --text: oklch(55.9% 0.044 278.52);
+
+  @include container(var(--white), var(--text));
+}
+

@@ -1,0 +1,18 @@
+@import 'bootstrap/scss/bootstrap-reboot';
+@import 'bootstrap/scss/bootstrap-grid';
+@import 'bootstrap/scss/tables';
+@import 'bootstrap/scss/utilities';
+@import 'bootstrap/scss/mixins';
+
+@font-face {
+  font-family: 'Montserrat';
+  src: url('./fonts/Montserrat.ttf') format("opentype");
+}
+
+html, body {
+  height: 100%;
+
+  @media(max-width: 1000px) {
+    height: fit-content;
+  }
+}
