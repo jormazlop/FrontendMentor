@@ -1,0 +1,45 @@
+@use 'variables' as *;
+
+.header {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+
+  .header-icons {
+    align-items: center;
+    display: flex;
+    gap: 2em;
+  }
+
+  .header-button {
+    display: none;
+  }
+
+  @media(max-width: $mobile) {
+
+    .header-icons {
+      display: none;
+    }
+
+    .header-button {
+      display: block;
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+
+.modal-content {
+
+  .modal-body {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+    padding: 3em;
+  }
+
+}

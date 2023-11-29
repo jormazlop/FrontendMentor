@@ -1,0 +1,29 @@
+@use 'variables' as *;
+
+.page-template-container {
+  background-image: url('../../../assets/illustration-devices.svg');
+  background-repeat: no-repeat;
+  background-position: 130% 50%;
+  background-size: 60% 50%;
+  height: 100%;
+  padding: 5%;
+  position: relative;
+
+  @media(max-width: $mobile) {
+    background-position: 0% 20%;
+    background-size: 130% 30%;
+  }
+
+  &::after {
+    background-color: $grey;
+    bottom: 50%;
+    border-radius: 0 0 0 50px;
+    content: '';
+    display: block;
+    height: 50%;
+    left: 50%;
+    position: absolute;
+    z-index: -1;
+    width: 50%;
+  }
+}

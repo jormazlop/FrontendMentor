@@ -1,0 +1,31 @@
+<header class="header">
+  <img ngSrc="../../../assets/logo.svg" class="logo" width="32" height="32" alt="Logo" priority>
+  <div class="header-icons">
+    <app-header-icon (click)="onClickOption('Product')">PRODUCT</app-header-icon>
+    <app-header-icon (click)="onClickOption('Features')">FEATURES</app-header-icon>
+    <app-header-icon (click)="onClickOption('Pricing')">PRICING</app-header-icon>
+    <app-header-icon type="secondary" style="pointer-events: none;">&#x25CF;</app-header-icon>
+    <app-header-icon type="secondary">LOGIN</app-header-icon>
+  </div>
+  <div class="header-button">
+    <img src="../../../assets/icon-hamburger.svg" alt="Open-Menu" *ngIf="!menuModal()" (click)="onClickMenu()" data-bs-toggle="modal" data-bs-target="#menuMobile">
+    <img src="../../../assets/icon-close.svg" alt="Close-Menu" *ngIf="menuModal()">
+  </div>
+</header>
+
+
+<!-- Menu Modal -->
+<div class="modal fade" id="menuMobile" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" #menuMobile>
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <div class="modal-body">
+        <app-header-icon (click)="onClickOption('Product')">PRODUCT</app-header-icon>
+        <app-header-icon (click)="onClickOption('Features')">FEATURES</app-header-icon>
+        <app-header-icon (click)="onClickOption('Pricing')">PRICING</app-header-icon>
+        <app-header-icon type="secondary">LOGIN</app-header-icon>
+      </div>
+
+    </div>
+  </div>
+</div>

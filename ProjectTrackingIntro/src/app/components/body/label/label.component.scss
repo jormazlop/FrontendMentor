@@ -1,0 +1,12 @@
+@use 'variables' as *;
+
+.label {
+  background-color: $dark;
+  border-radius: 1em;
+  color: $white;
+  font-size: 0.9em;
+  font-weight: bold;
+  letter-spacing: 0.1em;
+  padding: 0.2em 0.7em;
+  width: fit-content;
+}

@@ -1,0 +1,63 @@
+@use 'variables' as *;
+
+:host {
+  height: 60%;
+  position: absolute;
+  top: 30%;
+  width: 50%;
+
+  @media(max-width: $mobile) {
+    top: 60%;
+    width: 90%;
+  }
+}
+
+.body-container {
+  display: flex;
+  flex-direction: column;
+  font-family: 'BarlowCondensed';
+  gap: 2em;
+
+  .body-title {
+    font-size: 4em;
+    font-weight: bold;
+
+    @media(max-width: $mobile) {
+      font-size: 3em;
+    }
+  }
+
+  .body-subtitle {
+    align-items: center;
+    color: $darkGrey;
+    display: flex;
+    font-size: 1.2em;
+    letter-spacing: 0.3em;
+    gap: 1em;
+
+    @media(max-width: $mobile) {
+      font-size: 1em;
+    }
+  }
+
+  .body-description {
+    color: $dark;
+    font-size: 1.2em;
+    opacity: 0.75;
+  }
+
+  .body-button {
+    align-items: center;
+    display: flex;
+    gap: 1em;
+
+    p {
+      color: $dark;
+      font-size: 1em;
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      margin: 0;
+      opacity: 0.75;
+    }
+  }
+}

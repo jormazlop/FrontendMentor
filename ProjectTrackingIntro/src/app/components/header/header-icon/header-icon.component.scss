@@ -1,0 +1,44 @@
+@use 'variables' as *;
+
+:host {
+  width: fit-content;
+}
+
+@mixin icon($color) {
+  color: $color;
+  font-family: 'BarlowCondensed';
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin: 0;
+  position: relative;
+  width: fit-content;
+
+  &::after {
+    content: '';
+    display: block;
+    height: 1px;
+    position: absolute;
+    transition-duration: 0.4s;
+    width: 0%;
+  }
+
+  &:hover {
+    cursor: pointer;
+    &::after {
+      background-color: $color;
+      content: '';
+      display: block;
+      height: 1px;
+      position: absolute;
+      width: 100%;
+    }
+  }
+}
+
+.primary {
+  @include icon($dark);
+}
+
+.secondary {
+  @include icon($darkGrey);
+}
