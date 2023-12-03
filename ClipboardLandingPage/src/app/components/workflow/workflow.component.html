@@ -1,0 +1,16 @@
+<section class="workflow-container">
+  <h2 class="workflow-title">Supercharge your workflow</h2>
+  <p class="workflow-description">We’ve got the tools to boost your productivity.</p>
+  <div class="workflow-list row">
+    @for(workflow of workflowsItems(); track workflow.title) {
+      <app-workflow-item [workflowItem]="workflow" class="col-{{12/workflowsItems().length}}"/>
+    }
+  </div>
+  <div class="workflow-icons">
+    <img src="../../../assets/logo-google.png" alt="Google">
+    <img src="../../../assets/logo-ibm.png" alt="Ibm">
+    <img src="../../../assets/logo-microsoft.png" alt="Microsoft">
+    <img src="../../../assets/logo-hp.png" alt="HP">
+    <img src="../../../assets/logo-vector-graphics.png" alt="Vector">
+  </div>
+</section>

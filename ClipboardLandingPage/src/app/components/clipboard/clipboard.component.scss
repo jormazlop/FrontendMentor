@@ -1,0 +1,38 @@
+@use 'variables' as *;
+
+.clipboard-container {
+
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+
+  .clipboard-title {
+    color: $darkGrey;
+    font-size: 2rem;
+    font-weight: 600;
+  }
+
+  .clipboard-description {
+    color: $grey;
+    text-align: center;
+    width: 60%;
+  }
+
+  .clipboard-image {
+    padding-top: 2rem;
+    width: 100%;
+  }
+
+  @media(max-width: $responsive) {
+
+    text-align: center;
+
+    .clipboard-title {
+      font-size: 1.6rem;
+    }
+
+    .clipboard-description {
+      font-size: 1rem;
+    }
+  }
+}

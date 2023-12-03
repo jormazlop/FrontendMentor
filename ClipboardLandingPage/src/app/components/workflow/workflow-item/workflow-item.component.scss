@@ -1,0 +1,19 @@
+@use 'variables' as *;
+
+.workflow-item-container {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  text-align: center;
+
+  .workflow-item-title {
+    color: $darkGrey;
+    font-size: 1.5rem;
+    font-weight: 600;
+  }
+
+  .workflow-item-description {
+    color: $grey;
+  }
+}

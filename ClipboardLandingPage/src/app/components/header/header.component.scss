@@ -1,0 +1,49 @@
+@use 'variables' as *;
+
+.header {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  font-family: 'BaiJamjuree';
+  gap: 1.5rem;
+  justify-content: center;
+  text-align: center;
+
+  .header-logo {
+    margin: 2rem 0;
+  }
+
+  .header-title {
+    color: $darkGrey;
+    font-size: 3rem;
+    font-weight: 600;
+  }
+
+  .header-description {
+    color: $grey;
+    font-size: 1.4rem;
+    width: 50%;
+  }
+
+  .header-buttons {
+    display: flex;
+    gap: 2rem
+  }
+
+  @media(max-width: $responsive) {
+
+
+    .header-title {
+      font-size: 2rem;
+    }
+
+    .header-description {
+      font-size: 1rem;
+      width: 100%;
+    }
+
+    .header-buttons {
+      flex-direction: column;
+    }
+  }
+}

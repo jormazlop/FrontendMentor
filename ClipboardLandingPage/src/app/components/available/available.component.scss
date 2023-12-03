@@ -1,0 +1,41 @@
+@use 'variables' as *;
+
+.available {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  font-family: 'BaiJamjuree';
+  gap: 1.5rem;
+  justify-content: center;
+  text-align: center;
+
+  .available-title {
+    color: $darkGrey;
+    font-size: 3rem;
+    font-weight: 600;
+  }
+
+  .available-description {
+    color: $grey;
+    width: 50%;
+  }
+
+  .available-buttons {
+    display: flex;
+    gap: 2rem
+  }
+
+  @media(max-width: $responsive) {
+    .available-title {
+      font-size: 1.6rem;
+    }
+
+    .available-description {
+      font-size: 1rem;
+    }
+
+    .available-buttons {
+      flex-direction: column;
+    }
+  }
+}

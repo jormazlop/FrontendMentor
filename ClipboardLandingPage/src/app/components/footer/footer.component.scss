@@ -1,0 +1,58 @@
+@use 'variables' as *;
+
+:host {
+  display: contents;
+}
+
+.footer {
+  align-items: center;
+  background-color: $lightGrey;
+  display: flex;
+  justify-content: space-between;
+  padding: 5rem;
+  width: 100%;
+
+  .footer-section {
+    color: $darkGrey;
+    display: grid;
+    font-size: 1.2rem;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    width: 50%;
+
+    p:hover {
+      cursor:url('../../../assets/pointer.svg'), auto;
+      color: $green;
+    }
+  }
+
+  .footer-icons {
+    display: flex;
+    gap: 1rem;
+
+    svg:hover {
+      cursor:url('../../../assets/pointer.svg'), auto;
+
+      path {
+        fill: $green;
+      }
+    }
+  }
+
+  @media(max-width: $responsive) {
+    flex-direction: column;
+    gap: 3rem;
+    padding: 3rem 1rem;
+
+    .footer-section {
+      align-items: center;
+      display: flex;
+      flex-direction: column;
+
+      p {
+        text-align: center;
+        width: 100%;
+      }
+    }
+  }
+}

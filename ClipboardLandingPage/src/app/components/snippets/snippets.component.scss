@@ -1,0 +1,105 @@
+@use 'variables' as *;
+
+.snippets-container {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  font-family: 'BaiJamjuree';
+  gap: 3rem;
+
+  .snippets-title {
+    color: $darkGrey;
+    font-size: 2rem;
+    font-weight: 600;
+  }
+
+  .snippets-description {
+    color: $grey;
+    text-align: center;
+    width: 60%;
+  }
+
+  .snippets-main {
+
+    display: flex;
+
+    .snippets-image {
+
+      width: 40%;
+
+      &::before {
+        content: '';
+        display: block;
+        height: 100%;
+        position: absolute;
+        right: 60%;
+        background-image: url('../../../assets/image-computer.png');
+        background-repeat: no-repeat;
+        width: 752px;
+      }
+    }
+
+    .snippets-list {
+      display: flex;
+      flex-direction: column;
+      height: 572px;
+      justify-content: space-around;
+      list-style-type: none;
+      width: 60%;
+
+      .snippets-item {
+
+        h4 {
+          color: $darkGrey;
+          font-size: 1.3rem;
+          font-weight: 600;
+        }
+
+        p {
+          color: $grey;
+          font-size: 1rem;
+        }
+      }
+    }
+  }
+
+  @media(max-width: $responsive) {
+
+    text-align: center;
+
+    .snippets-title {
+      font-size: 1.6rem;
+    }
+
+    .snippets-description {
+      font-size: 1rem;
+    }
+
+    .snippets-main {
+
+      flex-direction: column;
+
+      .snippets-image {
+
+        background-image: url('../../../assets/image-computer.png');
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        height: 500px;
+        margin-bottom: 4rem;
+        width: 100%;
+
+        &::before {
+          display: none;
+        }
+      }
+
+      .snippets-list {
+        gap: 2rem;
+        height: fit-content;
+        padding: 0;
+        text-align: center;
+        width: 100%;
+      }
+    }
+  }
+}
