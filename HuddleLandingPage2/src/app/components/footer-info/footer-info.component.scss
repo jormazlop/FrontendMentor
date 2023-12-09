@@ -1,0 +1,21 @@
+@use 'variables' as *;
+
+.footer-info {
+  display: flex;
+  color: $white;
+  font-family: 'OpenSans';
+  gap: 1rem;
+
+  img {
+    height: 1rem;
+    position: relative;
+    top: 0.2rem;
+    width: 1rem;
+  }
+
+  @media(max-width: $mobile) {
+    img {
+      display: none;
+    }
+  }
+}

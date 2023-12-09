@@ -1,0 +1,65 @@
+@use 'variables' as *;
+
+button {
+  background-color: $white;
+  border-radius: 2rem;
+  border: none;
+  filter: drop-shadow($dropShadow 0.1rem 0.1rem 0.1rem);
+  font-family: 'OpenSans';
+  font-size: 0.8rem;
+  font-weight: bold;
+  padding: 0.8rem 5rem;
+  position: relative;
+
+  span {
+    display: inline-block;
+    min-width: 0.3em;
+    transition: 0.25s cubic-bezier(0.5, -1, 0.5, 2);
+    opacity: 0;
+    transform: translate(0, -20px);
+  }
+
+  &:before {
+    position: absolute;
+    content: attr(data-text);
+    width: 100%;
+    left: 0;
+    transition: 0.25s cubic-bezier(0.5, -1, 0.5, 2);
+    opacity: 1;
+    transform: translate(0, 0px);
+  }
+
+  &:hover {
+
+    span {
+      opacity: 1;
+      transform: translate(0, 0);
+
+      @for $i from 1 to 10 {
+        &:nth-child(#{$i}) {
+          transition-delay: (0.025s * $i);
+        }
+      }
+
+    }
+
+    &::before {
+      opacity: 0;
+      transform: translate(0, 20px);
+    }
+  }
+
+  &:active {
+    box-shadow: inset 1px 1px 1px $grey;
+    transform: translate(1px, 1px);
+  }
+}
+
+.primary {
+  background-color: $pink;
+  color: $white;
+}
+
+.secondary {
+  background-color: $white;
+}

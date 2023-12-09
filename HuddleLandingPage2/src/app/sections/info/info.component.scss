@@ -1,0 +1,61 @@
+@use 'variables' as *;
+
+.info-container {
+  align-items: center;
+  display: flex;
+  font-family: 'OpenSans';
+  justify-content: space-between;
+  padding: 5rem 0;
+
+  .info-main {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    width: 40%;
+
+    h1 {
+      font-family: 'Poppins';
+      color: $veryDarkCyan;
+      font-size: 2.3rem;
+    }
+
+    p {
+      font-weight: 500;
+    }
+  }
+
+  .info-mockups {
+    width: 50%;
+  }
+
+  @media(max-width: $tablet) {
+    flex-direction: column;
+    gap: 3rem;
+    text-align: center;
+
+    .info-main {
+      width: 100%;
+    }
+
+    .info-mockups {
+      width: 100%;
+    }
+
+  }
+
+  @media(max-width: $mobile) {
+    padding: 2rem 0;
+
+    .info-main {
+
+      h1 {
+        font-size: 1.5rem;
+      }
+
+      p {
+        font-size: 0.8rem;
+      }
+    }
+
+  }
+}

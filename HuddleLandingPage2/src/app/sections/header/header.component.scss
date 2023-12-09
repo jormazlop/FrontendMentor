@@ -1,0 +1,12 @@
+@use 'variables' as *;
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+
+  @media(max-width: $mobile) {
+    align-items: center;
+    flex-direction: column;
+    gap: 3rem;
+  }
+}

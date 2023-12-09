@@ -1,0 +1,16 @@
+<div class="footer-info">
+
+  @switch (type) {
+    @case ('location') {
+      <img src="../../../assets/icon-location.svg" alt="Location">
+    }
+    @case ('telephone') {
+      <img src="../../../assets/icon-phone.svg" alt="Telephon">
+    }
+    @case ('email') {
+      <img src="../../../assets/icon-email.svg" alt="Email">
+    }
+  }
+
+  <ng-content></ng-content>
+</div>

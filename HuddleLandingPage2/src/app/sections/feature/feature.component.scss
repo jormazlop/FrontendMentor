@@ -1,0 +1,25 @@
+@use 'variables' as *;
+
+.feature-container {
+  align-items: center;
+  display: flex;
+  box-shadow: $dropShadow 0rem 0rem 1rem 0rem;
+  height: 25rem;
+  justify-content: space-between;
+  padding: 5rem;
+
+  @media(max-width: $tablet) {
+    flex-direction: column;
+    gap: 3rem;
+    height: fit-content;
+
+    &:first-of-type,
+    &:last-of-type {
+      flex-direction: column-reverse;
+    }
+  }
+
+  @media(max-width: $mobile) {
+    padding: 2rem;
+  }
+}

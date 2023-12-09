@@ -1,0 +1,63 @@
+@use 'variables' as *;
+
+.features {
+
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+
+  .feature-text {
+
+    display: flex;
+    flex-direction: column;
+    gap: 1.3rem;
+    width: 50%;
+
+    h1 {
+      font-family: 'Poppins';
+      font-size: 2.2rem;
+    }
+
+    p {
+      color: $grayishBlue;
+      font-family: 'OpenSans';
+    }
+  }
+
+  .feature-image {
+    height: 100%;
+  }
+
+  @media(max-width: $tablet) {
+
+    text-align: center;
+
+    .feature-text {
+      width: 100%;
+    }
+
+    .feature-image {
+      width: 60%;
+    }
+
+  }
+
+  @media(max-width: $mobile) {
+
+    .feature-text {
+      h1 {
+        font-size: 1.5rem;
+      }
+
+      p {
+        font-size: 0.8rem;
+      }
+    }
+
+    .feature-image {
+      width: 100%;
+    }
+  }
+}
+
+
