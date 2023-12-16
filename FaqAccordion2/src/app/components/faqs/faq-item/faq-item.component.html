@@ -1,0 +1,10 @@
+<div class="faq-item-container" (click)="expandAccordeon()">
+  <h2 class="faq-item-title">
+    <ng-content select="[title]"></ng-content>
+    <img src="../../../../assets/icon-plus.svg" alt="Expand" [class.rotate]="expanded()">
+  </h2>
+
+  <p class="faq-item-description" [ngClass]="{'fade-in': expanded(), 'fade-out': !expanded()}">
+    <ng-content select="[description]"></ng-content>
+  </p>
+</div>

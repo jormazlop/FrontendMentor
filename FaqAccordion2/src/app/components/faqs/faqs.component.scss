@@ -1,0 +1,36 @@
+@use 'variables' as *;
+
+:host {
+  display: contents;
+}
+
+.faqs-container {
+  background-color: $white;
+  border-radius: 1rem;
+  color: $darkPurple;
+  font-family: 'WorkSans';
+  height: 70%;
+  padding: 4rem;
+  width: 800px;
+
+  @media(max-width: $mobile) {
+    padding: 2rem;
+    width: 95%;
+  }
+
+  .faqs-accordion {
+    display: flex;
+    flex-direction: column;
+    height: 80%;
+    justify-content: space-around;
+
+    app-faq-item {
+      border-bottom: 1px solid $lightPink;
+      padding-bottom: 1rem;
+
+      &:last-of-type {
+        border-bottom: none;
+      }
+    }
+  }
+}

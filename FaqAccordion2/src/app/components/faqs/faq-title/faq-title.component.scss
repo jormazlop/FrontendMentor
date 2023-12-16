@@ -1,0 +1,53 @@
+@use "variables" as *;
+
+.faq-title {
+
+  align-items: center;
+  display: flex;
+
+  svg {
+
+    height: 5rem;
+    width: 14rem;
+
+    text {
+      text-transform: uppercase;
+      animation: stroke 3s alternate;
+      stroke: $darkPurple;
+      font-size: 4rem;
+      font-weight: bold;
+      fill: $darkPurple;
+
+      @media(max-width: $mobile) {
+        font-size: 2.5rem;
+      }
+    }
+  }
+}
+
+@keyframes stroke {
+  0% {
+    fill: $white;
+    stroke: $darkPurple;
+    stroke-dashoffset: 25%;
+    stroke-dasharray: 0 50%;
+    stroke-width: 2;
+  }
+  70% {
+    fill: $white;
+    stroke: $darkPurple;
+    stroke-width: 2;
+  }
+  80% {
+    fill: $darkPurple;
+    stroke: $darkPurple;
+    stroke-width: 2;
+  }
+  100% {
+    fill: $darkPurple;
+    stroke: $darkPurple;
+    stroke-dashoffset: -25%;
+    stroke-dasharray: 50% 0;
+    stroke-width: 1;
+  }
+}

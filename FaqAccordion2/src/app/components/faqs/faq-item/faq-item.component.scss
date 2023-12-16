@@ -1,0 +1,63 @@
+@use 'variables' as *;
+
+.faq-item-container {
+
+  .faq-item-title {
+    align-items: center;
+    display: flex;
+    font-size: 1.2rem;
+    font-weight: bold;
+    justify-content: space-between;
+    position: relative;
+    z-index: 1;
+
+    @media(max-width: $mobile) {
+      font-size: 1rem;
+    }
+
+    &:hover {
+      cursor: pointer;
+    }
+
+    img {
+
+      transition-duration: 1s;
+
+      &.rotate {
+        transform: rotate(760deg);
+      }
+    }
+
+  }
+
+  .faq-item-description {
+    color: $palePurple;
+    margin: 1rem 0 0 0;
+    transition-duration: 1s;
+
+    @media(max-width: $mobile) {
+      font-size: 0.8rem;
+    }
+
+    &.fade-in {
+      animation: fade-in 1s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+
+    &.fade-out {
+      display: none;
+    }
+  }
+}
+
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+    transform: scale(0);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}

@@ -1,0 +1,12 @@
+<section class="faqs-container">
+  <app-faq-title />
+
+  <div class="faqs-accordion">
+    @for (item of faqItems; track $index) {
+    <app-faq-item [id]="item.id">
+      <div title>{{ item.title }}</div>
+      <div description>{{ item.description }}</div>
+    </app-faq-item>
+    }
+  </div>
+</section>
