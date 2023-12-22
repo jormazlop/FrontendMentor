@@ -1,0 +1,37 @@
+@use 'variables' as *;
+
+
+@mixin twitter-icon($iconColor, $iconHoverColor) {
+  .twitter-icon-wrapper {
+    border: 1px solid $iconColor;
+    border-radius: 50%;
+    width: fit-content;
+    padding: 5px 8px 8px 8px;
+
+    svg {
+      fill: $iconColor;
+    }
+
+    &:hover {
+      border: 1px solid $iconHoverColor;
+      cursor: pointer;
+
+      svg {
+        fill: $iconHoverColor;
+      }
+    }
+  }
+}
+
+
+:host-context(.dark) {
+
+  @include twitter-icon($darkIcon, $darkIconHover);
+
+}
+
+:host-context(.light) {
+
+  @include twitter-icon($lightIcon, $lightIconHover);
+
+}

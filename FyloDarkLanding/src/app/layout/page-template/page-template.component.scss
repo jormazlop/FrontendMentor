@@ -1,0 +1,56 @@
+@use 'variables' as *;
+
+
+:host-context(.dark) {
+
+  .page-template {
+    background: url('../../../assets/dark/dark-bg-curvy-desktop.svg'), linear-gradient($lightDark 55%, $lightDark2 55%, $lightDark2 82%, $darkDark 82%);
+    background-repeat: no-repeat;
+    background-size: 100% 10%, 100% 100%;
+    background-position: 50%;
+    color: $darkTextColor;
+    padding: 5%;
+
+    @media(max-width: $tablet) {
+      background: url('../../../assets/dark/dark-bg-curvy-desktop.svg'), linear-gradient($lightDark 55%, $lightDark2 55%, $lightDark2 80%, $darkDark 80%);
+      background-repeat: no-repeat;
+      background-size: 100% 10%, 100% 100%;
+      background-position: 50%;
+    }
+
+    @media(max-width: $mobile) {
+      background: url('../../../assets/dark/dark-bg-curvy-mobile.svg'), linear-gradient($lightDark 55%, $lightDark2 55%, $lightDark2 78%, $darkDark 78%);
+      background-repeat: no-repeat;
+      background-size: 100% 10%, 100% 100%;
+      background-position: 50%;
+    }
+  }
+
+}
+
+:host-context(.light) {
+  .page-template {
+    background: url('../../../assets/light/light-bg-curvy-desktop.svg'), linear-gradient($lightLight 55%, $lightLight2 55%, $lightLight2 82%, $darkLight 82%);
+    background-repeat: no-repeat;
+    background-size: 100% 10%, 100% 100%;
+    background-position: 50%;
+    color: $lightTextColor;
+    padding: 5%;
+
+    @media(max-width: $tablet) {
+      background: url('../../../assets/light/light-bg-curvy-desktop.svg'), linear-gradient($lightLight 55%, $lightLight2 55%, $lightLight2 80%, $darkLight 80%);
+      background-repeat: no-repeat;
+      background-size: 100% 10%, 100% 100%;
+      background-position: 50%;
+    }
+
+    @media(max-width: $mobile) {
+      background: url('../../../assets/light/light-bg-curvy-mobile.svg'), linear-gradient($lightLight 55%, $lightLight2 55%, $lightLight2 78%, $darkLight 78%);
+      background-repeat: no-repeat;
+      background-size: 100% 10%, 100% 100%;
+      background-position: 50%;
+    }
+  }
+}
+
+

@@ -1,0 +1,72 @@
+@use 'variables' as *;
+
+@mixin header-container($borderColor) {
+  .header-container {
+    align-items: center;
+    display: flex;
+    font-family: 'Raleway';
+    justify-content: space-between;
+    padding-bottom: 5%;
+
+    .header-logo {
+      height: 52px;
+      width: 176px;
+
+      @media(max-width: $mobile) {
+        background-size: 100%;
+        background-repeat: no-repeat;
+        height: 26px;
+        width: 88px;
+      }
+    }
+
+    .header-links {
+      display: flex;
+      gap: 2rem;
+
+      p {
+        margin: 0;
+        position: relative;
+
+        @media(max-width: $mobile) {
+          font-size: 0.8rem;
+        }
+
+        &::after {
+          content: '';
+          display: block;
+          border: 1px solid $borderColor;
+          position: absolute;
+          transition-duration: 0.5s;
+          transform: scale(0);
+          width: 100%;
+        }
+
+        &:hover {
+          cursor: pointer;
+
+          &::after {
+            transform: scale(1);
+          }
+        }
+      }
+    }
+  }
+}
+
+:host-context(.dark) {
+  @include header-container($darkTextColor);
+
+  .header-logo {
+    background-image: url('../../../assets/dark/dark-logo.svg');
+  }
+}
+
+:host-context(.light) {
+  @include header-container($lightTextColor);
+
+  .header-logo {
+    background-image: url('../../../assets/light/light-logo.svg');
+  }
+}
+

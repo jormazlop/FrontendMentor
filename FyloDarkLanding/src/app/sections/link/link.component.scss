@@ -1,0 +1,97 @@
+@use "variables" as *;
+
+@mixin link-container($borderColor) {
+  .link-container {
+    display: flex;
+    font-family: "OpenSans";
+    gap: 10%;
+
+    @media(max-width: $mobile) {
+      flex-direction: column;
+      gap: 2rem;
+      text-align: center;
+    }
+
+    .link-description {
+      align-items: flex-start;
+      display: flex;
+      flex-direction: column;
+      gap: 5%;
+      justify-content: center;
+
+      @media(max-width: $mobile) {
+        align-items: center;
+      }
+
+      h3 {
+        font-family: "Raleway";
+        font-size: 2.3rem;
+        font-weight: bold;
+
+        @media(max-width: $mobile) {
+          font-size: 1.5rem;
+        }
+      }
+
+      a {
+        position: relative;
+
+        &::after {
+          content: "";
+          display: block;
+          height: 1rem;
+          position: absolute;
+          transition-duration: 2s;
+          left: 110%;
+          top: 20%;
+          width: 1rem;
+        }
+
+        &::before {
+          content: '';
+          display: block;
+          border: 1px solid $borderColor;
+          position: absolute;
+          bottom: -0.3rem;
+          width: 120%;
+        }
+
+        &:hover {
+          cursor: pointer;
+
+          &::after {
+            left: 150%;
+            transform: rotate(720deg);
+          }
+        }
+      }
+    }
+
+
+    @media(max-width: $tablet) {
+
+      align-items: center;
+
+      img {
+        height: 200px;
+        width: 200px;
+      }
+    }
+  }
+}
+
+:host-context(.dark) {
+  @include link-container($darkTextColor);
+
+  a::after {
+    background-image: url("../../../assets/dark/dark-icon-arrow.svg");
+  }
+}
+
+:host-context(.light) {
+  @include link-container($lightTextColor);
+
+  a::after {
+    background-image: url("../../../assets/light/light-icon-arrow.svg");
+  }
+}

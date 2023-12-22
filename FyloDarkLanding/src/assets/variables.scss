@@ -1,0 +1,30 @@
+// Dark Theme
+
+$lightDark: oklch(25.46% 0.027 259.98);
+$lightDark2: oklch(23.82% 0.025 261.04);
+$darkDark: oklch(19.47% 0.034 258.28);
+$darkTextColor: oklch(100% 0 0);
+$darkButton: oklch(66.48% 0.116 230.34);
+$darkCardBg: oklch(28.43% 0.036 261.86);
+$darkCardShadow: oklch(0% 0 0);
+$darkIcon: oklch(100% 0 0);
+$darkIconHover: oklch(61.28% 0.112 190.23);
+
+
+// Light Theme
+
+$lightLight: oklch(97.02% 0 0);
+$lightLight2: oklch(90.97% 0 0);
+$darkLight: oklch(84.67% 0 37.06);
+$lightTextColor: oklch(61.28% 0.112 190.23);
+$lightButton: oklch(85.46% 0.027 259.98);
+$lightCardBg: oklch(90.97% 0 0);
+$lightIcon: oklch(61.28% 0.112 190.23);
+$lightIconHover: oklch(28.43% 0.036 261.86);
+
+
+
+// Responsive
+
+$tablet: 1225px;
+$mobile: 625px;
