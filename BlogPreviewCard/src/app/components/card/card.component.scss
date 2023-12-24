@@ -1,0 +1,91 @@
+@use 'variables' as *;
+
+.card-container {
+    background-color: $white;
+    border-radius: 1.2rem;
+    box-shadow: 7px 7px 0px $black;
+    color: $black;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    height: fit-content;
+    padding: 1.5rem;
+    width: 384px;
+
+    @media(max-width: $mobile) {
+        width: 95vw;
+    }
+
+    img {
+        border-radius: 0.6rem;
+        width: 100%;
+    }
+
+    .card-info {
+
+        display: flex;
+        flex-direction: column;
+        gap: 0.8rem;
+
+        .card-label {
+            background-color: $mainYellow;
+            border-radius: 0.2rem;
+            font-size: 0.8rem;
+            font-weight: bold;
+            padding: 0.2rem 0.5rem;
+            width: fit-content;
+
+            @media(max-width: $mobile) {
+                font-size: 0.7rem;
+            }
+        }
+
+        .card-date {
+            font-size: 0.8rem;
+
+            @media(max-width: $mobile) {
+                font-size: 0.7rem;
+            }
+        }
+
+        .card-title {
+            font-size: 1.4rem;
+            font-weight: bold;
+            transition-duration: 0.2s;
+
+            &:hover {
+                color: $mainYellow;
+                cursor: pointer;
+            }
+
+            @media(max-width: $mobile) {
+                font-size: 1rem;
+            }
+        }
+
+        .card-description {
+            color: $grey;
+            font-size: 0.9rem;
+
+            @media(max-width: $mobile) {
+                font-size: 0.8rem;
+            }
+        }
+    }
+
+    .card-profile {
+        align-items: center;
+        display: flex;
+        gap: 1rem;
+
+        img {
+            height: 1.7rem;
+            width: 1.7rem;
+        }
+
+        p {
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
+    }
+}
