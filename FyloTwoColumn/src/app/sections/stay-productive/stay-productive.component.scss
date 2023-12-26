@@ -1,0 +1,30 @@
+@use 'variables' as *;
+
+.stay-productive-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 4rem 5rem;
+
+    .stay-productive-info {
+        color: $darkBlue;
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+        justify-content: center;
+
+        h2 {
+            font-family: 'Raleway';
+            font-size: 2.5rem;
+            font-weight: bold;
+        }
+
+        p {
+            font-family: 'OpenSans';
+            font-weight: 400;
+        }
+    }
+
+    .stay-productive-image {
+        width: 100%;
+    }
+}

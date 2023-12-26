@@ -1,0 +1,7 @@
+@use 'variables' as *;
+
+.main-app-container {
+    background-color: $bgColor;
+    display: flex;
+    flex-direction: column;
+}

@@ -1,0 +1,8 @@
+<header class="header-container">
+    <img src="../../../assets/images/logo.svg" alt="Fylo-Logo">
+    <nav class="header-links">
+        @for(item of navItems; track item.label) {
+            <app-nav-item [dataReplace]="item.label">{{ item.label }}</app-nav-item>
+        }
+    </nav>
+</header>

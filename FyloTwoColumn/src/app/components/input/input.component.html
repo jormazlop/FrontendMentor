@@ -1,0 +1,13 @@
+<div
+  class="input-container"
+  [class.error]="emailControl.dirty && emailControl.invalid">
+  <input
+    type="text"
+    placeholder="Enter your email..."
+    [formControl]="emailControl"/>
+  <button
+    (click)="submitEmail()"
+    [disabled]="emailControl.invalid">
+    Get Started
+  </button>
+</div>

@@ -1,0 +1,55 @@
+@use 'variables' as *;
+
+.input-container {
+    display: grid;
+    font-family: 'OpenSans';
+    gap: 1rem;
+    grid-template-columns: 2fr 1fr;
+    width: 90%;
+
+    input {
+        border-radius: 0.2rem;
+        border: 1px solid $darkBlue;
+        padding: 0.5rem 1rem;
+
+        &::placeholder {
+            color: $grey;
+        }
+
+        &:focus {
+            outline: none;
+        }
+    }
+
+    button {
+        background-color: $blue;
+        border: none;
+        color: $white;
+        filter: drop-shadow(1px 1px 2px $grey);
+        font-family: 'Raleway';
+        font-size: 0.8rem;
+        font-weight: bold;
+        padding: 0 2rem;
+
+        &:active {
+            transform: translate(1px, 1px);
+        }
+
+        &:disabled {
+            background-color: $grey;
+            cursor: not-allowed;
+
+            &:active {
+                transform: none;
+            }
+        }
+
+    }
+
+    &.error {
+
+        input {
+            border: 1px solid $red;
+        }
+    }
+}
