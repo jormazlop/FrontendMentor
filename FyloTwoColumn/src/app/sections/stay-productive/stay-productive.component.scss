@@ -1,9 +1,12 @@
 @use 'variables' as *;
 
 .stay-productive-container {
+    background: url('../../../assets/images/bg-curve-desktop.svg'), linear-gradient($white 12%, $lightBlue 12%);
+    background-repeat: no-repeat;
+    background-size: 100% 12%, 100% 100%;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    padding: 4rem 5rem;
+    padding: 6rem 5rem;
 
     .stay-productive-info {
         color: $darkBlue;

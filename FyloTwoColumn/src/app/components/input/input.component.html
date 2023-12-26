@@ -1,5 +1,5 @@
 <div
-  class="input-container"
+  class="input-container" [class.column]="column"
   [class.error]="emailControl.dirty && emailControl.invalid">
   <input
     type="text"
@@ -8,6 +8,6 @@
   <button
     (click)="submitEmail()"
     [disabled]="emailControl.invalid">
-    Get Started
+    <ng-content></ng-content>
   </button>
 </div>

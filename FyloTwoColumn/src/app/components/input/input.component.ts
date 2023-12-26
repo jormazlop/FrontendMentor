@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Attribute, Component, Input, booleanAttribute } from '@angular/core';
 import { FormControl, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Notyf } from 'notyf';
 
@@ -10,6 +10,8 @@ import { Notyf } from 'notyf';
   styleUrl: './input.component.scss'
 })
 export class InputComponent {
+
+  @Input({transform: booleanAttribute}) column: boolean = false;
 
   emailControl = new FormControl('', Validators.compose([Validators.required, Validators.email]));
 

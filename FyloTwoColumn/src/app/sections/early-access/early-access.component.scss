@@ -1,0 +1,22 @@
+@use 'variables' as *;
+
+.early-access-container {
+    background-color: $middleBlue;
+    color: $white;
+    display: grid;
+    font-family: 'Raleway';
+    gap: 10%;
+    grid-template-columns: 1fr 1fr;
+    padding: 4rem 5rem;
+
+    .early-access-info {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+
+        h2 {
+            font-size: 2rem;
+            font-weight: bold;
+        }
+    }
+}
