@@ -1,3 +1,29 @@
 <footer class="footer-container">
-    
+  <img
+    src="../../../assets/images/footer-logo.svg"
+    alt="Logo"
+    class="footer-logo"
+  />
+  <div class="footer-sections">
+    <div class="footer-contact">
+      <div class="footer-phone">
+        <img src="../../../assets/images/icon-phone.svg" alt="Phone" />
+        <p>Phone: +1-543-123-4567</p>
+      </div>
+      <div class="footer-email">
+        <img src="../../../assets/images/icon-email.svg" alt="Email" />
+        <p>example&#64;fylo.com</p>
+      </div>
+    </div>
+
+    <div class="footer-links">
+      @for(link of footerLinks; track link) {
+      <p class="footer-link">{{ link }}</p>
+      }
+    </div>
+
+    <div class="footer-icons">
+        <app-facebook-icon/>
+    </div>
+  </div>
 </footer>

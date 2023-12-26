@@ -2,5 +2,41 @@
 
 .footer-container {
     background-color: $darkBlue;
+    color: $white;
+    font-family: 'OpenSans';
     padding: 4rem 5rem;
+
+    .footer-logo {
+        margin-bottom: 3rem;
+    }
+
+    .footer-sections {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+
+        .footer-contact {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+
+            .footer-phone,
+            .footer-email {
+                align-items: center;
+                display: flex;
+                gap: 1rem;
+            }
+        }
+
+        .footer-links {
+            display: grid;
+            gap: 1rem;
+            grid-template-columns: 1fr 1fr;
+
+            .footer-link {
+
+            }
+        }
+
+
+    }
 }

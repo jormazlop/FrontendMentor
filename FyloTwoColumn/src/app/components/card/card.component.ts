@@ -8,6 +8,4 @@ import { Component, ViewEncapsulation } from '@angular/core';
   styleUrl: './card.component.scss',
   encapsulation: ViewEncapsulation.ShadowDom
 })
-export class CardComponent {
-
-}
+export class CardComponent {}
