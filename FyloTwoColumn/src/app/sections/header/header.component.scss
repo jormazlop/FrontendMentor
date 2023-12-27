@@ -1,19 +1,43 @@
+@use "variables" as *;
+
 .header-container {
-    align-items: center;
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  padding: 4rem 5rem;
+
+  .header-links {
     display: flex;
-    justify-content: space-between;
-    padding: 4rem 5rem;
+    gap: 7rem;
+
+    p {
+      width: fit-content;
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+
+  @media (max-width: $tablet) {
+
+    padding: 2rem;
+
+    img {
+      width: 5rem;
+    }
 
     .header-links {
-        display: flex;
-        gap: 7rem;
-
-        p {
-            width: fit-content;
-
-            &:hover {
-                cursor: pointer;
-            }
-        }
+      gap: 1rem;
     }
+  }
+
+  @media (max-width: $mobile) {
+
+    justify-content: center;
+
+    img {
+      display: none;
+    }
+  }
 }

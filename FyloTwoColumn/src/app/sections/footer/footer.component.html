@@ -18,15 +18,23 @@
 
     <div class="footer-links">
       @for(link of footerLinks; track link) {
-
-      <app-footer-link>{{ link }}</app-footer-link>
+      <app-footer-link
+        [popper]="popperLink"
+        [popperTrigger]="trigger"
+        [popperHideOnScroll]="true"
+        [popperHideOnMouseLeave]="true"
+        [popperPlacement]="placement">{{ link }}</app-footer-link>
       }
     </div>
 
     <div class="footer-icons">
-        <app-facebook-icon/>
-        <app-twitter-icon/>
-        <app-instagram-icon/>
+      <app-facebook-icon />
+      <app-twitter-icon />
+      <app-instagram-icon />
     </div>
   </div>
 </footer>
+
+<popper-content #popperLink>
+  <p>Coming Soon!</p>
+</popper-content>

@@ -28,4 +28,33 @@
         width: 100%;
     }
 
+    @media (max-width: $tablet) {
+      align-items: center;
+      display: flex;
+      flex-direction: column-reverse;
+      gap: 2rem;
+      text-align: center;
+      padding: 2rem;
+
+      .getting-started-image {
+        width: 50%;
+      }
+
+      .getting-started-info {
+        h2 {
+          font-size: 1.5rem;
+        }
+
+        p {
+          font-size: 0.8rem;
+        }
+      }
+    }
+
+    @media (max-width: $mobile) {
+      .getting-started-image {
+        width: 100%;
+      }
+    }
+
 }

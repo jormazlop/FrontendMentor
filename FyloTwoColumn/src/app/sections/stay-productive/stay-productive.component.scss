@@ -30,4 +30,43 @@
     .stay-productive-image {
         width: 100%;
     }
+
+    @media (max-width: $tablet) {
+
+      align-items: center;
+      background: url('../../../assets/images/bg-curve-mobile.svg'), linear-gradient($white 12%, $lightBlue 12%);
+      background-repeat: no-repeat;
+      background-size: 100% 12%, 100% 100%;
+      display: flex;
+      flex-direction: column-reverse;
+      gap: 2rem;
+      text-align: center;
+      padding: 2rem;
+
+      .stay-productive-image {
+        width: 50%;
+      }
+
+      .stay-productive-info {
+
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+
+        h2 {
+          font-size: 1.5rem;
+        }
+
+        p {
+          font-size: 0.8rem;
+        }
+      }
+
+    }
+
+    @media (max-width: $mobile) {
+      .stay-productive-image {
+        width: 100%;
+      }
+    }
 }

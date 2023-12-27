@@ -63,4 +63,38 @@
             border: 1px solid $red;
         }
     }
+
+    @media (max-width: $tablet) {
+      align-items: center;
+      display: flex;
+      flex-direction: column;
+
+      input {
+        width: 80%;
+      }
+
+      button {
+        padding: 1rem;
+        width: 80%;
+      }
+
+      &.column button {
+        padding: 1rem;
+        width: 80%;
+      }
+    }
+
+    @media (max-width: $mobile) {
+      input {
+        width: 100%;
+      }
+
+      button {
+        width: 100%;
+      }
+
+      &.column button {
+        width: 100%;
+      }
+    }
 }
