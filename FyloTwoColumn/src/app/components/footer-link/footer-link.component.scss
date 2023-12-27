@@ -1,133 +1,50 @@
 @use 'variables' as *;
 
-$thick : 1px;
-$pad : 0.2rem;
-$extra : calc(#{$pad} * 2);
-$color : $violet;
-
-
-.portfolio-experiment {
-  
-  a {
-    color: $white;
-    padding: $pad $extra;
-    display: inline-block;
-    border: $thick solid transparent;
-    position: relative;
-    cursor: pointer;
-    letter-spacing: 0.07em;
-
-    .text {
-      font-family: 'OpenSans';
-      transform: translate3d(0,$pad,0);
-      display: block;
-      transition: transform 0.4s cubic-bezier(.2,0,0,1) 0.4s;
-    }
-
-    &:after {
-      position: absolute;
-      content: '';
-      bottom: -$thick;
-      left: $extra;
-      right: $extra;
-      height: $thick;
-      background: $color;
-      transition: 
-        transform 0.4s cubic-bezier(1,0,.37,1) 0.2s,
-        right 0.2s cubic-bezier(.04,.48,0,1) 0.6s,
-        left 0.4s cubic-bezier(.04,.48,0,1) 0.6s;
-      transform-origin: left;
-    }
-
+.underline {
+  text-decoration: none;
+  color: $white;
+  position: relative;
+  span {
+      background: linear-gradient(0deg, $violet 0%, $violet 100%);
+      background-position: 100% 100%;
+      background-repeat: no-repeat;
+      background-size: var(--background-size, 100%) 1px;
+      transition: background-size .2s linear var(--background-delay, .15s);
+      font-size: 16px;
+      line-height: 20px;
+      transform: translateZ(0);
   }
-
-  .line {
-    position: absolute;
-    background: $color;
-
-    &.-right,
-    &.-left {
-      width: $thick;
-      bottom: -$thick;
-      top: -$thick;
-      transform: scale3d(1,0,1);
-    }  
-
-    &.-top,
-    &.-bottom {
-      height: $thick;
-      left: -$thick;
-      right: -$thick;
-      transform: scale3d(0,1,1);
-    }
-
-    &.-right {
-      right: -$thick;
-      transition: transform 0.1s cubic-bezier(1,0,.65,1.01) 0.23s;
-      transform-origin: top;
-    }
-
-    &.-top {
-      top: -$thick;
-      transition: transform 0.08s linear 0.43s;
-      transform-origin: left;
-    }
-
-    &.-left {
-      left: -$thick;
-      transition: transform 0.08s linear 0.51s;
-      transform-origin: bottom;
-    }
-
-    &.-bottom {
-      bottom: -$thick;
-      transition: transform 0.3s cubic-bezier(1,0,.65,1.01);
-      transform-origin: right;
-    }  
+  svg {
+      vertical-align: top;
+      display: inline;
+      width: 13px;
+      height: 20px;
+      position: relative;
+      left: -2px;
+      top: 2px;
+      fill: none;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      stroke-width: 1px;
+      stroke: $violet;
+      stroke-dasharray: 7.95 30;
+      stroke-dashoffset: var(--stroke-dashoffset, 46);
+      transition: stroke-dashoffset var(--stroke-duration, .15s) var(--stroke-easing, linear) var(--stroke-delay, 0s);
   }
+  &:hover {
+      --background-size: 0%;
+      --background-delay: 0s;
+      --stroke-dashoffset: 26;
+      --stroke-duration: .3s;
+      --stroke-easing: cubic-bezier(.3, 1.5, .5, 1);
+      --stroke-delay: .195s;
+  }
+}
 
-  a:hover,
-  a:active {
-
-    .text {
-      transform: translate3d(0,0,0);
-      transition: transform 0.6s cubic-bezier(.2,0,0,1) 0.4s;
-    }
-
-    &:after {
-      transform: scale3d(0,1,1);
-      right: -$thick;
-      left: -$thick;
-      transform-origin: right;
-      transition: 
-        transform 0.2s cubic-bezier(1,0,.65,1.01) 0.17s,
-        right 0.2s cubic-bezier(1,0,.65,1.01),
-        left 0s 0.3s;
-    }
-
-    .line {
-      transform: scale3d(1,1,1);
-
-      &.-right {
-        transition: transform 0.1s cubic-bezier(1,0,.65,1.01) 0.2s;
-        transform-origin: bottom;
-      }
-
-      &.-top {
-        transition: transform 0.08s linear 0.4s;
-        transform-origin: right;
-      }
-
-      &.-left {
-        transition: transform 0.08s linear 0.48s;
-        transform-origin: top;
-      }
-
-      &.-bottom {
-        transition: transform 0.5s cubic-bezier(0,.53,.29,1) 0.56s;
-        transform-origin: left;
-      }
-    }
-
+* {
+  box-sizing: inherit;
+  &:before,
+  &:after {
+      box-sizing: inherit;
   }
 }
