@@ -32,6 +32,7 @@
       transition: stroke-dashoffset var(--stroke-duration, .15s) var(--stroke-easing, linear) var(--stroke-delay, 0s);
   }
   &:hover {
+    cursor: pointer;
       --background-size: 0%;
       --background-delay: 0s;
       --stroke-dashoffset: 26;
