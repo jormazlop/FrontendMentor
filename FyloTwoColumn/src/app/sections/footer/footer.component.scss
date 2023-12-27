@@ -31,10 +31,12 @@
             display: grid;
             gap: 1rem;
             grid-template-columns: 1fr 1fr;
+        }
 
-            .footer-link {
-
-            }
+        .footer-icons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
         }
 
 

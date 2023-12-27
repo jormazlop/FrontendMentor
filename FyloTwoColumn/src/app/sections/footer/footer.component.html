@@ -18,12 +18,15 @@
 
     <div class="footer-links">
       @for(link of footerLinks; track link) {
-      <p class="footer-link">{{ link }}</p>
+
+      <app-footer-link>{{ link }}</app-footer-link>
       }
     </div>
 
     <div class="footer-icons">
         <app-facebook-icon/>
+        <app-twitter-icon/>
+        <app-instagram-icon/>
     </div>
   </div>
 </footer>
