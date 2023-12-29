@@ -1,0 +1,81 @@
+@use "variables" as *;
+
+.grow-together-container {
+  background: url('../../../assets/bg-section-top-desktop-1.svg'),
+  url('../../../assets/bg-section-bottom-desktop-1.svg'),
+  linear-gradient($white 20%, $bgBlue 20%, $bgBlue 80%, $white 80%);
+  background-repeat: no-repeat, no-repeat;
+  background-size: 100% 20%, 100% 20%, 100% 100%;
+  background-position: 0% 0%, 0% 100%;
+
+  color: $black;
+  display: flex;
+  gap: 10%;
+  justify-content: center;
+  padding: 10rem 4rem;
+
+  @media(max-width: $tablet) {
+    padding: 10rem 2rem;
+  }
+
+  @media(max-width: $mobile) {
+
+    background: url('../../../assets/bg-section-top-mobile-1.svg'),
+    url('../../../assets/bg-section-bottom-mobile-1.svg'),
+    linear-gradient($white 20%, $bgBlue 20%, $bgBlue 80%, $white 80%);
+    background-repeat: no-repeat, no-repeat;
+    background-size: 100% 20%, 100% 20%, 100% 100%;
+    background-position: 0% 0%, 0% 100%;
+
+
+    align-items: center;
+    flex-direction: column-reverse;
+    gap: 2rem;
+    padding: 10rem 1rem;
+    text-align: center;
+  }
+
+  .grow-together-info {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    justify-content: center;
+    width: 40%;
+
+    h2 {
+      font-family: "Poppins";
+      font-size: 2.5rem;
+      font-weight: bold;
+    }
+
+    p {
+      font-family: "OpenSans";
+    }
+
+    @media(max-width: $tablet) {
+      h2 {
+        font-size: 2rem;
+      }
+    }
+
+    @media(max-width: $mobile) {
+      h2 {
+        font-size: 1.8rem;
+      }
+
+      p {
+        font-size: 0.8rem;
+      }
+
+      width: 90%;
+    }
+  }
+
+  img {
+    width: 30%;
+
+    @media(max-width: $mobile) {
+      width: 90%;
+    }
+  }
+}

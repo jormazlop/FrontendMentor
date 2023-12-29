@@ -1,0 +1,9 @@
+<div class="footer-subscribe" [class.error]="emailControl.dirty && emailControl.invalid">
+  <input type="text" [formControl]="emailControl">
+  <button [disabled]="emailControl.invalid">
+    <span><span>Subscribe</span></span>
+  </button>
+</div>
+<div class="email-error" *ngIf="emailControl.dirty && emailControl.invalid">
+  <span><span>Check your email please</span></span>
+</div>

@@ -1,0 +1,67 @@
+@use 'variables' as *;
+
+.flowing-conversations-container {
+  color: $black;
+  display: flex;
+  gap: 10%;
+  justify-content: center;
+  padding: 3rem 4rem;
+
+  @media(max-width: $tablet) {
+    padding: 3rem 2rem;
+  }
+
+  img {
+    width: 30%;
+  }
+
+  @media(max-width: $mobile) {
+
+    align-items: center;
+    flex-direction: column;
+    gap: 2rem;
+
+    padding: 3rem 1rem;
+    text-align: center;
+
+    img {
+      width: 90%;
+    }
+  }
+
+  .flowing-conversations-info {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    justify-content: center;
+    width: 40%;
+
+    h2 {
+      font-family: 'Poppins';
+      font-size: 2.5rem;
+      font-weight: bold;
+    }
+
+    p {
+      font-family: 'OpenSans';
+    }
+
+    @media(max-width: $tablet) {
+      h2 {
+        font-size: 2rem;
+      }
+    }
+
+    @media(max-width: $mobile) {
+      h2 {
+        font-size: 1.8rem;
+      }
+
+      p {
+        font-size: 0.8rem;
+      }
+
+      width: 90%;
+    }
+  }
+}
