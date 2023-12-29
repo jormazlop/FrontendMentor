@@ -1,6 +1,6 @@
 <div class="footer-subscribe" [class.error]="emailControl.dirty && emailControl.invalid">
   <input type="text" [formControl]="emailControl">
-  <button [disabled]="emailControl.invalid">
+  <button [disabled]="emailControl.invalid" (click)="sendMail()">
     <span><span>Subscribe</span></span>
   </button>
 </div>

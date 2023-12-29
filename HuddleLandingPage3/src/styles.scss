@@ -42,3 +42,18 @@ html, body {
 h2, p {
   margin: 0;
 }
+
+.modal-dialog {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+
+
+  .modal-content {
+    height: 300px;
+    width: 300px;
+  }
+
+}
+

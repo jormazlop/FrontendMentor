@@ -41,9 +41,12 @@
     font-weight: bold;
     color: $white;
 
+    @media (max-width: $tablet) {
+      width: fit-content;
+    }
+
     @media (max-width: $mobile) {
       align-self: flex-end;
-      width: fit-content;
     }
 
     &::before,

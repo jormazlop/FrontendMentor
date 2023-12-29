@@ -1,6 +1,8 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
-import { FormControl, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
+import { Component, inject } from '@angular/core';
+import { FormControl, ReactiveFormsModule, Validators } from '@angular/forms';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { SuccessDialogComponent } from '../success-dialog/success-dialog.component';
 
 @Component({
   selector: 'app-footer-input',
@@ -10,5 +12,12 @@ import { FormControl, FormsModule, ReactiveFormsModule, Validators } from '@angu
   styleUrl: './footer-input.component.scss'
 })
 export class FooterInputComponent {
-  emailControl = new FormControl('', Validators.compose([Validators.required, Validators.email]))
+
+  modalService = inject(NgbModal);
+  emailControl = new FormControl('', Validators.compose([Validators.required, Validators.email]));
+
+  sendMail(): void {
+    this.emailControl.reset();
+    this.modalService.open(SuccessDialogComponent);
+  }
 }

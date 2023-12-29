@@ -1,5 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { HeaderButtonComponent } from '../../components/header-button/header-button.component';
+import { ErrorDialogComponent } from '../../components/error-dialog/error-dialog.component';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-header',
@@ -9,5 +11,11 @@ import { HeaderButtonComponent } from '../../components/header-button/header-but
   styleUrl: './header.component.scss'
 })
 export class HeaderComponent {
+
+  modalService = inject(NgbModal);
+
+  onClickButton() {
+    this.modalService.open(ErrorDialogComponent);
+  }
 
 }

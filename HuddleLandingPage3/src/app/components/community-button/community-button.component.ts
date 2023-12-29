@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'app-community-button',
@@ -9,4 +9,9 @@ import { Component } from '@angular/core';
 })
 export class CommunityButtonComponent {
 
+  @Output() getStarted = new EventEmitter<null>;
+
+  onClickButton(): void {
+    this.getStarted.emit();
+  }
 }
