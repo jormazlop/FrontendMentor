@@ -1,0 +1,13 @@
+@use 'variables' as *;
+
+:host {
+  display: contents;
+}
+
+img {
+  border-radius: 0.75rem;
+
+  @media(max-width: $mobile) {
+    width: 100%;
+  }
+}

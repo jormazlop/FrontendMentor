@@ -1,0 +1,10 @@
+@use 'variables' as *;
+
+.app-main-container {
+  align-items: center;
+  background-color: $eggshell;
+  display: flex;
+  height: 100%;
+  justify-content: center;
+
+}

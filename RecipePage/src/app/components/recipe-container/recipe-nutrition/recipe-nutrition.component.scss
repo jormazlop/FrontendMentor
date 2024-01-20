@@ -1,0 +1,38 @@
+@use 'variables' as *;
+
+.recipe-nutrition {
+  h2 {
+    color: $brandyRed;
+    font-family: 'YoungSerif';
+  }
+
+  p {
+    color: $wengeBrown;
+    font-family: 'Outfit';
+  }
+
+  table {
+    color: $wengeBrown;
+    display: table;
+    font-family: 'Outfit';
+    margin: 2rem;
+    table-layout: fixed;
+    width: calc(100% - 5rem);
+
+    td {
+      border-bottom: 1px solid $whiteCoffee;
+      padding: 0.75rem 0;
+
+      strong {
+        color: $brandyRed;
+      }
+    }
+
+    tr:last-of-type {
+      td {
+        border: none;
+      }
+
+    }
+  }
+}

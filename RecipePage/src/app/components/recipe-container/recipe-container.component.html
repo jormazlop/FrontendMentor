@@ -1,0 +1,35 @@
+<section class="recipe-container">
+  @defer (on viewport) {
+  <app-recipe-image />
+  } @placeholder {
+  <div class="spinner primary"></div>
+  } @defer (on viewport) {
+  <app-recipe-title />
+  } @placeholder {
+  <div class="spinner primary"></div>
+  } @defer (on viewport) {
+  <app-recipe-preparation />
+  } @placeholder {
+  <div class="spinner primary"></div>
+  } @defer (on viewport) {
+  <app-recipe-ingredients />
+  } @placeholder {
+  <div class="spinner primary"></div>
+  } @defer (on viewport) {
+  <app-recipe-divider />
+  } @placeholder {
+  <div class="spinner primary"></div>
+  } @defer (on viewport) {
+  <app-recipe-instructions />
+  } @placeholder {
+  <div class="spinner primary"></div>
+  } @defer (on viewport) {
+  <app-recipe-divider />
+  } @placeholder {
+  <div class="spinner primary"></div>
+  } @defer (on viewport) {
+  <app-recipe-nutrition />
+  } @placeholder {
+  <div class="spinner primary"></div>
+  }
+</section>

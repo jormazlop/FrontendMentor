@@ -1,0 +1,40 @@
+@import "bootstrap/scss/bootstrap-reboot";
+@import "bootstrap/scss/bootstrap-grid";
+@import "bootstrap/scss/tables";
+@import "bootstrap/scss/utilities";
+@import "bootstrap/scss/mixins";
+
+@font-face {
+  font-family: "Outfit";
+  src: url("./assets/fonts/outfit/Outfit-VariableFont_wght.ttf")
+    format("opentype");
+}
+
+@font-face {
+  font-family: "YoungSerif";
+  src: url("./assets/fonts/young-serif/YoungSerif-Regular.ttf")
+    format("opentype");
+}
+
+html,
+body {
+  font-size: 16px;
+  height: fit-content;
+
+  @media (max-width: 768px) {
+    font-size: 15px;
+  }
+
+  @media (max-width: 500px) {
+    font-size: 12px;
+  }
+}
+
+p {
+  margin: 0;
+}
+
+h1,
+h2 {
+  width: fit-content;
+}

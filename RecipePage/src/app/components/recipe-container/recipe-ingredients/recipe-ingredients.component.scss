@@ -1,0 +1,23 @@
+@use 'variables' as *;
+
+.recipe-ingredients {
+
+  h2 {
+    color: $brandyRed;
+    font-family: 'YoungSerif';
+  }
+
+  ul {
+    font-family: 'Outfit';
+    color: $wengeBrown;
+
+    li {
+      margin: 0.8rem;
+      padding-left: 1rem;
+
+      &::marker {
+        color: $brandyRed;
+      }
+    }
+  }
+}

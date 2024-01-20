@@ -1,0 +1,43 @@
+@use "variables" as *;
+
+.recipe-container {
+  background-color: $white;
+  border-radius: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin: 7.6875rem 0;
+  padding: 2.5rem;
+  width: 46rem;
+
+  @media (max-width: $mobile) {
+    margin: 0;
+    width: 100%;
+  }
+
+  .spinner {
+    position: relative;
+    left: 45%;
+  }
+  .spinner {
+    display: inline-block;
+    margin: 0.5rem;
+    border: 0.25rem solid $snow;
+    border-left: 0.25rem solid $darkRaspberry;
+    border-radius: 50%;
+    width: 1.25rem;
+    height: 1.25rem;
+    animation: spin 1.2s linear infinite;
+
+    @keyframes spin {
+      0% {
+        transform: rotate(0deg);
+      }
+
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+  }
+}
+

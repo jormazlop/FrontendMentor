@@ -1,0 +1,6 @@
+@use 'variables' as *;
+
+.recipe-divider {
+  border: 1px solid $whiteCoffee;
+  width: 100%;
+}

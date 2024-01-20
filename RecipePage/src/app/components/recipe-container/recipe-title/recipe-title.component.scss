@@ -1,0 +1,16 @@
+@use 'variables' as *;
+
+.recipe-title {
+
+
+
+  h1 {
+    font-family: 'YoungSerif';
+    color: $darkCharcoal;
+  }
+
+  p {
+    font-family: 'Outfit';
+    color: $wengeBrown;
+  }
+}
