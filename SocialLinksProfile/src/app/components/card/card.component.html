@@ -1,0 +1,12 @@
+<section class="card-container">
+  <img src="./assets/images/avatar-jessica.jpeg" alt="Jessica">
+  <div class="card-title">
+    <h2 class="card-name">Jessica Randall</h2>
+    <p class="card-localisation">London, United Kingdom</p>
+  </div>
+  <p class="card-description">"Front-end developer and avid reader."</p>
+  @for(button of buttons(); track button) {
+    <app-card-button>{{ button }}</app-card-button>
+  }
+
+</section>

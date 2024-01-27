@@ -1,0 +1,48 @@
+@use 'variables' as *;
+
+button {
+  background-color: $grey;
+  border: none;
+  border-radius: 0.5rem;
+  color: $white;
+  font-weight: bold;
+  line-height: 2.5rem;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  transition-property: color;
+  transition-duration: 0.4s;
+  width: 19rem;
+
+  span {
+    position: absolute;
+    width: 25%;
+    height: 100%;
+    background-color: $neonGreen;
+    transform: translateY(150%);
+    border-radius: 50%;
+    left: calc((var(--n) - 1) * 25%);
+    transition-property: transform;
+    transition-duration: 0.4s;
+    transition-delay: calc((var(--n) - 1) * 0.1s);
+    z-index: -1;
+
+    @for $i from 1 through 4 {
+      &:nth-child(#{$i}) {
+        --n: #{$i};
+      }
+    }
+  }
+
+  &:hover {
+    color: $grey;
+
+    span {
+      transform: translateY(0) scale(2);
+    }
+  }
+
+  &:active {
+    transform: translate(0.05rem, 0.05rem);
+  }
+}
