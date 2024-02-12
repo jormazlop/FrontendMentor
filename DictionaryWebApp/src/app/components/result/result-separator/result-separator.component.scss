@@ -1,0 +1,31 @@
+@use 'variables' as *;
+
+@mixin resultSeparator($textColor, $borderColor) {
+  .result-separator {
+
+    align-items: center;
+    display: flex;
+    gap: 1.5rem;
+    justify-content: space-between;
+
+    p {
+      color: $textColor;
+    }
+
+    .separator {
+      border: 1px solid $borderColor;
+      height: 1px;
+      width: 100%;
+    }
+  }
+}
+
+:host-context(.light) {
+  @include resultSeparator($dark3, $light3);
+}
+
+:host-context(.dark) {
+  @include resultSeparator($light4, $dark4);
+}
+
+

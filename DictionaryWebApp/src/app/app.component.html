@@ -1,0 +1,22 @@
+<main
+  class="main-container"
+  [style.font-family]="font()"
+  [ngClass]="{ dark: mode(), light: !mode() }"
+>
+  <app-header />
+  <form [formGroup]="formGroup">
+    <app-search-input
+      formControlName="searchControl"
+      (search)="onClickSearch()"
+    />
+  </form>
+
+  @if(loading$()) {
+  <app-spinner />
+  } @else { @if(wordResult$() && !error$()) {
+  <app-result [word]="wordResult$()" />
+  } @if(error$()) {
+  <app-no-result />
+  }
+  }
+</main>

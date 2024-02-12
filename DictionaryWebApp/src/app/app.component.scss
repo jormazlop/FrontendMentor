@@ -1,0 +1,30 @@
+@use 'variables' as *;
+
+.main-container {
+  display: flex;
+  flex-direction: column;
+  height: fit-content;
+  gap: 3.2rem;
+  min-height: 100vh;
+  padding: 3rem 18rem;
+
+  @media(max-width: $tablet) {
+    padding: 3rem 10rem;
+  }
+
+  @media(max-width: $mobileBig) {
+    padding: 3rem 5rem;
+  }
+
+  @media(max-width: $mobileSmall) {
+    padding: 3rem 2rem;
+  }
+
+  &.light {
+    background-color: $light4;
+  }
+
+  &.dark {
+    background-color: $dark1;
+  }
+}

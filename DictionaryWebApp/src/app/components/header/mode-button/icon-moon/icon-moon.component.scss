@@ -1,0 +1,14 @@
+@use 'variables' as *;
+
+:host-context(.light) {
+  path {
+    stroke: $light1;
+  }
+}
+
+:host-context(.dark) {
+  path {
+    stroke: $purple;
+  }
+}
+

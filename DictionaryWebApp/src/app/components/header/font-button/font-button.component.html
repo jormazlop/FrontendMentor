@@ -1,0 +1,8 @@
+<menu class="dropdown">
+  <span class="dropdown-value">{{ modeService.font() | font }} <img class="dropdown-arrow" src="/assets/images/icon-arrow-down.svg" alt="Arrow"></span>
+  <div class="dropdown-content">
+    @for(font of fontOptions(); track font) {
+      <p [font]="font" (click)="onClickFont(font)"> {{ font | font }}</p>
+    }
+  </div>
+</menu>

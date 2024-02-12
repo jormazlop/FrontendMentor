@@ -1,0 +1,51 @@
+@use 'variables' as *;
+
+@mixin input($bgColor, $textColor) {
+  .input-container {
+    display: flex;
+    position: relative;
+
+    input {
+      background-color: $bgColor;
+      border: 1px solid transparent;
+      border-radius: 8px;
+      color: $textColor;
+      padding: 0.8rem 4rem 0.8rem 1.25rem;
+      width: 100%;
+
+      &:focus {
+        border: 1px solid $purple;
+        outline: none;
+      }
+
+      &.error {
+        border: 1px solid $red;
+      }
+
+
+    }
+
+    img {
+      position: absolute;
+      right: 1.5rem;
+      top: 1rem;
+
+      &:hover {
+        cursor: pointer;
+        transform: scale(1.1);
+      }
+    }
+  }
+
+  .error {
+    color: $red;
+  }
+}
+
+:host-context(.light) {
+  @include input($light3, $dark3);
+}
+
+:host-context(.dark) {
+  @include input($dark2, $light4);
+}

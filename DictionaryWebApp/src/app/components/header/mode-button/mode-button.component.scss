@@ -1,0 +1,28 @@
+@use 'variables' as *;
+
+.form-switch {
+  align-items: center;
+  display: flex;
+  font-family: none;
+  gap: 1rem;
+
+  .form-check-input {
+    --bs-form-switch-bg: url("/assets/images/icon-circle-mode-button.svg");
+    background-color: $light1;
+    border: 1px solid $light1;
+    box-shadow: none;
+
+    &:checked {
+      background-color: $purple;
+      border: 1px solid $purple;
+    }
+  }
+
+  input:hover {
+    cursor: pointer;
+  }
+
+  .form-check-label {
+    pointer-events: none;
+  }
+}

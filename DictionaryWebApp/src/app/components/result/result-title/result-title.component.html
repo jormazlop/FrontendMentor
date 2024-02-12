@@ -1,0 +1,10 @@
+<div class="result-title-container">
+  <div class="result-title-word">
+    <h1>{{ word() }}</h1>
+    <p>{{ phonetic().text }}</p>
+  </div>
+
+  @if(phonetic().audio) {
+  <img src="../../../assets/images/icon-play.svg" alt="Play-Audio" (click)="onClickAudio()"/>
+  }
+</div>

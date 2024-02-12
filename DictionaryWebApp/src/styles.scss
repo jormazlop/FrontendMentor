@@ -1,0 +1,47 @@
+@import "bootstrap/scss/bootstrap-reboot";
+@import "bootstrap/scss/bootstrap-grid";
+@import "bootstrap/scss/tables";
+@import "bootstrap/scss/utilities";
+@import "bootstrap/scss/mixins";
+@import "variables";
+
+@font-face {
+  font-family: "monospace";
+  src: url("./assets/fonts/inconsolata/Inconsolata.ttf") format("opentype");
+}
+
+@font-face {
+  font-family: "sans serif";
+  src: url("./assets/fonts/inter/Inter.ttf") format("opentype");
+}
+
+@font-face {
+  font-family: "serif";
+  src: url("./assets/fonts/lora/Lora.ttf") format("opentype");
+}
+
+@font-face {
+  font-family: "serif";
+  src: url("./assets/fonts/lora/Lora-Italic.ttf") format("opentype");
+  font-style: italic;
+}
+
+
+html,
+body {
+  font-size: 16px;
+  height: fit-content;
+  min-height: 100vh;
+
+  @media(max-width: $mobileBig) {
+    font-size: 14px;
+  }
+
+  @media(max-width: $mobileSmall) {
+    font-size: 12px;
+  }
+}
+
+main p {
+  margin: 0;
+}

@@ -1,0 +1,7 @@
+<section class="result-container">
+  <app-result-title [word]="word()?.word" [phonetics]="word()?.phonetics"/>
+  <app-result-meaning [meanings]="word()?.meanings"/>
+  @if (word()?.sourceUrls?.length) {
+    <app-result-source [sourceUrls]="word()?.sourceUrls"/>
+  }
+</section>

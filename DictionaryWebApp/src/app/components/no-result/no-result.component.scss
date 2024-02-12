@@ -1,0 +1,38 @@
+@use 'variables' as *;
+
+
+@mixin noResult($textColor) {
+  .no-result-container {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    justify-content: center;
+    text-align: center;
+
+    img {
+      padding: 2rem 0;
+      width: 4rem;
+    }
+
+    strong {
+      color: $textColor;
+    }
+
+    p {
+      color: $light1;
+    }
+
+  }
+}
+
+
+
+
+:host-context(.light) {
+  @include noResult($dark3);
+}
+
+:host-context(.dark) {
+  @include noResult($light4);
+}

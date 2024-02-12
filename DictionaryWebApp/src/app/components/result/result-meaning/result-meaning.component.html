@@ -1,0 +1,24 @@
+@for(meaning of meanings(); track meaning.partOfSpeech) {
+<div class="meaning-container">
+  <app-result-separator [partOfSpeech]="meaning.partOfSpeech" />
+  <p>Meaning</p>
+  <ul>
+    @for(definition of meaning.definitions; track definition.definition) {
+    <li>{{ definition.definition }}</li>
+    @if(definition.example) {
+    <p>{{ definition.example | example }}</p>
+    } }
+  </ul>
+  @if(meaning.synonyms.length) {
+  <div class="synonims">
+    <span>Synonims</span>
+    @for(synonim of meaning.synonyms; track synonim) {
+      <span class="synonim" (click)="onClick(synonim)">{{ synonim }}</span>
+    }
+
+  </div>
+  }
+</div>
+}
+
+<app-result-separator />

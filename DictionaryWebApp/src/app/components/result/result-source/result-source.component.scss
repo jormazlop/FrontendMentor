@@ -1,0 +1,34 @@
+@use 'variables' as *;
+
+@mixin source($textColor) {
+  .source-container {
+
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+
+    p {
+      color: $light1;
+    }
+
+    span {
+      color: $textColor;
+      text-decoration: underline;
+    }
+
+    img:hover {
+      cursor: pointer;
+      transform: scale(1.1);
+    }
+  }
+}
+
+
+
+:host-context(.light) {
+  @include source($light1);
+}
+
+:host-context(.dark) {
+  @include source($light4);
+}

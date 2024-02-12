@@ -1,0 +1,45 @@
+@use 'variables' as *;
+
+@mixin resultTitle($titleColor) {
+  .result-title-container {
+
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+
+    .result-title-word {
+      display: flex;
+      flex-direction: column;
+
+      h1 {
+        color: $titleColor;
+        font-size: 3rem;
+        font-weight: bold;
+      }
+
+      p {
+        color: $purple;
+      }
+    }
+
+    img {
+      width: 3rem;
+
+      &:hover {
+        cursor: pointer;
+        transform: scale(1.1);
+      }
+    }
+
+  }
+}
+
+
+
+:host-context(.light) {
+  @include resultTitle($dark3);
+}
+
+:host-context(.dark) {
+  @include resultTitle($light4);
+}

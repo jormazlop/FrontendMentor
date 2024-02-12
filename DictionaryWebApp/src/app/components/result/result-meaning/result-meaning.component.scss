@@ -1,0 +1,58 @@
+@use "variables" as *;
+
+@mixin meaningContainer($textColor) {
+  .meaning-container {
+    .synonims {
+      display: flex;
+      gap: 1rem;
+      padding-bottom: 1.5rem;
+
+      .synonim:hover {
+        cursor: pointer;
+        text-decoration: underline;
+      }
+    }
+
+    p {
+      color: $light1;
+      padding: 2rem 0 1rem;
+    }
+
+    span {
+      color: $purple;
+
+      &:first-of-type {
+        color: $light1;
+      }
+
+      &:not(:first-of-type) {
+        font-weight: bold;
+      }
+    }
+
+    ul {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+
+      li {
+        color: $textColor;
+        &::marker {
+          color: $purple;
+        }
+      }
+
+      p {
+        padding: 0;
+      }
+    }
+  }
+}
+
+:host-context(.light) {
+  @include meaningContainer($dark3);
+}
+
+:host-context(.dark) {
+  @include meaningContainer($light4);
+}

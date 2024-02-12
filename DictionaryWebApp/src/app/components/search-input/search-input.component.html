@@ -1,0 +1,21 @@
+<div class="input-container">
+  <input
+    type="text"
+    [class.error]="ngControl?.invalid && ngControl?.dirty"
+    [(ngModel)]="innerValue"
+    (ngModelChange)="changeInput()"
+  />
+
+  @if(ngControl?.valid) {
+    <img
+    src="/assets/images/icon-search.svg"
+    alt="Search"
+    (click)="onClickSearch()"
+  />
+  }
+
+</div>
+
+@if(ngControl?.invalid && ngControl?.dirty) {
+<p class="error">Whoops, can’t be empty…</p>
+}
