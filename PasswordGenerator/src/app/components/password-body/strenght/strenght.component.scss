@@ -1,0 +1,64 @@
+@use 'variables' as *;
+
+.password-strength-container {
+  align-items: center;
+  background-color: $veryDarkGrey;
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 1.5rem;
+  width: 100%;
+
+  .password-strength-title {
+    color: $grey;
+    font-size: 1.125rem;
+  }
+
+  .password-difficulty {
+    display: flex;
+    gap: 1rem;
+
+    p {
+      color: $almostWhite;
+      font-size: 1.25rem;
+    }
+
+    .password-difficulty-boxes {
+      align-items: center;
+      display: flex;
+      gap: 0.3rem;
+
+      .password-difficulty-box {
+        border: 1px solid $almostWhite;
+        height: 70%;
+        padding: 0.2rem;
+      }
+
+      @mixin boxColor($color, $nbBoxes) {
+        @for $i from 1 through $nbBoxes {
+          .password-difficulty-box:nth-child(#{$i}) {
+            background-color: $color;
+          }
+        }
+
+      }
+
+      &.too-weak {
+        @include boxColor($red, 1);
+      }
+
+      &.weak {
+        @include boxColor($orange, 2);
+      }
+
+      &.medium {
+        @include boxColor($yellow, 3);
+      }
+
+      &.strong {
+        @include boxColor($neonGreen, 4);
+      }
+    }
+  }
+}
+
+

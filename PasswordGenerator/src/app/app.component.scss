@@ -1,0 +1,17 @@
+@use 'variables' as *;
+
+.main-container {
+  align-items: center;
+  background-color: $veryDarkGrey;
+  display: flex;
+  flex-direction: column;
+  font-family: "JetBrains";
+  gap: 1.5rem;
+  height: 100%;
+  justify-content: center;
+
+  .title {
+    color: $grey;
+    font-size: 1.5rem;
+  }
+}

@@ -1,0 +1,5 @@
+<div class="stepper-container">
+  <p>Character Length</p>
+  <span>{{ ngControl?.value }}</span>
+</div>
+<ngx-slider [value]="value" [options]="options" (valueChange)="onValueChange($event)"></ngx-slider>

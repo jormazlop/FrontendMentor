@@ -1,0 +1,6 @@
+<div class="checkbox-container">
+  <input type="checkbox" (change)="onChangeValue()" [(ngModel)]="value" [id]="id">
+  @if (label()) {
+    <label [for]="id"> {{ label() }} </label>
+  }
+</div>

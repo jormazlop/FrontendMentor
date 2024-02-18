@@ -1,0 +1,17 @@
+@use 'variables' as *;
+
+.stepper-container {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+
+  p {
+    color: $almostWhite;
+    font-size: 1.125rem;
+  }
+
+  span {
+    color: $neonGreen;
+    font-size: 2rem;
+  }
+}

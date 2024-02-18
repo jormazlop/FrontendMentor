@@ -1,0 +1,12 @@
+<div class="password-strength-container">
+  <p class="password-strength-title">STRENGTH</p>
+  <div class="password-difficulty">
+    <p>{{ difficulty$() }}</p>
+    <div class="password-difficulty-boxes" [ngClass]="boxClass">
+      <div class="password-difficulty-box"></div>
+      <div class="password-difficulty-box"></div>
+      <div class="password-difficulty-box"></div>
+      <div class="password-difficulty-box"></div>
+    </div>
+  </div>
+</div>

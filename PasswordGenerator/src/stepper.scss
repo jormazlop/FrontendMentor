@@ -1,0 +1,45 @@
+@use "variables" as *;
+
+app-stepper .ngx-slider {
+
+  .ngx-slider-bar {
+    background-color: $veryDarkGrey;
+    height: 0.5rem;
+    position: relative;
+    bottom: 0.8rem;
+
+    @media(max-width: $tablet) {
+      bottom: 1.05rem;
+    }
+
+    @media(max-width: $mobileSmall) {
+      bottom: 1.6rem;
+    }
+
+    @media(max-width: $mobileVerySmall) {
+      bottom: 2.3rem;
+    }
+  }
+
+  .ngx-slider-selection {
+    background-color: $neonGreen;
+  }
+}
+
+app-stepper .ngx-slider-selection-bar {
+  visibility: visible !important;
+}
+
+app-stepper .ngx-slider .ngx-slider-pointer {
+  background-color: $almostWhite;
+  height: 1.8rem;
+  width: 1.8rem;
+
+  &::after {
+    display: none;
+  }
+
+  &:focus-visible {
+    outline: none;
+  }
+}
