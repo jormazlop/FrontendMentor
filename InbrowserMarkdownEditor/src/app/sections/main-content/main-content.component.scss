@@ -1,0 +1,9 @@
+.main-container {
+
+  transition: 0.5s;
+
+  &.sidenav-open {
+    margin-left: 10rem;
+  }
+
+}

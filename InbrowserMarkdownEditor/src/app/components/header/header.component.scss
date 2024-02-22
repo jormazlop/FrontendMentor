@@ -1,0 +1,17 @@
+@use 'variables' as *;
+
+.header {
+  align-items: center;
+  background-color: $var700;
+  display: flex;
+  font-family: "Roboto";
+  gap: 1.5rem;
+  width: 100%;
+  padding: 1rem;
+
+  .header-separator {
+    border: 1px solid $var600;
+    padding: 0.8rem 0;
+  }
+
+}
