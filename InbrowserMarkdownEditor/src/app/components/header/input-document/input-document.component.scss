@@ -48,6 +48,7 @@
     p {
       color: $var100;
       text-overflow: ellipsis;
+      text-wrap: nowrap;
       width: 8rem;
       overflow: hidden;
     }
