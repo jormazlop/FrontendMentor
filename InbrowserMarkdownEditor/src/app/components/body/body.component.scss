@@ -1,0 +1,35 @@
+@use 'variables' as *;
+
+:host {
+  display: contents;
+}
+
+.body-container {
+  display: flex;
+  height: 100%;
+
+  .body-separator {
+    background-color: $var300;
+    height: 100%;
+    width: 1px;
+  }
+
+  app-markdown,
+  app-preview {
+    transition-duration: 0.5s;
+    width: 50%;
+  }
+
+  &.preview {
+
+    app-markdown {
+      transform: scale(0);
+      transform-origin: top left;
+      width: 0%;
+    }
+
+    app-preview {
+      width: 100%;
+    }
+  }
+}

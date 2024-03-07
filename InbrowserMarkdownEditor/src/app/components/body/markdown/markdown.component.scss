@@ -1,0 +1,46 @@
+@use 'variables' as *;
+
+@mixin markdown($color1, $color2, $color3, $color4) {
+  .markdown-container {
+
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+
+    .markdown-header {
+      background-color: $color1;
+      height: 2.4rem;
+      padding: 0.5rem 1rem;
+
+      p {
+        color: $color2;
+        font-size: 0.9rem;
+        font-weight: bold;
+        letter-spacing: 0.2rem;
+      }
+    }
+
+    .markdown-content {
+      background-color: $color4;
+      border: none;
+      color: $color3;
+      height: 100%;
+      padding: 1rem;
+      resize: none;
+      width: 100%;
+
+      &:focus {
+        outline: none;
+      }
+    }
+  }
+}
+
+
+:host-context(.light) {
+  @include markdown($var200, $var500, $var700, $var100);
+}
+
+:host-context(.dark) {
+  @include markdown($var900, $var400, $var400, $var1000);
+}

@@ -1,0 +1,40 @@
+@use 'variables' as *;
+@import "bootstrap/dist/css/bootstrap.min.css";
+
+.form-switch {
+  align-items: center;
+  display: flex;
+  font-family: none;
+  gap: 1rem;
+  padding: 0;
+
+  input:hover {
+    cursor: pointer;
+  }
+
+  %form-switch {
+    --bs-form-switch-bg: url("/assets/images/icon-circle-mode-button.svg");
+    background-color: $var600;
+    border: 1px solid $var600;
+    box-shadow: none;
+  }
+
+  .form-check-input {
+    float: none;
+    margin: 0;
+
+    @extend %form-switch;
+
+    &:checked, &:focus {
+      @extend %form-switch;
+    }
+
+  }
+
+  .form-check-label {
+    pointer-events: none;
+  }
+
+}
+
+

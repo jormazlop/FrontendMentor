@@ -1,6 +1,31 @@
 <header class="header">
-  <app-menu-button/>
-  <img src="../../../assets/images/logo.svg" alt="Logo">
-  <div class="header-separator"></div>
-  <app-input-document/>
+  <div class="header-left">
+    <app-menu-button />
+    <img class="header-logo" src="assets/images/logo.svg" alt="Logo" />
+    <div class="header-separator"></div>
+    <app-input-document />
+  </div>
+  <div class="header-right">
+    <img
+      #deleteButton
+      src="assets/images/icon-delete.svg"
+      alt="Delete"
+      class="delete-button"
+      (click)="openConfirmationDialog()"
+    />
+    <app-save-button />
+  </div>
 </header>
+
+<ngx-smart-modal #confirmationDialog identifier="myModal">
+  <div class="dialog-body">
+    <h1 class="dialog-title">Delete this document?</h1>
+    <p class="dialog-body">
+      Are you sure you want to delete the ‘{{ document$().name }}’ document and
+      its contents? This action cannot be reversed.
+    </p>
+    <div>
+      <button (click)="onClickDeleteDocument()">Confirm & Delete</button>
+    </div>
+  </div>
+</ngx-smart-modal>

@@ -1,0 +1,5 @@
+<section class="body-container" [class.preview]="preview$()">
+  <app-markdown [(ngModel)]="content" (ngModelChange)="onDocContentChange($event)"/>
+  <div class="body-separator"></div>
+  <app-preview [preview]="content()"/>
+</section>

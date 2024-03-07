@@ -1,3 +1,4 @@
-<main class="main-container" [class.sidenav-open]="sidenav$()">
+<main class="main-container" [class.sidenav-open]="sidenav$()" [ngClass]="{'light': mode$(), 'dark': !mode$()}">
   <app-header/>
+  <app-body/>
 </main>

@@ -1,3 +1,23 @@
 <nav class="sidenav-menu" [class.sidenav-open]="sidenav$()">
-  AAA
+  <div class="sidenav-documents">
+    <div class="sidenav-header">
+      <h2 class="sidenav-title">MY DOCUMENTS</h2>
+      <app-menu-button />
+    </div>
+    <app-new-document-button />
+    <div class="documents-list">
+      @for(doc of documents$(); track doc.id) {
+      <div class="document-item" (click)="loadDocument(doc.id)">
+        <img src="../../../assets/images/icon-document.svg" alt="Document" />
+        <div class="document-info">
+          <p class="document-date">
+            {{ doc.createdAt | date : "dd MMMM YYYY" }}
+          </p>
+          <p class="document-name">{{ doc.name }}</p>
+        </div>
+      </div>
+      }
+    </div>
+  </div>
+  <app-mode-button />
 </nav>

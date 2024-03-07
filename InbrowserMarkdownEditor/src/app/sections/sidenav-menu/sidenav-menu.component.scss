@@ -1,15 +1,87 @@
+@use "variables" as *;
+
 .sidenav-menu {
+  background-color: $var900;
+  display: flex;
+  flex-direction: column;
   height: 100%;
-  width: 0px;
-  position: fixed;
-  z-index: 1;
-  top: 0;
+  justify-content: space-between;
   left: 0;
-  background-color: #111;
-  overflow-x: hidden;
+  position: fixed;
+  transform: scaleX(0);
+  transform-origin: left;
   transition: 0.5s;
+  width: var(--sidenav-space);
+
+  :nth-child(n) {
+    transform: scale(0);
+    transform-origin: left;
+    transition: 0.5s;
+  }
+
+  .sidenav-documents {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+
+    .sidenav-header {
+
+      align-items: center;
+      display: flex;
+      justify-content: space-between;
+
+      .sidenav-title {
+        color: $var500;
+        font-size: 0.8rem;
+      }
+    }
+
+    .documents-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      overflow-x: hidden;
+      overflow-y: auto;
+      height: 75vh;
+    }
+
+
+    .document-item {
+      align-items: center;
+      display: flex;
+      gap: 1rem;
+      transition: transform 0s;
+
+      &:hover {
+        cursor: pointer;
+        transform: scale(1.1);
+      }
+
+      .document-info {
+        display: flex;
+        flex-direction: column;
+
+        .document-date {
+          color: $var500;
+        }
+
+        .document-name {
+          color: $var100;
+          max-width: 11rem;
+          text-overflow: ellipsis;
+          overflow: hidden;
+        }
+      }
+
+    }
+  }
 
   &.sidenav-open {
-    width: 10rem;
+    padding: 2rem 1.5rem;
+    transform: scaleX(1);
+
+    :nth-child(n) {
+      transform: scale(1);
+    }
   }
 }

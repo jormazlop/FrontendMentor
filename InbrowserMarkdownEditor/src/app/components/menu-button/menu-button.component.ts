@@ -1,5 +1,5 @@
 import { Component, inject } from '@angular/core';
-import { SidenavService } from '../../../services/sidenav.service';
+import { SidenavService } from '../../services/sidenav.service';
 
 @Component({
   selector: 'app-menu-button',
@@ -9,6 +9,7 @@ import { SidenavService } from '../../../services/sidenav.service';
   styleUrl: './menu-button.component.scss'
 })
 export class MenuButtonComponent {
+
   sidenavService = inject(SidenavService);
   sidenav$ = this.sidenavService.sidenav$;
 

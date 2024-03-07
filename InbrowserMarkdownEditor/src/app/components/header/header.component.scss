@@ -1,17 +1,108 @@
-@use 'variables' as *;
+@use "variables" as *;
 
-.header {
-  align-items: center;
-  background-color: $var700;
-  display: flex;
-  font-family: "Roboto";
-  gap: 1.5rem;
-  width: 100%;
-  padding: 1rem;
+@mixin header($color1, $color2, $color3) {
+  .header {
+    align-items: center;
+    background-color: $var700;
+    display: flex;
+    font-family: "Roboto";
+    justify-content: space-between;
+    width: 100%;
+    padding: 1rem;
 
-  .header-separator {
-    border: 1px solid $var600;
-    padding: 0.8rem 0;
+    .header-left {
+      align-items: center;
+      display: flex;
+      gap: 1.5rem;
+
+      .header-logo {
+        width: 8rem;
+      }
+
+      @media (max-width: $tablet) {
+        .header-logo,
+        .header-separator {
+          display: none;
+        }
+      }
+    }
+
+    .header-right {
+      align-items: center;
+      display: flex;
+      gap: 1.5rem;
+
+      .delete-button {
+
+        height: 1.2rem;
+        width: 1.1rem;
+
+        &:hover {
+          cursor: pointer;
+          transform: scale(1.1);
+        }
+
+        &:active {
+          transform: scale(0.9);
+        }
+      }
+    }
+
+    .header-separator {
+      border: 1px solid $var600;
+      padding: 0.8rem 0;
+    }
   }
 
+  .dialog-body {
+    align-items: center;
+    background-color: $color1;
+    border: none;
+    display: flex;
+    flex-direction: column;
+    font-family: "RobotoSlab";
+    justify-content: center;
+    padding: 2rem;
+    text-align: center;
+
+    .dialog-title {
+      color: $color2;
+      font-size: 1.25rem;
+      font-weight: bold;
+    }
+
+    .dialog-body {
+      color: $color3;
+      font-size: 0.875rem;
+    }
+
+    button {
+      align-items: center;
+      background-color: $orange;
+      border: none;
+      border-radius: 8px;
+      color: $var100;
+      display: flex;
+      gap: 0.5rem;
+      outline: none;
+      padding: 0.5rem 1rem;
+
+      &:hover {
+        cursor: pointer;
+        background-color: $orangeHover;
+      }
+
+      &:active {
+        transform: translate(1px, 1px);
+      }
+    }
+  }
+}
+
+:host-context(.light) {
+  @include header($var100, $var700, $var500);
+}
+
+:host-context(.dark) {
+  @include header($var900, $var100, $var400);
 }

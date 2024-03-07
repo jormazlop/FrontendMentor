@@ -1,9 +1,10 @@
 .main-container {
-
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow-y: hidden;
   transition: 0.5s;
-
   &.sidenav-open {
-    margin-left: 10rem;
+    margin-left: var(--sidenav-space);
   }
-
 }

@@ -1,7 +1,12 @@
 <div class="input-document-container">
-  <img src="../../../../assets/images/icon-document.svg" alt="Document" />
-  <div class="input-document">
+  <img src="../../../../assets/images/icon-document.svg" alt="Document" (click)="onFocus()" #imgBox/>
+  <div class="input-document" (click)="onFocus()" #docBox>
     <label for="document-name">Document Name</label>
-    <input type="text" id="document-name" />
+    <div>
+    @if(!consultation()) {
+      <input type="text" id="document-name" [(ngModel)]="document" (ngModelChange)="onDocNameChange($event)"/>
+    } @else {
+      <p> {{ document() || 'New File.txt' }} </p>
+    }
   </div>
 </div>

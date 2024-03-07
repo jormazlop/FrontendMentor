@@ -3,11 +3,15 @@
 .input-document-container {
   align-items: center;
   display: flex;
-  gap: 1rem;
+  gap: 1.5rem;
 
   img {
     height: 1rem;
     width: 0.9rem;
+
+    &:hover {
+      cursor: pointer;
+    }
   }
 
   .input-document {
@@ -17,6 +21,14 @@
     label {
       color: $var400;
       font-size: 0.8rem;
+
+      &:hover {
+        cursor: pointer;
+      }
+
+      @media(max-width: $mobile) {
+        display: none;
+      }
     }
 
     input {
@@ -25,10 +37,19 @@
       border-bottom: 1px solid $var100;
       color: $var100;
       height: 2rem;
+      text-overflow: ellipsis;
+      width: 8rem;
 
       &:focus {
         outline: none;
       }
+    }
+
+    p {
+      color: $var100;
+      text-overflow: ellipsis;
+      width: 8rem;
+      overflow: hidden;
     }
   }
 }

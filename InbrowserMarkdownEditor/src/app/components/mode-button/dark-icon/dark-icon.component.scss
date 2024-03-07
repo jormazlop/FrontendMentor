@@ -1,0 +1,9 @@
+@use 'variables' as *;
+
+:host {
+  display: contents;
+}
+
+.selected path {
+  fill: $var100;
+}

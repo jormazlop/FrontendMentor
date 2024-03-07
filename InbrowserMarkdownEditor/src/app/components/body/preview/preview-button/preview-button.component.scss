@@ -1,0 +1,9 @@
+@use 'variables' as *;
+
+svg:hover {
+  cursor: pointer;
+
+  path {
+    fill: $orange;
+  }
+}

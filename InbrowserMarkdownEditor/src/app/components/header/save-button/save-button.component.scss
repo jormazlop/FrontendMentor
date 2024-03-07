@@ -1,0 +1,28 @@
+
+@use 'variables' as *;
+
+button {
+  align-items: center;
+  background-color: $orange;
+  border: none;
+  border-radius: 8px;
+  color: $var100;
+  display: flex;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+
+  &:hover {
+    cursor: pointer;
+    background-color: $orangeHover;
+  }
+
+  &:active {
+    transform: translate(1px, 1px);
+  }
+
+  @media(max-width: $mobile) {
+    p {
+      display: none;
+    }
+  }
+}

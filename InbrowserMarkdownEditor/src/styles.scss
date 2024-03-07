@@ -4,6 +4,13 @@
 @import "bootstrap/scss/utilities";
 @import "bootstrap/scss/mixins";
 
+$dialog-position-top: 60%;
+
+@import "ngx-smart-modal/styles/ngx-smart-modal";
+
+@import 'variables';
+
+
 @font-face {
   font-family: "Roboto";
   src: url("./assets/fonts/Roboto-Regular.ttf") format("opentype");
@@ -29,10 +36,36 @@
 
 html,
 body {
+  font-family: 'Roboto';
   font-size: 16px;
   height: 100vh;
+
+  --sidenav-space: 16rem;
+
+  @media(max-width: $tablet) {
+    font-size: 13px;
+
+    --sidenav-space: 100vw;
+  }
+
+  @media(max-width: $mobile) {
+    font-size: 10px;
+  }
 }
 
 p {
   margin: 0;
+}
+
+
+.nsm-content {
+  padding: 0;
+
+  .nsm-dialog-btn-close {
+    display: none;
+  }
+}
+
+#toast-container.toast-bottom-right.toast-container .ngx-toastr.toast-success {
+  box-shadow: none;
 }
