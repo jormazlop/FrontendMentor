@@ -1,5 +1,6 @@
 import { Injectable, effect, inject, signal } from '@angular/core';
 import { ToastrService } from 'ngx-toastr';
+import { StorageService } from './storage.service';
 
 export type Document = {
   id: number;
@@ -38,6 +39,23 @@ export class DocumentsService {
 
   private toastr = inject(ToastrService);
 
+  private storageService = inject(StorageService);
+
+  constructor() {
+    const documents = this.storageService.getLocalStorage();
+
+    if(documents) {
+      this.data = documents;
+      this.documents.set([...this.data]);
+      this.document.set({ ...this.data[0]})
+    }
+
+    effect(() => {
+      this.storageService.setLocalStorage(this.documents$());
+    });
+
+  }
+
   changeDocument(doc: Document): void {
     this.document.set(doc);
   }
@@ -56,6 +74,7 @@ export class DocumentsService {
 
     if (indexDoc != -1) {
       this.data[indexDoc] = this.document();
+      this.documents.set([...this.data]);
       this.toastr.success(`Document ${this.document().name} saved!`);
     }
   }
@@ -76,7 +95,6 @@ export class DocumentsService {
   }
 
   deleteDocument(): void {
-
     const deletedDocName = this.document().name;
 
     const indexDoc = this.data.findIndex(
