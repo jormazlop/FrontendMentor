@@ -1,0 +1,36 @@
+<div class="winner-modal-container">
+
+  @if(winnerName()) {
+    <p>{{ winnerName() | winner }}</p>
+  }
+
+  @switch(winner) {
+    @case ('o') {
+      <div class="winner-o-title">
+        <img src="../../../assets/icon-o.svg" alt="Icon-O">
+        <h4>TAKES THE ROUND</h4>
+      </div>
+    }
+    @case ('x') {
+      <div class="winner-x-title">
+        <img src="../../../assets/icon-x.svg" alt="Icon-X">
+        <h4>TAKES THE ROUND</h4>
+      </div>
+    }
+
+    @case ('ties') {
+      <div class="winner-ties-title">
+        <h4>ROUND TIED</h4>
+      </div>
+    }
+  }
+
+  <div class="winner-modal-buttons">
+    <app-modal-button type="silver" (click)="onClickQuit()">
+      QUIT
+    </app-modal-button>
+    <app-modal-button type="yellow" (click)="onClickNextRound()">
+      NEXT ROUND
+    </app-modal-button>
+  </div>
+</div>

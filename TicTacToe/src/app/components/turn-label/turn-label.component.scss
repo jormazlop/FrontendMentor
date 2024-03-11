@@ -1,0 +1,22 @@
+@use 'variables' as *;
+
+.turn-label-container {
+  align-items: center;
+  background-color: $semiDarkNavy;
+  border-radius: 10px;
+  box-shadow: 0px 6px 0px $boxShadow;
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+  padding: 1rem 2rem;
+
+  h3 {
+    color: $silver;
+    font-size: 1rem;
+    margin: 0;
+  }
+
+  img {
+    width: 1.25rem;
+  }
+}

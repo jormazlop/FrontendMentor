@@ -1,0 +1,37 @@
+@use 'variables' as *;
+
+button {
+  background-color: $silver;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0px 6px 0px $silverShadow;
+  color: $darkNavy;
+  font-weight: bold;
+  padding: 0.8rem;
+
+  &:hover {
+    background-color: $silverHover;
+
+    img {
+      animation: spin 1s;
+    }
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  &:active {
+    transform: translate(1px, 1px)
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}

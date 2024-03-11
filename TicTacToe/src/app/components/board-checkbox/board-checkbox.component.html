@@ -1,0 +1,5 @@
+<div class="board-checkbox-container" [class.disabled]="disabled()" (click)="onClickBox()">
+  @if(this.value()) {
+    <img src="assets/icon-{{this.value()}}.svg" alt="Icon-x">
+  }
+</div>

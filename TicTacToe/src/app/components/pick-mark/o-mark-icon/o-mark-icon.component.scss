@@ -1,0 +1,37 @@
+@use 'variables' as *;
+
+.o-mark-button {
+
+  border-radius: 10px;
+  display: flex;
+  padding: 0 5rem;
+  transition: 0.25s;
+
+  @media(width < $tablet) {
+    padding: 0 4rem;
+  }
+
+  @media(width < $mobile) {
+    padding: 0;
+  }
+
+  svg {
+    transform: scale(0.5);
+
+    path {
+      fill: $silver;
+      stroke: none;
+      transition: 0.25s;
+    }
+  }
+
+  &:hover,
+  &.active {
+    background-color: $silver;
+    cursor: pointer;
+
+    svg path {
+      fill: $darkNavy;
+    }
+  }
+}

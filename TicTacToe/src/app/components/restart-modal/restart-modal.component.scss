@@ -1,0 +1,22 @@
+@use 'variables' as *;
+
+.restart-modal-container {
+  align-items: center;
+  background-color: $semiDarkNavy;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 4rem;
+
+  h2 {
+    color: $silver;
+    font-size: 2.5rem;
+    font-weight: bold;
+  }
+
+  .restart-modal-buttons {
+    align-items: center;
+    display: flex;
+    gap: 1rem;
+  }
+}

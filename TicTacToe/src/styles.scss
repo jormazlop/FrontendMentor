@@ -1,0 +1,35 @@
+@import "bootstrap/scss/bootstrap-reboot";
+@import "bootstrap/scss/bootstrap-grid";
+@import "bootstrap/scss/tables";
+@import "bootstrap/scss/utilities";
+@import "bootstrap/scss/mixins";
+@import 'bootstrap/scss/bootstrap';
+@import 'variables';
+
+@font-face {
+  font-family: "Outfit";
+  src: url("./assets/fonts/Outfit.ttf") format("opentype");
+}
+
+html,
+body {
+  font-family: "Outfit";
+  font-size: 16px;
+  height: 100vh;
+
+  @media(width < $tablet) {
+    font-size: 12px;
+  }
+
+  @media(width < $mobile) {
+    font-size: 8px;
+  }
+}
+
+p {
+  margin: 0;
+}
+
+.modal {
+  --bs-modal-width: 100vw;
+}

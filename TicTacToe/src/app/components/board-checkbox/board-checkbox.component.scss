@@ -1,0 +1,36 @@
+@use "variables" as *;
+
+.board-checkbox-container {
+  align-items: center;
+  background-color: $semiDarkNavy;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0px 6px 0px $boxShadow;
+  color: $darkNavy;
+  display: flex;
+  justify-content: center;
+  height: 10rem;
+  width: 10rem;
+
+  img {
+    animation: slide-in-animation 0.3s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+  }
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  &.disabled {
+    cursor: not-allowed;
+  }
+}
+
+@keyframes slide-in-animation {
+  0% {
+    transform: scale(0);
+
+  }
+  100% {
+    transform: scale(1);
+  }
+}

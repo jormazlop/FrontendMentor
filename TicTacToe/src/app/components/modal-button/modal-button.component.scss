@@ -1,0 +1,31 @@
+@use "variables" as *;
+
+@mixin modal-button($color, $shadow, $hover) {
+  background-color: $color;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0px 6px 0px $shadow;
+  color: $darkNavy;
+  font-weight: bold;
+  padding: 0.8rem;
+
+  &:hover {
+    background-color: $hover;
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  &:active {
+    transform: translate(1px, 1px);
+  }
+}
+
+.silver {
+  @include modal-button($silver, $silverShadow, $silverHover)
+}
+
+.yellow {
+  @include modal-button($lightYellow, $yellowShadow, $lightYellowHover)
+}

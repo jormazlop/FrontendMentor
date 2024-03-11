@@ -1,0 +1,32 @@
+<section class="game-board-container">
+  <header class="game-board-header">
+    @if(!loading$()) {
+      <app-logo/>
+    } @else {
+      <div class="spinner-border" role="status">
+      </div>
+    }
+
+    <app-turn-label/>
+    <app-restart-button (click)="restartGame()"/>
+  </header>
+  <div class="game-board-body" [class.loading]="loading$()">
+    @for(box of data$().boxes; track box.value) {
+      <app-board-checkbox (clickBox)="checkBox(box.id)" [value]="box.value"/>
+    }
+  </div>
+  <footer class="game-board-footer">
+    <app-result-label color="blue">
+      <p>X ({{ data$().results.bluePlayer }})</p>
+      <strong>{{ data$().results.blueTotal }}</strong>
+    </app-result-label>
+    <app-result-label color="silver">
+      <p>TIES</p>
+      <strong>{{ data$().results.silverTotal }}</strong>
+    </app-result-label>
+    <app-result-label color="yellow">
+      <p>O ({{ data$().results.yellowPlayer }})</p>
+      <strong>{{ data$().results.yellowTotal }}</strong>
+    </app-result-label>
+  </footer>
+</section>

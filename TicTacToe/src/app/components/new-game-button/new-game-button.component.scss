@@ -1,0 +1,35 @@
+@use 'variables' as *;
+
+
+@mixin new-game-button($color, $shadow, $hover) {
+    background-color: $color;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0px 6px 0px $shadow;
+    color: $darkNavy;
+    font-size: 1.25rem;
+    font-weight: bold;
+    padding: 1rem;
+    width: 32.3rem;
+
+    @media(width < $mobile) {
+      width: 20rem;
+    }
+
+    &:hover {
+      background-color: $hover
+    }
+
+    &:active {
+      transform: translate(1px, 1px)
+    }
+}
+
+.yellow {
+  @include new-game-button($lightYellow, $yellowShadow, $lightYellowHover);
+}
+
+.blue {
+  @include new-game-button($lightBlue, $blueShadow, $lighBlueHover);
+}
+
