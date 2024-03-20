@@ -1,0 +1,68 @@
+<div class="comment-box-container" #commentBox>
+  <app-like-counter
+    class="width-desktop"
+    [count]="comment().score"
+    (plus)="clickPlus()"
+    (minus)="clickMinus()"
+  />
+  <div class="comment-box-main">
+    <div class="comment-box-header">
+      <div class="comment-header-avatar">
+        <img
+          src="assets/avatars/{{ comment().user.image.webp }}"
+          alt="Image Profil {{ comment().user.username }}"
+        />
+        <p class="comment-header-user">
+          {{ comment().user.username }}
+        </p>
+        <p class="comment-header-date">
+          {{ comment().createdAt | date }}
+        </p>
+      </div>
+      <div #commentButtons>
+        <app-comment-buttons
+          class="width-desktop"
+          [user]="userYou()"
+          (edit)="setModeEdit()"
+          [class.disabled]="edit()"
+          (reply)="setModeReply()"
+          (delete)="clickDelete()"
+        />
+      </div>
+    </div>
+    @if(!edit()) {
+    <p class="comment-text">{{ comment().content }}</p>
+    } @else {
+    <textarea class="edit-text" [(ngModel)]="editComment"></textarea>
+    <button
+      class="update-button"
+      (click)="updateComment()"
+      [class.disabled]="edit()"
+    >
+      UPDATE
+    </button>
+    }
+  </div>
+  <div class="footer-responsive">
+    <app-like-counter
+      [count]="comment().score"
+      (plus)="clickPlus()"
+      (minus)="clickMinus()"
+    />
+    <div #footerButtons>
+      <app-comment-buttons
+        [user]="userYou()"
+        (edit)="setModeEdit()"
+        [class.disabled]="edit()"
+        (reply)="setModeReply()"
+        (delete)="clickDelete()"
+      />
+    </div>
+  </div>
+</div>
+
+@if(reply()) {
+<div #replyBox>
+  <app-reply-comment [user]="user()" (send)="clickReply($event)" />
+</div>
+}

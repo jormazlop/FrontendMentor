@@ -1,0 +1,15 @@
+<div class="add-commentaire-container">
+  <div class="add-commentaire-main">
+    <img
+      src="assets/avatars/{{ user().image.webp }}"
+      alt="Avatar user {{ user().username }}"
+    />
+    <textarea
+      name="commentaire"
+      id="commentaire"
+      placeholder="Add a comment…"
+      [(ngModel)]="comment"
+    ></textarea>
+    <button (click)="onClickSend()" [class.disabled]="disabled()">SEND</button>
+  </div>
+</div>

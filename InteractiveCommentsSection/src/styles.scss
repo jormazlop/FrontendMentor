@@ -1,0 +1,65 @@
+@import "bootstrap/scss/bootstrap-reboot";
+@import "bootstrap/scss/bootstrap-grid";
+@import "bootstrap/scss/tables";
+@import "bootstrap/scss/utilities";
+@import "bootstrap/scss/mixins";
+@import 'bootstrap/scss/bootstrap';
+@import 'variables';
+
+@font-face {
+  font-family: "Rubik";
+  src: url("./assets/fonts/Rubik.ttf") format("opentype");
+}
+
+html,
+body {
+  font-family: "Rubik";
+  font-size: 16px;
+  height: 100vh;
+
+  @media (max-width: $tablet) {
+    font-size: 13px;
+  }
+
+  @media (max-width: $mobile) {
+    font-size: 12px;
+  }
+
+}
+
+p {
+  margin: 0;
+}
+
+
+.delete-modal {
+
+  .modal-content {
+    padding: 2rem;
+  }
+
+  .modal-header {
+    border-bottom: 0px;
+  }
+
+  .modal-buttons {
+    display: flex;
+    gap: 1rem;
+
+    button {
+      border: none;
+      border-radius: 8px;
+      color: $white;
+      padding: 0.8rem;
+      width: 50%;
+
+      &:nth-of-type(1) {
+        background-color: $grayishBlue;
+      }
+
+      &:nth-of-type(2) {
+        background-color: $softRed;
+      }
+    }
+  }
+}

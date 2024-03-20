@@ -1,0 +1,55 @@
+@use 'variables' as *;
+
+.reply-comment-container {
+  border-radius: 8px;
+  background-color: $veryLightGray;
+  display: flex;
+  height: 25vh;
+  padding: 2vh 0;
+
+  .reply-comment-main {
+    background-color: $white;
+    display: flex;
+    gap: 1rem;
+    padding: 2rem;
+    width: 100%;
+
+    img {
+      height: 2.5rem;
+      width: 2.5rem;
+    }
+
+    textarea {
+      border: 1px solid $lightGray;
+      border-radius: 8px;
+      color: $darkBlue;
+      padding: 1rem 1.5rem;
+      width: 100%;
+
+      &:focus {
+        border: 1px solid $moderateBlue;
+        outline: none;
+      }
+    }
+
+    button {
+      background-color: $moderateBlue;
+      border: none;
+      border-radius: 8px;
+      color: $white;
+      height: fit-content;
+      padding: 0.6rem 1.6rem;
+
+      &:active {
+        transform: translate(1px, 1px);
+      }
+
+      &.disabled {
+        opacity: 0.5;
+        pointer-events: none;
+      }
+    }
+  }
+
+
+}

@@ -1,0 +1,17 @@
+@if(user()) {
+<div class="comment-buttons-delete-edit">
+  <button (click)="clickDelete()">
+    <img src="../../../assets/icon-delete.svg" alt="Delete message"/>
+    <p class="delete-text">Delete</p>
+  </button>
+  <button (click)="clickEdit()">
+    <img src="../../../assets/icon-edit.svg" alt="Edit message" />
+    <p>Edit</p>
+  </button>
+</div>
+} @else {
+<button (click)="clickReply()">
+  <img src="assets/icon-reply.svg" alt="Reply message" />
+  <p>Reply</p>
+</button>
+}

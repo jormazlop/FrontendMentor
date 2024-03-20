@@ -1,0 +1,47 @@
+<main class="main-container">
+  @for(comment of comments$(); track comment.id) {
+  <app-comment-box
+    [comment]="comment"
+    [user]="user$()"
+    (plus)="clickPlus(comment.id)"
+    (minus)="clickMinus(comment.id)"
+    (update)="clickUpdate($event, comment.id)"
+    (addReply)="clickReply($event, comment.id)"
+    (delete)="openDeleteModal(comment.id)"
+  />
+
+  @if (comment.replies?.length) {
+  <div class="replies-container">
+    <div class="replies-separator"></div>
+    <div class="replies-comments">
+      @for(reply of comment.replies; track reply.id) {
+      <app-comment-box
+        [comment]="reply"
+        [user]="user$()"
+        (plus)="clickPlus(reply.id)"
+        (minus)="clickMinus(reply.id)"
+        (update)="clickUpdate($event, reply.id)"
+        (addReply)="clickReply($event, comment.id)"
+        (delete)="openDeleteModal(reply.id)"
+      />
+      }
+    </div>
+  </div>
+  } }
+</main>
+<app-add-commentaire [user]="user$()" (send)="addComent($event)" />
+
+
+<ng-template #template>
+  <div class="modal-header">
+    <h4 class="modal-title pull-left" id="delete-comment">Delete Comment</h4>
+  </div>
+  <div class="modal-body" id="delete-description">
+    Are you sure you want to delete this comment?
+    This will remove the comment and can’t be undone.
+  </div>
+  <div class="modal-buttons">
+    <button (click)="cancelDelete()" title="No, cancel delete">NO, CANCEL</button>
+    <button (click)="confirmDelete()" title="Yes, delete comment">YES, DELETE</button>
+  </div>
+</ng-template>
