@@ -32,7 +32,21 @@ export class AppComponent {
     const imageArray = new Array(
       "assets/destination/background-destination-desktop.jpg",
       "assets/destination/background-destination-mobile.jpg",
-      "assets/destination/background-destination-tablet.jpg",  );
+      "assets/destination/background-destination-tablet.jpg",
+      "assets/destination/image-europa.webp",
+      "assets/destination/image-mars.webp",
+      "assets/destination/image-moon.webp",
+      "assets/destination/image-titan.webp",
+      "assets/crew/background-crew-desktop.jpg",
+      "assets/crew/background-crew-mobile.jpg",
+      "assets/crew/background-crew-tablet.jpg",
+      "assets/crew/image-douglas-hurley.webp",
+      "assets/technology/background-technology-desktop.jpg",
+      "assets/technology/background-technology-mobile.jpg",
+      "assets/technology/background-technology-tablet.jpg",
+      "assets/technology/image-launch-vehicle-landscape.jpg",
+      "assets/technology/image-launch-vehicle-portrait.jpg",
+      );
 
     for (let i = 0; i < imageArray.length; i++) {
         const tempImage = new Image();
