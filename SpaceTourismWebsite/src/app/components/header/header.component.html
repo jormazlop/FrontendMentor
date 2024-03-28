@@ -1,0 +1,39 @@
+<header class="header-container">
+  <img
+    class="header-logo"
+    src="../../../assets/shared/logo.svg"
+    alt="Logo Space"
+  />
+  <div class="header-line"></div>
+  <nav class="header-navigation" role="navigation" aria-label="Main">
+    <ul class="header-menu-desktop">
+      <li>
+        <a routerLink="home" routerLinkActive="active" title="Navigate to the home page">
+          <strong>00</strong> HOME
+        </a>
+      </li>
+      <li>
+        <a routerLink="destination" routerLinkActive="active" title="Navigate to the destination page">
+          <strong>01</strong> DESTINATION
+        </a>
+      </li>
+      <li>
+        <a routerLink="crew" routerLinkActive="active" title="Navigate to the crew page">
+          <strong>02</strong> CREW
+        </a>
+      </li>
+      <li>
+        <a routerLink="technology" routerLinkActive="active" title="Navigate to the technology page">
+          <strong>03</strong> TECHNOLOGY
+        </a>
+      </li>
+    </ul>
+    <button class="header-menu-mobile" title="Open Navigation Menu" (click)="clickMenu()">
+      @if(!menu()) {
+        <img src="assets/shared/icon-hamburger.svg" aria-hidden="true">
+      } @else {
+        <img src="assets/shared/icon-close.svg" aria-hidden="true">
+      }
+    </button>
+  </nav>
+</header>

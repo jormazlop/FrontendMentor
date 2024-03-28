@@ -1,0 +1,163 @@
+@use "variables" as *;
+
+:host {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.technology-title {
+  align-items: flex-end;
+  color: $white;
+  display: flex;
+  font-family: "BarlowCondensed";
+  font-size: 1.75rem;
+  font-weight: 500;
+  gap: 1.5rem;
+  letter-spacing: 0.2rem;
+  left: 10%;
+  position: absolute;
+  top: 20%;
+
+  @media(max-width: $tablet) {
+    top: 15%;
+  }
+
+  span {
+    font-weight: bold;
+    opacity: 0.25;
+  }
+}
+
+.technology-container {
+  align-items: center;
+  display: flex;
+  font-family: "BarlowCondensed";
+  gap: 2rem;
+  justify-content: space-between;
+  height: 100%;
+  padding-left: 10%;
+
+  @media(max-width: $tablet) {
+    flex-direction: column-reverse;
+    justify-content: center;
+    padding: 0%;
+  }
+
+  .technology-description {
+    display: flex;
+    flex-direction: column;
+    gap: 6rem;
+    width: 40rem;
+
+    @media(max-width: $tablet) {
+      width: 100%;
+    }
+
+    .technology-description-content {
+
+      display: flex;
+      gap: 5rem;
+      height: 30vh;
+
+      @media(max-width: $tablet) {
+        align-items: center;
+        flex-direction: column;
+        gap: 0;
+        text-align: center;
+      }
+
+      .technology-list {
+
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        list-style: none;
+        padding: 0;
+
+        @media(max-width: $tablet) {
+          flex-direction: row;
+        }
+
+        button {
+          background: transparent;
+          border: 1px solid $white;
+          border-radius: 50%;
+          color: $white;
+          font-family: 'Bellefair';
+          font-size: 2rem;
+          height: 5rem;
+          width: 5rem;
+
+          &.active {
+            background: $white;
+            color: $dark;
+          }
+        }
+      }
+
+      .technology-description-main {
+        display: flex;
+        flex-direction: column;
+
+        @media(max-width: $mobile) {
+          overflow-x: clip;
+        }
+
+        .technology-description-terminology {
+          color: $blue;
+          font-family: 'BarlowCondensed';
+          letter-spacing: 0.2rem;
+          position: relative;
+        }
+
+        .technology-description-name {
+          color: $white;
+          font-family: 'Bellefair';
+          font-size: 3.5rem;
+          position: relative;
+          text-transform: uppercase;
+        }
+
+        .technology-description-description {
+          color: $blue;
+          font-family: 'Barlow';
+          font-size: 1.125rem;
+          line-height: 2rem;
+          position: relative;
+        }
+      }
+    }
+  }
+
+  .technology-image {
+    display: flex;
+
+    @media(max-width: $tablet) {
+      width: 100%;
+    }
+
+    img {
+      width: 100%;
+
+      @media(max-width: $tablet) {
+        &.portrait {
+          display: none;
+        }
+
+        &.landscape {
+          width: 100%;
+        }
+
+      }
+
+      @media(min-width: $tablet) {
+        &.landscape {
+          display: none;
+        }
+      }
+
+    }
+
+  }
+}

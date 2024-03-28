@@ -1,0 +1,33 @@
+<div class="app-container" [ngClass]="section$()">
+  <app-header (menuOpen)="openMenu($event)" [menu]="menu()"/>
+  <router-outlet />
+</div>
+
+
+<div class="sidenav" [class.open]="menu()">
+  <button #sidenav (click)="closeMenu()"><img src="assets/shared/icon-close.svg" aria-hidden="true" title="Close Navigation Menu"></button>
+  <nav role="navigation" aria-label="Main">
+    <ul>
+      <li>
+        <a routerLink="home" routerLinkActive="active" (click)="closeMenu()" title="Navigate to the home page">
+          <strong>00</strong> HOME
+        </a>
+      </li>
+      <li>
+        <a routerLink="destination" routerLinkActive="active" (click)="closeMenu()" title="Navigate to the destination page">
+          <strong>01</strong> DESTINATION
+        </a>
+      </li>
+      <li>
+        <a routerLink="crew" routerLinkActive="active" (click)="closeMenu()" title="Navigate to the crew page">
+          <strong>02</strong> CREW
+        </a>
+      </li>
+      <li>
+        <a routerLink="technology" routerLinkActive="active" (click)="closeMenu()" title="Navigate to the technology page">
+          <strong>03</strong> TECHNOLOGY
+        </a>
+      </li>
+    </ul>
+  </nav>
+</div>

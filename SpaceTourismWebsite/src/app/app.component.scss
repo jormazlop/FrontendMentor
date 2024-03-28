@@ -1,0 +1,113 @@
+@use 'variables' as *;
+
+.app-container {
+  background-image: url('./../assets/home/background-home-desktop.jpg');
+
+
+  &.destination {
+    background-image: url('./../assets/destination/background-destination-desktop.jpg');
+  }
+
+  &.crew {
+    background-image: url('./../assets/crew/background-crew-desktop.jpg');
+  }
+
+  &.technology {
+    background-image: url('./../assets/technology/background-technology-desktop.jpg');
+  }
+
+  @media(max-width: $tablet) {
+    background-image: url('./../assets/home/background-home-tablet.jpg');
+
+    &.destination {
+      background-image: url('./../assets/destination/background-destination-tablet.jpg');
+    }
+
+    &.crew {
+      background-image: url('./../assets/crew/background-crew-tablet.jpg');
+    }
+
+    &.technology {
+      background-image: url('./../assets/technology/background-technology-tablet.jpg');
+    }
+  }
+
+  @media(max-width: $mobile) {
+    background-image: url('./../assets/home/background-home-mobile.jpg');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+
+    &.destination {
+      background-image: url('./../assets/destination/background-destination-mobile.jpg');
+    }
+
+    &.crew {
+      background-image: url('./../assets/crew/background-crew-mobile.jpg');
+    }
+
+    &.technology {
+      background-image: url('./../assets/technology/background-technology-mobile.jpg');
+    }
+  }
+
+  background-repeat: round round;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  right: 0;
+  backdrop-filter: blur(11px);
+  overflow-x: hidden;
+  transition: 0.5s;
+  display: flex;
+  flex-direction: column;
+
+  &.open {
+    padding: 2.5rem;
+    width: 70vw;
+  }
+
+  button {
+    align-self: flex-end;
+    background: none;
+    border: none;
+    padding: 1rem;
+  }
+
+  ul {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    margin: 0;
+    width: 100%;
+
+    li {
+      display: flex;
+      height: 5rem;
+
+      a {
+        align-items: center;
+        background: transparent;
+        border: none;
+        color: $white;
+        display: flex;
+        font-family: "BarlowCondensed";
+        gap: 1rem;
+        letter-spacing: 2.5px;
+        position: relative;
+        text-decoration: none;
+
+        &.active::after {
+          transform: scale(1);
+        }
+      }
+    }
+  }
+}

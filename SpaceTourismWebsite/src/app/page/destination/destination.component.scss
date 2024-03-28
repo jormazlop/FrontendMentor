@@ -1,0 +1,161 @@
+@use "variables" as *;
+
+:host {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.destination-title {
+  align-items: flex-end;
+  color: $white;
+  display: flex;
+  font-family: "BarlowCondensed";
+  font-size: 1.75rem;
+  font-weight: 500;
+  gap: 1.5rem;
+  letter-spacing: 0.2rem;
+  left: 10%;
+  position: absolute;
+  top: 20%;
+
+  @media(max-width: $tablet) {
+    top: 15%;
+  }
+
+  span {
+    font-weight: bold;
+    opacity: 0.25;
+  }
+}
+
+.destination-container {
+  align-items: center;
+  display: flex;
+  font-family: "BarlowCondensed";
+  gap: 2rem;
+  justify-content: space-between;
+  height: 100%;
+  padding: 0% 10%;
+
+  @media(max-width: $tablet) {
+    text-align: center;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 0%;
+  }
+
+  .destination-image {
+    display: flex;
+    flex-direction: column;
+    width: 25rem;
+
+    img {
+      align-self: flex-end;
+      width: 100%;
+
+      @media(max-width: $tablet) {
+        align-self: center;
+        width: 50%;
+      }
+    }
+  }
+
+  .destination-description {
+    height: 55vh;
+    width: 30rem;
+
+    .destination-navigation {
+      ul {
+        display: flex;
+        font-family: "BarlowCondensed";
+        justify-content: space-between;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        width: 100%;
+
+        li {
+          display: flex;
+          height: 5rem;
+          width: fit-content;
+
+          button {
+            background: transparent;
+            border: none;
+            border-bottom: 2px solid transparent;
+            color: $blue;
+            letter-spacing: 0.1rem;
+            padding: 0;
+            text-transform: uppercase;
+            width: fit-content;
+
+            &.active {
+              border-bottom: 2px solid $white;
+            }
+          }
+        }
+      }
+    }
+
+    .destination-description-main {
+
+      @media(max-width: $mobile) {
+        overflow-x: clip;
+      }
+
+      h2 {
+        color: $white;
+        font-family: "Bellefair";
+        font-size: 6.25rem;
+        margin: 2rem 0;
+        position: relative;
+        text-transform: uppercase;
+      }
+
+      p {
+        color: $blue;
+        font-family: "Barlow";
+        font-size: 1.125rem;
+        margin-bottom: 3rem;
+        position: relative;
+      }
+
+      .destination-description-separator {
+        border-bottom: 1px solid $separator;
+        height: 1px;
+        margin-bottom: 2rem;
+      }
+
+      .destination-description-footer {
+        display: flex;
+        gap: 5rem;
+
+        @media(max-width: $tablet) {
+          justify-content: center;
+        }
+
+        .destination-description-footer-item {
+
+          display: flex;
+          flex-direction: column;
+
+          dt {
+            color: $blue;
+            font-family: "BarlowCondensed";
+            font-weight: 500;
+            letter-spacing: 0.1rem;
+          }
+
+          dd {
+            color: $white;
+            font-family: "Bellefair";
+            font-size: 2rem;
+            font-weight: 500;
+            text-transform: uppercase;
+          }
+        }
+      }
+    }
+  }
+}

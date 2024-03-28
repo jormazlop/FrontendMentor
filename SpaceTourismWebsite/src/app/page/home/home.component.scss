@@ -1,0 +1,100 @@
+@use 'variables' as *;
+
+:host {
+  display: contents;
+}
+
+.home-container {
+  align-items: center;
+  display: flex;
+  justify-content: space-around;
+  height: 100%;
+
+  @media(max-width: $tablet) {
+    flex-direction: column;
+  }
+
+  @media(max-width: $mobile) {
+    overflow-x: clip;
+  }
+
+  .home-text {
+
+    width: 29rem;
+
+    .home-subtitle {
+      animation: left 0.75s;
+      color: $blue;
+      font-family: 'BarlowCondensed';
+      font-size: 2rem;
+      letter-spacing: 0.3rem;
+      position: relative;
+    }
+
+    .home-title {
+      animation: right 1s;
+      color: $white;
+      font-family: 'Bellefair';
+      font-size: 9.375rem;
+      margin: 1.5rem 0;
+      position: relative;
+    }
+
+
+    .home-description {
+      animation: left2 1.75s;
+      color: $blue;
+      font-family: 'Barlow';
+      font-size: 1.125rem;
+      line-height: 2rem;
+      position: relative;
+    }
+  }
+}
+
+
+@keyframes left {
+  from {
+    opacity: 0;
+    right: 50px;
+  }
+
+  to {
+    opacity: 1;
+    right: 0px;
+  }
+}
+
+@keyframes right {
+  0% {
+    opacity: 0;
+    right: -50px;
+  }
+
+  50% {
+    opacity: 0;
+    right: -50px;
+  }
+
+  100% {
+    opacity: 1;
+    right: 0px;
+  }
+}
+
+@keyframes left2 {
+  0% {
+    opacity: 0;
+    right: 50px;
+  }
+
+  50% {
+    opacity: 0;
+    right: 50px;
+  }
+
+  100% {
+    opacity: 1;
+    right: 0px;
+  }
+}

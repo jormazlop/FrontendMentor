@@ -1,0 +1,27 @@
+@use 'variables' as *;
+
+button {
+  background-color: $white;
+  border: none;
+  border-radius: 50%;
+  color: $dark;
+  font-size: 2rem;
+  height: 17rem;
+  letter-spacing: 2px;
+  width: 17rem;
+
+  &:hover {
+    animation: pulse 1.25s infinite;
+  }
+}
+
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 $grey;
+  }
+
+  100% {
+    box-shadow: 0 0 0 2rem $greyNoOpacity;
+  }
+}

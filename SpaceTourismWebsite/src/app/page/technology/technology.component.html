@@ -1,0 +1,21 @@
+<h2 class="technology-title"><span>03</span> SPACE LAUNCH 101</h2>
+<main class="technology-container">
+  <section class="technology-description">
+    <div class="technology-description-content">
+      <ul class="technology-list">
+        @for (technology of technologies$(); track $index) {
+          <li><button [class.active]="technology === technology$()" (click)="clickTechnology(technology)">{{ $index + 1 }}</button></li>
+        }
+      </ul>
+      <div class="technology-description-main">
+        <p class="technology-description-terminology" [@fadeInLeft]="stateTechnology" (@fadeInLeft.done)="stateTechnology = false">THE TERMINOLOGY…</p>
+        <p class="technology-description-name" [@fadeInRight]="stateName" (@fadeInRight.done)="stateName = false"> {{ technology$().name }} </p>
+        <p class="technology-description-description" [@fadeInLeft]="stateDescription" (@fadeInLeft.done)="stateDescription = false"> {{ technology$().description }} </p>
+      </div>
+    </div>
+  </section>
+  <section class="technology-image">
+    <img class="portrait" [src]="technology$().images.portrait" alt="{{ technology$().name }} Image" [@fadeInCenter]="stateImage" (@fadeInCenter.done)="stateImage = false">
+    <img class="landscape" [src]="technology$().images.landscape" alt="{{ technology$().name }} Image" >
+  </section>
+</main>

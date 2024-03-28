@@ -1,0 +1,168 @@
+@use "variables" as *;
+
+:host {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.crew-title {
+  align-items: flex-end;
+  color: $white;
+  display: flex;
+  font-family: "BarlowCondensed";
+  font-size: 1.75rem;
+  font-weight: 500;
+  gap: 1.5rem;
+  letter-spacing: 0.2rem;
+  left: 10%;
+  position: absolute;
+  top: 20%;
+
+  @media (max-width: $tablet) {
+    top: 15%;
+  }
+
+  span {
+    font-weight: bold;
+    opacity: 0.25;
+  }
+}
+
+.crew-container {
+  align-items: center;
+  display: flex;
+  font-family: "BarlowCondensed";
+  justify-content: space-between;
+  height: 100%;
+  padding: 0 10%;
+
+  @media (max-width: $tablet) {
+    flex-direction: column-reverse;
+    justify-content: flex-start;
+    padding: 0%;
+  }
+
+  @media (max-width: $mobile) {
+    justify-content: center;
+  }
+
+  .crew-description {
+    display: flex;
+    flex-direction: column;
+    gap: 6rem;
+    width: 40rem;
+
+    @media (max-width: $tablet) {
+      align-items: center;
+      gap: 2rem;
+      width: 90%;
+    }
+
+    @media(max-width: $mobile) {
+      overflow-x: clip;
+    }
+
+    .crew-description-content {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      height: 35vh;
+
+      @media (max-width: $tablet) {
+        align-items: center;
+        height: 30vh;
+        text-align: center;
+      }
+
+      .crew-role {
+        color: $white;
+        font-family: "Bellefair";
+        font-size: 2rem;
+        opacity: 0.4 !important;
+        position: relative;
+        text-transform: uppercase;
+      }
+
+      .crew-name {
+        color: $white;
+        font-family: "Bellefair";
+        font-size: 3.5rem;
+        position: relative;
+        text-transform: uppercase;
+      }
+
+      .crew-bio {
+        color: $blue;
+        font-family: "Barlow";
+        font-size: 1.125rem;
+        position: relative;
+      }
+    }
+  }
+
+  .crew-list {
+    display: flex;
+    gap: 1.5rem;
+    list-style-type: none;
+    padding: 0;
+
+    @media (max-width: $tablet) {
+
+      justify-content: center;
+
+      &.desktop {
+        display: none;
+      }
+    }
+
+    @media (min-width: $tablet) {
+      &.mobile {
+        display: none;
+      }
+    }
+
+    button {
+      background-color: $grey;
+      border: none;
+      border-radius: 50%;
+      height: 1rem;
+      width: 1rem;
+
+      &.active {
+        background-color: $white;
+      }
+    }
+  }
+
+  .crew-image {
+    align-self: flex-end;
+    overflow: hidden;
+    width: 35vw;
+
+    @media (max-width: $tablet) {
+      align-self: center;
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      justify-content: center;
+      width: fit-content;
+    }
+
+    img {
+      max-width: 30rem;
+      position: relative;
+      width: 100%;
+
+      @media (max-width: $tablet) {
+        align-self: center;
+        height: 25rem;
+        width: 100%;
+      }
+
+      @media (max-width: $mobile) {
+        height: 15rem;
+      }
+    }
+  }
+}

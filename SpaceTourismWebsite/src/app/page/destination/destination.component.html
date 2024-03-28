@@ -1,0 +1,32 @@
+<h2 class="destination-title"><span>01</span> PICK YOUR DESTINATION</h2>
+<main class="destination-container">
+  <section class="destination-image">
+    <img [src]="destination$().images.webp" alt="{{ destination$().name }} Image" [@fadeInOpacity]="stateImage" (@fadeInOpacity.done)="stateImage = false">
+  </section>
+  <section class="destination-description">
+    <nav class="destination-navigation" role="navigation" aria-label="Secondary">
+      <ul>
+      @for(destination of destinations$(); track $index){
+        <li>
+          <button [class.active]="destination$() === destination" (click)="clickDestination(destination)">{{ destination.name }}</button>
+        </li>
+      }
+      </ul>
+    </nav>
+    <div class="destination-description-main">
+      <h2 [@fadeInLeft]="stateTitle" (@fadeInLeft.done)="stateTitle = false">{{ destination$().name }}</h2>
+      <p [@fadeInRight]="stateDescription" (@fadeInRight.done)="stateDescription = false">{{ destination$().description }}</p>
+      <div class="destination-description-separator"></div>
+      <dl class="destination-description-footer" [@fadeInOpacity]="stateFooter" (@fadeInOpacity.done)="stateFooter = false">
+        <div class="destination-description-footer-item">
+          <dt>AVG. DISTANCE</dt>
+          <dd>{{ destination$().distance }}</dd>
+        </div>
+        <div class="destination-description-footer-item">
+          <dt>EST. TRAVEL TIME</dt>
+          <dd>{{ destination$().travel }}</dd>
+        </div>
+      </dl>
+    </div>
+  </section>
+</main>

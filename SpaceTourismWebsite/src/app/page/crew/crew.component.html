@@ -1,0 +1,23 @@
+<h2 class="crew-title"><span>02</span> MEET YOUR CREW</h2>
+<main class="crew-container">
+  <section class="crew-description">
+    <div class="crew-description-content">
+      <p class="crew-role" [@fadeInLeft]="stateRole" (@fadeInLeft.done)="stateRole = false"> {{ crew$().role }}</p>
+      <p class="crew-name" [@fadeInRight]="stateName" (@fadeInRight.done)="stateName = false"> {{ crew$().name }}</p>
+      <p class="crew-bio" [@fadeInLeft]="stateBio" (@fadeInLeft.done)="stateBio = false"> {{ crew$().bio}} </p>
+    </div>
+    <ul class="crew-list desktop">
+      @for(crew of crews$(); track crew) {
+        <li><button [class.active]="crew === crew$()" (click)="clickCrew(crew)"></button></li>
+      }
+    </ul>
+   </section>
+   <section class="crew-image">
+    <img [src]="crew$().images.webp" alt="{{ crew$().name }} Image" [@fadeInDown]="stateImage" (@fadeInDown.done)="stateImage = false">
+    <ul class="crew-list mobile">
+      @for(crew of crews$(); track crew) {
+        <li><button [class.active]="crew === crew$()" (click)="clickCrew(crew)"></button></li>
+      }
+    </ul>
+  </section>
+</main>
