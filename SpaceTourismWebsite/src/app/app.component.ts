@@ -24,6 +24,22 @@ export class AppComponent {
 
   sidenav = viewChild<ElementRef>('sidenav');
 
+  constructor() {
+    addEventListener("DOMContentLoaded", this.preloadImages, true);
+  }
+
+  preloadImages() {
+    const imageArray = new Array(
+      "assets/destination/background-destination-desktop.jpg",
+      "assets/destination/background-destination-mobile.jpg",
+      "assets/destination/background-destination-tablet.jpg",  );
+
+    for (let i = 0; i < imageArray.length; i++) {
+        const tempImage = new Image();
+        tempImage.src = imageArray[i];
+    }
+  }
+
   openMenu(open: boolean): void {
     this.menu.set(open);
     this.sidenav()?.nativeElement.focus();
