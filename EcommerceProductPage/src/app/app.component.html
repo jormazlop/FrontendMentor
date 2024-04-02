@@ -1,0 +1,40 @@
+<main class="main-container">
+  <app-header (menu)="openMenu()"/>
+  <section class="main-content">
+    <app-preview/>
+    <app-description/>
+  </section>
+</main>
+
+<nav class="sidenav-menu" [class.open]="menu()">
+  <button title="Close Navigation Menu" (click)="closeMenu()"><img src="assets/icon-close.svg" aria-hidden="true"></button>
+  <nav role="navigation" aria-label="Main">
+    <ul>
+      <li>
+        <a routerLink="/" title="Navigate to the Collections page">
+          Collections
+        </a>
+      </li>
+      <li>
+        <a routerLink="/" title="Navigate to the Men page">
+          Men
+        </a>
+      </li>
+      <li>
+        <a routerLink="/" title="Navigate to the Women page">
+          Women
+        </a>
+      </li>
+      <li>
+        <a routerLink="/" title="Navigate to the About page">
+          About
+        </a>
+      </li>
+      <li>
+        <a routerLink="/" title="Navigate to the Contact page">
+          Contact
+        </a>
+      </li>
+    </ul>
+  </nav>
+</nav>

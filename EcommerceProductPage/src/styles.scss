@@ -1,0 +1,72 @@
+@import 'bootstrap/scss/bootstrap-reboot';
+@import 'bootstrap/scss/bootstrap-grid';
+@import 'bootstrap/scss/tables';
+@import 'bootstrap/scss/utilities';
+@import 'bootstrap/scss/mixins';
+@import 'bootstrap/scss/bootstrap';
+@import 'variables';
+
+@font-face {
+  font-family: "KumbhSans";
+  src: url("./assets/fonts/KumbhSans.ttf")
+    format("opentype");
+}
+
+html,
+body {
+
+  font-family: "KumbhSans";
+  font-size: 16px;
+  height: 100vh;
+
+  @media(max-width: $breakpointMedium) {
+    font-size: 13px;
+  }
+
+  @media(max-width: $breakpointDiminute) {
+    font-size: 9px;
+  }
+
+}
+
+p {
+  margin: 0;
+}
+
+
+.tooltip-inner {
+
+  background-color: $white;
+  padding: 0;
+  position: relative;
+  right: 5rem;
+
+  @media(max-width: $breakpointLarge) {
+    right: 10rem;
+  }
+
+  @media(max-width: $breakpointVerySmall) {
+    right: 0;
+  }
+}
+
+.tooltip-arrow {
+  visibility: hidden;
+}
+
+.tooltip.show {
+  opacity: 1;
+
+  @media(max-width: $breakpointVerySmall) {
+    transform: translate(1rem, 10rem) !important;
+  }
+}
+
+.d-block {
+  align-items: center;
+  display: flex !important;
+}
+.modal-content {
+  background: transparent;
+  border: none;
+}

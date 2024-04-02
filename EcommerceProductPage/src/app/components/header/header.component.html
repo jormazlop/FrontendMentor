@@ -1,0 +1,36 @@
+<header class="header-container">
+  <div class="header-left">
+    <button class="button-menu" title="Open Menu" (click)="openMenu()"><img  src="assets/icon-menu.svg" aria-hidden="true"></button>
+    <img class="header-logo" src="assets/logo.svg" alt="Logo Sneakers"/>
+    <nav class="header-navigation" role="navigation">
+      <ul>
+        <li><a routerLink="/" title="Navigate to the Collections page">Collections</a></li>
+        <li><a routerLink="/" title="Navigate to the Men page">Men</a></li>
+        <li><a routerLink="/" title="Navigate to the Women page">Women</a></li>
+        <li><a routerLink="/" title="Navigate to the About page">About</a></li>
+        <li><a routerLink="/" title="Navigate to the Contact page">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+  <div class="header-right">
+    <button title="Shopping Cart" placement="bottom" [ngbTooltip]="cartTooltip" triggers="click" autoClose="outside" [animation]="false"><app-icon-cart aria-hidden="true" [quantity]="quantity$()"/></button>
+    <button title="Mon Profile"><img class="header-avatar" src="assets/image-avatar.png" aria-hidden="true"></button>
+  </div>
+</header>
+
+<ng-template #cartTooltip>
+  <div class="cart-tooltip">
+    <strong class="tooltip-title">Cart</strong>
+    <div class="tooltip-header-separator"></div>
+    @if(quantity$()) {
+    <div class="tooltip-product">
+      <img src="assets/image-product-1-thumbnail.jpg" alt="Product Image">
+      <p>Fall Limited Edition Sneakers <br> $125 x {{ quantity$() }} <strong>${{ total$() }}</strong></p>
+      <button class="delete-button" title="Delete product from cart" (click)="deleteProduct()"><img src="assets/icon-delete.svg" aria-hidden="true"></button>
+    </div>
+    <app-checkout-button/>
+  } @else {
+    <p class="tooltip-empty">Your cart is empty.</p>
+  }
+  </div>
+</ng-template>

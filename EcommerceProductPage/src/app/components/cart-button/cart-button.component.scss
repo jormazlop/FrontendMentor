@@ -1,0 +1,32 @@
+@use 'variables' as *;
+
+:host {
+  @media(max-width: $breakpointVerySmall) {
+    width: 100%;
+  }
+}
+
+button {
+  align-items: center;
+  background-color: $orange;
+  border: none;
+  border-radius: 10px;
+  color: $white;
+  display: flex;
+  gap: 1rem;
+  min-width: 16rem;
+  padding: 1rem 3.75rem;
+
+  @media(max-width: $breakpointVerySmall) {
+    justify-content: center;
+    width: 100%;
+  }
+
+  &:hover {
+    background-color: $orangeHover;
+  }
+
+  &:active {
+    transform: translate(1px, 1px);
+  }
+}

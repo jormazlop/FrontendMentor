@@ -1,0 +1,36 @@
+@use 'variables' as *;
+
+:host {
+  position: relative;
+}
+
+svg {
+
+  &:hover {
+    path {
+      fill: $veryDarkBlue;
+    }
+  }
+
+  &.white {
+    path {
+      fill: $white
+    }
+  }
+}
+
+.quantity {
+  align-items: center;
+  background-color: $orange;
+  border-radius: 50%;
+  color: $white;
+  display: flex;
+  height: 1rem;
+  justify-content: center;
+  position: absolute;
+  top: -0.25rem;
+  left: 50%;
+  width: 1.5rem;
+}
+
+

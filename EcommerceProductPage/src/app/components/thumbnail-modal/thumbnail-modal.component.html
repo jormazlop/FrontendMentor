@@ -1,0 +1,10 @@
+<section class="thumbnail-container">
+  <img class="thumbnail-image" src="assets/image-product-{{thumbnail$()}}.jpg" alt="Image preview {{thumbnail$()}}">
+  <button class="previous-button" title="Previous Thumbnail" (click)="previousThumbnail()"><img src="assets/icon-previous.svg" aria-hidden="true"></button>
+  <button class="next-button" title="Next Thumbnail" (click)="nextThumbnail()"><img src="assets/icon-next.svg" aria-hidden="true"></button>
+  <ul class="thumbnail-list">
+    @for(thumbnail of thumbnails; track $index) {
+      <li><button title="Image product {{thumbnail}}" [class.active]="thumbnail === thumbnail$()" (click)="clickThumbnail(thumbnail)"><img src="assets/image-product-{{thumbnail}}-thumbnail.jpg" aria-hidden="true"></button></li>
+    }
+  </ul>
+</section>

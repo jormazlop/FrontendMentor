@@ -1,0 +1,10 @@
+<section class="preview-container">
+  <img class="preview-image" src="assets/image-product-{{preview()}}.jpg" alt="Image preview {{preview()}}" (click)="openModal()">
+  <button class="previous-button" title="Previous Thumbnail" (click)="previousThumbnail()"><img src="assets/icon-previous.svg" aria-hidden="true"></button>
+  <button class="next-button" title="Next Thumbnail" (click)="nextThumbnail()"><img src="assets/icon-next.svg" aria-hidden="true"></button>
+  <ul class="thumbnail-list">
+    @for(product of products; track $index) {
+      <li><button title="Image product {{product}}" [class.active]="product === preview()" (click)="clickThumbnail(product)"><img src="assets/image-product-{{product}}-thumbnail.jpg" aria-hidden="true"></button></li>
+    }
+  </ul>
+</section>

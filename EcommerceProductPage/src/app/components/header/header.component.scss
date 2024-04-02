@@ -1,0 +1,186 @@
+@use 'variables' as *;
+
+.header-container {
+
+  border-bottom: 1px solid $lightGrayishBlue;
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 2.5rem;
+
+  @media(max-width: $breakpointSmall) {
+    border-bottom: none;
+    padding: 0rem 1.75rem 1rem;
+  }
+
+  .header-left {
+    align-items: center;
+    display: inherit;
+    gap: 1rem;
+
+    @media(max-width: $breakpointVerySmall) {
+      .header-logo {
+        width: 7rem;
+      }
+    }
+
+    @media(max-width: $breakpointDiminute) {
+      .header-logo {
+        display: none;
+      }
+    }
+
+    @media(min-width: $breakpointSmall) {
+      gap: 0;
+      .button-menu {
+        display: none;
+      }
+    }
+
+    .button-menu {
+      background: none;
+      border: none;
+    }
+
+    .header-navigation ul {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+      margin: 0;
+
+      @media(max-width: $breakpointSmall) {
+        display: none;
+      }
+
+      li a {
+        color: $grayishBlue;
+        padding-bottom: 3.6rem;
+        position: relative;
+        text-decoration: none;
+        transition-duration: 0.3s;
+
+        &::after {
+          background-color: $orange;
+          bottom: 0px;
+          content: '';
+          display: block;
+          height: 4px;
+          position: absolute;
+          transform: scaleX(0);
+          transition-duration: 0.3s;
+          width: 100%;
+        }
+
+        &:hover {
+          color: $darkGrayishBlue;
+
+          &::after {
+            transform: scaleX(1);
+          }
+        }
+      }
+    }
+  }
+
+  .header-right {
+    align-items: center;
+    display: inherit;
+    gap: 2.88625rem;
+
+    @media(max-width: $breakpointVerySmall) {
+      gap: 1rem;
+    }
+
+    button {
+      background: none;
+      border: none;
+    }
+
+    .header-avatar {
+      border: 2px solid transparent;
+      border-radius: 50%;
+      width: 3.125rem;
+
+      &:hover {
+        border: 2px solid $orange;
+      }
+    }
+  }
+}
+
+.cart-tooltip {
+  align-items: flex-start;
+  background-color: $white;
+  border-radius: 10px;
+  box-shadow: 1px 1px 5px $blackOpacity;
+  color: $veryDarkBlue;
+  display: flex;
+  flex-direction: column;
+  font-family: "KumbhSans";
+  width: 22rem;
+
+  @media(max-width: $breakpointVerySmall) {
+    width: calc(100vw - 2rem);
+  }
+
+  .tooltip-title {
+    padding: 1rem 1.5rem 0.5rem;
+  }
+
+  .tooltip-header-separator {
+    background-color: $grayishBlue;
+    height: 1px;
+    margin: 0.5rem 0;
+    width: 100%;
+  }
+
+  .tooltip-product {
+
+    display: flex;
+    gap: 1rem;
+    padding: 0.5rem 1.5rem 0.5rem;
+
+    @media(max-width: $breakpointVerySmall) {
+      justify-content: space-between;
+      width: 100%;
+    }
+
+    img {
+      border-radius: 4px;
+      width: 3.125rem;
+    }
+
+    p {
+      color: $darkGrayishBlue;
+      text-align: left;
+      strong {
+        color: $black;
+      }
+    }
+
+    .delete-button {
+      img {
+        height: 1rem;
+        width: 0.875rem;
+      }
+
+      &:active {
+        transform: translate(1px, 1px);
+      }
+    }
+  }
+
+  app-checkout-button {
+    padding: 0.5rem 1.5rem 1rem;
+    width: 100%;
+  }
+
+  .tooltip-empty {
+    align-items: center;
+    color: $darkGrayishBlue;
+    display: flex;
+    font-weight: bold;
+    justify-content: center;
+    padding: 5rem;
+    width: 100%;
+  }
+}

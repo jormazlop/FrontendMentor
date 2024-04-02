@@ -1,0 +1,133 @@
+@use 'variables' as *;
+
+:host {
+  display: contents;
+}
+
+.preview-container {
+
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  height: 100%;
+  justify-content: center;
+  width: 35rem;
+
+  .preview-image {
+    border-radius: 15px;
+    height: 60%;
+  }
+
+  .previous-button {
+    display: none;
+  }
+
+  .next-button {
+    display: none;
+  }
+
+  @media(max-width: $breakpointSmall) {
+    height: 30rem;
+    width: 100%;
+
+    .preview-image {
+      border-radius: 0px;
+      height: 100%;
+      position: relative;
+      pointer-events: none;
+    }
+
+    .previous-button {
+      align-items: center;
+      background-color: $white;
+      border: none;
+      border-radius: 50%;
+      display: flex;
+      height: 2.5rem;
+      justify-content: center;
+      left: 5%;
+      position: absolute;
+      width: 2.5rem;
+
+      &:active {
+        transform: translate(1px, 1px);
+      }
+
+      img {
+        height: 1rem;
+        position: relative;
+        right: 1px;
+        width: 0.65rem;
+      }
+    }
+
+    .next-button {
+      align-items: center;
+      background-color: $white;
+      border: none;
+      border-radius: 50%;
+      display: flex;
+      height: 2.25rem;
+      justify-content: center;
+      left: 90%;
+      position: absolute;
+      width: 2.25rem;
+
+      &:active {
+        transform: translate(1px, 1px);
+      }
+
+      img {
+        height: 1rem;
+        position: relative;
+        left: 1px;
+        width: 0.65rem;
+      }
+    }
+  }
+
+  @media(max-width: $breakpointVerySmall) {
+    height: 20rem;
+  }
+
+  .thumbnail-list {
+    display: flex;
+    gap: 2rem;
+    height: fit-content;
+    justify-content: space-between;
+    list-style: none;
+    padding: 0;
+
+    @media(max-width: $breakpointSmall) {
+      display: none;
+    }
+
+    button {
+      background: none;
+      border: 2px solid transparent;
+      border-radius: 10px;
+      padding: 0;
+
+      img {
+        border-radius: 10px;
+        height: 100%;
+        width: 100%;
+
+        &:hover {
+          opacity: 0.5;
+        }
+      }
+
+      &.active {
+        border: 2px solid $orange;
+        img {
+          opacity: 0.5;
+        }
+
+        &:hover {
+          cursor: not-allowed;
+        }
+      }
+    }
+  }
+}

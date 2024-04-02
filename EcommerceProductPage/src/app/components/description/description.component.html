@@ -1,0 +1,25 @@
+<section class="description-container">
+  <p class="description-subtitle">SNEAKER COMPANY</p>
+  <h2 class="description-title">Fall Limited Edition Sneakers</h2>
+  <p class="description-explanation">
+    These low-profile sneakers are your perfect casual wear companion. Featuring
+    a durable rubber outer sole, they’ll withstand everything the weather can
+    offer.
+  </p>
+  <div class="description-price">
+    <div class="decription-price-left">
+      <strong>$125</strong>
+      <p>50%</p>
+    </div>
+    <p class="description-reduction-responsive">$250.00</p>
+  </div>
+  <p class="description-reduction">$250.00</p>
+  <div class="description-buttons">
+    <div class="description-buttons-quantity">
+      <button (click)="subtract()">-</button>
+      <strong>{{ quantity() }}</strong>
+      <button (click)="add()">+</button>
+    </div>
+    <app-cart-button (click)="addToCart()" [class.disabled]="!quantity()"/>
+  </div>
+</section>
