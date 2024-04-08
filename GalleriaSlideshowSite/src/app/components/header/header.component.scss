@@ -1,0 +1,32 @@
+@use 'variables' as *;
+
+.header-container {
+  align-items: center;
+  border-bottom: 1px solid $lightGrey;
+  display: flex;
+  height: 10vh;
+  justify-content: space-between;
+  padding-bottom: 2.85rem;
+
+  @media(max-width: $breakpointSmall) {
+    img {
+      width: 8rem;
+    }
+  }
+
+  .slide-button {
+    background: none;
+    border: none;
+    color: $grey;
+    font-weight: bold;
+    transition: color 0.3s;
+
+    &:hover {
+      color: $dark;
+    }
+
+    &:active {
+      transform: translate(1px, 1px);
+    }
+  }
+}

@@ -1,0 +1,44 @@
+@use 'variables' as *;
+
+:host {
+  display: contents;
+}
+
+.detail-container {
+  display: flex;
+  height: calc(90vh - 10.7rem);
+  justify-content: space-between;
+  padding: 2.5rem 0;
+
+  @media(max-width: $breakpointLarge) {
+    flex-direction: column;
+    height: fit-content;
+  }
+}
+
+.detail-footer {
+  color: $dark;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  height: 5rem;
+
+  @media(max-width: $breakpointSmall) {
+    height: fit-content;
+  }
+
+  .detail-progress-bar {
+    accent-color: $grey;
+    width: 100%;
+  }
+
+  .detail-footer-name {
+    font-size: 1.25rem;
+    font-weight: bold;
+  }
+
+  .detail-footer-artist {
+    font-size: 0.9rem;
+    opacity: 0.75;
+  }
+}

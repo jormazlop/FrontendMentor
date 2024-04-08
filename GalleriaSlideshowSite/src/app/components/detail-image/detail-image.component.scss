@@ -1,0 +1,131 @@
+@use 'variables' as *;
+
+:host {
+  width: 45%;
+
+  @media(max-width: $breakpointLarge) {
+    width: 100%;
+  }
+}
+
+.detail-image-container {
+
+  display: flex;
+  gap: 1rem;
+  height: 100%;
+  position: relative;
+
+  @media(max-width: $breakpointSmall) {
+    flex-direction: column;
+  }
+
+  .detail-image-image {
+    align-self: center;
+    height: 80%;
+    width: 70%;
+
+    @media(max-width: $breakpointSmall) {
+      width: 100%;
+    }
+
+    img {
+      height: 100%;
+      position: relative;
+      width: 100%;
+    }
+
+    .detail-image-view-button {
+      align-items: center;
+      background-color: $darkOpacity;
+      border: none;
+      bottom: 13%;
+      display: flex;
+      gap: 1rem;
+      height: 2.85rem;
+      left: 3%;
+      padding: 1rem;
+      position: absolute;
+      width: 11rem;
+
+      @media(max-width: $breakpointSmall) {
+        bottom: calc(100% - 4rem);
+      }
+
+      img {
+        height: 0.85rem;
+        width: 0.85rem;
+      }
+
+      p {
+        color: $white;
+        font-size: 0.7rem;
+        margin-top: 3px;
+      }
+    }
+  }
+
+  .detail-image-author {
+    background-color: $white;
+    position: absolute;
+    left: 60%;
+    min-width: 25rem;
+    padding: 3rem;
+    width: fit-content;
+
+    @media(max-width: $breakpointLarge) {
+      left: 30%;
+      padding: 2rem;
+    }
+
+    @media(max-width: $breakpointSmall) {
+      left: 0%;
+      padding: 2rem 1rem;
+      bottom: 10rem;
+      min-width: 0%;
+    }
+
+    strong {
+      color: $dark;
+      font-size: 3rem;
+      font-weight: bold;
+
+      @media(max-width: $breakpointSmall) {
+        font-size: 2rem;
+      }
+    }
+
+    p {
+      color: $grey;
+    }
+  }
+
+  .detail-image-artist {
+    align-self: flex-end;
+    height: 9rem;
+    width: 9rem;
+
+    @media(max-width: $breakpointLarge) {
+      left: 75%;
+      position: absolute;
+      top: 17rem;
+    }
+
+    @media(max-width: $breakpointSmall) {
+      align-self: flex-start;
+      position: static;
+    }
+  }
+}
+
+.modal-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+
+  button {
+    align-self: flex-end;
+    background: transparent;
+    border: none;
+    letter-spacing: 0.2rem;
+  }
+}

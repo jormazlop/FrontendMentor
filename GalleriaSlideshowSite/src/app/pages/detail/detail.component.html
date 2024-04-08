@@ -1,0 +1,9 @@
+<section class="detail-container">
+  <app-detail-image [painting]="painting$()"/>
+  <app-detail-description [painting]="painting$()"/>
+</section>
+<footer class="detail-footer">
+  <progress class="detail-progress-bar" max="100" [value]="progress$()"></progress>
+  <p class="detail-footer-name">{{ painting$().name }}</p>
+  <p class="detail-footer-artist">{{ painting$().artist.name }}</p>
+</footer>

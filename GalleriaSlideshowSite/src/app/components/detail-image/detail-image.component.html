@@ -1,0 +1,22 @@
+<div class="detail-image-container">
+  <div class="detail-image-image" [title]="painting().name" [title]="'Painting ' + painting().name">
+    <img [src]="painting().images.gallery" aria-hidden="true" />
+    <button class="detail-image-view-button" (click)="onClickViewImage()">
+      <img src="../../../assets/shared/icon-view-image.svg" aria-hidden="true">
+      <p>VIEW IMAGE</p>
+    </button>
+  </div>
+  <div class="detail-image-author">
+    <strong>{{ painting().name }}</strong>
+    <p>{{ painting().artist.name }}</p>
+  </div>
+  <img class="detail-image-artist" [src]="painting().artist.image" [alt]="'Artist ' + painting().artist.name">
+</div>
+
+
+<ng-template #modal>
+  <div class="modal-container">
+    <button (click)="onClickCloseModal()">CLOSE</button>
+    <img [src]="painting().images.thumbnail" [alt]="painting().name">
+  </div>
+</ng-template>

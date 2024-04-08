@@ -1,0 +1,86 @@
+@import 'bootstrap/scss/bootstrap-reboot';
+@import 'bootstrap/scss/bootstrap-grid';
+@import 'bootstrap/scss/tables';
+@import 'bootstrap/scss/utilities';
+@import 'bootstrap/scss/mixins';
+@import 'bootstrap/scss/bootstrap';
+@import 'variables';
+
+@font-face {
+  font-family: 'LibreBaskerville';
+  src: url('./fonts/LibreBaskerville-Regular.ttf') format("opentype");
+}
+
+@font-face {
+  font-family: 'LibreBaskerville';
+  font-weight: bold;
+  src: url('./fonts/LibreBaskerville-Bold.ttf') format("opentype");
+}
+
+
+html, body {
+  font-family: 'LibreBaskerville';
+  font-size: 14px;
+  height: fit-content;
+
+  @media(max-width: $breakpointSmall) {
+    font-size: 12px;
+  }
+}
+
+p {
+  margin: 0;
+}
+
+.gallery-column {
+
+  display: flex;
+  flex-direction: column;
+  gap: 2.85rem;
+
+  .gallery-button {
+    background: none;
+    border: none;
+    flex: 1;
+    position: relative;
+
+    .gallery-image {
+      height: 100%;
+      width: 100%;
+    }
+
+    .gallery-title {
+      bottom: 0;
+      color: $white;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      padding: 2rem;
+      position: absolute;
+      text-align: left;
+
+      strong {
+        font-size: 1.7rem;
+      }
+
+      p {
+        font-size: 0.92rem;
+        opacity: 0.75;
+      }
+    }
+
+    &:hover {
+      opacity: 0.6;
+    }
+  }
+}
+
+.modal-content {
+  background: transparent;
+  border: none;
+
+  button {
+    color: $white;
+    font-weight: bold;
+  }
+}

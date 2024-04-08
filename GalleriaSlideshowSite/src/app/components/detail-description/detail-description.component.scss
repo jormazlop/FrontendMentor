@@ -1,0 +1,71 @@
+@use 'variables' as *;
+
+:host {
+  width: 35rem;
+
+  @media(max-width: $breakpointLarge) {
+    width: 100%;
+  }
+}
+
+.detail-description-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: space-between;
+  position: relative;
+
+  @media(max-width: $breakpointLarge) {
+    gap: 4.5rem;
+  }
+
+  .detail-description-year {
+    align-self: flex-end;
+    color: $almostWhite;
+    font-size: 14rem;
+    font-weight: bold;
+    width: fit-content;
+
+    @media(max-width: $breakpointLarge) {
+      align-self: flex-start;
+      position: absolute;
+      z-index: -1;
+    }
+
+    @media(max-width: $breakpointSmall) {
+      align-self: flex-end;
+      font-size: 10rem;
+    }
+  }
+
+  .detail-description-description {
+    color: $grey;
+    font-weight: bold;
+    position: absolute;
+    top: 12rem;
+    width: 70%;
+
+    @media(max-width: $breakpointLarge) {
+      align-self: center;
+      margin-top: 13rem;
+      position: initial;
+    }
+
+    @media(max-width: $breakpointSmall) {
+      margin-top: 10rem;
+      width: 100%;
+    }
+  }
+
+  .detail-description-link {
+    bottom: 5rem;
+    color: $grey;
+    font-size: 0.65rem;
+    font-weight: bold;
+    position: relative;
+
+    @media(max-width: $breakpointLarge) {
+      position: initial;
+    }
+  }
+}

@@ -1,0 +1,47 @@
+@use 'variables' as *;
+
+:host {
+  display: contents;
+}
+
+
+.home-container {
+
+  height: calc(100% - 2.85rem);
+  padding: 2.85rem 0;
+
+    .home-container-column {
+      display: flex;
+      gap: 2.85rem;
+
+      &.large {
+        display: none;
+      }
+
+      &.small {
+        display: none;
+      }
+
+      @media(max-width: $breakpointLarge) {
+
+        display: none;
+
+        &.large {
+          display: flex;
+        }
+
+      }
+
+      @media(max-width: $breakpointSmall) {
+        &.large {
+          display: none;
+        }
+
+        &.small {
+          display: flex;
+        }
+      }
+    }
+}
+
+
