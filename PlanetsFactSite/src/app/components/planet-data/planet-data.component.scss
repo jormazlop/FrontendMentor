@@ -1,0 +1,61 @@
+@use 'variables' as *;
+
+:host {
+  display: contents;
+}
+
+footer {
+  color: $color1;
+  display: flex;
+  font-family: 'Spartan';
+  width: 100%;
+
+  ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+
+    @media(max-width: $breakpointSmall) {
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    li {
+      border: 1px solid $color3;
+      width: 20%;
+      padding: 1.25rem 1.25rem 0.5rem 1.25rem;
+
+      @media(max-width: $breakpointLarge) {
+        padding: 1rem 1rem 0.5rem 1rem;
+      }
+
+      @media(max-width: $breakpointSmall) {
+        align-items: center;
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+      }
+
+      .footer-item-title {
+        align-items: center;
+        font-size: 0.8rem;
+        opacity: 0.5;
+      }
+
+      .footer-item-data {
+        font-size: 2.4rem;
+        letter-spacing: -2.5px;
+        text-transform: uppercase;
+
+        @media(max-width: $breakpointLarge) {
+          font-size: 1.4rem;
+        }
+
+        @media(max-width: $breakpointSmall) {
+          letter-spacing: -1px;
+        }
+      }
+    }
+  }
+}

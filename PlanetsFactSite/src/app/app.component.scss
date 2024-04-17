@@ -1,0 +1,21 @@
+@use 'variables' as *;
+
+.app-container {
+  animation: background-movement 30s linear infinite;
+  background-image: url('../assets/background-stars.svg');
+  background-color: $color2;
+  background-size: 1532px 1291px;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+@keyframes background-movement {
+  from {
+    background-position-y: 100vh;
+  }
+
+  to {
+    background-position-y: 0vh;
+  }
+}

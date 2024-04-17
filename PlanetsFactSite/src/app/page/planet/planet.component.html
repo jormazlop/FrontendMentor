@@ -1,0 +1,30 @@
+<nav aria-labelledby="responsivemoptionslabel" class="responsive-options" [style.--border-color]="borderColor()">
+  <ul>
+    <li [class.active]="option() === 1"><button (click)="onClickOption(1)">Overview</button></li>
+    <li [class.active]="option() === 2"><button (click)="onClickOption(2)">Internal Structure</button></li>
+    <li [class.active]="option() === 3"><button (click)="onClickOption(3)">Surface Geology</button></li>
+  </ul>
+</nav>
+
+<main>
+  <div class="planet-main">
+
+    <app-planet-image [images]="images()" [option]="option()"/>
+    <app-planet-description [planet]="planet()" (option)="onClickOption($event)"/>
+  </div>
+  <app-planet-data [planet]="planet()"/>
+</main>
+
+
+<div class="sidenav" [class.open]="sidenav$()">
+  <ul>
+    @for(menu of menu$(); track $index) {
+      <li>
+        <button (click)="onClickPlanet($index)">
+          <p><img class="link-planet" [src]="menu.image" aria-hidden="true">{{ menu.name }}</p>
+          <img src="assets/icon-chevron.svg" aria-hidden="true">
+        </button>
+      </li>
+    }
+  </ul>
+</div>

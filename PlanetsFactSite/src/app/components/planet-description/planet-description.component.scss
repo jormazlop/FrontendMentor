@@ -1,0 +1,81 @@
+@use 'variables' as *;
+
+.planet-description-container {
+  color: $color1;
+  display: flex;
+  flex-direction: column;
+  gap: 1.7rem;
+  width: 25rem;
+
+  @media(max-width: $breakpointLarge) {
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  @media(max-width: $breakpointSmall) {
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .planet-description-principal {
+
+    display: flex;
+    flex-direction: column;
+    gap: 1.7rem;
+
+    @media(max-width: $breakpointLarge) {
+      width: 50%;
+    }
+
+    @media(max-width: $breakpointSmall) {
+      align-items: center;
+      text-align: center;
+      width: 100%;
+    }
+
+    .planet-description-title {
+      font-size: 5.7rem;
+      text-transform: uppercase;
+    }
+
+    .planet-description-overview {
+      font-family: 'Spartan';
+      font-weight: 100;
+      line-height: 1.7rem;
+    }
+
+    .planet-description-link {
+      align-items: center;
+      display: flex;
+      font-family: 'Spartan';
+      gap: 0.5rem;
+      letter-spacing: 1px;
+
+      p {
+        font-weight: 100;
+        opacity: 0.5;
+      }
+
+      a {
+        color: $color1;
+        opacity: 0.5;
+      }
+    }
+  }
+
+  .planet-description-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 1.7rem;
+
+    @media(max-width: $breakpointLarge) {
+      justify-content: center;
+      width: 40%;
+    }
+
+    @media(max-width: $breakpointSmall) {
+      display: none;
+    }
+  }
+}

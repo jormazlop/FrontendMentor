@@ -1,0 +1,43 @@
+@use 'variables' as *;
+
+.planet-image-container {
+  position: relative;
+  width: fit-content;
+
+  .planet-image {
+    width: 28rem;
+
+    @media(max-width: $breakpointLarge) {
+      width: 18rem;
+    }
+
+    @media(max-width: $breakpointSmall) {
+      width: 12rem;
+    }
+  }
+
+  .image-geology {
+    height: 14rem;
+    left: calc(50% - 5.5rem);
+    position: absolute;
+    top: calc(100% - 7rem);
+    width: 11rem;
+
+    @media(max-width: $breakpointLarge) {
+      height: 9rem;
+      left: calc(50% - 3.5rem);
+      top: calc(100% - 4.5rem);
+      width: 7rem;
+    }
+
+    @media(max-width: $breakpointSmall) {
+      height: 6rem;
+      left: calc(50% - 2.5rem);
+      top: calc(100% - 3rem);
+      width: 5rem;
+    }
+  }
+
+}
+
+

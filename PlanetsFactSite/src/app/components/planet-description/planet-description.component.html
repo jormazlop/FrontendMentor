@@ -1,0 +1,16 @@
+<section class="planet-description-container">
+  <div class="planet-description-principal">
+    <h2 class="planet-description-title">{{ planet().name }}</h2>
+    <p class="planet-description-overview">{{ planet().overview.content }}</p>
+    <div class="planet-description-link">
+      <p>Source:</p>
+      <a [href]="planet().overview.source" target="_blank">Wikipedia</a>
+      <img src="assets/icon-source.svg" alt="Link to Wikipedia" />
+    </div>
+  </div>
+  <div class="planet-description-buttons">
+    <app-button (click)="onClickView(1)" title="Overview of the planet"><p number>01</p><p text>Overview</p></app-button>
+    <app-button (click)="onClickView(2)" title="Internal Structure of the planet"><p number>02</p><p text>Internal Structure</p></app-button>
+    <app-button (click)="onClickView(3)" title="Surface Geology of the planet"><p number>03</p><p text>Surface Geology</p></app-button>
+  </div>
+</section>

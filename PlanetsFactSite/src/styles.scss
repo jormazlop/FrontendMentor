@@ -1,0 +1,32 @@
+@import 'bootstrap/scss/bootstrap-reboot';
+@import 'bootstrap/scss/bootstrap-grid';
+@import 'bootstrap/scss/tables';
+@import 'bootstrap/scss/utilities';
+@import 'bootstrap/scss/mixins';
+@import 'variables';
+
+@font-face {
+  font-family: 'Antonio';
+  src: url('./fonts/Antonio.ttf') format("opentype");
+}
+
+@font-face {
+  font-family: 'Spartan';
+  src: url('./fonts/Spartan.ttf') format("opentype");
+}
+
+
+body, html {
+  font-family: 'Antonio';
+  font-size: 14px;
+  height: 100vh;
+
+  @media(max-width: $breakpointSmall) {
+    font-size: 12px;
+  }
+}
+
+
+h1, p {
+  margin: 0;
+}

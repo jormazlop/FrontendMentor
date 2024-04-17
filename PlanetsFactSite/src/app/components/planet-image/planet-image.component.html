@@ -1,0 +1,6 @@
+<section class="planet-image-container">
+  <img class="planet-image" [src]="image()" alt="Image of the planet">
+  @if(option() === 3) {
+    <img class="image-geology" [src]="images()?.geology" alt="Geology of the planet">
+  }
+</section>

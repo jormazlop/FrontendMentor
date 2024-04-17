@@ -1,0 +1,25 @@
+@use 'variables' as *;
+
+button {
+  background: none;
+  border: 1px solid $color3;
+  box-shadow: none;
+  color: $color1;
+  display: flex;
+  font-family: 'Spartan';
+  gap: 2rem;
+  padding: 1rem 2rem;
+  width: 100%;
+
+  .button-number {
+    opacity: 0.5;
+  }
+
+  .button-text {
+    text-transform: uppercase;
+  }
+
+  &:hover {
+    background-color: $color6;
+  }
+}

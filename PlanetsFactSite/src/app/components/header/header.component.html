@@ -1,0 +1,13 @@
+<header>
+  <h1>THE PLANETS</h1>
+  <nav aria-labelledby="mainmenulabel">
+    <ul>
+      @for(menu of menu$(); track $index) {
+        <li><a [routerLink]="['/detail', $index]">{{ menu }}</a></li>
+      }
+    </ul>
+  </nav>
+  <button title="Open Menu" (click)="onClickMenu()" [class.open]="sidenav$()">
+    <img src="assets/icon-hamburger.svg" aria-hidden="true">
+  </button>
+</header>

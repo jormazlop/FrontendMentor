@@ -1,0 +1,62 @@
+@use 'variables' as *;
+
+header {
+  align-items: center;
+  border-bottom: 1px solid $color3;
+  color: $color1;
+  display: flex;
+  justify-content: space-between;
+  padding: 2rem;
+  width: 100%;
+
+  @media(max-width: $breakpointLarge) {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  @media(max-width: $breakpointSmall) {
+    flex-direction: row;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  ul {
+    display: flex;
+    gap: 2.35rem;
+    list-style: none;
+    margin: 0;
+
+    a {
+      color: $color1;
+      font-family: 'Spartan';
+      font-size: 1rem;
+      text-decoration: none;
+      text-transform: uppercase;
+    }
+
+    @media(max-width: $breakpointSmall) {
+      display: none;
+    }
+  }
+
+  button {
+    background: none;
+    border: 1px solid transparent;
+    display: none;
+    padding: 0.5rem;
+
+    &.open {
+      opacity: 0.5;
+    }
+
+    &:hover {
+      border: 1px solid $color3;
+    }
+
+    @media(max-width: $breakpointSmall) {
+      display: block;
+    }
+  }
+}
