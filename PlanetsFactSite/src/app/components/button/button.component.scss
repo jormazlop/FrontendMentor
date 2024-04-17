@@ -1,7 +1,7 @@
 @use 'variables' as *;
 
 button {
-  background: none;
+  background: transparent;
   border: 1px solid $color3;
   box-shadow: none;
   color: $color1;
@@ -10,6 +10,10 @@ button {
   gap: 2rem;
   padding: 1rem 2rem;
   width: 100%;
+
+  &.active {
+    background-color: var(--bg-color);
+  }
 
   .button-number {
     opacity: 0.5;
@@ -20,6 +24,6 @@ button {
   }
 
   &:hover {
-    background-color: $color6;
+    background-color: var(--bg-color);
   }
 }

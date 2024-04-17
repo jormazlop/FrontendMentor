@@ -1,4 +1,4 @@
-<button [attr.title]="title()">
+<button [attr.title]="title()" [style.--bg-color]="bgColor()" [class.active]="active()">
    <div class="button-number"><ng-content select="[number]"></ng-content></div>
    <div class="button-text"><ng-content select="[text]"></ng-content></div>
 </button>

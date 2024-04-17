@@ -9,8 +9,8 @@
     </div>
   </div>
   <div class="planet-description-buttons">
-    <app-button (click)="onClickView(1)" title="Overview of the planet"><p number>01</p><p text>Overview</p></app-button>
-    <app-button (click)="onClickView(2)" title="Internal Structure of the planet"><p number>02</p><p text>Internal Structure</p></app-button>
-    <app-button (click)="onClickView(3)" title="Surface Geology of the planet"><p number>03</p><p text>Surface Geology</p></app-button>
+    <app-button (click)="onClickView(1)" title="Overview of the planet" [bgColor]="bgColor()" [active]="active() === 1"><p number>01</p><p text>Overview</p></app-button>
+    <app-button (click)="onClickView(2)" title="Internal Structure of the planet" [bgColor]="bgColor()" [active]="active() === 2"><p number>02</p><p text>Internal Structure</p></app-button>
+    <app-button (click)="onClickView(3)" title="Surface Geology of the planet" [bgColor]="bgColor()" [active]="active() === 3"><p number>03</p><p text>Surface Geology</p></app-button>
   </div>
 </section>

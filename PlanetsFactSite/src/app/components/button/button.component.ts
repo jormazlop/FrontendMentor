@@ -9,4 +9,8 @@ import { Component, input } from '@angular/core';
 })
 export class ButtonComponent {
   title = input();
+
+  bgColor = input<string>();
+
+  active = input<boolean>(false)
 }
