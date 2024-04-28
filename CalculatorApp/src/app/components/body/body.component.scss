@@ -1,0 +1,38 @@
+@use 'variables' as *;
+
+@mixin body($color1) {
+  .body-container {
+    background-color: $color1;
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-areas:
+    "button-1 button-2 button-3 button-4"
+    "button-5 button-6 button-7 button-8"
+    "button-9 button-10 button-11 button-12"
+    "button-13 button-14 button-15 button-16"
+    "button-17 button-17 button-18 button-18";
+    padding: 2rem;
+    width: var(--calculator-size);
+
+    @for $i from 1 through 18 {
+      app-body-button:nth-child(#{$i}) {
+        grid-area: button-#{$i};
+      }
+    }
+  }
+}
+
+
+:host-context(.theme-1) {
+  @include body($color2-theme1);
+}
+
+:host-context(.theme-2) {
+  @include body($color2-theme2);
+}
+
+:host-context(.theme-3) {
+  @include body($color2-theme3);
+}

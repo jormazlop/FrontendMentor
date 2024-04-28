@@ -1,0 +1,82 @@
+@use 'variables' as *;
+
+@mixin button($color1, $color2, $color3) {
+
+  background-color: $color1;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0px 4px 0px $color3;
+  font-weight: bold;
+  height: 100%;
+  width: 100%;
+
+  p {
+    color: $color2;
+    font-size: 2rem;
+    position: relative;
+    top: 0.2rem;
+  }
+
+  &:active {
+    transform: translate(1px, 1px);
+  }
+}
+
+:host-context(.theme-1) {
+
+  .primary {
+    @include button($color8-theme1, $color10-theme1, $color9-theme1);
+  }
+
+  .secondary {
+    @include button($color4-theme1, $color11-theme1, $color5-theme1);
+
+    p {
+      font-size: 1.5rem;
+    }
+  }
+
+  .tertiary {
+    @include button($color6-theme1, $color11-theme1, $color7-theme1);
+  }
+
+}
+
+:host-context(.theme-2) {
+
+  .primary {
+    @include button($color1-theme2, $color10-theme2, $color9-theme2);
+  }
+
+  .secondary {
+    @include button($color4-theme2, $color11-theme2, $color5-theme2);
+
+    p {
+      font-size: 1.5rem;
+    }
+  }
+
+  .tertiary {
+    @include button($color6-theme2, $color11-theme2, $color7-theme2);
+  }
+
+}
+
+:host-context(.theme-3) {
+
+  .primary {
+    @include button($color7-theme3, $color9-theme3, $color8-theme3);
+  }
+
+  .secondary {
+    @include button($color3-theme3, $color11-theme3, $color4-theme3);
+
+    p {
+      font-size: 1.5rem;
+    }
+  }
+
+  .tertiary {
+    @include button($color5-theme3, $color10-theme3, $color6-theme3);
+  }
+}

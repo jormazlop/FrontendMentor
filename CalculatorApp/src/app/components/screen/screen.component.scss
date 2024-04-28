@@ -1,0 +1,42 @@
+@use 'variables' as *;
+
+@mixin screen($color1, $color2) {
+  .screen-component {
+    align-items: center;
+    background-color: $color1;
+    border-radius: 10px;
+    display: flex;
+    height: 4rem;
+    justify-content: flex-end;
+    padding: 4rem 2rem;
+    position: relative;
+    width: var(--calculator-size);
+
+    .screen-temporary {
+      color: $color2;
+      font-size: 1.5rem;
+      position: absolute;
+      top: 0.8rem;
+    }
+
+    .screen-total {
+      color: $color2;
+      font-size: 3rem;
+      font-weight: bold;
+      position: relative;
+      top: 1rem;
+    }
+  }
+}
+
+:host-context(.theme-1) {
+  @include screen($color3-theme1, $color11-theme1);
+}
+
+:host-context(.theme-2) {
+  @include screen($color3-theme2, $color10-theme2);
+}
+
+:host-context(.theme-3) {
+  @include screen($color2-theme3, $color9-theme3);
+}

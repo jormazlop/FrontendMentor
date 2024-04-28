@@ -1,0 +1,91 @@
+@use 'variables' as *;
+
+
+@mixin toggle($color1, $color2, $color3) {
+  .toggle-button-container {
+    display: flex;
+    gap: 1.5rem;
+    height: 4rem;
+
+    .toggle-text {
+      color: $color3;
+      font-size: 0.9rem;
+      font-weight: bold;
+      position: relative;
+      top: 1.7rem;
+    }
+
+    .toggle-button {
+      background-color: $color1;
+      border-radius: 14px;
+      height: 1.75rem;
+      top: 1.5rem;
+      width: 5rem;
+
+      @media(max-width: $breakPoint1) {
+        height: 2rem;
+      }
+
+      @media(max-width: $breakPoint2) {
+        height: 2.1rem;
+      }
+
+      @media(max-width: $breakPoint3) {
+        height: 2.5rem;
+      }
+
+      @media(max-width: $breakPoint4) {
+        height: 3rem;
+      }
+    }
+    .toggle {
+
+      height: 1rem;
+      background-color: $color2;
+      border-radius: 8px;
+      left: 6px;
+      position: relative;
+      top: 6px;
+      width: 1rem;
+
+      &.option-1 {
+        transition: transform 0.1s linear;
+        transform: translateX(0);
+      }
+
+      &.option-2 {
+        transition: transform 0.1s linear;
+        transform: translateX(1.5rem);
+      }
+
+      &.option-3 {
+        transition: transform 0.1s linear;
+        transform: translateX(3rem);
+      }
+    }
+    .legend-container {
+      color: $color3;
+      display: flex;
+      font-size: 0.9rem;
+      font-weight: bold;
+      justify-content: space-around;
+
+      .legend:hover {
+        cursor: pointer;
+        transform: scale(1.1);
+      }
+    }
+  }
+}
+
+:host-context(.theme-1) {
+  @include toggle($color2-theme1, $color6-theme1, $color11-theme1);
+}
+
+:host-context(.theme-2) {
+  @include toggle($color2-theme2, $color6-theme2, $color10-theme2);
+}
+
+:host-context(.theme-3) {
+  @include toggle($color2-theme3, $color6-theme3, $color9-theme3);
+}

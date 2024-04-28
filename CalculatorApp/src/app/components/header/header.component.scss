@@ -1,0 +1,31 @@
+@use 'variables' as *;
+
+@mixin header($color1) {
+  .calculator-header {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    width: var(--calculator-size);
+
+    .calculator-logo {
+      color: $color1;
+      font-size: 2rem;
+      font-weight: bold;
+      position: relative;
+      top: 0.3rem;
+    }
+  }
+}
+
+
+:host-context(.theme-1) {
+  @include header($color11-theme1);
+}
+
+:host-context(.theme-2) {
+  @include header($color10-theme2);
+}
+
+:host-context(.theme-3) {
+  @include header($color9-theme3);
+}

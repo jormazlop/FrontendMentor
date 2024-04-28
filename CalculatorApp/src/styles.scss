@@ -1,0 +1,44 @@
+@import 'bootstrap/scss/bootstrap-reboot';
+@import 'bootstrap/scss/bootstrap-grid';
+@import 'bootstrap/scss/tables';
+@import 'bootstrap/scss/utilities';
+@import 'bootstrap/scss/mixins';
+@import 'variables';
+
+@font-face {
+  font-family: 'LeagueSpartan';
+  src: url('./fonts/LeagueSpartan.ttf') format("opentype");
+}
+
+html {
+  font-size: 16px;
+
+  @media(max-width: $breakPoint1) {
+    font-size: 12px;
+  }
+
+  @media(max-width: $breakPoint2) {
+    font-size: 10px;
+  }
+
+  @media(max-width: $breakPoint3) {
+    font-size: 8px;
+  }
+
+  @media(max-width: $breakPoint4) {
+    font-size: 6px;
+  }
+}
+
+body {
+  font-family: 'LeagueSpartan';
+
+  height: 100vh;
+
+  --calculator-size: 35rem;
+
+  p {
+    margin: 0;
+  }
+
+}

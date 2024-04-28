@@ -1,0 +1,5 @@
+<main class="body-container">
+  @for(button of buttons(); track $index) {
+    <app-body-button [value]="button.value" [type]="button.type" (onClick)="clickButton($event)"/>
+  }
+</main>
