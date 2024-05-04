@@ -1,0 +1,11 @@
+@use 'variables' as *;
+
+.home-container {
+  display: flex;
+  flex-direction: column;
+  gap: 8rem;
+
+  @media(max-width: $breakPoint2) {
+    gap: 5rem;
+  }
+}

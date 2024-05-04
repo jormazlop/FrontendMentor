@@ -1,0 +1,27 @@
+<main class="main-container" [class.open-menu]="open()">
+  <app-header (openMenu)="onClickMenu()"/>
+  <router-outlet/>
+  <app-footer/>
+</main>
+
+<aside class="main-sidebar" [class.open-menu]="open()">
+  <div class="main-sidebar-header">
+    <div class="sidebar-logo"></div>
+    <button class="hamburger-button" (click)="onClickMenu()">
+      <img src="assets/shared/mobile/icon-close.svg" alt="Close Menu">
+    </button>
+  </div>
+  <nav class="sidebar-navigation">
+    <ul>
+      <li>
+        <a routerLink="home" (click)="onClickMenu()">Home</a>
+      </li>
+      <li>
+        <a routerLink="about-us" (click)="onClickMenu()">About Us</a>
+      </li>
+      <li>
+        <a routerLink="create-your-plan" (click)="onClickMenu()">Create Your Plan</a>
+      </li>
+    </ul>
+  </nav>
+</aside>

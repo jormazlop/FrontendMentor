@@ -1,0 +1,89 @@
+@use 'variables' as *;
+
+.create-your-plan-how-it-works-container {
+
+  background-color: $darkGreyBlue;
+  display: flex;
+  flex-direction: column;
+  gap: 5rem;
+  padding: 5rem;
+
+  @media(max-width: $breakPoint3) {
+    padding: 5rem 1.5rem;
+  }
+
+  .create-your-plan-how-it-works-title {
+    color: $grey;
+    font-family: 'Fraunces-9pt';
+
+    @media(max-width: $breakPoint3) {
+      text-align: center;
+    }
+  }
+
+  .create-your-plan-how-it-works-main {
+    display: grid;
+    grid-template: 2rem 1fr / 1fr 1fr 1fr;
+    row-gap: 4rem;
+
+    @media(max-width: $breakPoint3) {
+      align-items: center;
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+    }
+
+    .create-your-plan-how-it-works-header {
+
+      align-items: center;
+      display: flex;
+
+      @media(max-width: $breakPoint3) {
+        display: none;
+      }
+
+      .circle {
+        background: transparent;
+        border: 1px solid $darkCyan;
+        border-radius: 50%;
+        height: 2rem;
+        position: absolute;
+        width: 2rem;
+      }
+
+      .line {
+        background-color: $paleOrange;
+        height: 1px;
+        width: 100%;
+        position: relative;
+        left: 1rem;
+      }
+
+    }
+
+    .create-your-plan-how-it-works-body {
+
+      display: flex;
+      flex-direction: column;
+      gap: 2.375rem;
+      width: 80%;
+
+      .create-your-plan-how-it-works-body-number {
+        color: $paleOrange;
+        font-family: 'Fraunces-9pt';
+        font-size: 4.5rem;
+      }
+
+      .create-your-plan-how-it-works-body-title {
+        color: $lightCream;
+        font-family: 'Fraunces-9pt';
+        font-size: 2rem;
+      }
+
+      .create-your-plan-how-it-works-body-description {
+        color: $lightCream;
+        font-family: 'Barlow';
+      }
+    }
+  }
+}

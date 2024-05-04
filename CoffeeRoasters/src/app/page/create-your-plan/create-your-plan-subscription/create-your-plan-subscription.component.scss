@@ -1,0 +1,110 @@
+@use "variables" as *;
+
+.create-your-plan-subscription-container {
+  display: flex;
+  gap: 7rem;
+  padding: 0 5rem;
+
+  @media(max-width: $breakPoint1) {
+    gap: 0;
+    justify-content: center;
+    padding: 0;
+  }
+
+  .create-your-plan-subscription-sidebar ol {
+    display: flex;
+    flex-direction: column;
+
+    @media(max-width: $breakPoint1) {
+      display: none;
+    }
+
+    li {
+      border-bottom: 1px solid $grey;
+      color: $darkGreyBlue;
+      font-family: "Fraunces-9pt";
+      font-size: 1.5rem;
+      opacity: 0.4;
+      padding: 1.5rem 0;
+      list-style: none;
+
+      &:last-of-type {
+        border: none;
+      }
+
+      &::before {
+        color: $grey;
+        content: "0" counter(list-item) "";
+        padding: 1.5rem 1.5rem 1.5rem 0;
+      }
+
+      &.active {
+        opacity: 1;
+
+        &::before {
+          color: $darkCyan;
+        }
+      }
+    }
+  }
+
+  .create-your-plan-subscription-main {
+    display: flex;
+    flex-direction: column;
+    max-width: 50rem;
+    padding: 1.5rem 0;
+    width: 100%;
+  }
+
+  .create-your-plan-subscription-summary {
+    background-color: $dark;
+    color: $lightCream;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Fraunces-9pt';
+    font-size: 1.5rem;
+    padding: 1.5rem 4rem;
+  }
+
+  .create-your-plan-button {
+    align-self: flex-end;
+    background-color: $darkCyan;
+    border: none;
+    border-radius: 6px;
+    color: $lightCream;
+    font-family: 'Fraunces';
+    font-size: 1.15rem;
+    font-weight: bold;
+    margin-top: 2rem;
+    padding: 1rem 2rem;
+    width: fit-content;
+
+    @media(max-width: $breakPoint2) {
+      align-self: center;
+    }
+
+    &:active {
+      transform: translate(1px, 1px);
+    }
+
+    &:disabled {
+      pointer-events: none;
+      opacity: 0.5;
+    }
+  }
+}
+
+:host ::ng-deep .create-your-plan-subscription-summary {
+
+  .summary-title {
+    font-family: 'Barlow';
+    font-size: 1rem;
+    opacity: 0.5;
+  }
+
+  span {
+    color: $darkCyan;
+  }
+
+}
+

@@ -1,0 +1,64 @@
+@use 'variables' as *;
+
+.about-us-headquarters-container {
+  display: flex;
+  flex-direction: column;
+  gap: 4.5rem;
+  padding: 0 5rem;
+
+  @media(max-width: $breakPoint2) {
+    padding: 0;
+  }
+
+  .about-us-headquarters-title {
+    color: $grey;
+    font-family: 'Fraunces-9pt';
+    font-size: 1.5rem;
+
+    @media(max-width: $breakPoint3) {
+      text-align: center;
+    }
+  }
+
+  .about-us-headquarters-list {
+
+    display: flex;
+    padding: 0;
+
+    @media(max-width: $breakPoint3) {
+      flex-direction: column;
+      gap: 2rem;
+      text-align: center;
+    }
+
+    .about-us-headquarters-item {
+      color: $darkGreyBlue;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      width: 100%;
+
+      @media(max-width: $breakPoint3) {
+        align-items: center;
+      }
+
+      .about-us-headquarters-image {
+        height: 3.125rem;
+        width: 2.25rem;
+      }
+
+      .about-us-headquarters-subtitle {
+        font-family: 'Fraunces-9pt';
+        font-size: 2rem;
+        margin: 2.5rem 0;
+      }
+
+      .about-us-headquarters-address {
+        font-family: 'Barlow';
+      }
+
+
+    }
+
+  }
+}

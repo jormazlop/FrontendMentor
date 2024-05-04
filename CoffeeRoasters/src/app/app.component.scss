@@ -1,0 +1,71 @@
+@use 'variables' as *;
+
+.main-container {
+  background-color: $lightCream;
+  display: flex;
+  flex-direction: column;
+  padding: 2.5rem 5rem;
+
+  &.open-menu {
+    height: 100vh;
+    overflow: hidden;
+  }
+
+  @media(max-width: $breakPoint2) {
+    padding: 2.5rem;
+  }
+
+}
+
+.main-sidebar {
+  background-image: $linearSidebar;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  z-index: 10;
+  width: 100%;
+  transform: scale(0);
+  transform-origin: top;
+  transition-duration: 0.3s;
+
+  &.open-menu {
+    transform: scale(1);
+  }
+
+  .main-sidebar-header {
+    align-items: center;
+    display: flex;
+    font-family: 'Barlow';
+    justify-content: space-between;
+    padding: 2.5rem;
+
+    .sidebar-logo {
+      background-image: url('/assets/shared/desktop/header-logo.svg');
+      background-size: 100% 100%;
+      height: 1.75rem;
+      width: 15rem;
+    }
+
+    .hamburger-button {
+      background: none;
+      border: none;
+    }
+  }
+
+  .sidebar-navigation ul {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    list-style: none;
+    margin-top: 5rem;
+
+    a {
+      color: $dark;
+      font-family: 'Fraunces-9pt';
+      font-size: 2rem;
+      text-decoration: none;
+    }
+  }
+}
+

@@ -1,0 +1,117 @@
+@use 'variables' as *;
+
+:host {
+  display: contents;
+}
+
+.home-collection-container {
+  display: flex;
+  height: 30rem;
+  position: relative;
+
+  @media(max-width: $breakPoint2) {
+    height: fit-content;
+  }
+
+  @media(max-width: $breakPoint3) {
+    flex-direction: column;
+  }
+
+  .home-collection-background {
+    background-image: $linearCollection;
+    background-clip: text;
+    display: flex;
+    font-family: 'Fraunces-9pt';
+    font-size: 10rem;
+    font-weight: bold;
+    justify-content: center;
+    line-height: 7.5rem;
+    position: absolute;
+    z-index: 0;
+    width: 100%;
+    -webkit-text-fill-color: transparent;
+
+    @media(max-width: $breakPoint1) {
+      font-size: 8.5rem;
+    }
+
+    @media(max-width: $breakPoint2) {
+      font-size: 5rem;
+      top: -4rem;
+    }
+
+    @media(max-width: $breakPoint3) {
+      font-size: 3rem;
+      top: 0;
+      position: relative;
+      text-align: center;
+    }
+  }
+
+  .home-collection-list {
+    align-self: flex-end;
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+    width: 100%;
+    z-index: 1;
+
+    @media(max-width: $breakPoint2) {
+      flex-direction: column;
+      gap: 4rem;
+    }
+
+    .home-collection-item {
+
+      align-items: center;
+      display: flex;
+      flex-direction: column;
+      gap: 4rem;
+      text-align: center;
+
+      @media(max-width: $breakPoint2) {
+        flex-direction: row;
+        justify-content: center;
+      }
+
+      @media(max-width: $breakPoint3) {
+        flex-direction: column;
+      }
+
+      .home-collection-image {
+        width: 13rem;
+      }
+
+      hgroup {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+
+        @media(max-width: $breakPoint2) {
+          text-align: left;
+        }
+
+        @media(max-width: $breakPoint3) {
+          text-align: center;
+        }
+
+        .home-collection-title {
+          color: $darkGreyBlue;
+          font-family: 'Fraunces';
+          font-size: 1.5rem;
+          font-weight: bold;
+        }
+
+        .home-collection-description {
+          color: $darkGreyBlue;
+          font-family: 'Barlow';
+          max-width: 16rem;
+
+          @media(max-width: $breakPoint3) {
+            max-width: 100%;
+          }
+        }
+      }
+    }
+  }
+}

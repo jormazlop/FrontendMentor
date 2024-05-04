@@ -1,0 +1,17 @@
+@use 'variables' as *;
+
+svg {
+
+  path {
+    transition-duration: 0.25s;
+  }
+
+  &:hover {
+    cursor: pointer;
+
+    path {
+      fill: $paleOrange;
+    }
+
+  }
+}

@@ -1,0 +1,24 @@
+<section class="create-your-plan-how-it-works-container">
+  <h2 class="create-your-plan-how-it-works-title">How it works</h2>
+  <div class="create-your-plan-how-it-works-main">
+
+    @for(how of howItWorks(); track $index; let last = $last) {
+      <div class="create-your-plan-how-it-works-header">
+        <div class="circle"></div>
+        @if (!last) {
+          <div class="line"></div>
+        }
+      </div>
+    }
+
+      @for(how of howItWorks(); track $index) {
+        <div class="create-your-plan-how-it-works-body">
+          <span class="create-your-plan-how-it-works-body-number">{{ how.num }}</span>
+          <h3 class="create-your-plan-how-it-works-body-title"> {{ how.title }} </h3>
+          <p class="create-your-plan-how-it-works-body-description">
+            {{ how.description }}
+          </p>
+        </div>
+      }
+  </div>
+</section>

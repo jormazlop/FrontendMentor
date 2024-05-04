@@ -1,0 +1,15 @@
+<section class="about-us-headquarters-container">
+  <h2 class="about-us-headquarters-title">Our headquarters</h2>
+  <ul class="about-us-headquarters-list">
+
+    @for(headquarter of headquarters(); track $index) {
+      <li class="about-us-headquarters-item">
+        <img class="about-us-headquarters-image" [src]="headquarter.image" [alt]="headquarter.title + ' Image'">
+        <h3 class="about-us-headquarters-subtitle">{{ headquarter.title }}</h3>
+        @for (address of headquarter.addresses; track $index) {
+          <p class="about-us-headquarters-address">{{ address }}</p>
+        }
+      </li>
+    }
+  </ul>
+</section>

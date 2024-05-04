@@ -1,0 +1,101 @@
+@use 'variables' as *;
+
+
+.modal-header {
+  background-color: $dark;
+  padding: 2rem 3.5rem;
+}
+
+.modal-title {
+  color: $lightCream;
+  font-family: 'Fraunces-9pt';
+  font-size: 2.5rem;
+}
+
+.modal-body {
+
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 2rem 3.5rem;
+
+  p {
+    color: $dark;
+    font-family: 'Barlow';
+    opacity: 0.8;
+  }
+}
+
+:host ::ng-deep .summary {
+
+  .summary-title {
+    display: none;
+  }
+
+  p {
+    color: $grey;
+    font-family: 'Fraunces-9pt';
+    font-size: 1.5rem;
+
+    span {
+      color: $darkCyan;
+    }
+  }
+
+}
+
+.modal-footer {
+
+  align-items: center;
+  border: none;
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 3.5rem 2rem;
+
+  .total {
+    color: $dark;
+    font-family: 'Fraunces-9pt';
+    font-size: 2rem;
+
+    @media(max-width: $breakPoint3) {
+      display: none;
+    }
+  }
+
+  .checkout-button {
+    align-self: flex-end;
+    background-color: $darkCyan;
+    border: none;
+    border-radius: 6px;
+    color: $lightCream;
+    font-family: 'Fraunces';
+    font-size: 1.15rem;
+    font-weight: bold;
+    padding: 1rem 2rem;
+    width: fit-content;
+
+    @media(max-width: $breakPoint3) {
+      width: 100%;
+    }
+
+    &:active {
+      transform: translate(1px, 1px);
+    }
+
+    &:disabled {
+      pointer-events: none;
+      opacity: 0.5;
+    }
+
+    @media(min-width: $breakPoint3) {
+
+      span {
+        display: none;
+      }
+    }
+
+
+  }
+}
+
+

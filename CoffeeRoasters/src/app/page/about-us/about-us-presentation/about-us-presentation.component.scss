@@ -1,0 +1,54 @@
+@use 'variables' as *;
+
+.about-us-presentation-container {
+  background-image: url('/assets/about/desktop/image-hero-whitecup.jpg');
+  background-size: 100% 100%;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  height: 37rem;
+  justify-content: center;
+  padding: 6.5rem 5rem;
+  width: 100%;
+
+  @media(max-width: $breakPoint2) {
+    background-image: url('/assets/about/tablet/image-hero-whitecup.jpg');
+    padding: 2.5rem;
+    height: 25rem;
+  }
+
+  @media(max-width: $breakPoint3) {
+    background-image: url('/assets/about/mobile/image-hero-whitecup.jpg');
+    text-align: center;
+  }
+
+  .about-us-presentation-title {
+    color: $lightCream;
+    font-family: 'Fraunces-9pt';
+    font-size: 4.5rem;
+    font-weight: bold;
+    width: 30rem;
+
+    @media(max-width: $breakPoint2) {
+      font-size: 2.5rem;
+    }
+
+    @media(max-width: $breakPoint3) {
+      font-size: 1.5rem;
+      width: 100%;
+    }
+  }
+
+  .about-us-presentation-description {
+    color: $lightCream;
+    font-family: 'Barlow';
+    font-weight: 100;
+    opacity: 0.8;
+    width: 28rem;
+
+    @media(max-width: $breakPoint3) {
+      width: 100%;
+    }
+  }
+}

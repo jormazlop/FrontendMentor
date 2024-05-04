@@ -1,0 +1,50 @@
+@use 'variables' as *;
+
+.header-container {
+  align-items: center;
+  display: flex;
+  font-family: 'Barlow';
+  justify-content: space-between;
+  padding-bottom: 2.5rem;
+
+  .header-logo {
+    background-image: url('/assets/shared/desktop/header-logo.svg');
+    background-size: 100% 100%;
+    height: 1.75rem;
+    width: 15rem;
+  }
+
+  .header-navigation ul {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+    margin: 0;
+
+    @media(max-width: $breakPoint3) {
+      display: none;
+    }
+
+    li a {
+      color: $grey;
+      font-size: 0.9rem;
+      font-weight: bold;
+      letter-spacing: 1px;
+      text-decoration: none;
+      transition-duration: 0.3s;
+
+      &:hover {
+        color: $darkGreyBlue;
+      }
+    }
+  }
+
+  .hamburger-button {
+
+    background: none;
+    border: none;
+
+    @media(min-width: $breakPoint3) {
+      display: none;
+    }
+  }
+}

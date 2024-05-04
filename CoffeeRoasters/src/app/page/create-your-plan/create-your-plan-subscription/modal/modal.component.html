@@ -1,0 +1,18 @@
+<div class="modal-header">
+  <h4 class="modal-title">Order Summary</h4>
+</div>
+<div class="modal-body">
+  <div class="summary" [innerHTML]="options() | summary"></div>
+  <p>
+    Is this correct? You can proceed to checkout or go back to plan selection if something is off.
+    Subscription discount codes can also be redeemed at the checkout.
+  </p>
+</div>
+<div class="modal-footer">
+  <p class="total">${{ total() }}/mo</p>
+  <button class="checkout-button"
+          title="Checkout"
+          (click)="onCheckout()">
+    Checkout <span> - ${{ total() }}/mo</span>
+  </button>
+</div>

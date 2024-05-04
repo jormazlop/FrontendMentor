@@ -1,0 +1,70 @@
+@use 'variables' as *;
+
+.about-us-quality-container {
+  background: linear-gradient(180deg, $lightCream 30%, $darkGreyBlue 30%);
+  border-radius: 8px;
+  display: flex;
+  gap: 7.5rem;
+  justify-content: space-around;
+  padding: 5.5rem;
+
+  @media(max-width: $breakPoint2) {
+    background: linear-gradient(180deg, $lightCream 35%, $darkGreyBlue 35%);
+    flex-direction: column-reverse;
+    gap: 3rem;
+    padding: 5.5rem 2rem;
+  }
+
+  @media(max-width: $breakPoint3) {
+    background: linear-gradient(180deg, $lightCream 25%, $darkGreyBlue 25%);
+  }
+
+  .about-us-quality-main {
+    color: $lightCream;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    justify-content: center;
+    position: relative;
+    top: 4rem;
+    width: 40%;
+
+    @media(max-width: $breakPoint2) {
+      text-align: center;
+      top: 0;
+      width: 100%;
+    }
+
+    .about-us-quality-title {
+      font-family: 'Fraunces-9pt';
+      font-size: 2.5rem;
+
+      @media(max-width: $breakPoint3) {
+        font-size: 1.5rem;
+      }
+    }
+
+    .about-us-quality-description {
+      font-family: 'Barlow';
+    }
+  }
+
+  .about-us-quality-image {
+    background-image: url('/assets/about/desktop/image-quality.jpg');
+    background-size: 100% 100%;
+    border-radius: 8px;
+    height: 29rem;
+    width: 28rem;
+
+    @media(max-width: $breakPoint2) {
+      background-image: url('/assets/about/tablet/image-quality.jpg');
+      width: 100%;
+    }
+
+    @media(max-width: $breakPoint3) {
+      background-image: url('/assets/about/mobile/image-quality.jpg');
+      height: 12rem;
+    }
+
+  }
+}

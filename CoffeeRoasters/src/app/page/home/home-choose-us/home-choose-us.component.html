@@ -1,0 +1,20 @@
+<section class="home-choose-us-container">
+  <h2 class="home-choose-us-title">Why choose us</h2>
+  <p class="home-choose-us-description">
+    A large part of our role is choosing which particular coffees will be featured
+    in our range. This means working closely with the best coffee growers to give
+    you a more impactful experience on every level.
+  </p>
+  <ul class="home-choose-us-list">
+
+    @for(feature of features(); track $index) {
+      <li class="home-choose-us-item">
+        <img class="home-choose-us-image" [src]="feature.image" [alt]="feature.title + ' Image'">
+        <h3 class="home-choose-us-subtitle">{{ feature.title }}</h3>
+        <p class="home-choose-us-subdescription">
+          {{ feature.description }}
+        </p>
+      </li>
+    }
+  </ul>
+</section>

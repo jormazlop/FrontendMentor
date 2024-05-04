@@ -1,0 +1,18 @@
+$darkCyan: oklch(56.45% 0.094 192);
+$darkGreyBlue: oklch(35.68% 0.028 256.82);
+$paleOrange: oklch(90.21% 0.058 57.59);
+$lightCream: oklch(99.12% 0.007 88.64);
+$grey: oklch(62.48% 0.012 256.72);
+$lightGrey: oklch(95.88% 0.009 84.57);
+$dark: oklch(32.17% 0.021 254.13);
+
+$linearCollection: linear-gradient(to bottom, oklch(62.48% 0.012 256.72 / .3), oklch(62.48% 0.012 256.72 / 0));
+
+
+$linearSidebar: linear-gradient(to bottom, oklch(100% 0 0 / 1), oklch(100% 0 0 / 0.5));
+
+// Responsive
+
+$breakPoint1: 1460px;
+$breakPoint2: 1115px;
+$breakPoint3: 700px;

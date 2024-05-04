@@ -1,0 +1,16 @@
+<section class="home-collection-container">
+  <span class="home-collection-background">our collection</span>
+  <ul class="home-collection-list">
+    @for (coffee of coffees(); track $index) {
+      <li class="home-collection-item">
+        <img [src]="coffee.image" [alt]="coffee.title + ' Image'" class="home-collection-image">
+        <hgroup>
+          <h3 class="home-collection-title"> {{ coffee.title }} </h3>
+          <p class="home-collection-description">
+            {{ coffee.description }}
+          </p>
+        </hgroup>
+      </li>
+    }
+  </ul>
+</section>

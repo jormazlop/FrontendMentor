@@ -1,0 +1,70 @@
+@use 'variables' as *;
+
+.home-presentation-container {
+  background-image: url('/assets/home/desktop/image-hero-coffeepress.jpg');
+  background-size: 100% 100%;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  height: 37rem;
+  justify-content: space-between;
+  padding: 6.5rem 5rem;
+  width: 100%;
+
+  @media(max-width: $breakPoint2) {
+    background-image: url('/assets/home/tablet/image-hero-coffeepress.jpg');
+    padding: 2.5rem;
+    height: 25rem;
+  }
+
+  @media(max-width: $breakPoint3) {
+    align-items: center;
+    background-image: url('/assets/home/mobile/image-hero-coffeepress.jpg');
+    text-align: center;
+  }
+
+  .home-presentation-title {
+    color: $lightCream;
+    font-family: 'Fraunces-9pt';
+    font-size: 4.5rem;
+    font-weight: bold;
+    width: 30rem;
+
+    @media(max-width: $breakPoint2) {
+      font-size: 2.5rem;
+    }
+
+    @media(max-width: $breakPoint3) {
+      font-size: 1.5rem;
+      width: 100%;
+    }
+  }
+
+  .home-presentation-description {
+    color: $lightCream;
+    font-family: 'Barlow';
+    font-weight: 100;
+    opacity: 0.8;
+    width: 28rem;
+
+    @media(max-width: $breakPoint3) {
+      width: 100%;
+    }
+  }
+
+  .home-presentation-button {
+    background-color: $darkCyan;
+    border: none;
+    border-radius: 6px;
+    color: $lightCream;
+    font-family: 'Fraunces';
+    font-size: 1.15rem;
+    font-weight: bold;
+    padding: 1rem 2rem;
+    width: fit-content;
+
+    &:active {
+      transform: translate(1px, 1px);
+    }
+  }
+}

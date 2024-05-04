@@ -1,0 +1,21 @@
+<div class="accordeon-container" [class.disabled]="option$().disabled">
+  <div class="accordeon-header" [class.close]="!option$().display">
+    <h2 class="accordeon-question">{{ option$().question }}</h2>
+    <button (click)="onOpen()">
+      <img src="assets/plan/desktop/icon-arrow.svg" alt="Arrow" [class.open]="option$().display">
+    </button>
+  </div>
+
+  @if (option$().display) {
+    <ul class="accordeon-options">
+      @for (option of option$().options; track $index) {
+        <li>
+          <button class="accordeon-option" (click)="onSelect($index)" [class.selected]="option$().selected === $index">
+            <h3>{{ option.title }}</h3>
+            <p>{{ option.description }}</p>
+          </button>
+        </li>
+      }
+    </ul>
+  }
+</div>

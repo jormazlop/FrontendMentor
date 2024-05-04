@@ -1,0 +1,102 @@
+@use 'variables' as *;
+
+.accordeon-container {
+
+  &.disabled {
+    opacity: 0.5;
+    pointer-events: none;
+  }
+
+  .accordeon-header {
+
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+
+    &.close {
+      padding-bottom: 2.5rem;
+    }
+
+    .accordeon-question {
+      color: $grey;
+      font-family: "Fraunces-9pt";
+    }
+
+    button {
+      background: none;
+      border: none;
+
+      img {
+        height: 0.75rem;
+        width: 1.125rem;
+        transform: rotate(180deg);
+        &.open {
+          transform: rotate(0deg);
+        }
+      }
+    }
+  }
+
+  .accordeon-options {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: flex-start;
+    list-style: none;
+    padding: 3.5rem 0;
+
+    @media(max-width: $breakPoint2) {
+      gap: 0.5rem;
+      justify-content: space-between;
+    }
+
+    @media(max-width: $breakPoint3) {
+      flex-direction: column;
+    }
+
+    .accordeon-option {
+      background-color: $lightGrey;
+      border: none;
+      border-radius: 8px;
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      height: 15rem;
+      padding: 2rem 2rem 4rem 2rem;
+      text-align: left;
+
+      @media(max-width: $breakPoint2) {
+        justify-content: center;
+        max-width: 11.5rem;
+        padding: 1rem;
+      }
+
+      @media(max-width: $breakPoint3) {
+        align-items: center;
+        justify-content: center;
+        max-width: 100%;
+        padding: 1rem;
+        text-align: center;
+        width: 100%;
+      }
+
+      &.selected {
+        background-color: $darkCyan;
+        color: $lightCream;
+      }
+
+      h3 {
+        font-family: "Fraunces-9pt";
+      }
+
+      p {
+        font-family: 'Barlow';
+        width: 11.5rem;
+
+        @media(max-width: $breakPoint2) {
+          width: 100%;
+        }
+      }
+    }
+  }
+}

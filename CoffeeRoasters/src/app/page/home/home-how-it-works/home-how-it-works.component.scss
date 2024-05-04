@@ -1,0 +1,105 @@
+@use 'variables' as *;
+
+.app-home-how-it-works-container {
+
+  display: flex;
+  flex-direction: column;
+  gap: 5rem;
+  padding: 5rem;
+
+  @media(max-width: $breakPoint3) {
+    padding: 5rem 1.5rem;
+  }
+
+  .app-home-how-it-works-title {
+    color: $grey;
+    font-family: 'Fraunces-9pt';
+
+    @media(max-width: $breakPoint3) {
+      text-align: center;
+    }
+  }
+
+  .app-home-how-it-works-main {
+    display: grid;
+    grid-template: 2rem 1fr / 1fr 1fr 1fr;
+    row-gap: 4rem;
+
+
+    @media(max-width: $breakPoint3) {
+      align-items: center;
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+    }
+
+    .app-home-how-it-works-header {
+
+      align-items: center;
+      display: flex;
+
+      @media(max-width: $breakPoint3) {
+        display: none;
+      }
+
+      .circle {
+        border: 1px solid $darkCyan;
+        border-radius: 50%;
+        height: 2rem;
+        width: 2rem;
+      }
+
+      .line {
+        background-color: $paleOrange;
+        height: 1px;
+        width: 100%;
+      }
+
+    }
+
+    .app-home-how-it-works-body {
+
+      display: flex;
+      flex-direction: column;
+      gap: 2.375rem;
+      width: 80%;
+
+      .app-home-how-it-works-body-number {
+        color: $paleOrange;
+        font-family: 'Fraunces-9pt';
+        font-size: 4.5rem;
+      }
+
+      .app-home-how-it-works-body-title {
+        color: $darkGreyBlue;
+        font-family: 'Fraunces-9pt';
+        font-size: 2rem;
+      }
+
+      .app-home-how-it-works-body-description {
+        color: $darkGreyBlue;
+        font-family: 'Barlow';
+      }
+    }
+  }
+
+  .home-presentation-button {
+    background-color: $darkCyan;
+    border: none;
+    border-radius: 6px;
+    color: $lightCream;
+    font-family: 'Fraunces';
+    font-size: 1.15rem;
+    font-weight: bold;
+    padding: 1rem 2rem;
+    width: fit-content;
+
+    &:active {
+      transform: translate(1px, 1px);
+    }
+
+    @media(max-width: $breakPoint3) {
+      align-self: center;
+    }
+  }
+}

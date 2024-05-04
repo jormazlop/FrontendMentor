@@ -1,0 +1,49 @@
+@import 'bootstrap/scss/bootstrap-reboot';
+@import 'bootstrap/scss/bootstrap-grid';
+@import 'bootstrap/scss/tables';
+@import 'bootstrap/scss/utilities';
+@import 'bootstrap/scss/mixins';
+@import "bootstrap/scss/bootstrap";
+@import 'ngx-toastr/toastr';
+@import 'variables';
+
+@font-face {
+  font-family: 'Fraunces';
+  src: url('./fonts/Fraunces.ttf') format("opentype");
+}
+
+@font-face {
+  font-family: 'Fraunces-9pt';
+  src: url('./fonts/Fraunces_9pt_Soft-Bold.ttf') format("opentype");
+}
+
+
+@font-face {
+  font-family: 'Barlow';
+  src: url('./fonts/Barlow-Regular.ttf') format("opentype");
+}
+
+@font-face {
+  font-family: 'Barlow';
+  src: url('./fonts/Barlow-Light.ttf') format("opentype");
+  font-weight: 100;
+}
+
+@font-face {
+  font-family: 'Barlow';
+  src: url('./fonts/Barlow-Bold.ttf') format("opentype");
+  font-weight: bold;
+}
+
+body, html {
+  font-size: 16px;
+
+  @media(max-width: $breakPoint3) {
+    font-size: 13px;
+  }
+}
+
+p, h2 {
+  margin: 0;
+}
+

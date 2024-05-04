@@ -1,0 +1,25 @@
+<section class="create-your-plan-subscription-container">
+  <aside class="create-your-plan-subscription-sidebar">
+    <ol>
+      <li [class.active]="step() === 1">Preferences</li>
+      <li [class.active]="step() === 2">Bean Type</li>
+      <li [class.active]="step() === 3">Quantity</li>
+      <li [class.active]="step() === 4">Grind Option</li>
+      <li [class.active]="step() === 5">Deliveries</li>
+    </ol>
+  </aside>
+  <div class="create-your-plan-subscription-main">
+    @for (option of options(); track $index) {
+      <app-accordeon [option$]="option" (select)="onSelect($index, $event)" (open)="onOpen($index)"/>
+    }
+    <div class="create-your-plan-subscription-summary" [innerHTML]="options() | summary"></div>
+
+    <button class="create-your-plan-button"
+            title="Open modal create your plan"
+            (click)="onCreatePlan()"
+            [disabled]="this.options()[4].selected === undefined">
+      Create your plan
+    </button>
+  </div>
+</section>
+
