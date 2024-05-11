@@ -1,0 +1,226 @@
+@use 'variables' as *;
+
+.card-container {
+  align-items: center;
+  color: $grayishBlue;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  letter-spacing: 0.5rem;
+  text-transform: uppercase;
+
+
+  @media(max-width: $breakpoint1) {
+    gap: 3rem;
+  }
+
+  @media(max-width: $breakpoint2) {
+    gap: 4.5rem;
+  }
+}
+
+.main-container {
+
+  position: relative;
+
+  .nums {
+
+    border-radius: 8px;
+    box-shadow: 0px 12px 0px $veryDarkBlue;
+    height: 10rem;
+    width: 10.5rem;
+
+    &:after {
+      background: $darkDesaturatedBlue;
+      border-radius: 8px;
+      border-top: 1px solid $darkDesaturatedBlue;
+      bottom: 0;
+      color: $softRed;
+      content: attr(initial-data);
+      display: block;
+      font-size: 5.5rem;
+      height: calc(50% - 1px);
+      left: 0;
+      line-height: 0;
+      overflow: hidden;
+      position: absolute;
+      text-align: center;
+      width: 100%;
+      mask: radial-gradient(circle at top left, transparent .5rem, black .5rem) left,
+      radial-gradient(circle at top right, transparent .5rem, black .5rem) right;
+      mask-size: 90% 100%;
+      mask-repeat: no-repeat;
+    }
+
+    &.flip-seconds {
+
+      @for $i from 1 through 60 {
+        .num:nth-of-type(#{$i}) {
+          animation: flip-animation-60-s 60s linear $i - 1s infinite;
+          z-index: (70 - $i) + 1;
+        }
+      }
+    }
+
+    &.flip-minutes {
+
+      @for $i from 1 through 60 {
+        .num:nth-of-type(#{$i}) {
+          animation: flip-animation-60-m 60s linear $i * 60s - 1s infinite;
+          z-index: (70 - $i) + 1;
+        }
+      }
+    }
+
+
+    &.flip-hours {
+
+      @for $i from 1 through 24 {
+        .num:nth-of-type(#{$i}) {
+          animation: flip-animation-24 24s linear $i * 3600s - 1s infinite;
+          z-index: (70 - $i) + 1;
+        }
+      }
+    }
+
+    &.flip-days {
+
+      @for $i from 1 through 9 {
+        .num:nth-of-type(#{$i}) {
+          animation: flip-animation-9 9s linear $i * 86400s - 1s infinite;
+          z-index: (70 - $i) + 1;
+        }
+      }
+    }
+  }
+
+  .num {
+    border-radius: 8px;
+    font-size: 5.5rem;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    transform: rotateX(0);
+    transition: 0.6s;
+    transform-style: preserve-3d;
+    top: 1px;
+    width: 100%;
+
+    &:before,
+    &:after {
+      backface-visibility: hidden;
+      color: $softRed;
+      height: 50%;
+      mask: radial-gradient(circle at top left, transparent .5rem, black .5rem) left,
+      radial-gradient(circle at top right, transparent .5rem, black .5rem) right;
+      mask-size: 90% 100%;
+      mask-repeat: no-repeat;
+      position: absolute;
+      text-align: center;
+      width: 100%;
+    }
+
+    &:before {
+      background: $darkDesaturatedBlue;
+      border-radius: 8px;
+      content: attr(data-num);
+      line-height: 1.8;
+      mask: radial-gradient(circle at bottom left, transparent .5rem, black .5rem) left,
+            radial-gradient(circle at bottom right, transparent .5rem, black .5rem) right;
+      mask-size: 90% 100%;
+      mask-repeat: no-repeat;
+    }
+
+    &:after {
+      background: $darkDesaturatedBlue;
+      border-radius: 8px;
+      content: attr(data-num-next);
+      line-height: 0;
+      transform: rotateX(180deg);
+    }
+  }
+}
+
+@keyframes flip-animation-60-s {
+  0% {
+    transform: rotateX(0);
+    z-index: 200;
+  }
+  1.66% {
+    transform: rotateX(-180deg);
+    z-index: 200;
+  }
+  98.34% {
+    transform: rotateX(-180deg);
+    z-index: 1;
+  }
+  98.3400001% {
+    transform: rotateX(0);
+  }
+  100% {
+    transform: rotateX(0);
+  }
+}
+
+@keyframes flip-animation-60-m {
+  0% {
+    transform: rotateX(0);
+    z-index: 200;
+  }
+  1.66% {
+    transform: rotateX(-180deg);
+    z-index: 200;
+  }
+  99.34% {
+    transform: rotateX(-180deg);
+    z-index: 1;
+  }
+  99.3400001% {
+    transform: rotateX(0);
+  }
+  100% {
+    transform: rotateX(0);
+  }
+}
+
+@keyframes flip-animation-24 {
+  0% {
+    transform: rotateX(0);
+    z-index: 200;
+  }
+  4.16% {
+    transform: rotateX(-180deg);
+    z-index: 200;
+  }
+  95.84% {
+    transform: rotateX(-180deg);
+    z-index: 1;
+  }
+  95.8400001% {
+    transform: rotateX(0);
+  }
+  100% {
+    transform: rotateX(0);
+  }
+}
+
+@keyframes flip-animation-9 {
+  0% {
+    transform: rotateX(0);
+    z-index: 200;
+  }
+  11.11% {
+    transform: rotateX(-180deg);
+    z-index: 200;
+  }
+  88.89% {
+    transform: rotateX(-180deg);
+    z-index: 1;
+  }
+  88.8900001% {
+    transform: rotateX(0);
+  }
+  100% {
+    transform: rotateX(0);
+  }
+}

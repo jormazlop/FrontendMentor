@@ -1,0 +1,12 @@
+@use 'variables' as *;
+
+.button-container {
+  background: none;
+  border: none;
+
+  &:hover {
+    svg path {
+      fill: $softRed;
+    }
+  }
+}

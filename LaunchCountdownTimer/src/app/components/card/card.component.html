@@ -1,0 +1,14 @@
+<div class="card-container">
+  <div class="main-container" [ngClass]="'flip-' + array$().length">
+    <div class="nums" [attr.initial-data]="initial$()" [ngClass]="class$()">
+      @for (number of array$(); track $index; let last = $last) {
+        @if(!last) {
+          <div class="num" [attr.data-num]="array$()[$index]" [attr.data-num-next]="array$()[$index + 1]"></div>
+        } @else {
+          <div class="num" [attr.data-num]="array$()[$index]" [attr.data-num-next]="initial$()"></div>
+        }
+      }
+    </div>
+  </div>
+  <p class="card-subtitle">{{ type$() }}</p>
+</div>
