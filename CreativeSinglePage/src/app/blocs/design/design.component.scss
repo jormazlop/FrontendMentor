@@ -1,0 +1,101 @@
+@use 'variables' as *;
+
+.design-container {
+  align-items: flex-end;
+  background-color: $bgBlack;
+  background-image: url('/assets/desktop/image-strategic.jpg');
+  background-size: 50% 100%;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  height: 60rem;
+  padding: var(--page-padding);
+  position: relative;
+
+  @media(max-width: $breakpoint2) {
+    background-image: none;
+    height: fit-content;
+    padding: 0 0 3rem 0;
+    text-align: center;
+  }
+
+  .design-main {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+    margin-top: 10%;
+    width: 55%;
+
+    @media(max-width: $breakpoint2) {
+      align-items: center;
+      margin: 0;
+      width: 100%;
+    }
+
+    .mobile-background {
+      display: none;
+      height: 25rem;
+      width: 100%;
+
+      @media(max-width: $breakpoint2) {
+        display: block;
+      }
+    }
+
+    .design-title {
+      align-items: center;
+      display: flex;
+      gap: 5.5rem;
+
+      img {
+        height: 3.5rem;
+        width: 8rem;
+
+        @media(max-width: $breakpoint2) {
+          height: 1.75rem;
+          left: 3rem;
+          position: absolute;
+          top: 24rem;
+          width: 4rem;
+        }
+      }
+
+      h2 {
+        color: $white;
+        font-weight: 800;
+
+        span {
+          color: $red;
+        }
+      }
+    }
+
+    .design-description {
+      color: $white;
+      font-size: 1.125rem;
+      margin-left: 13.5rem;
+
+      @media(max-width: $breakpoint2) {
+        margin: 0;
+        width: 90%;
+      }
+    }
+
+    .design-link {
+      border-bottom: 1px solid $red;
+      color: $red;
+      font-weight: 800;
+      margin-left: 13.5rem;
+      padding-bottom: 0.5rem;
+      text-decoration: none;
+      width: fit-content;
+
+      @media(max-width: $breakpoint2) {
+        margin: 0;
+      }
+    }
+  }
+
+
+
+}

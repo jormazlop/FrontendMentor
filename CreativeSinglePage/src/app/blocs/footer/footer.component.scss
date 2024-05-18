@@ -1,0 +1,36 @@
+@use 'variables' as *;
+
+.footer-container {
+  align-items: center;
+  background-image: url('/assets/desktop/bg-pattern-wave-red.svg');
+  background-repeat: no-repeat;
+  background-position: -4rem 50%;
+  display: flex;
+  justify-content: space-between;
+  padding: var(--page-padding);
+
+  .footer-title {
+    color: $textBlack;
+    font-size: 3.5rem;
+    font-weight: 800;
+    width: 40rem;
+
+    @media(max-width: $breakpoint2) {
+      font-size: 1.75rem;
+      text-align: center;
+      width: fit-content;
+    }
+
+  }
+
+  @media(max-width: $breakpoint1) {
+    background-image: none;
+  }
+
+  @media(max-width: $breakpoint2) {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+
+}

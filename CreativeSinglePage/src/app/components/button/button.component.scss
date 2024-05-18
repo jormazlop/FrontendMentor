@@ -1,0 +1,20 @@
+@use 'variables' as *;
+
+.button-container {
+  border: none;
+  color: $white;
+  font-weight: bold;
+  padding: 1.25rem 2.5rem;
+
+  &.primary {
+    background-color: $red;
+  }
+
+  &.secondary {
+    background-color: $textBlack;
+  }
+
+  &:active {
+    transform: translate(1px, 1px);
+  }
+}

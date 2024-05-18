@@ -1,0 +1,17 @@
+@use 'variables' as *;
+
+.main-container {
+
+  --page-padding: 3rem 9rem;
+
+  display: flex;
+  flex-direction: column;
+
+  @media(max-width: $breakpoint1) {
+    --page-padding: 1.5rem 3rem;
+  }
+
+  @media(max-width: $breakpoint2) {
+    --page-padding: 1.5rem;
+  }
+}

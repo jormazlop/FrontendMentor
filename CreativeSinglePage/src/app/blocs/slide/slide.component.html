@@ -1,0 +1,13 @@
+<section class="slide-container" [attr.subtitle]="this.items[this.selected()].subtitle" [ngClass]="this.items[this.selected()].image">
+  <div class="slide-main">
+    <img class="mobile-background" [src]="'/assets/mobile/' + this.items[this.selected()].image + '.jpg'" alt="Mobile Image">
+    <div class="slide-title">
+      <h3>{{ this.items[this.selected()].name }}</h3>
+      <img src="assets/desktop/bg-pattern-wavy-white.svg" alt="Pattern Wavy White">
+    </div>
+    <div class="slide-buttons">
+      <button (click)="previousSlide()"><img src="assets/desktop/icon-arrow-previous.svg" alt="Previous Slide"></button>
+      <button (click)="nextSlide()"><img src="assets/desktop/icon-arrow-next.svg" alt="Next Slide"></button>
+    </div>
+  </div>
+</section>

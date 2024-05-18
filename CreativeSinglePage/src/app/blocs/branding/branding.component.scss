@@ -1,0 +1,53 @@
+@use 'variables' as *;
+
+.branding-container {
+  background-image: url('/assets/desktop/image-hero.jpg');
+  background-size: 65% 100%;
+  background-repeat: no-repeat;
+  background-position: 100% 0%;
+  color: $textBlack;
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  height: 50rem;
+  justify-content: center;
+  padding: var(--page-padding);
+
+  @media(max-width: $breakpoint2) {
+    align-items: center;
+    background-image: none;
+    height: fit-content;
+    padding: 0 0 3rem 0;
+    text-align: center;
+  }
+
+  .mobile-background {
+    display: none;
+
+    @media(max-width: $breakpoint2) {
+      display: block;
+      width: 100%;
+    }
+
+  }
+
+  .branding-title {
+    font-size: 5rem;
+    font-weight: 800;
+    width: 35rem;
+
+    @media(max-width: $breakpoint2) {
+      font-size: 2.5rem;
+      width: 90%;
+    }
+  }
+
+  .branding-description {
+    font-size: 1.125rem;
+    width: 35rem;
+
+    @media(max-width: $breakpoint2) {
+      width: 90%;
+    }
+  }
+}

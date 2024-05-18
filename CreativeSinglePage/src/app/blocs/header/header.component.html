@@ -1,0 +1,35 @@
+<header class="header-container">
+  <img
+    class="header-logo"
+    src="assets/desktop/logo.svg"
+    alt="Logo Creative Page"
+  />
+  <nav class="header-nav">
+    <ul>
+      <li><a routerLink="/">About</a></li>
+      <li><a routerLink="/">Service</a></li>
+      <li><a routerLink="/">Projects</a></li>
+      <li><app-button type="secondary">Schedule a Call</app-button></li>
+    </ul>
+  </nav>
+  <button class="mobile-nav" (click)="clickMenu()">
+    @if(!menu()) {
+      <img src="/assets/mobile/icon-hamburger.svg" alt="Open Menu">
+    } @else {
+      <img src="/assets/mobile/icon-cross.svg" alt="Close Menu">
+    }
+  </button>
+  <menu class="responsive-menu" [ngClass]="{'open': menu()}">
+    <nav class="responsive-nav">
+      <ul>
+        <li><a routerLink="/">About</a></li>
+        <li><a routerLink="/">Service</a></li>
+        <li><a routerLink="/">Projects</a></li>
+        <li><app-button type="primary">Schedule a Call</app-button></li>
+      </ul>
+    </nav>
+  </menu>
+</header>
+
+
+
