@@ -1,0 +1,16 @@
+<div class="input-container">
+  <label [for]="id">{{ label() }} <span>*</span></label>
+  <div class="options-container">
+  @for(option of options; track $index) {
+    <div class="option-item" [class.selected]="innerControl.value === option.value">
+      <input type="radio" [id]="id + $index" [name]="id" [value]="option.value" [formControl]="innerControl"/>
+      <label [for]="id + $index">{{ option.name }}</label>
+    </div>
+  }
+  </div>
+  @if (innerControl.errors && innerControl.dirty) {
+    <p class="input-errors">
+      Please select a query type
+    </p>
+  }
+</div>

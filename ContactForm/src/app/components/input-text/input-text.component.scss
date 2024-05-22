@@ -1,0 +1,45 @@
+@use 'variables' as *;
+
+:host {
+  flex: auto;
+}
+
+.input-container {
+
+  label {
+    color: $darkGrey;
+    padding-bottom: 0.5rem;
+
+    span {
+      color: $green;
+      font-weight: bold;
+    }
+  }
+
+  input {
+    border: 1px solid $mediumGrey;
+    border-radius: 8px;
+    color: $darkGrey;
+    padding: 0.75rem 1rem;
+    width: 100%;
+
+    &:focus {
+      border: 1px solid $green;
+      outline: none;
+    }
+
+    &.ng-invalid:not(.ng-pristine) {
+      border: 1px solid $red;
+    }
+
+    &:hover {
+      border: 1px solid $green;
+      cursor: pointer;
+    }
+  }
+
+  .input-errors {
+    color: $red;
+    margin: 0;
+  }
+}

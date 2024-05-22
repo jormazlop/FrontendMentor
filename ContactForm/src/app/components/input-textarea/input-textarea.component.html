@@ -1,0 +1,10 @@
+<div class="input-container">
+  <label [for]="id">{{ label() }} <span>*</span></label>
+  <textarea [formControl]="innerControl" [id]="id"></textarea>
+  @if (innerControl.errors && innerControl.dirty) {
+    <p class="input-errors">
+      {{ innerControl.errors | error }}
+    </p>
+  }
+</div>
+

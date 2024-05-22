@@ -1,0 +1,75 @@
+@import 'bootstrap/scss/bootstrap-reboot';
+@import 'bootstrap/scss/bootstrap-grid';
+@import 'bootstrap/scss/tables';
+@import 'bootstrap/scss/utilities';
+@import 'bootstrap/scss/mixins';
+@import 'ngx-toastr/toastr';
+@import 'variables';
+
+@font-face {
+  font-family: "Karla";
+  src: url("./fonts/Karla.ttf") format("opentype");
+}
+
+html,
+body {
+  font-family: "Karla";
+  font-size: 18px;
+  height: 100vh;
+
+  @media(max-width: $breakpoint3) {
+    font-size: 14px;
+  }
+
+  @media(max-width: $breakpoint4) {
+    font-size: 10px;
+  }
+}
+
+
+// toaster
+
+.toast-container.toast-top-center .ngx-toastr {
+  background-color: $darkGrey;
+  background-image: none;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 1.5rem;
+  width: 40vw;
+
+
+  @media(max-width: $breakpoint1) {
+    width: 60vw;
+  }
+
+  @media(max-width: $breakpoint2) {
+    width: 80vw;
+  }
+
+  @media(max-width: $breakpoint3) {
+    width: 90vw;
+  }
+
+  .toast-title {
+
+    align-items: center;
+    display: flex;
+    gap: 0.5rem;
+
+    &::before {
+      background-image: url('./assets/icon-success-check.svg');
+      background-repeat: no-repeat;
+      background-size: 100% 100%;
+      display: flex;
+      content: '';
+      height: 1.3rem;
+      width: 1.3rem;
+    }
+  }
+
+  .toast-message {
+    font-weight: 300;
+  }
+}

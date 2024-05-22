@@ -1,0 +1,12 @@
+<div class="input-container">
+  <div class="checkbox-container">
+    <input type="checkbox" [formControl]="innerControl" [id]="id">
+    <label [for]="id">{{ label() }} <span>*</span></label>
+  </div>
+  @if (innerControl.errors && innerControl.dirty) {
+    <p class="input-errors">
+      To submit this form, please consent to being contacted
+    </p>
+  }
+</div>
+

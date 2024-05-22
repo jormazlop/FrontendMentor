@@ -1,0 +1,14 @@
+<main class="main-container">
+  <form class="form-container" [formGroup]="formContact" (ngSubmit)="onSubmit()">
+    <h1 class="form-title">Contact Us</h1>
+    <div class="form-name">
+      <app-input-text formControlName="firstName" label="First Name"/>
+      <app-input-text formControlName="lastName" label="Last Name"/>
+    </div>
+    <app-input-text formControlName="email" label="Email Address"/>
+    <app-input-radio formControlName="query" label="Query Type"/>
+    <app-input-textarea formControlName="message" label="Message"/>
+    <app-input-checkbox formControlName="consent" label="I consent to being contacted by the team"/>
+    <button class="submit-button" type="submit" [disabled]="!formContact.valid">Submit</button>
+  </form>
+</main>

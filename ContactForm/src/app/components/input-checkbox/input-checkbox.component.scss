@@ -1,0 +1,57 @@
+@use 'variables' as *;
+
+:host {
+  flex: auto;
+}
+
+.input-container {
+
+  display: flex;
+  flex-direction: column;
+
+  .checkbox-container {
+
+    display: flex;
+    gap: 1rem;
+    justify-content: flex-start;
+
+    label {
+      color: $darkGrey;
+
+      span {
+        color: $green;
+        font-weight: bold;
+      }
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+
+    input {
+      accent-color: $green;
+      border: 1px solid $mediumGrey;
+      border-radius: 8px;
+      color: $darkGrey;
+      padding: 0.75rem 1rem;
+
+      &:focus {
+        border: 1px solid $green;
+        outline: none;
+      }
+
+      &.ng-invalid:not(.ng-pristine) {
+        border: 1px solid $red;
+      }
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+
+  .input-errors {
+    color: $red;
+    margin: 0;
+  }
+}

@@ -1,0 +1,64 @@
+@use 'variables' as *;
+
+.main-container {
+  align-items: center;
+  background-color: $lightGreen;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: center;
+
+  .form-container {
+    background-color: $pureWhite;
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    padding: 2.5rem;
+    width: 50vw;
+
+    @media(max-width: $breakpoint1) {
+      width: 70vw;
+    }
+
+    @media(max-width: $breakpoint2) {
+      width: 90vw;
+    }
+
+    @media(max-width: $breakpoint3) {
+      width: 100vw;
+    }
+
+    .form-title {
+      color: $darkGrey;
+      font-size: 2rem;
+      font-weight: bold;
+    }
+
+    .form-name {
+      display: flex;
+      gap: 1rem;
+    }
+
+    .submit-button {
+      background-color: $green;
+      border: none;
+      border-radius: 8px;
+      color: $pureWhite;
+      padding: 0.5rem;
+
+      &:hover {
+        background-color: $darkGreen;
+      }
+
+      &:active {
+        transform: translate(1px, 1px);
+      }
+
+      &:disabled {
+        pointer-events: none;
+        opacity: 0.5;
+      }
+    }
+  }
+}
