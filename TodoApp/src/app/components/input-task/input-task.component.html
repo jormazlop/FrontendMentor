@@ -1,0 +1,6 @@
+<div class="input-task-container">
+  <button class="task-icon" (click)="onClickTask()" [class.completed]="taskCompleted()">
+    <app-check-icon/>
+  </button>
+  <input type="text" [(ngModel)]="task" placeholder="Create a new todo…">
+</div>

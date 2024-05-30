@@ -1,0 +1,238 @@
+@import "variables";
+
+@mixin task-list(
+  $bg-color,
+  $text-color,
+  $border-icon-color,
+  $border-bottom-color,
+  $box-shadow,
+  $footer-color
+) {
+  .cdk-drop-list {
+
+    box-shadow: 0px 0px 50px -15px $box-shadow;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    .cdk-drag {
+      align-items: center;
+      background-color: $bg-color;
+      border-bottom: 1px solid $border-bottom-color;
+      display: flex;
+      gap: 1.5rem;
+      padding: 1.2rem 1.5rem;
+      width: var(--width);
+
+      &:first-of-type:not(:last-of-type) {
+        border-radius: 5px 5px 0 0;
+      }
+
+      &:last-of-type {
+        border-radius: 0 0 5px 5px;
+      }
+
+      &:first-of-type:last-of-type {
+        border-radius: 5px 5px 5px 5px;
+      }
+
+      .task-icon {
+        align-items: center;
+        border-radius: 50%;
+        display: flex;
+        height: 1.5rem;
+        justify-content: center;
+        width: 1.5rem;
+
+        &:not(.completed) {
+          background: $bg-color;
+          border: 1px solid $border-icon-color;
+
+          &:hover {
+            border: 1px solid $lightGrayishBluehover;
+          }
+        }
+
+        &.completed {
+          background: $checkBg;
+          border: none;
+
+          &:hover {
+            background: $checkBgHover;
+          }
+        }
+      }
+    }
+
+    .task-name {
+      color: $text-color;
+
+      &.completed {
+        text-decoration: line-through;
+      }
+    }
+  }
+
+  .task-list-footer {
+    align-items: center;
+    background-color: $bg-color;
+    border-radius: 5px;
+    color: $footer-color;
+    display: flex;
+    justify-content: space-between;
+    padding: 1.5rem;
+    width: var(--width);
+
+    .task-list-filters {
+      display: flex;
+      gap: 1rem;
+
+      @media(max-width: $breakpoint1) {
+        display: none;
+      }
+    }
+
+    .task-filter-button {
+      background: none;
+      border: none;
+      color: $footer-color;
+
+      &:hover {
+        color: $blue;
+      }
+
+      &:active {
+        transform: translate(1px, 1px);
+      }
+    }
+  }
+
+  .task-list-footer-responsive {
+    @extend .task-list-footer;
+    display: none;
+    justify-content: center;
+    margin-top: 2rem;
+
+    @media(max-width: $breakpoint1) {
+      display: flex;
+    }
+
+    .task-list-filters-responsive {
+      display: flex;
+      gap: 1rem;
+    }
+  }
+}
+
+:host-context(.light) {
+  @include task-list(
+    $white,
+    $veryDarkGrayishBlue,
+    $lightGrayishBlue,
+    $lightGrayishBluehover,
+    $lightGrayishBlue,
+    $darkGrayishBlue
+  );
+}
+
+:host-context(.dark) {
+  @include task-list(
+    $veryDarkDesaturatedBlue,
+    $lightGrayishBlue,
+    $veryDarkGrayishBlue,
+    $veryDarkGrayishBlue,
+    $dark,
+    $darkGrayishBlue
+  );
+}
+
+.cdk-drag-preview {
+  align-items: center;
+  border-radius: 5px;
+  display: flex;
+  gap: 1.5rem;
+  padding: 1.2rem 1.5rem;
+  width: var(--width);
+
+  &.light {
+    background-color: $white;
+
+    .task-icon {
+      align-items: center;
+      border-radius: 50%;
+      display: flex;
+      height: 1.5rem;
+      justify-content: center;
+      width: 1.5rem;
+
+      &:not(.completed) {
+        background: $white;
+        border: 1px solid $lightGrayishBlue;
+
+        &:hover {
+          border: 1px solid $lightGrayishBluehover;
+        }
+      }
+
+      &.completed {
+        background: $checkBg;
+        border: none;
+
+        &:hover {
+          background: $checkBgHover;
+        }
+      }
+    }
+
+    .task-name {
+      color: $veryDarkGrayishBlue;
+
+      &.completed {
+        text-decoration: line-through;
+      }
+    }
+  }
+
+  &.dark {
+    background-color: $veryDarkDesaturatedBlue;
+
+    .task-icon {
+      align-items: center;
+      border-radius: 50%;
+      display: flex;
+      height: 1.5rem;
+      justify-content: center;
+      width: 1.5rem;
+
+      &:not(.completed) {
+        background: $veryDarkDesaturatedBlue;
+        border: 1px solid $veryDarkGrayishBlue;
+
+        &:hover {
+          border: 1px solid $lightGrayishBluehover;
+        }
+      }
+
+      &.completed {
+        background: $checkBg;
+        border: none;
+
+        &:hover {
+          background: $checkBgHover;
+        }
+      }
+    }
+
+    .task-name {
+      color: $lightGrayishBlue;
+
+      &.completed {
+        text-decoration: line-through;
+      }
+    }
+  }
+}
+
+.cdk-drag-placeholder {
+  opacity: 0;
+}

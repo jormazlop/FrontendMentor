@@ -1,0 +1,6 @@
+<header class="header-container">
+  <h1 class="header-title">TODO</h1>
+  <button class="header-button" (click)="onClickMode()" [title]="mode$() | mode">
+    <ng-container *modeIcon></ng-container>
+  </button>
+</header>

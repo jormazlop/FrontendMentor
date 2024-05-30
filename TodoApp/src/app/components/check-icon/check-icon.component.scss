@@ -1,0 +1,20 @@
+@import 'variables';
+
+svg {
+  opacity: 0;
+
+  @media(max-width: $breakpoint1) {
+    transform: scale(0.8);
+  }
+
+  @media(max-width: $breakpoint2) {
+    transform: scale(0.6);
+  }
+}
+
+:host-context(.completed) {
+  svg {
+    opacity: 1;
+  }
+}
+

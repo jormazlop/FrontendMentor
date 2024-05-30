@@ -1,0 +1,26 @@
+<ul class="tasks-list-container" cdkDropList (cdkDropListDropped)="drop($event)">
+  @for (task of tasks$(); track task.name) {
+    <li class="task-item" cdkDrag [ngClass]="mode$()">
+      <button class="task-icon" (click)="onClickTask(task.id)" [class.completed]="task.completed">
+        <app-check-icon/>
+      </button>
+      <p class="task-name" [class.completed]="task.completed">{{ task.name }}</p>
+    </li>
+  }
+</ul>
+<div class="task-list-footer">
+  <p>{{ tasks$().length }} items left</p>
+  <div class="task-list-filters">
+    <button class="task-filter-button" (click)="onClickFilter('all')">All</button>
+    <button class="task-filter-button" (click)="onClickFilter('active')">Active</button>
+    <button class="task-filter-button" (click)="onClickFilter('completed')">Completed</button>
+  </div>
+  <button class="task-filter-button" (click)="onClickClear()">Clear Completed</button>
+</div>
+<div class="task-list-footer-responsive">
+  <div class="task-list-filters-responsive">
+    <button class="task-filter-button" (click)="onClickFilter('all')">All</button>
+    <button class="task-filter-button" (click)="onClickFilter('active')">Active</button>
+    <button class="task-filter-button" (click)="onClickFilter('completed')">Completed</button>
+  </div>
+</div>
