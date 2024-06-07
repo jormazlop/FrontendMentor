@@ -5,10 +5,26 @@
   &.morning,
   &.afternoon {
     background-image: linear-gradient($bg-dark, $bg-dark), url('/assets/desktop/bg-image-daytime.jpg');
+
+    @media(max-width: $breakpoint-1) {
+      background-image: linear-gradient($bg-dark, $bg-dark), url('/assets/tablet/bg-image-daytime.jpg');
+    }
+
+    @media(max-width: $breakpoint-3) {
+      background-image: linear-gradient($bg-dark, $bg-dark), url('/assets/mobile/bg-image-daytime.jpg');
+    }
   }
 
   &.evening {
     background-image: linear-gradient($bg-dark, $bg-dark), url('/assets/desktop/bg-image-nighttime.jpg');
+
+    @media(max-width: $breakpoint-1) {
+      background-image: linear-gradient($bg-dark, $bg-dark), url('/assets/tablet/bg-image-nighttime.jpg');
+    }
+
+    @media(max-width: $breakpoint-3) {
+      background-image: linear-gradient($bg-dark, $bg-dark), url('/assets/mobile/bg-image-nighttime.jpg');
+    }
   }
 
   background-repeat: no-repeat;
