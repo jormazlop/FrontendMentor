@@ -1,0 +1,31 @@
+@import 'bootstrap/scss/bootstrap-reboot';
+@import 'bootstrap/scss/bootstrap-grid';
+@import 'bootstrap/scss/tables';
+@import 'bootstrap/scss/utilities';
+@import 'bootstrap/scss/mixins';
+@import 'variables';
+
+@font-face {
+  font-family: "Inter";
+  src: url("./fonts/Inter.ttf") format("opentype");
+}
+
+html,
+body {
+  font-family: "Inter";
+  font-size: 18px;
+  height: 100vh;
+
+  @media(max-width: $breakpoint-1) {
+    font-size: 16px;
+  }
+
+  @media(max-width: $breakpoint-2) {
+    font-size: 12px;
+  }
+}
+
+h1,
+p {
+  margin: 0;
+}

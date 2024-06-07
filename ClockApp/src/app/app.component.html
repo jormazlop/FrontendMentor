@@ -1,0 +1,64 @@
+<main class="clock-container" [ngClass]="greeting$()">
+  <section class="main-container" [class.active]="more()">
+    <div class="quote-container">
+      <div class="quote-content">
+        <p>{{ quote$().content }}</p>
+        <button title="Refresh quote" (click)="refreshQuote()">
+          <img src="assets/desktop/icon-refresh.svg">
+        </button>
+      </div>
+      <p class="quote-author">{{ quote$().author }}</p>
+    </div>
+    <div class="time-container">
+      <div class="time-header">
+
+        @switch (greeting$()) {
+          @case ("afternoon") {
+            <img src="assets/desktop/icon-sun.svg" alt="Sun icon">
+          }
+          @case ("morning") {
+            <img src="assets/desktop/icon-sun.svg" alt="Sun icon">
+          }
+          @case ("evening") {
+            <img src="assets/desktop/icon-moon.svg" alt="Moon icon">
+          }
+        }
+
+        <p>GOOD {{ greeting$() | uppercase }} <span>, IT’S CURRENTLY</span></p>
+      </div>
+      <p class="time-hour">
+        <strong>{{ worldtime$().datetime | date: 'HH:mm' }}</strong> {{ worldtime$().abbreviation }}
+      </p>
+      <p class="time-location">
+        IN {{ geolocation$().city | uppercase }},{{ geolocation$().country | uppercase }}
+      </p>
+    </div>
+  </section>
+
+  <app-more-button (click)="onClickMore()" [active]="more()"/>
+
+</main>
+
+<menu class="menu-detail" [class.active]="more()" [ngClass]="greeting$()">
+
+  <div class="menu-item">
+    <h2>CURRENT TIMEZONE</h2>
+    <p>{{ worldtime$().timezone }}</p>
+  </div>
+
+  <div class="menu-item">
+    <h2>Day of the week</h2>
+    <p>{{ worldtime$().day_of_week }}</p>
+  </div>
+
+  <div class="menu-item">
+    <h2>Day of the year</h2>
+    <p>{{ worldtime$().day_of_year }}</p>
+  </div>
+
+  <div class="menu-item">
+    <h2>Week number</h2>
+    <p>{{ worldtime$().week_number }}</p>
+  </div>
+
+</menu>
