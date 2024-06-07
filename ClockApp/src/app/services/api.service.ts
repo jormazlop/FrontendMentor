@@ -14,7 +14,7 @@ export class ApiService {
   private http = inject(HttpClient);
 
   readonly worldtime$: Signal<WorldTime> = toSignal(
-    this.http.get<Ip>('http://api.ipify.org/?format=json').pipe(
+    this.http.get<Ip>('https://api.ipify.org/?format=json').pipe(
       map((data) => data.ip),
       switchMap((ip) =>
         this.http.get<Geolocation>(`https://api.ipbase.com/v2/info?ip=${ip}`)
@@ -25,12 +25,12 @@ export class ApiService {
       map((geolocation) => geolocation.data),
       switchMap((geolocation) =>
         this.http.get<WorldTime>(
-          `http://worldtimeapi.org/api/timezone/${geolocation.location.country.timezones[0]}`
+          `https://worldtimeapi.org/api/timezone/${geolocation.location.country.timezones[0]}`
         )
       ),
       catchError(() =>
         this.http.get<WorldTime>(
-          `http://worldtimeapi.org/api/timezone/Europe/Madrid`
+          `https://worldtimeapi.org/api/timezone/Europe/Madrid`
         )
       )
     ),
