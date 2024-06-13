@@ -1,0 +1,26 @@
+<section class="slide-container">
+  <div [ngClass]="image()">
+    <div class="slide-buttons-responsive">
+      <button title="Previous Slide" (click)="previousSlide()">
+        <img src="assets/icon-angle-left.svg">
+      </button>
+      <button title="Next Slide" (click)="nextSlide()">
+        <img src="assets/icon-angle-right.svg">
+      </button>
+    </div>
+  </div>
+  <div class="slide-description">
+    <h2>{{ description().title }}</h2>
+    <p>{{ description().description }}</p>
+    <a href="/">SHOP NOW <img src="assets/icon-arrow.svg" alt="Arrow"></a>
+
+    <div class="slide-buttons">
+      <button title="Previous Slide" (click)="previousSlide()">
+        <img src="assets/icon-angle-left.svg">
+      </button>
+      <button title="Next Slide" (click)="nextSlide()">
+        <img src="assets/icon-angle-right.svg">
+      </button>
+    </div>
+  </div>
+</section>

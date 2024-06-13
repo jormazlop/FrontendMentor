@@ -1,0 +1,118 @@
+@import 'variables';
+
+:host {
+  display: contents;
+}
+
+.slide-container {
+  display: flex;
+  height: 60%;
+  width: 100%;
+
+  @media(max-width: $breakpoint3) {
+    flex-direction: column;
+  }
+
+  @for $i from 1 through 3 {
+
+    .slide-#{$i} {
+      background-image: url('/assets/desktop-image-hero-#{$i}.jpg');
+      background-size: 100% 100%;
+      width: 55%;
+
+      .slide-buttons-responsive {
+        display: none;
+      }
+
+      @media(max-width: $breakpoint3) {
+        background-image: url('/assets/mobile-image-hero-#{$i}.jpg');
+        height: 30rem;
+        position: relative;
+        width: 100%;
+
+        .slide-buttons-responsive {
+          bottom: 0;
+          display: block;
+          position: absolute;
+          right: 0;
+
+          button {
+            background-color: $black;
+            border: none;
+            padding: 1.5rem;
+
+            &:hover {
+              background-color: $veryDarkGray;
+            }
+          }
+        }
+      }
+
+
+    }
+  }
+
+  .slide-description {
+    align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    justify-content: center;
+    padding: 10%;
+    position: relative;
+    width: 45%;
+
+    @media(max-width: $breakpoint1) {
+      padding: 10% 5%;
+    }
+
+    @media(max-width: $breakpoint3) {
+      width: 100%;
+    }
+
+    @media(max-width: $breakpoint4) {
+      padding: 10%;
+    }
+
+    h2 {
+      color: $black;
+      font-size: 2.5rem;
+      font-weight: 600;
+    }
+
+    p {
+      color: $darkGray;
+    }
+
+    a {
+      align-items: center;
+      color: $black;
+      display: flex;
+      font-weight: 700;
+      gap: 1.5rem;
+      letter-spacing: 12.5px;
+      text-decoration: none;
+    }
+
+    .slide-buttons {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+
+      @media(max-width: $breakpoint3) {
+        display: none;
+      }
+
+      button {
+        background-color: $black;
+        border: none;
+        padding: 1.5rem;
+
+        &:hover {
+          background-color: $veryDarkGray;
+        }
+      }
+    }
+  }
+
+}

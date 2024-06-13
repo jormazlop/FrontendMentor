@@ -1,0 +1,68 @@
+@import 'variables';
+
+:host {
+  display: contents;
+}
+
+.about-container {
+  display: flex;
+  height: 100%;
+
+  @media(max-width: $breakpoint3) {
+    flex-direction: column;
+  }
+
+  .about-dark {
+    background-image: url('/assets/image-about-dark.jpg');
+    background-size: 100% 100%;
+    width: 25%;
+
+    @media(max-width: $breakpoint3) {
+      height: 30rem;
+      width: 100%;
+    }
+  }
+
+  .about-description {
+    align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    justify-content: center;
+    padding: 2% 5%;
+    position: relative;
+    width: 40%;
+
+    h2 {
+      color: $black;
+      font-size: 1rem;
+      font-weight: 800;
+      letter-spacing: 6.65px;
+    }
+
+    p {
+      color: $darkGray;
+    }
+
+    @media(max-width: $breakpoint3) {
+      height: 30rem;
+      width: 100%;
+    }
+
+    @media(max-width: $breakpoint4) {
+      padding: 10%;
+    }
+
+  }
+
+  .about-light {
+    background-image: url('/assets/image-about-light.jpg');
+    background-size: 100% 100%;
+    width: 40%;
+
+    @media(max-width: $breakpoint3) {
+      height: 30rem;
+      width: 100%;
+    }
+  }
+}

@@ -1,0 +1,85 @@
+@import 'variables';
+
+.header-container {
+  color: $white;
+  padding: 3rem;
+  position: absolute;
+  z-index: 1;
+  width: 100%;
+
+  .header-full {
+    align-items: center;
+    display: flex;
+    gap: 2rem;
+
+    @media(max-width: $breakpoint3) {
+      display: none;
+    }
+
+    li {
+      list-style: none;
+
+      button {
+        background: none;
+        border: none;
+        border-bottom: 1px solid transparent;
+        color: $white;
+
+        &:hover {
+          border-bottom: 1px solid $white;
+        }
+      }
+    }
+  }
+
+  .header-responsive {
+
+    display: none;
+
+    @media(max-width: $breakpoint3) {
+      align-items: center;
+      display: flex;
+      justify-content: space-between;
+      width: 60%;
+    }
+
+    @media(max-width: $breakpoint4) {
+      width: 80%;
+    }
+
+    button {
+      background: none;
+      border: none;
+    }
+  }
+}
+
+.menu-responsive {
+  background-color: $white;
+  margin: 0;
+  padding: 3rem;
+  position: absolute;
+  z-index: 2;
+  width: 100%;
+
+  @media(max-width: $breakpoint4) {
+    padding: 10% 5%;
+  }
+
+  .menu-responsive-list {
+    display: flex;
+    justify-content: space-between;
+    padding: 0;
+
+    .menu-item {
+      color: $black;
+      list-style: none;
+
+      button {
+        background: none;
+        border: none;
+        font-weight: bold;
+      }
+    }
+  }
+}
