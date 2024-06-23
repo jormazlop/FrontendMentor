@@ -1,0 +1,21 @@
+<section class="info-container">
+  <div class="info-item">
+    <h2>IP Address</h2>
+    <p>{{ ip().ip }}</p>
+  </div>
+  <div class="info-separator"></div>
+  <div class="info-item">
+    <h2>Location</h2>
+    <p>{{ ip().location.region }}, {{ ip().location.country }} </p>
+  </div>
+  <div class="info-separator"></div>
+  <div class="info-item">
+    <h2>Timezone</h2>
+    <p>{{ ip().location.timezone }}</p>
+  </div>
+  <div class="info-separator"></div>
+  <div class="info-item">
+    <h2>ISP</h2>
+    <p>{{ ip().as.name }}</p>
+  </div>
+</section>

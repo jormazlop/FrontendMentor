@@ -1,0 +1,32 @@
+:host {
+  position: absolute;
+  top: 33%;
+  left: 0;
+
+  @media(max-width: 800px) {
+    top: 35%;
+  }
+}
+
+.map-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.map-frame {
+  border: 2px solid black;
+  height: 67vh;
+  width: 100vw;
+
+  @media(max-width: 800px) {
+    height: 65vh;
+  }
+}
+
+#map {
+  height: 100%;
+  width: 100%;
+}

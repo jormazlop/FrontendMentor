@@ -1,0 +1,12 @@
+<header class="header-container">
+  <h1 class="header-title">IP Address Tracker</h1>
+
+  <div class="header-input" [ngClass]="{ 'error' : error() }">
+    <input type="text" [(ngModel)]="ip" placeholder="Search for any IP address or domain">
+    <button title="Track ip" (click)="onSearchIp()">
+      <img src="assets/icon-arrow.svg">
+    </button>
+  </div>
+
+
+</header>
