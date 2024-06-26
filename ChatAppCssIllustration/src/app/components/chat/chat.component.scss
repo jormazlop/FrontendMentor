@@ -1,0 +1,16 @@
+:host {
+  display: contents;
+}
+
+.chat-container {
+  background-color: oklch(96.68% 0.006 308.4);
+  box-shadow: 0 30px 60px -10px oklch(32.27% 0.08 306.6 / 0.3);
+  border: 9px solid oklch(100 0 0);
+  border-radius: 30px;
+  display: flex;
+  flex-direction: column;
+  height: 640px;
+  justify-content: space-between;
+  position: relative;
+  width: 350px;
+}

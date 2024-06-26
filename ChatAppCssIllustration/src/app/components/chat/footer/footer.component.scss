@@ -1,0 +1,44 @@
+:host {
+  padding: 16px 10px;
+}
+
+.footer-container {
+  align-items: center;
+  background-color: oklch(100% 0 0);
+  border-radius: 20px;
+  display: flex;
+  height: 34px;
+  justify-content: space-between;
+  padding: 20px 10px;
+  width: 100%;
+
+  p {
+    color: oklch(83.37% 0.006 239.84);
+    font-size: 11px;
+  }
+
+  .footer-circle {
+
+    align-items: center;
+    background-color: oklch(32.27% 0.08 306.6);
+    border-radius: 50%;
+    display: flex;
+    height: 24px;
+    justify-content: center;
+    width: 24px;
+
+    &::before {
+      border: solid oklch(100% 0 0);
+      border-width: 0 2px 2px 0;
+      content: '';
+      display: inline-block;
+      height: 6px;
+      padding: 2.5px;
+      position: relative;
+      left: -1px;
+      transform: rotate(315deg);
+      width: 6px;
+    }
+
+  }
+}

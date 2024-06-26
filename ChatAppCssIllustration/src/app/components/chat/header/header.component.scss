@@ -1,0 +1,82 @@
+:host {
+  display: contents;
+}
+
+.chat-header-container {
+  align-items: center;
+  background: linear-gradient(to left, oklch(69.5% 0.28 322), oklch(56.73% 0.266 293.9));
+  border-radius: 22px 22px 5px 5px;
+  display: flex;
+  justify-content: space-between;
+  height: 15%;
+  padding: 15px 30px 0px 30px;
+  position: relative;
+  width: 100%;
+
+  &::before {
+    background-color: oklch(100% 0 0);
+    border-radius: 0 0 30px 30px;
+    content: '';
+    display: block;
+    height: 25%;
+    position: absolute;
+    top: 0;
+    left: 25%;
+    width: 50%;
+  }
+
+  .avatar-container {
+    align-items: center;
+    display: flex;
+    gap: 8px;
+    position: relative;
+    width: 100%;
+
+    .avatar-arrow {
+      border: solid oklch(100% 0 0);
+      border-width: 0 2px 2px 0;
+      display: inline-block;
+      padding: 4px;
+      transform: rotate(135deg);
+    }
+
+    img {
+      border: 1px solid oklch(100% 0 0);
+      border-radius: 50%;
+      height: 24px;
+      width: 24px;
+    }
+
+    .avatar-name {
+
+      display: flex;
+      flex-direction: column;
+
+      .name {
+        font-size: 14px;
+        color: oklch(100% 0 0);
+      }
+
+      .availabilty {
+        font-size: 11px;
+        color: oklch(79% 0.146 311.29);
+      }
+    }
+
+    .menu-dots {
+
+      position: absolute;
+      right: 0;
+
+      &::after {
+        content: '\2807';
+        color: oklch(100% 0 0);
+        font-size: 20px;
+      }
+    }
+
+
+  }
+
+
+}
