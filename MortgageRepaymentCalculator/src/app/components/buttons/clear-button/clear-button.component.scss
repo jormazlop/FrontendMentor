@@ -1,0 +1,19 @@
+@import 'variables';
+
+button {
+  background: none;
+  border: none;
+  border-bottom: 1px solid $slate-700;
+  color: $slate-700;
+  font-size: 1.6rem;
+  padding: 0;
+
+  &:hover {
+    border-bottom: 1px solid $slate-900;
+    color: $slate-900;
+  }
+
+  &:active {
+    transform: translate(1px, 1px);
+  }
+}

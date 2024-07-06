@@ -1,0 +1,123 @@
+@import "variables";
+
+@mixin suffix($bg-color, $text-color) {
+  align-items: center;
+  background-color: $bg-color;
+  border-radius: 4px 0 0 4px;
+  color: $text-color;
+  content: attr(suffix);
+  display: flex;
+  order: 0;
+  font-size: 1.8rem;
+  font-weight: bold;
+  justify-content: center;
+  padding: 1rem 2rem;
+  width: fit-content;
+}
+
+@mixin prefix($bg-color, $text-color) {
+  align-items: center;
+  background-color: $bg-color;
+  border-radius: 0 4px 4px 0;
+  color: $text-color;
+  content: attr(prefix);
+  display: flex;
+  order: 2;
+  font-size: 1.8rem;
+  font-weight: bold;
+  justify-content: center;
+  padding: 1rem 2rem;
+  width: fit-content;
+}
+
+.input-text-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+
+  label {
+    color: $slate-700;
+    font-size: 1.6rem;
+    font-weight: 500;
+    width: fit-content;
+  }
+
+  &:has(.ng-pristine):has([suffix]) {
+    .input-text::before {
+      @include suffix($slate-100, $slate-700);
+    }
+  }
+
+  &:has(.ng-valid:not(.ng-pristine)):has([suffix]) {
+    .input-text::before {
+      @include suffix($lime, $slate-900);
+    }
+  }
+
+  &:has(.ng-invalid:not(.ng-pristine)):has([suffix]) {
+    .input-text::before {
+      @include suffix($red, $white);
+    }
+  }
+
+  &:has(.ng-pristine):has([prefix]) {
+    .input-text::after {
+      @include prefix($slate-100, $slate-700);
+    }
+  }
+
+  &:has(.ng-valid:not(.ng-pristine)):has([prefix]) {
+    .input-text::after {
+      @include prefix($lime, $slate-900);
+    }
+  }
+
+  &:has(.ng-invalid:not(.ng-pristine)):has([prefix]) {
+    .input-text::after {
+      @include prefix($red, $white);
+    }
+  }
+
+  .input-text {
+
+    display: flex;
+    width: 100%;
+
+    input {
+      border-radius: 4px;
+      color: $slate-900;
+      flex: 1;
+      font-size: 1.8rem;
+      font-weight: bold;
+      padding: 1.3rem;
+      width: 100%;
+
+      &:focus {
+        outline: none;
+      }
+
+      &.ng-pristine {
+        border: 1px solid $slate-300;
+      }
+
+      &.ng-valid:not(.ng-pristine) {
+        border: 1px solid $lime;
+      }
+
+      &.ng-invalid:not(.ng-pristine) {
+        border: 1px solid $red;
+      }
+    }
+  }
+}
+
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type=number] {
+  appearance: textfield;
+}

@@ -1,0 +1,46 @@
+@import 'variables';
+
+.input-checkbox-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+
+  .input-checkbox-title {
+    color: $slate-700;
+    font-size: 1.6rem;
+    font-weight: 500;
+    margin: 0;
+    width: fit-content;
+  }
+
+  .input-checkbox-option {
+    align-items: center;
+    border: 1px solid $slate-500;
+    border-radius: 4px;
+    color: $slate-900;
+    display: flex;
+    font-size: 1.8rem;
+    font-weight: bold;
+    gap: 1.6rem;
+    padding: 1.4rem 1.8rem;
+
+    input {
+      accent-color: olive;
+    }
+
+    &.active {
+      border: 1px solid $lime;
+      background-color: $limeHover;
+    }
+
+    label {
+      cursor: pointer;
+      width: 100%;
+    }
+
+    &:hover {
+      border: 1px solid $lime;
+      cursor: pointer;
+    }
+  }
+}

@@ -1,0 +1,29 @@
+@import "bootstrap/scss/bootstrap-reboot";
+@import "bootstrap/scss/bootstrap-grid";
+@import "bootstrap/scss/tables";
+@import "bootstrap/scss/utilities";
+@import "bootstrap/scss/mixins";
+@import 'variables';
+
+@font-face {
+  font-family: "PlusJakarta";
+  src: url("../public/fonts/PlusJakartaSans-VariableFont_wght.ttf") format("opentype");
+}
+
+html,
+body {
+  background-color: $slate-100;
+  font-family: "PlusJakarta";
+  font-size: 10px;
+  height: 100vh;
+
+  @media(max-width: $breakpoint1) {
+    font-size: 7px;
+  }
+
+  @media(max-width: $breakpoint2) {
+    font-size: 6px;
+    height: 100vh;
+  }
+
+}

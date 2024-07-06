@@ -1,0 +1,14 @@
+
+<div class="input-checkbox-container">
+  <p class="input-checkbox-title">{{ title() }}</p>
+  @for(option of options(); track $index; let idx = $index) {
+    <div class="input-checkbox-option" [class.active]="innerControl.value === option" [title]="'Option ' + option">
+      <input type="radio" [formControl]="innerControl" [value]="option" [id]="id() + idx" />
+      <label [for]="id()  + idx"> {{ option }} </label>
+    </div>
+  }
+  @if(innerControl.errors && innerControl.dirty) {
+    <app-input-error [errors]="innerControl.errors"/>
+  }
+</div>
+

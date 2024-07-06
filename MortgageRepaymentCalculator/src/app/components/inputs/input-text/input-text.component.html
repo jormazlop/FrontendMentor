@@ -1,0 +1,9 @@
+<div class="input-text-container">
+  <label [for]="id()"> {{ title() }} </label>
+  <div class="input-text" [attr.suffix]="suffix()" [attr.prefix]="prefix()">
+    <input [type]="type()" [id]="id()" [formControl]="innerControl"/>
+  </div>
+  @if(innerControl.errors && innerControl.dirty) {
+    <app-input-error [errors]="innerControl.errors"/>
+  }
+</div>

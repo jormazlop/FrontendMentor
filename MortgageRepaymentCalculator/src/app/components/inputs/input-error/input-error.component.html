@@ -1,0 +1,10 @@
+@for(error of controlErrors(); track $index) {
+  @switch(error) {
+    @case ('required') {
+      <p>This field is required</p>
+    }
+    @default {
+      <p>There is an error in the control!</p>
+    }
+  }
+}

@@ -1,0 +1,33 @@
+@import 'variables';
+
+.calculator-container {
+
+  padding: 4rem;
+
+  .calculator-header {
+
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 4rem;
+
+    h2 {
+      color: $slate-900;
+      font-size: 2.4rem;
+      font-weight: bold;
+      letter-spacing: -1px;
+    }
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+
+    .term-rate-container {
+      display: flex;
+      gap: 2.4rem;
+    }
+  }
+
+}

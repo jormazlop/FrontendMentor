@@ -1,0 +1,18 @@
+<section class="calculator-container">
+  <div class="calculator-header">
+    <h2>Mortgage Calculator</h2>
+    <app-clear-button (onClick)="clear()" title="Clear All"/>
+  </div>
+
+  <form [formGroup]="calculatorGroup" (ngSubmit)="calculate()">
+    <app-input-text formControlName="amount" title="Mortgage Amount" suffix="£" type="number"/>
+    <div class="term-rate-container">
+      <app-input-text formControlName="term" title="Mortgage Term" prefix="years" type="number"/>
+      <app-input-text formControlName="rate" title="Mortgage Rate" prefix="%" type="number"/>
+    </div>
+    <app-input-checkbox formControlName="type" [options]="['Repayement', 'Interest Only']" title="Mortgage Type"/>
+    <app-submit-button title="Calculate Repayments">
+      Calculate Repayments
+    </app-submit-button>
+  </form>
+</section>
