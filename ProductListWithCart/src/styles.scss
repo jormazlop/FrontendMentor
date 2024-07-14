@@ -1,0 +1,27 @@
+@import 'bootstrap/scss/bootstrap-reboot';
+@import 'bootstrap/scss/bootstrap-grid';
+@import 'bootstrap/scss/tables';
+@import 'bootstrap/scss/utilities';
+@import 'bootstrap/scss/mixins';
+@import 'bootstrap/scss/bootstrap';
+@import 'variables';
+
+@font-face {
+  font-family: 'RedHat';
+  src: url('/fonts/RedHatText.ttf') format("opentype");
+}
+
+
+body, html {
+  font-family: 'RedHat';
+  font-size: 14px;
+  height: fit-content;
+
+  @media(max-width: $breakpoint3) {
+    font-size: 10px;
+  }
+}
+
+h1, p {
+  margin: 0;
+}

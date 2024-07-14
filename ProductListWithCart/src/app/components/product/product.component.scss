@@ -1,0 +1,39 @@
+@import 'variables';
+
+.product-container {
+
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+
+  .product-image {
+
+    position: relative;
+
+    img {
+      border-radius: 8px;
+      width: 100%;
+    }
+
+    app-add-cart-button,
+    app-add-substract-button {
+      bottom: -1.5rem;
+      left: 15%;
+      position: absolute;
+      width: 70%;
+      z-index: 1;
+
+      @media(max-width: $breakpoint2) {
+        left: 10%;
+        width: 80%;
+      }
+    }
+  }
+
+  .product-description {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+}

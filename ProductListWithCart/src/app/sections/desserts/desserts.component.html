@@ -1,0 +1,8 @@
+<section class="dessert-container">
+  <p class="text-preset-1">Desserts</p>
+  <div class="dessert-products">
+    @for(product of products(); track $index; let idx = $index) {
+      <app-product [product]="product" (add)="add(idx)" (substract)="substract(idx)"/>
+    }
+  </div>
+</section>
