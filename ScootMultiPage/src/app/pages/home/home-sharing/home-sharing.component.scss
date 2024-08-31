@@ -1,0 +1,146 @@
+@import "variables";
+
+.home-sharing-container {
+  background-image: url("/images/home-hero-desktop.jpg");
+  background-size: 100% 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+  height: 65rem;
+  justify-content: center;
+
+  @media (max-width: $breakpoint1) {
+    align-items: center;
+    text-align: center;
+    position: relative;
+
+    &::before {
+      content: '';
+      background-image: url("/patterns/left-upward-arrow.svg");
+      background-repeat: no-repeat;
+      bottom: 5rem;
+      height: 20rem;
+      left: 0;
+      position: absolute;
+      transform: rotate(180deg);
+      width: 30rem;
+    }
+
+    &::after {
+      content: '';
+      background-image: url("/patterns/white-circles.svg");
+      background-repeat: no-repeat;
+      bottom: 0rem;
+      height: 13rem;
+      right: 0;
+      position: absolute;
+      width: 20rem;
+    }
+  }
+
+  @media (max-width: $breakpoint2) {
+
+    align-items: center;
+    display: flex;
+    height: fit-content;
+    padding: 15rem 5rem;
+
+    &::before {
+      background-size: 80rem 13rem;
+      bottom: 2rem;
+      left: -12rem;
+    }
+
+    &::after {
+      display: none;
+    }
+  }
+
+  @media (max-width: $breakpoint3) {
+    padding: 15rem 0;
+  }
+
+  .home-sharing-title {
+    color: $white;
+    font-size: 5.6rem;
+    font-weight: bold;
+    margin-left: 16rem;
+    width: 55rem;
+
+    @media (max-width: $breakpoint1) {
+      margin: 0;
+    }
+
+    @media (max-width: $breakpoint1) {
+      width: 100%;
+    }
+  }
+
+  .home-sharing-content {
+    display: flex;
+    gap: 4rem;
+
+    @media (max-width: $breakpoint1) {
+      justify-content: center;
+    }
+
+    .line-1 {
+      background-image: url("/patterns/line.svg");
+      height: 1.5rem;
+      margin-top: 3rem;
+      width: 10%;
+
+      @media (max-width: $breakpoint1) {
+        display: none;
+      }
+    }
+
+    .description-container {
+      color: $white;
+      display: flex;
+      flex-direction: column;
+      font-size: 1.5rem;
+      gap: 2rem;
+      height: 20rem;
+      width: 30%;
+
+      @media (max-width: $breakpoint1) {
+        align-items: center;
+        gap: 4rem;
+        height: fit-content;
+        width: 80rem;
+      }
+
+      @media (max-width: $breakpoint2) {
+        width: 100%;
+      }
+    }
+
+    .line-2 {
+      background-image: url("/patterns/left-upward-arrow.svg");
+      background-position: 0% 100%;
+      background-repeat: no-repeat;
+      transform: rotate(180deg);
+      height: 1.5rem;
+      margin-top: 3rem;
+      height: 100%;
+      width: 35%;
+
+      @media (max-width: $breakpoint1) {
+        display: none;
+      }
+    }
+
+    .circles {
+      background-image: url("/patterns/white-circles.svg");
+      background-position: 120% 100%;
+      background-repeat: no-repeat;
+      margin-bottom: 3rem;
+      width: 25%;
+
+      @media (max-width: $breakpoint1) {
+        display: none;
+      }
+    }
+  }
+}

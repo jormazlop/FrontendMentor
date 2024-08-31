@@ -1,0 +1,159 @@
+{
+  "header": {
+    "about": "Acerca de",
+    "location": "Ubicación",
+    "careers": "Trabajos",
+    "button": "Ponte en marcha"
+  },
+  "footer": {
+    "sign-up": "Regístrese y salga hoy mismo",
+    "icons": {
+      "app-store": "Disponible en",
+      "google-play": "Consíguelo en"
+    },
+    "about": "Acerca de",
+    "location": "Ubicación",
+    "careers": "Trabajos"
+  },
+  "home": {
+    "home-sharing": {
+      "title": "Compartir scooter de forma simple",
+      "description": "Scoot facilita la movilidad urbana. Nuestras bicicletas están situadas en lugares convenientes en cada una de nuestras ciudades. Utiliza nuestra aplicación para localizar la bicicleta más cercana, desbloquéala con un toque y ¡listo!",
+      "button": "Ponte en marcha"
+    },
+    "home-features": {
+      "item-1": {
+        "title": "Localizar con app",
+        "description": "Utiliza la aplicación para encontrar el scooter más cercano. Estamos continuamente colocando scooters en las zonas con más demanda, por lo que uno nunca debería estar demasiado lejos. "
+      },
+      "item-2": {
+        "title": "Elige tu scooter",
+        "description": "Mostramos la información más importante de los scooters más cercanos. Para que sepas cuánta carga les queda y puedas ver aproximadamente cuánto te costará."
+      },
+      "item-3": {
+        "title": "Disfruta del viaje",
+        "description": "Escanea el código QR y la moto se desbloqueará. Retira el cable de bloqueo, ponte el casco y ¡listo! Bloquea siempre las bicicletas lejos de pasarelas y rampas de accesibilidad."
+      }
+    },
+    "home-telemetry": {
+      "title": "Telemetría de conducción fácil de usar",
+      "description": "La aplicación Scoot está disponible con telemetría de conducción. Esto significa que puede mostrarte tu velocidad media, cuánto tiempo has estado usando el scooter, tu distancia recorrida y muchas cosas más, todo en una aplicación fácil de usar.",
+      "button": "Más información"
+    },
+    "home-city": {
+      "title": "Próximamente en su ciudad",
+      "description": "De momento, Scoot está disponible en 4 grandes ciudades. Nos estamos expandiendo rápidamente, así que no dejes de avisarnos si quieres vernos en tu ciudad. Nuestro objetivo es llegar a 23 ciudades el año que viene.",
+      "button": "Más información"
+    },
+    "home-payments": {
+      "title": "Pagos sin complicaciones",
+      "description": "Pagar es tan fácil como uno, dos y tres. Aceptamos la mayoría de tarjetas de crédito y débito. También puedes vincular tu cuenta PayPal dentro de la aplicación. ¿Necesitas pagar más tarde? No se preocupe. Puedes aplazar el pago hasta un mes.",
+      "button": "Más información"
+    }
+  },
+  "about": {
+    "about-header": {
+      "title": "Acerca de"
+    },
+    "about-mobility": {
+      "title": "Movilidad para la era digital",
+      "description": "Desplazarse debería ser sencillo (¡e incluso divertido!) para todos. Adoptamos la tecnología para ofrecer un acceso inteligente y de bajo coste a scooters al alcance de tu mano."
+    },
+    "about-urban-living": {
+      "title": "Mejor calidad de vida",
+      "description": "Ayudamos a conectar ciudades y a acercar a la gente. Además, nuestros scooters son totalmente eléctricos y compensamos la mínima huella de carbono de cada trayecto."
+    },
+    "about-values": {
+      "title": "Nuestros valores",
+      "tech": {
+        "title": "Nuestra tecnología",
+        "description": "Utilizamos tecnología punta para impulsar el transporte urbano accesible. Es un placer conducir nuestros scooters totalmente eléctricos."
+      },
+      "integrity": {
+        "title": "Nuestra integridad",
+        "description": "Estamos plenamente comprometidos a ofrecer una experiencia de micromovilidad excelente, segura y sostenible en todas las ciudades en las que operamos."
+      },
+      "community": {
+        "title": "Nuestra comunidad",
+        "description": "Apoyamos a todas las comunidades a las que servimos. Todos los trabajadores cobran un salario digno en función de su ubicación y son empleados de Scoot."
+      }
+    },
+    "about-faqs": {
+      "works": {
+        "title": "Cómo funciona",
+        "faq-1": {
+          "title": "¿Cómo se descarga la aplicación?",
+          "description": "Para descargar la aplicación Scoot, puedes buscar «Scoot» en las tiendas App y Google Play. Una forma aún más sencilla de hacerlo sería hacer clic en el enlace correspondiente en la parte inferior de esta página y serás redirigido a la página correcta."
+        },
+        "faq-2": {
+          "title": "¿Puedo encontrar un Scoots cercano?",
+          "description": "Por supuesto. Solo tienes que abrir la aplicación y permitirnos encontrar tu ubicación mientras la utilizas. Te mostraremos todos los Scoots más cercanos y alguna información útil extra."
+        },
+        "faq-3": {
+          "title": "¿Necesito carné de conducir?",
+          "description": "¡Sí! Proporcionamos información dentro de la aplicación con respecto a las leyes locales y la licencia que necesita para poder montar nuestros Scoots."
+        }
+      },
+      "driving": {
+        "title": "Conducción segura",
+        "faq-1": {
+          "title": "¿Debo llevar casco?",
+          "description": "Sí, por favor. Todas las ciudades tienen leyes diferentes. Pero te recomendamos encarecidamente que lleves siempre el casco, independientemente de las leyes locales. Nos gustas y queremos que estés lo más seguro posible mientras conduces."
+        },
+        "faq-2": {
+          "title": "¿Y las normas y reglamentos?",
+          "description": "No es el momento de saltarse las normas. Asegúrate de cumplir todas las leyes y normativas locales. Además, sé un buen ser humano. Asegúrate de no aparcar tu Scoot donde pueda bloquear el acceso a edificios o estorbar a otras personas."
+        },
+        "faq-3": {
+          "title": "¿Qué pasa si estropeo mi Scoot?",
+          "description": "Asegúrese de leer atentamente nuestras condiciones. No es el trabajo más divertido, lo sabemos, pero lo hacemos lo más claro posible. Existe la opción de añadir un seguro para cada viaje, o puedes contratar un seguro anual si eres un Scooter habitual."
+        }
+      }
+    }
+  },
+  "location": {
+    "location-header": {
+      "title": "Ubicaciones"
+    },
+    "location-message": {
+      "title": "¿No está su ciudad en la lista?",
+      "description": "Si quieres ver Scoot en tu ciudad, no dudes en decírnoslo. Hacemos un seguimiento de las solicitudes y planificamos los lanzamientos en función de la demanda. No dudes en enviarnos un mensaje haciendo clic en el enlace o enviándonos un mensaje en las redes sociales.",
+      "button": "Envíenos un mensaje"
+    }
+  },
+  "careers": {
+    "careers-header": {
+      "title": "Trabajos"
+    },
+    "careers-join": {
+      "title": "¿Quiere unirse a nuestra misión?",
+      "description": "Siempre estamos buscando personas ambiciosas que nos ayuden en nuestro viaje. Si te apasiona nuestra misión de ofrecer un transporte limpio y accesible para mejorar la vida urbana, ¡queremos conocerte!",
+      "button": "Di Hola"
+    },
+    "careers-values": {
+      "title": "¿Por qué unirse a nosotros?",
+      "tech": {
+        "title": "Nuestra tecnología",
+        "description": "Utilizamos tecnología punta para impulsar el transporte urbano accesible. Es un placer conducir nuestros scooters totalmente eléctricos."
+      },
+      "integrity": {
+        "title": "Nuestra integridad",
+        "description": "Estamos plenamente comprometidos a ofrecer una experiencia de micromovilidad excelente, segura y sostenible en todas las ciudades en las que operamos."
+      },
+      "community": {
+        "title": "Nuestra comunidad",
+        "description": "Apoyamos a todas las comunidades a las que servimos. Todos los trabajadores cobran un salario digno en función de su ubicación y son empleados de Scoot."
+      }
+    },
+    "careers-offers": {
+      "button": "Solicitar",
+      "offer-1": "Director General",
+      "offer-2": "Diseñador UI/UX",
+      "offer-3": "Redactor de contenidos para blogs",
+      "offer-4": "Diseñador gráfico",
+      "offer-5": "Supervisor de flota",
+      "offer-6": "Analista de UX"
+    }
+  }
+
+}

@@ -1,0 +1,41 @@
+@import 'bootstrap/scss/bootstrap-reboot';
+@import 'bootstrap/scss/bootstrap-grid';
+@import 'bootstrap/scss/tables';
+@import 'bootstrap/scss/utilities';
+@import 'bootstrap/scss/mixins';
+@import 'bootstrap/scss/bootstrap';
+@import 'variables';
+
+
+@font-face {
+  font-family: 'LexendDeca';
+  src: url('/fonts/LexendDeca-VariableFont_wght.ttf') format("opentype");
+}
+
+@font-face {
+  font-family: 'SpaceMono';
+  src: url('/fonts/SpaceMono-Regular.ttf') format("opentype");
+}
+
+@font-face {
+  font-family: 'SpaceMono';
+  font-weight: bold;
+  src: url('/fonts/SpaceMono-Bold.ttf') format("opentype");
+}
+
+body, html {
+  font-family: 'SpaceMono';
+  font-size: 10px;
+
+  @media (max-width: $breakpoint2) {
+    font-size: 8px;
+  }
+
+  :has(.requires-no-scroll) {
+    overflow-y: hidden;
+  }
+}
+
+h1, h2, p, ul {
+  margin: 0;
+}

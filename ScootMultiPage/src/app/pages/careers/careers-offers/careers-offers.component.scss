@@ -1,0 +1,43 @@
+@import 'variables';
+
+.careers-offers-container {
+
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  padding: 0 15rem;
+
+  @media (max-width: $breakpoint1) {
+    padding: 0 10rem;
+  }
+
+  @media (max-width: $breakpoint2) {
+    padding: 0 5rem;
+  }
+
+  .careers-offers-item {
+    align-items: center;
+    background-color: $snow;
+    display: flex;
+    justify-content: space-between;
+    padding: 3rem;
+
+    .careers-offers-description {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+
+      h4 {
+        color: $darkNavy;
+        font-size: 2.5rem;
+        font-weight: bold;
+      }
+
+      p {
+        color: $darkNavy;
+        font-size: 1.5rem;
+        font-weight: 500;
+      }
+    }
+  }
+}

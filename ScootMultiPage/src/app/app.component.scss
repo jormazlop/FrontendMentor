@@ -1,0 +1,45 @@
+@import 'variables';
+
+.main-container {
+  display: flex;
+  flex-direction: column;
+
+  .responsive-menu {
+    background-color: $blackNavy;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: calc(100vh - 11rem);
+    overflow: hidden;
+    position: fixed;
+    top: 11rem;
+    transition-duration: 0.5s;
+    width: 0vw;
+
+    &.open {
+      padding: 6rem 3rem 2.5rem;
+      width: 50vw;
+    }
+
+    ul {
+      display: flex;
+      flex-direction: column;
+      gap: 2.5rem;
+
+      li {
+        list-style: none;
+
+        button {
+          background: none;
+          border: none;
+          color: $white;
+          font-size: 2rem;
+
+          &:hover {
+            color: $yellow;
+          }
+        }
+      }
+    }
+  }
+}

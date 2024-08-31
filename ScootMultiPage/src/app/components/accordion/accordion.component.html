@@ -1,0 +1,13 @@
+<div class="accordion-container" (click)="onClickMenu()">
+  <div class="accordion-title">
+    <h4>{{ title() }}</h4>
+      <img
+        src="/icons/chevron.svg"
+        [class.open]="open()"
+      />
+  </div>
+
+  <p class="accordion-description" [class.open]="open()">
+    {{ description() }}
+  </p>
+</div>

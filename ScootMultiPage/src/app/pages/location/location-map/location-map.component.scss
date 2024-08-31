@@ -1,0 +1,138 @@
+@import 'variables';
+
+.location-map-container {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 5rem;
+  justify-content: center;
+  padding: 0 10rem;
+
+  @media (max-width: $breakpoint1) {
+    padding: 0;
+  }
+
+  .location-map-map {
+    background-image: url('/images/world-map-desktop.png');
+    background-repeat: no-repeat;
+    height: 55rem;
+    position: relative;
+    width: 110rem;
+
+    @media (max-width: $breakpoint1) {
+      background-image: url('/images/world-map-tablet.png');
+      background-position: 50% 0%;
+      height: 30rem;
+      width: 90rem;
+    }
+
+    @media (max-width: $breakpoint2) {
+      background-image: url('/images/world-map-mobile.png');
+      background-size: 100% 100%;
+      background-position: 50% 0%;
+      height: 35rem;
+      width: 100%;
+    }
+  }
+
+  .location-map-tooltip {
+    background-color: $yellow;
+    color: $darkNavy;
+    font-size: 2.5rem;
+    font-weight: bold;
+    padding: 1.5rem 3rem;
+    position: absolute;
+    width: fit-content;
+
+    @media (max-width: $breakpoint1) {
+      font-size: 2rem;
+      padding: 1rem 2rem;
+    }
+
+    @media (max-width: $breakpoint2) {
+      display: none;
+    }
+
+    &::after {
+      border-color: $yellow transparent transparent transparent;
+      border-style: solid;
+      border-width: 2rem;
+      content: '';
+      left: 50%;
+      margin-left: -2rem;
+      position: absolute;
+      top: 100%;
+
+      @media (max-width: $breakpoint1) {
+        border-width: 1.5rem;
+        margin-left: -1.5rem;
+      }
+    }
+  }
+
+  .new-york {
+    @extend .location-map-tooltip;
+    left: 15rem;
+    top: 7rem;
+
+    @media (max-width: $breakpoint1) {
+      left: 18rem;
+      top: 4rem;
+    }
+  }
+
+  .london {
+    @extend .location-map-tooltip;
+    left: 41.5rem;
+    top: 2rem;
+
+    @media (max-width: $breakpoint1) {
+      left: 35.5rem;
+      top: 0rem;
+    }
+  }
+
+  .yokohama {
+    @extend .location-map-tooltip;
+    left: 86rem;
+    top: 8rem;
+
+    @media (max-width: $breakpoint1) {
+      left: 62.7rem;
+      top: 3.7rem;
+    }
+  }
+
+  .jakarta {
+    @extend .location-map-tooltip;
+    left: 79rem;
+    top: 25rem;
+
+    @media (max-width: $breakpoint1) {
+      left: 59rem;
+      top: 14.8rem;
+    }
+  }
+
+  .location-map-list {
+
+    display: none;
+
+    @media (max-width: $breakpoint2) {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      text-align: center;
+      width: 90%;
+
+      .location-map-item {
+        background-color: $lightYellow;
+        color: $darkNavy;
+        font-size: 2.5rem;
+        font-weight: bold;
+        padding: 1.5rem;
+        width: 100%;
+      }
+    }
+  }
+}

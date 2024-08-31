@@ -1,0 +1,34 @@
+<header>
+
+  <button class="header-buton-mobile" title="Menu" (click)="onClickMenu()">
+    @if(menu()) {
+      <img src="/icons/close.svg">
+    } @else {
+      <img src="/icons/hamburger.svg">
+    }
+  </button>
+
+  <ul class="header-sections">
+    <li>
+      <button routerLink="home" class="logo-button" title="Return to home">
+        <app-logo/>
+      </button>
+    </li>
+    <li>
+      <button routerLink="about">{{ 'header.about' | translate }}</button>
+    </li>
+    <li>
+      <button routerLink="location">{{ 'header.location' | translate }}</button>
+    </li>
+    <li>
+      <button routerLink="careers">{{ 'header.careers' | translate }}</button>
+    </li>
+  </ul>
+
+  <div class="header-buttons">
+    <app-button class="header-button" [title]="'header.button' | translate">
+      {{ 'header.button' | translate }}
+    </app-button>
+    <app-language-select/>
+  </div>
+</header>

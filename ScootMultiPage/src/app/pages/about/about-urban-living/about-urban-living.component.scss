@@ -1,0 +1,67 @@
+@import 'variables';
+
+.about-urban-living-container {
+  align-items: center;
+  background-image: url('/patterns/right-arrow.svg'), url('/patterns/circle.svg');
+  background-repeat: no-repeat, no-repeat;
+  background-position: 0% 0%, calc(0% - 35rem) 0%;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 15rem;
+
+  @media (max-width: $breakpoint1) {
+    background-image: url('/patterns/right-arrow.svg'), url('/patterns/circle.svg');
+    background-repeat: no-repeat, no-repeat;
+    background-position: 0% 0%, calc(0% - 25rem) 0%;
+    flex-direction: column;
+    gap: 5rem;
+    padding: 0 10rem;
+  }
+
+  @media (max-width: $breakpoint2) {
+    background-image: url('/patterns/right-arrow.svg');
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    background-position: -10rem 10vw;
+    padding: 0 5rem;
+  }
+
+  @media (max-width: $breakpoint3) {
+    padding: 0;
+  }
+
+  .about-urban-living-image {
+    border-radius: 50%;
+    position: relative;
+    z-index: -1;
+
+    @media (max-width: $breakpoint2) {
+      width: 100%;
+    }
+  }
+
+  .about-urban-living-text {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+    width: 40%;
+
+    @media (max-width: $breakpoint1) {
+      align-items: center;
+      text-align: center;
+      width: 100%;
+    }
+
+    h2 {
+      color: $darkNavy;
+      font-size: 4.5rem;
+      font-weight: bold;
+    }
+
+    p {
+      color: $dimGrey;
+      font-size: 1.5rem;
+      line-height: 2.5rem;
+    }
+  }
+}

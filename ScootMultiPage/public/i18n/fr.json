@@ -1,0 +1,158 @@
+{
+  "header": {
+    "about": "À propos",
+    "location": "Location",
+    "careers": "Carrières",
+    "button": "Scootin"
+  },
+  "footer": {
+    "sign-up": "Inscrivez-vous et partez dès aujourd'hui",
+    "icons": {
+      "app-store": "Disponible sur",
+      "google-play": "Le télécharger sur"
+    },
+    "about": "À propos",
+    "location": "Location",
+    "careers": "Carrières"
+  },
+  "home": {
+    "home-sharing": {
+      "title": "Le partage des scooters en toute simplicité",
+      "description": "Scoot élimine les tracas de la mobilité urbaine. Nos vélos sont placés dans des endroits pratiques dans chacune de nos villes. Utilisez notre application pour localiser le vélo le plus proche, déverrouillez-le d'un simple toucher, et c'est parti!",
+      "button": "Scootin"
+    },
+    "home-features": {
+      "item-1": {
+        "title": "Localiser avec l'application",
+        "description": "Utilisez l'application pour trouver le scooter le plus proche de chez vous. Nous plaçons continuellement des scooters dans les zones les plus demandées, de sorte qu'il n'y en a jamais trop loin."
+      },
+      "item-2": {
+        "title": "Choisissez votre scooter",
+        "description": "Nous affichons les informations les plus importantes pour les scooters les plus proches de vous. Ainsi, vous savez combien de charge il leur reste et vous pouvez voir approximativement combien cela coûtera."
+      },
+      "item-3": {
+        "title": "Profitez du voyage",
+        "description": "Scannez le code QR et le vélo se déverrouillera. Rétractez le câble de verrouillage, mettez un casque et c'est parti ! Verrouillez toujours les vélos à l'écart des allées et des rampes d'accès."
+      }
+    },
+    "home-telemetry": {
+      "title": "Télémétrie équestre facile à utiliser",
+      "description": "L'application Scoot est disponible avec la télémétrie de conduite. Cela signifie qu'elle peut vous indiquer votre vitesse moyenne, la durée d'utilisation du scooter, la distance parcourue, et bien d'autres choses encore, le tout dans une application facile à utiliser.",
+      "button": "En savoir plus"
+    },
+    "home-city": {
+      "title": "Dans une ville proche de chez vous",
+      "description": "Scoot est disponible dans 4 grandes villes pour l'instant. Nous nous développons rapidement, alors n'hésitez pas à nous faire savoir si vous souhaitez nous voir dans votre ville. Notre objectif est de faire circuler nos scooters dans 23 villes au cours de l'année à venir.",
+      "button": "En savoir plus"
+    },
+    "home-payments": {
+      "title": "Paiements sans tracas",
+      "description": "Notre paiement est aussi simple qu'un deux trois. Nous acceptons la plupart des cartes de crédit et de débit. Vous pouvez également connecter votre compte PayPal dans l'application. Besoin de payer plus tard ? Pas de problème ! Vous pouvez différer votre paiement jusqu'à un mois.",
+      "button": "En savoir plus"
+    }
+  },
+  "about": {
+    "about-header": {
+      "title": "À propos"
+    },
+    "about-mobility": {
+      "title": "La mobilité à l'ère numérique",
+      "description": "Se déplacer devrait être simple (et même amusant !) pour tout le monde. Nous nous appuyons sur la technologie pour offrir un accès intelligent et peu coûteux à des scooters à portée de main."
+    },
+    "about-urban-living": {
+      "title": "Améliorer la vie urbaine",
+      "description": "Nous contribuons à connecter les villes et à rapprocher les gens. Nos scooters sont également entièrement électriques et nous compensons l'empreinte carbone minimale de chaque trajet."
+    },
+    "about-values": {
+      "title": "Nos valeurs",
+      "tech": {
+        "title": "Notre technologie",
+        "description": "Nous utilisons une technologie de pointe pour faire progresser les transports urbains accessibles. Nos scooters entièrement électriques sont un plaisir à conduire !"
+      },
+      "integrity": {
+        "title": "Notre intégrité",
+        "description": "Nous nous engageons pleinement à offrir une expérience de micro-mobilité à la fois agréable, sûre et durable dans chaque ville que nous desservons."
+      },
+      "community": {
+        "title": "Notre communauté",
+        "description": "Nous soutenons toutes les communautés que nous servons. Tous les travailleurs reçoivent un salaire décent en fonction de leur lieu de travail et sont des employés de Scoot."
+      }
+    },
+    "about-faqs": {
+      "works": {
+        "title": "Comment cela fonctionne-t-il ?",
+        "faq-1": {
+          "title": "Comment télécharger l'application ?",
+          "description": "Pour télécharger l'application Scoot, vous pouvez rechercher « Scoot » dans les boutiques App et Google Play. Une façon encore plus simple de le faire est de cliquer sur le lien correspondant au bas de cette page et vous serez redirigé vers la bonne page."
+        },
+        "faq-2": {
+          "title": "Puis-je trouver un Scoots à proximité ?",
+          "description": "Tout à fait ! Il vous suffit d'ouvrir l'application et de nous permettre de vous localiser pendant que vous l'utilisez. Nous vous indiquerons tous les Scoots les plus proches et quelques informations utiles supplémentaires."
+        },
+        "faq-3": {
+          "title": "Ai-je besoin d'un permis pour rouler ?",
+          "description": "Oui ! Nous fournissons des informations à l'intérieur de l'application concernant les lois locales et le permis dont vous avez besoin pour pouvoir conduire nos scooters."
+        }
+      },
+      "driving": {
+        "title": "Conduite sûre",
+        "faq-1": {
+          "title": "Dois-je porter un casque ?",
+          "description": "Oui, faites-le ! Toutes les villes ont des lois différentes. Mais nous recommandons fortement de toujours porter un casque, quelle que soit la législation locale. Nous vous aimons bien et nous voulons que vous soyez le plus en sécurité possible lorsque vous faites du scooter."
+        },
+        "faq-2": {
+          "title": "Qu'en est-il des règles et règlements ?",
+          "description": "Ce n'est pas le moment d'enfreindre les règles. Veillez à respecter toutes les lois et réglementations locales. En outre, soyez un bon citoyen. Veillez à ne pas garer votre Scoot dans un endroit où il pourrait bloquer l'accès aux bâtiments ou gêner les gens."
+        },
+        "faq-3": {
+          "title": "Que se passe-t-il si j'endommage mon Scoot ?",
+          "description": "N'oubliez pas de lire attentivement nos conditions générales. Ce n'est pas le travail le plus amusant qui soit, mais nous le rendons aussi clair que possible. Vous avez la possibilité d'ajouter une assurance pour chaque voyage, ou vous pouvez souscrire une assurance annuelle si vous êtes un utilisateur régulier de Scooter."
+        }
+      }
+    }
+  },
+  "location": {
+    "location-header": {
+      "title": "Locations"
+    },
+    "location-message": {
+      "title": "Votre ville ne figure pas dans la liste ?",
+      "description": "Si vous souhaitez que Scoot s'installe dans votre ville, n'hésitez pas à nous le faire savoir. Nous suivons les demandes et planifions les lancements en fonction de la demande. N'hésitez pas à nous envoyer un message en cliquant sur le lien ou en nous envoyant un message sur les réseaux sociaux.",
+      "button": "Envoyez-nous un message"
+    }
+  },
+  "careers": {
+    "careers-header": {
+      "title": "Carrières"
+    },
+    "careers-join": {
+      "title": "Vous souhaitez participer à notre mission ?",
+      "description": "Nous sommes toujours à la recherche de personnes ambitieuses pour nous aider dans notre voyage. Si vous êtes passionné par notre mission, qui consiste à fournir des transports propres et accessibles pour améliorer la vie urbaine, nous voulons vous entendre !",
+      "button": "Dites bonjour"
+    },
+    "careers-values": {
+      "title": "Pourquoi nous rejoindre ?",
+      "tech": {
+        "title": "Notre technologie",
+        "description": "Nous utilisons une technologie de pointe pour faire progresser les transports urbains accessibles. Nos scooters entièrement électriques sont un plaisir à conduire !"
+      },
+      "integrity": {
+        "title": "Notre intégrité",
+        "description": "Nous nous engageons pleinement à offrir une expérience de micro-mobilité à la fois agréable, sûre et durable dans chaque ville que nous desservons."
+      },
+      "community": {
+        "title": "Notre communauté",
+        "description": "Nous soutenons toutes les communautés que nous servons. Tous les travailleurs reçoivent un salaire décent en fonction de leur lieu de travail et sont des employés de Scoot."
+      }
+    },
+    "careers-offers": {
+      "button": "Appliquer",
+      "offer-1": "Directeur général",
+      "offer-2": "Designer UI/UX",
+      "offer-3": "Rédacteur de contenu de blog",
+      "offer-4": "Concepteur graphique",
+      "offer-5": "Superviseur de flotte",
+      "offer-6": "Analyste UX"
+    }
+  }
+}

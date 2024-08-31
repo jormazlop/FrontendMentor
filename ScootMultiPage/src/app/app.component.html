@@ -1,0 +1,23 @@
+<main class="main-container" [class.requires-no-scroll]="menu()">
+  <app-header/>
+  <router-outlet/>
+  <app-sign-up/>
+  <app-footer/>
+
+  <div class="responsive-menu" [class.open]="menu()">
+    <ul>
+      <li>
+        <button routerLink="about" (click)="onClickMenu()">{{ 'header.about' | translate }}</button>
+      </li>
+      <li>
+        <button routerLink="location" (click)="onClickMenu()">{{ 'header.location' | translate }}</button>
+      </li>
+      <li>
+        <button routerLink="careers" (click)="onClickMenu()">{{ 'header.careers' | translate }}</button>
+      </li>
+    </ul>
+    <app-button>
+      {{ 'header.button' | translate }}
+    </app-button>
+  </div>
+</main>

@@ -1,0 +1,24 @@
+<footer>
+  <ul class="footer-sections">
+    <li>
+      <button routerLink="home" class="logo-button" title="Return to home">
+        <app-logo color="FFFFFF"/>
+      </button>
+    </li>
+    <li>
+      <button routerLink="about">{{ 'footer.about' | translate }}</button>
+    </li>
+    <li>
+      <button routerLink="location">{{ 'footer.location' | translate }}</button>
+    </li>
+    <li>
+      <button routerLink="careers">{{ 'footer.careers' | translate }}</button>
+    </li>
+  </ul>
+
+  <div class="footer-icons">
+    <app-facebook/>
+    <app-instagram/>
+    <app-twitter/>
+  </div>
+</footer>

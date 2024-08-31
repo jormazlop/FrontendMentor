@@ -1,0 +1,52 @@
+@import 'variables';
+
+footer {
+
+  background-color: $blackNavy;
+  display: flex;
+  font-size: 1.5rem;
+  justify-content: space-between;
+  padding: 3rem 10rem;
+
+  @media (max-width: $breakpoint2) {
+    align-items: center;
+    flex-direction: column;
+    gap: 5rem;
+    padding: 3rem 5rem;
+  }
+
+  .footer-sections {
+    align-items: center;
+    display: flex;
+    gap: 3rem;
+
+    @media (max-width: $breakpoint2) {
+      flex-direction: column;
+    }
+
+    li {
+      list-style: none;
+
+      .logo-button {
+        background: none;
+        border: none;
+      }
+
+      button {
+        background: none;
+        border: none;
+        color: $white;
+
+        &:hover {
+          color: $yellow;
+        }
+      }
+    }
+  }
+
+  .footer-icons {
+    align-items: center;
+    display: flex;
+    gap: 3rem;
+  }
+}

@@ -1,0 +1,41 @@
+@import "variables";
+
+.careers-header-container {
+  background-image: url("/images/careers-locations-hero-desktop.jpg");
+  background-size: 100% 100%;
+  overflow: hidden;
+  padding: 5rem;
+  position: relative;
+
+  @media (max-width: $breakpoint1) {
+    background-image: url("/images/careers-locations-hero-tablet.jpg");
+  }
+
+  @media (max-width: $breakpoint2) {
+    align-items: center;
+    background-image: url("/images/careers-locations-hero-mobile.jpg");
+    display: flex;
+    justify-content: center;
+  }
+
+  &::after {
+    content: '';
+    background-image: url("/patterns/white-circles.svg");
+    background-repeat: no-repeat;
+    bottom: calc(50% - 3.5rem);
+    height: 7rem;
+    right: 0;
+    position: absolute;
+    width: 20rem;
+
+    @media (max-width: $breakpoint2) {
+      display: none;
+    }
+  }
+
+  .careers-header-title {
+    color: $white;
+    font-size: 5.6rem;
+    font-weight: bold;
+  }
+}
