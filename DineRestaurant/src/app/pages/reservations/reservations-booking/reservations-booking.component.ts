@@ -68,7 +68,6 @@ export class ReservationsBookingComponent {
       const dateToCheck = new Date(`${year}/${month}/${day}`);
 
       if (isNaN(dateToCheck.getDate()) || dateToCheck < today) {
-        console.log(dateToCheck);
         return { invalidDate: true }
       }
 
