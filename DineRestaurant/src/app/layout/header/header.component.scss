@@ -1,0 +1,9 @@
+.header-container {
+  padding: calc(var(--padding)/2) calc(var(--padding));
+  position: absolute;
+
+  .header-logo {
+    background: none;
+    border: none;
+  }
+}

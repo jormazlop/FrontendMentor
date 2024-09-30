@@ -1,0 +1,102 @@
+<form class="reservations-booking-component" [formGroup]="formGroup">
+
+  @let nameRequired = formGroup.controls['name'].errors?.['required'] && formGroup.controls['name'].dirty;
+
+  <input type="text" formControlName="name" placeholder="Name">
+
+  @if(nameRequired) {
+    <p class="errors">This field is required</p>
+  }
+
+  @let emailRequired = formGroup.controls['email'].errors?.['required'] && formGroup.controls['email'].dirty;
+  @let emailFormat = formGroup.controls['email'].errors?.['email'] && formGroup.controls['email'].dirty;
+
+  <input type="email" formControlName="email" placeholder="Email">
+
+  @if(emailRequired) {
+    <p class="errors">This field is required</p>
+  }
+
+  @if(emailFormat) {
+    <p class="errors">This is not a valid email</p>
+  }
+
+  @let dateRequired = formGroup.controls['date'].errors?.['required'] && formGroup.controls['date'].dirty;
+  @let dateInvalid = formGroup.controls['date'].errors?.['invalidDate'] && formGroup.controls['date'].dirty;
+
+  <div class="booking-date" formGroupName="date">
+    <p>
+      Pick a date
+
+      @if(dateRequired) {
+        <p class="errors">This field is incomplete</p>
+      }
+
+      @if(dateInvalid) {
+        <p class="errors">This is not a valid date</p>
+      }
+
+    </p>
+
+    <input type="text" formControlName="month" placeholder="MM" maxlength="2">
+    <input type="text" formControlName="day" placeholder="DD" maxlength="2">
+    <input type="text" formControlName="year" placeholder="YYYY" maxlength="4">
+
+  </div>
+
+  @let timeRequired = formGroup.controls['time'].errors?.['required'] && formGroup.controls['time'].dirty;
+  @let timeInvalid = formGroup.controls['time'].errors?.['invalidTime'] && formGroup.controls['time'].dirty;
+
+  <div class="booking-time" formGroupName="time">
+    <p>
+      Pick a time
+
+      @if(timeRequired) {
+        <p class="errors">This field is incomplete</p>
+      }
+
+      @if(timeInvalid) {
+        <p class="errors">This is not a valid time</p>
+      }
+    </p>
+    <input type="text" formControlName="hour" placeholder="09" maxlength="2">
+    <input type="text" formControlName="minute" placeholder="00" maxlength="2">
+
+    <div ngbDropdown>
+      <button class="btn btn-outline-primary"
+              ngbDropdownToggle
+              class="dropdown-time-button"
+              [class.open]="dropdownOpen()"
+              (click)="onClickMenu()">{{ time() }}</button>
+      <div ngbDropdownMenu>
+        <button ngbDropdownItem (click)="onUpdateTime('AM')" class="dropdown-option">
+          @if(isAM()) {
+            <img src="/images/icons/icon-check.svg">
+          }
+          <span>AM</span>
+        </button>
+        <button ngbDropdownItem (click)="onUpdateTime('PM')" class="dropdown-option">
+          @if(isPM()) {
+            <img src="/images/icons/icon-check.svg">
+          }
+          <span>PM</span>
+        </button>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="booking-people">
+    <button (click)="onClickMinus()" [disabled]="people() <= 1">
+      <img src="/images/icons/icon-minus.svg">
+    </button>
+    <p>{{ people()}} people</p>
+    <button (click)="onClickPlus()">
+      <img src="/images/icons/icon-plus.svg">
+    </button>
+  </div>
+  <app-button type="tertiary"
+              [class.disabled]="formGroup.invalid"
+              [routerLink]="'/home'"
+              (click)="closeModal()">MAKE A RESERVATION</app-button>
+</form>

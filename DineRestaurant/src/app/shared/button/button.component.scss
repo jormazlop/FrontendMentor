@@ -1,0 +1,26 @@
+@import 'variables';
+
+button {
+  background-color: $codGray;
+  border: 1px solid $white;
+  color: $white;
+  font-size: 1.7rem;
+  letter-spacing: 2.5px;
+  padding: 1.5rem 5rem;
+  transition-duration: 0.25s;
+  width: fit-content;
+
+  &.secondary {
+    background-color: transparent;
+  }
+
+  &.tertiary {
+    width: 100%;
+  }
+
+  &:hover {
+    background-color: $white;
+    border: 1px solid $codGray;
+    color: $codGray;
+  }
+}

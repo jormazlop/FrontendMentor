@@ -1,0 +1,18 @@
+<section class="home-5-container">
+  <div class="home-5-slide" [ngClass]="'type-' + active()"></div>
+  <div class="home-5-text">
+    <ul class="buttons-tablet">
+      <li><button [title]="'Family' | booking" (click)="onClickBooking(0)" [class.active]="active() == 0">FAMILY GATHERING</button></li>
+      <li><button [title]="'Special' | booking" (click)="onClickBooking(1)" [class.active]="active() == 1">SPECIAL EVENTS</button></li>
+      <li><button [title]="'Social' | booking" (click)="onClickBooking(2)" [class.active]="active() == 2">SOCIAL EVENTS</button></li>
+    </ul>
+    <h2>{{ type().type | booking }}</h2>
+    <p>{{ type().description }}</p>
+    <app-button [routerLink]="'/reservations'">BOOK A TABLE</app-button>
+    <ul class="buttons-desktop">
+      <li><button [title]="'Family' | booking" (click)="onClickBooking(0)" [class.active]="active() == 0">FAMILY GATHERING</button></li>
+      <li><button [title]="'Special' | booking" (click)="onClickBooking(1)" [class.active]="active() == 1">SPECIAL EVENTS</button></li>
+      <li><button [title]="'Social' | booking" (click)="onClickBooking(2)" [class.active]="active() == 2">SOCIAL EVENTS</button></li>
+    </ul>
+  </div>
+</section>

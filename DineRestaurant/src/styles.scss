@@ -1,0 +1,112 @@
+@import "bootstrap/scss/bootstrap-reboot";
+@import "bootstrap/scss/bootstrap-grid";
+@import "bootstrap/scss/tables";
+@import "bootstrap/scss/utilities";
+@import "bootstrap/scss/mixins";
+@import "bootstrap/scss/bootstrap";
+@import "variables";
+
+@font-face {
+  font-family: "LeagueSpartan";
+  src: url("/fonts/LeagueSpartan.ttf") format("opentype");
+}
+
+body,
+html {
+  font-family: "LeagueSpartan";
+  font-size: 10px;
+  --padding: 8rem;
+
+  @media (width <= $breakpoint2) {
+    font-size: 8px;
+    --padding: 4rem;
+  }
+}
+
+h1,
+h2,
+p,
+ul {
+  margin: 0;
+}
+
+// Modal
+.modal-backdrop.show {
+  opacity: 0;
+}
+
+.modal-content {
+  border-radius: 0;
+  width: 65rem;
+
+  @media (width <= $breakpoint2) {
+    width: 100%;
+  }
+}
+
+.modal-dialog {
+  margin: 0;
+  max-width: fit-content;
+  position: absolute;
+  right: 10%;
+
+  @media (width <= $breakpoint2) {
+    right: 0%;
+  }
+}
+
+.modal-open {
+  overflow: auto !important;
+}
+
+// Dropdown
+.dropdown {
+  button {
+    background: transparent;
+    border: none;
+    color: $codGray;
+    font-size: 2rem;
+    font-weight: 500;
+
+    &.btn.show,
+    &:active,
+    &:hover {
+      background: none;
+      background-color: transparent !important;
+      color: $codGray !important;
+    }
+
+    &.dropdown-time-button {
+      &::after {
+        background-image: url("/images/icons/icon-arrow.svg");
+        border: none;
+        height: 1rem;
+        margin-left: 1.5rem;
+        vertical-align: 0;
+        width: 1.8rem;
+
+        @media (width <= $breakpoint2) {
+          height: 1.3rem;
+          width: 2.3rem;
+        }
+      }
+
+      &.open::after {
+        transform: rotate(180deg);
+      }
+    }
+
+    &.dropdown-option {
+      align-items: center;
+      display: flex;
+      justify-content: flex-end;
+      gap: 2rem;
+    }
+  }
+
+  .dropdown-menu {
+    border-radius: 0;
+    box-shadow: 0px 15px 25px 0px $shadow;
+    padding: 1.5rem 1.5rem 1.5rem 0.5rem;
+  }
+}
