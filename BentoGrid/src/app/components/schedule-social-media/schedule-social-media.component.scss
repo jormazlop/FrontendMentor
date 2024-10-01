@@ -1,0 +1,47 @@
+@import 'variables';
+
+.schedule-social-media-container {
+  background-color: $purple100;
+  border-radius: 1rem;
+  color: $black;
+  display: flex;
+  flex-direction: column;
+  gap: 2.4rem;
+  overflow: hidden;
+  padding: 5rem 3.2rem;
+  width: 25.6rem;
+
+  @media(width < $breakpoint1) {
+    align-items: center;
+    text-align: center;
+    width: 100%;
+
+    br {
+      &:nth-child(1) {
+        display: none;
+      }
+    }
+
+    p br {
+      &:nth-child(1),
+      &:nth-child(3) {
+        display: none;
+      }
+    }
+  }
+
+  @media(width < $breakpoint2) {
+    br {
+      display: none;
+    }
+  }
+
+  img {
+    position: static;
+    width: 35.7rem;
+  }
+
+  p {
+    margin: 0;
+  }
+}

@@ -1,0 +1,46 @@
+@import 'variables';
+
+.faster-audiencie-growth-container {
+  background-color: $white;
+  border-radius: 1rem;
+  color: $black;
+  display: flex;
+  flex-direction: column;
+  gap: 3.84rem;
+  padding: 2.4rem;
+
+  @media(width < $breakpoint1) {
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  @media(width < $breakpoint2) {
+
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 2.4rem;
+
+    br {
+      display: none;
+    }
+  }
+
+  .growth {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+
+    p {
+      margin: 0;
+    }
+  }
+
+  img {
+    width: 18rem;
+
+    @media(width < $breakpoint1) {
+      height: 6.5rem;
+    }
+  }
+}

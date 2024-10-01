@@ -1,0 +1,61 @@
+@import "bootstrap/scss/bootstrap-reboot";
+@import "bootstrap/scss/bootstrap-grid";
+@import "bootstrap/scss/tables";
+@import "bootstrap/scss/utilities";
+@import "bootstrap/scss/mixins";
+@import "bootstrap/scss/bootstrap";
+@import "variables";
+
+@font-face {
+  font-family: "DMSans";
+  src: url("/fonts/DMSans.ttf") format("opentype");
+}
+
+@font-face {
+  font-family: "DMSans";
+  font-style: italic;
+  src: url("/fonts/DMSans-Italic.ttf") format("opentype");
+}
+
+body,
+html {
+  font-family: "DMSans";
+  font-size: 10px;
+  height: 100vh;
+
+  @media(width < $breakpoint1) {
+    height: fit-content;
+  }
+
+  @media(width < $breakpoint2) {
+    font-size: 8px;
+  }
+}
+
+.text-preset-1 {
+  font-size: 6.2rem;
+  font-weight: 500;
+  letter-spacing: 0rem;
+  line-height: 93.5%;
+}
+
+.text-preset-2 {
+  font-size: 4rem;
+  font-weight: 500;
+  letter-spacing: -0.2rem;
+  line-height: 90%;
+}
+
+.text-preset-3 {
+  font-size: 3.2rem;
+  font-weight: 600;
+  letter-spacing: -0.2rem;
+  line-height: 87.5%;
+}
+
+.text-preset-4 {
+  font-size: 1.8rem;
+  font-weight: 500;
+  letter-spacing: 0rem;
+  line-height: 111%;
+}

@@ -1,0 +1,88 @@
+@import 'variables';
+
+.main-container {
+  background-color: #F6F5F6;
+  align-items: center;
+  display: flex;
+  height: 100%;
+  justify-content: center;
+
+  .grid-container {
+
+    display: grid;
+    gap: 3rem;
+    grid-template-rows: 1fr 1fr 1fr;
+
+
+    grid-template-areas:
+              "create-schedule social-media-faster social-media-faster schedule-social-media"
+              "create-schedule social-media-faster social-media-faster schedule-social-media"
+              "create-schedule social-media-faster social-media-faster schedule-social-media"
+              "create-schedule social-media-faster social-media-faster schedule-social-media"
+              "create-schedule manage-multiple-accounts maintain-consistent-posting schedule-social-media"
+              "write-your-content manage-multiple-accounts maintain-consistent-posting schedule-social-media"
+              "write-your-content manage-multiple-accounts maintain-consistent-posting schedule-social-media"
+              "write-your-content faster-audiencie-growth grow-followers grow-followers"
+              "write-your-content faster-audiencie-growth grow-followers grow-followers"
+              "write-your-content faster-audiencie-growth grow-followers grow-followers";
+
+
+    @media(width < $breakpoint1) {
+
+      grid-template-areas:
+          "social-media-faster social-media-faster"
+          "manage-multiple-accounts maintain-consistent-posting"
+          "schedule-social-media schedule-social-media"
+          "grow-followers grow-followers"
+          "faster-audiencie-growth faster-audiencie-growth"
+          "create-schedule write-your-content";
+
+      grid-template-rows: min-content;
+      width: 90%;
+    }
+
+    @media(width < $breakpoint2) {
+      grid-template-areas:
+      "social-media-faster"
+      "manage-multiple-accounts"
+      "maintain-consistent-posting"
+      "schedule-social-media"
+      "grow-followers"
+      "faster-audiencie-growth"
+      "create-schedule"
+      "write-your-content";
+    }
+
+    app-create-schedule {
+      grid-area: create-schedule;
+    }
+
+    app-social-media-faster {
+      grid-area: social-media-faster;
+    }
+
+    app-schedule-social-media {
+      grid-area: schedule-social-media;
+    }
+
+    app-write-your-content {
+      grid-area: write-your-content;
+    }
+
+    app-manage-multiple-accounts {
+      grid-area: manage-multiple-accounts;
+    }
+
+    app-maintain-consistent-posting {
+      grid-area: maintain-consistent-posting;
+    }
+
+    app-faster-audiencie-growth {
+      grid-area: faster-audiencie-growth;
+    }
+
+    app-grow-followers {
+      grid-area: grow-followers;
+    }
+  }
+}

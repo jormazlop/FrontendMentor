@@ -1,0 +1,33 @@
+@import 'variables';
+
+.create-schedule-container {
+  background-color: $yellow100;
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2.4rem;
+  padding: 7.8rem 3rem;
+
+  @media(width < $breakpoint1) {
+    br {
+      &:nth-child(2) {
+        display: none;
+      }
+    }
+  }
+
+  @media(width < $breakpoint2) {
+    br {
+      display: none;
+    }
+  }
+
+  span {
+    color: $purple500;
+    font-style: italic;
+  }
+
+  img {
+    width: 19rem;
+  }
+}

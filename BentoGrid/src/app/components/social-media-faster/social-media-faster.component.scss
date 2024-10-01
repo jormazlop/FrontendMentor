@@ -1,0 +1,44 @@
+@import 'variables';
+
+.social-media-faster-container {
+  background-color: $purple500;
+  border-radius: 1rem;
+  color: $white;
+  display: flex;
+  flex-direction: column;
+  gap: 2.4rem;
+  padding: 6.2rem 3.2rem;
+
+  @media(width < $breakpoint1) {
+    text-align: center;
+  }
+
+  @media(width < $breakpoint2) {
+    br {
+      display: none;
+    }
+  }
+
+  span {
+    color: $yellow500;
+  }
+
+  i {
+    font-style: italic;
+  }
+
+  .social-media-stars {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+
+    img {
+      width: 19rem;
+    }
+
+    .text-preset-4 {
+      margin: 0;
+    }
+  }
+}

@@ -1,0 +1,36 @@
+@import 'variables';
+
+.manage-multiple-accounts-container {
+
+  background-color: $white;
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  overflow: hidden;
+  padding: 2.4rem;
+  width: 25.6rem;
+
+  @media(width < $breakpoint1) {
+    height: 100%;
+    justify-content: center;
+    width: auto;
+
+    br {
+      &:nth-child(1) {
+        display: none;
+      }
+    }
+  }
+
+  @media(width < $breakpoint2) {
+    br {
+      display: none;
+    }
+  }
+
+  img {
+    background-color: $white;
+    width: 31.6rem;
+  }
+}

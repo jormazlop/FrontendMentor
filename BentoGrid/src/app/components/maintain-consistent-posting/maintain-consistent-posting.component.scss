@@ -1,0 +1,31 @@
+@import 'variables';
+
+.maintain-consistent-posting-container {
+  background-color: $yellow500;
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+  height: 24rem;
+  overflow: hidden;
+  padding: 2.4rem;
+
+  @media(width < $breakpoint1) {
+    br {
+      &:nth-child(1),
+      &:nth-child(3) {
+        display: none;
+      }
+    }
+  }
+
+  @media(width < $breakpoint2) {
+    br {
+      display: none;
+    }
+  }
+
+  img {
+    width: 20rem;
+  }
+}
