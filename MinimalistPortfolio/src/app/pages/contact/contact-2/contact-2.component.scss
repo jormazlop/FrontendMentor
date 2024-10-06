@@ -1,0 +1,48 @@
+@import 'variables';
+
+.contact-2-container {
+  $padding: var(--padding);
+
+  display: flex;
+  flex-direction: column;
+  gap: 4.8rem;
+  margin: 0 calc($padding*2) calc($padding*2) calc($padding*2);
+
+  .separator {
+    background-color: $grayishDarkBlue;
+    height: 1px;
+    opacity: 0.15;
+    width: 100%;
+  }
+
+  .contact-2-content {
+    display: flex;
+    justify-content: space-between;
+
+    @media (width < $breakpoint2) {
+      flex-direction: column;
+      gap: 2.5rem;
+
+      h2 {
+        text-align: left;
+      }
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 2.5rem;
+      width: 50%;
+
+      @media (width < $breakpoint2) {
+        width: 100%;
+      }
+
+      app-button.disabled {
+        opacity: 0.8;
+        pointer-events: none;
+      }
+    }
+  }
+
+}

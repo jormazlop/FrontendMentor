@@ -1,0 +1,26 @@
+@import 'variables';
+
+.portfolio-bookmark-4-container {
+  $padding: var(--padding);
+
+  align-items: center;
+  display: flex;
+  gap: 3rem;
+  justify-content: space-between;
+  margin: calc($padding*2);
+
+  @media(width < $breakpoint2) {
+    flex-direction: column;
+  }
+
+  .separator {
+    background-color: $grayishDarkBlue;
+    height: 1px;
+    opacity: 0.15;
+    width: 100%;
+
+    @media(width < $breakpoint2) {
+      display: none;
+    }
+  }
+}

@@ -1,0 +1,7 @@
+@import 'variables';
+
+.main-container {
+  background-color: $veryLightGrey;
+  display: flex;
+  flex-direction: column;
+}

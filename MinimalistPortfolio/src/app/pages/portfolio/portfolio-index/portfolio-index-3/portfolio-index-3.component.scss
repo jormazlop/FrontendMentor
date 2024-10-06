@@ -1,0 +1,67 @@
+@import 'variables';
+
+.portfolio-index-3-container {
+  $padding: var(--padding);
+
+  display: flex;
+  gap: 10rem;
+  height: 60rem;
+  justify-content: space-between;
+  margin: 0 calc($padding*2) calc($padding*2) calc($padding*2);
+
+  @media(width < $breakpoint1) {
+    gap: 5rem;
+  }
+
+  @media(width < $breakpoint2) {
+    flex-direction: column;
+    height: 110rem;
+  }
+
+  @media(width < $breakpoint3) {
+    height: 140rem;
+  }
+
+  .portfolio-index-3-profile {
+    background-image: url('/images/portfolio/desktop/image-portfolio-insure.jpg');
+    background-size: 100% 100%;
+    height: 100%;
+    width: 50%;
+
+    @media(width < $breakpoint2) {
+      background-image: url('/images/portfolio/mobile/image-portfolio-insure.jpg');
+      height: 40%;
+      width: 100%;
+    }
+  }
+
+  .portfolio-index-3-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 0 7.5%;
+    width: 50%;
+
+    @media(width < $breakpoint1) {
+      padding: 0;
+    }
+
+    @media(width < $breakpoint2) {
+      height: 60%;
+      justify-content: space-around;
+      width: 100%;
+    }
+
+    .separator {
+      background-color: $grayishDarkBlue;
+      height: 1px;
+      opacity: 0.15;
+      width: 100%;
+
+      @media(width < $breakpoint3) {
+        display: none;
+      }
+    }
+  }
+
+}

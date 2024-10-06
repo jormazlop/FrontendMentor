@@ -1,0 +1,21 @@
+<section class="contact-2-container">
+  <div class="separator"></div>
+  <div class="contact-2-content">
+    <h2>Contact Me</h2>
+    <form [formGroup]="formGroup" (ngSubmit)="onSubmit()">
+      <app-input-text
+        formControlName="name"
+        placeholder="Jane Appleseed"
+        label="Name"/>
+      <app-input-text
+        formControlName="email"
+        placeholder="email@example.com"
+        label="Email Address"/>
+      <app-input-textarea
+        formControlName="message"
+        placeholder="How can I help?"
+        label="Message"/>
+      <app-button type="tertiary" [class.disabled]="formGroup.invalid">SEND MESSAGE</app-button>
+    </form>
+  </div>
+</section>

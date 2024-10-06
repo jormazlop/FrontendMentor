@@ -1,0 +1,26 @@
+<header class="header-container">
+  <app-logo/>
+  <nav class="menu-full-screen">
+    <ul>
+      <li><a [routerLink]="'/home'">HOME</a></li>
+      <li><a [routerLink]="'/portfolio'">PORTFOLIO</a></li>
+      <li><a [routerLink]="'/contact'">CONTACT ME</a></li>
+    </ul>
+  </nav>
+  <button class="menu-mobile" (click)="onClickMenu()" [title]="menu() ? 'Close Menu' : 'Open Menu'">
+    @if (!menu()) {
+      <img src="/images/icons/hamburger.svg">
+    } @else {
+      <img src="/images/icons/close.svg">
+    }
+  </button>
+  <div class="popup-menu" [class.closed]="!menu()">
+    <nav>
+      <ul>
+        <li><a [routerLink]="'/home'" (click)="onClickMenu()">HOME</a></li>
+        <li><a [routerLink]="'/portfolio'" (click)="onClickMenu()">PORTFOLIO</a></li>
+        <li><a [routerLink]="'/contact'" (click)="onClickMenu()">CONTACT ME</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>

@@ -1,0 +1,10 @@
+@let required = innerControl.errors?.['required'] && innerControl.dirty;
+
+<div class="input-text-container">
+  <label [for]="id">{{ label() }}</label>
+  <textarea type="text" [formControl]="innerControl" [placeholder]="placeholder()" [id]="id" rows="5">
+  </textarea>
+  @if(required) {
+    <p class="error">*Champ required</p>
+  }
+</div>

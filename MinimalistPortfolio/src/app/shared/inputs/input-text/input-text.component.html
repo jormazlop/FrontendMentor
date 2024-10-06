@@ -1,0 +1,15 @@
+@let required = innerControl.errors?.['required'] && innerControl.dirty;
+@let email = innerControl.errors?.['email'] && innerControl.dirty;
+
+<div class="input-text-container">
+  <label [for]="id">{{ label() }}</label>
+  <input type="text" [formControl]="innerControl" [placeholder]="placeholder()" [id]="id">
+
+  @if(required) {
+    <p class="error">*Champ required</p>
+  }
+
+  @if(email) {
+    <p class="error">*Format not valid</p>
+  }
+</div>

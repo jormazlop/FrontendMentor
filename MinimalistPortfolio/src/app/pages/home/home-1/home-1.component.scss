@@ -1,0 +1,48 @@
+@import 'variables';
+
+.home-1-container {
+  $padding: var(--padding);
+
+  background-image: url('/images/homepage/desktop/image-homepage-hero.jpg');
+  background-size: 100% 100%;
+  height: 60rem;
+  margin: 0 calc($padding*2) calc($padding*2) calc($padding*2);
+  position: relative;
+
+  @media(width < $breakpoint2) {
+    background-image: url('/images/homepage/mobile/image-homepage-hero.jpg');
+    background-size: 100% 40rem;
+    height: 70rem;
+  }
+
+  @media(width < $breakpoint3) {
+    height: 90rem;
+  }
+
+  .home-1-text {
+    background-color: $veryLightGrey;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 6rem;
+    padding: 5rem 5rem 0 0;
+    position: absolute;
+    width: fit-content;
+
+    @media(width < $breakpoint2) {
+      gap: 1.5rem;
+      height: 30rem;
+      justify-content: space-around;
+      padding: 2.5rem 0 0 0;
+      width: 100%;
+
+      br {
+        display: none;
+      }
+    }
+
+    @media(width < $breakpoint3) {
+      height: 50rem;
+    }
+  }
+}

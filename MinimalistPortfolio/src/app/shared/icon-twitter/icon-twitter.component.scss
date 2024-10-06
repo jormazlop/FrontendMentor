@@ -1,0 +1,21 @@
+@import 'variables';
+
+button {
+
+  background: none;
+  border: none;
+
+  &.secondary {
+    svg path {
+      fill: $grayishDarkBlue
+    }
+  }
+
+  &:hover {
+
+    svg path {
+      fill: $slightlyDesaturatedCyan;
+    }
+
+  }
+}

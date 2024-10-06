@@ -1,0 +1,77 @@
+@import 'bootstrap/scss/bootstrap-reboot';
+@import 'bootstrap/scss/bootstrap-grid';
+@import 'bootstrap/scss/tables';
+@import 'bootstrap/scss/utilities';
+@import 'bootstrap/scss/mixins';
+@import 'variables';
+
+@font-face {
+  font-family: 'PublicSans';
+  src: url('/fonts/PublicSans.ttf') format("opentype");
+}
+
+@font-face {
+  font-family: 'IbarraRealNova';
+  src: url('/fonts/IbarraRealNova.ttf') format("opentype");
+}
+
+
+body, html {
+  font-family: 'PublicSans';
+  font-size: 10px;
+  --padding: 6rem;
+
+  @media(width < $breakpoint1) {
+    --padding: 3rem;
+  }
+
+  @media(width < $breakpoint2) {
+    font-size: 8px;
+  }
+
+  @media(width < $breakpoint3) {
+    --padding: 1.5rem;
+  }
+}
+
+
+h1 {
+  color: $grayishDarkBlue;
+  font-family: 'IbarraRealNova';
+  font-size: 5rem;
+  font-weight: 700;
+  letter-spacing: -0.2rem;
+  line-height: 5rem;
+}
+
+h2 {
+  color: $grayishDarkBlue;
+  font-family: 'IbarraRealNova';
+  font-size: 4rem;
+  font-weight: 700;
+  letter-spacing: -0.2rem;
+  line-height: 4.2rem;
+  text-wrap: nowrap;
+
+  @media(width < $breakpoint2) {
+    text-align: center;
+  }
+}
+
+h3 {
+  color: $grayishDarkBlue;
+  font-family: 'IbarraRealNova';
+  font-size: 3.2rem;
+  font-weight: 400;
+  letter-spacing: -0.2rem;
+  line-height: 3.6rem;
+  text-wrap: nowrap;
+}
+
+.body-text-1 {
+  color: $grayishDarkBlue;
+  font-family: 'PublicSans';
+  font-size: 1.6rem;
+  line-height: 3rem;
+  margin: 0;
+}

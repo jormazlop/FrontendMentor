@@ -1,0 +1,62 @@
+@import 'variables';
+
+.button-container {
+
+  align-items: center;
+  border: none;
+  display: flex;
+  font-size: 1.2rem;
+  font-weight: 500;
+  padding: 0;
+  transition-duration: 0.25s;
+
+  img {
+    padding: 1.6rem;
+  }
+
+  p {
+    font-family: 'PublicSans';
+    letter-spacing: 0.2rem;
+    margin: 0;
+    padding: 1.5rem 3rem;
+    text-wrap: nowrap;
+  }
+
+  &.primary {
+    background-color: $darkBlue;
+    color: $white;
+
+    img {
+      background-color: rgba(0, 0, 0, 0.1);
+    }
+
+    &:hover {
+      background-color: $slightlyDesaturatedCyan;
+
+      img {
+        filter: contrast(200%) brightness(200%);
+      }
+    }
+  }
+
+  &.secondary {
+    background-color: transparent;
+    border: 1px solid $grayishDarkBlue;
+    color: $grayishDarkBlue;
+
+    &:hover {
+      background-color: $grayishDarkBlue;
+      color: $white;
+    }
+  }
+
+  &.tertiary {
+    background-color: $darkBlue;
+    color: $white;
+
+    &:hover {
+      background-color: $slightlyDesaturatedCyan;
+    }
+  }
+
+}

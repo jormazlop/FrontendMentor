@@ -1,0 +1,14 @@
+@import 'variables';
+
+:host {
+  display: contents;
+}
+
+
+svg {
+  &.footer {
+    path {
+      fill: $white;
+    }
+  }
+}

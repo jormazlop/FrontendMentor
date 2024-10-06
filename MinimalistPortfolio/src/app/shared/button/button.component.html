@@ -1,0 +1,7 @@
+<button class="button-container" [ngClass]="type()" [attr.type]="button()">
+
+  @if(primary()) {
+    <img src="images/icons/down-arrows.svg">
+  }
+  <p><ng-content/></p>
+</button>

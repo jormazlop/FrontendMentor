@@ -1,0 +1,58 @@
+@import 'variables';
+
+.portfolio-manage-3-container {
+  $padding: var(--padding);
+
+  display: flex;
+  flex-direction: column;
+  margin: 0 calc($padding*2) calc($padding*2) calc($padding*2);
+
+
+  .separator {
+    background-color: $grayishDarkBlue;
+    height: 1px;
+    opacity: 0.15;
+    width: 100%;
+  }
+
+  .portfolio-manage-3-links {
+    display: flex;
+    justify-content: space-between;
+
+    .link, .link-2 {
+      align-items: center;
+      background: none;
+      border: none;
+      display: flex;
+      gap: 3rem;
+      padding: 3rem 0;
+      text-align: left;
+      width: fit-content;
+
+      span {
+        font-family: 'PublicSans';
+        font-size: 1.6rem;
+        opacity: 0.5;
+      }
+
+      @media (width < $breakpoint3) {
+
+        &.link {
+          flex-direction: column;
+        }
+
+        &.link-2 {
+          flex-direction: column-reverse;
+        }
+
+      }
+    }
+
+    .line {
+      background-color: $grayishDarkBlue;
+      opacity: 0.15;
+      width: 1px;
+    }
+  }
+
+}

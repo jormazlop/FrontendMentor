@@ -1,0 +1,34 @@
+@import 'variables';
+
+.portfolio-insure-1-container {
+  $padding: var(--padding);
+
+  height: 60rem;
+  margin: 0 calc($padding*2) calc($padding*2) calc($padding*2);
+
+  @media(width < $breakpoint1) {
+    gap: 5rem;
+  }
+
+  @media(width < $breakpoint2) {
+    background-image: url('/images/portfolio/mobile/image-portfolio-insure.jpg');
+    flex-direction: column;
+    height: 50rem;
+  }
+
+  @media(width < $breakpoint3) {
+    height: 40rem;
+  }
+
+  .portfolio-insure-1-image {
+    background-image: url('/images/portfolio/desktop/image-portfolio-insure.jpg');
+    background-size: 100% 100%;
+    height: 100%;
+    width: 100%;
+
+    @media(width < $breakpoint2) {
+      background-image: url('/images/portfolio/mobile/image-portfolio-insure.jpg');
+    }
+  }
+
+}
