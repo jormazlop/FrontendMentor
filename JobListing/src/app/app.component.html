@@ -1,0 +1,19 @@
+<main class="main-container">
+  <header class="header"></header>
+
+  <app-filtre/>
+
+  <ul class="job-list">
+
+    @for(job of data(); track job.id) {
+
+      @let tags = getTags(job);
+
+      <li class="job-item" *tags="tags">
+        <app-job [job]="job"/>
+      </li>
+    }
+
+  </ul>
+
+</main>

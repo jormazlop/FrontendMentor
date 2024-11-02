@@ -1,0 +1,27 @@
+@import "bootstrap/scss/bootstrap-reboot";
+@import "bootstrap/scss/bootstrap-grid";
+@import "bootstrap/scss/tables";
+@import "bootstrap/scss/utilities";
+@import "bootstrap/scss/mixins";
+@import "bootstrap/scss/bootstrap";
+@import "variables";
+
+@font-face {
+  font-family: "LeagueSpartan";
+  src: url("/fonts/LeagueSpartan.ttf") format("opentype");
+}
+
+body,
+html {
+  font-family: "LeagueSpartan";
+  font-size: 10px;
+  height: fit-content;
+}
+
+h1 {
+  font-family: "LeagueSpartan";
+}
+
+p {
+  margin: 0;
+}

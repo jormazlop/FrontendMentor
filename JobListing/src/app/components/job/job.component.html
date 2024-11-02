@@ -1,0 +1,36 @@
+<div class="job-container">
+  <div class="job-main">
+    <img [src]="job().logo" [alt]="job().company">
+    <div class="job-main-description">
+      <div class="job-main-company">
+        <p>{{ job().company }}</p>
+
+        @switch (job().postedAt) {
+          @case ('1d ago') {
+            <p class="job-new">NEW!</p>
+            <p class="job-featured">FEATURED</p>
+          }
+          @case ('2d ago') {
+            <p class="job-new">NEW</p>
+          }
+        }
+
+      </div>
+      <p class="job-main-position">{{ job().position }}</p>
+
+      <p class="job-main-info">
+        <span>{{ job().postedAt }}</span>
+        <span class="point">.</span>
+        <span>{{ job().contract }}</span>
+        <span class="point">.</span>
+        <span>{{ job().location }}</span>
+      </p>
+    </div>
+  </div>
+  <hr class="job-separator">
+  <div class="job-tags">
+    @for(tag of tags(); track tag) {
+      <button (click)="onClickTag(tag)">{{ tag }}</button>
+    }
+  </div>
+</div>

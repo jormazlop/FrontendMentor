@@ -1,0 +1,46 @@
+@import 'variables';
+
+.main-container {
+  background-color: $lightGrayishCyan1;
+  align-items: center;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+  padding: 12rem 16.5rem;
+
+  @media(width < $breakpoint1) {
+    padding: 12rem 3rem;
+  }
+
+  @media(width < $breakpoint3) {
+    padding: 12rem 1rem;
+  }
+
+  .header {
+    background-color: $desaturatedDarkCyan;
+    background-image: url('/images/bg-header-desktop.svg');
+    height: 15.6rem;
+    position: absolute;
+    top: 0;
+    width: 100%;
+  }
+
+  .job-list {
+    display: flex;
+    flex-direction: column;
+    gap: 2.4rem;
+    padding: 0;
+    position: relative;
+    width: 100%;
+    z-index: 1;
+
+    @media(width < $breakpoint2) {
+      gap: 4rem;
+    }
+
+    .job-item {
+      list-style: none;
+    }
+  }
+}

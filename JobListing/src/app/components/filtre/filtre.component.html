@@ -1,0 +1,12 @@
+<section class="filtre-container" [class.no-active]="!filtreActive()">
+  <ul class="filtre-list">
+
+    @for(tag of filtre(); track tag) {
+      <li>
+        <button class="filtre-button" (click)="onRemoveFiltre(tag)"><p>{{ tag }}</p> <span><app-close-button/></span></button>
+      </li>
+    }
+
+  </ul>
+  <button class="clear-button" (click)="onClearFiltre()">Clear</button>
+</section>
