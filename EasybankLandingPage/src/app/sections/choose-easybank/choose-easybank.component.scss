@@ -1,0 +1,70 @@
+@import 'variables';
+
+.choose-easybank-container {
+  background-color: $grey-2;
+  display: flex;
+  flex-direction: column;
+  gap: 7rem;
+  padding: var(--padding) var(--padding);
+
+  @media(width < $breakpoint2) {
+    align-items: center;
+    text-align: center;
+  }
+
+  .choose-easybank-description {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+
+    h2 {
+      color: $dark;
+      font-size: 4rem;
+      font-weight: 200;
+      line-height: 6.4rem;
+    }
+
+    p {
+      color: $grey-1;
+      font-size: 1.8rem;
+      line-height: 2.8rem;
+    }
+  }
+
+  .choose-easybank-list {
+    display: flex;
+    gap: 4rem;
+    justify-content: space-between;
+    list-style: none;
+
+    @media(width < $breakpoint2) {
+      align-items: center;
+      flex-direction: column;
+    }
+
+    .choose-easybank-item {
+      display: flex;
+      flex-direction: column;
+      gap: 3rem;
+
+      @media(width < $breakpoint2) {
+        align-items: center;
+      }
+
+      img {
+        width: 7rem;
+      }
+
+      h3 {
+        color: $dark;
+        font-size: 2.4rem;
+        line-height: 2.8rem;
+      }
+
+      p {
+        font-size: 1.6rem;
+        color: $grey-1;
+      }
+    }
+  }
+}

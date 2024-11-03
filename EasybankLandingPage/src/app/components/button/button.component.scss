@@ -1,0 +1,23 @@
+@import 'variables';
+
+.button-container {
+  background: $green-1;
+  background-size: 200% 100%;
+  background-position: 100% 0;
+  transition: .5s;
+  border: none;
+  border-radius: 22px;
+  color: $white;
+  font-size: 1.5rem;
+  font-weight: 600;
+  padding: 0.8rem 3rem;
+
+  &:hover {
+    background-position: 0 0;
+    opacity: 0.6;
+  }
+
+  &:active {
+    transform: translate(1px, 1px);
+  }
+}

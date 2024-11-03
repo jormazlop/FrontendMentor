@@ -1,0 +1,36 @@
+@import "bootstrap/scss/bootstrap-reboot";
+@import "bootstrap/scss/bootstrap-grid";
+@import "bootstrap/scss/tables";
+@import "bootstrap/scss/utilities";
+@import "bootstrap/scss/mixins";
+@import "bootstrap/scss/bootstrap";
+@import 'variables';
+
+@font-face {
+  font-family: "PublicSans";
+  src: url("/fonts/PublicSans.ttf") format("opentype");
+}
+
+body,
+html {
+  font-family: "PublicSans";
+  font-size: 10px;
+  height: fit-content;
+
+  --padding: 16rem;
+
+  @media(width < $breakpoint1) {
+    font-size: 8px;
+    --padding: 8rem;
+  }
+
+  @media(width < $breakpoint3) {
+    font-size: 7px;
+    --padding: 3rem;
+  }
+}
+
+ul, p {
+  margin: 0;
+  padding: 0;
+}

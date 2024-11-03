@@ -1,0 +1,9 @@
+@import 'variables';
+
+svg:hover {
+  cursor: pointer;
+
+  path {
+    fill: $green-2;
+  }
+}

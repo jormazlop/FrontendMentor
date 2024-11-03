@@ -1,0 +1,14 @@
+<header class="header-container">
+  <app-logo/>
+  <nav class="desktop-menu">
+    <ul>
+      <li><button>Home</button></li>
+      <li><button>About</button></li>
+      <li><button>Contact</button></li>
+      <li><button>Blog</button></li>
+      <li><button>Careers</button></li>
+    </ul>
+  </nav>
+  <app-menu-button class="responsive-menu" (clickMenu)="onClick()" [open]="open()"/>
+  <app-button>Request Invite</app-button>
+</header>
