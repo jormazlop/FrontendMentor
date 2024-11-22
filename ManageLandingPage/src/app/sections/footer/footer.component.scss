@@ -1,0 +1,107 @@
+$padding: var(--padding);
+$padding2: calc($padding*2);
+
+.footer-container {
+  align-items: center;
+  background-color: var(--black);
+  display: flex;
+  justify-content: space-between;
+  padding: $padding $padding2;
+
+  @media(width < 1000px) {
+    align-items: center;
+    flex-direction: column-reverse;
+    gap: 3rem;
+  }
+
+  @media(width < 600px) {
+    padding: 5rem $padding2;
+  }
+
+  .footer-manage {
+    display: flex;
+    flex-direction: column;
+    gap: 8rem;
+    justify-content: space-between;
+
+    @media(width < 1200px) {
+      flex-direction: column-reverse;
+      gap: 2rem;
+    }
+
+    @media(width < 600px) {
+      align-items: center;
+      gap: 5rem;
+      width: 100%;
+    }
+
+    .footer-icons {
+      align-items: center;
+      display: flex;
+      gap: 1.3rem;
+
+      @media(width < 600px) {
+        justify-content: space-between;
+        width: 100%;
+      }
+    }
+  }
+
+  .footer-menu {
+    column-gap: 20rem;
+    display: grid;
+    font-size: 1.5rem;
+    grid-template-columns: 1fr 1fr;
+    list-style: none;
+    padding: 0;
+    row-gap: 1.5rem;
+
+    @media(width < 1200px) {
+      column-gap: 2rem;
+    }
+
+    @media(width < 600px) {
+      column-gap: 0;
+      width: 100%;
+    }
+
+    button {
+      background: none;
+      border: none;
+      color: var(--white);
+    }
+  }
+
+  .footer-mail {
+    display: flex;
+    flex-direction: column;
+    gap: 8rem;
+
+    @media(width < 1200px) {
+      gap: 2rem;
+    }
+
+    .footer-input {
+      align-items: flex-start;
+      display: flex;
+      gap: 1rem;
+
+      app-button.disabled {
+        opacity: 0.5;
+        pointer-events: none;
+      }
+    }
+
+    span {
+      color: var(--white);
+      font-size: 1.3rem;
+      font-weight: 500;
+      letter-spacing: -0.2px;
+      opacity: 0.5;
+
+      @media(width < 1000px) {
+        text-align: center;
+      }
+    }
+  }
+}

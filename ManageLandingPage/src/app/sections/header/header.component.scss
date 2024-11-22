@@ -1,0 +1,30 @@
+
+$padding: var(--padding);
+$padding2: calc($padding*2);
+
+.header-container {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  padding: $padding $padding2;
+
+  @media(width < 1200px) {
+    app-nav-menu {
+      display: none;
+    }
+  }
+
+  @media(width < 600px) {
+    app-button {
+      display: none;
+    }
+
+    padding: 5rem $padding2;
+  }
+
+  @media(width > 600px) {
+    .responsive-menu {
+      display: none;
+    }
+  }
+}

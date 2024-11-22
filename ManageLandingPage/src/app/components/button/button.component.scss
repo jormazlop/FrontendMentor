@@ -1,0 +1,39 @@
+
+.button {
+  background-color: var(--orange);
+  border: none;
+  border-radius: 22px;
+  color: var(--cream);
+  font-size: 1.3rem;
+  font-weight: 600;
+  padding: 1.3rem 3rem;
+  transition-duration: 0.25s;
+
+  &.primary {
+    box-shadow: 0 1.5rem 1.5rem -1rem var(--light-orange);
+
+    &:hover {
+      background-color: var(--orange-hover);
+    }
+  }
+
+  &.secondary {
+    background-color: var(--white);
+    color: var(--orange);
+
+    &:hover {
+      color: var(--light-orange);
+    }
+  }
+
+  &.tertiary {
+
+    &:hover {
+      background-color: var(--orange-hover);
+    }
+  }
+
+  &:active {
+    transform: translate(1px, 1px);
+  }
+}

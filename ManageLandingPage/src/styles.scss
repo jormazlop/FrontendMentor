@@ -1,0 +1,71 @@
+@import "bootstrap/scss/bootstrap-reboot";
+@import "bootstrap/scss/bootstrap-grid";
+@import "bootstrap/scss/tables";
+@import "bootstrap/scss/utilities";
+@import "bootstrap/scss/mixins";
+@import "bootstrap/scss/bootstrap";
+
+@font-face {
+  font-family: "BeVietnam";
+  src: url("/fonts/BeVietnamPro-Regular.ttf") format("opentype");
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: "BeVietnam";
+  src: url("/fonts/BeVietnamPro-Medium.ttf") format("opentype");
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: "BeVietnam";
+  src: url("/fonts/BeVietnamPro-SemiBold.ttf") format("opentype");
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: "BeVietnam";
+  src: url("/fonts/BeVietnamPro-Bold.ttf") format("opentype");
+  font-weight: bold;
+}
+
+body,
+html {
+  font-family: "BeVietnam";
+  font-size: 10px;
+  height: fit-content;
+
+  --light-orange: #FF9F8E;
+  --orange: #F3603C;
+  --orange-hover: #F98F75;
+  --red: #F33C3C;
+  --dark-blue: #242D52;
+  --black: #1D1E25;
+  --cream: #FFF0EC;
+  --grey: #FAFAFA;
+  --dark-grey: #8D8D8D;
+  --white: #FFFFFF;
+
+  --padding: 7rem;
+
+  @media(width < 1000px) {
+    --padding: 2.5rem;
+  }
+
+  @media(width < 600px) {
+    font-size: 8px;
+  }
+
+  @media(width < 450px) {
+    --padding: 1rem;
+  }
+
+  @media(width < 400px) {
+    font-size: 6px;
+  }
+}
+
+.drag-scroll-content {
+  overflow-x: hidden !important;
+  overflow-y: visible !important;
+}

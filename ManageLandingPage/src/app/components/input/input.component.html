@@ -1,0 +1,5 @@
+<input type="text" [formControl]="innerControl" placeholder="Updates in your inbox…">
+@if(innerControl.errors) {
+  <p>Please insert a valid email</p>
+}
+

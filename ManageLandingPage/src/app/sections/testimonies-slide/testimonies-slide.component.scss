@@ -1,0 +1,70 @@
+$padding: var(--padding);
+
+.testimonies-slides-container {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 5rem;
+  padding: $padding 0;
+
+  @media(width < 450px) {
+    padding: 10rem $padding;
+  }
+
+  h2 {
+    color: var(--dark-blue);
+    font-size: 4rem;
+    font-weight: bold;
+    line-height: 4.4rem;
+  }
+
+  drag-scroll {
+    height: fit-content;
+    overflow-x: hidden;
+    overflow-y: visible;
+    width: 100%;
+
+    &:hover {
+      cursor: pointer;
+    }
+
+    .drag-item {
+      width: 30%;
+
+      @media(width < 1000px) {
+        width: 100%;
+      }
+    }
+
+    app-slide {
+      display: block;
+      width: 100%;
+    }
+
+    .drag-separator:not(:last-of-type) {
+      width: 5%;
+    }
+  }
+
+  .responsive-menu {
+
+    display: flex;
+    gap: 2rem;
+
+    @media(width > 600px) {
+      display: none;
+    }
+
+    button {
+      background: none;
+      border: 1px solid var(--orange);
+      border-radius: 50%;
+      height: 2rem;
+      width: 2rem;
+
+      &.active {
+        background-color: var(--orange);
+      }
+    }
+  }
+}

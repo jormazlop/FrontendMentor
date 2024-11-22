@@ -1,0 +1,19 @@
+<section class="what-different-container">
+  <div class="what-different-description">
+    <h2>What’s different about Manage?</h2>
+    <p>
+      Manage provides all the functionality your team needs, without the complexity.
+      Our software is tailor-made for modern digital product teams.
+    </p>
+  </div>
+  <div class="what-different-list">
+    <ol>
+        @for(item of funcs(); track $index) {
+          <li>
+            <h3>{{ item.title }}</h3>
+            <p>{{ item.description }}</p>
+          </li>
+        }
+    </ol>
+  </div>
+</section>

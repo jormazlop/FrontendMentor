@@ -1,0 +1,9 @@
+<nav class="nav-container">
+  <ul>
+    @for (menu of menus(); track $index) {
+      <li>
+        <button hoverNav>{{ menu | titlecase }}</button>
+      </li>
+    }
+  </ul>
+</nav>

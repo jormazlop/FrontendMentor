@@ -1,0 +1,26 @@
+$padding: var(--padding);
+$padding2: calc($padding*2);
+
+.simplify-your-team-container {
+  align-items: center;
+  background-color: var(--orange);
+  background-image: url('/images/bg-simplify-section-desktop.svg');
+  background-size: 100% 150%;
+  background-position: 20rem 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: $padding $padding2;
+
+  @media(width < 1000px) {
+    flex-direction: column;
+    gap: 5rem;
+    padding: 10rem 0;
+    text-align: center;
+  }
+
+  h2 {
+    color: var(--white);
+    font-size: 4rem;
+    font-weight: bold;
+  }
+}

@@ -1,0 +1,42 @@
+.slide-container {
+  align-items: center;
+  background: linear-gradient(
+    to bottom,
+    var(--white) 0%,
+    var(--white) 3.5rem,
+    var(--grey) 3.5rem,
+    var(--grey) 100%
+  );
+  color: var(--dark-blue);
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 9rem 4rem 4rem 4rem;
+  position: relative;
+  text-align: center;
+
+  &::before {
+    background: var(--url);
+    background-size: 100% 100%;
+    border-radius: 50%;
+    content: '';
+    height: 7rem;
+    position: absolute;
+    top: 0rem;
+    width: 7rem;
+    z-index: 1;
+  }
+
+  h3 {
+    font-size: 1.6rem;
+    font-weight: bold;
+  }
+
+  p {
+    font-size: 1.6rem;
+    font-weight: 500;
+    line-height: 2.6rem;
+    opacity: 0.5;
+    white-space: normal;
+  }
+}

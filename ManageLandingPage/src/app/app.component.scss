@@ -1,0 +1,13 @@
+:host {
+  background-image: url('/images/bg-tablet-pattern.svg'), url('/images/bg-tablet-pattern.svg');
+  background-repeat: no-repeat;
+  background-position: 70vw -10rem, -50rem 100vh;
+  display: flex;
+  flex-direction: column;
+
+  @media(width < 1000px) {
+    background-image: url('/images/bg-tablet-pattern.svg');
+    background-repeat: no-repeat;
+    background-position: 70vw 0;
+  }
+}

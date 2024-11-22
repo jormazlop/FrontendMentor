@@ -1,0 +1,31 @@
+<footer class="footer-container">
+  <div class="footer-manage">
+    <app-logo type="secondary"/>
+    <div class="footer-icons">
+      <app-icon-facebook/>
+      <app-icon-youtube/>
+      <app-icon-twitter/>
+      <app-icon-pinterest/>
+      <app-icon-instagram/>
+    </div>
+  </div>
+
+  <ul class="footer-menu">
+    <li><button>Home</button></li>
+    <li><button>Careers</button></li>
+    <li><button>Pricing</button></li>
+    <li><button>Community</button></li>
+    <li><button>Products</button></li>
+    <li><button>Privacy Policy</button></li>
+    <li><button>About Us</button></li>
+  </ul>
+
+  <div class="footer-mail">
+    <form class="footer-input" [formGroup]="formGroup">
+      <app-input formControlName="email"/>
+      <app-button type="tertiary" [class.disabled]="formGroup.invalid" (click)="onClickEmail()">Go</app-button>
+    </form>
+    <span>Copyright 2020. All Rights Reserved</span>
+  </div>
+
+</footer>

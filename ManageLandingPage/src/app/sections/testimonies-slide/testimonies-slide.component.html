@@ -1,0 +1,18 @@
+<section class="testimonies-slides-container">
+  <h2>What they’ve said</h2>
+  <drag-scroll #testimonies>
+    @for(profil of profils(); track profil.name) {
+      <div drag-scroll-item class="drag-item">
+        <app-slide [profil]="profil"/>
+      </div>
+      <div drag-scroll-item class="drag-separator"></div>
+    }
+  </drag-scroll>
+  <div class="responsive-menu">
+    <button (click)="moveTo(0)" [class.active]="active() == 0"></button>
+    <button (click)="moveTo(2)" [class.active]="active() == 2"></button>
+    <button (click)="moveTo(4)" [class.active]="active() == 4"></button>
+    <button (click)="moveTo(6)" [class.active]="active() == 6"></button>
+  </div>
+  <app-button>Get Started</app-button>
+</section>
