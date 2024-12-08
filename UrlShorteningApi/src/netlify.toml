@@ -2,4 +2,7 @@
   from = "/api/**"
   to = "https://cleanuri.com"
   status = 200
-  headers = {Access-Control-Allow-Origin = "*"}
+[[headers]]
+  for = "/*"
+  [headers.values]
+    Access-Control-Allow-Origin = "*"
