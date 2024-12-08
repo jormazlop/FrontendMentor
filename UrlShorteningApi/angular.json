@@ -52,7 +52,7 @@
                 "glob": "**/*",
                 "input": "public"
               },
-              "src/_redirects"
+              "src/netlify.toml"
             ],
             "styles": [
               "src/styles.scss",
