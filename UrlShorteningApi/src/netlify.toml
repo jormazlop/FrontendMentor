@@ -2,9 +2,8 @@
   from = "/api/**"
   to = "https://cleanuri.com"
   status = 200
-  force = true
-  headers = {X-From = "Netlify"}
+
 [[headers]]
   for = "/*"
     [headers.values]
-    Access-Control-Allow-Origin = "*"
+      Access-Control-Allow-Origin = "*"
