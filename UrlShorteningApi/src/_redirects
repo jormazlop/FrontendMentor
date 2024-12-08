@@ -1,1 +1,1 @@
-/api/*  https://cleanuri.com/:splat  200
+/api/**  https://cleanuri.com/:splat  200
