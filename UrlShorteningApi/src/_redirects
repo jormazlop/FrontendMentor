@@ -1,4 +1,1 @@
-[[redirects]]
-from = "/api/*"
-to = "https://cleanuri.com/:splat"
-status = 200
+/api/*  https://cleanuri.com/:splat  200
