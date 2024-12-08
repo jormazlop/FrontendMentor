@@ -1,0 +1,8 @@
+<div class="shorten-item-container">
+  <p class="full-link">{{ url().full }}</p>
+  <hr class="separator">
+  <div class="short-link-container">
+    <p class="short-link">{{ url().short }}</p>
+    <app-button [type]="type()" (click)="onClickCopy()">{{ text() }}</app-button>
+  </div>
+</div>

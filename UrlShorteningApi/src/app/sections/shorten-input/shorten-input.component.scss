@@ -1,0 +1,68 @@
+$pad: var(--padding);
+$pad2: calc($pad * 3);
+
+.shorter-input-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: $pad2 $pad2 $pad $pad2;
+
+  @media(width < 600px) {
+    padding: $pad2 0 $pad 0;
+  }
+
+  .shorter-input-input {
+    background-color: var(--dark-violet);
+    background-image: url('/images/bg-shorten-desktop.svg');
+    background-size: 100% 100%;
+    border-radius: 10px;
+
+    display: flex;
+    gap: 2.5rem;
+
+    padding: $pad;
+
+    @media(width < 1250px) {
+      flex-direction: column;
+      width: 100%;
+    }
+
+    .input-container {
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      width: 100%;
+
+      input {
+        border: 1px solid transparent;
+        border-radius: 10px;
+        color: var(--dark-gray);
+        font-size: 2rem;
+        padding: 1.5rem 3rem;
+
+        &::placeholder {
+          font-weight: 600;
+          opacity: 0.7;
+        }
+      }
+
+      &.error input {
+        border: 1px solid var(--red);
+
+        &::placeholder {
+          color: var(--red);
+        }
+      }
+
+      .error {
+        bottom: -2.5rem;
+        color: var(--red);
+        position: absolute;
+
+        @media(width < 1250px) {
+          bottom: -2rem;
+        }
+      }
+    }
+  }
+}

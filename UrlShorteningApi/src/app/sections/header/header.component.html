@@ -1,0 +1,13 @@
+<header class="header-container">
+  <div class="header-content">
+    <app-logo/>
+    <app-header-menu [elements]="elements"/>
+  </div>
+
+  <div class="header-content">
+    <app-button type="secondary">Login</app-button>
+    <app-button type="primary">Sign Up</app-button>
+  </div>
+
+  <app-button-menu (clickButton)="onClick()"/>
+</header>

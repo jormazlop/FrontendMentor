@@ -1,0 +1,8 @@
+svg path {
+  fill: var(--white);
+
+  &:hover {
+    cursor: pointer;
+    fill: var(--cyan);
+  }
+}

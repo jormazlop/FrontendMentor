@@ -1,0 +1,32 @@
+$pad: var(--padding);
+$pad2: calc($pad * 3);
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  padding: $pad $pad2;
+
+  @media(width < 600px) {
+    padding: $pad 0;
+  }
+
+  .header-content {
+    align-items: center;
+    display: flex;
+    gap: 4rem;
+
+    &:nth-of-type(2), app-header-menu {
+
+      @media(width < 850px) {
+        display: none;
+      }
+
+    }
+  }
+
+  @media(width >= 850px) {
+    app-button-menu {
+      display: none;
+    }
+  }
+}

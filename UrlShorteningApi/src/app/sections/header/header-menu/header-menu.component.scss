@@ -1,0 +1,14 @@
+.header-menu-container {
+  color: var(--grayish-violet);
+  display: flex;
+  gap: 3rem;
+  font-size: 1.5rem;
+  font-weight: bold;
+  list-style: none;
+  margin: 0;
+
+  li:hover {
+    cursor: pointer;
+    color: var(--dark-gray);
+  }
+}

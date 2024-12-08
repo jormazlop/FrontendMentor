@@ -1,0 +1,13 @@
+:host {
+  background: linear-gradient(var(--white) 80rem, var(--light-violet) 80rem);
+  display: flex;
+  flex-direction: column;
+
+  @media(width < 1250px) {
+    background: linear-gradient(var(--white) 85rem, var(--light-violet) 85rem);
+  }
+
+  @media(width < 650px) {
+    background: linear-gradient(var(--white) 125rem, var(--light-violet) 125rem);
+  }
+}

@@ -1,0 +1,15 @@
+<section class="advanced-statistics-container">
+  <div class="advanced-statistics-title">
+    <h2>Advanced Statistics</h2>
+    <p>
+      Track how your links are performing across the web with
+      <br>
+      our advanced statistics dashboard.
+    </p>
+  </div>
+  <div class="advanced-statistics-list">
+    @for (item of items(); track $index) {
+      <app-statistics-item [stat]="item"/>
+    }
+  </div>
+</section>

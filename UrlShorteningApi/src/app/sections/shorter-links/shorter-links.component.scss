@@ -1,0 +1,64 @@
+$pad: var(--padding);
+$pad2: calc($pad * 3);
+
+.shorter-links-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  overflow: hidden;
+  padding: $pad $pad2;
+  position: relative;
+
+  @media(width < 600px) {
+    padding: $pad 0;
+  }
+
+  @media(width < 1250px) {
+    align-items: center;
+    gap: 2rem;
+    text-align: center;
+  }
+
+  img {
+    height: -moz-available;
+    height: -webkit-fill-available;
+    height: fill-available;
+    position: absolute;
+    right: -10rem;
+
+    @media(width < 1250px) {
+      position: relative;
+      right: 0;
+      width: 50%;
+    }
+
+    @media(width < 850px) {
+      width: 70%;
+    }
+
+    @media(width < 600px) {
+      left: 20rem;
+      width: 150%;
+    }
+  }
+
+  h1 {
+    color: var(--dark-gray);
+    font-size: 8rem;
+    font-weight: bold;
+    letter-spacing: -2px;
+    line-height: 9rem;
+  }
+
+  p {
+    color: var(--grayish-violet);
+    font-size: 2.2rem;
+    letter-spacing: 0.15px;
+    line-height: 3.6rem;
+    margin-bottom: 3rem;
+  }
+
+  app-button {
+    width: fit-content;
+  }
+}

@@ -1,0 +1,56 @@
+
+.button {
+  background: none;
+  border: none;
+  border-radius: 28px;
+  font-size: 1.5rem;
+  font-weight: bold;
+  padding: 1rem 2.5rem;
+  transition-duration: 0.25s;
+  width: -webkit-fill-available;
+
+  &:hover {
+    cursor: pointer
+  }
+}
+
+.primary {
+  @extend .button;
+  background-color: var(--cyan);
+  color: var(--white);
+
+  &:hover {
+    background-color: var(--cyan-hover)
+  }
+}
+
+.secondary {
+  @extend .button;
+  color: var(--grayish-violet);
+
+  &:hover {
+    color: var(--dark-gray);
+  }
+}
+
+.tertiary {
+  @extend .button;
+  background-color: var(--cyan);
+  border-radius: 10px;
+  color: var(--white);
+  height: 100%;
+  white-space: nowrap;
+
+  @media(width < 1250px) {
+    padding: 1.5rem;
+  }
+
+  &:hover {
+    background-color: var(--cyan-hover);
+  }
+}
+
+.tertiary-2 {
+  @extend .tertiary;
+  background-color: var(--dark-violet);
+}

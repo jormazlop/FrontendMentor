@@ -1,0 +1,17 @@
+<section class="shorter-input-container">
+
+  <div class="shorter-input-input">
+    <div class="input-container" [class.error]="error()">
+      <input type="text" placeholder="Shorten a link here..." [(ngModel)]="inputValue">
+      @if(error()) {
+        <p class="error">Please add a link</p>
+      }
+    </div>
+    <app-button type="tertiary" (click)="addUrl()">Get Started</app-button>
+  </div>
+
+  @for(url of urls(); track $index) {
+    <app-shorten-item [url]="url"/>
+  }
+
+</section>
