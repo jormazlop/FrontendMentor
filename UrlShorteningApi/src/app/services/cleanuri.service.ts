@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { inject, Injectable } from '@angular/core';
+import { inject, Injectable, isDevMode } from '@angular/core';
 import { Observable } from 'rxjs';
 import { ResponseUrl } from '../models/response';
 
@@ -10,12 +10,13 @@ export class CleanuriService {
 
   private http = inject(HttpClient);
 
-
   shortenLink(url:string): Observable<ResponseUrl> {
 
     let fd = new FormData();
     fd.append('url', url);
 
-    return this.http.post<ResponseUrl>('/api/v1/shorten', fd);
+    const urlProxy = isDevMode() ? '/api/v1/shorten': 'https://cleanuri.com/api/v1/shorten';
+
+    return this.http.post<ResponseUrl>(urlProxy, fd);
   }
 }
