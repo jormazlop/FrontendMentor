@@ -1,0 +1,32 @@
+.footer-container {
+  align-items: center;
+  background-color: var(--neutral-900);
+  background-image: url('/images/pattern-dark-bg.svg');
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+  padding: 8rem var(--padd) 3rem var(--padd);
+
+  .text-2 {
+    color: var(--light-salmon-50);
+    text-align: center;
+  }
+
+  .separator {
+    border: 1px solid var(--neutral-700);
+    width: 100%;
+  }
+
+  .footer-footer {
+    color: var(--light-salmon-50);
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+
+    .footer-icons {
+      align-items: center;
+      display: flex;
+      gap: 2.4rem;
+    }
+  }
+}

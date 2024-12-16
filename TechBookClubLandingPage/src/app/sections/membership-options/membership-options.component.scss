@@ -1,0 +1,21 @@
+.membership-options-container {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 6rem;
+  padding: 0 var(--padd) 2rem var(--padd);
+
+  .text-2 {
+    color: var(--neutral-900);
+  }
+
+  .membership-items {
+    align-items: center;
+    display: flex;
+    gap: 2.4rem;
+
+    @media(width < 1300px) {
+      flex-wrap: wrap;
+    }
+  }
+}

@@ -1,0 +1,8 @@
+<button [ngClass]="type()" class="text-6">
+  <ng-content>BUTTON</ng-content>
+
+  @if(image()) {
+    <img [src]="image()" alt="Arrow Down">
+  }
+
+</button>

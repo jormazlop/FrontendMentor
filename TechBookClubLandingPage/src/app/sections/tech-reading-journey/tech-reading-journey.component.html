@@ -1,0 +1,13 @@
+<section class="tech-reading-journey-container">
+  <h2 class="text-2">
+    Your tech
+    <br>
+    reading journey
+  </h2>
+  <article class="tech-instructions">
+    @for(instruction of instructions(); track instruction.ordre; let last = $last) {
+      <app-tech-instruction [instruction]="instruction" [showArrow]="!last"/>
+    }
+
+  </article>
+</section>

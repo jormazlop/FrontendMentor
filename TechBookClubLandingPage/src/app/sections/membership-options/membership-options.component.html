@@ -1,0 +1,8 @@
+<section class="membership-options-container">
+  <h2 class="text-2">Membership options</h2>
+  <div class="membership-items">
+    @for(membership of membershipInfos(); track $index; let odd = $odd) {
+      <app-membership-item [membership]="membership" [optional]="odd"/>
+    }
+  </div>
+</section>

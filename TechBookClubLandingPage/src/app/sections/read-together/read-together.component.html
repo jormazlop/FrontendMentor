@@ -1,0 +1,19 @@
+<section class="read-together-container">
+  <article class="read-together-image">
+  </article>
+
+  <article class="read-together-info">
+    <h2 class="text-2">
+      Read together,
+      <br>
+      grow together
+    </h2>
+    <ul class="read-together-check">
+        @for(item of items(); track $index) {
+        <li>
+          <app-check-item [text]="item"/>
+        </li>
+        }
+    </ul>
+  </article>
+</section>

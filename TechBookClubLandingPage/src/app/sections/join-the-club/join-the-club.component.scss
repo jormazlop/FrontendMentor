@@ -1,0 +1,46 @@
+.join-the-club-container {
+  align-items: center;
+  display: flex;
+  gap: 6rem;
+  justify-content: space-between;
+  padding: 0 var(--padd) 2rem var(--padd);
+
+  @media(width < 1300px) {
+    flex-direction: column;
+  }
+
+  .join-the-club-info {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+    padding: 5rem 0;
+    width: 45%;
+
+    @media(width < 1300px) {
+      width: 100%;
+    }
+
+    .join-the-club-title {
+      background: var(--text-gradient);
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .join-the-club-description {
+      color: var(--neutral-700);
+    }
+  }
+
+  .join-the-club-image {
+    background-image: url('/images/image-hero-desktop.webp');
+    background-size: 100% 100%;
+    border-radius: 8px;
+    height: 52rem;
+    width: 50%;
+
+    @media(width < 1300px) {
+      background-image: url('/images/image-hero-tablet.webp');
+      width: 100%;
+    }
+  }
+}

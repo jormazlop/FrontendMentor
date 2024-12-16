@@ -1,0 +1,15 @@
+<h3 class="text-4">{{ membership().type }}</h3>
+
+@if(membership().type2) {
+  <p class="text-3">{{ membership().type2 }}</p>
+}
+
+@if(membership().price) {
+  <p class="text-5"><span class="text-3">${{ membership().price }}</span>/month</p>
+}
+
+<hr>
+@for (feature of membership().features; track $index) {
+  <app-check-item [text]="feature"/>
+}
+<app-button type="primary-1">{{ membership().button | uppercase }}</app-button>

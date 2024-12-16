@@ -1,0 +1,26 @@
+.avatars-container {
+  align-items: center;
+  display: flex;
+  gap: 1.2rem;
+
+  .avatars-image {
+    width: 11rem;
+  }
+
+  .avatars-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+
+    .text-7 {
+
+      &.primary {
+        color: var(--neutral-700);
+      }
+
+      &.secondary {
+        color: var(--light-salmon-50);
+      }
+    }
+  }
+}

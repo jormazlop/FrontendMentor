@@ -1,0 +1,56 @@
+.average-book-club-container {
+  align-items: center;
+  display: flex;
+  gap: 6rem;
+  justify-content: space-between;
+  padding: 2rem var(--padd) 0 var(--padd);
+  position: relative;
+
+  @media(width < 1300px) {
+    flex-direction: column;
+  }
+
+  .average-book-club-info {
+    display: flex;
+    flex-direction: column;
+    gap: 3.4rem;
+    padding: 4.4rem 0;
+    width: 45%;
+
+    @media(width < 1300px) {
+      width: 100%;
+    }
+
+    .text-2 {
+      color: var(--neutral-900);
+    }
+
+    .average-book-club-description {
+      color: var(--neutral-700);
+    }
+  }
+
+  .average-book-club-image {
+    background-image: url('/images/image-not-average-desktop.webp');
+    background-size: 100% 100%;
+    border-radius: 8px;
+    height: 52rem;
+    width: 50%;
+
+    @media(width < 1300px) {
+      background-image: url('/images/image-not-average-tablet.webp');
+      width: 100%;
+    }
+  }
+
+  .logos-tech {
+    position: absolute;
+    left: calc(50% - 7rem);
+    top: 70%;
+
+    @media(width < 1300px) {
+      top: 80%;
+      left: calc(100% - 20rem);
+    }
+  }
+}

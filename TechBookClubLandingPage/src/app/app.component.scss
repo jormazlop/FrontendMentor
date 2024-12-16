@@ -1,0 +1,26 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  gap: 8rem;
+  position: relative;
+
+  @media(width < 1300px) {
+    gap: 4rem;
+  }
+
+  &::before {
+    background-image: url('/images/pattern-light-bg.svg'), url('/images/pattern-glow.svg');
+    background-position: 0% 0%, 150% -50%;
+    background-repeat: repeat, no-repeat;
+    background-color: var(--neutral-100);
+    content: '';
+    height: 85rem;
+    position: absolute;
+    width: 100%;
+    z-index: -1;
+
+    @media(width < 1300px) {
+      height: 135rem;
+    }
+  }
+}

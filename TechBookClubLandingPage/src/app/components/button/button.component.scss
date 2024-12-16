@@ -1,0 +1,39 @@
+.button {
+  align-items: center;
+  border-radius: 8px;
+  display: flex;
+  gap: 1.5rem;
+  padding: 1.5rem;
+  transition-duration: 0.25s
+}
+
+.primary,
+.primary-1 {
+  @extend .button;
+  background: var(--light-salmon-50);
+  border: 2px solid var(--neutral-900);
+  color: var(--neutral-900);
+
+  &:hover {
+    background: var(--gradient-primary);
+  }
+
+  &:focus {
+    box-shadow: 0 0 0 3px var(--neutral-0), 0 0 0 5px var(--neutral-700);
+  }
+}
+
+.secondary {
+  @extend .button;
+  background: none;
+  border: 2px solid var(--neutral-0);
+  color: var(--neutral-0);
+
+  &:hover {
+    background: var(--gradient-secondary);
+  }
+
+  &:focus {
+    box-shadow: 0 0 0 3px var(--neutral-900), 0 0 0 5px var(--neutral-0);
+  }
+}

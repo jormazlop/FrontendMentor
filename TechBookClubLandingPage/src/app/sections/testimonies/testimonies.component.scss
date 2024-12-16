@@ -1,0 +1,24 @@
+.testimonies-container {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+  padding: 0 var(--padd);
+
+  @media(width < 1300px) {
+    align-items: flex-start;
+  }
+
+  .text-3 {
+    color: var(--neutral-900);
+    text-align: center;
+
+    @media(width < 1300px) {
+      text-align: left;
+    }
+  }
+
+  .text-5 {
+    color: var(--neutral-700);
+  }
+}
