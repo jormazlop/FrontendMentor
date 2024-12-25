@@ -1,0 +1,20 @@
+@let errors = innerControl.errors;
+@let dirty = innerControl.dirty;
+
+<div class="text-6 input-text-container">
+  <label [for]="id()" class="label">{{ label() }}</label>
+  <input
+    type="text"
+    [name]="id()"
+    [id]="id()"
+    class="radius-12 input"
+    [formControl]="innerControl"
+  />
+
+  @if(errors && dirty) {
+    <div class="error-message">
+      <img src="/assets/images/icon-info-error.svg" alt="error">
+      <p class="text-7">{{ errors | error }}</p>
+    </div>
+  }
+</div>

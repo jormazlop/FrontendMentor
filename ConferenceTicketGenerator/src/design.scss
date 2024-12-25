@@ -1,0 +1,111 @@
+@font-face {
+    font-family: "Inconsolata";
+    src: url("/assets/fonts/Inconsolata.ttf") format("opentype");
+}
+  
+:root {
+    --neutral-900: #0D082D;
+    --neutral-700: #4B4869;
+    --neutral-500: #8784A5;
+    --neutral-300: #D1D0D5;
+    --neutral-0: #FFFFFF;
+
+    --orange-700: #E1604F;
+    --orange-500: #F57463;
+
+    --gradient-01: linear-gradient(90deg, #F37362 0%, #FFF 100%);
+
+    --padding: 4rem 20rem;
+}
+
+.text-1 {
+    color: var(--neutral-900);
+    font-size: 6rem;
+    font-weight: bold;
+    letter-spacing: -1px;
+    line-height: 110%;
+}
+
+.text-1-mobile {
+    @extend .text-1;
+    font-size: 3rem;
+}
+
+.text-2 {
+    color: var(--neutral-900);
+    font-size: 4rem;
+    font-weight: 700;
+    letter-spacing: -1px;
+    line-height: 110%;
+}
+
+.text-2-mobile {
+    @extend .text-2;
+    font-size: 2.4rem;
+}
+
+.text-3 {
+    color: var(--neutral-900);
+    font-size: 3rem;
+    font-weight: 700;
+    letter-spacing: -1px;
+    line-height: 110%;
+}
+
+.text-3-mobile {
+    @extend .text-3;
+    font-size: 2.2rem;
+}
+
+.text-4 {
+    color: var(--neutral-900);
+    font-size: 2.4rem;
+    font-weight: 500;
+    letter-spacing: -0.5px;
+    line-height: 120%;
+}
+
+.text-4-mobile {
+    @extend .text-4;
+    font-size: 2rem;
+}
+
+.text-5 {
+    color: var(--neutral-900);
+    font-size: 2rem;
+    font-weight: 500;
+    letter-spacing: -0.3px;
+    line-height: 110%;
+}
+
+.text-5-bold {
+    @extend .text-5;
+    font-weight: bold;
+}
+
+.text-6 {
+    color: var(--neutral-900);
+    font-size: 1.8rem;
+    font-weight: 500;
+    letter-spacing: 0px;
+    line-height: 120%;
+}
+
+.text-6-mobile {
+    @extend .text-6;
+    font-size: 1.4rem;
+}
+
+.text-7 {
+    color: var(--neutral-900);
+    font-size: 1.2rem;
+    font-weight: 500;
+    letter-spacing: -0.2px;
+    line-height: 120%;
+}
+
+@for $i from 0 through 24 {
+    .radius-#{$i} {
+        border-radius: #{$i}px;
+    }
+}

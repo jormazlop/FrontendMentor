@@ -1,0 +1,26 @@
+.ticket-generator-container {
+
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    text-align: center;
+
+    .ticket-generator-title {
+        color: var(--neutral-0);
+    }
+
+    .ticket-generator-description {
+        color: var(--neutral-300);
+    }
+
+    .form-container {
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        gap: 2.4rem;
+        margin-top: 3rem;
+        width: 50%;
+    }
+
+}
