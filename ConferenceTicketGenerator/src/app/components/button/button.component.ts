@@ -9,4 +9,6 @@ export type ButtonType = HTMLButtonElement['type'];
 })
 export class ButtonComponent {
   type = input<ButtonType>('button');
+
+  disabled = input<boolean>(false);
 }

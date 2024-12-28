@@ -1,0 +1,30 @@
+:host {
+  width: 100%;
+}
+
+.ticket-generated-container {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  text-align: center;
+
+  .ticket-generated-title {
+    color: var(--neutral-0);
+
+    .title-name {
+      background: var(--gradient-01);
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+  }
+
+  .ticket-generated-description {
+    color: var(--neutral-300);
+    margin-bottom: 8rem;
+
+    .description-mail {
+      color: var(--orange-500);
+    }
+  }
+}

@@ -12,7 +12,7 @@ export class InputAbstractComponent implements ControlValueAccessor {
 
   private onChange = (value: string) => {};
   private onTouched = () => {};
-  
+
   protected innerControl!: FormControl;
   private ngControl = inject(NgControl, { self: true, optional: true });
 
@@ -27,7 +27,7 @@ export class InputAbstractComponent implements ControlValueAccessor {
   }
 
   writeValue(obj: any): void {
-     // Implement if needed
+    this.onChange(obj);
   }
 
   registerOnChange(fn: any): void {

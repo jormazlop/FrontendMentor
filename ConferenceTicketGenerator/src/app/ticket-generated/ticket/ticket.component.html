@@ -1,0 +1,22 @@
+<article class="ticket-container">
+  <div class="ticket-info">
+    <div class="ticket-info-date">
+      <app-logo/>
+      <p class="text-6">{{ date() }}</p>
+    </div>
+
+    <div class="ticket-info-avatar">
+      <img [src]="imgUrl()" alt="Avatar" class="radius-8 avatar-image">
+      <div class="ticket-info-name">
+        <h3 class="text-3">{{ ticket()?.fullName }}</h3>
+        <p class="text-5">
+          <img src="/assets/images/icon-github.svg" alt="Github">
+          {{ ticket()?.github }}
+        </p>
+      </div>
+    </div>
+  </div>
+  <p class="text-3 ticket-number">
+    #01609
+  </p>
+</article>

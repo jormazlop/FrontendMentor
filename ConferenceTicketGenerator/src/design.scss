@@ -2,7 +2,7 @@
     font-family: "Inconsolata";
     src: url("/assets/fonts/Inconsolata.ttf") format("opentype");
 }
-  
+
 :root {
     --neutral-900: #0D082D;
     --neutral-700: #4B4869;
@@ -14,8 +14,21 @@
     --orange-500: #F57463;
 
     --gradient-01: linear-gradient(90deg, #F37362 0%, #FFF 100%);
+    --gradient-02: linear-gradient(90deg, #FFF 0%, #F37362 100%);
 
     --padding: 4rem 20rem;
+
+    @media(width < 1100px) {
+      --padding: 4rem 10rem;
+    }
+
+    @media(width < 725px) {
+      --padding: 4rem 5rem;
+    }
+
+    @media(width < 500px) {
+      --padding: 4rem 1rem;
+    }
 }
 
 .text-1 {
@@ -24,11 +37,10 @@
     font-weight: bold;
     letter-spacing: -1px;
     line-height: 110%;
-}
 
-.text-1-mobile {
-    @extend .text-1;
-    font-size: 3rem;
+    @media(width < 725px) {
+      font-size: 3rem;
+    }
 }
 
 .text-2 {
@@ -37,11 +49,10 @@
     font-weight: 700;
     letter-spacing: -1px;
     line-height: 110%;
-}
 
-.text-2-mobile {
-    @extend .text-2;
-    font-size: 2.4rem;
+    @media(width < 725px) {
+      font-size: 2.4rem;
+    }
 }
 
 .text-3 {
@@ -50,11 +61,10 @@
     font-weight: 700;
     letter-spacing: -1px;
     line-height: 110%;
-}
 
-.text-3-mobile {
-    @extend .text-3;
-    font-size: 2.2rem;
+    @media(width < 725px) {
+      font-size: 2.2rem;
+    }
 }
 
 .text-4 {
@@ -63,11 +73,10 @@
     font-weight: 500;
     letter-spacing: -0.5px;
     line-height: 120%;
-}
 
-.text-4-mobile {
-    @extend .text-4;
-    font-size: 2rem;
+    @media(width < 725px) {
+      font-size: 2rem;
+    }
 }
 
 .text-5 {
@@ -76,11 +85,10 @@
     font-weight: 500;
     letter-spacing: -0.3px;
     line-height: 110%;
-}
 
-.text-5-bold {
-    @extend .text-5;
-    font-weight: bold;
+    @media(width < 725px) {
+      font-weight: bold;
+    }
 }
 
 .text-6 {
@@ -89,11 +97,10 @@
     font-weight: 500;
     letter-spacing: 0px;
     line-height: 120%;
-}
 
-.text-6-mobile {
-    @extend .text-6;
-    font-size: 1.4rem;
+    @media(width < 725px) {
+      font-size: 1.4rem;
+    }
 }
 
 .text-7 {

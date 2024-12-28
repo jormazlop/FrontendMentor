@@ -1,5 +1,5 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import { RequiredValidator, ValidationErrors, Validators } from '@angular/forms';
+import { ValidationErrors } from '@angular/forms';
 
 @Pipe({
   name: 'error'
@@ -21,6 +21,9 @@ export class InputErrorPipe implements PipeTransform {
           break;
         case 'github':
           res = 'Please enter a valid github username';
+          break;
+        case 'size':
+          res = 'File too large. Please upload a photo under 5MB';
           break;
       }
     });

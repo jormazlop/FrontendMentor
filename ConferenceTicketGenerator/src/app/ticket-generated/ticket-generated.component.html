@@ -1,1 +1,15 @@
-<p>ticket-generated works!</p>
+<section class="ticket-generated-container">
+  <h1 class="text-1 ticket-generated-title">
+    Congrats, <span class="title-name">{{ ticket()?.fullName }}!</span>
+    <br>
+    Your ticket is ready.
+  </h1>
+  <p class="text-4 ticket-generated-description">
+    We've emailed your ticket to
+    <br>
+    <span class="description-mail">{{ ticket()?.email }}</span> and will send updates in
+    <br>
+    the run up to the event.
+  </p>
+  <app-ticket/>
+</section>

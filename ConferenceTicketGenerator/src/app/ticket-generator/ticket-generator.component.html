@@ -6,9 +6,10 @@
         Secure your spot at next year’s biggest coding conference.
     </p>
     <form [formGroup]="formGroup" class="form-container" (ngSubmit)="submit()">
+        <app-input-image label="Upload Avatar"  formControlName="avatar"/>
         <app-input-text label="Full Name" formControlName="fullName"/>
         <app-input-text label="Email Address" formControlName="email"/>
         <app-input-text label="GitHub Username" formControlName="github"/>
-        <app-button type="submit">{{ 'Generate my ticket' | titlecase }}</app-button>
+        <app-button type="submit" [disabled]="!formGroup.valid">{{ 'Generate my ticket' | titlecase }}</app-button>
     </form>
 </section>

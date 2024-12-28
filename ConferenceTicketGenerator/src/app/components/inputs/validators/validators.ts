@@ -27,3 +27,17 @@ export function ValidateGithub(control: AbstractControl): ValidationErrors | nul
     return null;
 
 }
+
+export function ValidateFile(control: AbstractControl): ValidationErrors | null {
+
+  if (!control.value) return null;
+
+  const sizeInMB = +(control.value.size / (1024*1024)).toFixed(2);
+
+  if (sizeInMB > 5) {
+    return { size: true }
+  }
+
+  return null;
+
+}

@@ -1,3 +1,7 @@
-<button class="button-container text-5 radius-12" [type]="type()">
-    <ng-content>Button</ng-content>
+<button
+  class="button-container text-5 radius-12"
+  [type]="type()"
+  [disabled]="disabled()"
+>
+  <ng-content>Button</ng-content>
 </button>
