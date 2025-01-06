@@ -1,0 +1,39 @@
+html,
+body {
+  font-family: "Rubik";
+  font-size: 10px;
+
+  @media(width < 600px) {
+    font-size: 8px;
+  }
+
+  @media(width < 400px) {
+    font-size: 6px;
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+ul,
+p {
+  margin: 0;
+  padding: 0;
+}
+
+
+.ngneat-dialog-backdrop.ngneat-dialog-backdrop-visible {
+  padding: 0;
+
+  .ngneat-dialog-content {
+    opacity: 0.85;
+    width: 100% !important;
+  }
+
+  .ngneat-close-dialog {
+    display: none;
+  }
+}

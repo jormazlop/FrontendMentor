@@ -1,0 +1,21 @@
+<section class="stay-to-date-container">
+  <p class="stay-to-date-info">35,000+ ALREADY JOINED</p>
+  <h2 class="stay-to-date-title">
+    Stay up-to-date with what
+    <br>
+    we’re doing
+  </h2>
+
+  @let error = formGroup.invalid && formGroup.dirty;
+
+  <form class="stay-to-date-form" [formGroup]="formGroup" (ngSubmit)="onSubmit()">
+    <div class="input-contact">
+      <input type="text" placeholder="Enter your email address" formControlName="contact" [class.error]="error">
+      @if(error) {
+        <app-error/>
+        <p class="input-error">Whoops, make sure it’s an email</p>
+      }
+    </div>
+    <app-button type="red">Contact us</app-button>
+  </form>
+</section>

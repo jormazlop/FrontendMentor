@@ -1,0 +1,71 @@
+.simple-bookmark-manager-container {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  overflow: hidden;
+  padding: 5rem 15rem;
+  position: relative;
+
+  @media(width < 1500px) {
+    padding: 5rem;
+  }
+
+  @media(width < 1200px) {
+    flex-direction: column-reverse;
+  }
+
+  @media(width < 600px) {
+    img {
+      width: 100%;
+    }
+  }
+
+  &::after {
+    background-color: var(--blue);
+    border-radius: 10rem 0 0 10rem;
+    content: '';
+    height: 60%;
+    left: 75%;
+    position: absolute;
+    top: 40%;
+    width: 50%;
+    z-index: -1;
+
+    @media(width < 1200px) {
+      height: 30%;
+      left: 50%;
+      top: 25%;
+    }
+
+    @media(width < 600px) {
+      top: 10%;
+    }
+  }
+
+  .simple-bookmark-manager-info {
+    color: var(--black);
+    display: flex;
+    flex-direction: column;
+    gap: 2.4rem;
+
+    @media(width < 1200px) {
+      align-items: center;
+      text-align: center;
+    }
+
+    .simple-bookmark-manager-title {
+      font-size: 4.8rem;
+      letter-spacing: -0.15px;
+    }
+
+    .simple-bookmark-manager-description {
+      font-size: 1.8rem;
+      opacity: 0.5;
+    }
+
+    .simple-bookmark-manager-buttons {
+      display: flex;
+      gap: 1.5rem;
+    }
+  }
+}

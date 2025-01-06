@@ -1,0 +1,42 @@
+.extension-container {
+  align-items: center;
+  box-shadow: 0px 10px 20px -5px #495DCF73;
+  border-radius: 15px;
+  color: var(--black);
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  padding: 4rem 0 2.5rem 0;
+
+  .extension-logo {
+    width: 10rem;
+  }
+
+  .extension-info {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+
+    .extension-add {
+      font-size: 2rem;
+      letter-spacing: -0.1px;
+    }
+
+    .extension-version {
+      font-size: 1.5rem;
+      opacity: 0.5;
+    }
+  }
+
+  app-button {
+    padding: 0 2rem;
+  }
+
+  @media(width < 400px) {
+    app-dots {
+      display: none;
+    }
+  }
+
+}

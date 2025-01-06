@@ -1,0 +1,20 @@
+.link-container {
+  color: var(--black);
+  font-size: 1.3rem;
+  font-weight: 400;
+  letter-spacing: 1.5px;
+  text-decoration: none;
+  transition-duration: 0.25s;
+
+  &.dark {
+    color: var(--black);
+  }
+
+  &.bright {
+    color: var(--white);
+  }
+
+  &:hover {
+    color: var(--red);
+  }
+}

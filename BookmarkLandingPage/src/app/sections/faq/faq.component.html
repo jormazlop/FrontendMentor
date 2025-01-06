@@ -1,0 +1,15 @@
+<section class="faq-container">
+  <h2 class="faq-title">Frequently Asked Questions</h2>
+  <p class="faq-description">
+    Here are some of our FAQs. If you have any other questions you’d
+    <br>
+    like answered please feel free to email us.
+  </p>
+  <ul class="faq-questions">
+    @for(question of questions(); track $index; let last = $last) {
+      <li><app-accordeon [accordeon]="question" [last]="last"/></li>
+    }
+  </ul>
+  <app-button type="blue">More Info</app-button>
+
+</section>

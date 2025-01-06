@@ -1,0 +1,18 @@
+<footer class="footer-container">
+  <div class="footer-menu">
+    <app-logo mode="bright"/>
+    <nav class="footer-menu-nav">
+      <ul>
+        @for(menu of menuNav(); track $index) {
+          <li>
+            <app-link mode="bright">{{ menu | uppercase }}</app-link>
+          </li>
+        }
+      </ul>
+    </nav>
+  </div>
+  <div class="footer-icons">
+    <app-facebook/>
+    <app-twitter/>
+  </div>
+</footer>

@@ -1,0 +1,16 @@
+<header class="header-container">
+  <app-logo/>
+  <nav class="header-menu-nav">
+    <ul>
+      @for(menu of menuNav(); track $index) {
+        <li>
+          <app-link>{{ menu | uppercase }}</app-link>
+        </li>
+      }
+      <li>
+        <app-button type="red">LOGIN</app-button>
+      </li>
+    </ul>
+  </nav>
+  <app-menu-button (clickEv)="onClickMenu()" [open]="open()"/>
+</header>

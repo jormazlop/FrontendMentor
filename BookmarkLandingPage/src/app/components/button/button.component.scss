@@ -1,0 +1,44 @@
+.button-container {
+  border-radius: 5px;
+  box-shadow: 0px 8px 8px -4px #495DCF33;
+  font-size: 1.4rem;
+  font-weight: 500;
+  letter-spacing: 1.5px;
+  padding: 1rem 3rem;
+  transition-duration: 0.25s;
+  width: 100%;
+}
+
+.red {
+  background-color: var(--red);
+  border: 2px solid var(--red);
+  color: var(--white);
+
+  &:hover {
+    background-color: var(--white);
+    color: var(--red);
+  }
+}
+
+.blue {
+  background-color: var(--blue);
+  border: 2px solid var(--blue);
+  color: var(--white);
+
+  &:hover {
+    background-color: var(--white);
+    color: var(--blue);
+  }
+}
+
+.grey {
+  background-color: var(--light-grey);
+  border: 2px solid var(--light-grey);
+  color: #242A45BF;
+
+  &:hover {
+    background-color: var(--white);
+    border: 2px solid var(--medium-grey);
+    color: var(--medium-grey);
+  }
+}

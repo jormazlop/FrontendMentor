@@ -1,0 +1,43 @@
+.extensions-container {
+  align-items: center;
+  color: var(--black);
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: 5rem 0 15rem;
+
+  @media(width < 400px) {
+    text-align: center;
+  }
+
+  .extensions-title {
+    font-size: 3.2rem;
+    letter-spacing: -0.1px;
+  }
+
+  .extensions-description {
+    font-size: 1.8rem;
+    opacity: 0.5;
+    text-align: center;
+  }
+
+  .extensions-list {
+    display: flex;
+    gap: 3rem;
+    list-style: none;
+    margin-top: 3rem;
+
+    @media(width < 1200px) {
+      flex-direction: column;
+    }
+
+    @media(width >= 1200px) {
+      @for $i from 2 through 3 {
+        li:nth-child(#{$i}) {
+          position: relative;
+          top: 4rem * ($i - 1);
+        }
+      }
+    }
+  }
+}

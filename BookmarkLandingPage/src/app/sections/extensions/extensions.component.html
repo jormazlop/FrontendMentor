@@ -1,0 +1,13 @@
+<section class="extensions-container">
+  <h2 class="extensions-title">Download the extension</h2>
+  <p class="extensions-description">
+    We’ve got more browsers in the pipeline. Please do let us know if
+    <br>
+    you’ve got a favourite you’d like us to prioritize.
+  </p>
+  <ul class="extensions-list">
+    @for(extension of extensions(); track $index) {
+      <li><app-extension [extension]="extension"/></li>
+    }
+  </ul>
+</section>

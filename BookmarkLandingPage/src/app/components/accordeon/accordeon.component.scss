@@ -1,0 +1,47 @@
+.accordeon-container {
+  color: var(--black);
+  display: flex;
+  flex-direction: column;
+  width: 50rem;
+
+  @media(width < 600px) {
+    width: 100%;
+  }
+
+  .separator {
+    margin: 0;
+
+    &.hidden {
+      display: none;
+    }
+  }
+
+  .accordeon-question {
+    background: none;
+    border: none;
+    display: flex;
+    font-size: 1.8rem;
+    justify-content: space-between;
+    padding: 2rem;
+    transition-duration: 0.25s;
+
+    &:hover {
+      cursor: pointer;
+      color: var(--red);
+    }
+  }
+
+  .accordeon-response {
+    opacity: 0.75;
+    font-size: 1.6rem;
+    padding: 1rem 2rem 2rem 2rem;
+    transition: opacity 0.25s linear 0s;
+
+    &.hidden {
+      opacity: 0;
+      position: absolute;
+      transition: opacity 0s;
+      z-index: -1;
+    }
+  }
+}

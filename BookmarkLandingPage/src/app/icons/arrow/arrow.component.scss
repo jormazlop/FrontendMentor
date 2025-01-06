@@ -1,0 +1,12 @@
+svg {
+  transition-duration: 0.25s;
+
+  &.active {
+    transform: rotate(180deg);
+
+    path {
+      stroke: var(--red);
+    }
+  }
+
+}

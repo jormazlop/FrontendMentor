@@ -1,0 +1,68 @@
+.stay-to-date-container {
+  align-items: center;
+  background-color: var(--blue);
+  color: var(--white);
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  padding: 5rem 0;
+
+  .stay-to-date-info {
+    font-size: 1.3rem;
+    letter-spacing: 5px;
+  }
+
+  .stay-to-date-title {
+    font-size: 3.2rem;
+    letter-spacing: -0.1px;
+    text-align: center;
+  }
+
+  .stay-to-date-form {
+    display: flex;
+    gap: 1.5rem;
+
+    @media(width < 1200px) {
+      flex-direction: column;
+      width: 80%;
+    }
+
+    .input-contact {
+      position: relative;
+
+      input {
+        border: 2px solid transparent;
+        border-radius: 5px;
+        color: var(--black);
+        font-size: 1.4rem;
+        padding: 1rem 4.5rem 1rem 2.5rem;
+        min-width: 30rem;
+        outline: none;
+
+        @media(width < 1200px) {
+          width: 100%;
+        }
+
+        &.error {
+          border: 2px solid var(--red);
+        }
+      }
+
+      app-error {
+        position: absolute;
+        right: 1.5rem;
+        top: 1.2rem;
+      }
+
+      .input-error {
+        background-color: var(--red);
+        border-radius: 0 0 5px 5px;
+        font-style: italic;
+        padding: 0.5rem 1rem;
+        position: absolute;
+        top: 4.1rem;
+        width: 100%;
+      }
+    }
+  }
+}

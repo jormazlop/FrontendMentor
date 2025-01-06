@@ -1,0 +1,35 @@
+<section class="features-container">
+  <h2 class="features-title">Features</h2>
+  <p class="features-description">
+    Our aim is to make it quick and easy for you to access your
+    <br />
+    favourite websites. Your bookmarks sync between your devices
+    <br />
+    so you can access them on the go.
+  </p>
+  <div class="features-selection">
+    @for(feature of features(); track $index) {
+      <button
+        class="feature-button"
+        [active]="active() === $index"
+        (click)="changeFeature($index)">
+          {{ feature }}
+      </button>
+    }
+  </div>
+
+  <ng-container [ngTemplateOutlet]="template()"></ng-container>
+
+</section>
+
+<ng-template #simpleBook>
+  <app-slide-1/>
+</ng-template>
+
+<ng-template #speedySearch>
+  <app-slide-2/>
+</ng-template>
+
+<ng-template #easyShare>
+  <app-slide-3/>
+</ng-template>

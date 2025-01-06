@@ -1,0 +1,11 @@
+:host {
+  display: contents;
+}
+
+.dark path:nth-child(1) {
+  fill: var(--black);
+}
+
+.bright path:nth-child(1) {
+  fill: var(--white);
+}

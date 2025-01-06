@@ -1,0 +1,11 @@
+<article class="accordeon-container">
+  <hr class="separator">
+  <button class="accordeon-question" (click)="onShow()">
+    <p>{{ accordeon().question }}</p>
+    <app-arrow [active]="show()"/>
+  </button>
+  <p class="accordeon-response" [class.hidden]="!show()">
+    {{ accordeon().response }}
+  </p>
+  <hr class="separator" [class.hidden]="!last()">
+</article>

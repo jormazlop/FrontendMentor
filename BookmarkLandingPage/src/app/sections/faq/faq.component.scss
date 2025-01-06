@@ -1,0 +1,39 @@
+.faq-container {
+  align-items: center;
+  color: var(--black);
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: 5rem 0 10rem 0;
+
+  @media(width < 400px) {
+    text-align: center;
+  }
+
+  .faq-title {
+    font-size: 3.2rem;
+    letter-spacing: -0.1px;
+  }
+
+  .faq-description {
+    font-size: 1.8rem;
+    opacity: 0.5;
+    text-align: center;
+  }
+
+  .faq-questions {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    padding: 4rem 0;
+
+    @media(width < 600px) {
+      align-items: center;
+      width: 95%;
+
+      li {
+        width: 95%;
+      }
+    }
+  }
+}
