@@ -22,6 +22,7 @@ import { DeleteModalComponent } from '@modals/delete-modal/delete-modal.componen
 import { Note } from '@models/note.model';
 import { ModalService } from '@services/modal.service';
 import { NoteService } from '@services/note.service';
+import { ToastService } from '@services/toast.service';
 
 @Component({
   selector: 'note-archived-note',
@@ -44,10 +45,11 @@ import { NoteService } from '@services/note.service';
   styleUrl: './note.component.scss',
 })
 export class NoteComponent {
-    private modal = inject(ModalService);
+  private modal = inject(ModalService);
   private service = inject(NoteService);
   private router = inject(Router);
   private route = inject(ActivatedRoute);
+  private toast = inject(ToastService);
 
   id = input(0, { transform: (i: string) => +i });
   creation = computed(() => !this.id());
@@ -95,6 +97,7 @@ export class NoteComponent {
     const note = new Note(val.id, val.title, val.tags ? val.tags.split(',') : [] , new Date(), val.body);
     this.service.addNote(note);
     this.router.navigate([ '../../../all-notes/note/', note.id], { relativeTo: this.route, state: { bypassGuard: true } });
+    this.toast.save();
     this.initNote();
   }
 
@@ -106,6 +109,7 @@ export class NoteComponent {
     this.modal.open(DeleteModalComponent).subscribe((val) => {
       if (val.data) {
         this.service.deleteNote(this.id());
+        this.toast.delete();
         this.router.navigate(['../']);
       }
     });
@@ -113,6 +117,7 @@ export class NoteComponent {
 
   onRestore(): void {
     this.service.restoreNote(this.id());
+    this.toast.restore();
     this.router.navigate([ '../']);
   }
 }

@@ -7,6 +7,7 @@ import { ArchiveModalComponent } from '@modals/archive-modal/archive-modal.compo
 import { DeleteModalComponent } from '@modals/delete-modal/delete-modal.component';
 import { ModalService } from '@services/modal.service';
 import { NoteService } from '@services/note.service';
+import { ToastService } from '@services/toast.service';
 
 @Component({
   selector: 'note-sidebar-notes-2',
@@ -20,6 +21,7 @@ export class SidebarNotes2Component {
   private modal = inject(ModalService);
   private service = inject(NoteService);
   private router = inject(Router);
+  private toast = inject(ToastService);
 
   isArchived = input(false);
 
@@ -27,6 +29,7 @@ export class SidebarNotes2Component {
     this.modal.open(ArchiveModalComponent).subscribe(val => {
       if(val.data) {
         this.service.archiveNote(this.id());
+        this.toast.archive();
         this.router.navigate([ '../']);
       }
     });
@@ -34,6 +37,7 @@ export class SidebarNotes2Component {
 
   onRestore(): void {
     this.service.restoreNote(this.id());
+    this.toast.restore();
     this.router.navigate([ '../']);
   }
 
@@ -41,6 +45,7 @@ export class SidebarNotes2Component {
     this.modal.open(DeleteModalComponent).subscribe(val => {
       if(val.data) {
         this.service.deleteNote(this.id());
+        this.toast.delete();
         this.router.navigate([ '../']);
       }
     });

@@ -10,6 +10,7 @@ import { FontTheme } from '@models/font-theme.model';
 import { ColorThemeService } from '@services/color-theme.service';
 import { FontThemeService } from '@services/font-theme.service';
 import { SettingsService } from '@services/settings.service';
+import { ToastService } from '@services/toast.service';
 import { InputRadioComponent } from 'app/components/inputs/input-radio/input-radio.component';
 
 @Component({
@@ -29,13 +30,15 @@ import { InputRadioComponent } from 'app/components/inputs/input-radio/input-rad
 export class FontComponent {
     private service = inject(FontThemeService);
     private settingService = inject(SettingsService);
+  private toast = inject(ToastService);
 
     mode = new FormControl<FontTheme>(this.service.font());
 
     id = Date.now();
 
     onClick(): void {
-      this.service.setMode(this.mode.value!)
+      this.service.setMode(this.mode.value!);
+      this.toast.settings();
     }
 
     onClickMenu(): void {

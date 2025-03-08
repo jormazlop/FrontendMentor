@@ -28,6 +28,10 @@ export class ToastService {
     this.success('Password changed successfully!');
   }
 
+  settings(): void {
+    this.success('Settings updated successfully!');
+  }
+
   add(): void {
     this.success('Tag added successfully!');
   }

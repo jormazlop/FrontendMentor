@@ -16,6 +16,7 @@ import { DeleteModalComponent } from '@modals/delete-modal/delete-modal.componen
 import { Note } from '@models/note.model';
 import { ModalService } from '@services/modal.service';
 import { NoteService } from '@services/note.service';
+import { ToastService } from '@services/toast.service';
 
 @Component({
   selector: 'note-tag',
@@ -42,6 +43,7 @@ export class TagComponent {
     private service = inject(NoteService);
     private router = inject(Router);
     private route = inject(ActivatedRoute);
+    private toast = inject(ToastService);
 
     id = input(0, { transform: (i: string) => +i });
     creation = computed(() => !this.id());
@@ -98,6 +100,7 @@ export class TagComponent {
         relativeTo: this.route,
         state: { bypassGuard: true },
       });
+      this.toast.save();
       this.initNote();
     }
 
@@ -109,6 +112,7 @@ export class TagComponent {
       this.modal.open(ArchiveModalComponent).subscribe((val) => {
         if (val.data) {
           this.service.archiveNote(this.id());
+          this.toast.archive();
           this.router.navigate(['../']);
         }
       });
@@ -118,6 +122,7 @@ export class TagComponent {
       this.modal.open(DeleteModalComponent).subscribe((val) => {
         if (val.data) {
           this.service.deleteNote(this.id());
+          this.toast.delete();
           this.router.navigate(['../']);
         }
       });

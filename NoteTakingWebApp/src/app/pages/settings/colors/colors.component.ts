@@ -8,6 +8,7 @@ import { IconSunComponent } from '@icons/icon-sun/icon-sun.component';
 import { ColorTheme } from '@models/color-theme.model';
 import { ColorThemeService } from '@services/color-theme.service';
 import { SettingsService } from '@services/settings.service';
+import { ToastService } from '@services/toast.service';
 import { InputRadioComponent } from 'app/components/inputs/input-radio/input-radio.component';
 
 @Component({
@@ -28,13 +29,15 @@ export class ColorsComponent {
 
   private service = inject(ColorThemeService);
   private settingService = inject(SettingsService);
+  private toast = inject(ToastService);
 
   mode = new FormControl<ColorTheme>(this.service.color());
 
   id = Date.now();
 
   onClick(): void {
-    this.service.setMode(this.mode.value!)
+    this.service.setMode(this.mode.value!);
+    this.toast.settings();
   }
 
   onClickMenu(): void {

@@ -16,11 +16,6 @@ export const routes: Routes = [
       ),
   },
   {
-    path: 'login',
-    loadChildren: () =>
-      import('./pages/login/login.routes').then((x) => x.routes),
-  },
-  {
     path: 'search/:search',
     title: function(params){
       return 'Showing results for: ' + params.params["search"];
