@@ -1,0 +1,63 @@
+@use '_variables.scss' as *;
+
+@mixin colors($bgIcon, $text1, $text2) {
+  .colors-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    height: 100%;
+    padding: 3rem;
+
+    .sidebar-button {
+      align-items: center;
+      background: none;
+      border: none;
+      color: $text2;
+      display: flex;
+      gap: 1rem;
+      width: fit-content;
+
+      note-icon-arrow {
+        width: 1rem;
+      }
+
+      @media(width > $breakpoint-lg) {
+        display: none;
+      }
+    }
+
+    h2 {
+      color: $text1;
+      font-weight: bold;
+    }
+
+    p {
+      color: $text2;
+      margin-bottom: 3rem;
+    }
+
+    note-icon-sun,
+    note-icon-dark,
+    note-icon-light {
+      background-color: $bgIcon;
+      border-radius: 8px;
+      padding: 0.5rem;
+      width: 4rem;
+    }
+
+    note-primary-button {
+      align-self: flex-end;
+      margin-top: 2rem;
+      width: fit-content;
+    }
+  }
+}
+
+
+:host-context(.dark) {
+  @include colors(var(--neutral-700), var(--neutral-0), var(--neutral-300));
+}
+
+:host-context(.light) {
+  @include colors(var(--neutral-0), var(--neutral-950), var(--neutral-700));
+}

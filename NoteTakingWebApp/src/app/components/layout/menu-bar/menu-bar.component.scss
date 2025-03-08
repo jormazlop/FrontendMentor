@@ -1,0 +1,44 @@
+@use '_variables.scss' as *;
+
+.menu-bar-container {
+
+  ul {
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+    width: 100%;
+    padding: 1rem 3rem;
+
+
+    li {
+      align-items: center;
+      background-color: var(--blue-50);
+      border-radius: 8px;
+      color: var(--blue-500);
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      padding: 1rem 2rem;
+      transition-duration: 0.25s;
+
+      a {
+        width: 2rem;
+      }
+
+      &:hover {
+        transform: scale(1.1);
+      }
+
+      @media(width <= $breakpoint-sm) {
+        span {
+          display: none;
+        }
+      }
+    }
+  }
+
+  @media(width > $breakpoint-lg) {
+    display: none;
+  }
+
+}

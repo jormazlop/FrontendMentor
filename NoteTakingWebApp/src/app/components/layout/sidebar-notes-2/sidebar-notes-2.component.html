@@ -1,0 +1,17 @@
+<aside class="sidenav-notes-2-container">
+
+  @if (!isArchived()) {
+    <note-border-button (click)="onArchive()">
+      <note-icon-archive icon/>
+      Archive Note
+    </note-border-button>
+  } @else {
+    <note-border-button (click)="onRestore()">
+      Restore Note
+    </note-border-button>
+  }
+  <note-border-button (click)="onDelete()">
+    <note-icon-delete icon/>
+    Delete Note
+  </note-border-button>
+</aside>

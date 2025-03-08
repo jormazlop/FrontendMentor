@@ -1,0 +1,71 @@
+@mixin button($text) {
+  align-items: center;
+  background-color: transparent;
+  border: 1px solid var(--neutral-300);
+  border-radius: 8px;
+  color: $text;
+  display: flex;
+  gap: 0.8rem;
+  justify-content: center;
+  padding: 1.2rem 1.6rem;
+  transition-duration: 0.25s;
+  width: 100%;
+
+  &:hover {
+    border: 1px solid transparent;
+  }
+
+  &:focus {
+    box-shadow: 0 0 0 2px var(--neutral-0), 0 0 0 4px var(--neutral-400);
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+  }
+}
+
+:host-context(.dark) {
+  button {
+    @include button(var(--neutral-0));
+
+    &:hover {
+      background-color: var(--neutral-800);
+      border: 1px solid transparent;
+      color: var(--neutral-50);
+    }
+
+    &:focus {
+      box-shadow: 0 0 0 2px var(--neutral-950), 0 0 0 4px var(--neutral-400);
+      outline: none;
+    }
+
+    &:disabled {
+      background-color: var(--neutral-50);
+      color: var(--neutral-300);
+      cursor: not-allowed;
+    }
+  }
+}
+
+:host-context(.light) {
+  button {
+    @include button(var(--neutral-950));
+
+    &:hover {
+      background-color: var(--neutral-100);
+      border: 1px solid transparent;
+      color: var(--neutral-600);
+    }
+
+    &:focus {
+      box-shadow: 0 0 0 2px var(--neutral-0), 0 0 0 4px var(--neutral-400);
+      outline: none;
+    }
+
+    &:disabled {
+      background-color: var(--neutral-50);
+      color: var(--neutral-300);
+      cursor: not-allowed;
+    }
+  }
+}

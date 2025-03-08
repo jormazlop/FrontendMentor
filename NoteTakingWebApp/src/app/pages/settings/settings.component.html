@@ -1,0 +1,12 @@
+<main class="settings-container">
+  <note-page-header/>
+
+  <mat-drawer-container class="main-container">
+    <mat-drawer mode="side" [opened]="opened()" class="sidebar-container">
+      <note-settings-menu/>
+    </mat-drawer>
+    <mat-drawer-content>
+      <router-outlet/>
+    </mat-drawer-content>
+  </mat-drawer-container>
+</main>

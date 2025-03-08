@@ -1,0 +1,11 @@
+:host-context(.light) {
+  path {
+    stroke: var(--neutral-950);
+  }
+}
+
+:host-context(.dark) {
+  path {
+    stroke: var(--neutral-0);
+  }
+}

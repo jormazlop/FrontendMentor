@@ -1,0 +1,31 @@
+<aside class="settings-navigation-container">
+  <button class="settings-button" routerLink="colors" routerLinkActive="active" (click)="onClickMenu()">
+    <div class="settings-icon">
+      <note-icon-sun />
+      <p class="text-4">Colors Theme</p>
+    </div>
+    <note-icon-arrow />
+  </button>
+  <button class="settings-button" routerLink="fonts" routerLinkActive="active" (click)="onClickMenu()">
+    <div class="settings-icon">
+      <note-icon-font />
+      <p class="text-4">Font Theme</p>
+    </div>
+    <note-icon-arrow />
+  </button>
+  <button class="settings-button" routerLink="password" routerLinkActive="active" (click)="onClickMenu()">
+    <div class="settings-icon">
+      <note-icon-lock />
+      <p class="text-4">Change Password</p>
+    </div>
+    <note-icon-arrow />
+  </button>
+  <hr class="settings-separator" />
+  <button class="settings-button" routerLink="/login" routerLinkActive="active">
+    <div class="settings-icon">
+      <note-icon-logout />
+      <p class="text-4">Logout</p>
+    </div>
+    <note-icon-arrow />
+  </button>
+</aside>

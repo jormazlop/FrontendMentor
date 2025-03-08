@@ -1,0 +1,17 @@
+<mat-drawer-container class="main-container">
+  <mat-drawer mode="side" opened class="sidebar-container">
+    <note-sidebar-navigation/>
+  </mat-drawer>
+  <mat-drawer-content>
+     <router-outlet/>
+     <note-menu-bar/>
+  </mat-drawer-content>
+</mat-drawer-container>
+
+<ngx-sonner-toaster [theme]="color()" visibleToasts="1" closeButton>
+  <note-icon-check success-icon />
+</ngx-sonner-toaster>
+
+
+
+

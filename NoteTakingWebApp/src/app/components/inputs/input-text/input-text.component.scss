@@ -1,0 +1,59 @@
+.input-text-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+
+  label {
+    font-weight: 500;
+  }
+
+  input {
+    background-color: transparent;
+    border: 1px solid var(--neutral-300);
+    border-radius: 8px;
+    padding: 1.3rem;
+    transition-duration: 0.25s;
+
+    &.ng-invalid {
+      border: 1px solid var(--red-500);
+    }
+  }
+}
+
+@mixin input($label, $input, $placeholder) {
+
+  label {
+    color: $label;
+  }
+
+  input {
+    color: $input;
+
+    &::placeholder {
+      color: $placeholder;
+    }
+  }
+}
+
+:host-context(.dark) {
+  .input-text-container {
+    input {
+      &:focus {
+        box-shadow: 0 0 0 2px var(--neutral-950), 0 0 0 4px var(--neutral-400);
+      }
+    }
+
+    @include input(var(--neutral-0), var(--neutral-0), var(--neutral-300));
+  }
+}
+
+:host-context(.light) {
+  .input-text-container {
+    input {
+      &:focus {
+        box-shadow: 0 0 0 2px var(--neutral-0), 0 0 0 4px var(--neutral-400);
+      }
+    }
+    @include input(var(--neutral-950), var(--neutral-950), var(--neutral-500));
+  }
+}

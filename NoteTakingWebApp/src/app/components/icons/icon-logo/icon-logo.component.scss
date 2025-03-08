@@ -1,0 +1,11 @@
+:host-context(.light) {
+  .text {
+    fill: var(--neutral-950);
+  }
+}
+
+:host-context(.dark) {
+  .text {
+    fill: var(--neutral-0);
+  }
+}

@@ -1,0 +1,37 @@
+@use '_variables.scss' as *;
+
+:host {
+  height: 100%;
+}
+
+@mixin search($background, $border) {
+  .search-container,
+  .main-container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+
+    .sidebar-container {
+      background-color: $background;
+      border-radius: 0;
+      border-right: 1px solid $border;
+      width: 20%;
+
+      @media(width <= $breakpoint-lg) {
+        width: 100%;
+      }
+    }
+
+    .main-container {
+      background-color: $background;
+    }
+  }
+}
+
+:host-context(.dark) {
+  @include search(var(--neutral-950), var(--neutral-800));
+}
+
+:host-context(.light) {
+  @include search(var(--neutral-0), var(--neutral-200));
+}

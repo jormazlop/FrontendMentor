@@ -1,0 +1,77 @@
+<mat-drawer-container class="main-container">
+  <mat-drawer-content>
+    <form class="note-container" [formGroup]="form" (ngSubmit)="onSaveNote()">
+      <div class="header-responsive-menu">
+        <button
+          class="text-4 go-back-button"
+          type="button"
+          (click)="onCancel()"
+        >
+          <note-icon-arrow />
+          Go back
+        </button>
+        <div class="header-buttons">
+          @if(!creation()) {
+            <button type="button" class="icon-button" (click)="onDelete()">
+              <note-icon-delete />
+            </button>
+            <button type="button" class="icon-button" (click)="onRestore()">
+              <note-icon-refresh />
+            </button>
+          }
+          <button
+            type="button"
+            class="text-5 cancel-button"
+            (click)="onCancel()"
+          >
+            Cancel
+          </button>
+          <button type="submit" class="text-5 submit-button" [disabled]="!form.valid">Save Note</button>
+        </div>
+      </div>
+      <input
+        type="text"
+        class="text-1 title"
+        formControlName="title"
+        placeholder="Enter a title…"
+        maxlength="20"
+      />
+      <div class="text-5 tags">
+        <p><note-icon-tag />Tags</p>
+        <input
+          type="text"
+          class="text-5"
+          formControlName="tags"
+          placeholder="Add tags separated by commas (e.g. Work, Planning)"
+        />
+      </div>
+      <div class="text-5 date">
+        <p><note-icon-clock />Last edited</p>
+
+        @let date = form.controls['edited'].value;
+
+        <span>{{
+          date ? (date | date : "dd MMMM YYYY, h:mm:a") : "Not yet saved"
+        }}</span>
+      </div>
+      <hr class="note-separator" />
+      <textarea
+        class="text-5"
+        formControlName="body"
+        placeholder="Start typing your note here…"
+      ></textarea>
+      <hr class="note-separator" />
+      <div class="buttons">
+        <note-primary-button type="submit" [disabled]="!form.valid"
+          >Save Note</note-primary-button
+        >
+        <note-secondary-button (click)="onCancel()"
+          >Cancel</note-secondary-button
+        >
+      </div>
+    </form>
+  </mat-drawer-content>
+  <mat-drawer mode="side" [opened]="!!id()" class="sidebar-2-container" position="end">
+    <note-sidebar-notes-2 [id]="id()" [isArchived]="true"/>
+  </mat-drawer>
+</mat-drawer-container>

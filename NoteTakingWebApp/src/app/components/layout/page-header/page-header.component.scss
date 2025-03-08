@@ -1,0 +1,60 @@
+@use '_variables.scss' as *;
+
+@mixin responsive-header($background) {
+  .responsive-header-container {
+    background-color: $background;
+    display: flex;
+    padding: 2rem 3rem;
+    width: 100%;
+
+    @media(width > $breakpoint-lg) {
+      display: none;
+    }
+  }
+}
+
+@mixin full-header($text, $border) {
+  .full-header-container {
+    align-items: center;
+    border-bottom: 1px solid $border;
+    color: $text;
+    display: flex;
+    justify-content: space-between;
+    padding: 2rem 3rem;
+
+    h1 {
+      font-weight: bold;
+    }
+
+    .header-options {
+
+      display: flex;
+      gap: 2.5rem;
+
+      .header-search {
+        width: 30rem;
+      }
+
+      .header-settings {
+        background: none;
+        border: none;
+        padding: 0;
+        width: 2rem;
+      }
+    }
+
+    @media(width <= $breakpoint-lg) {
+      display: none;
+    }
+  }
+}
+
+:host-context(.light) {
+  @include responsive-header(var(--neutral-100));
+  @include full-header(var(--neutral-950), var(--neutral-200));
+}
+
+:host-context(.dark) {
+  @include responsive-header(var(--neutral-800));
+  @include full-header(var(--neutral-0), var(--neutral-800));
+}

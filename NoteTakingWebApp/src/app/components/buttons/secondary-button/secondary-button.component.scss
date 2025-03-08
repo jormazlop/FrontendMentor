@@ -1,0 +1,29 @@
+@mixin button($background, $text, $hover) {
+  button {
+    background-color: $background;
+    border: none;
+    border-radius: 8px;
+    color: $text;
+    padding: 1.2rem 1.6rem;
+    transition-duration: 0.25s;
+    width: 100%;
+
+    &:hover {
+      background-color: $hover;
+    }
+
+    &:focus {
+      box-shadow: 0 0 0 2px var(--neutral-0), 0 0 0 4px var(--neutral-400);
+      outline: none;
+    }
+  }
+}
+
+
+:host-context(.dark) {
+  @include button(var(--neutral-800), var(--neutral-200), var(--neutral-950));
+}
+
+:host-context(.light) {
+  @include button(var(--neutral-100), var(--neutral-600), var(--neutral-0));
+}

@@ -1,0 +1,40 @@
+<section class="colors-container">
+  <button class="sidebar-button text-4" (click)="onClickMenu()">
+    <note-icon-arrow/>
+     Settings
+  </button>
+  <h2 class="text-3">Color Theme</h2>
+  <p class="text-5">Choose your color theme:</p>
+
+  <note-input-radio
+    [formControl]="mode"
+    label="Light Mode"
+    subLabel="Pick a clean and classic light theme"
+    value="light"
+    [id]="id"
+  >
+    <note-icon-sun icon />
+  </note-input-radio>
+
+  <note-input-radio
+    [formControl]="mode"
+    label="Dark Mode"
+    subLabel="Select a sleek and modern dark theme"
+    value="dark"
+    [id]="id + 1"
+  >
+    <note-icon-dark icon />
+  </note-input-radio>
+
+  <note-input-radio
+    [formControl]="mode"
+    label="System"
+    subLabel="Adapts to your device’s theme"
+    value="system"
+    [id]="id + 2"
+  >
+    <note-icon-light icon />
+  </note-input-radio>
+
+  <note-primary-button (click)="onClick()">Apply Changes</note-primary-button>
+</section>

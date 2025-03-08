@@ -1,0 +1,11 @@
+<div class="input-search-container text-4">
+  <note-icon-search class="icon-search" />
+  <input
+    type="text"
+    class="text-5"
+    [id]="id()"
+    [placeholder]="placeholder()"
+    [formControl]="innerControl"
+    (keypress)="onSearch($event)"
+  />
+</div>

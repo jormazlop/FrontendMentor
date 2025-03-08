@@ -1,0 +1,17 @@
+<dialog class="delete-modal-container">
+  <div class="delete-modal-body">
+    <note-icon-delete class="delete-modal-body-icon"/>
+    <div class="delete-modal-text">
+      <h2 class="text-3">Delete Note</h2>
+      <p class="text-5">
+        Are you sure you want to permanently delete this note?
+        This action cannot be undone.
+      </p>
+    </div>
+  </div>
+  <hr class="delete-modal-separator">
+  <div class="delete-modal-buttons">
+    <note-secondary-button (click)="onCancel()">Cancel</note-secondary-button>
+    <note-primary-button color="red" (click)="onDelete()">Delete note</note-primary-button>
+  </div>
+</dialog>

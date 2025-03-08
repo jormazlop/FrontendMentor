@@ -1,0 +1,17 @@
+:host-context(.light) {
+  path {
+    fill: var(--neutral-950);
+  }
+}
+
+:host-context(.dark) {
+  path {
+    fill: var(--neutral-0);
+  }
+}
+
+:host-context(.menu-bar-container), :host-context(.active) {
+  path {
+    fill: var(--blue-500);
+  }
+}

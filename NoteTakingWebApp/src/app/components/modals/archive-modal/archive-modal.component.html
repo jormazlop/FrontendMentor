@@ -1,0 +1,17 @@
+<dialog class="archive-modal-container">
+  <div class="archive-modal-body">
+    <note-icon-archive class="archive-modal-body-icon"/>
+    <div class="archive-modal-text">
+      <h2 class="text-3">Archive Note</h2>
+      <p class="text-5">
+        Are you sure you want to archive this note?
+        You can find it in the Archived Notes section and restore it anytime.
+      </p>
+    </div>
+  </div>
+  <hr class="archive-modal-separator">
+  <div class="archive-modal-buttons">
+    <note-secondary-button (click)="onCancel()">Cancel</note-secondary-button>
+    <note-primary-button (click)="onArchive()">Archive note</note-primary-button>
+  </div>
+</dialog>

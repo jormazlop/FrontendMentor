@@ -1,0 +1,63 @@
+@mixin modal($background, $text, $icon) {
+  .confirm-modal-container {
+    background-color: $background;
+    border: 1px solid var(--neutral-200);
+    border-radius: 12px;
+    color: $text;
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    width: max-content;
+
+    .confirm-modal-body {
+      display: flex;
+      gap: 1.5rem;
+      padding: 2rem 2rem 1rem 2rem;
+
+      .confirm-modal-body-icon {
+        background-color: $icon;
+        border: none;
+        border-radius: 8px;
+        height: 4rem;
+        padding: 0.8rem;
+        width: 4rem;
+      }
+
+      .confirm-modal-text {
+
+        h2 {
+          font-weight: 600;
+          width: fit-content;
+        }
+
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        width: 30rem;
+      }
+    }
+
+    .confirm-modal-separator {
+      color: var(--neutral-400);
+    }
+
+    .confirm-modal-buttons {
+      justify-content: flex-end;
+      display: flex;
+      gap: 1.5rem;
+      padding: 1rem 2rem 2rem 2rem;
+
+      note-primary-button {
+        width: fit-content;
+      }
+    }
+  }
+}
+
+:host-context(.dark) {
+  @include modal(var(--neutral-950), var(--neutral-0), var(--neutral-800));
+}
+
+:host-context(.light) {
+  @include modal(var(--neutral-0), var(--neutral-950), var(--neutral-100));
+}

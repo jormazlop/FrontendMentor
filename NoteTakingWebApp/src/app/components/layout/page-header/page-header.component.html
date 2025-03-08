@@ -1,0 +1,18 @@
+<header class="responsive-header-container">
+  <note-icon-logo />
+</header>
+
+<header class="full-header-container">
+  <h1 class="text-1">{{ title }}</h1>
+  <div class="header-options">
+    <note-input-search
+    [formControl]="search"
+    class="header-search"
+    placeholder="Search by title, content, or tags…"
+  />
+  <button class="header-settings" routerLink="/settings">
+    <note-icon-settings/>
+  </button>
+  </div>
+
+</header>

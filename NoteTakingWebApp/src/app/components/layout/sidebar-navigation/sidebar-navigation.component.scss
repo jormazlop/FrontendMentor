@@ -1,0 +1,66 @@
+@mixin sidenav($text, $hover, $separator) {
+  .sidenav-navigation-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    padding: 2.5rem 1.5rem;
+
+    .sidenav-button {
+      align-items: center;
+      background: none;
+      border: none;
+      border-radius: 8px;
+      color: $text;
+      display: flex;
+      transition-duration: 0.25s;
+      transition-property: background-color;
+      justify-content: space-between;
+      padding: 1rem;
+
+      .sidenav-icon {
+        align-items: center;
+        display: flex;
+        gap: 1rem;
+
+        note-icon-home,
+        note-icon-archive,
+        note-icon-tag {
+          width: 2rem;
+        }
+      }
+
+      note-icon-arrow {
+        align-self: stretch;
+        display: none;
+        transform: rotate(180deg);
+        width: 1.8rem;
+      }
+
+      &:hover, &.active {
+        background-color: $hover;
+
+        note-icon-arrow {
+          display: block;
+        }
+      }
+
+    }
+
+    .sidenav-separator {
+      color: $separator;
+    }
+
+    h3 {
+      color: var(--neutral-500);
+    }
+
+  }
+}
+
+:host-context(.light) {
+  @include sidenav(var(--neutral-950), var(--neutral-100), var(--neutral-800));
+}
+
+:host-context(.dark) {
+  @include sidenav(var(--neutral-0), var(--neutral-800), var(--neutral-200));
+}

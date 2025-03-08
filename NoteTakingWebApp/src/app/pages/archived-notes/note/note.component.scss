@@ -1,0 +1,165 @@
+@use "_variables.scss" as *;
+
+@mixin note(
+  $text,
+  $placeholder1,
+  $tag,
+  $date,
+  $separator,
+  $header,
+  $background,
+  $border
+) {
+  .main-container {
+    background: transparent;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+
+  .note-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    height: 100%;
+    padding: 3rem;
+
+    .header-responsive-menu {
+      display: flex;
+      justify-content: space-between;
+
+      .go-back-button {
+        align-items: center;
+        background: none;
+        border: none;
+        color: $header;
+        display: flex;
+        gap: 1rem;
+        width: fit-content;
+
+        note-icon-arrow {
+          width: 1rem;
+        }
+      }
+
+      .header-buttons {
+        display: flex;
+        gap: 2.5rem;
+
+        .icon-button {
+          background: none;
+          border: none;
+          padding: 0;
+          width: 2rem;
+        }
+
+        .cancel-button {
+          background: none;
+          border: none;
+          color: $header;
+        }
+
+        .submit-button {
+          background: none;
+          border: none;
+          color: var(--blue-500);
+        }
+      }
+
+      @media (width > $breakpoint-lg) {
+        display: none;
+      }
+    }
+
+    input,
+    textarea {
+      background: transparent;
+      border: none;
+      color: $text;
+      outline: none;
+    }
+
+    .title {
+      font-weight: bold;
+
+      &::placeholder {
+        color: $placeholder1;
+      }
+    }
+
+    .tags,
+    .date {
+      display: flex;
+
+      p {
+        color: $tag;
+        display: flex;
+        gap: 0.5rem;
+        min-width: 13rem;
+
+        note-icon-tag,
+        note-icon-clock {
+          width: 1.5rem;
+        }
+      }
+
+      span {
+        color: $date;
+      }
+
+      input {
+        width: 100%;
+      }
+    }
+
+    .note-separator {
+      color: $separator;
+    }
+  }
+
+  textarea {
+    height: 100%;
+  }
+
+  .buttons {
+    display: flex;
+    gap: 1.5rem;
+  }
+
+  .sidebar-2-container {
+    background-color: $background;
+    border-radius: 0;
+    border-left: 1px solid $border;
+    width: 20%;
+
+    @media (width <= $breakpoint-lg) {
+      display: none;
+    }
+  }
+}
+
+:host-context(.light) {
+  @include note(
+    var(--neutral-950),
+    var(--neutral-950),
+    var(--neutral-700),
+    var(--neutral-400),
+    var(--neutral-800),
+    var(--neutral-600),
+    var(--neutral-0),
+    var(--neutral-200)
+  );
+}
+
+:host-context(.dark) {
+  @include note(
+    var(--neutral-0),
+    var(--neutral-0),
+    var(--neutral-300),
+    var(--neutral-300),
+    var(--neutral-200),
+    var(--neutral-300),
+    var(--neutral-950),
+    var(--neutral-800)
+  );
+}

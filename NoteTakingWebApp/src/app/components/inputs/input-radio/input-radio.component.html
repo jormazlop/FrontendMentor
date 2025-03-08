@@ -1,0 +1,18 @@
+@let active = innerControl.value == value();
+
+<label [for]="id()" class="input-radio-container text-4" [class.active]="active">
+  <div class="input-icon-title">
+    <ng-content select="[icon]"/>
+    <div class="input-title">
+      <p class="text-4">{{ label() }}</p>
+      <p class="text-6">{{ subLabel() }}</p>
+    </div>
+  </div>
+  <input
+    type="radio"
+    class="text-5"
+    [id]="id()"
+    [formControl]="innerControl"
+    [value]="value()"
+  />
+</label>

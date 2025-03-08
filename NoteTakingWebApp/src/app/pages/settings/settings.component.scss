@@ -1,0 +1,36 @@
+@use '_variables.scss' as *;
+
+:host {
+  height: 100%;
+}
+
+@mixin settings($background, $border) {
+  .settings-container,
+  .main-container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+
+    .sidebar-container {
+      background-color: $background;
+      border-radius: 0;
+      border-right: 1px solid $border;
+
+      @media(width <= $breakpoint-lg) {
+        width: 100%;
+      }
+    }
+
+    .main-container {
+      background-color: $background;
+    }
+  }
+}
+
+:host-context(.dark) {
+  @include settings(var(--neutral-950), var(--neutral-800));
+}
+
+:host-context(.light) {
+  @include settings(var(--neutral-0), var(--neutral-200));
+}

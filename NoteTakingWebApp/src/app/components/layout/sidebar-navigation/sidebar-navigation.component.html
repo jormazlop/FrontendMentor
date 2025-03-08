@@ -1,0 +1,28 @@
+<aside class="sidenav-navigation-container">
+  <note-icon-logo />
+  <button class="sidenav-button" routerLink="all-notes" routerLinkActive="active">
+    <div class="sidenav-icon">
+      <note-icon-home />
+      <p class="text-4">All notes</p>
+    </div>
+    <note-icon-arrow />
+  </button>
+  <button class="sidenav-button" routerLink="archived-notes" routerLinkActive="active">
+    <div class="sidenav-icon">
+      <note-icon-archive />
+      <p class="text-4">Archived Notes</p>
+    </div>
+    <note-icon-arrow />
+  </button>
+  <hr class="sidenav-separator" />
+  <h3 class="text-4">Tags</h3>
+  @for (tag of tags(); track $index) {
+  <button class="sidenav-button" [routerLink]="['tags/', tag]" routerLinkActive="active">
+    <div class="sidenav-icon">
+      <note-icon-tag />
+      <p class="text-4">{{ tag }}</p>
+    </div>
+    <note-icon-arrow />
+  </button>
+  }
+</aside>

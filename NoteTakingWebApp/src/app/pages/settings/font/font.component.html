@@ -1,0 +1,40 @@
+<section class="font-container">
+  <button class="sidebar-button text-4" (click)="onClickMenu()">
+    <note-icon-arrow/>
+     Settings
+  </button>
+  <h2 class="text-3">Font Theme</h2>
+  <p class="text-5">Choose your font theme:</p>
+
+  <note-input-radio
+    [formControl]="mode"
+    label="Sans-serif"
+    subLabel="Clean and modern, easy to read."
+    value="sans-serif"
+    [id]="id"
+  >
+    <note-icon-sans-serif icon />
+  </note-input-radio>
+
+  <note-input-radio
+    [formControl]="mode"
+    label="Serif"
+    subLabel="Classic and elegant for a timeless feel."
+    value="serif"
+    [id]="id + 1"
+  >
+    <note-icon-serif icon />
+  </note-input-radio>
+
+  <note-input-radio
+    [formControl]="mode"
+    label="Monospace"
+    subLabel="Code-like, great for a technical vibe."
+    value="monospace"
+    [id]="id + 2"
+  >
+    <note-icon-monospace icon />
+  </note-input-radio>
+
+  <note-primary-button (click)="onClick()">Apply Changes</note-primary-button>
+</section>

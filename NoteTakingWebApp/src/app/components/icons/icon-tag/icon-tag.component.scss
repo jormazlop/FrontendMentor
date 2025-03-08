@@ -1,0 +1,17 @@
+:host-context(.light) {
+  path {
+    stroke: var(--neutral-950);
+  }
+}
+
+:host-context(.dark) {
+  path {
+    stroke: var(--neutral-0);
+  }
+}
+
+:host-context(.menu-bar-container), :host-context(.active) {
+  path {
+    stroke: var(--blue-500);
+  }
+}

@@ -1,0 +1,21 @@
+@mixin sidenav($text, $text2, $tag) {
+  .sidenav-notes-2-container {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    padding: 2.5rem;
+
+    note-border-button {
+      width: 100%;
+    }
+  }
+}
+
+:host-context(.dark) {
+  @include sidenav(var(--neutral-0), var(--neutral-300), var(--neutral-700));
+}
+
+:host-context(.light) {
+  @include sidenav(var(--neutral-950), var(--neutral-700), var(--neutral-200));
+}

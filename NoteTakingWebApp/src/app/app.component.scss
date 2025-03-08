@@ -1,0 +1,57 @@
+@use '_variables.scss' as *;
+
+:host-context(.dark) {
+  background-color: var(--neutral-950);
+
+  .sidebar-container {
+    background-color: var(--neutral-950);
+    border-right: 1px solid var(--neutral-800);
+
+    @media(width <= $breakpoint-lg) {
+      display: none;
+    }
+  }
+
+  .main-container {
+    background-color: var(--neutral-950);
+
+  }
+}
+
+:host-context(.light) {
+  background-color: var(--neutral-0);
+
+  .sidebar-container {
+    background-color: var(--neutral-0);
+    border-right: 1px solid var(--neutral-200);
+
+    @media(width <= $breakpoint-lg) {
+      display: none;
+    }
+  }
+
+  .main-container {
+    background-color: var(--neutral-0);
+  }
+}
+
+:host {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+
+  .sidebar-container {
+    border-radius: 0;
+    width: 20%;
+  }
+
+  .main-container {
+    height: 100%;
+  }
+
+  .mat-drawer-content {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+}

@@ -1,0 +1,58 @@
+
+
+@mixin input($label, $subLabel, $active) {
+
+  .input-radio-container {
+    border: 1px solid $subLabel;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    padding: 1.5rem;
+    transition-duration: 0.25s;
+    transition-property: background-color;
+
+    .input-icon-title {
+      display: flex;
+      gap: 1.5rem;
+
+      .input-title {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        p:nth-child(1) {
+          color: $label;
+          font-weight: bold;
+        }
+
+        p:nth-child(2) {
+          color: $subLabel;
+        }
+      }
+    }
+
+    input {
+      background-color: transparent;
+      border: 1px solid var(--neutral-300);
+      border-radius: 8px;
+      padding: 1.5rem;
+      transition-duration: 0.25s;
+    }
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  .active {
+    background-color: $active;
+  }
+}
+
+:host-context(.dark) {
+  @include input(var(--neutral-0), var(--neutral-300), var(--neutral-1700));
+}
+
+:host-context(.light) {
+  @include input(var(--neutral-950), var(--neutral-700), var(--neutral-100));
+}

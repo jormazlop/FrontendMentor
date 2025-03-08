@@ -1,0 +1,49 @@
+<aside class="sidenav-notes-container">
+
+  @if(!isArchived() || !notesList().length) {
+    <note-primary-button routerLink="note/0" (click)="onClickMenu()"
+    class="create-button-full"
+    >+ Create New Note</note-primary-button>
+  <note-create-button class="create-button-responsive" routerLink="note/0" (click)="onClickMenu()"/>
+  }
+
+   @if (isArchived() && notesList().length) {
+    <p class="text-5 archived-notes">
+      All your archived notes are stored here. You can restore or delete them anytime.
+    </p>
+  }
+
+  @if(notesList().length) {
+    @for(note of notesList(); track note.id) {
+    <button
+      class="note-item"
+      [routerLink]="['note', note.id]"
+      routerLinkActive="active"
+      (click)="onClickMenu()"
+    >
+      <h3 class="text-3">{{ note.title }}</h3>
+      @if(note.tags.length) {
+      <div class="note-tags">
+        @for(tag of note.tags; track $index) {
+        <span class="text-6">{{ tag }}</span>
+        }
+      </div>
+      }
+      <p class="text-6 note-date">{{ note.edited | date : "dd MMMM YYYY" }}</p>
+    </button>
+    }
+  } @else {
+    @if(!isArchived()) {
+      <p class="text-5 no-notes">
+        You don’t have any notes yet. Start a new note to capture your thoughts and
+        ideas.
+      </p>
+    } @else {
+      <p class="text-5">
+        No notes have been archived yet. Move notes here for safekeeping, or create a new note.
+      </p>
+    }
+
+  }
+
+</aside>

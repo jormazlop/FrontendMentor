@@ -1,0 +1,17 @@
+<dialog class="confirm-modal-container">
+  <div class="confirm-modal-body">
+    <note-icon-close class="confirm-modal-body-icon"/>
+    <div class="confirm-modal-text">
+      <h2 class="text-3">Discard changes</h2>
+      <p class="text-5">
+        You have made changes that haven't been saved
+        yet. Are you sure to discard changes ?
+      </p>
+    </div>
+  </div>
+  <hr class="confirm-modal-separator">
+  <div class="confirm-modal-buttons">
+    <note-secondary-button (click)="onCancel()">Cancel</note-secondary-button>
+    <note-primary-button (click)="onArchive()">Yes</note-primary-button>
+  </div>
+</dialog>

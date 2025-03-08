@@ -1,0 +1,76 @@
+@use '_variables.scss' as *;
+@mixin sidenav($text, $text2, $tag, $bgActive) {
+  .sidenav-notes-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    padding: 2.5rem 1.5rem;
+
+    .create-button-full {
+      @media(width <= $breakpoint-lg) {
+        display: none;
+      }
+    }
+
+    .create-button-responsive {
+      bottom: 3rem;
+      position: absolute;
+      right: 3rem;
+
+      @media(width > $breakpoint-lg) {
+        display: none;
+      }
+    }
+
+    .no-notes {
+      background-color: $tag;
+      border-radius: 8px;
+      padding: 1rem;
+    }
+
+    .note-item {
+      background: none;
+      border: none;
+      border-radius: 6px;
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
+      padding: 1rem;
+
+      &.active {
+        background-color: $bgActive;
+      }
+
+      h3 {
+        color: $text;
+        width: fit-content;
+      }
+
+      .note-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+
+        span {
+          background-color: $tag;
+          border-radius: 4px;
+          color: $text;
+          padding: 0.5rem 0.75rem;
+        }
+      }
+
+      .note-date {
+        color: $text2;
+        width: fit-content;
+      }
+    }
+  }
+}
+
+:host-context(.dark) {
+  @include sidenav(var(--neutral-0), var(--neutral-300), var(--neutral-700), var(--neutral-800));
+}
+
+:host-context(.light) {
+  @include sidenav(var(--neutral-950), var(--neutral-700), var(--neutral-200), var(--neutral-100));
+}
