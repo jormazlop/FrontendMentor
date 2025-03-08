@@ -1,12 +1,13 @@
 <main class="all-notes-container">
-  <note-page-header/>
+  <note-page-header />
 
   <mat-drawer-container class="main-container">
     <mat-drawer mode="side" [opened]="opened()" class="sidebar-container">
-      <note-sidebar-notes [isArchived]="true" [notesList]="archived()"/>
+      <h1 class="text-1">Archived Notes</h1>
+      <note-sidebar-notes [isArchived]="true" [notesList]="archived()" />
     </mat-drawer>
     <mat-drawer-content>
-      <router-outlet/>
+      <router-outlet />
     </mat-drawer-content>
   </mat-drawer-container>
 </main>

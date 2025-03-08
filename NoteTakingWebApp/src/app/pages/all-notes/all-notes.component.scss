@@ -1,10 +1,10 @@
-@use '_variables.scss' as *;
+@use "_variables.scss" as *;
 
 :host {
   height: 100%;
 }
 
-@mixin all-notes($background, $border) {
+@mixin all-notes($background, $border, $title) {
   .all-notes-container,
   .main-container {
     display: flex;
@@ -17,8 +17,21 @@
       border-right: 1px solid $border;
       width: 20%;
 
-      @media(width <= $breakpoint-lg) {
+      @media (width <= $breakpoint-lg) {
+        padding: 2rem 3rem;
         width: 100%;
+
+        h1 {
+          color: $title;
+          font-weight: bold;
+
+        }
+      }
+
+      @media (width > $breakpoint-lg) {
+        h1 {
+          display: none;
+        }
       }
     }
 
@@ -29,9 +42,9 @@
 }
 
 :host-context(.dark) {
-  @include all-notes(var(--neutral-950), var(--neutral-800));
+  @include all-notes(var(--neutral-950), var(--neutral-800), var(--neutral-0));
 }
 
 :host-context(.light) {
-  @include all-notes(var(--neutral-0), var(--neutral-200));
+  @include all-notes(var(--neutral-0), var(--neutral-200), var(--neutral-950));
 }

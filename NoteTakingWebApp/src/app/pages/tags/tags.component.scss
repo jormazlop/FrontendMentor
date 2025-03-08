@@ -1,10 +1,10 @@
-@use '_variables.scss' as *;
+@use "_variables.scss" as *;
 
 :host {
   height: 100%;
 }
 
-@mixin tags($background, $border) {
+@mixin tags-full($background, $border, $text, $hover) {
   .tags-container,
   .main-container {
     display: flex;
@@ -17,7 +17,7 @@
       border-right: 1px solid $border;
       width: 20%;
 
-      @media(width <= $breakpoint-lg) {
+      @media (width <= $breakpoint-lg) {
         width: 100%;
       }
     }
@@ -26,12 +26,72 @@
       background-color: $background;
     }
   }
+
+  h1 {
+    color: $text;
+    font-weight: bold;
+    margin-bottom: 2rem;
+  }
+
+  .tags-container-responsive {
+
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    padding: 2.5rem 1.5rem;
+
+    .tag-separator {
+      color: $border;
+    }
+
+    .button-tag {
+      align-items: center;
+      background: none;
+      border: none;
+      border-radius: 8px;
+      color: $text;
+      display: flex;
+      transition-duration: 0.25s;
+      transition-property: background-color;
+      justify-content: space-between;
+      padding: 1rem;
+
+      .icon-tag {
+        align-items: center;
+        display: flex;
+        gap: 1rem;
+
+        note-icon-home,
+        note-icon-archive,
+        note-icon-tag {
+          width: 2rem;
+        }
+      }
+
+      note-icon-arrow {
+        align-self: stretch;
+        display: none;
+        transform: rotate(180deg);
+        width: 1.8rem;
+      }
+
+      &:hover, &.active {
+        background-color: $hover;
+
+        note-icon-arrow {
+          display: block;
+        }
+      }
+    }
+  }
+
+
 }
 
 :host-context(.dark) {
-  @include tags(var(--neutral-950), var(--neutral-800));
+  @include tags-full(var(--neutral-950), var(--neutral-800), var(--neutral-0), var(--neutral-800));
 }
 
 :host-context(.light) {
-  @include tags(var(--neutral-0), var(--neutral-200));
+  @include tags-full(var(--neutral-0), var(--neutral-200), var(--neutral-950), var(--neutral-100));
 }
