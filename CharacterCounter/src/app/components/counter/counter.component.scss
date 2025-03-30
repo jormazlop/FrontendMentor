@@ -1,0 +1,31 @@
+:host {
+  display: contents;
+}
+
+.counter-container {
+  background-position: 100% 100%;
+  background-repeat: no-repeat;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  justify-content: center;
+  padding: 2.5rem 1.5rem;
+  width: 100%;
+}
+
+
+.character {
+  background-color: var(--purple-400);
+  background-image: url('/images/pattern-character-count.svg');
+}
+
+.word {
+  background-color: var(--yellow-500);
+  background-image: url('/images/pattern-word-count.svg');
+}
+
+.sentence {
+  background-color: var(--orange-500);
+  background-image: url('/images/pattern-sentence-count.svg');
+}

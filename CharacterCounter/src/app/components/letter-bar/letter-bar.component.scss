@@ -1,0 +1,22 @@
+.letter-bar-container {
+  align-items: center;
+  display: flex;
+  gap: 2.5rem;
+  justify-content: space-between;
+
+  .letter-progress {
+    border-radius: 12px;
+    width: 100%;
+    height: 1.5rem;
+
+    &::-webkit-progress-bar {
+      background-color: var(--neutral-200);
+      border-radius: 12px;
+    }
+
+    &::-webkit-progress-value {
+      background-color: var(--purple-400);
+      border-radius: 12px;
+    }
+  }
+}

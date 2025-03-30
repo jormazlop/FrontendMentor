@@ -1,0 +1,9 @@
+<section class="letter-density-container">
+  <h2 class="text-2 title">Letter Density</h2>
+  @for(char of list(); track $index) {
+    <app-letter-bar [char]="char" [total]="total()"/>
+  }
+
+  <button class="text-3 change-see" (click)="onClickSeeMore()">{{ seeMorePlaceholder() }} <span [class.active]="seeMore()">></span></button>
+
+</section>

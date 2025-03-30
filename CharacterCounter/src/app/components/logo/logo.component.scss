@@ -1,0 +1,17 @@
+@mixin logo($color1, $color2) {
+  path:nth-child(1) {
+    fill: $color1;
+  }
+
+  path:nth-child(2) {
+    fill: $color2;
+  }
+}
+
+:host-context(.light) {
+  @include logo(#c27cf8, #12131a);
+}
+
+:host-context(.dark) {
+  @include logo(#d3a0fa, #e4e4ef);
+}

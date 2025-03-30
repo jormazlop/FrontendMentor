@@ -1,0 +1,58 @@
+:host {
+  width: 100%;
+}
+
+@mixin character-textarea($color, $background, $border) {
+  .character-textarea-container {
+
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+
+    textarea {
+      background-color: $background;
+      border: 1px solid $border;
+      color: $color;
+      border-radius: 12px;
+      min-height: 25rem;
+      padding: 2rem;
+    }
+
+    .error-limit {
+      color: var(--orange-800);
+    }
+
+    .character-textarea-footer {
+      align-items: center;
+      display: flex;
+      justify-content: space-between;
+
+      .checkboxes {
+        align-items: center;
+        display: flex;
+        gap: 2.5rem;
+
+        .char-limit {
+          background: transparent;
+          border: 1px solid $color;
+          border-radius: 6px;
+          color: $color;
+          padding: 0.5rem 1.2rem;
+          width: 10rem;
+        }
+      }
+
+      p {
+        color: $color;
+      }
+    }
+  }
+}
+
+:host-context(.light) {
+  @include character-textarea(var(--neutral-700), var(--neutral-100), var(--neutral-200));
+}
+
+:host-context(.dark) {
+  @include character-textarea(var(--neutral-200), var(--neutral-800), var(--neutral-700));
+}

@@ -1,0 +1,18 @@
+html,
+body {
+  font-size: 10px;
+  font-family: "DMSans";
+
+  @media(width < 750px) {
+    font-size: 8px;
+  }
+
+  @media(width < 500px) {
+    font-size: 6px;
+  }
+}
+
+
+h1, h2, h3, p {
+  margin: 0;
+}

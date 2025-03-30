@@ -1,0 +1,5 @@
+<div class="letter-bar-container">
+  <p class="text-4"> {{ char()[0] }} </p>
+  <progress class="letter-progress" [value]="char()[1]" [max]="total()"></progress>
+  <p class="text-4">{{ char()[1] }} ({{ percentage() | number: '1.2-2' }}%)</p>
+</div>

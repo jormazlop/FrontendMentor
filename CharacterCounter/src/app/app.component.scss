@@ -1,0 +1,42 @@
+@mixin host($background, $text) {
+  :host {
+    background: $background;
+    display: flex;
+    flex-direction: column;
+    gap: 4.5rem;
+    padding: 3rem 20rem;
+    transition-duration: 0.5s;
+    min-height: 100vh;
+
+    @media(width < 1125px) {
+      padding: 3rem 10rem;
+    }
+
+    @media(width < 750px) {
+      padding: 3rem;
+    }
+  }
+
+  .main-container {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    gap: 4.5rem;
+    width: 100%;
+
+    h1 {
+      color: $text;
+      text-align: center;
+      width: 50rem;
+    }
+  }
+
+}
+
+:host-context(.light) {
+  @include host(var(--neutral-0), var(--neutral-900));
+}
+
+:host-context(.dark) {
+  @include host(var(--neutral-900), var(--neutral-100));
+}

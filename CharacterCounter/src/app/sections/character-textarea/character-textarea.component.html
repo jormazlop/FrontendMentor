@@ -1,0 +1,23 @@
+<section class="character-textarea-container">
+  <textarea
+    [(ngModel)]="characters"
+    class="text-3"
+    placeholder="Start typing here… (or paste your text)"
+  ></textarea>
+  @if(limitError()) {
+    <p class="text-4 error-limit">Limit reached! Your text exceeds {{ limit() }} characters.</p>
+  }
+  <div class="character-textarea-footer">
+    <div class="checkboxes">
+      <app-input-checkbox label="Exclude Spaces" (clickCheckbox)="onClickExclude($event)"/>
+      <app-input-checkbox label="Set Character Limit" (clickCheckbox)="onClickLimit($event)"/>
+      @if(charLimit()) {
+        <input class="text-6 char-limit" type="number" [(ngModel)]="limit">
+      }
+    </div>
+
+    <p class="text-4">
+      Approx. reading time: {{ readingTime() }} minute
+    </p>
+  </div>
+</section>

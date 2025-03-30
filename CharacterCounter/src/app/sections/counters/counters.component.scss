@@ -1,0 +1,10 @@
+:host {
+  display: contents;
+}
+
+.counters-container {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: space-around;
+  width: 100%;
+}
