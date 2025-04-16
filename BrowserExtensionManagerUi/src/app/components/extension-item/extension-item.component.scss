@@ -1,0 +1,44 @@
+@mixin extension-item($bg-color, $name, $description) {
+  .extension-item-container {
+    background-color: $bg-color;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+    height: 100%;
+    justify-content: space-between;
+    padding: 2rem;
+    width: 100%;
+
+    .extension-item-description {
+      display: flex;
+      gap: 1.5rem;
+
+      .extension-item-image {
+        height: fit-content;
+      }
+
+      .text-2 {
+        color: $name;
+      }
+
+      .text-5 {
+        color: $description;
+      }
+    }
+
+    .extension-item-buttons {
+      align-items: center;
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+}
+
+:host-context(.light) {
+  @include extension-item(var(--neutral-0), var(--neutral-900), var(--neutral-600));
+}
+
+:host-context(.dark) {
+  @include extension-item(var(--neutral-800), var(--neutral-0), var(--neutral-300));
+}

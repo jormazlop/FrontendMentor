@@ -1,0 +1,13 @@
+<div class="extension-item-container">
+  <div class="extension-item-description">
+    <img [src]="extension().logo" [alt]="extension().name" class="extension-item-image">
+    <div class="extension-item-title">
+      <h2 class="text-2">{{ extension().name }}</h2>
+      <p class="text-5">{{ extension().description }}</p>
+    </div>
+  </div>
+  <div class="extension-item-buttons">
+    <app-filter-button [active]="false" (click)="removeExtension()">Remove</app-filter-button>
+    <app-switch-button [active]="extension().isActive" (switch)="switchExtension()"/>
+  </div>
+</div>

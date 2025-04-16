@@ -1,0 +1,35 @@
+@mixin main($gradient) {
+
+  :host {
+    background: $gradient;
+    display: flex;
+    flex-direction: column;
+    gap: 6rem;
+    min-height: 100vh;
+    padding: 4rem 13rem;
+    transition-duration: 0.25s;
+
+    @media(width < 1200px) {
+      padding: 4rem;
+    }
+
+    @media(width < 700px) {
+      padding: 4rem 1rem;
+    }
+  }
+
+  .main-container {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+  }
+}
+
+
+:host-context(.light) {
+  @include main(linear-gradient(180deg, #EBF2FC 0%, #EEFBF9 100%));
+}
+
+:host-context(.dark) {
+  @include main(linear-gradient(180deg, #04091B 0%, #091540 100%));
+}

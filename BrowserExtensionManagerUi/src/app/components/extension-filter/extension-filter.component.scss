@@ -1,0 +1,30 @@
+@mixin extension-filter($title) {
+  .extension-filter-container {
+
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+
+    @media(width < 700px) {
+      flex-direction: column;
+      gap: 2.4rem;
+    }
+
+    .text-1 {
+      color: $title;
+    }
+
+    .filter-button-container {
+      display: flex;
+      gap: 1.2rem;
+    }
+  }
+}
+
+:host-context(.light) {
+  @include extension-filter(var(--neutral-900));
+}
+
+:host-context(.dark) {
+  @include extension-filter(var(--neutral-0));
+}

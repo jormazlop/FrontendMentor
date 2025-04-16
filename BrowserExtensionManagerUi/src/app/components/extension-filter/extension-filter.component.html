@@ -1,0 +1,20 @@
+<div class="extension-filter-container">
+  <h1 class="text-1">Extensions List</h1>
+  <div class="filter-button-container">
+    <app-filter-button
+      (click)="setFilter(filterEnum.ALL)"
+      [active]="isActive()(filterEnum.ALL)"
+      >All</app-filter-button
+    >
+    <app-filter-button
+      (click)="setFilter(filterEnum.ACTIVE)"
+      [active]="isActive()(filterEnum.ACTIVE)"
+      >Active</app-filter-button
+    >
+    <app-filter-button
+      (click)="setFilter(filterEnum.INACTIVE)"
+      [active]="isActive()(filterEnum.INACTIVE)"
+      >Inactive</app-filter-button
+    >
+  </div>
+</div>

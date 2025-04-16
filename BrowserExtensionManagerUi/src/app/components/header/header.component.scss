@@ -1,0 +1,26 @@
+@mixin header($bg-color) {
+  .header-container {
+    background-color: $bg-color;
+    border-radius: 20px;
+    display: flex;
+    justify-content: space-between;
+    padding: 1.6rem;
+    width: 100%;
+
+    .logo {
+      width: 17rem;
+    }
+  }
+}
+
+:host-context(.light) {
+  @include header(var(--neutral-0));
+
+  .header-container {
+    box-shadow: 0 2px 3px #D9E5F4;
+  }
+}
+
+:host-context(.dark) {
+  @include header(var(--neutral-700));
+}

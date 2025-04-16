@@ -1,0 +1,17 @@
+@mixin theme-button($bg-color) {
+  .theme-button-container {
+    background-color: $bg-color;
+    border: none;
+    border-radius: 12px;
+    height: 100%;
+    padding: 1.5rem;
+  }
+}
+
+:host-context(.light) {
+  @include theme-button(var(--neutral-100));
+}
+
+:host-context(.dark) {
+  @include theme-button(var(--neutral-600));
+}

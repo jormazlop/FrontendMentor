@@ -1,0 +1,61 @@
+@font-face {
+  font-family: "NotoSans";
+  src: url("/fonts/NotoSans-VariableFont.ttf") format("opentype");
+}
+
+:root {
+  --neutral-900: #091540;
+  --neutral-800: #202535;
+  --neutral-700: #2F364B;
+  --neutral-600: #535868;
+  --neutral-300: #C6C6C6;
+  --neutral-200: #D6E2F5;
+  --neutral-100: #EEEEEE;
+  --neutral-0: #FBFDFE;
+
+  --red-700: #C7231A;
+  --red-500: #DE4840;
+  --red-400: #F25C54;
+}
+
+.text-1 {
+  font-size: 3.4rem;
+  font-weight: bold;
+  line-height: 100%;
+  letter-spacing: -0.1px;
+}
+
+.text-2 {
+  font-size: 2rem;
+  font-weight: bold;
+  line-height: 120%;
+  letter-spacing: -0.2px;
+}
+
+.text-3 {
+  font-size: 2rem;
+  font-weight: 500;
+  line-height: 140%;
+  letter-spacing: -0.3px;
+}
+
+.text-4 {
+  font-size: 2rem;
+  font-weight: 300;
+  line-height: 140%;
+  letter-spacing: -0.3px;
+}
+
+.text-5 {
+  font-size: 1.6rem;
+  font-weight: 500;
+  line-height: 140%;
+  letter-spacing: -0.5px;
+}
+
+.text-6 {
+  font-size: 1.6rem;
+  font-weight: 300;
+  line-height: 140%;
+  letter-spacing: -0.5px;
+}

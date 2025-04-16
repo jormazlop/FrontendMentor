@@ -1,0 +1,17 @@
+:host {
+  display: flex;
+}
+
+@mixin logo($color) {
+  .text {
+    fill: $color;
+  }
+}
+
+:host-context(.light) {
+  @include logo(var(--neutral-900));
+}
+
+:host-context(.dark) {
+  @include logo(var(--neutral-0));
+}

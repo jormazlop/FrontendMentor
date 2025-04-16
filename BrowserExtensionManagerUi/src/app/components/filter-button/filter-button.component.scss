@@ -1,0 +1,35 @@
+@mixin filter-button($color1, $color2, $bg-color1, $bg-color2, $border) {
+  .filter-button-container {
+    color: $color1;
+    background-color: $bg-color1;
+    border: 1px solid $border;
+    border-radius: 10rem;
+    padding: 0.8rem 2rem;
+    transition-duration: 0.25s;
+
+    &.active {
+      color: $color2;
+      background-color: $bg-color2;
+    }
+
+    &:focus {
+      border: 1px solid transparent;
+      box-shadow: 0 0 0 2px $bg-color1, 0 0 0 4px $bg-color2;
+      outline: none;
+    }
+
+    &:disabled {
+      opacity: 0.7;
+    }
+  }
+}
+
+
+
+:host-context(.light) {
+  @include filter-button(var(--neutral-900), var(--neutral-0), var(--neutral-0), var(--red-700), var(--neutral-200));
+}
+
+:host-context(.dark) {
+  @include filter-button(var(--neutral-0), var(--neutral-900), var(--neutral-700), var(--red-400), var(--neutral-600));
+}
