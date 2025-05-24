@@ -1,0 +1,15 @@
+<h2 class="text-2 blog-title">My Articles</h2>
+<p class="text-7 blog-subtitle">Below are all my recent blog posts. Click on any title to read the full article.</p>
+<br>
+<hr class="blog-separator">
+<br>
+<ul class="articles-list">
+  @for(article of articles(); track article.name) {
+    <li class="article-item">
+      <h3 class="article-title text-5">{{ article.name }}</h3>
+      <p class="article-date text-8">{{ article.date | date: 'MMMM dd, YYYY' }}</p>
+      <p class="article-description text-7">{{ article.description }}</p>
+    </li>
+    <hr class="blog-separator">
+  }
+</ul>

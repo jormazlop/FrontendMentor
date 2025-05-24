@@ -1,0 +1,56 @@
+@mixin newsletter($title, $text, $input-background, $input-border) {
+  .newsletter-title {
+    color: $title;
+    position: relative;
+    width: fit-content;
+    z-index: 0;
+  }
+
+  .newsletter-body {
+    color: $text;
+  }
+
+  .newsletter-email {
+    color: $text;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+    input {
+      background-color: $input-background;
+      border: 1px solid $input-border;
+      border-radius: 10px;
+      padding: 0.75rem 1.5rem;
+    }
+  }
+
+  .newsletter-button {
+    background-color: var(--blue-500);
+    border: none;
+    border-radius: 10px;
+    color: var(--neutral-900);
+    padding: 1rem 2rem;
+
+    &:active {
+      transform: translate(1px, 1px);
+    }
+  }
+}
+
+:host-context(.light) {
+  @include newsletter(
+    var(--neutral-700),
+    var(--neutral-600),
+    var(--neutral-0),
+    var(--neutral-300)
+  );
+}
+
+:host-context(.dark) {
+  @include newsletter(
+    var(--neutral-0),
+    var(--neutral-400),
+    var(--neutral-800),
+    var(--neutral-600)
+  );
+}

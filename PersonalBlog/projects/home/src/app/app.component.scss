@@ -1,0 +1,35 @@
+@mixin home-app($text, $border) {
+  .view-articles-button {
+    color: $text;
+    background: none;
+    border: none;
+    padding: 0;
+    position: relative;
+    width: fit-content;
+    z-index: 0;
+
+    &::after {
+      background-color: var(--blue-500);
+      content: "";
+      display: block;
+      height: 4px;
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      z-index: -1;
+    }
+  }
+
+  .home-separator {
+    color: $border;
+    opacity: 1;
+  }
+}
+
+:host-context(.light) {
+  @include home-app(var(--neutral-700), var(--neutral-200));
+}
+
+:host-context(.dark) {
+  @include home-app(var(--neutral-0), var(--neutral-700));
+}

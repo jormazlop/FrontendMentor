@@ -1,0 +1,7 @@
+<div class="page-container">
+  <header-web-component (navigation)="goTo($event)" [active]="actualSection()" class="header-component"></header-web-component>
+  <main class="main-container">
+    <router-outlet/>
+  </main>
+  <footer-web-component class="footer-container"/>
+</div>

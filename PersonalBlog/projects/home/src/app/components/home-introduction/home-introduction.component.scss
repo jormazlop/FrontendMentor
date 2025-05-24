@@ -1,0 +1,36 @@
+@mixin home-introduction($title, $description) {
+  .home-title {
+    color: $title;
+    position: relative;
+    width: fit-content;
+    z-index: 0;
+
+    &::after {
+      background-color: var(--blue-500);
+      content: "";
+      display: block;
+      height: 7px;
+      position: absolute;
+      bottom: 6px;
+      width: 100%;
+      z-index: -1;
+    }
+  }
+
+  .home-description {
+    color: $description;
+  }
+
+  .home-links {
+    display: flex;
+    gap: 1.2rem;
+  }
+}
+
+:host-context(.light) {
+  @include home-introduction(var(--neutral-700), var(--neutral-600));
+}
+
+:host-context(.dark) {
+  @include home-introduction(var(--neutral-0), var(--neutral-400));
+}

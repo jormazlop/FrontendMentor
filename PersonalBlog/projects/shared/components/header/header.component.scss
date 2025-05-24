@@ -1,0 +1,50 @@
+@mixin header($fill, $border, $text) {
+  .header-container {
+    align-items: center;
+    background-color: $fill;
+    border: 1px solid $border;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem;
+    transition-duration: 0.25s;
+
+    .header-avatar {
+      border-radius: 10px;
+      width: 5rem;
+    }
+
+    .header-buttons {
+      align-items: center;
+      display: flex;
+      gap: 3rem;
+
+      .header-navigation {
+        display: flex;
+        gap: 2.4rem;
+
+        .header-nav-link {
+          color: $text;
+          text-decoration: none;
+
+          &.active {
+            border-bottom: 3px solid var(--blue-500);
+          }
+
+          &:hover {
+            cursor: pointer;
+            transform: scale(1.1);
+          }
+        }
+      }
+    }
+  }
+}
+
+:host-context(.light) {
+  @include header(var(--neutral-0), var(--neutral-200), var(--neutral-700));
+}
+
+:host-context(.dark) {
+  @include header(var(--neutral-800), var(--neutral-700), var(--neutral-0));
+}

@@ -1,0 +1,53 @@
+@mixin home-article($text, $description) {
+  .home-title {
+    color: $text;
+    margin-bottom: 3rem;
+    position: relative;
+    width: fit-content;
+    z-index: 0;
+
+    &::after {
+      background-color: var(--blue-500);
+      bottom: 10px;
+      content: "";
+      display: block;
+      height: 3px;
+      left: 105%;
+      position: absolute;
+      width: 4rem;
+      z-index: -1;
+    }
+  }
+
+  .articles-list {
+    display: flex;
+    flex-direction: column;
+    gap: 2.4rem;
+    list-style: none;
+    padding: 0;
+
+    .article-item {
+
+      display: inherit;
+      flex-direction: column;
+      gap: 1rem;
+
+      .article-title {
+        color: $text;
+      }
+
+      .article-date {
+        color: $description;
+        font-style: italic;
+      }
+    }
+  }
+}
+
+:host-context(.light) {
+  @include home-article(var(--neutral-700), var(--neutral-600));
+}
+
+:host-context(.dark) {
+  @include home-article(var(--neutral-0), var(--neutral-400));
+}

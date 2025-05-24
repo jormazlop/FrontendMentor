@@ -1,0 +1,9 @@
+<h2 class="text-2 home-title">Latest Articles</h2>
+<ul class="articles-list">
+  @for(article of articles(); track article.name) {
+    <li class="article-item">
+      <h3 class="article-title text-5">{{ article.name }}</h3>
+      <p class="article-date text-8">{{ article.date | date: 'MMMM dd, YYYY' }}</p>
+    </li>
+  }
+</ul>

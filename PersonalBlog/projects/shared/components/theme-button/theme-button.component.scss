@@ -1,0 +1,25 @@
+@mixin theme-button($bg-color, $border) {
+  .theme-button-container {
+    background-color: $bg-color;
+    border: 1px solid $border;
+    border-radius: 12px;
+    height: 100%;
+    padding: 1.5rem;
+
+    &:hover {
+      cursor: pointer;
+    }
+
+    img {
+      width: 2rem;
+    }
+  }
+}
+
+:host-context(.light) {
+  @include theme-button(var(--neutral-100), var(--neutral-200));
+}
+
+:host-context(.dark) {
+  @include theme-button(var(--neutral-900), var(--neutral-700));
+}

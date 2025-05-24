@@ -1,0 +1,44 @@
+@mixin about($title, $text) {
+  .about-title {
+    color: $title;
+    position: relative;
+    width: fit-content;
+    z-index: 0;
+
+    &::after {
+      background-color: var(--blue-500);
+      content: "";
+      display: block;
+      height: 7px;
+      position: absolute;
+      bottom: 6px;
+      width: 100%;
+      z-index: -1;
+    }
+  }
+
+  .about-body {
+    color: $text;
+  }
+
+  .about-list {
+    margin-left: 1.5rem;
+  }
+
+  .about-image {
+    width: 100%;
+  }
+
+  .about-links {
+    display: flex;
+    gap: 1.2rem;
+  }
+}
+
+:host-context(.light) {
+  @include about(var(--neutral-700), var(--neutral-600));
+}
+
+:host-context(.dark) {
+  @include about(var(--neutral-0), var(--neutral-400));
+}

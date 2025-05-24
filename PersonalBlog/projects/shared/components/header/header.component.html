@@ -1,0 +1,12 @@
+<header class="header-container">
+  <img class="header-avatar" src="images/image-avatar.jpg" alt="Avatar">
+  <div class="header-buttons">
+    <nav class="header-navigation text-8">
+      <a (click)="goTo('home')" class="header-nav-link" [class.active]="this.active() === 'home'">Home</a>
+      <a (click)="goTo('blog')" class="header-nav-link" [class.active]="this.active() === 'blog'">Blog</a>
+      <a (click)="goTo('about')" class="header-nav-link" [class.active]="this.active() === 'about'">About</a>
+      <a (click)="goTo('newsletter')" class="header-nav-link" [class.active]="this.active() === 'newsletter'">Newsletter</a>
+    </nav>
+    <app-theme-button/>
+  </div>
+</header>

@@ -1,0 +1,33 @@
+@mixin frontend-icon($icon, $bg-color, $hover) {
+  .footer-frontend-icon {
+    background-color: $bg-color;
+    border-radius: 10px;
+    width: 4.5rem;
+    padding: 1rem;
+
+    &:hover {
+      cursor: pointer;
+      background-color: $hover;
+    }
+
+    path {
+      fill: $icon;
+    }
+  }
+}
+
+:host-context(.light) {
+  @include frontend-icon(
+    var(--neutral-700),
+    var(--neutral-0),
+    var(--neutral-200)
+  );
+}
+
+:host-context(.dark) {
+  @include frontend-icon(
+    var(--neutral-0),
+    var(--neutral-800),
+    var(--neutral-600)
+  );
+}

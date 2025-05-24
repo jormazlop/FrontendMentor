@@ -1,0 +1,38 @@
+@mixin page-container($bg-color, $border) {
+  .page-container {
+    background-color: $bg-color;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    padding: 0 25rem;
+
+    .header-component {
+      position: sticky;
+      top: 0;
+      z-index: 1;
+    }
+
+    .main-container {
+      border-left: 1px solid $border;
+      border-right: 1px solid $border;
+      flex: 1;
+      padding: 4rem 2rem;
+    }
+
+    .footer-container {
+      background-color: $bg-color;
+      position: sticky;
+      bottom: 0;
+      z-index: 1;
+      padding: 0 2rem;
+    }
+  }
+}
+
+:host-context(.light) {
+  @include page-container(var(--neutral-100), var(--neutral-200));
+}
+
+:host-context(.dark) {
+  @include page-container(var(--neutral-900), var(--neutral-700));
+}

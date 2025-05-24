@@ -1,0 +1,22 @@
+@mixin footer($text) {
+  .footer-container {
+    align-items: center;
+    color: $text;
+    display: flex;
+    justify-content: space-between;
+    padding: 3rem 0;
+
+    .footer-links {
+      display: flex;
+      gap: 1.5rem;
+    }
+  }
+}
+
+:host-context(.light) {
+  @include footer(var(--neutral-600));
+}
+
+:host-context(.dark) {
+  @include footer(var(--neutral-400));
+}
