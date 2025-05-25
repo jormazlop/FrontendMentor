@@ -1,0 +1,18 @@
+@mixin detail($text) {
+  .detail-title {
+    color: $text;
+    margin-bottom: 3rem;
+  }
+
+  .detail-body {
+    color: $text;
+  }
+}
+
+:host-context(.light) {
+  @include detail(var(--neutral-700));
+}
+
+:host-context(.dark) {
+  @include detail(var(--neutral-0));
+}

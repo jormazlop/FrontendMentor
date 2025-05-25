@@ -1,6 +1,7 @@
 import { Component, CUSTOM_ELEMENTS_SCHEMA, inject, signal } from '@angular/core';
-import { Router, RouterOutlet } from '@angular/router';
-import { SectionService } from '@services/section.service';
+import { NavigationEnd, Router, RouterOutlet } from '@angular/router';
+import { DataService } from '@services/data.service';
+import { filter } from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -13,13 +14,18 @@ export class AppComponent {
   title = 'PersonalBlog';
 
   private route = inject(Router);
-  private section = inject(SectionService);
+  private data = inject(DataService);
 
-  actualSection = this.section.section;
+  actualSection = signal(this.route.url.substring(1));
+
+  constructor() {
+    this.route.events.pipe(filter(event => event instanceof NavigationEnd)).subscribe(event => {
+      this.actualSection.set(event.urlAfterRedirects.substring(1))
+    });
+  }
 
   goTo(route: Event): void {
     const event = route as CustomEvent;
     this.route.navigate([event.detail]);
-    this.section.setSection(event.detail);
   }
 }

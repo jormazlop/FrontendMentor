@@ -1,24 +1,43 @@
 <h2 class="text-2 newsletter-title">Newsletter</h2>
-<br/>
+<br />
 <p class="text-7 newsletter-body">
-  Want to stay updated on my latest articles, coding tutorials, and personal adventures?
-  Sign up for my newsletter! It’s a simple way to keep track of new posts and occasional coding tips I discover.
-  Just drop your email in the sign-up box, and I’ll send you updates whenever there’s something new to share.
+  Want to stay updated on my latest articles, coding tutorials, and personal
+  adventures? Sign up for my newsletter! It’s a simple way to keep track of new
+  posts and occasional coding tips I discover. Just drop your email in the
+  sign-up box, and I’ll send you updates whenever there’s something new to
+  share.
 </p>
-<br/>
+<br />
 <strong class="text-5 newsletter-body">
   I’d love to have you along for the ride and also hear about your own journey!
 </strong>
-<br/>
-<br/>
+<br />
+<br />
 <div class="text-7 newsletter-email">
   <label for="email">Email Address</label>
-  <input type="text" name="email" placeholder="email@example.com">
+  <input
+    type="text"
+    name="email"
+    placeholder="email@example.com"
+    [formControl]="mail"
+    [class.success]="send()"
+  />
+  @if (mail.invalid && mail.dirty) {
+  <p class="text-8 mail-error">
+    <img src="/images/icon-error.svg" alt="Error" />
+    Please enter a valid email address.
+  </p>
+  } @else if (send()) {
+  <p class="text-8 mail-send">
+    <img src="/images/icon-success.svg" alt="Success" />
+    You’re subscribed! Check your inbox for updates.
+  </p>
+  }
 </div>
-<br/>
-<button class="text-6 newsletter-button">
+<br />
+<button class="text-6 newsletter-button" (click)="sendMail()">
   Stay updated
 </button>
-<br/>
-<br/>
+<br />
+<br />
 <p class="text-8 newsletter-body">Unsubscribe anytime. No spam, I promise 🙂</p>

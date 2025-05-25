@@ -6,7 +6,7 @@
 <ul class="articles-list">
   @for(article of articles(); track article.name) {
     <li class="article-item">
-      <h3 class="article-title text-5">{{ article.name }}</h3>
+      <button class="article-title text-5" (click)="clickArticle(article.id)">{{ article.name }}</button>
       <p class="article-date text-8">{{ article.date | date: 'MMMM dd, YYYY' }}</p>
       <p class="article-description text-7">{{ article.description }}</p>
     </li>

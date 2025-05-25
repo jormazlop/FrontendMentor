@@ -73,11 +73,16 @@
                 "bundleName": "blog-js"
               },
               {
+                "input": "public/web-components/detail.js",
+                "inject": false,
+                "bundleName": "detail-js"
+              },
+              {
                 "input": "public/web-components/about.js",
                 "inject": false,
                 "bundleName": "about-js"
               },
-               {
+              {
                 "input": "public/web-components/newsletter.js",
                 "inject": false,
                 "bundleName": "newsletter-js"
@@ -502,9 +507,7 @@
             },
             "index": "projects/about/src/index.html",
             "browser": "projects/about/src/main.ts",
-            "polyfills": [
-              "zone.js"
-            ],
+            "polyfills": ["zone.js"],
             "tsConfig": "projects/about/tsconfig.app.json",
             "inlineStyleLanguage": "scss",
             "assets": [
@@ -566,10 +569,7 @@
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
-            "polyfills": [
-              "zone.js",
-              "zone.js/testing"
-            ],
+            "polyfills": ["zone.js", "zone.js/testing"],
             "tsConfig": "projects/about/tsconfig.spec.json",
             "inlineStyleLanguage": "scss",
             "assets": [
@@ -578,9 +578,7 @@
                 "input": "projects/about/public"
               }
             ],
-            "styles": [
-              "projects/about/src/styles.scss"
-            ],
+            "styles": ["projects/about/src/styles.scss"],
             "scripts": []
           }
         }
@@ -628,9 +626,7 @@
             },
             "index": "projects/newsletter/src/index.html",
             "browser": "projects/newsletter/src/main.ts",
-            "polyfills": [
-              "zone.js"
-            ],
+            "polyfills": ["zone.js"],
             "tsConfig": "projects/newsletter/tsconfig.app.json",
             "inlineStyleLanguage": "scss",
             "assets": [
@@ -692,10 +688,7 @@
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
-            "polyfills": [
-              "zone.js",
-              "zone.js/testing"
-            ],
+            "polyfills": ["zone.js", "zone.js/testing"],
             "tsConfig": "projects/newsletter/tsconfig.spec.json",
             "inlineStyleLanguage": "scss",
             "assets": [
@@ -704,9 +697,126 @@
                 "input": "projects/newsletter/public"
               }
             ],
-            "styles": [
-              "projects/newsletter/src/styles.scss"
+            "styles": ["projects/newsletter/src/styles.scss"],
+            "scripts": []
+          }
+        }
+      }
+    },
+    "detail": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss",
+          "skipTests": true
+        },
+        "@schematics/angular:class": {
+          "skipTests": true
+        },
+        "@schematics/angular:directive": {
+          "skipTests": true
+        },
+        "@schematics/angular:guard": {
+          "skipTests": true
+        },
+        "@schematics/angular:interceptor": {
+          "skipTests": true
+        },
+        "@schematics/angular:pipe": {
+          "skipTests": true
+        },
+        "@schematics/angular:resolver": {
+          "skipTests": true
+        },
+        "@schematics/angular:service": {
+          "skipTests": true
+        }
+      },
+      "root": "projects/detail",
+      "sourceRoot": "projects/detail/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:application",
+          "options": {
+            "outputPath": {
+              "base": "projects/detail/dist",
+              "browser": ""
+            },
+            "index": "projects/detail/src/index.html",
+            "browser": "projects/detail/src/main.ts",
+            "polyfills": ["zone.js"],
+            "tsConfig": "projects/detail/tsconfig.app.json",
+            "inlineStyleLanguage": "scss",
+            "assets": [
+              {
+                "glob": "**/*",
+                "input": "projects/detail/public"
+              },
+              {
+                "glob": "**/*",
+                "input": "public"
+              }
             ],
+            "styles": [
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "src/design.scss",
+              "projects/detail/src/styles.scss"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kB",
+                  "maximumError": "1MB"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "4kB",
+                  "maximumError": "8kB"
+                }
+              ],
+              "outputHashing": "all"
+            },
+            "development": {
+              "optimization": false,
+              "extractLicenses": false,
+              "sourceMap": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "configurations": {
+            "production": {
+              "buildTarget": "detail:build:production"
+            },
+            "development": {
+              "buildTarget": "detail:build:development"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "polyfills": ["zone.js", "zone.js/testing"],
+            "tsConfig": "projects/detail/tsconfig.spec.json",
+            "inlineStyleLanguage": "scss",
+            "assets": [
+              {
+                "glob": "**/*",
+                "input": "projects/detail/public"
+              }
+            ],
+            "styles": ["projects/detail/src/styles.scss"],
             "scripts": []
           }
         }

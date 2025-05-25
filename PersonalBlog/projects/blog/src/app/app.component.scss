@@ -36,7 +36,15 @@
       gap: 1rem;
 
       .article-title {
+        background: none;
+        border: none;
         color: $text;
+        text-align: left;
+        width: fit-content;
+
+        &:hover {
+          transform: translateX(10px) scale(1.05);
+        }
       }
 
       .article-date {
