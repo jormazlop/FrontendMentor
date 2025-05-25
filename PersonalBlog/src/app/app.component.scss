@@ -6,6 +6,18 @@
     min-height: 100vh;
     padding: 0 25rem;
 
+    @media(width < 1000px) {
+      padding: 0 10rem;
+    }
+
+    @media(width < 700px) {
+      padding: 0 3rem;
+    }
+
+    @media(width < 500px) {
+      padding: 0;
+    }
+
     .header-component {
       position: sticky;
       top: 0;
