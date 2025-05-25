@@ -1,4 +1,4 @@
-import { Component, effect, input } from '@angular/core';
+import { Component, input } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 
 @Component({
@@ -12,9 +12,5 @@ export class AppComponent {
 
   detailTitle = input('');
   content = input('');
-
-  constructor() {
-    effect(() =>  console.log(this.content()))
-  }
 
 }
