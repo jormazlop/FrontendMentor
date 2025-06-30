@@ -1,0 +1,25 @@
+<section class="mood-container">
+  <article class="mood-feels">
+    <div class="mood-feels-title">
+      <h3 class="text-3">I’m feeling</h3>
+      <h2 class="text-2">{{ mood().step1 | kebabCase | titlecase }}</h2>
+    </div>
+    <p class="mood-feels-comment text-6">
+      {{ mood().step1 | mood }}
+    </p>
+    <img class="mood-feels-image" [src]="image()" alt="Mood">
+  </article>
+  <article class="mood-sleep">
+    <p class="text-6 mood-sleep-title"><img src="/images/icon-sleep.svg" alt="Sleep">Sleep</p>
+    <p class="text-3 mood-sleep-hours">{{ mood().step4 }}</p>
+  </article>
+  <article class="mood-comment text-6">
+    <p class="mood-comment-title"><img src="/images/icon-reflection.svg" alt="Reflection">Reflection of the day</p>
+    <p class="mood-comment-reflection">{{ mood().step3 }}</p>
+    <div class="mood-comment-tags">
+      @for (tag of mood().step2; track $index) {
+        <p>#{{ tag }}</p>
+      }
+    </div>
+  </article>
+</section>

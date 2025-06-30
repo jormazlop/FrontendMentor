@@ -1,0 +1,16 @@
+:host {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 5rem;
+  height: 100%;
+  padding: 5rem 14rem;
+
+  @media (width < 1000px) {
+    padding: 5rem;
+  }
+
+  @media (width < 700px) {
+    padding: 5rem 0.5rem;
+  }
+}

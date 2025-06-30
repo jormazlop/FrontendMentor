@@ -1,0 +1,13 @@
+<section class="step-2-container">
+  <h3 class="text-3 step-2-title">How did you feel?</h3>
+  <p class="text-6 step-2-subtitle">Select up to three tags:</p>
+  <div class="step-2-checkbox-list">
+  @for (tag of tags; track $index) {
+    <label class="step-2-checkbox-container">
+      <input type="checkbox" [id]="tag" [name]="tag" #tagCheck (change)="onChange(tag, tagCheck.checked)"/>
+      <p class="text-6" [attr.for]="tag">{{ tag }}</p>
+    </label>
+  }
+  </div>
+
+</section>

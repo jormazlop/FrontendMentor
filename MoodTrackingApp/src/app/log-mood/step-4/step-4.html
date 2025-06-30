@@ -1,0 +1,10 @@
+<section class="step-4-container">
+  <h3 class="text-3 step-4-title">How many hours did you sleep last night?</h3>
+
+  @for(option of options; track $index) {
+  <label class="step-4-radio-container" [for]="option.id">
+    <input type="radio" [id]="option.id" name="hours" [value]="option.id" (change)="onChange(option.id)"/>
+    <p class="text-5">{{ option.title }}</p>
+  </label>
+  }
+</section>

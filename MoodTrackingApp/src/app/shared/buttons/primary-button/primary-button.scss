@@ -1,0 +1,16 @@
+.primary-button-container {
+  background-color: var(--blue-600);
+  border: none;
+  color: var(--neutral-0);
+  padding: 1rem 3rem;
+  width: 100%;
+
+  &:active:not(:disabled) {
+    transform: translate(1px, 1px);
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+  }
+}

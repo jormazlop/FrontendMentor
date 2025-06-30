@@ -1,0 +1,36 @@
+<div class="dialog-container">
+  <button class="dialog-close-button" (click)="closeDialog()">
+    <app-close />
+  </button>
+  <h1 class="text-3 dialog-title">Update your profile</h1>
+  <p class="text-6 dialog-subtitle">
+    Personalize your account with your name and photo.
+  </p>
+
+  <label class="text-6 label" for="name">Name</label>
+  <input class="text-6 name-input" type="text" id="name" [(ngModel)]="name">
+
+
+  <div class="image-container">
+    <label class="hoverable" for="fileInput">
+      <img [src]="url() ? url() : '/images/avatar-lisa.jpg'" />
+      <div class="background"></div>
+    </label>
+    <br />
+    <input
+      id="fileInput"
+      type="file"
+      [(ngModel)]="url"
+      class="select-profile-picture"
+      (change)="onSelectFile($event)"
+    />
+    <p class="text-6 message">
+      Upload Image
+      <br>
+      <span class="text-7">Max 250KB, PNG or JPEG</span>
+    </p>
+  </div>
+
+  <app-primary-button (click)="saveChanges()">Save changes</app-primary-button>
+
+</div>

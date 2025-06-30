@@ -1,0 +1,120 @@
+:host {
+  display: contents;
+}
+
+.mood-container {
+  border-radius: 16px;
+  display: grid;
+  gap: 2rem;
+  grid-template-areas: "feel feel sleep" "feel feel comment";
+  grid-template-columns: 1fr 1fr 1fr;
+  width: 100%;
+
+  @media (width < 1250px) {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .mood-feels {
+    border: 1px solid var(--blue-100);
+    background-color: var(--neutral-0);
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 10rem;
+    grid-area: feel;
+    overflow: hidden;
+    padding: 2rem;
+    position: relative;
+
+    .mood-feels-title {
+      color: var(--neutral-900);
+
+      h3 {
+        opacity: 0.7;
+      }
+    }
+
+    .mood-feels-comment {
+      color: var(--neutral-900);
+      font-style: italic;
+      position: relative;
+      width: 30rem;
+
+      &::after {
+        background-image: url("/images/icon-quote.svg");
+        content: "";
+        height: 16px;
+        left: 0;
+        position: absolute;
+        top: -2.5rem;
+        width: 16px;
+      }
+    }
+
+    .mood-feels-image {
+      bottom: -2rem;
+      position: absolute;
+      right: 5%;
+      width: 25rem;
+
+      @media (width < 1250px) {
+        width: 15rem;
+      }
+
+      @media (width < 700px) {
+        bottom: -1rem;
+        width: 10rem;
+      }
+    }
+  }
+
+  .mood-sleep {
+    border: 1px solid var(--blue-100);
+    background-color: var(--neutral-0);
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    grid-area: sleep;
+    justify-content: space-between;
+    padding: 2rem;
+
+    .mood-sleep-title {
+      color: var(--neutral-600);
+      display: flex;
+      gap: 1rem;
+    }
+
+    .mood-sleep-hours {
+      color: var(--neutral-900);
+    }
+  }
+
+  .mood-comment {
+    border: 1px solid var(--blue-100);
+    background-color: var(--neutral-0);
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    grid-area: comment;
+    justify-content: space-between;
+    padding: 2rem;
+
+    .mood-comment-title {
+      color: var(--neutral-600);
+      display: flex;
+      gap: 1rem;
+    }
+
+    .mood-comment-reflection {
+      color: var(--neutral-900);
+    }
+
+    .mood-comment-tags {
+      color: var(--neutral-600);
+      display: flex;
+      font-style: italic;
+      gap: 1rem;
+    }
+  }
+}

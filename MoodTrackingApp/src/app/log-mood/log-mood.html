@@ -1,0 +1,24 @@
+<div class="dialog-container">
+  <button class="dialog-close-button" (click)="closeDialog()">
+    <app-close />
+  </button>
+  <h1 class="text-2 dialog-title">Log your mood</h1>
+  <app-stepper [step]="step()" />
+  @switch (step()) {
+    @case (1) {
+      <app-step-1 />
+    }
+    @case (2) {
+      <app-step-2 />
+    }
+    @case (3) {
+      <app-step-3 />
+    }
+    @case (4) {
+      <app-step-4 />
+    }
+  }
+  <app-primary-button (click)="nextStep()" [disabled]="disabled()">
+    {{ step() | textButton }}
+  </app-primary-button>
+</div>

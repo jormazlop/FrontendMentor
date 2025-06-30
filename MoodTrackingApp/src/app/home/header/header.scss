@@ -1,0 +1,22 @@
+:host {
+  display: contents;
+}
+
+.header-container {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+
+  .avatar-container {
+
+    align-items: center;
+    display: flex;
+    gap: 1rem;
+
+    .avatar-button {
+      background: none;
+      border: none;
+    }
+  }
+}

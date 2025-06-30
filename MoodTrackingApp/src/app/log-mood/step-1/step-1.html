@@ -1,0 +1,9 @@
+<section class="step-1-container">
+  <h3 class="text-3 step-1-title">How was your mood {{ date() | today: true }}?</h3>
+
+  @for(option of options; track $index) {
+    <app-small-emoji [option]="option" (change)="onChange(option.id)"/>
+  }
+
+
+</section>

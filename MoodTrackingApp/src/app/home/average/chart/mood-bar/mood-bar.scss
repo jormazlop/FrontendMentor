@@ -1,0 +1,29 @@
+:host {
+  position: relative;
+}
+
+.very-happy {
+  fill: var(--amber-300);
+}
+
+.happy {
+  fill: var(--green-300);
+}
+
+.neutral {
+  fill: var(--blue-300);
+}
+
+.sad {
+  fill: var(--indigo-200);
+}
+
+.very-sad {
+  fill: var(--red-300)
+}
+
+img {
+  left: 0.5rem;
+  position: absolute;
+  transform: translateY(0.5rem);
+}

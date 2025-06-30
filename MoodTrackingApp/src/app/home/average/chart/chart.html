@@ -1,0 +1,56 @@
+<section class="chart-container">
+  <div class="chart-container">
+    <div class="y-axis">
+      <div class="text-9 y-axis-label">
+        <img src="/images/icon-sleep.svg" alt="Sleep" />9+ hours
+      </div>
+      <div class="text-9 y-axis-label">
+        <img src="/images/icon-sleep.svg" alt="Sleep" />7-8 hours
+      </div>
+      <div class="text-9 y-axis-label">
+        <img src="/images/icon-sleep.svg" alt="Sleep" />5-6 hours
+      </div>
+      <div class="text-9 y-axis-label">
+        <img src="/images/icon-sleep.svg" alt="Sleep" />3-4 hours
+      </div>
+      <div class="text-9 y-axis-label">
+        <img src="/images/icon-sleep.svg" alt="Sleep" />0-2 hours
+      </div>
+      <div class="text-9 y-axis-label"></div>
+    </div>
+
+    <div class="chart">
+      @for(date of datesToShow; track $index) { @let moodInfo = getMood(date);
+      @if(moodInfo) {
+      <div class="bar" (click)="setMood(date, moodInfo)">
+        <app-mood-bar
+          [hours]="moodInfo.sleepHours"
+          [mood]="moodInfo.mood"
+          [tp]="tpl"
+          [tpData]="moodInfo"
+        />
+        <span class="label text-9">{{ date | date: 'MMMM dd' }}</span>
+      </div>
+      } @else {
+      <div class="bar" (click)="setMood(date)">
+        <span class="label text-9">{{ date | date: 'MMMM dd' }}</span>
+      </div>
+      } }
+    </div>
+  </div>
+</section>
+
+<ng-template #tpl let-item="data">
+  <p class="text-8 tooltip-subtitle">Mood</p>
+  <p class="text-7 tooltip-text">
+    @let image = `/images/icon-${item.mood}-color.svg`;
+    <img class="mood-tooltip-image" [src]="image" alt="Mood">
+    {{ item.mood | kebabCase | titlecase  }}
+  </p>
+  <p class="text-8 tooltip-subtitle">Sleep</p>
+  <p class="text-7 tooltip-text">{{ item.sleepHours }}</p>
+  <p class="text-8 tooltip-subtitle">Reflection</p>
+  <p class="text-7 tooltip-text">{{ item.journalEntry }}</p>
+  <p class="text-8 tooltip-subtitle">Tags</p>
+  <p class="text-7 tooltip-text">{{ item.feelings }}</p>
+</ng-template>

@@ -1,0 +1,5 @@
+<section class="step-3-container">
+  <h3 class="text-3 step-3-title">Write about your day...</h3>
+  <textarea class="text-6 step-3-textarea" placeholder="Today, I felt…" maxlength="150" [(ngModel)]="mood"></textarea>
+  <p class="text-8 step-3-length">{{ mood().length }}/150</p>
+</section>

@@ -1,0 +1,10 @@
+<app-header />
+<app-title />
+<app-primary-button (click)="openDialog()">Log {{ date() | today: true }} mood</app-primary-button>
+
+@if(mood().step1) {
+  <app-mood [mood]="mood()" />
+}
+
+<app-average />
+

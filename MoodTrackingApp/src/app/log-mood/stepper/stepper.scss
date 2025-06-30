@@ -1,0 +1,9 @@
+.stepper-container {
+  display: flex;
+  gap: 1.5rem;
+  width: 100%;
+
+  .step-bar {
+    flex: 1;
+  }
+}

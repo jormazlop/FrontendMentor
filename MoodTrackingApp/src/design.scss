@@ -1,0 +1,126 @@
+@import "tippy.js/dist/tippy.css";
+@import "tippy.js/themes/light.css";
+@import "tippy.js/animations/scale.css";
+
+@font-face {
+  font-family: "DMSans";
+  src: url("/fonts/Reddit_Sans/RedditSans.ttf") format("opentype");
+}
+
+:root {
+  --neutral-900: #21214d;
+  --neutral-600: #57577b;
+  --neutral-300: #9393b7;
+  --neutral-200: #cbcdd0;
+  --neutral-0: #ffffff;
+
+  --blue-700: #2a4cd5;
+  --blue-600: #4865db;
+  --blue-300: #89caff;
+  --blue-200: #c7d3f7;
+  --blue-100: #e0e6fa;
+
+  --red-700: #e60013;
+  --red-300: #ff9b99;
+
+  --green-300: #89e780;
+
+  --indigo-200: #b8b1ff;
+
+  --amber-300: #ffc97c;
+}
+
+.text-1 {
+  font-size: 5.2rem;
+  font-weight: bold;
+  letter-spacing: -0.2px;
+  line-height: 140%;
+}
+
+.text-2 {
+  font-size: 4rem;
+  font-weight: bold;
+  line-height: 120%;
+  letter-spacing: -0.2px;
+}
+
+.text-3 {
+  font-size: 3.2rem;
+  font-weight: bold;
+  line-height: 140%;
+  letter-spacing: -0.3px;
+}
+
+.text-4 {
+  font-size: 2.4rem;
+  font-weight: 600;
+  line-height: 140%;
+  letter-spacing: 0;
+}
+
+.text-5 {
+  font-size: 2rem;
+  font-weight: 600;
+  line-height: 140%;
+  letter-spacing: 0;
+}
+
+.text-6 {
+  font-size: 1.8rem;
+  font-weight: 400;
+  line-height: 140%;
+  letter-spacing: -0.3px;
+}
+
+.text-7 {
+  font-size: 1.5rem;
+  font-weight: 400;
+  line-height: 140%;
+  letter-spacing: -0.3px;
+}
+
+.text-8 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  line-height: 100%;
+  letter-spacing: 0;
+}
+
+.text-9 {
+  font-size: 1.2rem;
+  font-weight: 400;
+  line-height: 110%;
+  letter-spacing: 0;
+}
+
+@for $i from 1 to 24 {
+  .radius-#{$i} {
+    border-radius: #{$i}px;
+  }
+}
+
+.radius-full {
+  border-radius: 999px;
+}
+
+.tippy-box {
+  background-color: var(--neutral-0);
+  border-radius: 10px;
+  filter: drop-shadow(0 4px 7px var(--blue-100));
+  padding: 1.2rem;
+
+  .mood-tooltip-image {
+    width: 1.5rem;
+  }
+
+  .tooltip-subtitle {
+    color: var(--neutral-600);
+    line-height: 2rem;
+  }
+
+  .tooltip-text {
+    color: var(--neutral-900);
+    line-height: 2rem;
+    margin-bottom: 1rem;
+  }
+}

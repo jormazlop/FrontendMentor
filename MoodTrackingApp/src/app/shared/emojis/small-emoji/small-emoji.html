@@ -1,0 +1,10 @@
+<label class="emoji-container" [for]="option().id">
+  <div class="emoji-radio-button">
+    <input type="radio" [id]="option().id" name="mood" [value]="option().id" />
+    <p class="text-5">{{ option().title }}</p>
+  </div>
+  <ng-lottie
+    [options]="option().options"
+    (animationCreated)="animationCreated($event)"
+  />
+</label>

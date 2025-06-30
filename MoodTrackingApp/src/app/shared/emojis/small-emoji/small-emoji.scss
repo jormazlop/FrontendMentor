@@ -1,0 +1,29 @@
+.emoji-container {
+  align-items: center;
+  background-color: var(--neutral-0);
+  border: 2px solid var(--blue-200);
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+  padding: 1.5rem 2rem;
+
+  .emoji-radio-button {
+    color: var(--neutral-900);
+    display: flex;
+    gap: 1.2rem;
+  }
+
+  ng-lottie {
+    display: block;
+    height: 54px;
+    width: 54px;
+  }
+
+  &:has(:checked) {
+    border: 2px solid var(--blue-600);
+  }
+
+  &:hover {
+    cursor: pointer;
+  }
+}

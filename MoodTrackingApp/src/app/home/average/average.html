@@ -1,0 +1,61 @@
+<section class="average-container">
+  <article class="average-mood-sleep">
+    <p class="text-5 average-mood-sleep-title">
+      Average Mood <span class="text-7">(Last 5 check-ins)</span>
+    </p>
+
+    <div class="average-mood" [ngClass]="averageMood().mood">
+
+        @switch (averageMood().mood) {
+          @case ('very-happy') {
+            <p class="text-4 average-sleep-trend">
+              <img src="/images/icon-very-happy-white.svg" alt="Trend" /> Very Happy
+            </p>
+          }
+          @case ('happy') {
+            <p class="text-4 average-sleep-trend">
+              <img src="/images/icon-happy-white.svg" alt="Trend" /> Happy
+            </p>
+          }
+          @case ('neutral') {
+            <p class="text-4 average-sleep-trend">
+              <img src="/images/icon-neutral-white.svg" alt="Trend" /> Neutral
+            </p>
+          }
+          @case ('sad') {
+            <p class="text-4 average-sleep-trend">
+              <img src="/images/icon-sad-white.svg" alt="Trend" /> Sad
+            </p>
+          }
+          @case ('very-sad') {
+            <p class="text-4 average-sleep-trend">
+              <img src="/images/icon-very-sad-white.svg" alt="Trend" />Very Sad
+            </p>
+          }
+        }
+
+      <p class="text-6 average-sleep-trend">
+        <img [src]="averageMoodImage()" alt="Trend" /> {{ averageMood() | average }}
+      </p>
+    </div>
+
+    <p class="text-5 average-mood-sleep-title">
+      Average Sleep <span class="text-7">(Last 5 check-ins)</span>
+    </p>
+
+    <div class="average-sleep">
+      <p class="text-4 average-sleep-trend average-sleep-trend-title">
+        <img src="/images/icon-sleep-light.svg" alt="Sleep" /> {{ averageSleep().hours }}
+      </p>
+
+
+      <p class="text-6 average-sleep-trend">
+        <img [src]="averageSleepImage()" alt="Trend" /> {{ averageSleep() | average }}
+      </p>
+    </div>
+  </article>
+  <article class="average-trends">
+    <h3 class="text-3 average-trends-title">Mood and sleep trends</h3>
+    <app-chart/>
+  </article>
+</section>
