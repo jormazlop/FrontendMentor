@@ -1,0 +1,19 @@
+<section class="categorie-container">
+  <div class="categorie-header">
+    <div class="categorie-subheader-1">
+      <app-menu-button class="menu-button" (click)="openPauseDialog()"/>
+      <h1 class="heading-l categorie-title">{{ categorieId() }}</h1>
+    </div>
+    <app-stepper [wrong]="wrong()" />
+  </div>
+  <div class="categorie-guess-container">
+    @for (letter of letters(); track $index) {
+      <app-play-letter [letter]="letter" [disabled]="!selection().includes(letter)"/>
+    }
+  </div>
+  <div class="categorie-letters-container">
+    @for (letter of keyLetters; track $index) {
+      <app-keyboard-letter [letter]="letter" [disabled]="selection().includes(letter)" (click)="selectLetter(letter)"/>
+    }
+  </div>
+</section>

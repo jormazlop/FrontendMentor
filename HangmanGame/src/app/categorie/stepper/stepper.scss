@@ -1,0 +1,32 @@
+.progress-bar-container {
+  align-items: center;
+  display: flex;
+  gap: 4rem;
+
+  @media (width < 768px) {
+    gap: 2rem;
+  }
+
+  .progress-bar {
+    background-color: var(--white);
+    border-radius: 96px;
+    height: 2rem;
+    width: 20rem;
+
+    @media (width < 768px) {
+      width: 10rem;
+    }
+  }
+
+  .progress-bar-fill {
+    background-color: var(--dark-navy);
+    border-radius: 96px;
+    height: 50%;
+    margin: 0 1rem;
+  }
+
+  .progress-bar-icon {
+    height: 4rem;
+    width: 4rem;
+  }
+}

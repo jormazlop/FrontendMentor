@@ -1,0 +1,67 @@
+:host {
+  display: contents;
+}
+
+.categorie-container {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+  justify-content: space-around;
+  height: 100%;
+  padding: 8rem 10rem;
+
+  @media (width < 1200px) {
+    padding: 2rem 5rem;
+  }
+
+  .categorie-header {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+
+    .categorie-subheader-1 {
+      align-items: center;
+      display: flex;
+      gap: 5rem;
+
+      .categorie-title {
+        color: var(--white);
+      }
+
+      .menu-button {
+        @media (width < 1200px) {
+          transform: scale(0.9);
+        }
+
+        @media (width < 768px) {
+          transform: scale(0.75);
+        }
+
+        @media (width < 565px) {
+          transform: scale(0.5);
+        }
+      }
+    }
+  }
+
+  .categorie-guess-container {
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    height: 30rem;
+    justify-content: center;
+
+    @media (width < 565px) {
+      height: 40rem;
+    }
+  }
+
+  .categorie-letters-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+  }
+}

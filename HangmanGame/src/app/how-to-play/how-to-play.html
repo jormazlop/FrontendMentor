@@ -1,0 +1,20 @@
+<section class="how-to-play-container">
+  <div class="how-to-play-header">
+    <app-back-button class="back-button" (click)="goBack()"/>
+    <app-title class="how-to-play-title"/>
+  </div>
+  <div class="how-to-play-categories">
+    @for(categorie of categories; track categorie.number) {
+    <div class="categorie">
+      <h2 class="heading-l categorie-number">{{ categorie.number }}</h2>
+      <div class="categorie-text">
+        <h3 class="heading-m categorie-title">
+          <span class="categorie-number-title">{{ categorie.number }}</span>
+          {{ categorie.title | uppercase }}
+        </h3>
+        <p class="body categorie-description">{{ categorie.description }}</p>
+      </div>
+    </div>
+    }
+  </div>
+</section>

@@ -1,0 +1,119 @@
+:host {
+  display: contents;
+}
+
+.how-to-play-container {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 6rem;
+  justify-content: center;
+  height: 100%;
+  padding: 8rem 10rem;
+
+  @media (width < 1200px) {
+    padding: 2rem 5rem;
+  }
+
+  .how-to-play-header {
+    align-items: center;
+    display: flex;
+    position: relative;
+    width: 100%;
+
+    .how-to-play-title {
+      left: 35%;
+      position: absolute;
+      width: 30%;
+
+      @media (width < 768px) {
+        left: 25%;
+        width: 50%;
+      }
+    }
+
+    .back-button {
+      @media (width < 1200px) {
+        transform: scale(0.9);
+      }
+
+      @media (width < 768px) {
+        transform: scale(0.75);
+      }
+
+      @media (width < 565px) {
+        transform: scale(0.5);
+      }
+    }
+  }
+
+  .how-to-play-categories {
+    display: flex;
+    gap: 3rem;
+    justify-content: center;
+
+    @media (width < 1200px) {
+      flex-direction: column;
+    }
+
+    .categorie {
+      align-items: center;
+      background-color: var(--white);
+      border-radius: 40px;
+      display: flex;
+      flex-direction: column;
+      gap: 4rem;
+      padding: 6rem 4.8rem;
+
+      @media (width < 1200px) {
+        flex-direction: row;
+        padding: 3rem 4.8rem;
+      }
+
+      .categorie-number {
+        color: var(--blue);
+
+        @media (width < 565px) {
+          display: none;
+        }
+      }
+
+      .categorie-text {
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        gap: 4rem;
+
+        @media (width < 1200px) {
+          align-items: flex-start;
+          gap: 1rem;
+        }
+
+        .categorie-title {
+          color: var(--dark-navy);
+          text-align: center;
+
+          .categorie-number-title {
+            color: var(--blue);
+            @media (width >= 565px) {
+              display: none;
+            }
+          }
+
+          @media (width < 1200px) {
+            text-align: left;
+          }
+        }
+
+        .categorie-description {
+          color: #887dc0;
+          text-align: center;
+
+          @media (width < 1200px) {
+            text-align: left;
+          }
+        }
+      }
+    }
+  }
+}

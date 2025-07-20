@@ -1,0 +1,19 @@
+.back-button-container {
+  background: linear-gradient(#FE71FE, #7199FF);
+  border: none;
+  border-radius: 50%;
+  box-shadow: inset 0 -6px 0 7px rgba(157, 45, 245, 0.25);
+ ;
+  padding: 2rem 2.6rem 3.4rem;
+
+  &:hover {
+    background: linear-gradient(
+      color-mix(in srgb, #FE71FE 100%, var(--white) 25%),
+      color-mix(in srgb, #7199FF 100%, var(--white) 25%)
+    );
+  }
+
+  &:active {
+    transform: scale(.98);
+  }
+}

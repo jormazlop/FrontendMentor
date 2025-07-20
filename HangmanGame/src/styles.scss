@@ -1,0 +1,23 @@
+@use '@angular/cdk' as cdk;
+
+html,
+body {
+  font-family: "MouseMemoirs";
+  font-size: 10px;
+
+  @media (width < 1200px) {
+    font-size: 8px;
+  }
+
+  @media (width < 768px) {
+    font-size: 7px;
+  }
+
+  @media (width < 565px) {
+    font-size: 6px;
+  }
+}
+
+p {
+  margin: 0;
+}

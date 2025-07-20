@@ -1,0 +1,14 @@
+<section class="pick-a-category-container">
+  <div class="pick-a-category-header">
+    <app-back-button class="back-button" (click)="goBack()" />
+    <app-title class="pick-a-category-title" />
+  </div>
+  <div class="pick-a-category-categories">
+    <app-category-button class="categorie-button" (click)="goToCategorie('movies')"> MOVIES </app-category-button>
+    <app-category-button class="categorie-button" (click)="goToCategorie('tv shows')"> TV SHOWS </app-category-button>
+    <app-category-button class="categorie-button" (click)="goToCategorie('countries')"> COUNTRIES </app-category-button>
+    <app-category-button class="categorie-button" (click)="goToCategorie('capital cities')"> CAPITAL CITIES </app-category-button>
+    <app-category-button class="categorie-button" (click)="goToCategorie('animals')"> ANIMALS </app-category-button>
+    <app-category-button class="categorie-button" (click)="goToCategorie('sports')"> SPORTS </app-category-button>
+  </div>
+</section>

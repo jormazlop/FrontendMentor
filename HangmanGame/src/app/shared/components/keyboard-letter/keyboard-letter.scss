@@ -1,0 +1,23 @@
+.keyboard-letter-container {
+  background-color: var(--white);
+  border-radius: 24px;
+  color: var(--dark-navy);
+  display: flex;
+  justify-content: center;
+  padding: 1.4rem 2.8rem;
+  transition-duration: 0.25s;
+  width: 9rem;
+
+  &:hover {
+    background-color: var(--blue);
+    color: var(--white);
+    cursor: pointer;
+  }
+
+  &.disabled {
+    background-color: var(--white);
+    color: var(--dark-navy);
+    opacity: 0.3;
+    cursor: not-allowed;
+  }
+}
