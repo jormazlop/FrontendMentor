@@ -1,0 +1,31 @@
+.checkbox-input-container {
+  align-items: center;
+  border: 1px solid var(--purple-600);
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  padding: 1.1rem 1.6rem;
+  width: 100%;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  .checkbox-title {
+
+    display: flex;
+    flex-direction: column;
+
+    p {
+      color: var(--blue-950);
+    }
+
+    span {
+      color: var(--grey-500);
+    }
+  }
+
+  .checkbox-price {
+    color: var(--purple-600);
+  }
+}

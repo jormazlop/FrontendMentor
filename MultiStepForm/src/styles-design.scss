@@ -1,0 +1,99 @@
+@font-face {
+  font-family: "Ubuntu-Bold";
+  src: url("/fonts/Ubuntu-Bold.ttf") format("opentype");
+}
+
+@font-face {
+  font-family: "Ubuntu-Medium";
+  src: url("/fonts/Ubuntu-Medium.ttf") format("opentype");
+}
+
+@font-face {
+  font-family: "Ubuntu-Regular";
+  src: url("/fonts/Ubuntu-Regular.ttf") format("opentype");
+}
+
+:root {
+  --white: #FFF;
+  --black: #000;
+
+  --grey-500: #9699AA;
+
+  --orange-300: #FFAF7E;
+
+  --red-500: #EE374A;
+  --red-450: #E96170;
+  --red-400: #F9818E;
+
+  --purple-600: #483EFF;
+  --purple-500: #6259FF;
+  --purple-400: #928CFF;
+  --purple-200: #D6D9E6;
+
+  --blue-950: #022959;
+  --blue-700: #164A8A;
+  --blue-300: #ABBCFF;
+  --blue-200: #BEE2FD;
+  --blue-100: #EFF5FF;
+  --blue-50: #F8F9FF;
+}
+
+.text-1 {
+  font-size: 3.2rem;
+  font-weight: bold;
+  letter-spacing: 0;
+  line-height: 120%;
+}
+
+.text-2 {
+  font-size: 2.4rem;
+  font-weight: bold;
+  letter-spacing: 0;
+  line-height: 120%;
+}
+
+.text-3-m {
+  font-family: "Ubuntu-Medium";
+  font-size: 1.6rem;
+  font-weight: 500;
+  letter-spacing: 0;
+  line-height: 120%;
+}
+
+.text-3-r {
+    font-family: "Ubuntu-Regular";
+  font-size: 1.6rem;
+  letter-spacing: 0;
+  line-height: 150%;
+}
+
+.text-4-b {
+  font-family: "Ubuntu-Bold";
+  font-size: 1.4rem;
+  font-weight: bold;
+  letter-spacing: 0.1rem;
+  line-height: 120%;
+}
+
+.text-4-m {
+  font-family: "Ubuntu-Medium";
+  font-size: 1.4rem;
+  font-weight: normal;
+  letter-spacing: 0;
+  line-height: 150%;
+}
+
+.text-4-r {
+  font-family: "Ubuntu-Regular";
+  font-size: 1.4rem;
+  font-weight: 600;
+  letter-spacing: 0;
+  line-height: 120%;
+}
+
+.text-5 {
+  font-size: 1.2rem;
+  letter-spacing: 0;
+  line-height: 120%;
+}
+

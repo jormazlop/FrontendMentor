@@ -1,0 +1,37 @@
+<section class="step-4-container">
+  <hgroup class="step-4-title">
+    <h1 class="title text-1">Finishing up</h1>
+    <p class="subtitle text-3-r">
+      Double-check everything looks OK before confirming.
+    </p>
+  </hgroup>
+  <div class="step-4-resultats">
+    <div class="step-4-type">
+      <p class="text-3-m step-4-type-title">
+        {{ this.plan() | titlecase }} ({{ this.typeText() }})
+        <br />
+        <br />
+        <span class="text-4">Change</span>
+      </p>
+      <span class="text-4-b">$9/mo</span>
+    </div>
+    <hr class="step-4-separator" />
+    @for(addon of addons(); track $index) {
+      @let addonValue = addon.split(',');
+      <div class="step-4-plan">
+        <p class="text-3-m">{{ addonValue[0] | titlecase }}</p>
+        <span class="text-4-m"> {{ addonValue[1] }}</span>
+      </div>
+    }
+  </div>
+  <div class="step-4-total">
+    <p class="text-4-m">Total (per month)</p>
+    <span class="text-2">+${{ total() }}/ {{ this.type() ? 'yr': 'mo'}}</span>
+  </div>
+  <div class="step-4-buttons">
+    <app-additional-button (click)="goBack()">Go Back</app-additional-button>
+    <app-primary-button class="form-button" type="submit" (click)="submit()"
+      >Next Step</app-primary-button
+    >
+  </div>
+</section>

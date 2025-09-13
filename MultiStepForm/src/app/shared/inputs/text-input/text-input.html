@@ -1,0 +1,15 @@
+<div class="text-input-container">
+  <div class="text-input-header">
+    <label [for]="id" class="text-4-r">{{ label() }}</label>
+    @if(innerControl.invalid && innerControl.dirty) {
+     <p class="text-4-b error">{{ innerControl.errors | errorMessage }}</p>
+    }
+  </div>
+  <input
+    type="text"
+    [formControl]="innerControl"
+    [id]="id"
+    [placeholder]="placeholder()"
+    class="text-3-m"
+  />
+</div>

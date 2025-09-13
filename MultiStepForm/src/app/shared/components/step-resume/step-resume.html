@@ -1,0 +1,15 @@
+<div class="step-resume-container">
+  <ul class="step-list">
+    @for(step of steps; track $index) {
+      @let index = $index + 1;
+      <li class="step-list-item">
+        <span class="step-list-item-order text-4-b" [class.active]="index == active()">{{ index }}</span>
+        <div class="step-list-item-description">
+          <span class="step-number text-5">STEP {{ index }}</span>
+          <p class="step-description text-4-b">{{ step | uppercase }}</p>
+        </div>
+      </li>
+    }
+
+  </ul>
+</div>

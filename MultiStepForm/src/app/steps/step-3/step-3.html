@@ -1,0 +1,37 @@
+<section class="step-3-container">
+  <hgroup class="step-3-title">
+    <h1 class="title text-1">Pick add-ons</h1>
+    <p class="subtitle text-3-r">
+      Add-ons help enhance your gaming experience.
+    </p>
+  </hgroup>
+  <form [formGroup]="step3" class="step-3-form-container">
+    @let price1 = type() ? '+$10/yr' : '+$1/mo';
+    <app-checkbox-input
+      formControlName="addons"
+      title="Online Services"
+      subtitle="Access to multiplayer games"
+      [price]="price1"
+    />
+    @let price2 = type() ? '+$20/yr' : '+$2/mo';
+    <app-checkbox-input
+      formControlName="addons"
+      title="Larger storage"
+      subtitle="Extra 1TB of cloud save"
+      [price]="price2"
+    />
+    @let price3 = type() ? '+$20/yr' : '+$2/mo';
+    <app-checkbox-input
+      formControlName="addons"
+      title="Customizable profile"
+      subtitle="Custom theme on your profile"
+      [price]="price3"
+    />
+  </form>
+  <div class="step-3-form-buttons">
+    <app-additional-button (click)="goBack()">Go Back</app-additional-button>
+    <app-primary-button class="form-button" type="submit" (click)="submit()"
+      >Next Step</app-primary-button
+    >
+  </div>
+</section>

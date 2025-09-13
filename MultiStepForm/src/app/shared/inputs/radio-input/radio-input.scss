@@ -1,0 +1,46 @@
+.radio-input-container {
+  display: flex;
+  gap: 1.8rem;
+
+  .input-container {
+    border: 1px solid var(--purple-200);
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 5rem;
+    justify-content: space-between;
+    padding: 1.8rem;
+    transition-duration: 0.25s;
+    width: 100%;
+
+    &:hover {
+      cursor: pointer;
+    }
+
+    &.active {
+      background-color: var(--blue-50);
+      border: 1px solid var(--purple-600);
+    }
+
+    input {
+      display: none;
+    }
+
+    img {
+      width: 4rem;
+    }
+
+    .radio-input-text {
+      display: flex;
+      flex-direction: column;
+
+      p {
+        color: var(--blue-950);
+      }
+
+      span {
+        color: var(--grey-500);
+      }
+    }
+  }
+}

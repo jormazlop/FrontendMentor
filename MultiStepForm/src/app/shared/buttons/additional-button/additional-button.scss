@@ -1,0 +1,14 @@
+.additional-button-container {
+  background: none;
+  border: none;
+  color: var(--grey-500);
+  transition-duration: 0.25s;
+
+  &:hover {
+    color: var(--blue-950);
+  }
+
+  &:active {
+    transform: scale(0.95);
+  }
+}

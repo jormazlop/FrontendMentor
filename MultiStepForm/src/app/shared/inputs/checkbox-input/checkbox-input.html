@@ -1,0 +1,16 @@
+<label [for]="id" class="checkbox-input-container">
+  <input
+    type="checkbox"
+    [id]="id"
+    [value]="value()"
+    [(ngModel)]="model"
+  />
+  <div class="checkbox-title">
+    <p class="text-3-m checkbox-title">{{ title() }}</p>
+    <span class="text-4-m">{{ subtitle() }}</span>
+  </div>
+
+  <span class="text-4-m checkbox-price">
+    {{ price() }}
+  </span>
+</label>

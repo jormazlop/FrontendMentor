@@ -1,0 +1,42 @@
+:host {
+  width: 100%;
+
+  @media (width < 800px) {
+    background-color: var(--white);
+    border-radius: 15px;
+    position: relative;
+    z-index: 2;
+  }
+}
+
+.step-3-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 3rem;
+  height: 55rem;
+  padding: 4rem;
+
+  .step-3-title {
+    .title {
+      color: var(--blue-950);
+    }
+
+    .subtitle {
+      color: var(--grey-500);
+    }
+  }
+
+  .step-3-form-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .step-3-form-buttons {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+  }
+}

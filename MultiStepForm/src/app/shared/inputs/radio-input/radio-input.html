@@ -1,0 +1,20 @@
+<div class="radio-input-container">
+  <label
+    class="input-container"
+    [for]="id"
+    [class.active]="innerControl.value == value()"
+  >
+    <input
+      type="radio"
+      [id]="id"
+      [value]="value()"
+      [name]="name()"
+      [formControl]="innerControl"
+    />
+    <img [src]="image()" alt="Images" />
+    <div class="radio-input-text">
+      <p class="text-3-m">{{ type() }}</p>
+      <span class="text-4-m">${{ price() }}/mo</span>
+    </div>
+  </label>
+</div>

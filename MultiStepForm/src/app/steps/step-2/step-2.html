@@ -1,0 +1,40 @@
+<section class="step-2-container">
+  <hgroup class="step-2-title">
+    <h1 class="title text-1">Select your plan</h1>
+    <p class="subtitle text-3-r">
+      You have the option of monthly or yearly billing.
+    </p>
+  </hgroup>
+  <form [formGroup]="step2" class="step-2-form-container">
+    <div class="step-2-plan-type">
+      <app-radio-input
+        formControlName="plan"
+        type="Arcade"
+        price="9"
+        name="type-plan"
+        image="images/icon-arcade.svg"
+      />
+      <app-radio-input
+        formControlName="plan"
+        type="Advanced"
+        price="12"
+        name="type-plan"
+        image="images/icon-advanced.svg"
+      />
+      <app-radio-input
+        formControlName="plan"
+        type="Pro"
+        price="15"
+        name="type-plan"
+        image="images/icon-pro.svg"
+      />
+    </div>
+    <app-toggle-input formControlName="type" />
+  </form>
+  <div class="step-2-form-buttons">
+    <app-additional-button (click)="goBack()">Go Back</app-additional-button>
+    <app-primary-button class="form-button" type="submit" (click)="submit()"
+      >Next Step</app-primary-button
+    >
+  </div>
+</section>

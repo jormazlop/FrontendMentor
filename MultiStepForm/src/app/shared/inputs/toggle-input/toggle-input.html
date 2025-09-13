@@ -1,0 +1,8 @@
+<div class="toggle-input-container">
+  <p class="text-4-b" [class.active]="!innerControl.value">Monthly</p>
+  <label class="toggle-input">
+    <input type="checkbox" [formControl]="innerControl"/>
+    <span class="slider round"></span>
+  </label>
+  <p class="text-4-b" [class.active]="innerControl.value">Yearly</p>
+</div>

@@ -1,0 +1,29 @@
+<section class="step-1-container">
+  <hgroup class="step-1-title">
+    <h1 class="title text-1">Personal Info</h1>
+    <p class="subtitle text-3-r">
+      Please provide your name, email address, and phone number.
+    </p>
+  </hgroup>
+
+  <form [formGroup]="step1" class="step-1-form">
+    <app-text-input
+      formControlName="name"
+      label="Name"
+      placeholder="e.g. Stephen King"
+    />
+    <app-text-input
+      formControlName="mail"
+      label="Email Address"
+      placeholder="e.g. stephenking@lorem.com"
+    />
+    <app-text-input
+      formControlName="phone"
+      label="Phone Number"
+      placeholder="e.g. +1 234 567 890"
+    />
+  </form>
+  <app-primary-button class="form-button" type="submit" (click)="submit()"
+    >Next Step</app-primary-button
+  >
+</section>
