@@ -1,0 +1,116 @@
+@font-face {
+  font-family: 'DMSans';
+  src: url('/fonts/DM_Sans/DMSans.ttf') format('opentype');
+}
+
+@font-face {
+  font-family: 'DMSans-Italic';
+  src: url('/fonts/DM_Sans/DMSans-Italic.ttf') format('opentype');
+}
+
+@font-face {
+  font-family: 'BricolageGrotesque';
+  src: url('/fonts/Bricolage_Grotesque/BricolageGrotesque.ttf') format('opentype');
+}
+
+:root {
+  --neutral-900: #02012c;
+  --neutral-800: #262540;
+  --neutral-700: #302f4a;
+  --neutral-600: #3c3b5e;
+  --neutral-300: #acacb7;
+  --neutral-200: #d4d3d9;
+  --neutral-0: #ffffff;
+
+  --orange-500: #ff820a;
+
+  --blue-500: #4658d9;
+  --blue-700: #2b1b9c;
+}
+
+.text-1 {
+  font-family: 'DMSans-Italic';
+  font-size: 9.6rem;
+  font-weight: 700;
+  letter-spacing: -2px;
+  line-height: 100%;
+}
+
+.text-2 {
+  font-family: 'BricolageGrotesque';
+  font-size: 5.2rem;
+  font-weight: bold;
+  letter-spacing: 0;
+  line-height: 120%;
+}
+
+.text-3 {
+  font-family: 'DMSans';
+  font-size: 3.2rem;
+  font-weight: 300;
+  letter-spacing: 0;
+  line-height: 100%;
+}
+
+.text-4 {
+  font-family: 'DMSans';
+  font-size: 2.8rem;
+  font-weight: bold;
+  letter-spacing: 0;
+  line-height: 120%;
+}
+
+.text-5 {
+  font-family: 'DMSans';
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: 0;
+  line-height: 120%;
+}
+
+.text-5-m {
+  font-family: 'DMSans';
+  font-size: 2rem;
+  font-weight: 500;
+  letter-spacing: 0;
+  line-height: 120%;
+}
+
+.text-6 {
+  font-family: 'DMSans';
+  font-size: 1.8rem;
+  font-weight: 500;
+  letter-spacing: 0;
+  line-height: 120%;
+}
+
+.text-7 {
+  font-family: 'DMSans';
+  font-size: 1.6rem;
+  font-weight: 500;
+  letter-spacing: 0;
+  line-height: 120%;
+}
+
+.text-8 {
+  font-family: 'DMSans';
+  font-size: 1.4rem;
+  font-weight: 500;
+  letter-spacing: 0;
+  line-height: 120%;
+}
+
+p, legend, ul {
+  margin: 0;
+  padding: 0;
+}
+
+
+@keyframes loading {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

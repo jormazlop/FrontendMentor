@@ -1,0 +1,17 @@
+<section class="hourly-container">
+  <div class="hourly-header">
+    <p class="text-5">Hourly forecast</p>
+    <app-day-button (clickDay)="onSelectDay($event)" />
+  </div>
+  <ul class="hourly-body">
+    @for(index of index(); track $index) { @let image = `/images/icon-${codes()[index]}.webp`;
+    <li class="hourly-item">
+      <p class="text-5-m hourly-weather">
+        <img [src]="image" [alt]="codes()[index]" />
+        <span>{{ time()[index] | date : 'h a' }}</span>
+      </p>
+      <p class="text-7">{{ temperatures()[index] }}{{ unit() | temperature }}</p>
+    </li>
+    }
+  </ul>
+</section>

@@ -1,0 +1,27 @@
+<button class="day-button" (click)="clickMenu()">
+  <p class="text-7">{{ selectedDay() | titlecase }}</p>
+  <img
+    class="icon-arrow"
+    src="/images/icon-dropdown.svg"
+    alt="Units Dropdown Arrow"
+    [class.active]="open()"
+  />
+</button>
+
+@if(open()) {
+<menu class="dropdown-container text-7" (clickOutside)="closeMenu()">
+  <fieldset class="fieldset-container">
+    @for(day of dayList; track $index) {
+    <label
+      [for]="day"
+      class="input-radio-container text-7"
+      [class.active]="selectedDay() == day"
+      (click)="closeMenu()"
+    >
+      <input type="radio" [id]="day" name="day" [value]="day" [(ngModel)]="selectedDay" />
+      <p>{{ day | titlecase }}</p>
+    </label>
+    }
+  </fieldset>
+</menu>
+}

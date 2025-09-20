@@ -1,0 +1,131 @@
+:host {
+  display: flex;
+  gap: 1.6rem;
+}
+
+.search-container {
+  display: flex;
+  position: relative;
+  width: 52.6rem;
+
+  @media (width < 700px) {
+    width: 40rem;
+  }
+
+  &::before {
+    background-image: url('/images/icon-search.svg');
+    content: '';
+    height: 2.1rem;
+    left: 2.4rem;
+    position: absolute;
+    top: 1.8rem;
+    width: 2.1rem;
+
+    @media (width < 700px) {
+      height: 2.5rem;
+      left: 1.4rem;
+      width: 2.5rem;
+    }
+
+    @media (width < 500px) {
+      height: 3rem;
+      transform: scale(0.6);
+      top: 1.4rem;
+      width: 3rem;
+    }
+  }
+
+  input {
+    background-color: var(--neutral-800);
+    border: none;
+    border-radius: 12px;
+    color: var(--neutral-200);
+    padding: 1.7rem 2.4rem 1.7rem 6rem;
+    width: 100%;
+
+    &::placeholder {
+      color: var(--neutral-200);
+    }
+  }
+
+  .autocomplete-container {
+    background-color: var(--neutral-800);
+    border-radius: 12px;
+    padding: 0.8rem;
+    position: absolute;
+    top: 7rem;
+    width: 100%;
+    z-index: 2;
+
+    .loading {
+      color: var(--neutral-0);
+      display: flex;
+      gap: 1rem;
+      padding: 1rem 0.8rem;
+
+      img {
+        animation: loading 2s linear infinite;
+      }
+    }
+
+    .autocomplete-list {
+      color: var(--neutral-0);
+      list-style: none;
+      max-height: 18rem;
+      overflow-y: auto;
+      scrollbar-color: var(--neutral-600) var(--neutral-800);
+      scrollbar-width: thin;
+
+      .autocomplete-item {
+        align-items: center;
+        border: 1px solid transparent;
+        border-radius: 8px;
+        display: flex;
+        justify-content: space-between;
+        padding: 1rem 2rem;
+        transition-duration: 0.25s;
+
+        .autocomplete-info {
+          display: flex;
+          gap: 2rem;
+
+          .autocomplete-country {
+            opacity: 0.7;
+          }
+
+          .autocomplete-admin {
+            opacity: 0.5;
+          }
+        }
+
+        .autotomplete-flag {
+          width: 2rem;
+        }
+
+        &:hover {
+          background-color: var(--neutral-700);
+          border: 1px solid var(--neutral-600);
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}
+
+.button-search {
+  background-color: var(--blue-500);
+  border-radius: 12px;
+  border: none;
+  color: var(--neutral-0);
+  padding: 1.6rem 2.4rem;
+  transition-duration: 0.25s;
+  transition-property: background-color;
+
+  &:hover {
+    background-color: var(--blue-700);
+  }
+
+  &:active {
+    transform: translate(1px, 1px);
+  }
+}

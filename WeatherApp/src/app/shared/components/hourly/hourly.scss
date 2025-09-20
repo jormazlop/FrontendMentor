@@ -1,0 +1,47 @@
+.hourly-container {
+  background-color: var(--neutral-800);
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+  height: 100%;
+  padding: 2.4rem;
+  max-height: 70vh;
+
+  .hourly-header {
+    align-items: center;
+    color: var(--neutral-0);
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .hourly-body {
+    color: var(--neutral-0);
+    display: flex;
+    flex-direction: column;
+    gap: 1.6rem;
+    overflow-y: auto;
+    scrollbar-color: var(--neutral-600) var(--neutral-800);
+    scrollbar-width: thin;
+
+    .hourly-item {
+      align-items: center;
+      background-color: var(--neutral-700);
+      border: 1px solid var(--neutral-600);
+      border-radius: 8px;
+      display: flex;
+      justify-content: space-between;
+      padding: 1rem 1.2rem;
+
+      .hourly-weather {
+        align-items: center;
+        display: flex;
+        gap: 1rem;
+
+        img {
+          width: 4rem;
+        }
+      }
+    }
+  }
+}

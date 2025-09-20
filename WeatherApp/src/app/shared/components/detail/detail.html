@@ -1,0 +1,26 @@
+<section class="detail-container">
+  <div class="detail-main">
+    <div class="detail-description">
+      @let title = `${(selectedResult().name | titlecase)}, ${(selectedResult().country == '' ?
+      selectedResult().admin1: selectedResult().country | titlecase)}`;
+      <p class="text-4">{{ title }}</p>
+      @let subtitle = `${(detail().current.time | date:'EEEE, MMM d, y')}`;
+      <span class="text-7">{{ subtitle }}</span>
+    </div>
+    <div class="detail-temperature">
+      @let image = `/images/icon-${weatherCode()}.webp`;
+      <img [src]="image" [alt]="weatherCode()" />
+      @let temp = `${detail().current.temperature_2m}${detail().current_units.temperature_2m |
+      temperature}`;
+      <p class="text-1">{{ temp }}</p>
+    </div>
+  </div>
+  <ul class="detail-items">
+    @for(item of items(); track item.text) {
+    <li>
+      <span class="text-6">{{ item.text }}</span>
+      <p class="text-3">{{ item.value }}</p>
+    </li>
+    }
+  </ul>
+</section>

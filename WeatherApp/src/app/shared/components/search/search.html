@@ -1,0 +1,31 @@
+<div class="search-container text-5">
+  <input type="text" placeholder="Search for a place..." [(ngModel)]="search" />
+
+  @if(loading()) {
+  <div class="autocomplete-container" (clickOutside)="closeAutocomplete()">
+    <div class="loading text-7">
+      <img src="/images/icon-loading.svg" alt="Loading Autocomplete" />
+      <p>Search in progress</p>
+    </div>
+  </div>
+  } @else if(searchResults().length) {
+  <div class="autocomplete-container" (clickOutside)="closeAutocomplete()">
+    <ul class="autocomplete-list">
+      @for(result of searchResults(); track result.id) {
+      <li class="autocomplete-item text-7" (click)="searchDetail(result)">
+        <div class="autocomplete-info">
+          <p>{{ result.name }}</p>
+          <span class="autocomplete-country">{{ result.country }}</span>
+          <span class="autocomplete-admin">{{ result.admin1 }}</span>
+        </div>
+        @let image =
+        `https://open-meteo.com/images/country-flags/${result.country_code.toLowerCase()}.svg`; @let
+        alt = `Flag ${result.country}`;
+        <img class="autotomplete-flag" [src]="image" [alt]="alt" />
+      </li>
+      }
+    </ul>
+  </div>
+  }
+</div>
+<button class="button-search text-5-m" (click)="searchAutocomplete()">Search</button>

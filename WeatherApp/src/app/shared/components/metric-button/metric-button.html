@@ -1,0 +1,99 @@
+<button class="unit-button" (click)="clickMenu()">
+  <img class="icon-units" src="/images/icon-units.svg" alt="Units Dropdown Icon" />
+  <p class="text-7">Units</p>
+  <img
+    class="icon-arrow"
+    src="/images/icon-dropdown.svg"
+    alt="Units Dropdown Arrow"
+    [class.active]="open()"
+  />
+</button>
+
+@if(open()) {
+<menu class="dropdown-container text-7" (clickOutside)="closeMenu()">
+  @let title = `Switch to ${(unit() | titlecase)}`;
+  <button class="switch-button" (click)="changeUnit()">{{ title }}</button>
+
+  <fieldset class="fieldset-container">
+    <legend class="dropdown-legend text-8">Temperature</legend>
+    <label
+      for="celsius"
+      class="input-radio-container text-7"
+      [class.active]="temperature() == 'celsius'"
+    >
+      <input
+        type="radio"
+        id="celsius"
+        name="temperature"
+        value="celsius"
+        [(ngModel)]="temperature"
+      />
+      <p>Celsius (°C)</p>
+      <img src="images/icon-checkmark.svg" alt="Check" />
+    </label>
+    <label
+      for="fahrenheit"
+      class="input-radio-container text-7"
+      [class.active]="temperature() == 'fahrenheit'"
+    >
+      <input
+        type="radio"
+        id="fahrenheit"
+        name="temperature"
+        value="fahrenheit"
+        [(ngModel)]="temperature"
+      />
+      <p>Fahrenheit (°F)</p>
+      <img src="images/icon-checkmark.svg" alt="Check" />
+    </label>
+  </fieldset>
+  <hr class="separator" />
+  <fieldset class="fieldset-container">
+    <legend class="dropdown-legend text-8">Wind Speed</legend>
+    <label for="kmh" class="input-radio-container text-7" [class.active]="wind() == 'kmh'">
+      <input type="radio" id="kmh" name="wind" value="kmh" [(ngModel)]="wind" />
+      <p>km/h</p>
+      <img src="images/icon-checkmark.svg" alt="Check" />
+    </label>
+    <label for="mph" class="input-radio-container text-7" [class.active]="wind() == 'mph'">
+      <input type="radio" id="mph" name="wind" value="mph" [(ngModel)]="wind" />
+      <p>mph</p>
+      <img src="images/icon-checkmark.svg" alt="Check" />
+    </label>
+  </fieldset>
+  <hr class="separator" />
+  <fieldset class="fieldset-container">
+    <legend class="dropdown-legend text-8">Precipitation</legend>
+    <label
+      for="mm"
+      class="input-radio-container text-7"
+      [class.active]="precipitation() == 'mm'"
+    >
+      <input
+        type="radio"
+        id="mm"
+        name="precipitation"
+        value="mm"
+        [(ngModel)]="precipitation"
+      />
+      <p>Millimeters (mm)</p>
+      <img src="images/icon-checkmark.svg" alt="Check" />
+    </label>
+    <label
+      for="inch"
+      class="input-radio-container text-7"
+      [class.active]="precipitation() == 'inch'"
+    >
+      <input
+        type="radio"
+        id="inch"
+        name="precipitation"
+        value="inch"
+        [(ngModel)]="precipitation"
+      />
+      <p>Inches (in)</p>
+      <img src="images/icon-checkmark.svg" alt="Check" />
+    </label>
+  </fieldset>
+</menu>
+}

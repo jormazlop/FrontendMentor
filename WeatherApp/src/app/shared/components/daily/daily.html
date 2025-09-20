@@ -1,0 +1,17 @@
+<section class="daily-container">
+  <p class="text-5">Daily forecast</p>
+  <ul class="daily-list">
+    @for(day of days(); track $index) {
+      <li class="daily-item">
+        <p class="text-6">{{ days()[$index] | date: 'EEE' }}</p>
+        @let image = `/images/icon-${weathers()[$index]}.webp`;
+        <img [src]="image" [alt]="weathers()[$index]">
+
+        <p class="text-7 temperatures">
+          <span>{{ maxs()[$index] }}{{ unit() | temperature }}</span>
+          <span>{{ mins()[$index] }}{{ unit() | temperature }}</span>
+        </p>
+      </li>
+    }
+  </ul>
+</section>

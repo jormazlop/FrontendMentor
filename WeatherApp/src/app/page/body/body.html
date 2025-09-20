@@ -1,0 +1,24 @@
+<main class="body-container">
+  <app-search />
+  @if(loadingDetail()) {
+
+  <div class="loading text-2">
+    <img src="/images/icon-loading.svg" alt="Loading Detail" />
+    <p>Search in progress</p>
+  </div>
+
+  } @else if(noResultFound()) {
+  <div class="no-result text-2">
+    <img src="/images/icon-error.svg" alt="No result Found" />
+    <p>No search result found!</p>
+  </div>
+  }
+
+  @else {
+  <div class="weather-container">
+    <app-detail />
+    <app-daily />
+    <app-hourly />
+  </div>
+  }
+</main>
