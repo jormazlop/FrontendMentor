@@ -1,0 +1,5 @@
+<form class="filter-options" [formGroup]="filterGroup">
+  <app-select-input formControlName="prepTime" placeholder="Max Prep Time" [values]="[0, 5, 10]"/>
+  <app-select-input formControlName="cookTime" placeholder="Max Cook Time" [values]="[0, 5, 10, 15, 20]"/>
+</form>
+<app-text-input [(ngModel)]="search" placeholder="Search by name or ingredient…"/>

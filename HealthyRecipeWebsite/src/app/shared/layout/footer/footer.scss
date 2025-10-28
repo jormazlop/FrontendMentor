@@ -1,0 +1,22 @@
+:host {
+  position: static;
+}
+
+.footer-container {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  padding: 3rem 10rem;
+
+  p {
+    color: var(--neutral-900);
+  }
+
+  .footer-icons {
+    display: flex;
+    gap: 2.4rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+}

@@ -1,0 +1,40 @@
+:host {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+
+  @media (width < 1050px) {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 4rem;
+  }
+}
+
+.beyond-title {
+  color: var(--neutral-900);
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  width: 40%;
+
+  ul {
+    color: var(--neutral-800);
+    padding-left: 3.5rem;
+  }
+
+  @media (width < 1050px) {
+    width: 100%;
+  }
+}
+
+.image-container {
+  border-radius: 16px;
+  display: flex;
+
+  img {
+    border-radius: 16px;
+    height: 45rem;
+    width: 100%;
+  }
+}

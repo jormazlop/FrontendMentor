@@ -1,0 +1,11 @@
+.detail-container {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+  padding: 8rem 12.4rem;
+
+  @media(width < 1050px) {
+    padding: 4.8rem 3.2rem;
+  }
+}

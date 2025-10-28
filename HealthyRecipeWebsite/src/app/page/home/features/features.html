@@ -1,0 +1,11 @@
+<h2 class="text-2">What you’ll get</h2>
+<ul class="features-list">
+  @for(feature of features; track feature.title) {
+  <li>
+    @let image = `/images/${feature.image}`;
+    <img [src]="image" alt="Whole Food" />
+    <h3 class="text-3">{{ feature.title }}</h3>
+    <p class="text-6">{{ feature.description }}</p>
+  </li>
+  }
+</ul>

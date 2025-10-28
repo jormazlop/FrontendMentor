@@ -1,0 +1,9 @@
+<h2 class="text-2">{{ title() }}</h2>
+<ul class="mission-list">
+  @for(mission of missions(); track mission.title) {
+  <li>
+    <h4 class="text-4">{{ mission.title }}</h4>
+    <p class="text-6">{{ mission.description }}</p>
+  </li>
+  }
+</ul>

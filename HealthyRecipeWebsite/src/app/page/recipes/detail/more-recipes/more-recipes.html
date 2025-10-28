@@ -1,0 +1,5 @@
+<ul class="more-recipes-container">
+  @for(recipe of suggestions(); track recipe.id) {
+  <li><app-recipe-card [recipe]="recipe" (viewRecipe)="onViewRecipe($event)" /></li>
+  }
+</ul>

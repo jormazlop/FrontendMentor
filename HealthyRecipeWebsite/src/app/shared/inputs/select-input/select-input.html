@@ -1,0 +1,23 @@
+@let controlValue = innerControl.value;
+
+<button class="select-button text-7" (click)="openOptions()" (clickOutside)="closeOptions()">
+  <p>{{ controlValue ?? placeholder() }}</p>
+  <img src="/images/icon-chevron-down.svg" alt="Arrow Down" />
+</button>
+<ul class="option-list" [class.hide]="!open()">
+  @for (value of values(); track $index) {
+    @let showValue = `${value} minutes`;
+  <li class="text-7">
+    <label
+      ><input
+        type="radio"
+        [formControl]="innerControl"
+        [value]="value"
+        [name]="id + value.toString()"
+        [checked]="controlValue === value"
+      />{{ showValue }}</label
+    >
+  </li>
+  }
+  <li class="text-9"><button (click)="onClear()">Clear</button></li>
+</ul>

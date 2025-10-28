@@ -1,0 +1,17 @@
+:host {
+  position: relative;
+}
+
+input {
+  border: 1px solid var(--neutral-300);
+  border-radius: 10px;
+  color: var(--neutral-900);
+  padding: 1rem 3rem 1rem 4.4rem;
+  width: 33rem;
+}
+
+img {
+  position: absolute;
+  left: 1.5rem;
+  top: 1.5rem;
+}

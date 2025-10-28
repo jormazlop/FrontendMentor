@@ -1,0 +1,47 @@
+:host {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+
+  @media (width < 1050px) {
+    align-items: flex-start;
+  }
+}
+
+.home-title {
+  color: var(--neutral-900);
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+
+  @media (width < 1050px) {
+    align-items: flex-start;
+
+    br {
+      display: none;
+    }
+  }
+
+  span {
+    position: relative;
+    z-index: 0;
+    &::after {
+      background-color: var(--orange-500);
+      border-radius: 4px;
+      bottom: 0;
+      content: '';
+      height: 45%;
+      left: 0;
+      opacity: 0.4;
+      position: absolute;
+      width: 100%;
+      z-index: -1;
+    }
+  }
+
+  p {
+    color: var(--neutral-800);
+    text-align: center;
+  }
+}

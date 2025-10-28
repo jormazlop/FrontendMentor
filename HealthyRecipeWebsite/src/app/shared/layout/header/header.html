@@ -1,0 +1,33 @@
+<header class="header-container">
+  <app-logo />
+  <nav class="navigation-menu">
+    <button class="navigation-button text-7" routerLink="home" routerLinkActive="active">
+      Home
+    </button>
+    <button class="navigation-button text-7" routerLink="about" routerLinkActive="active">
+      About
+    </button>
+    <button class="navigation-button text-7" routerLink="recipes" routerLinkActive="active">
+      Recipes
+    </button>
+  </nav>
+  <app-button routerLink="recipes">Browse recipes</app-button>
+  <button class="button-responsive" (click)="openMenu()">
+    <img src="/images/icon-hamburger-menu.svg" alt="Menu Responsive" />
+  </button>
+
+  @if(responsiveMenu()) {
+  <nav class="navigation-menu-responsive" (clickOutside)="closeMenu()">
+    <button class="navigation-button text-7" routerLink="home" routerLinkActive="active" (click)="closeMenu()">
+      Home
+    </button>
+    <button class="navigation-button text-7" routerLink="about" routerLinkActive="active" (click)="closeMenu()">
+      About
+    </button>
+    <button class="navigation-button text-7" routerLink="recipes" routerLinkActive="active" (click)="closeMenu()">
+      Recipes
+    </button>
+    <app-button routerLink="recipes" (click)="closeMenu()">Browse recipes</app-button>
+  </nav>
+  }
+</header>

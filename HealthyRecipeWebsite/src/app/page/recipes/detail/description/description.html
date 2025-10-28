@@ -1,0 +1,42 @@
+<p class="text-7 description-title"><span>Recipes /</span> {{ recipe().title }}</p>
+<div class="description-main-container">
+  @let imageL = `${recipe().image.large}`; @let imageS = `${recipe().image.small}`;
+  <picture class="image-container">
+    <source media="(width < 1050px)" [srcset]="imageS" />
+    <source media="(width >= 1050px)" [srcset]="imageL" />
+    <img [src]="imageL" alt="Recipe Image" />
+  </picture>
+  <div class="description-info">
+    <h2 class="text-2">{{ recipe().title }}</h2>
+    <p class="text-6">{{ recipe().overview }}</p>
+    <ul class="description-prep-info">
+      <li class="text-9">
+        <img src="/images/icon-servings.svg" alt="Servings" /> Servings: {{ recipe().servings }}
+      </li>
+      <li class="text-9">
+        <img src="/images/icon-prep-time.svg" alt="Prep Time" /> Prep:
+        {{ recipe().prepMinutes }} mins
+      </li>
+      <li class="text-9">
+        <img src="/images/icon-cook-time.svg" alt="Cook Time" /> Cook:
+        {{ recipe().cookMinutes }} mins
+      </li>
+    </ul>
+    <h4 class="text-4">Ingredients:</h4>
+    <ul class="ingredients-instructions-list">
+      @for(ingredient of recipe().ingredients; track $index) {
+      <li>
+        <p class="text-6">{{ ingredient }}</p>
+      </li>
+      }
+    </ul>
+    <h4 class="text-4">Instructions:</h4>
+    <ul class="ingredients-instructions-list">
+      @for(instruction of recipe().instructions; track $index) {
+      <li>
+        <p class="text-6">{{ instruction }}</p>
+      </li>
+      }
+    </ul>
+  </div>
+</div>

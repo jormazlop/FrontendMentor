@@ -1,0 +1,17 @@
+<div class="recipe-card-container">
+  @let imageL = `${recipe().image.large}`;
+  @let imageS = `${recipe().image.small}`;
+  <picture class="image-container">
+    <source media="(width < 1050px)" [srcset]="imageS" />
+    <source media="(width >= 1050px)" [srcset]="imageL" />
+    <img [src]="imageL" alt="Recipe Image" />
+  </picture>
+  <h5 class="text-5">{{ recipe().title }}</h5>
+  <p class="text-9">{{ recipe().overview }}</p>
+  <ul class="recipe-card-info">
+    <li class="text-9"> <img src="/images/icon-servings.svg" alt="Servings"> Servings: {{ recipe().servings }}</li>
+    <li class="text-9"> <img src="/images/icon-prep-time.svg" alt="Prep Time"> Prep: {{ recipe().prepMinutes }} mins</li>
+    <li class="text-9"> <img src="/images/icon-cook-time.svg" alt="Cook Time"> Cook: {{ recipe().cookMinutes }} mins</li>
+  </ul>
+  <app-button [recipe]="true" (click)="onViewRecipe()">View Recipe</app-button>
+</div>
