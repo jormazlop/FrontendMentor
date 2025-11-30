@@ -1,0 +1,23 @@
+<section class="build-manage-container">
+  <div class="build-manage-title">
+    <div class="build-manage-rectangle"></div>
+    <h2 class="h2">
+      Build & manage <br>
+      distributed teams <br>
+      like no one else.
+    </h2>
+  </div>
+  <ul class="build-manage-features">
+    @for(feature of features; track feature) {
+      <li class="build-manage-feature">
+        <img [src]="feature.image" [alt]="feature.title">
+        <hgroup>
+          <h3 class="h3">{{ feature.title }}</h3>
+          <p class="body-2">
+            {{ feature.description }}
+          </p>
+        </hgroup>
+      </li>
+    }
+  </ul>
+</section>

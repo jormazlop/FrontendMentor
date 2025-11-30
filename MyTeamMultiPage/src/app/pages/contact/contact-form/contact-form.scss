@@ -1,0 +1,8 @@
+.contact-form-container {
+  display: flex;
+  flex-direction: column;
+
+  app-button {
+    margin-top: 5rem;
+  }
+}

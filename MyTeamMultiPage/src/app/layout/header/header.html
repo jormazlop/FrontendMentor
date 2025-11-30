@@ -1,0 +1,17 @@
+<header class="header-container">
+  <div class="header-logo-nav">
+    <img src="/images/logo.svg" alt="Logo" />
+    <ul class="header-nav h3">
+      <li><a routerLink="home" routerLinkActive="active">home</a></li>
+      <li><a routerLink="about" routerLinkActive="active">about</a></li>
+    </ul>
+  </div>
+  <app-button routerLink="contact">contact us</app-button>
+  <button class="responsive-button" (click)="changeMenu()">
+    @if(menu()) {
+      <img src="/images/icon-close.svg" alt="Close Menu" />
+    } @else {
+      <img src="/images/icon-hamburger.svg" alt="Open Menu" />
+    }
+  </button>
+</header>

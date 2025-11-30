@@ -1,0 +1,16 @@
+<input
+  class="body-2"
+  type="text"
+  [(ngModel)]="value"
+  [placeholder]="placeholder()"
+  [class.empty]="!value()"
+  [class.error]="errors().length"
+  (keyup)="onTouch()"
+/>
+
+@if(touched()) {
+  @for(error of errors(); track error) {
+    <span class="body-2">{{ error.message }}</span>
+  }
+}
+

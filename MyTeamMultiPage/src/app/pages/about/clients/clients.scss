@@ -1,0 +1,41 @@
+.clients-container {
+  align-items: center;
+  background-color: var(--sacramento-state-green);
+  background-image: url('/images/bg-pattern-about-4.svg');
+  background-repeat: no-repeat;
+  color: var(--white);
+  display: flex;
+  flex-direction: column;
+  gap: 7rem;
+  padding: 15rem 20rem;
+
+  @media (width < 1250px) {
+    padding: 15rem 10rem;
+  }
+
+  @media (width < 700px) {
+    background-image: url('/images/bg-pattern-about-4.svg');
+    background-repeat: no-repeat;
+    background-position: -14rem -14rem;
+    padding: 15rem 2rem 10rem;
+  }
+
+  .clients-list {
+    display: flex;
+    gap: 10rem;
+    list-style: none;
+
+    @media(width < 1450px) {
+      gap: 3rem;
+    }
+
+    @media (width < 1000px) {
+      flex-direction: column;
+      gap: 7rem;
+    }
+
+    img {
+      width: 100%;
+    }
+  }
+}

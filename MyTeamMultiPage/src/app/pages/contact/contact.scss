@@ -1,0 +1,33 @@
+:host {
+  background-image: url('/images/bg-pattern-about-2-contact-1.svg'),
+    url('/images/bg-pattern-contact-2.svg');
+  background-position: -10rem 20%, calc(100% + 10rem) 100%;
+  background-repeat: no-repeat;
+  display: flex;
+  padding: 5rem 20rem;
+  height: fit-content;
+  min-height: 100%;
+
+  @media (width < 1250px) {
+    padding: 5rem 10rem;
+  }
+
+  @media (width < 1000px) {
+    align-items: center;
+    background-image: url('/images/bg-pattern-contact-2.svg');
+    background-position: calc(100% + 10rem) calc(100% + 10rem);
+    background-repeat: no-repeat;
+    flex-direction: column;
+    gap: 4rem;
+    padding: 5rem 10rem 15rem;
+  }
+
+  app-contact-about,
+  app-contact-form {
+    width: 50%;
+
+    @media (width < 1000px) {
+      width: 100%;
+    }
+  }
+}

@@ -1,0 +1,18 @@
+<app-header />
+<main class="page-container">
+  <router-outlet />
+</main>
+<app-footer />
+
+@if(menu()) {
+<div class="responsive-menu">
+  <button (click)="changeMenu()">
+    <img src="/images/icon-close.svg" alt="Close Menu" />
+  </button>
+  <ul class="header-nav h3">
+    <li><a routerLink="home" routerLinkActive="active" (click)="changeMenu()">home</a></li>
+    <li><a routerLink="about" routerLinkActive="active" (click)="changeMenu()">about</a></li>
+  </ul>
+  <app-button routerLink="contact" (click)="changeMenu()">contact us</app-button>
+</div>
+}

@@ -1,0 +1,9 @@
+<form class="contact-form-container" (submit)="onSubmit($event)">
+  <app-text-input [field]="form.name" placeholder="Name"/>
+  <app-text-input [field]="form.email" placeholder="Email Address"/>
+  <app-text-input [field]="form.company" placeholder="Company Name"/>
+  <app-text-input [field]="form.title" placeholder="Title"/>
+  <app-textarea-input [field]="form.message" placeholder="Message" />
+  <app-button>submit</app-button>
+</form>
+

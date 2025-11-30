@@ -1,0 +1,24 @@
+<section class="meet-directors-container">
+  <h2 class="h2">Meet the directors</h2>
+  <div class="meet-directors-list">
+    @for(director of directors; track director) {
+    <app-card>
+      <ng-container no-detail>
+        <img [src]="director.image" [alt]="director.name" />
+        <h3 class="h3">{{ director.name }}</h3>
+        <span class="body-2">{{ director.position }}</span>
+      </ng-container>
+      <ng-container detail>
+        <h3 class="h3">{{ director.name }}</h3>
+        <p class="body-2">
+          {{ director.description }}
+        </p>
+        <div class="card-icons">
+          <app-twitter />
+          <app-linkedin />
+        </div>
+      </ng-container>
+    </app-card>
+    }
+  </div>
+</section>

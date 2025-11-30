@@ -1,0 +1,14 @@
+html,
+body {
+  font-size: 10px;
+  height: 100vh;
+  max-height: 100vh;
+
+  @media (width < 600px) {
+    font-size: 8px;
+  }
+
+  @media (width < 450px) {
+    font-size: 6px;
+  }
+}

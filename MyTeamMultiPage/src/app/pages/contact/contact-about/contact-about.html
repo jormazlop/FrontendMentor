@@ -1,0 +1,12 @@
+<section class="contact-about-container">
+  <h1 class="h1">Contact</h1>
+  <h2 class="h2">Ask us about</h2>
+  <ul class="about-list">
+    @for(about of abouts; track about) {
+      <li class="about-item">
+        <img [src]="about.image" alt="About">
+        <span class="body-1">{{ about.description }}</span>
+      </li>
+    }
+  </ul>
+</section>

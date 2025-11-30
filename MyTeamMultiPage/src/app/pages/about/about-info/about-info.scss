@@ -1,0 +1,48 @@
+.about-info-container {
+  align-items: center;
+  background-image: url('/images/bg-pattern-about-1-mobile-nav-1.svg');
+  background-position: calc(100% + 10rem) 100%;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: space-between;
+  padding: 10rem 20rem 15rem;
+
+  @media (width < 1250px) {
+    padding: 5rem 10rem 15rem;
+  }
+
+  @media (width < 1000px) {
+    flex-direction: column;
+    gap: 2.5rem;
+    text-align: center;
+  }
+
+  @media (width < 700px) {
+    background-image: url('/images/bg-pattern-about-1-mobile-nav-1.svg');
+    background-position: 50% calc(100% + 15rem);
+    background-repeat: no-repeat;
+    padding: 5rem 2rem 15rem;
+  }
+
+  .h1 {
+    color: var(--white);
+  }
+
+  .about-info-description {
+    color: var(--white);
+    display: flex;
+    flex-direction: column;
+    gap: 8rem;
+    justify-content: space-between;
+
+    .about-info-rectangle {
+      background-color: var(--light-coral);
+      height: 4px;
+      width: 5rem;
+
+      @media (width < 1000px) {
+        display: none;
+      }
+    }
+  }
+}

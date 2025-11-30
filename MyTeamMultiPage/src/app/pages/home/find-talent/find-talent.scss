@@ -1,0 +1,52 @@
+.find-talent-container {
+  align-items: center;
+  background: url('/images/bg-pattern-home-1.svg'), url('/images/bg-pattern-home-2.svg');
+  background-repeat: no-repeat;
+  background-position: -10rem 6rem, 85% 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 10rem 20rem 15rem;
+
+  @media (width < 1250px) {
+    padding: 5rem 10rem 15rem;
+  }
+
+  @media (width < 1000px) {
+    background: url('/images/bg-pattern-home-2.svg');
+    background-position: 50% 100%;
+    background-repeat: no-repeat;
+    flex-direction: column;
+    gap: 2.5rem;
+    text-align: center;
+  }
+
+  @media (width < 700px) {
+    padding: 5rem 2rem 15rem;
+  }
+
+  .h1 {
+    color: var(--white);
+
+    span {
+      color: var(--light-coral);
+    }
+  }
+
+  .find-talent-description {
+    color: var(--white);
+    display: flex;
+    flex-direction: column;
+    gap: 8rem;
+    justify-content: space-between;
+
+    .find-talent-rectangle {
+      background-color: var(--rapture-blue);
+      height: 4px;
+      width: 5rem;
+
+      @media (width < 1000px) {
+        display: none;
+      }
+    }
+  }
+}

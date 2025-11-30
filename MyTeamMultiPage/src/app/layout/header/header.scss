@@ -1,0 +1,68 @@
+:host {
+  position: static;
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 4rem 20rem;
+
+  @media (width < 1250px) {
+    padding: 4rem 10rem;
+  }
+
+  @media (width < 700px) {
+    padding: 4rem 2rem;
+  }
+
+  .header-logo-nav {
+    align-items: center;
+    display: flex;
+    gap: 8rem;
+
+    @media (width < 1250px) {
+      gap: 4rem;
+    }
+
+    .header-nav {
+      display: flex;
+      gap: 4rem;
+      list-style: none;
+      padding: 0;
+
+      @media (width < 1250px) {
+        gap: 3rem;
+      }
+
+      @media (width < 1000px) {
+        display: none;
+      }
+
+      a {
+        color: var(--white);
+        text-decoration: none;
+
+        &.active {
+          color: var(--light-coral);
+        }
+      }
+    }
+  }
+
+  .responsive-button {
+    background: none;
+    border: none;
+  }
+
+  @media (width < 1000px) {
+    app-button {
+      display: none;
+    }
+  }
+
+  @media (width >= 1000px) {
+    .responsive-button {
+      display: none;
+    }
+  }
+}

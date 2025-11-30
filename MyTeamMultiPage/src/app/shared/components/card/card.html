@@ -1,0 +1,14 @@
+<article class="card-container">
+  @if(detail()) {
+    <ng-content select="[detail]">Detail</ng-content>
+  } @else {
+    <ng-content select="[no-detail]">No Detail</ng-content>
+  }
+  <button (click)="changeDetail()" [class.detail]="detail()">
+    @if(detail()) {
+      <img class="button-icon" src="/images/icon-close.svg" alt="Close Detail">
+    } @else {
+      <img class="button-icon" src="/images/icon-cross.svg" alt="Open Detail">
+    }
+  </button>
+</article>

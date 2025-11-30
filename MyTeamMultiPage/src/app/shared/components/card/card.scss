@@ -1,0 +1,52 @@
+@use '../../../../styles-design.scss';
+
+.card-container {
+  align-items: center;
+  background-color: var(--sacramento-state-green);
+  color: var(--white);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 16rem;
+  padding: 3.2rem 2.4rem 5.4rem;
+  position: relative;
+  text-align: center;
+
+
+  img:not(.button-icon) {
+    border: 1px solid var(--white);
+    border-radius: 50%;
+    height: 9.6rem;
+    width: 9.6rem;
+  }
+
+  h3 {
+    color: var(--rapture-blue);
+  }
+
+  span {
+    font-style: italic;
+  }
+
+  .card-icons {
+    display: flex;
+    gap: 2rem;
+  }
+
+  button {
+    background-color: var(--light-coral);
+    border: none;
+    border-radius: 50%;
+    bottom: -2.5rem;
+    cursor: pointer;
+    height: 5rem;
+    left: calc(50% - 2.5rem);
+    position: absolute;
+    width: 5rem;
+
+    &.detail {
+      background-color: var(--rapture-blue);
+    }
+
+  }
+}

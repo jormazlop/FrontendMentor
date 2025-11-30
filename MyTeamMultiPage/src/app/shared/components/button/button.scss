@@ -1,0 +1,38 @@
+.primary {
+  background-color: var(--midnight-green);
+  border: 1px solid var(--white);
+  border-radius: 24px;
+  color: var(--white);
+  padding: 1rem 3rem;
+  transition-duration: 0.25s;
+
+
+  &:enabled:hover {
+    background-color: var(--white);
+    border: 1px solid var(--white);
+    color: var(--midnight-green);
+  }
+
+  &:disabled {
+    opacity: 0.25;
+  }
+}
+
+.secondary {
+  background-color: transparent;
+  border: 1px solid var(--sacramento-state-green);
+  border-radius: 24px;
+  color: var(--sacramento-state-green);
+  padding: 1rem 3rem;
+  transition-duration: 0.25s;
+
+
+  &:enabled:hover {
+    background-color: var(--sacramento-state-green);
+    color: var(--white);
+  }
+
+  &:disabled {
+    opacity: 0.25;
+  }
+}
