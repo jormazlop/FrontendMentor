@@ -1,0 +1,14 @@
+:host {
+  display: contents;
+}
+
+.flashcard-study-container {
+  display: flex;
+  gap: 3rem;
+  height: 100%;
+  width: 100%;
+
+  .study-card {
+    width: 60%;
+  }
+}

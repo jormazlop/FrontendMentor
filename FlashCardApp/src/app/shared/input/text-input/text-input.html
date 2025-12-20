@@ -1,0 +1,15 @@
+<label class="text-4-medium" [for]="id">{{ label() }}</label>
+<input
+  class="text-4-regular"
+  type="text"
+  [id]="id"
+  [field]="field()"
+  [placeholder]="placeholder()"
+/>
+
+@for(error of errors(); track error) {
+  <span class="text-5-regular">
+    <icon-error />
+    {{ error.message }}
+  </span>
+}

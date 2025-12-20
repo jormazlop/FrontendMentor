@@ -1,0 +1,11 @@
+.study-card-container {
+  background-color: var(--neutral-0);
+  border: 1px solid var(--neutral-900);
+  border-radius: 16px;
+  box-shadow: 2px 2px 0 0 var(--neutral-900);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: space-between;
+  width: 100%;
+}

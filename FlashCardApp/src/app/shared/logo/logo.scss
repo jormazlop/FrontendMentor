@@ -1,0 +1,11 @@
+@media (width < 700px) {
+  .logo-large {
+    display: none;
+  }
+}
+
+@media (width >= 700px) {
+  .logo-small {
+    display: none;
+  }
+}

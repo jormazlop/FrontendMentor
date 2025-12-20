@@ -1,0 +1,15 @@
+:host {
+  background-color: var(--neutral-100);
+  display: flex;
+  flex-direction: column;
+  gap: 3.2rem;
+  height: 100%;
+  padding: 2.4rem 10rem;
+}
+
+.main-content {
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  width: 100%;
+}

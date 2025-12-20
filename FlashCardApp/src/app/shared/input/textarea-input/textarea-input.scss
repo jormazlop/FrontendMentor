@@ -1,0 +1,44 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+
+  label {
+    color: var(--neutral-900);
+  }
+
+  textarea {
+    border: 1px solid var(--neutral-900);
+    border-radius: 6px;
+    color: var(--neutral-900);
+    padding: 1.6rem;
+    resize: none;
+    transition-duration: 0.25s;
+
+    &::placeholder {
+      color: var(--neutral-600);
+    }
+
+    &:hover {
+      box-shadow: 2px 2px 0 0 var(--neutral-900);
+    }
+
+    &:focus {
+      border: 1px solid var(--neutral-600);
+      box-shadow: 2px 2px 0 0 var(--blue-600);
+      outline: none;
+    }
+
+    &.ng-invalid.ng-dirty {
+      border: 1px solid var(--pink-700);
+      box-shadow: 2px 2px 0 0 var(--pink-700);
+    }
+  }
+
+  span {
+    align-items: center;
+    color: var(--pink-700);
+    display: flex;
+    gap: 0.6rem;
+  }
+}

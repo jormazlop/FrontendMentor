@@ -1,0 +1,33 @@
+[ngTabList] {
+  background-color: var(--neutral-0);
+  border: 1px solid var(--neutral-900);
+  border-radius: 999px;
+  box-shadow: 1px 2px 0 0 var(--neutral-900);
+  display: flex;
+  padding: 0.4rem;
+  width: fit-content;
+}
+
+[ngTab][aria-selected='true'] button {
+  align-items: center;
+  background-color: var(--yellow-500);
+  border: 1px solid var(--neutral-900);
+  border-radius: 999px;
+  color: var(--neutral-900);
+  display: flex;
+  gap: 0.8rem;
+  padding: 1.2rem 2rem;
+  transition-duration: 0.25s;
+}
+
+[ngTab][aria-selected='false'] button {
+  align-items: center;
+  background-color: var(--neutral-0);
+  border: 1px solid transparent;
+  border-radius: 999px;
+  color: var(--neutral-900);
+  display: flex;
+  gap: 0.8rem;
+  padding: 1.2rem 2rem;
+  transition-duration: 0.25s;
+}

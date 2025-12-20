@@ -1,0 +1,9 @@
+<div ngTabs>
+  <div ngTabList selectionMode="follow" [selectedTab]="values()[0]">
+    @for(value of values(); track value) {
+    <div ngTab [value]="value">
+      <button class="text-4-semi" (click)="changeTab(value)">{{ value }}</button>
+    </div>
+    }
+  </div>
+</div>

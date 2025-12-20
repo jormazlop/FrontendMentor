@@ -1,0 +1,34 @@
+<div ngCombobox readonly>
+  <div #origin class="select text-4-medium">
+    <span class="combobox-label">
+      <span class="selected-label-text">{{ displayValue() }}</span>
+    </span>
+    <input aria-label="Label dropdown" placeholder="Select a category" ngComboboxInput />
+    <icon-chevron-down />
+  </div>
+  <ng-template ngComboboxPopupContainer>
+    <ng-template
+      [cdkConnectedOverlay]="{origin, usePopover: 'inline', matchWidth: true}"
+      [cdkConnectedOverlayOpen]="true"
+    >
+      <div class="popup-container">
+        <div ngListbox multi>
+          @for (label of labels(); track label.category) {
+            <div ngOption [value]="label.category" [label]="label.category">
+              <p class="text-5">
+                {{label.category}}
+                <span class="text-6 total-category">({{label.total}})</span>
+              </p>
+
+              <icon-check
+                class="option-check"
+                translate="no"
+                aria-hidden="true"
+              />
+            </div>
+          }
+        </div>
+      </div>
+    </ng-template>
+  </ng-template>
+</div>

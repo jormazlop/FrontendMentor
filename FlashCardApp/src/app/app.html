@@ -1,0 +1,15 @@
+<app-header />
+
+<main class="main-content">
+  @if(studyMode()) {
+    @defer (when studyMode()) {
+      <flashcard-study />
+    }
+  }
+
+  @if(allMode()) {
+    @defer (when allMode()) {
+      <flashcard-all />
+    }
+  }
+</main>
