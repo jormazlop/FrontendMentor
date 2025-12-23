@@ -1,0 +1,57 @@
+.flashcard-item-container {
+  background-color: var(--neutral-0);
+  border: 1px solid var(--neutral-900);
+  border-radius: 16px;
+  box-shadow: 2px 2px 0 0 var(--neutral-900);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+
+  .flashcard-item-question {
+    align-items: center;
+    border-bottom: 1px solid var(--neutral-900);
+    color: var(--neutral-900);
+    display: flex;
+    height: 10rem;
+    justify-content: center;
+    padding: 1rem 1.5rem;
+    text-align: center;
+  }
+
+  .flashcard-item-answer {
+    border-bottom: 1px solid var(--neutral-900);
+    color: var(--neutral-900);
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    height: 50%;
+    padding: 1rem 1.5rem;
+
+    span {
+      opacity: 0.6;
+    }
+  }
+
+  .flashcard-item-footer {
+    display: flex;
+    gap: 1rem;
+
+    .flashcard-item-tag {
+      padding: 1.5rem 0.5rem;
+    } 
+
+    .flashcard-item-progress {
+      align-items: center;
+      border-left: 1px solid var(--neutral-900);
+      display: flex;
+      gap: 0.5rem;
+      padding: 1.5rem 1.5rem;
+      width:10rem;
+
+      progress {
+        height: 1.5rem;
+      }
+    }
+  }
+}

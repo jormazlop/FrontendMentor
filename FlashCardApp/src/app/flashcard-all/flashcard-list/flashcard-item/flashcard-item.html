@@ -1,0 +1,17 @@
+<li class="flashcard-item-container">
+  <h3 class="text-3 flashcard-item-question">{{ card().question }}</h3>
+  <hgroup class="text-5 flashcard-item-answer">
+    <span>Answer</span>
+    <p>{{ card().answer }}</p>
+  </hgroup>
+  <div class="flashcard-item-footer">
+    <div class="flashcard-item-tag">
+      <tag>{{ card().category }}</tag>
+    </div>
+    <div class="flashcard-item-progress">
+      @let count = card().knownCount;
+      <progress id="progress-bar" max="5" [value]="count"></progress>
+      <label for="progress-bar">{{ count }}/5</label>
+    </div>
+  </div>
+</li>

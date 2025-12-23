@@ -1,0 +1,6 @@
+<form class="flashcard-edit-container" (submit)="onCreateCard($event)">
+  <text-input [field]="form.question" />
+  <textarea-input [field]="form.answer" label="Answer" />
+  <text-input [field]="form.category" label="Category" placeholder="e.g., Geography" />
+  <button-primary [disabled]="!form().valid()">Create Card</button-primary>
+</form>

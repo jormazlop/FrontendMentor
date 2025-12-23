@@ -8,7 +8,7 @@ import { CategoryModel, FlashcardModel } from 'model/flashcard.model';
 })
 export class FlashcardService {
   private readonly _cards = signal<FlashcardModel[]>([]);
-  private readonly _filteredCards = computed(() => {
+  filteredCards = computed(() => {
 
     const cards = this._cards().filter(card => this._hideMastered() ? card.knownCount != 5 : true);
 
@@ -19,7 +19,7 @@ export class FlashcardService {
   private readonly _index = signal(0);
   private readonly _hideMastered = signal(false);
   index = this._index.asReadonly();
-  total = computed(() => this._filteredCards().length);
+  total = computed(() => this.filteredCards().length);
   statTotal = computed(() => this._cards().length);
   statMastered = computed(() => this._cards().filter(card => card.knownCount != 5).length);
   statInProgress = computed(() => this._cards().filter(card => card.knownCount != 5 && card.knownCount != 0).length);
@@ -27,7 +27,7 @@ export class FlashcardService {
 
   private readonly _selectedCategories = signal<string[]>([]);
 
-  selectedCard = computed<FlashcardModel>(() => this._filteredCards()[this.index()]);
+  selectedCard = computed<FlashcardModel>(() => this.filteredCards()[this.index()]);
 
   private readonly _tab = signal<TabSelect>('Study Mode');
   tab = this._tab.asReadonly();

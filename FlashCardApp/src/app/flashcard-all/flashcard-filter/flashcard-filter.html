@@ -1,0 +1,10 @@
+<div class="study-card-filter-container">
+  <div class="study-card-filter-categories">
+    <button-categories [labels]="categories()" />
+    <label class="text-4-medium hide-mastered" for="hide-mastered">
+      <input type="checkbox" id="hide-mastered" [(ngModel)]="hideMastered" />
+      Hide Mastered
+    </label>
+  </div>
+  <button-shuffle (click)="onShuffleCards()" />
+</div>

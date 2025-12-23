@@ -13,6 +13,6 @@ export class TextareaInput {
   field = input.required<FieldTree<string, string>>();
   errors = computed(() => this.field()().dirty() ? this.field()().errors() : []);
   label = input('Title');
-  placeholder = input('Placeholder text');
+  placeholder = input('e.g., Paris');
   protected id = "text-input" + Math.random().toString(16).slice(2);
 }

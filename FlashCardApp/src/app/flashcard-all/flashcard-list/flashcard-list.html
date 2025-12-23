@@ -1,0 +1,5 @@
+<ul class="flashcard-list-container">
+  @for(card of filteredCards(); track card.id) {
+    <flashcard-item [card]="card"/>
+  }
+</ul>

@@ -1,0 +1,12 @@
+.flashcard-edit-container {
+  background-color: var(--neutral-0);
+  border: 1px solid var(--neutral-900);
+  border-radius: 16px;
+  box-shadow: 2px 2px 0 0 var(--neutral-900);
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  height: 100%;
+  padding: 2rem;
+  width: 100%;
+}
