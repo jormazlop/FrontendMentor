@@ -1,1 +1,27 @@
-<p>study-card-body works!</p>
+<div class="study-card-body-container" (click)="onShowAnswer()" [class.answer]="answer()">
+  <pattern-star-blue class="pattern-star-blue" />
+  <pattern-star-yellow class="pattern-star-yellow" />
+
+  <tag>{{ selectedCard().category }}</tag>
+
+  @let question = answer() ? selectedCard().answer : selectedCard().question;
+  <hgroup class="study-card-question">
+    @if(answer()) {
+      <span class="text-4-medium">Answer :</span>
+    }
+    <h1 class="text-1">{{ question }}</h1>
+    @if(!answer()) {
+      <span class="text-4-medium">Click to reveal answer</span>
+    }
+  </hgroup>
+
+  <div class="study-card-progress">
+    @let count = selectedCard().knownCount;
+    <progress id="progress-bar" max="5" [value]="count"></progress>
+    <label for="progress-bar">{{ count }}/5</label>
+  </div>
+</div>
+<div class="study-card-body-buttons">
+  <button-primary [add]="false" [disabled]="count === 5 || !answer()" (click)="onKnowClick()">I Know This</button-primary>
+  <button-secondary (click)="onResetProgress()">Reset Progress</button-secondary>
+</div>

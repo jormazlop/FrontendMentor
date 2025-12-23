@@ -9,6 +9,8 @@ import {
   afterRenderEffect,
   Component,
   computed,
+  effect,
+  inject,
   input,
   viewChild,
   viewChildren,
@@ -17,6 +19,7 @@ import { OverlayModule } from '@angular/cdk/overlay';
 import { IconChevronDown } from '@shared/icons/icon-chevron-down/icon-chevron-down';
 import { IconCheck } from '@shared/icons/icon-check/icon-check';
 import { CategoryModel } from 'model/flashcard.model';
+import { FlashcardService } from 'service/flashcard.service';
 @Component({
   selector: 'button-categories',
   templateUrl: './button-categories.html',
@@ -30,10 +33,12 @@ import { CategoryModel } from 'model/flashcard.model';
     Option,
     OverlayModule,
     IconChevronDown,
-    IconCheck
+    IconCheck,
   ],
 })
 export class ButtonCategories {
+  private readonly service = inject(FlashcardService);
+
   listbox = viewChild<Listbox<string>>(Listbox);
   options = viewChildren<Option<string>>(Option);
   combobox = viewChild<Combobox<string>>(Combobox);
@@ -48,8 +53,13 @@ export class ButtonCategories {
     return `${values[0]} + ${values.length - 1} more`;
   });
 
-
   labels = input<CategoryModel[]>([]);
+
+  effect = effect(() => {
+    if(this.listbox()?.values().length) this.service.resetIndex();
+    this.service.setSelectedCategories(this.listbox()?.values() ?? []);
+  });
+
   constructor() {
     afterRenderEffect(() => {
       const option = this.options().find((opt) => opt.active());

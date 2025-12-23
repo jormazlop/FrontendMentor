@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, computed, input } from '@angular/core';
 import { IconChevronLeft } from '@shared/icons/icon-chevron-left/icon-chevron-left';
 import { IconChevronRight } from '@shared/icons/icon-chevron-right/icon-chevron-right';
 
@@ -9,5 +9,8 @@ import { IconChevronRight } from '@shared/icons/icon-chevron-right/icon-chevron-
   styleUrl: './button-border.scss',
 })
 export class ButtonBorder {
+  type = input.required<'left' | 'right'>();
 
+  left = computed(() => this.type() === 'left');
+  right = computed(() => this.type() === 'right');
 }

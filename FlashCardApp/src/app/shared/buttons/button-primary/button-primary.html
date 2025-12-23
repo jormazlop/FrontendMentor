@@ -1,4 +1,8 @@
 <button class="text-4-medium" [disabled]="disabled()">
-  <icon-circle-plus />
+  @if(add()) {
+    <icon-circle-plus />
+  } @else {
+    <icon-circle-check />
+  }
   <ng-content>Button Primary</ng-content>
 </button>

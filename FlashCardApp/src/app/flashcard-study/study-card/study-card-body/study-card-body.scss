@@ -1,0 +1,78 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  gap: 1.5rem;
+  padding: 1.5rem;
+}
+
+.study-card-body-container {
+  align-items: center;
+  background-color: var(--pink-400);
+  background-image: url('/images/pattern-flashcard-bg.svg');
+  background-repeat: no-repeat;
+  border: 2px solid var(--neutral-900);
+  border-radius: 16px;
+  box-shadow: 2px 2px 0 0 var(--neutral-900);
+  display: flex;
+  flex-direction: column;
+  height: 85%;
+  justify-content: space-between;
+  padding: 1rem;
+  position: relative;
+  width: 100%;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  &.answer {
+    background-color: var(--blue-400);
+
+    &:hover {
+      cursor: default;
+    }
+  }
+
+  .pattern-star-blue {
+    position: absolute;
+    right: 2rem;
+    top: 4rem;
+  }
+
+  .pattern-star-yellow {
+    bottom: 4rem;
+    left: 2rem;
+    position: absolute;
+  }
+
+  .study-card-question {
+    align-items: center;
+    color: var(--neutral-900);
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+
+    span {
+      opacity: 0.8;
+    }
+  }
+
+  .study-card-progress {
+    align-items: center;
+    display: flex;
+    gap: 0.5rem;
+    width: 6rem;
+
+    progress {
+      height: 1.5rem;
+    }
+  }
+}
+
+.study-card-body-buttons {
+  align-items: center;
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+}

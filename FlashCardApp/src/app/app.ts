@@ -15,8 +15,4 @@ export class App {
   private readonly service = inject(FlashcardService);
   studyMode = computed(() => this.service.tab() === 'Study Mode');
   allMode = computed(() => !this.studyMode());
-
-  constructor() {
-    this.service.getData();
-  }
 }

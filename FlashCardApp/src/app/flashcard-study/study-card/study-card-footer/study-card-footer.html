@@ -1,3 +1,5 @@
 <div class="study-card-footer-container">
-
+  <button-border type="left" (click)="previousCard()">Previous</button-border>
+  <p class="text-5">Card {{ index() + 1 }} of {{ total() }}</p>
+  <button-border type="right" (click)="nextCard()">Next</button-border>
 </div>

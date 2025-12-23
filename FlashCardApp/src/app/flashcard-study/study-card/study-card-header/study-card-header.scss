@@ -1,5 +1,21 @@
 .study-card-header-container {
+  align-items: center;
   border-bottom: 1px solid var(--neutral-900);
   display: flex;
+  justify-content: space-between;
   padding: 2rem;
+
+  .study-card-header-categories {
+
+    align-items: center;
+    display: flex;
+    gap: 1.5rem;
+
+    .hide-mastered {
+      align-items: center;
+      color: var(--neutral-900);
+      display: flex;
+      gap: 0.5rem;
+    }
+  }
 }

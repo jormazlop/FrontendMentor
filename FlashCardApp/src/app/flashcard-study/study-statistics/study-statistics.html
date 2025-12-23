@@ -1,1 +1,7 @@
-<p>study-statistics works!</p>
+<div class="study-statistics-container">
+  <h2 class="text-2">Study Statistics</h2>
+  <study-statistics-card type="total" [stat]="statTotal()" />
+  <study-statistics-card type="mastered" [stat]="statMastered()" />
+  <study-statistics-card type="in-progress" [stat]="statInProgress()" />
+  <study-statistics-card type="not-started" [stat]="statNotStarted()" />
+</div>

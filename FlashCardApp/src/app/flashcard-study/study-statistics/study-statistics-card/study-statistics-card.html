@@ -1,0 +1,23 @@
+<div class="study-statistics-card-container">
+  <hgroup>
+    <span class="text-4-medium">{{ title() }}</span>
+    <h2 class="text-1">{{ stat() }}</h2>
+  </hgroup>
+
+  @switch(type()) {
+    @case ('total') {
+      <icon-stats-total class="study-stats-icon icon-total" />
+    }
+    @case ('mastered') {
+      <icon-stats-mastered class="study-stats-icon icon-mastered" />
+    }
+    @case ('in-progress') {
+      <icon-stats-in-progress class="study-stats-icon icon-in-progress" />
+    }
+    @case ('not-started') {
+      <icon-stats-not-started class="study-stats-icon icon-not-started" />
+    }
+  }
+
+
+</div>

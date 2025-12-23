@@ -1,5 +1,11 @@
 .study-card-footer-container {
+  align-items: center;
   border-top: 1px solid var(--neutral-900);
   display: flex;
+  justify-content: space-between;
   padding: 2rem;
+
+  p {
+    color: var(--neutral-600);
+  }
 }

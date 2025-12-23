@@ -1,5 +1,9 @@
 <button class="text-4-medium">
-  <icon-chevron-left />
+  @if(left()) {
+    <icon-chevron-left />
+  }
   <ng-content>Button Border</ng-content>
-  <icon-chevron-right />
+  @if(right()) {
+    <icon-chevron-right />
+  }
 </button>
