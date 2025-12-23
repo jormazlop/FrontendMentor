@@ -8,10 +8,16 @@
     <div class="flashcard-item-tag">
       <tag>{{ card().category }}</tag>
     </div>
-    <div class="flashcard-item-progress">
-      @let count = card().knownCount;
-      <progress id="progress-bar" max="5" [value]="count"></progress>
-      <label for="progress-bar">{{ count }}/5</label>
-    </div>
+    @let count = card().knownCount;
+    @if(count !== 5) {
+      <div class="flashcard-item-progress border-left">
+        <progress id="progress-bar" max="5" [value]="count"></progress>
+        <label for="progress-bar">{{ count }}/5</label>
+      </div>
+    } @else {
+      <div class="flashcard-mastered-item-tag border-left">
+        <mastered-tag />
+      </div>  
+    }
   </div>
 </li>

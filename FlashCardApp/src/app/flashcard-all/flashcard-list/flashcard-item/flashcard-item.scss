@@ -41,9 +41,16 @@
       padding: 1.5rem 0.5rem;
     } 
 
+    .flashcard-mastered-item-tag {
+      padding: 1rem 0.5rem;
+    }
+
+    .border-left {
+      border-left: 1px solid var(--neutral-900);
+    }
+
     .flashcard-item-progress {
       align-items: center;
-      border-left: 1px solid var(--neutral-900);
       display: flex;
       gap: 0.5rem;
       padding: 1.5rem 1.5rem;
