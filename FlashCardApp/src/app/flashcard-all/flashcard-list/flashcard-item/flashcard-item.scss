@@ -39,10 +39,12 @@
 
     .flashcard-item-tag {
       padding: 1.5rem 0.5rem;
+      width: fit-content;
     } 
 
     .flashcard-mastered-item-tag {
       padding: 1rem 0.5rem;
+      width: 100%;
     }
 
     .border-left {
@@ -54,11 +56,16 @@
       display: flex;
       gap: 0.5rem;
       padding: 1.5rem 1.5rem;
-      width:10rem;
+      width: 100%;
 
       progress {
         height: 1.5rem;
       }
+    }
+
+    .button-edit {
+      border-left: 1px solid var(--neutral-900);
+      width: 10%;
     }
   }
 }

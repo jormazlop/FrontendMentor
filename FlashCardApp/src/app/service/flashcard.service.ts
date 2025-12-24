@@ -16,6 +16,7 @@ export class FlashcardService {
       this._selectedCategories().length ? this._selectedCategories().includes(card.category) : true
     );
   });
+  private readonly _lastId = computed(() => this._cards().sort((a, b) => a.id .localeCompare(b.id)).at(-1)?.id);
   private readonly _index = signal(0);
   private readonly _hideMastered = signal(false);
   index = this._index.asReadonly();
@@ -27,7 +28,7 @@ export class FlashcardService {
 
   private readonly _selectedCategories = signal<string[]>([]);
 
-  selectedCard = computed<FlashcardModel>(() => this.filteredCards()[this.index()]);
+  selectedCard = computed<FlashcardModel | undefined>(() => this.filteredCards()[this.index()]);
 
   private readonly _tab = signal<TabSelect>('Study Mode');
   tab = this._tab.asReadonly();
@@ -87,6 +88,16 @@ export class FlashcardService {
   onResetProgress(id: string): void {
     const card = this._cards().find((card) => card.id === id)!;
     card.knownCount = 0;
+  }
+
+  onCreateCard(card: FlashcardModel): void {
+    const id = +this._lastId()!.substring(2) + 1;
+    const formattedId = 'fc' + ('000' + id).substr(-3);
+    card.id = formattedId;
+    this._cards.update(cards => {
+      cards.unshift(card);
+      return [...cards];
+    })
   }
 
   getData(): void {

@@ -18,7 +18,7 @@ export class StudyCardBody {
   answer = signal(false);
 
   effect = effect(() => {
-    this.selectedCard().id;
+    this.selectedCard()?.id;
     this.answer.set(false);
   });
 
@@ -27,11 +27,11 @@ export class StudyCardBody {
   }
 
   onKnowClick(): void {
-    this.service.onKnowCard(this.selectedCard().id);
+    this.service.onKnowCard(this.selectedCard()!.id);
   }
 
   onResetProgress(): void {
-    this.service.onResetProgress(this.selectedCard().id);
+    this.service.onResetProgress(this.selectedCard()!.id);
     this.answer.set(false);
   }
 }

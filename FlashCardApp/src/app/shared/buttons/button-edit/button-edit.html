@@ -1,0 +1,28 @@
+<!--<button>
+    <icon-menu />
+</button>-->
+
+<button ngMenuTrigger #origin #trigger="ngMenuTrigger" [menu]="formatMenu()">
+    <icon-menu />
+</button>
+<ng-template
+  [cdkConnectedOverlayOpen]="trigger.expanded()"
+  [cdkConnectedOverlay]="{origin, usePopover: 'inline'}"
+  [cdkConnectedOverlayPositions]="[
+    { originX: 'start', originY: 'bottom', overlayX: 'start', overlayY: 'top', offsetY: 4 }
+  ]"
+  cdkAttachPopoverAsChild
+>
+  <div ngMenu class="menu" #formatMenu="ngMenu">
+    <ng-template ngMenuContent>
+      <div ngMenuItem value="Edit">
+        <icon-edit aria-hidden="true" />
+        <span class="label text-5">Edit</span>
+      </div>
+      <div ngMenuItem value="Delete">
+        <icon-delete aria-hidden="true" />
+        <span class="label text-5">Delete</span>
+      </div>
+    </ng-template>
+  </div>
+</ng-template>
