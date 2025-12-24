@@ -5,10 +5,13 @@
   padding: 2rem;
 
   .study-card-filter-categories {
-
     align-items: center;
     display: flex;
     gap: 1.5rem;
+    
+    @media (width < 700px) {
+      flex-direction: column;
+    }
 
     .hide-mastered {
       align-items: center;

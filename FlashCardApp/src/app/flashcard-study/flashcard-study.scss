@@ -8,11 +8,24 @@
   height: 60rem;
   width: 100%;
 
+  @media (width < 1000px) {
+    flex-direction: column;
+    height: fit-content;
+  }
+
   .study-card {
     width: 60%;
+
+    @media (width < 1000px) {
+      width: 100%;
+    }
   }
 
   .study-statistics {
     width: 40%;
+
+    @media (width < 1000px) {
+      width: 100%;
+    }
   }
 }

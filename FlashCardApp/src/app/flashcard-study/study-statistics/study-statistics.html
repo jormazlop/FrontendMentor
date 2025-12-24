@@ -1,7 +1,9 @@
 <div class="study-statistics-container">
   <h2 class="text-2">Study Statistics</h2>
-  <study-statistics-card type="total" [stat]="statTotal()" />
-  <study-statistics-card type="mastered" [stat]="statMastered()" />
-  <study-statistics-card type="in-progress" [stat]="statInProgress()" />
-  <study-statistics-card type="not-started" [stat]="statNotStarted()" />
+  <ul class="study-statistics-list">
+    <li><study-statistics-card type="total" [stat]="statTotal()" /></li>
+    <li><study-statistics-card type="mastered" [stat]="statMastered()" /></li>
+    <li><study-statistics-card type="in-progress" [stat]="statInProgress()" /></li>
+    <li><study-statistics-card type="not-started" [stat]="statNotStarted()" /></li> 
+  </ul>
 </div>

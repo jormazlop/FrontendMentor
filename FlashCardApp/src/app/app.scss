@@ -5,6 +5,18 @@
   gap: 3.2rem;
   height: 100%;
   padding: 2.4rem 10rem;
+
+  @media (width < 1000px) {
+    padding: 2.4rem 5rem;
+  }
+
+  @media (width < 700px) {
+    padding: 2.4rem;
+  }
+
+  @media (width < 500px) {
+    padding: 2.4rem 1rem;
+  }
 }
 
 .main-content {
