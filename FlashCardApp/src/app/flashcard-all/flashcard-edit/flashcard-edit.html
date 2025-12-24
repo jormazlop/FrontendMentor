@@ -2,5 +2,5 @@
   <text-input [field]="form.question" />
   <textarea-input [field]="form.answer" label="Answer" />
   <text-input [field]="form.category" label="Category" placeholder="e.g., Geography" />
-  <button-primary [disabled]="!form().valid()">Create Card</button-primary>
+  <button-primary [disabled]="!form().valid()" type="add">Create Card</button-primary>
 </form>

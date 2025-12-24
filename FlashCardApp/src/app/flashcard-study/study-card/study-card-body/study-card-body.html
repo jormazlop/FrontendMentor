@@ -24,7 +24,7 @@
     </div>
   </div>
   <div class="study-card-body-buttons">
-    <button-primary [add]="false" [disabled]="count === 5 || !answer()" (click)="onKnowClick()">I Know This</button-primary>
+    <button-primary type="check" [disabled]="count === 5 || !answer()" (click)="onKnowClick()">I Know This</button-primary>
     <button-secondary (click)="onResetProgress()">Reset Progress</button-secondary>
   </div>
 }

@@ -9,6 +9,6 @@ import { IconCirclePlus } from '@shared/icons/icon-circle-plus/icon-circle-plus'
   styleUrl: './button-primary.scss',
 })
 export class ButtonPrimary {
-  add = input<boolean>(true);
+  type = input.required<'add' | 'check' | 'none'>();
   disabled = input(false);
 }

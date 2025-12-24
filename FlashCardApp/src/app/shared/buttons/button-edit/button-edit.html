@@ -15,11 +15,11 @@
 >
   <div ngMenu class="menu" #formatMenu="ngMenu">
     <ng-template ngMenuContent>
-      <div ngMenuItem value="Edit">
+      <div ngMenuItem value="Edit" (click)="onClickEdit()">
         <icon-edit aria-hidden="true" />
         <span class="label text-5">Edit</span>
       </div>
-      <div ngMenuItem value="Delete">
+      <div ngMenuItem value="Delete" (click)="onClickDelete()">
         <icon-delete aria-hidden="true" />
         <span class="label text-5">Delete</span>
       </div>

@@ -100,6 +100,20 @@ export class FlashcardService {
     })
   }
 
+  onEditCard(cardEdit: FlashcardModel): void {
+    this._cards.update(cards => {
+      const index = cards.findIndex(card => card.id === cardEdit.id);
+      cards[index] = cardEdit;
+      return [...cards];
+    })
+  }
+
+  onDeleteCard(id: string): void {
+    this._cards.update(cards => {
+      return cards.filter(card => card.id != id);
+    })
+  }
+
   getData(): void {
     const url = '../../../data/data.json';
     this.http.get<FlashcardModel[]>(url).subscribe((data) => this._cards.set(data));

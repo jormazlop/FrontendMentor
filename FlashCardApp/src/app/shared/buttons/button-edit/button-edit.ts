@@ -1,5 +1,5 @@
 import { IconMenu } from '@shared/icons/icon-menu/icon-menu';
-import { Component, viewChild } from '@angular/core';
+import { Component, output, viewChild } from '@angular/core';
 import { Menu, MenuContent, MenuItem, MenuTrigger } from '@angular/aria/menu';
 import { OverlayModule } from '@angular/cdk/overlay';
 import { IconEdit } from '@shared/icons/icon-edit/icon-edit';
@@ -23,4 +23,15 @@ import { IconDelete } from '@shared/icons/icon-delete/icon-delete';
 export class ButtonEdit {
   formatMenu = viewChild<Menu<string>>('formatMenu');
   categorizeMenu = viewChild<Menu<string>>('categorizeMenu');
+
+  onEdit = output();
+  onDelete = output();
+
+  onClickEdit(): void {
+    this.onEdit.emit();
+  }
+
+  onClickDelete(): void {
+    this.onDelete.emit();
+  }
 }

@@ -10,3 +10,9 @@ export type CategoryModel = {
   category: string;
   total: number;
 }
+
+export type FormModel = {
+  question: string;
+  answer: string;
+  category: string;
+};

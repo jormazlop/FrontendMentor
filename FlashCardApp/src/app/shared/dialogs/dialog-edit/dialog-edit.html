@@ -1,0 +1,15 @@
+<div class="dialog-edit-container">
+  <hgroup>
+    <h2 class="text-2">Edit your card</h2>
+  </hgroup>
+
+  <form class="dialog-edit-form">
+    <text-input [field]="form.question" />
+    <textarea-input [field]="form.answer" label="Answer" />
+    <text-input [field]="form.category" label="Category" placeholder="e.g., Geography" />
+  </form>
+
+  <div class="dialog-edit-buttons">
+    <button-primary type="none" [disabled]="!form().valid()"  (click)="onClickUpdate()">Update Card</button-primary>
+  </div>
+</div>

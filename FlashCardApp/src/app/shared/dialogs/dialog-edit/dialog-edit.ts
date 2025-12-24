@@ -1,19 +1,20 @@
 import { Component, inject, signal } from '@angular/core';
-import { form, required, schema } from '@angular/forms/signals';
+import { form, required } from '@angular/forms/signals';
+import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { ButtonPrimary } from '@shared/buttons/button-primary/button-primary';
 import { TextInput } from '@shared/input/text-input/text-input';
 import { TextareaInput } from '@shared/input/textarea-input/textarea-input';
 import { FlashcardModel, FormModel } from 'model/flashcard.model';
-import { FlashcardService } from 'service/flashcard.service';
 
 @Component({
-  selector: 'flashcard-edit',
+  selector: 'app-dialog-edit',
   imports: [TextInput, TextareaInput, ButtonPrimary],
-  templateUrl: './flashcard-edit.html',
-  styleUrl: './flashcard-edit.scss',
+  templateUrl: './dialog-edit.html',
+  styleUrl: './dialog-edit.scss',
 })
-export class FlashcardEdit {
-  private readonly service = inject(FlashcardService);
+export class DialogEdit {
+  private dialogRef = inject(MatDialogRef<DialogEdit>);
+  private readonly data = inject<FlashcardModel>(MAT_DIALOG_DATA);
 
   formModel = signal<FormModel>({
     question: '',
@@ -27,21 +28,23 @@ export class FlashcardEdit {
     required(schemaPath.category, { message: 'The field category is required!' });
   });
 
-  onCreateCard(event: Event): void {
-    event.preventDefault();
+  constructor() {
+    this.formModel.set({
+      question: this.data.question,
+      answer: this.data.answer,
+      category: this.data.category
+    });
+  }
+
+  onClickUpdate(): void {
     const card = {} as FlashcardModel;
+    card.id = this.data.id;
     card.question = this.formModel().question;
     card.answer = this.formModel().answer;
     card.category = this.formModel().category;
-    card.knownCount = 0;
+    card.knownCount = this.data.knownCount;
 
-    this.service.onCreateCard(card);
-
-    this.form().reset();
-    this.formModel.set({
-      question: '',
-      answer: '',
-      category: '',
-    });
+    this.dialogRef.close(card);
+    
   }
 }

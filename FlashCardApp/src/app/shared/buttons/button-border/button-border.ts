@@ -9,7 +9,7 @@ import { IconChevronRight } from '@shared/icons/icon-chevron-right/icon-chevron-
   styleUrl: './button-border.scss',
 })
 export class ButtonBorder {
-  type = input.required<'left' | 'right'>();
+  type = input.required<'left' | 'right' | 'none'>();
 
   left = computed(() => this.type() === 'left');
   right = computed(() => this.type() === 'right');
