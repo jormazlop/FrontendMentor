@@ -1,5 +1,5 @@
-import { Component, computed, effect, inject, model } from '@angular/core';
-import { TypeDirective } from '@shared/directive/type.directive';
+import { Component, computed, effect, inject, model, OnDestroy } from '@angular/core';
+import { TypeDirective } from '@shared/directives/type.directive';
 import { TextPipe } from '@shared/pipes/text-pipe';
 import { Typing } from '@shared/services/typing';
 
@@ -9,7 +9,7 @@ import { Typing } from '@shared/services/typing';
   templateUrl: './home-started.html',
   styleUrl: './home-started.scss',
 })
-export default class HomeStarted {
+export default class HomeStarted implements OnDestroy {
 
   private readonly service = inject(Typing);
 
@@ -25,7 +25,7 @@ export default class HomeStarted {
       const match = this.textTyped().at(index);
 
       if(!match) return null;
-      if(match.toLowerCase() === character.toLowerCase()) return true;
+      if(match === character) return true;
       return false;
     });
     return result;
@@ -35,4 +35,12 @@ export default class HomeStarted {
     const accuracy = this.textResult().filter(result => result != false).length / this.textResult().length;
     this.service.setAccuracy(accuracy);
   });
+
+  constructor() {
+    this.service.startTimedTest();
+  }
+
+  ngOnDestroy(): void {
+    this.service.stopTest();
+  }
 }

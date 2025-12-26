@@ -55,7 +55,8 @@
               "node_modules/bootstrap/dist/css/bootstrap.min.css",
               "src/styles-design.scss",
               "src/styles.scss"
-            ]
+            ],
+            "webWorkerTsConfig": "tsconfig.worker.json"
           },
           "configurations": {
             "production": {

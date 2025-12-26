@@ -18,9 +18,13 @@ export class Typing {
   private readonly _accuracy = signal<number>(0);
   readonly accuracy = this._accuracy.asReadonly();
 
+  private readonly _timer = signal<number>(0);
+  readonly timer = this._timer.asReadonly();
+
+  private worker: Worker = new Worker(new URL('./timer.worker', import.meta.url));
+
   readonly selectedTest = computed<Test | undefined>(() => {
     const tests: Test[] | undefined = this._testList()[this._difficulty()];
-
     return tests[Math.floor(Math.random() * tests.length)];
   });
 
@@ -38,6 +42,22 @@ export class Typing {
 
   setMode(mode: Mode): void {
     this._mode.set(mode);
+  }
+
+  startTimedTest(): void {
+    this.worker = new Worker(new URL('./timer.worker', import.meta.url));
+    this.worker.onmessage = ({ data }) => {
+      this._timer.set(data);
+
+      if (!this._timer()) {
+        this.worker.terminate();
+      }
+    };
+    this.worker.postMessage('timed');
+  }
+
+  stopTest(): void {
+    this.worker.terminate();
   }
 
   getData(): void {

@@ -1,4 +1,4 @@
-import { PercentPipe } from '@angular/common';
+import { DatePipe, PercentPipe } from '@angular/common';
 import { Component, computed, inject } from '@angular/core';
 import { Router } from '@angular/router';
 import { ButtonSelect } from '@shared/buttons/button-select/button-select';
@@ -7,7 +7,7 @@ import { Typing } from '@shared/services/typing';
 
 @Component({
   selector: 'app-home-menu',
-  imports: [PercentPipe, ButtonSelect],
+  imports: [PercentPipe, ButtonSelect, DatePipe],
   templateUrl: './home-menu.html',
   styleUrl: './home-menu.scss',
 })
@@ -15,9 +15,11 @@ export class HomeMenu {
   private readonly service = inject(Typing);
   private readonly router = inject(Router);
 
+  accuracy = this.service.accuracy;
+  timer = computed(() => this.service.timer() * 1000);
   difficulty = this.service.difficulty;
   mode = this.service.mode;
-  accuracy = this.service.accuracy;
+
 
   easy = computed(() => this.difficulty() === 'easy');
   medium = computed(() => this.difficulty() === 'medium');
