@@ -1,0 +1,15 @@
+.header-container {
+  display: flex;
+  justify-content: space-between;
+
+  .header-personal-best {
+    align-items: center;
+    color: var(--neutral-0);
+    display: flex;
+    gap: 1rem;
+
+    span {
+      color: var(--neutral-400);  
+    }
+  }
+}

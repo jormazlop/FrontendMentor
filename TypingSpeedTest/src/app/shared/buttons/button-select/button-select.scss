@@ -1,0 +1,18 @@
+.button-select-container {
+  background-color: transparent;
+  border: 1px solid var(--neutral-500);
+  border-radius: 8px;
+  color: var(--neutral-0);
+  padding: 0.6rem 1rem;
+  transition-duration: 0.25s;
+
+  &:hover,
+  &.active {
+    border: 1px solid var(--blue-400);
+    color: var(--blue-400);
+  }
+
+  &:focus {
+    box-shadow: 0 0 0 2px var(--neutral-900), 0 0 0 4px var(--blue-400);
+  }
+}
