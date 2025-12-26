@@ -1,3 +1,2 @@
-<p class="home-started-background text-1-r">
-  {{ selectedTest()?.text }}
+<p class="home-started-background text-1-r" [innerHTML]="textTest() | text: textResult()" [(type)]="textTyped">
 </p>

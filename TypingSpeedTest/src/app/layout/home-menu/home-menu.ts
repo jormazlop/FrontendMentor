@@ -17,6 +17,7 @@ export class HomeMenu {
 
   difficulty = this.service.difficulty;
   mode = this.service.mode;
+  accuracy = this.service.accuracy;
 
   easy = computed(() => this.difficulty() === 'easy');
   medium = computed(() => this.difficulty() === 'medium');

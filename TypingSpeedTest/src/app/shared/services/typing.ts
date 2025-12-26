@@ -15,6 +15,9 @@ export class Typing {
   private readonly _mode = signal<Mode>('timed');
   readonly mode = this._mode.asReadonly();
 
+  private readonly _accuracy = signal<number>(0);
+  readonly accuracy = this._accuracy.asReadonly();
+
   readonly selectedTest = computed<Test | undefined>(() => {
     const tests: Test[] | undefined = this._testList()[this._difficulty()];
 
@@ -23,6 +26,10 @@ export class Typing {
 
   constructor() {
     this.getData();
+  }
+
+  setAccuracy(accuracy: number): void {
+    this._accuracy.set(accuracy);
   }
 
   setDifficulty(difficulty: Difficulty): void {
