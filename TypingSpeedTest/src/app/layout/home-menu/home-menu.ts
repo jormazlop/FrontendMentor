@@ -15,6 +15,7 @@ export class HomeMenu {
   private readonly service = inject(Typing);
   private readonly router = inject(Router);
 
+  wpm = this.service.wpm;
   accuracy = this.service.accuracy;
   timer = computed(() => this.service.timer() * 1000);
   difficulty = this.service.difficulty;

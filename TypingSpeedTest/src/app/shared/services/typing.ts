@@ -21,6 +21,9 @@ export class Typing {
   private readonly _timer = signal<number>(0);
   readonly timer = this._timer.asReadonly();
 
+  private readonly _wpm = signal<number>(0);
+  readonly wpm = this._wpm.asReadonly();
+
   private worker: Worker = new Worker(new URL('./timer.worker', import.meta.url));
 
   readonly selectedTest = computed<Test | undefined>(() => {
@@ -44,7 +47,20 @@ export class Typing {
     this._mode.set(mode);
   }
 
-  startTimedTest(): void {
+  startTest(): void {
+    this._mode() == 'passage' ? this.startPassageTest() : this.startTimedTest();
+  }
+
+
+  setWPM(correctCharacters: number): void {
+
+    const wpm = Math.floor(correctCharacters / 5);
+
+    this._wpm.set(this._mode() == 'passage' ? (wpm / Math.ceil(this._timer())) : wpm);
+
+  }
+
+  private startTimedTest(): void {
     this.worker = new Worker(new URL('./timer.worker', import.meta.url));
     this.worker.onmessage = ({ data }) => {
       this._timer.set(data);
@@ -54,6 +70,14 @@ export class Typing {
       }
     };
     this.worker.postMessage('timed');
+  }
+
+    private startPassageTest(): void {
+    this.worker = new Worker(new URL('./timer.worker', import.meta.url));
+    this.worker.onmessage = ({ data }) => {
+      this._timer.set(data);
+    };
+    this.worker.postMessage('passage');
   }
 
   stopTest(): void {

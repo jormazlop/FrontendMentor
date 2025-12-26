@@ -26,18 +26,20 @@ export default class HomeStarted implements OnDestroy {
 
       if(!match) return null;
       if(match === character) return true;
-      return false;
+      return false; 
     });
     return result;
   });
 
   private readonly effect = effect(() => {
     const accuracy = this.textResult().filter(result => result != false).length / this.textResult().length;
+    const wpm = this.textResult().filter(result => result == true).length;
     this.service.setAccuracy(accuracy);
+    this.service.setWPM(wpm);
   });
 
   constructor() {
-    this.service.startTimedTest();
+    this.service.startTest();
   }
 
   ngOnDestroy(): void {
