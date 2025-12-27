@@ -18,6 +18,7 @@ export class HomeMenu {
   wpm = this.service.wpm;
   accuracy = this.service.accuracy;
   timer = computed(() => this.service.timer() * 1000);
+  timerOn = this.service.timerOn;
   difficulty = this.service.difficulty;
   mode = this.service.mode;
 

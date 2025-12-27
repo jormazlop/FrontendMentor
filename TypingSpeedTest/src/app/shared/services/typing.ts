@@ -21,6 +21,9 @@ export class Typing {
   private readonly _timer = signal<number>(0);
   readonly timer = this._timer.asReadonly();
 
+  private readonly _timerOn = signal<boolean>(false);
+  readonly timerOn = this._timerOn.asReadonly();
+
   private readonly _wpm = signal<number>(0);
   readonly wpm = this._wpm.asReadonly();
 
@@ -67,9 +70,11 @@ export class Typing {
 
       if (!this._timer()) {
         this.worker.terminate();
+        this._timerOn.set(false);
       }
     };
     this.worker.postMessage('timed');
+    this._timerOn.set(true);
   }
 
     private startPassageTest(): void {
@@ -78,10 +83,12 @@ export class Typing {
       this._timer.set(data);
     };
     this.worker.postMessage('passage');
+    this._timerOn.set(true);
   }
 
   stopTest(): void {
     this.worker.terminate();
+    this._timerOn.set(false);
   }
 
   getData(): void {

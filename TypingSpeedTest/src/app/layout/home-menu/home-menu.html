@@ -5,11 +5,11 @@
   </li>
   <li class="home-menu-item">
     <span class="text-3-r">Accuracy:</span>
-    <h2 class="text-2">{{ accuracy() | percent: '2.0-0' }}</h2>
+    <h2 class="text-2" [class.accuracy-errors]="accuracy() != 1">{{ accuracy() | percent: '2.0-0' }}</h2>
   </li>
   <li class="home-menu-item">
     <span class="text-3-r">Time:</span>
-    <h2 class="text-2">{{ this.timer() | date: 'm:ss' }}</h2>
+    <h2 class="text-2" [class.timer-on]="timerOn()">{{ this.timer() | date: 'm:ss' }}</h2>
   </li>
   <li></li>
   <li></li>

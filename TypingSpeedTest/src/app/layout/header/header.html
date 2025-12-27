@@ -2,6 +2,7 @@
     <logo />
     <div class="header-personal-best text-4">
         <icon-personal-best />
-        <span>Personal best:</span> 92 WPM
+        <span>Personal best:</span> 
+        {{ personalBest().wpm | personalBest }}
     </div>
 </header>
