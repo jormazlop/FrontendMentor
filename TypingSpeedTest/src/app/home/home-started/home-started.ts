@@ -1,4 +1,5 @@
 import { Component, computed, effect, inject, model, OnDestroy } from '@angular/core';
+import { Router } from '@angular/router';
 import { TypeDirective } from '@shared/directives/type.directive';
 import { TextPipe } from '@shared/pipes/text-pipe';
 import { Typing } from '@shared/services/typing';
@@ -12,6 +13,7 @@ import { Typing } from '@shared/services/typing';
 export default class HomeStarted implements OnDestroy {
 
   private readonly service = inject(Typing);
+  private readonly router = inject(Router);
 
   selectedTest = inject(Typing).selectedTest;
 
@@ -26,7 +28,7 @@ export default class HomeStarted implements OnDestroy {
 
       if(!match) return null;
       if(match === character) return true;
-      return false; 
+      return false;
     });
     return result;
   });
@@ -36,6 +38,10 @@ export default class HomeStarted implements OnDestroy {
     const wpm = this.textResult().filter(result => result == true).length;
     this.service.setAccuracy(accuracy);
     this.service.setWPM(wpm);
+
+    if(this.textResult().filter(character => character !== null).length === this.textTest().length) {
+      this.router.navigate(['../results']);
+    }
   });
 
   constructor() {

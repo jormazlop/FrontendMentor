@@ -12,8 +12,9 @@ import { Typing } from '@shared/services/typing';
 export default class HomeNotStarted {
   private readonly route = inject(ActivatedRoute);
   private readonly router = inject(Router);
+  private readonly service = inject(Typing);
 
-  selectedTest = inject(Typing).selectedTest;
+  selectedTest = this.service.selectedTest;
 
   onClickTest(): void {
     this.router.navigate(['../started'], { relativeTo: this.route });

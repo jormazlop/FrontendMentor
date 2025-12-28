@@ -1,4 +1,5 @@
 import { Routes } from '@angular/router';
+import { resultGuard } from '@shared/guards/result-guard';
 
 export const routes: Routes = [
   { path: '', redirectTo: 'home/not-started', pathMatch: 'full' },
@@ -8,6 +9,7 @@ export const routes: Routes = [
   },
   {
     path: 'results',
+    canActivate:  [resultGuard],
     loadChildren: () => import('./results/results.routes').then((m) => m.routes),
   },
   { path: '**', redirectTo: '' },

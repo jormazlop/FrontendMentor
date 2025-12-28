@@ -1,1 +1,22 @@
-<p>results-first-test works!</p>
+<icon-completed />
+<hgroup class="result-first-test-title">
+  <h2 class="text-1-b">Baseline Established!</h2>
+  <h3 class="text-3-r">You’ve set the bar. Now the real challenge begins—time to beat it.</h3>
+</hgroup>
+<ul class="result-first-test-resume">
+  <li>
+    <h3 class="text-3-r">WPM:</h3>
+    <span class="text-2">{{ pb().wpm }}</span>
+  </li>
+  <li>
+    <h3 class="text-3-r">Accuracy:</h3>
+    <span class="text-2">{{ pb().accuracy | percent: '2.0-0' }}</span>
+  </li>
+  <li>
+    <h3 class="text-3-r">Characters:</h3>
+    <span class="text-2">120/5</span>
+  </li>
+</ul>
+<button-secondary (click)="onClickRepeat()">Beat This Score</button-secondary>
+<pattern-star-1 class="star-1"/>
+<pattern-star-2 class="star-2"/>
