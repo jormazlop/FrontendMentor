@@ -6,12 +6,13 @@ import { IconCompleted } from '@shared/icons/icon-completed/icon-completed';
 import { PersonalBestModel } from '@shared/models/personal-best.model';
 import { PatternStar1 } from '@shared/patterns/pattern-star-1/pattern-star-1';
 import { PatternStar2 } from '@shared/patterns/pattern-star-2/pattern-star-2';
+import { AccuracyPipe } from '@shared/pipes/accuracy.pipe';
 import { PersonalBest } from '@shared/services/personal-best';
 import { Typing } from '@shared/services/typing';
 
 @Component({
   selector: 'app-results-first-test',
-  imports: [ButtonSecondary, IconCompleted, PatternStar1, PatternStar2, PercentPipe],
+  imports: [ButtonSecondary, IconCompleted, PatternStar1, PatternStar2, AccuracyPipe],
   templateUrl: './results-first-test.html',
   styleUrl: './results-first-test.scss',
 })

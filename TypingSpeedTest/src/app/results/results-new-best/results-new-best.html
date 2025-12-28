@@ -6,11 +6,11 @@
 <ul class="result-new-best-resume">
   <li>
     <h3 class="text-3-r">WPM:</h3>
-    <span class="text-2">85</span>
+    <span class="text-2">{{ pb().wpm }}</span>
   </li>
   <li>
     <h3 class="text-3-r">Accuracy:</h3>
-    <span class="text-2">90%</span>
+    <span class="text-2">{{ pb().accuracy | accuracy: '2.0-0' }}</span>
   </li>
   <li>
     <h3 class="text-3-r">Characters:</h3>

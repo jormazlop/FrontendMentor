@@ -3,11 +3,12 @@ import { Component, computed, inject } from '@angular/core';
 import { Router } from '@angular/router';
 import { ButtonSelect } from '@shared/buttons/button-select/button-select';
 import { Difficulty, Mode } from '@shared/models/config.model';
+import { AccuracyPipe } from '@shared/pipes/accuracy.pipe';
 import { Typing } from '@shared/services/typing';
 
 @Component({
   selector: 'app-home-menu',
-  imports: [PercentPipe, ButtonSelect, DatePipe],
+  imports: [AccuracyPipe, ButtonSelect, DatePipe],
   templateUrl: './home-menu.html',
   styleUrl: './home-menu.scss',
 })
