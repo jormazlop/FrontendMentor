@@ -17,18 +17,18 @@
       <h2 class="text-2" [class.timer-on]="timerOn()">{{ this.timer() | date : 'm:ss' }}</h2>
     </li>
   </div>
-  <div class="home-menu-bloc right-bloc">
+  <div class="home-menu-bloc">
     <li class="home-menu-item">
-      <span class="text-3-r">Difficulty:</span>
-      <button-select [active]="easy()" (click)="setDifficulty('easy')">Easy</button-select>
-      <button-select [active]="medium()" (click)="setDifficulty('medium')">Medium</button-select>
-      <button-select [active]="hard()" (click)="setDifficulty('hard')">Hard</button-select>
+      <button-select
+        label="Difficulty:"
+        [active]="difficulty()"
+        (onChangeOption)="setDifficulty($event)"
+        [options]="optionsDifficulty()"
+        />
     </li>
     <li class="separator"></li>
     <li class="home-menu-item">
-      <span class="text-3-r">Mode:</span>
-      <button-select [active]="timed()" (click)="setMode('timed')">Timed(60s)</button-select>
-      <button-select [active]="passage()" (click)="setMode('passage')">Passage</button-select>
+      <button-select label="Mode:" [active]="mode()" (onChangeOption)="setMode($event)" [options]="optionsMode()" />
     </li>
   </div>
 </menu>

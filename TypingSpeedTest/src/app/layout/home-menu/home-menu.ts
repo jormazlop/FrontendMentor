@@ -1,5 +1,5 @@
 import { DatePipe } from '@angular/common';
-import { Component, computed, inject } from '@angular/core';
+import { Component, computed, inject, signal } from '@angular/core';
 import { Router } from '@angular/router';
 import { ButtonSelect } from '@shared/buttons/button-select/button-select';
 import { Difficulty, Mode } from '@shared/models/config.model';
@@ -20,23 +20,20 @@ export class HomeMenu {
   accuracy = this.service.accuracy;
   timer = computed(() => this.service.timer() * 1000);
   timerOn = this.service.timerOn;
+
   difficulty = this.service.difficulty;
+  optionsDifficulty = signal(['easy', 'medium', 'hard']);
+
   mode = this.service.mode;
+  optionsMode = signal(['timed(60s)', 'passage']);
 
-  easy = computed(() => this.difficulty() === 'easy');
-  medium = computed(() => this.difficulty() === 'medium');
-  hard = computed(() => this.difficulty() === 'hard');
-
-  timed = computed(() => this.mode() === 'timed');
-  passage = computed(() => this.mode() === 'passage');
-
-  setDifficulty(difficulty: Difficulty): void {
-    this.service.setDifficulty(difficulty);
+  setDifficulty(difficulty: string): void {
+    this.service.setDifficulty(difficulty as Difficulty);
     this.router.navigate(['/home/not-started']);
   }
 
-  setMode(mode: Mode): void {
-    this.service.setMode(mode);
+  setMode(mode: string): void {
+    this.service.setMode(mode as Mode);
     this.router.navigate(['/home/not-started']);
   }
 }

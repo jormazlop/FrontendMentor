@@ -24,8 +24,8 @@ export default class ResultsComplete {
     constructor() {
       this.resultat().accuracy = this.service.accuracy();
       this.resultat().wpm = this.service.wpm();
-      this.resultat().correctCharacters = 0;
-      this.resultat().incorrectCharacters = 0;
+      this.resultat().correctCharacters = this.service.correctCount();
+      this.resultat().incorrectCharacters = this.service.incorrectCount();
     }
 
   onClickRepeat(): void {

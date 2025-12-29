@@ -1,3 +1,37 @@
-<button class="button-select-container text-5" [class.active]="active()">
-  <ng-content>Button Select</ng-content>
+<span class="text-3-r label">{{ label() }}</span>
+@for (option of options(); track option) {
+<button
+  class="button-select-container-full text-5"
+  [class.active]="active() === option"
+  (click)="onClickOption(option)"
+>
+  {{ option | titlecase }}
 </button>
+}
+
+
+<div ngCombobox readonly>
+  <div #origin class="select">
+    <span class="combobox-label">
+      <span class="selected-label-text text-3-r">{{ active() | titlecase }}</span>
+    </span>
+    <input aria-label="Label dropdown" placeholder="Select a label" ngComboboxInput />
+  </div>
+  <ng-template ngComboboxPopupContainer>
+    <ng-template
+      [cdkConnectedOverlay]="{origin, usePopover: 'inline', matchWidth: true}"
+      [cdkConnectedOverlayOpen]="true"
+    >
+      <div class="popup-container">
+        <div ngListbox>
+          @for (option of options(); track option) {
+            <div ngOption [value]="option" [label]="option" (click)="onClickOption(option)">
+              <input type="radio" [id]="option" [name]="option" [checked]="active() === option" />
+              <label [for]="option" class="text-3-r"><span></span>{{ option | titlecase }}</label>
+            </div>
+          }
+        </div>
+      </div>
+    </ng-template>
+  </ng-template>
+</div>

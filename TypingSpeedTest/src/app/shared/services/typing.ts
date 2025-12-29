@@ -12,7 +12,7 @@ export class Typing {
 
   private readonly _difficulty = signal<Difficulty>('easy');
   readonly difficulty = this._difficulty.asReadonly();
-  private readonly _mode = signal<Mode>('timed');
+  private readonly _mode = signal<Mode>('timed(60s)');
   readonly mode = this._mode.asReadonly();
 
   private readonly _accuracy = signal<number>(0);
