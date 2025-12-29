@@ -25,7 +25,7 @@ export default class ResultsComplete {
       this.resultat().accuracy = this.service.accuracy();
       this.resultat().wpm = this.service.wpm();
       this.resultat().correctCharacters = 0;
-      this.resultat().wrongCharacters = 0;
+      this.resultat().incorrectCharacters = 0;
     }
 
   onClickRepeat(): void {

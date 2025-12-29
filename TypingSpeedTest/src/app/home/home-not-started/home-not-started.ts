@@ -16,6 +16,10 @@ export default class HomeNotStarted {
 
   selectedTest = this.service.selectedTest;
 
+  constructor() {
+    this.service.initTest();
+  }
+
   onClickTest(): void {
     this.router.navigate(['../started'], { relativeTo: this.route });
   }

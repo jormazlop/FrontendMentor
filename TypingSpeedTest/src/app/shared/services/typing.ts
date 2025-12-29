@@ -30,6 +30,12 @@ export class Typing {
   private readonly _testStarted = signal(false);
   readonly testStarted = this._testStarted.asReadonly();
 
+  private readonly _correctCount = signal(0);
+  readonly correctCount = this._correctCount.asReadonly();
+
+  private readonly _incorrectCount = signal(0);
+  readonly incorrectCount = this._incorrectCount.asReadonly();
+
   private worker: Worker = new Worker(new URL('./timer.worker', import.meta.url));
 
   readonly selectedTest = computed<Test | undefined>(() => {
@@ -53,6 +59,14 @@ export class Typing {
     this._mode.set(mode);
   }
 
+  initTest(): void {
+    this._accuracy.set(0);
+    this._wpm.set(0);
+    this._correctCount.set(0);
+    this._incorrectCount.set(0);
+    this._timer.set(0);
+  }
+
   startTest(): void {
     this._mode() == 'passage' ? this.startPassageTest() : this.startTimedTest();
     this.setTestStarted(true);
@@ -63,11 +77,16 @@ export class Typing {
   }
 
   setWPM(correctCharacters: number): void {
-
     const wpm = Math.floor(correctCharacters / 5);
-
     this._wpm.set(this._mode() == 'passage' ? (wpm / Math.ceil(this._timer())) : wpm);
+  }
 
+  setCorrectCount(count: number): void {
+    this._correctCount.set(count);
+  }
+
+  setIncorrectCount(count: number): void {
+    this._incorrectCount.set(count);
   }
 
   private startTimedTest(): void {

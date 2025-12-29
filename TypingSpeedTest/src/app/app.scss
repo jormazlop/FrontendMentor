@@ -6,6 +6,10 @@
   height: 100%;
   padding: 3rem 10rem;
 
+  @media (width < 1300px) {
+    padding: 3rem;
+  }
+
   .main-container {
     height: calc(100% - 6rem);
   }

@@ -36,8 +36,8 @@ export default class ResultsNewBest {
     const newBest = new PersonalBestModel();
     newBest.accuracy = this.service.accuracy();
     newBest.wpm = this.service.wpm();
-    newBest.correctCharacters = 0;
-    newBest.wrongCharacters = 0;
+    newBest.correctCharacters = this.service.correctCount();
+    newBest.incorrectCharacters = this.service.incorrectCount();
     this.personalBest.setPersonalBest(newBest);
   }
 

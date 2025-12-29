@@ -1,4 +1,4 @@
-import { DatePipe, PercentPipe } from '@angular/common';
+import { DatePipe } from '@angular/common';
 import { Component, computed, inject } from '@angular/core';
 import { Router } from '@angular/router';
 import { ButtonSelect } from '@shared/buttons/button-select/button-select';
@@ -22,7 +22,6 @@ export class HomeMenu {
   timerOn = this.service.timerOn;
   difficulty = this.service.difficulty;
   mode = this.service.mode;
-
 
   easy = computed(() => this.difficulty() === 'easy');
   medium = computed(() => this.difficulty() === 'medium');

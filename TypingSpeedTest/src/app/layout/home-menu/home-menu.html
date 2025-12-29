@@ -1,27 +1,34 @@
 <menu class="home-menu-container">
-  <li class="home-menu-item">
-    <span class="text-3-r">WPM:</span>
-    <h2 class="text-2">{{ wpm() }}</h2>
-  </li>
-  <li class="home-menu-item">
-    <span class="text-3-r">Accuracy:</span>
-    <h2 class="text-2" [class.accuracy-errors]="accuracy() != 1">{{ accuracy() | accuracy: '2.0-0' }}</h2>
-  </li>
-  <li class="home-menu-item">
-    <span class="text-3-r">Time:</span>
-    <h2 class="text-2" [class.timer-on]="timerOn()">{{ this.timer() | date: 'm:ss' }}</h2>
-  </li>
-  <li></li>
-  <li></li>
-  <li class="home-menu-item">
-    <span class="text-3-r">Difficulty:</span>
-    <button-select [active]="easy()" (click)="setDifficulty('easy')">Easy</button-select>
-    <button-select [active]="medium()" (click)="setDifficulty('medium')">Medium</button-select>
-    <button-select [active]="hard()" (click)="setDifficulty('hard')">Hard</button-select>
-  </li>
-  <li class="home-menu-item">
-    <span class="text-3-r">Mode:</span>
-    <button-select [active]="timed()" (click)="setMode('timed')">Timed(60s)</button-select>
-    <button-select [active]="passage()" (click)="setMode('passage')">Passage</button-select>
-  </li>
+  <div class="home-menu-bloc">
+    <li class="home-menu-item">
+      <span class="text-3-r">WPM:</span>
+      <h2 class="text-2">{{ wpm() }}</h2>
+    </li>
+    <li class="separator"></li>
+    <li class="home-menu-item">
+      <span class="text-3-r">Accuracy:</span>
+      <h2 class="text-2" [class.accuracy-errors]="accuracy() != 1">
+        {{ accuracy() | accuracy : '2.0-0' }}
+      </h2>
+    </li>
+    <li class="separator"></li>
+    <li class="home-menu-item">
+      <span class="text-3-r">Time:</span>
+      <h2 class="text-2" [class.timer-on]="timerOn()">{{ this.timer() | date : 'm:ss' }}</h2>
+    </li>
+  </div>
+  <div class="home-menu-bloc right-bloc">
+    <li class="home-menu-item">
+      <span class="text-3-r">Difficulty:</span>
+      <button-select [active]="easy()" (click)="setDifficulty('easy')">Easy</button-select>
+      <button-select [active]="medium()" (click)="setDifficulty('medium')">Medium</button-select>
+      <button-select [active]="hard()" (click)="setDifficulty('hard')">Hard</button-select>
+    </li>
+    <li class="separator"></li>
+    <li class="home-menu-item">
+      <span class="text-3-r">Mode:</span>
+      <button-select [active]="timed()" (click)="setMode('timed')">Timed(60s)</button-select>
+      <button-select [active]="passage()" (click)="setMode('passage')">Passage</button-select>
+    </li>
+  </div>
 </menu>

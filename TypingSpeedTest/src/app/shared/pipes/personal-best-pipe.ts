@@ -6,7 +6,9 @@ import { Pipe, PipeTransform } from '@angular/core';
 export class PersonalBestPipe implements PipeTransform {
 
   transform(value?: number): string {
-    return value ? value + ' WPM' : '- WPM';
+
+
+    return value != undefined ? value + ' WPM' : '- WPM';
   }
 
 }

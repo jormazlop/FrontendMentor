@@ -9,7 +9,21 @@
     gap: 1rem;
 
     span {
-      color: var(--neutral-400);  
+      color: var(--neutral-400);
+
+      @media (width < 700px) {
+
+        &.full-text {
+          display: none;
+        }
+      }
+
+      @media (width >= 700px) {
+
+        &.responsive-text {
+          display: none;
+        }
+      }
     }
   }
 }

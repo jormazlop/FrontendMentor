@@ -1,4 +1,4 @@
-import { Component, computed, effect, inject, model, OnDestroy } from '@angular/core';
+import { Component, computed, effect, inject, model, OnDestroy, signal } from '@angular/core';
 import { Router } from '@angular/router';
 import { TypeDirective } from '@shared/directives/type.directive';
 import { TextPipe } from '@shared/pipes/text-pipe';
@@ -21,11 +21,13 @@ export default class HomeStarted implements OnDestroy {
 
   textTyped = model<string[]>([]);
 
+  correctCharacter = computed(() => this.textTest()[this.textTyped().length]);
+
+  incorrectCount = model<number>(0);
+
   textResult = computed(() => {
     const result = this.textTest().map((character, index) => {
-
       const match = this.textTyped().at(index);
-
       if(!match) return null;
       if(match === character) return true;
       return false;
@@ -34,12 +36,15 @@ export default class HomeStarted implements OnDestroy {
   });
 
   private readonly effect = effect(() => {
-    const accuracy = this.textResult().filter(result => result != false).length / this.textResult().length;
+    let accuracy = (this.textResult().length - this.incorrectCount()) / this.textResult().length;
+    accuracy = accuracy > 0 ? accuracy : 0;
     const wpm = this.textResult().filter(result => result == true).length;
     this.service.setAccuracy(accuracy);
     this.service.setWPM(wpm);
+    this.service.setIncorrectCount(this.incorrectCount());
+    this.service.setCorrectCount(this.textResult().filter(result => result === true).length)
 
-    if(this.textResult().filter(character => character !== null).length === this.textTest().length) {
+    if(this.textResult().filter(character => character !== null).length === this.textTest().length && this.textTest().length) {
       this.router.navigate(['../results']);
     }
   });
