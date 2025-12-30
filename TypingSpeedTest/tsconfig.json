@@ -22,6 +22,9 @@
       "@home/*": [
         "home/*"
       ],
+      "@config/*": [
+        "config/*"
+      ],
       "@shared/*": [
         "shared/*"
       ],

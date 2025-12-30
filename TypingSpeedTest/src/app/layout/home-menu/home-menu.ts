@@ -2,7 +2,7 @@ import { DatePipe } from '@angular/common';
 import { Component, computed, inject, signal } from '@angular/core';
 import { Router } from '@angular/router';
 import { ButtonSelect } from '@shared/buttons/button-select/button-select';
-import { Difficulty, Mode } from '@shared/models/config.model';
+import { Difficulty, Timer } from '@shared/models/config.model';
 import { AccuracyPipe } from '@shared/pipes/accuracy.pipe';
 import { Typing } from '@shared/services/typing';
 
@@ -33,7 +33,7 @@ export class HomeMenu {
   }
 
   setMode(mode: string): void {
-    this.service.setMode(mode as Mode);
+    this.service.setMode(mode as Timer);
     this.router.navigate(['/home/not-started']);
   }
 }

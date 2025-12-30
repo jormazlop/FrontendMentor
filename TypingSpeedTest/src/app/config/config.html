@@ -1,1 +1,17 @@
-<p>config works!</p>
+<h1 class="text-1-r">Configuration:</h1>
+<div class="config-option">
+  <h2 class="text-2">Select Language:</h2>
+  <app-config-options [options]="languages()" [(selected)]="languageSelected"/>
+</div>
+<div class="config-option">
+  <h2 class="text-2">Select Mode:</h2>
+  <app-config-options [options]="modes()" [(selected)]="modeSelected"/>
+</div>
+<div class="config-option">
+  <h2 class="text-2">Select Sound:</h2>
+  <app-config-options [options]="sounds()" [(selected)]="soundSelected"/>
+</div>
+<div class="config-buttons">
+  <button-secondary (click)="onReturn()">Return home</button-secondary>
+  <button-primary (click)="onSaveOptions()">Save Options</button-primary>
+</div>

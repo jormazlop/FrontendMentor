@@ -27,12 +27,7 @@
     }
 
     .config-link {
-
-      transition-duration: 1s;
-
-      &:hover {
-        transform: rotate(360deg);
-      }
+      margin-left: 2rem;
     }
   }
 }

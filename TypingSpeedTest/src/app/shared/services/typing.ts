@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { computed, inject, Injectable, signal } from '@angular/core';
-import { Difficulty, Mode } from '@shared/models/config.model';
+import { Difficulty, Timer } from '@shared/models/config.model';
 import { Test, TestList } from '@shared/models/typing.model';
 
 @Injectable({
@@ -12,7 +12,7 @@ export class Typing {
 
   private readonly _difficulty = signal<Difficulty>('easy');
   readonly difficulty = this._difficulty.asReadonly();
-  private readonly _mode = signal<Mode>('timed(60s)');
+  private readonly _mode = signal<Timer>('timed(60s)');
   readonly mode = this._mode.asReadonly();
 
   private readonly _accuracy = signal<number>(0);
@@ -55,7 +55,7 @@ export class Typing {
     this._difficulty.set(difficulty);
   }
 
-  setMode(mode: Mode): void {
+  setMode(mode: Timer): void {
     this._mode.set(mode);
     this._mode() == 'passage' ? this._timer.set(0) : this._timer.set(60);
   }

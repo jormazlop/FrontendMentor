@@ -1,0 +1,36 @@
+.button {
+  background: var(--neutral-0);
+  border: 2px solid var(--neutral-700);
+  font-size: 18px;
+  cursor: pointer;
+  border-radius: 10px;
+  outline: none;
+  padding: 0;
+  transition: all 0.1s ease-in-out;
+
+  &:focus {
+    box-shadow: 0 0 0 3px var(--neutral-900), 0 0 0 5px var(--blue-400);
+  }
+}
+.button-content {
+  padding: 1.5rem 3rem;
+  border-radius: 8px;
+  box-shadow: inset 0 -6px var(--neutral-400), 0 -2px var(--neutral-700);
+  transition: all 0.1s ease-in-out;
+}
+.button-text {
+  color: var(--neutral-900);
+  display: block;
+  transform: translate3d(0, -4px, 0);
+  transition: all 0.1s ease-in-out;
+}
+.button:active, .active {
+  background-color: var(--blue-400);
+  box-shadow: none;
+}
+.button:active .button-content, .active .button-content {
+  box-shadow: none;
+}
+.button:active .button-text, .active .button-text {
+  transform: translate3d(0, 0, 0);
+}
