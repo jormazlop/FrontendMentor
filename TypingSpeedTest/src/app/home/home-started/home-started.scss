@@ -5,6 +5,10 @@
   position: relative;
   overflow: hidden;
 
+  @media(width < 1300px) {
+    overflow-y: auto;
+  }
+
   .home-started-background {
     user-select: none;
   }

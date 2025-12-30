@@ -12,5 +12,9 @@ export const routes: Routes = [
     canActivate:  [resultGuard],
     loadChildren: () => import('./results/results.routes').then((m) => m.routes),
   },
+  {
+    path: 'config',
+    loadComponent: () => import('./config/config')
+  },
   { path: '**', redirectTo: '' },
 ];

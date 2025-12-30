@@ -44,14 +44,14 @@ export default class HomeStarted implements OnDestroy {
     this.service.setIncorrectCount(this.incorrectCount());
     this.service.setCorrectCount(this.textResult().filter(result => result === true).length)
 
+    if (this.textResult().filter(character => character !== null).length) {
+      this.service.startTest();
+    }
+
     if(this.textResult().filter(character => character !== null).length === this.textTest().length && this.textTest().length) {
       this.router.navigate(['../results']);
     }
   });
-
-  constructor() {
-    this.service.startTest();
-  }
 
   ngOnDestroy(): void {
     this.service.stopTest();

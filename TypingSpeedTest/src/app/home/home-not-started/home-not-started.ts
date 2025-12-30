@@ -25,6 +25,7 @@ export default class HomeNotStarted {
   }
 
   onStartTest(): void {
+    this.service.startTest();
     this.router.navigate(['../started'], { relativeTo: this.route });
   }
 }

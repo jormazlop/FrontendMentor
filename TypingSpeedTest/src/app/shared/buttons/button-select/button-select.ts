@@ -16,6 +16,7 @@ import {
   viewChild,
 } from '@angular/core';
 import { OverlayModule } from '@angular/cdk/overlay';
+import { IconDownArrow } from '@shared/icons/icon-down-arrow/icon-down-arrow';
 
 @Component({
   selector: 'button-select',
@@ -28,6 +29,7 @@ import { OverlayModule } from '@angular/cdk/overlay';
     Listbox,
     Option,
     OverlayModule,
+    IconDownArrow
   ],
   templateUrl: './button-select.html',
   styleUrl: './button-select.scss',

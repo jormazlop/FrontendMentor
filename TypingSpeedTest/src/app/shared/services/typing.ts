@@ -57,6 +57,7 @@ export class Typing {
 
   setMode(mode: Mode): void {
     this._mode.set(mode);
+    this._mode() == 'passage' ? this._timer.set(0) : this._timer.set(60);
   }
 
   initTest(): void {
@@ -64,12 +65,15 @@ export class Typing {
     this._wpm.set(0);
     this._correctCount.set(0);
     this._incorrectCount.set(0);
-    this._timer.set(0);
+    this._mode() == 'passage' ? this._timer.set(0) : this._timer.set(60);
+    this._testStarted.set(false);
   }
 
   startTest(): void {
-    this._mode() == 'passage' ? this.startPassageTest() : this.startTimedTest();
-    this.setTestStarted(true);
+    if (!this.testStarted()) {
+      this._mode() == 'passage' ? this.startPassageTest() : this.startTimedTest();
+      this.setTestStarted(true);
+    }
   }
 
   setTestStarted(started: boolean): void {
@@ -78,7 +82,7 @@ export class Typing {
 
   setWPM(correctCharacters: number): void {
     const wpm = Math.floor(correctCharacters / 5);
-    this._wpm.set(this._mode() == 'passage' ? (wpm / Math.ceil(this._timer())) : wpm);
+    this._wpm.set(this._mode() == 'passage' ? wpm / Math.ceil(this._timer() / 60 || 1) : wpm);
   }
 
   setCorrectCount(count: number): void {
@@ -103,7 +107,7 @@ export class Typing {
     this._timerOn.set(true);
   }
 
-    private startPassageTest(): void {
+  private startPassageTest(): void {
     this.worker = new Worker(new URL('./timer.worker', import.meta.url));
     this.worker.onmessage = ({ data }) => {
       this._timer.set(data);

@@ -2,6 +2,14 @@ html, body {
   font-size: 10px;
   height: 100%;
   min-height: 100vh;
+
+  @media (width < 700px) {
+    font-size: 8px;
+  }
+
+  @media (width < 400px) {
+    font-size: 6px;
+  }
 }
 
 h1, h2, h3, h4, h5, h6, p {
