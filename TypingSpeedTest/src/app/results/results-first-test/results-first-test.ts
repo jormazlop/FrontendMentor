@@ -1,6 +1,7 @@
 import { PercentPipe } from '@angular/common';
 import { Component, inject } from '@angular/core';
 import { Router } from '@angular/router';
+import { TranslocoPipe } from '@jsverse/transloco';
 import { ButtonSecondary } from '@shared/buttons/button-secondary/button-secondary';
 import { IconCompleted } from '@shared/icons/icon-completed/icon-completed';
 import { PersonalBestModel } from '@shared/models/personal-best.model';
@@ -12,7 +13,14 @@ import { Typing } from '@shared/services/typing';
 
 @Component({
   selector: 'app-results-first-test',
-  imports: [ButtonSecondary, IconCompleted, PatternStar1, PatternStar2, AccuracyPipe],
+  imports: [
+    ButtonSecondary,
+    IconCompleted,
+    PatternStar1,
+    PatternStar2,
+    AccuracyPipe,
+    TranslocoPipe,
+  ],
   templateUrl: './results-first-test.html',
   styleUrl: './results-first-test.scss',
 })
@@ -33,6 +41,6 @@ export default class ResultsFirstTest {
   }
 
   onClickRepeat(): void {
-    this.router.navigate(['../../home/not-started'])
+    this.router.navigate(['../../home/not-started']);
   }
 }

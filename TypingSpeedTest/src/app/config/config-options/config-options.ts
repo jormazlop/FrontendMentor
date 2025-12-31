@@ -1,10 +1,11 @@
-import { TitleCasePipe } from '@angular/common';
+import { AsyncPipe } from '@angular/common';
 import { Component, input, output } from '@angular/core';
 import { Language, Mode, Sound } from '@shared/models/config.model';
+import { ConfigPipe } from '@shared/pipes/config-pipe';
 
 @Component({
   selector: 'app-config-options',
-  imports: [TitleCasePipe],
+  imports: [ConfigPipe, AsyncPipe],
   templateUrl: './config-options.html',
   styleUrl: './config-options.scss',
 })

@@ -2,8 +2,8 @@
     <logo />
     <div class="header-personal-best text-4">
         <icon-personal-best />
-        <span class="full-text">Personal best:</span>
-        <span class="responsive-text">Best:</span>
+        <span class="full-text">{{ 'header.personal-1'| transloco }}</span>
+        <span class="responsive-text">{{ 'header.personal-2'| transloco }}</span>
         {{ personalBest().wpm | personalBest }}
         <a class="config-link" routerLink="../../config">
           <icon-config />

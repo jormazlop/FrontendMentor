@@ -1,11 +1,17 @@
-import { Injectable, signal } from '@angular/core';
+import { effect, inject, Injectable, signal } from '@angular/core';
+import { TranslocoService } from '@jsverse/transloco';
 import { Language, Mode, Sound } from '@shared/models/config.model';
+import { Typing } from './typing';
 
 @Injectable({
   providedIn: 'root',
 })
 export class ConfigService {
-  private readonly _languages = signal<Language[]>(['english', 'spanish', 'french', 'italian']);
+
+  private readonly translocoService = inject(TranslocoService);
+  private readonly typingService = inject(Typing);
+
+  private readonly _languages = signal<Language[]>(['en', 'es', 'fr', 'it']);
   readonly languages = this._languages.asReadonly();
 
   private readonly _modes = signal<Mode[]>(['dark', 'light', 'system']);
@@ -14,7 +20,7 @@ export class ConfigService {
   private readonly _sounds = signal<Sound[]>(['on', 'off']);
   readonly sounds = this._sounds.asReadonly();
 
-  private readonly _languageSelected = signal<Language>('english');
+  private readonly _languageSelected = signal<Language>('en');
   readonly languageSelected = this._languageSelected.asReadonly();
 
   private readonly _modeSelected = signal<Mode>('dark');
@@ -22,6 +28,11 @@ export class ConfigService {
 
   private readonly _soundSelected = signal<Sound>('off');
   readonly soundSelected = this._soundSelected.asReadonly();
+
+  private readonly effect = effect(() => {
+    this.translocoService.setActiveLang(this.languageSelected());
+    this.typingService.getData(this.languageSelected());
+  });
 
   setLanguageSelected(language: Language): void {
     this._languageSelected.set(language);

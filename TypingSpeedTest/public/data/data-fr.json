@@ -1,0 +1,128 @@
+{
+  "easy": [
+    {
+      "id": "easy-1",
+      "text": "Le soleil se leva sur la ville tranquille. Les oiseaux chantaient dans les arbres tandis que les gens se reveillaient et commencaient leur journee. Ce serait une matinee chaude et ensoleillee."
+    },
+    {
+      "id": "easy-2",
+      "text": "Elle alla a pied au magasin pour acheter du pain et du lait. Le magasin etait anime, mais elle trouva rapidement ce dont elle avait besoin. En rentrant chez elle, elle vit une amie et lui fit signe de la main."
+    },
+    {
+      "id": "easy-3",
+      "text": "Le chien courait a travers le parc en poursuivant une balle. Il etait rapide et adorait jouer. Au bout d’un moment, il se fatigua et s’allongea a l’ombre fraiche d’un grand chene."
+    },
+    {
+      "id": "easy-4",
+      "text": "J’aime lire des livres avant d’aller me coucher. Cela m’aide a me detendre apres une longue journee. Mes histoires preferees parlent d’aventure et de voyages vers des lieux lointains."
+    },
+    {
+      "id": "easy-5",
+      "text": "La cuisine sentait le cafe frais et le pain grille. Maman preparait le petit-dejeuner pendant que papa lisait les nouvelles. C’etait un matin ordinaire dans leur petite maison chaleureuse."
+    },
+    {
+      "id": "easy-6",
+      "text": "Nous sommes alles a la plage l’ete dernier. L’eau etait bleue et le sable etait chaud. Nous avons construit un grand chateau de sable et cherche des coquillages le long du rivage."
+    },
+    {
+      "id": "easy-7",
+      "text": "La chatte etait assise sur le rebord de la fenetre en regardant la pluie. Les gouttes glissaient sur la vitre une par une. Elle semblait heureuse d’etre a l’interieur, au sec et au chaud."
+    },
+    {
+      "id": "easy-8",
+      "text": "Mon meilleur ami habite a cote de chez moi. Nous jouons ensemble apres l’ecole. Parfois, nous faisons du velo autour du quartier ou nous nous asseyons pour parler pendant des heures."
+    },
+    {
+      "id": "easy-9",
+      "text": "Le printemps est ma saison preferee de l’annee. Les fleurs commencent a eclore et les journees deviennent plus longues. J’aime voir les arbres redevenir verts apres les mois froids de l’hiver."
+    },
+    {
+      "id": "easy-10",
+      "text": "La musique jouait doucement dans la piece. Elle ferma les yeux et laissa les sons l’envelopper. C’etait une chanson simple, mais elle lui apportait un sentiment de paix."
+    }
+  ],
+  "medium": [
+    {
+      "id": "medium-1",
+      "text": "Apprendre une nouvelle competence demande de la patience et une pratique reguliere. Que vous etudiiez une langue, appreniez un instrument ou maitrisiez un sport, la cle est de s’y mettre chaque jour. Les petites ameliorations s’accumulent avec le temps et, avant meme de vous en rendre compte, vous aurez fait des progres remarquables."
+    },
+    {
+      "id": "medium-2",
+      "text": "L’ancien phare se dressait sur la falaise depuis plus d’un siecle, guidant les marins en toute securite a travers des eaux dangereuses. Son faisceau percait le brouillard chaque nuit, une presence rassurante pour ceux qui naviguaient le long de la cote rocheuse. De nombreuses tempetes avaient mis sa structure a l’epreuve, mais il etait reste solide."
+    },
+    {
+      "id": "medium-3",
+      "text": "La culture du cafe a beaucoup evolue ces dernieres decennies. Ce qui etait autrefois un simple rituel matinal est devenu une forme d’art, avec des baristas creant des motifs complexes et des torrefacteurs s’approvisionnant en grains provenant de villages de montagne recules. La humble tasse de cafe raconte desormais une histoire mondiale."
+    },
+    {
+      "id": "medium-4",
+      "text": "Les jardins urbains transforment les paysages des villes du monde entier. Les habitants transforment les toits, les balcons et les terrains abandonnes en espaces verts florissants. Ces initiatives fournissent non seulement des produits frais, mais creent aussi du lien social, reduisent le stress et aident a lutter contre l’effet d’ilot de chaleur urbain."
+    },
+    {
+      "id": "medium-5",
+      "text": "Le documentaire a explore la maniere dont la technologie faconne nos habitudes quotidiennes. Du moment ou nous nous reveillons avec une alarme sur nos telephones jusqu’aux podcasts que nous ecoutons pour nous endormir, les outils numeriques se sont integres au tissu de la vie moderne. La question est la suivante : avons-nous le controle ?"
+    },
+    {
+      "id": "medium-6",
+      "text": "Voyager en train offre une perspective unique sur le paysage. Contrairement a l’avion, qui reduit les territoires a des motifs abstraits, les trajets ferroviaires permettent d’observer les transitions progressives entre les regions. On voit les fermes laisser place aux forets et de petites villes apparaitre au milieu de collines ondulantes."
+    },
+    {
+      "id": "medium-7",
+      "text": "La cheffe pensait qu’une grande cuisine commence par des ingredients de qualite. Chaque semaine, elle rendait visite aux agriculteurs locaux et choisissait des legumes a pleine maturite. Son menu changeait au fil des saisons, refletant ce que la terre offrait. Les clients appreciaient la fraicheur qu’ils pouvaient gouter a chaque bouchee."
+    },
+    {
+      "id": "medium-8",
+      "text": "Les bibliotheques se sont reinvente es pour l’ere numerique. Au-dela du pret de livres, elles proposent desormais des espaces de coworking, des imprimantes 3D, des studios d’enregistrement et des ateliers de programmation. Ces lieux communautaires sont devenus des espaces ou des personnes de tous ages viennent apprendre, creer et se connecter aux autres."
+    },
+    {
+      "id": "medium-9",
+      "text": "L’architecte concevait des batiments qui travaillaient avec la nature plutot que contre elle. De grandes fenetres captaient la lumiere naturelle, reduisant ainsi le besoin en electricite. Les toits vegetalises absorbaient l’eau de pluie et offraient une isolation. Sa philosophie etait simple : le design durable doit etre beau, fonctionnel et accessible a tous."
+    },
+    {
+      "id": "medium-10",
+      "text": "Les marches nocturnes s’animent apres le coucher du soleil dans des villes de toute l’Asie. Les vendeurs installent des stands proposant aussi bien des brochettes grillees que des objets artisanaux. L’air se remplit d’aromes allechants et du bourdonnement des conversations. Habitants et touristes s’y promenent, goutent a la cuisine de rue et cherchent de bonnes affaires."
+    }
+  ],
+  "hard": [
+    {
+      "id": "hard-1",
+      "text": "L’argument de la philosophe reposait sur une affirmation apparemment paradoxale : la liberte absolue, poursuivie sans contrainte, finit inevitablement par se saper elle-meme. « Considerez, ecrivait-elle, comment l’ideal libertarien, pousse a son extreme logique, cree des conditions dans lesquelles les puissants dominent les faibles, eliminant ainsi la liberte pour la majorite. » Ses critiques ont rejete cela comme de la sophistique ; ses partisans y ont vu une reflexion profonde."
+    },
+    {
+      "id": "hard-2",
+      "text": "L’intrication quantique — la « mysterieuse action a distance » d’Einstein — continue de deconcerter les physiciens comme les philosophes. Lorsque deux particules deviennent intriquees, la mesure de l’une affecte instantanement l’autre, quelle que soit la distance qui les separe. Ce phenomene ne viole pas la relativite (aucune information ne voyage plus vite que la lumiere), mais il remet en question nos intuitions sur la localite, la causalite et la nature meme de la realite."
+    },
+    {
+      "id": "hard-3",
+      "text": "La correspondance du polymathe de la Renaissance revele un esprit d’une ampleur extraordinaire : dans les lettres d’une seule semaine, il discutait d’observations astronomiques, critiquait les dessins architecturaux d’un collegue, proposait des ameliorations au systeme d’egouts de la ville et composait un sonnet pour la fille d’un mecene. « La specialisation, remarqua-t-il avec ironie, est pour les insectes. » Ses contemporains le trouvaient epuisant ; la posterite le trouve inspirant."
+    },
+    {
+      "id": "hard-4",
+      "text": "Le trading algorithmique a profondement restructure les marches financiers. Les systemes a haute frequence executent des milliers de transactions par seconde, exploitant de minuscules ecarts de prix entre les places boursieres. Les critiques estiment que cela cree une fragilite systemique — le « Flash Crash » de 2010 a vu le Dow Jones chuter de 1 000 points en quelques minutes avant de se redresser. Les defenseurs retorquent que les algorithmes apportent de la liquidite et reduisent les ecarts, beneficiant en fin de compte aux investisseurs particuliers."
+    },
+    {
+      "id": "hard-5",
+      "text": "La biographe fut confrontee a un dilemme ethique : les journaux intimes de son sujet — recemment decouverts dans un grenier — contenaient des revelations qui bouleverseraient l’image publique soigneusement construite de celui-ci. Devait-elle les publier ? « La biographie, reflechit-elle, existe dans une tension entre la verite et le respect des morts. » Apres des mois de deliberation, elle choisit la divulgation, estimant qu’une histoire aseptisee ne sert personne."
+    },
+    {
+      "id": "hard-6",
+      "text": "Les microplastiques ont infiltre pratiquement tous les ecosystemes de la planete, de la fosse des Mariannes aux carottes de glace de l’Arctique. Ces fragments de polymeres — de moins de 5 mm de diametre — proviennent de la degradation de produits de consommation, de textiles synthetiques et de processus industriels. Les chercheurs en ont detecte dans le sang humain, les tissus placentaires et le lait maternel ; leurs effets a long terme sur la sante restent inquietantement incertains. L’omnipresence de la pollution plastique represente une experience sans precedent sur la biologie planetaire."
+    },
+    {
+      "id": "hard-7",
+      "text": "L’interpretation de la cheffe d’orchestre de la Neuvieme Symphonie de Mahler mettait en avant ses qualites prophet iques : la premonition de la catastrophe, la nostalgie douloureuse d’un monde sur le point de disparaitre. « Mahler a compose cette oeuvre en sachant qu’il allait mourir, expliquait-elle dans les notes du programme, mais il pressentait aussi, d’une certaine maniere, que la civilisation europeenne elle-meme se trouvait au bord du precipice. » La performance de l’orchestre — feutree, fremissante, transcendante — laissa le public dans un silence stupefait."
+    },
+    {
+      "id": "hard-8",
+      "text": "Les specialistes du droit constitutionnel continuent de debattre de la « difficulte contre-majoritaire » : comment concilier le controle juridictionnel — par lequel des juges non elus annulent des lois votees par des representants democratiques — avec la souverainete populaire ? Certains soutiennent que les tribunaux protegent les droits des minorites contre des majorites tyranniques ; d’autres affirment que ce raisonnement dissimule des preferences ideologiques sous une jurisprudence d’apparence neutre. Cette tension est peut-etre insoluble ; les systemes democratiques doivent equilibrer des valeurs concurrentes plutot que d’optimiser un seul principe."
+    },
+    {
+      "id": "hard-9",
+      "text": "Le style de prose de la romanciere — elliptique, fragmente, ponctue de brusques sauts temporels — refletait ses preoccupations thematiques : l’incertitude de la memoire, la fluidite de l’identite, l’impossibilite d’une narration objective. « Toute histoire, declara-t-elle lors d’une interview, est a la fois vraie et fausse ; elle revele en dissimulant, elle eclaire en projetant des ombres. » Les critiques l’accuserent d’obscurantisme ; elle repondit que la clarte elle-meme peut etre une forme de tromperie."
+    },
+    {
+      "id": "hard-10",
+      "text": "L’expedition archeologique mit au jour des artefacts qui compliquaient les theories dominantes sur les reseaux commerciaux de l’age du Bronze. De l’obsidienne d’Anatolie, du lapis-lazuli d’Afghanistan et de l’ambre de la Baltique — tous decouverts dans une seule tombe mycenienne — suggeraient des connexions commerciales bien plus etendues que ce qui avait ete suppose auparavant. « Nous avons sous-estime les capacites de navigation des peuples anciens et leur appetit pour les biens de luxe », observa le chercheur principal. « La mondialisation n’est pas aussi moderne que nous le pensons. »"
+    }
+  ]
+}

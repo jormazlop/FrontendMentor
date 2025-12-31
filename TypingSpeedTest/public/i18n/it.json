@@ -1,0 +1,50 @@
+{
+  "config" : {
+    "title": "Configurazione:",
+    "language": "Seleziona lingua:",
+    "mode": "Seleziona modalità:",
+    "sound": "Seleziona suono:",
+    "home": "Ritorno alla pagina iniziale",
+    "save": "Opzioni di salvataggio",
+    "en": "Inglese",
+    "es": "Spagnolo",
+    "fr": "Francese",
+    "it": "Italiano",
+    "dark": "Scuro",
+    "light": "Luce",
+    "system": "Sistema",
+    "on": "On",
+    "off": "Off"
+  },
+  "header" : {
+    "personal-1": "Record personale:",
+    "personal-2": "Record:",
+    "wpm": "PAM:",
+    "accuracy": "Precisione:",
+    "time": "Tempo:",
+    "difficulty": "Difficoltà:",
+    "mode": "Modalità:",
+    "easy": "Facile",
+    "medium": "Medio",
+    "hard": "Difficile",
+    "timed": "A tempo(60s)",
+    "passage": "Passaggio"
+  },
+  "home-not-started": {
+    "start-test": "Inizia il Typing Test",
+    "start-typing": "Oppure clicca sul testo e inizia a digitare"
+  },
+  "results": {
+    "baseline": "Linea di base stabilita!",
+    "set-bar": "Hai fissato l'obiettivo. Ora inizia la vera sfida: è ora di superarlo.",
+    "wpm": "PAM:",
+    "accuracy": "Precisione:",
+    "characters": "Caratteri:",
+    "beat-score":"Batti questo punteggio",
+    "complete": "Test completato!",
+    "solid-run": "Ottima prestazione. Continua a dare il massimo per battere il tuo record personale..",
+    "again": "Riprova",
+    "high-score": "Punteggio record battuto!",
+    "faster": "Stai diventando più veloce. Hai digitato in modo incredibile."
+  }
+}

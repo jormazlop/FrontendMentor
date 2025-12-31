@@ -1,0 +1,50 @@
+{
+  "config" : {
+    "title": "Configuration:",
+    "language": "Sélectionner la langue:",
+    "mode": "Sélectionner le mode:",
+    "sound": "Sélectionner le son:",
+    "home": "Retour à l'accueil",
+    "save": "Enregistrer les options",
+    "en": "Anglais",
+    "es": "Espagnol",
+    "fr": "Français",
+    "it": "italien",
+    "dark": "Sombre",
+    "light": "Lumineux",
+    "system": "Système",
+    "on": "On",
+    "off": "Off"
+  },
+  "header" : {
+    "personal-1": "Record personnel:",
+    "personal-2": "Record:",
+    "wpm": "MPM:",
+    "accuracy": "Précision:",
+    "time": "Temps:",
+    "difficulty": "Difficulté:",
+    "mode": "Mode:",
+    "easy": "Facile",
+    "medium": "Moyen",
+    "hard": "Difficile",
+    "timed": "Chronométré(60s)",
+    "passage": "Passage"
+  },
+  "home-not-started": {
+    "start-test": "Commencer le Typing Test",
+    "start-typing": "Ou cliquez sur le texte et commencez à taper"
+  },
+  "results": {
+    "baseline": "Référence établie!",
+    "set-bar": "Vous avez placé la barre haut. Maintenant, le vrai défi commence : il est temps de le relever.",
+    "wpm": "MPM:",
+    "accuracy": "Précision:",
+    "characters": "Caractères:",
+    "beat-score":"Battez ce score",
+    "complete": "Test terminé!",
+    "solid-run": "Bonne course. Continuez à vous dépasser pour battre votre meilleur score.",
+    "again": "Recommencer",
+    "high-score": "Record battu!",
+    "faster": "Tu deviens plus rapide. C'était incroyable, ta frappe."
+  }
+}

@@ -1,11 +1,12 @@
 import { Component, inject } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { TranslocoPipe } from '@jsverse/transloco';
 import { ButtonPrimary } from '@shared/buttons/button-primary/button-primary';
 import { Typing } from '@shared/services/typing';
 
 @Component({
   selector: 'app-home-not-started',
-  imports: [ButtonPrimary],
+  imports: [ButtonPrimary, TranslocoPipe],
   templateUrl: './home-not-started.html',
   styleUrl: './home-not-started.scss',
 })

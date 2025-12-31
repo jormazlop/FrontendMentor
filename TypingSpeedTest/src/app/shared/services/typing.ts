@@ -12,7 +12,7 @@ export class Typing {
 
   private readonly _difficulty = signal<Difficulty>('easy');
   readonly difficulty = this._difficulty.asReadonly();
-  private readonly _mode = signal<Timer>('timed(60s)');
+  private readonly _mode = signal<Timer>('timed');
   readonly mode = this._mode.asReadonly();
 
   private readonly _accuracy = signal<number>(0);
@@ -44,7 +44,7 @@ export class Typing {
   });
 
   constructor() {
-    this.getData();
+    this.getData('en');
   }
 
   setAccuracy(accuracy: number): void {
@@ -121,8 +121,8 @@ export class Typing {
     this._timerOn.set(false);
   }
 
-  getData(): void {
-    const url = '../../../data/data.json';
+  getData(lang: string): void {
+    const url = `../../../data/data-${lang}.json`;
     this.http.get<TestList>(url).subscribe((data) => this._testList.set(data));
   }
 }

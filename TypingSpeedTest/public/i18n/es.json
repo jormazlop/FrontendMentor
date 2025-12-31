@@ -1,0 +1,50 @@
+{
+  "config": {
+    "title": "Configuración:",
+    "language": "Seleccionar Idioma:",
+    "mode": "Seleccionar Modo:",
+    "sound": "Seleccionar Sonido:",
+    "home": "Volver al inicio",
+    "save": "Guardar opciones",
+    "en": "Inglés",
+    "es": "Español",
+    "fr": "Francés",
+    "it": "Italiano",
+    "dark": "Oscuro",
+    "light": "Claro",
+    "system": "Sistema",
+    "on": "On",
+    "off": "Off"
+  },
+  "header": {
+    "personal-1": "Mejor Marca:",
+    "personal-2": "Mejor:",
+    "wpm": "PPM:",
+    "accuracy": "Precisión:",
+    "time": "Tiempo:",
+    "difficulty": "Dificultad:",
+    "mode": "Modo:",
+    "easy": "Facil",
+    "medium": "Medio",
+    "hard": "Dificil",
+    "timed": "Cronometrado(60s)",
+    "passage": "Pasaje"
+  },
+  "home-not-started": {
+    "start-test": "Comenzar Test Escritura",
+    "start-typing": "O haz click en el texto y comienza a escribir"
+  },
+  "results": {
+    "baseline": "Record Establecido!",
+    "set-bar": "Has puesto el listón muy alto. Ahora empieza el verdadero reto: es hora de superarlo.",
+    "wpm": "PPM:",
+    "accuracy": "Precisión:",
+    "characters": "Caracteres:",
+    "beat-score":"Supera esta puntuación",
+    "complete": "Prueba terminada!",
+    "solid-run": "Buen intento. Sigue esforzándote para superar tu mejor marca.",
+    "again": "Intentar de nuevo",
+    "high-score": "¡Récord superado!",
+    "faster": "Estás mejorando. Ha sido increíble lo rápido que has escrito."
+  }
+}

@@ -1,5 +1,6 @@
 import { Component, inject } from '@angular/core';
 import { Router } from '@angular/router';
+import { TranslocoPipe } from '@jsverse/transloco';
 import { ButtonSecondary } from '@shared/buttons/button-secondary/button-secondary';
 import { IconNewPb } from '@shared/icons/icon-new-pb/icon-new-pb';
 import { PersonalBestModel } from '@shared/models/personal-best.model';
@@ -10,7 +11,7 @@ import confetti from 'canvas-confetti';
 
 @Component({
   selector: 'app-results-new-best',
-  imports: [ButtonSecondary, IconNewPb, AccuracyPipe],
+  imports: [ButtonSecondary, IconNewPb, AccuracyPipe, TranslocoPipe],
   templateUrl: './results-new-best.html',
   styleUrl: './results-new-best.scss',
 })

@@ -2,6 +2,6 @@
   {{ selectedTest()?.text }}
 </p>
 <dialog open class="home-not-started-button">
-    <button-primary (click)="onStartTest()">Start Typing Test</button-primary>
-    <span class="text-3-semi-b">Or click the text and start typing</span>
+    <button-primary (click)="onStartTest()">{{ 'home-not-started.start-test' | transloco }}</button-primary>
+    <span class="text-3-semi-b">{{ 'home-not-started.start-typing' | transloco }}</span>
 </dialog>

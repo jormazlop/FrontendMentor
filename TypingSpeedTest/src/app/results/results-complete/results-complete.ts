@@ -1,5 +1,6 @@
 import { Component, inject, signal } from '@angular/core';
 import { Router } from '@angular/router';
+import { TranslocoPipe } from '@jsverse/transloco';
 import { ButtonSecondary } from '@shared/buttons/button-secondary/button-secondary';
 import { IconCompleted } from '@shared/icons/icon-completed/icon-completed';
 import { PersonalBestModel } from '@shared/models/personal-best.model';
@@ -11,24 +12,31 @@ import { Typing } from '@shared/services/typing';
 
 @Component({
   selector: 'app-results-complete',
-  imports: [ButtonSecondary, IconCompleted, PatternStar1, PatternStar2, AccuracyPipe],
+  imports: [
+    ButtonSecondary,
+    IconCompleted,
+    PatternStar1,
+    PatternStar2,
+    AccuracyPipe,
+    TranslocoPipe,
+  ],
   templateUrl: './results-complete.html',
   styleUrl: './results-complete.scss',
 })
 export default class ResultsComplete {
   private readonly router = inject(Router);
-    private readonly service = inject(Typing);
+  private readonly service = inject(Typing);
 
-    resultat = signal(new PersonalBestModel());
+  resultat = signal(new PersonalBestModel());
 
-    constructor() {
-      this.resultat().accuracy = this.service.accuracy();
-      this.resultat().wpm = this.service.wpm();
-      this.resultat().correctCharacters = this.service.correctCount();
-      this.resultat().incorrectCharacters = this.service.incorrectCount();
-    }
+  constructor() {
+    this.resultat().accuracy = this.service.accuracy();
+    this.resultat().wpm = this.service.wpm();
+    this.resultat().correctCharacters = this.service.correctCount();
+    this.resultat().incorrectCharacters = this.service.incorrectCount();
+  }
 
   onClickRepeat(): void {
-    this.router.navigate(['../../home/not-started'])
+    this.router.navigate(['../../home/not-started']);
   }
 }

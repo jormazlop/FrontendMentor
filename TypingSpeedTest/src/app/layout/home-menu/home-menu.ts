@@ -1,6 +1,7 @@
 import { DatePipe } from '@angular/common';
 import { Component, computed, inject, signal } from '@angular/core';
 import { Router } from '@angular/router';
+import { TranslocoPipe } from '@jsverse/transloco';
 import { ButtonSelect } from '@shared/buttons/button-select/button-select';
 import { Difficulty, Timer } from '@shared/models/config.model';
 import { AccuracyPipe } from '@shared/pipes/accuracy.pipe';
@@ -8,7 +9,7 @@ import { Typing } from '@shared/services/typing';
 
 @Component({
   selector: 'app-home-menu',
-  imports: [AccuracyPipe, ButtonSelect, DatePipe],
+  imports: [AccuracyPipe, ButtonSelect, DatePipe, TranslocoPipe],
   templateUrl: './home-menu.html',
   styleUrl: './home-menu.scss',
 })
@@ -25,7 +26,7 @@ export class HomeMenu {
   optionsDifficulty = signal(['easy', 'medium', 'hard']);
 
   mode = this.service.mode;
-  optionsMode = signal(['timed(60s)', 'passage']);
+  optionsMode = signal(['timed', 'passage']);
 
   setDifficulty(difficulty: string): void {
     this.service.setDifficulty(difficulty as Difficulty);

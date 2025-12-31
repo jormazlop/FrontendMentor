@@ -1,34 +1,39 @@
 <menu class="home-menu-container">
   <div class="home-menu-bloc">
     <li class="home-menu-item">
-      <span class="text-3-r">WPM:</span>
+      <span class="text-3-r">{{ 'header.wpm' | transloco }}</span>
       <h2 class="text-2">{{ wpm() }}</h2>
     </li>
     <li class="separator"></li>
     <li class="home-menu-item">
-      <span class="text-3-r">Accuracy:</span>
+      <span class="text-3-r">{{ 'header.accuracy' | transloco }}</span>
       <h2 class="text-2" [class.accuracy-errors]="accuracy() != 1">
         {{ accuracy() | accuracy : '2.0-0' }}
       </h2>
     </li>
     <li class="separator"></li>
     <li class="home-menu-item">
-      <span class="text-3-r">Time:</span>
+      <span class="text-3-r">{{ 'header.time' | transloco }}</span>
       <h2 class="text-2" [class.timer-on]="timerOn()">{{ this.timer() | date : 'm:ss' }}</h2>
     </li>
   </div>
   <div class="home-menu-bloc">
     <li class="home-menu-item">
       <button-select
-        label="Difficulty:"
+        [label]="'header.difficulty' | transloco"
         [active]="difficulty()"
         (onChangeOption)="setDifficulty($event)"
         [options]="optionsDifficulty()"
-        />
+      />
     </li>
     <li class="separator"></li>
     <li class="home-menu-item">
-      <button-select label="Mode:" [active]="mode()" (onChangeOption)="setMode($event)" [options]="optionsMode()" />
+      <button-select
+        [label]="'header.mode' | transloco"
+        [active]="mode()"
+        (onChangeOption)="setMode($event)"
+        [options]="optionsMode()"
+      />
     </li>
   </div>
 </menu>

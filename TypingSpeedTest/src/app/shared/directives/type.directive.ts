@@ -13,7 +13,9 @@ export class TypeDirective {
   incorrectCountChange = output<number>();
 
   @HostListener('document:keyup', ['$event']) keyup(event: KeyboardEvent) {
-    if (event.key == 'Shift') {
+    const exceptions = ['Shift'];
+
+    if (exceptions.includes(event.key)) {
       return;
     }
 

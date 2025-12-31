@@ -1,0 +1,128 @@
+{
+  "easy": [
+    {
+      "id": "easy-1",
+      "text": "El sol salio sobre el pueblo tranquilo. Los pajaros cantaban en los arboles mientras la gente se despertaba y comenzaba su dia. Iba a ser una manana calida y soleada."
+    },
+    {
+      "id": "easy-2",
+      "text": "Ella camino hasta la tienda para comprar pan y leche. La tienda estaba llena, pero encontro lo que necesitaba rapidamente. De camino a casa, vio a una amiga y la saludo con la mano."
+    },
+    {
+      "id": "easy-3",
+      "text": "El perro corrio por el parque persiguiendo una pelota. Era rapido y le encantaba jugar. Despues de un rato, se canso y se acosto a la sombra fresca de un gran roble."
+    },
+    {
+      "id": "easy-4",
+      "text": "Me gusta leer libros antes de irme a dormir. Me ayuda a relajarme despues de un dia largo. Mis historias favoritas son sobre aventuras y viajes a lugares lejanos."
+    },
+    {
+      "id": "easy-5",
+      "text": "La cocina olia a cafe recien hecho y tostadas. Mama estaba preparando el desayuno mientras papa leia las noticias. Era una manana normal en su pequeno pero acogedor hogar."
+    },
+    {
+      "id": "easy-6",
+      "text": "Fuimos a la playa el verano pasado. El agua era azul y la arena estaba caliente. Construimos un gran castillo de arena y buscamos conchas a lo largo de la orilla."
+    },
+    {
+      "id": "easy-7",
+      "text": "La gata se sento en el alfizar de la ventana observando la lluvia. Las gotas caian por el vidrio una a una. Parecia feliz de estar dentro, donde estaba seco y calido."
+    },
+    {
+      "id": "easy-8",
+      "text": "Mi mejor amigo vive al lado de mi casa. Jugamos juntos despues de la escuela. A veces montamos en bicicleta alrededor de la manzana o nos sentamos a hablar durante horas."
+    },
+    {
+      "id": "easy-9",
+      "text": "La primavera es mi epoca favorita del ano. Las flores comienzan a florecer y los dias se hacen mas largos. Me encanta ver como los arboles vuelven a ponerse verdes despues de los frios meses de invierno."
+    },
+    {
+      "id": "easy-10",
+      "text": "La musica sonaba suavemente en la habitacion. Ella cerro los ojos y dejo que los sonidos la envolvieran. Era una cancion sencilla, pero la hacia sentir en paz."
+    }
+  ],
+  "medium": [
+    {
+      "id": "medium-1",
+      "text": "Aprender una nueva habilidad requiere paciencia y practica constante. Ya sea que estes estudiando un idioma, aprendiendo a tocar un instrumento o dominando un deporte, la clave es presentarse todos los dias. Las pequenas mejoras se acumulan con el tiempo y, antes de que te des cuenta, habras logrado un progreso notable."
+    },
+    {
+      "id": "medium-2",
+      "text": "El antiguo faro habia permanecido en el acantilado durante mas de un siglo, guiando a los marineros de forma segura a traves de aguas traicioneras. Su haz de luz atravesaba la niebla cada noche, una presencia tranquilizadora para quienes navegaban por la costa rocosa. Muchas tormentas pusieron a prueba su estructura, pero permanecio firme."
+    },
+    {
+      "id": "medium-3",
+      "text": "La cultura del cafe ha evolucionado drasticamente en las ultimas decadas. Lo que antes era un simple ritual matutino se ha convertido en una forma de arte, con baristas creando disenos elaborados en el cafe con leche y tostadores obteniendo granos de remotas aldeas montanosas. La humilde taza de cafe ahora cuenta una historia global."
+    },
+    {
+      "id": "medium-4",
+      "text": "Los jardines urbanos estan transformando los paisajes de las ciudades en todo el mundo. Los residentes estan convirtiendo azoteas, balcones y terrenos abandonados en prosperos espacios verdes. Estas iniciativas no solo proporcionan productos frescos, sino que tambien crean comunidad, reducen el estres y ayudan a combatir el efecto de isla de calor urbana."
+    },
+    {
+      "id": "medium-5",
+      "text": "El documental exploro como la tecnologia moldea nuestros habitos diarios. Desde el momento en que despertamos con una alarma en el telefono hasta los podcasts que escuchamos para dormirnos, las herramientas digitales se han integrado en la vida moderna. La pregunta es: tenemos el control?"
+    },
+    {
+      "id": "medium-6",
+      "text": "Viajar en tren ofrece una perspectiva unica del paisaje. A diferencia de volar, que reduce los paisajes a patrones abstractos, los viajes en tren te permiten presenciar las transiciones graduales entre regiones. Ves como las granjas dan paso a los bosques y como pequenos pueblos emergen entre colinas ondulantes."
+    },
+    {
+      "id": "medium-7",
+      "text": "La chef creia que una gran cocina comienza con ingredientes de calidad. Visitaba a los agricultores locales cada semana, seleccionando verduras en su punto optimo de maduracion. Su menu cambiaba con las estaciones, reflejando lo que la tierra ofrecia. Los comensales apreciaban la frescura que podian saborear en cada bocado."
+    },
+    {
+      "id": "medium-8",
+      "text": "Las bibliotecas se han reinventado para la era digital. Mas alla de prestar libros, ahora ofrecen espacios de trabajo compartido, impresoras 3D, estudios de grabacion y talleres de programacion. Estos centros comunitarios se han convertido en lugares donde personas de todas las edades vienen a aprender, crear y conectar con otros."
+    },
+    {
+      "id": "medium-9",
+      "text": "La arquitecta diseno edificios que trabajaban con la naturaleza en lugar de contra ella. Grandes ventanales captaban la luz natural, reduciendo la necesidad de electricidad. Los techos verdes absorbian el agua de lluvia y proporcionaban aislamiento. Su filosofia era simple: el diseno sostenible debe ser bello, funcional y accesible para todos."
+    },
+    {
+      "id": "medium-10",
+      "text": "Los mercados nocturnos cobran vida despues del atardecer en ciudades de toda Asia. Los vendedores instalan puestos donde venden desde brochetas a la parrilla hasta artesanias hechas a mano. El aire se llena de aromas tentadores y del murmullo de las conversaciones. Tanto locales como turistas pasean, prueban comida callejera y buscan buenas ofertas."
+    }
+  ],
+  "hard": [
+    {
+      "id": "hard-1",
+      "text": "El argumento de la filosofa se basaba en una afirmacion aparentemente paradojica: que la libertad absoluta, perseguida sin restricciones, termina socavandose a si misma. «Consideren», escribio, «como el ideal libertario, llevado a su extremo logico, produce condiciones en las que los poderosos dominan a los debiles, eliminando asi la libertad de la mayoria». Sus criticos lo descartaron como sofisteria; sus seguidores lo celebraron como algo profundo."
+    },
+    {
+      "id": "hard-2",
+      "text": "El entrelazamiento cuantico —la «accion fantasmal a distancia» de Einstein— sigue desconcertando tanto a fisicos como a filosofos. Cuando dos particulas se entrelazan, medir una afecta instantaneamente a la otra, sin importar la distancia que las separe. Este fenomeno no viola la relatividad (ninguna informacion viaja mas rapido que la luz), pero desafia nuestras intuiciones sobre la localidad, la causalidad y la propia naturaleza de la realidad."
+    },
+    {
+      "id": "hard-3",
+      "text": "La correspondencia del polimata renacentista revela una mente de extraordinaria amplitud: en las cartas de una sola semana, discutia observaciones astronomicas, criticaba los planos arquitectonicos de un colega, proponia mejoras para el sistema de alcantarillado de la ciudad y componia un soneto para la hija de un mecenas. «La especializacion», comento con ironia, «es para los insectos». Sus contemporaneos lo encontraban agotador; la posteridad lo encuentra inspirador."
+    },
+    {
+      "id": "hard-4",
+      "text": "El trading algoritmico ha reestructurado fundamentalmente los mercados financieros. Los sistemas de alta frecuencia ejecutan miles de transacciones por segundo, aprovechando minimas discrepancias de precios entre bolsas. Los criticos sostienen que esto crea fragilidad sistemica —el «Flash Crash» de 2010 vio al Dow Jones caer 1.000 puntos en minutos antes de recuperarse—. Los defensores responden que los algoritmos proporcionan liquidez y reducen los diferenciales, beneficiando en ultima instancia a los inversores minoristas."
+    },
+    {
+      "id": "hard-5",
+      "text": "La biografa enfrento un dilema etico: los diarios privados de su sujeto —descubiertos recientemente en un atico— contenian revelaciones que desmantelarian la imagen publica cuidadosamente construida de el. Debia publicarlos? «La biografia», reflexiono, «existe en tension entre decir la verdad y respetar a los muertos». Tras meses de deliberacion, eligio la divulgacion, razonando que una historia higienizada no sirve a nadie."
+    },
+    {
+      "id": "hard-6",
+      "text": "Los microplasticos han infiltrado practicamente todos los ecosistemas de la Tierra, desde la Fosa de las Marianas hasta los nucleos de hielo del Artico. Estos fragmentos de polimero —de menos de 5 mm de diametro— se originan en la degradacion de productos de consumo, textiles sinteticos y procesos industriales. Los investigadores los han detectado en sangre humana, tejido placentario y leche materna; sus implicaciones a largo plazo para la salud siguen siendo inquietantemente poco claras. La ubicuidad de la contaminacion plastica representa un experimento sin precedentes en la biologia planetaria."
+    },
+    {
+      "id": "hard-7",
+      "text": "La interpretacion de la directora de orquesta de la Novena Sinfonia de Mahler enfatizo sus cualidades profeticas: la premonicion de la catastrofe, la dolorosa nostalgia por un mundo a punto de desaparecer. «Mahler compuso esto sabiendo que estaba muriendo», explico en las notas del programa, «pero tambien intuyo, de algun modo, que la civilizacion europea misma estaba al borde del abismo». La actuacion de la orquesta —contenida, temblorosa, trascendente— dejo al publico en un silencio atonito."
+    },
+    {
+      "id": "hard-8",
+      "text": "Los estudiosos del derecho constitucional continuan debatiendo la «dificultad contramayoritaria»: como puede conciliarse la revision judicial —mediante la cual jueces no electos anulan leyes aprobadas por representantes democraticos— con la soberania popular? Algunos sostienen que los tribunales protegen los derechos de las minorias frente a mayorias tiranicas; otros afirman que este razonamiento encubre preferencias ideologicas bajo una jurisprudencia aparentemente neutral. La tension, quiza, sea irresoluble; los sistemas democraticos deben equilibrar valores en competencia en lugar de optimizar un solo principio."
+    },
+    {
+      "id": "hard-9",
+      "text": "El estilo en prosa de la novelista —eliptico, fragmentado, salpicado de bruscos saltos temporales— reflejaba sus preocupaciones tematicas: la falta de fiabilidad de la memoria, la fluidez de la identidad, la imposibilidad de una narracion objetiva. «Toda historia», declaro en una entrevista, «es simultaneamente verdadera y falsa; revela ocultando, ilumina proyectando sombras». Los criticos la acusaron de oscurantismo; ella respondio que la claridad misma puede ser una forma de engano."
+    },
+    {
+      "id": "hard-10",
+      "text": "La expedicion arqueologica desenterro artefactos que complicaron las teorias predominantes sobre las redes comerciales de la Edad del Bronce. Obsidiana de Anatolia, lapislazuli de Afganistan y ambar del Baltico —todos encontrados en una sola tumba micenica— sugerian conexiones comerciales mucho mas extensas de lo que se habia hipotetizado previamente. «Hemos subestimado las capacidades de navegacion de los pueblos antiguos y su apetito por los bienes de lujo», observo el investigador principal. «La globalizacion no es tan moderna como asumimos»."
+    }
+  ]
+}

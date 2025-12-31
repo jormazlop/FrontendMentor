@@ -1,0 +1,50 @@
+{
+  "config" : {
+    "title": "Configuration:",
+    "language": "Select Language:",
+    "mode": "Select Mode:",
+    "sound": "Select Sound:",
+    "home": "Return home",
+    "save": "Save Options",
+    "en": "English",
+    "es": "Spanish",
+    "fr": "French",
+    "it": "Italian",
+    "dark": "Dark",
+    "light": "Light",
+    "system": "System",
+    "on": "On",
+    "off": "Off"
+  },
+  "header" : {
+    "personal-1": "Personal best:",
+    "personal-2": "Best:",
+    "wpm": "WPM:",
+    "accuracy": "Accuracy:",
+    "time": "Time:",
+    "difficulty": "Difficulty:",
+    "mode": "Mode:",
+    "easy": "Easy",
+    "medium": "Medium",
+    "hard": "Hard",
+    "timed": "Timed(60s)",
+    "passage": "Passage"
+  },
+  "home-not-started": {
+    "start-test": "Start Typing Test",
+    "start-typing": "Or click the text and start typing"
+  },
+  "results": {
+    "baseline": "Baseline Established!",
+    "set-bar": "You’ve set the bar. Now the real challenge begins—time to beat it.",
+    "wpm": "WPM:",
+    "accuracy": "Accuracy:",
+    "characters": "Characters:",
+    "beat-score":"Beat This Score",
+    "complete": "Test Complete!",
+    "solid-run": "Solid run. Keep pushing to beat your high score.",
+    "again": "Go Again",
+    "high-score": "High Score Smashed!",
+    "faster": "You’re getting faster. That was incredible typing."
+  }
+}

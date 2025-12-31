@@ -1,19 +1,19 @@
 <icon-completed />
 <hgroup class="result-complete-title">
-  <h2 class="text-1-b">Test Complete!</h2>
-  <h3 class="text-3-r">Solid run. Keep pushing to beat your high score.</h3>
+  <h2 class="text-1-b">{{ 'results.complete' | transloco }}</h2>
+  <h3 class="text-3-r">{{ 'results.solid-run' | transloco }}</h3>
 </hgroup>
 <ul class="result-complete-resume">
   <li>
-    <h3 class="text-3-r">WPM:</h3>
+    <h3 class="text-3-r">{{ 'results.wpm' | transloco }}</h3>
     <span class="text-2">{{ resultat().wpm }}</span>
   </li>
   <li>
-    <h3 class="text-3-r">Accuracy:</h3>
+    <h3 class="text-3-r">{{ 'results.accuracy' | transloco }}</h3>
     <span class="text-2">{{ resultat().accuracy | accuracy : '2.0-0' }}</span>
   </li>
   <li>
-    <h3 class="text-3-r">Characters:</h3>
+    <h3 class="text-3-r">{{ 'results.characters' | transloco }}</h3>
      <span class="text-2">
       <span class="correct-character">{{ resultat().correctCharacters }}</span>
       /
@@ -21,6 +21,6 @@
     </span>
   </li>
 </ul>
-<button-secondary (click)="onClickRepeat()">Go Again</button-secondary>
+<button-secondary (click)="onClickRepeat()">{{ 'results.again' | transloco }}</button-secondary>
 <pattern-star-1 class="star-1" />
 <pattern-star-2 class="star-2" />

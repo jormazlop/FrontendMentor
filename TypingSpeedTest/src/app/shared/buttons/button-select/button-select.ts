@@ -1,4 +1,4 @@
-import { TitleCasePipe } from '@angular/common';
+import { AsyncPipe, TitleCasePipe } from '@angular/common';
 import {
   Combobox,
   ComboboxInput,
@@ -17,6 +17,8 @@ import {
 } from '@angular/core';
 import { OverlayModule } from '@angular/cdk/overlay';
 import { IconDownArrow } from '@shared/icons/icon-down-arrow/icon-down-arrow';
+import { TranslocoPipe } from '@jsverse/transloco';
+import { ConfigPipe } from '@shared/pipes/config-pipe';
 
 @Component({
   selector: 'button-select',
@@ -29,7 +31,9 @@ import { IconDownArrow } from '@shared/icons/icon-down-arrow/icon-down-arrow';
     Listbox,
     Option,
     OverlayModule,
-    IconDownArrow
+    IconDownArrow,
+    ConfigPipe,
+    AsyncPipe
   ],
   templateUrl: './button-select.html',
   styleUrl: './button-select.scss',

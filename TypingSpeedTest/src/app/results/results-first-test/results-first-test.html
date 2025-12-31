@@ -1,19 +1,19 @@
 <icon-completed />
 <hgroup class="result-first-test-title">
-  <h2 class="text-1-b">Baseline Established!</h2>
-  <h3 class="text-3-r">You’ve set the bar. Now the real challenge begins—time to beat it.</h3>
+  <h2 class="text-1-b">{{ 'results.baseline' | transloco }}</h2>
+  <h3 class="text-3-r">{{ 'results.set-bar' | transloco }}</h3>
 </hgroup>
 <ul class="result-first-test-resume">
   <li>
-    <h3 class="text-3-r">WPM:</h3>
+    <h3 class="text-3-r">{{ 'results.wpm' | transloco }}</h3>
     <span class="text-2">{{ pb().wpm }}</span>
   </li>
   <li>
-    <h3 class="text-3-r">Accuracy:</h3>
+    <h3 class="text-3-r">{{ 'results.accuracy' | transloco }}</h3>
     <span class="text-2">{{ pb().accuracy | accuracy: '2.0-0' }}</span>
   </li>
   <li>
-    <h3 class="text-3-r">Characters:</h3>
+    <h3 class="text-3-r">{{ 'results.characters' | transloco }}</h3>
     <span class="text-2">
       <span class="correct-character">{{ pb().correctCharacters }}</span>
       /
@@ -21,6 +21,6 @@
     </span>
   </li>
 </ul>
-<button-secondary (click)="onClickRepeat()">Beat This Score</button-secondary>
+<button-secondary (click)="onClickRepeat()">{{ 'results.beat-score' | transloco }}</button-secondary>
 <pattern-star-1 class="star-1"/>
 <pattern-star-2 class="star-2"/>
