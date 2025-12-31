@@ -32,7 +32,8 @@
   },
   "home-not-started": {
     "start-test": "Commencer le Typing Test",
-    "start-typing": "Ou cliquez sur le texte et commencez à taper"
+    "start-typing": "Ou cliquez sur le texte et commencez à taper",
+    "restart": "Recommencer Test"
   },
   "results": {
     "baseline": "Référence établie!",

@@ -32,7 +32,8 @@
   },
   "home-not-started": {
     "start-test": "Comenzar Test Escritura",
-    "start-typing": "O haz click en el texto y comienza a escribir"
+    "start-typing": "O haz click en el texto y comienza a escribir",
+    "restart": "Recomenzar Test"
   },
   "results": {
     "baseline": "Record Establecido!",

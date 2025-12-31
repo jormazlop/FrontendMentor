@@ -1,3 +1,7 @@
 path {
   fill: var(--neutral-900);
+
+  &.light {
+    fill: var(--neutral-0);
+  }
 }

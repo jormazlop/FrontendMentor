@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, computed, input } from '@angular/core';
 
 @Component({
   selector: 'icon-restart',
@@ -6,5 +6,6 @@ import { Component } from '@angular/core';
   styleUrl: './icon-restart.scss',
 })
 export class IconRestart {
-
+  type = input<'dark' | 'light'>('dark');
+  light = computed(() => this.type() === 'light');
 }

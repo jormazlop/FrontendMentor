@@ -1,12 +1,14 @@
 import { Component, computed, effect, inject, model, OnDestroy } from '@angular/core';
 import { Router } from '@angular/router';
+import { TranslocoPipe } from '@jsverse/transloco';
+import { ButtonTertiary } from '@shared/buttons/button-tertiary/button-tertiary';
 import { TypeDirective } from '@shared/directives/type.directive';
 import { TextPipe } from '@shared/pipes/text-pipe';
 import { Typing } from '@shared/services/typing';
 
 @Component({
   selector: 'app-home-started',
-  imports: [TextPipe, TypeDirective],
+  imports: [TextPipe, TypeDirective, ButtonTertiary, TranslocoPipe],
   templateUrl: './home-started.html',
   styleUrl: './home-started.scss',
 })
@@ -52,6 +54,10 @@ export default class HomeStarted implements OnDestroy {
       this.router.navigate(['../results']);
     }
   });
+
+  onRestartTest(): void {
+    this.router.navigate(['../home/not-started']);
+  }
 
   ngOnDestroy(): void {
     this.service.stopTest();

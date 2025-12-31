@@ -32,7 +32,8 @@
   },
   "home-not-started": {
     "start-test": "Inizia il Typing Test",
-    "start-typing": "Oppure clicca sul testo e inizia a digitare"
+    "start-typing": "Oppure clicca sul testo e inizia a digitare",
+    "restart": "Riavvia test"
   },
   "results": {
     "baseline": "Linea di base stabilita!",

@@ -32,7 +32,8 @@
   },
   "home-not-started": {
     "start-test": "Start Typing Test",
-    "start-typing": "Or click the text and start typing"
+    "start-typing": "Or click the text and start typing",
+    "restart": "Restart Test"
   },
   "results": {
     "baseline": "Baseline Established!",
