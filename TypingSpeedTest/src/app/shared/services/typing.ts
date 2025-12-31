@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { computed, inject, Injectable, signal } from '@angular/core';
+import { Router } from '@angular/router';
 import { Difficulty, Timer } from '@shared/models/config.model';
 import { Test, TestList } from '@shared/models/typing.model';
 
@@ -9,6 +10,7 @@ import { Test, TestList } from '@shared/models/typing.model';
 export class Typing {
   private readonly _testList = signal<TestList>(new TestList());
   private readonly http = inject(HttpClient);
+  private readonly router = inject(Router);
 
   private readonly _difficulty = signal<Difficulty>('easy');
   readonly difficulty = this._difficulty.asReadonly();
@@ -97,6 +99,7 @@ export class Typing {
       if (!this._timer()) {
         this.worker.terminate();
         this._timerOn.set(false);
+        this.router.navigate(['../results']);
       }
     };
     this.worker.postMessage('timed');
