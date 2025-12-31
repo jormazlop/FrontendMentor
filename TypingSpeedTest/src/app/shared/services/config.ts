@@ -1,4 +1,4 @@
-import { effect, inject, Injectable, signal } from '@angular/core';
+import { DOCUMENT, effect, inject, Injectable, signal } from '@angular/core';
 import { TranslocoService } from '@jsverse/transloco';
 import { Language, Mode, Sound } from '@shared/models/config.model';
 import { Typing } from './typing';
@@ -7,9 +7,9 @@ import { Typing } from './typing';
   providedIn: 'root',
 })
 export class ConfigService {
-
   private readonly translocoService = inject(TranslocoService);
   private readonly typingService = inject(Typing);
+  private readonly document = inject(DOCUMENT);
 
   private readonly _languages = signal<Language[]>(['en', 'es', 'fr', 'it']);
   readonly languages = this._languages.asReadonly();
@@ -29,10 +29,30 @@ export class ConfigService {
   private readonly _soundSelected = signal<Sound>('off');
   readonly soundSelected = this._soundSelected.asReadonly();
 
-  private readonly effect = effect(() => {
+  private readonly languageEffect = effect(() => {
     this.translocoService.setActiveLang(this.languageSelected());
     this.typingService.getData(this.languageSelected());
   });
+
+  private readonly modeEffect = effect(() => {
+    this.document.body.classList = '';
+    if(this.modeSelected() === 'system') {
+      this.document.body.classList.add(this.getPreferredColorScheme());
+    } else {
+      this.document.body.classList.add(this.modeSelected());
+    }
+  });
+
+  private getPreferredColorScheme() {
+    if (window.matchMedia) {
+      if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        return 'dark';
+      } else {
+        return 'light';
+      }
+    }
+    return 'light';
+  }
 
   setLanguageSelected(language: Language): void {
     this._languageSelected.set(language);

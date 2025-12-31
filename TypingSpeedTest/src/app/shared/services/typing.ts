@@ -43,10 +43,6 @@ export class Typing {
     return tests[Math.floor(Math.random() * tests.length)];
   });
 
-  constructor() {
-    this.getData('en');
-  }
-
   setAccuracy(accuracy: number): void {
     this._accuracy.set(accuracy);
   }

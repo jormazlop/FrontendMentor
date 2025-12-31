@@ -5,6 +5,7 @@ import { ButtonSecondary } from '@shared/buttons/button-secondary/button-seconda
 import { IconNewPb } from '@shared/icons/icon-new-pb/icon-new-pb';
 import { PersonalBestModel } from '@shared/models/personal-best.model';
 import { AccuracyPipe } from '@shared/pipes/accuracy.pipe';
+import { ConfigService } from '@shared/services/config';
 import { PersonalBest } from '@shared/services/personal-best';
 import { Typing } from '@shared/services/typing';
 import confetti from 'canvas-confetti';
@@ -19,6 +20,7 @@ export default class ResultsNewBest {
   private readonly router = inject(Router);
   private readonly service = inject(Typing);
   private readonly personalBest = inject(PersonalBest);
+  private readonly sound = inject(ConfigService).soundSelected;
 
   pb = this.personalBest.personalBest;
 
@@ -40,6 +42,14 @@ export default class ResultsNewBest {
     newBest.correctCharacters = this.service.correctCount();
     newBest.incorrectCharacters = this.service.incorrectCount();
     this.personalBest.setPersonalBest(newBest);
+    if (this.sound() === 'on') this.playAudio();
+  }
+
+  private playAudio(): void {
+    let audio = new Audio();
+    audio.src = '../../../audio/victory.wav';
+    audio.load();
+    audio.play();
   }
 
   onClickRepeat(): void {
