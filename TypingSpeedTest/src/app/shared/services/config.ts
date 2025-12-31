@@ -1,7 +1,8 @@
 import { DOCUMENT, effect, inject, Injectable, signal } from '@angular/core';
 import { TranslocoService } from '@jsverse/transloco';
-import { Language, Mode, Sound } from '@shared/models/config.model';
+import { ConfigModel, Language, Mode, Sound } from '@shared/models/config.model';
 import { Typing } from './typing';
+import { Storage } from './storage';
 
 @Injectable({
   providedIn: 'root',
@@ -9,6 +10,7 @@ import { Typing } from './typing';
 export class ConfigService {
   private readonly translocoService = inject(TranslocoService);
   private readonly typingService = inject(Typing);
+  private readonly storage = inject(Storage);
   private readonly document = inject(DOCUMENT);
 
   private readonly _languages = signal<Language[]>(['en', 'es', 'fr', 'it']);
@@ -36,7 +38,7 @@ export class ConfigService {
 
   private readonly modeEffect = effect(() => {
     this.document.body.classList = '';
-    if(this.modeSelected() === 'system') {
+    if (this.modeSelected() === 'system') {
       this.document.body.classList.add(this.getPreferredColorScheme());
     } else {
       this.document.body.classList.add(this.modeSelected());
@@ -52,6 +54,13 @@ export class ConfigService {
       }
     }
     return 'light';
+  }
+
+  constructor() {
+    const config = this.storage.getLocalConfig() ?? new ConfigModel();
+    this.setLanguageSelected(config.language);
+    this.setModeSelected(config.mode);
+    this.setSoundSelected(config.sound);
   }
 
   setLanguageSelected(language: Language): void {
