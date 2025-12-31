@@ -9,8 +9,6 @@ import { Listbox, Option } from '@angular/aria/listbox';
 import {
   afterRenderEffect,
   Component,
-  computed,
-  effect,
   inject,
   input,
   output,
@@ -18,7 +16,6 @@ import {
 } from '@angular/core';
 import { OverlayModule } from '@angular/cdk/overlay';
 import { IconDownArrow } from '@shared/icons/icon-down-arrow/icon-down-arrow';
-import { TranslocoPipe } from '@jsverse/transloco';
 import { ConfigPipe } from '@shared/pipes/config-pipe';
 import { ConfigService } from '@shared/services/config';
 
@@ -47,12 +44,8 @@ export class ButtonSelect {
   label = input<string>('');
   options = input.required<string[]>();
   onChangeOption = output<string>();
-
-  /** The combobox listbox popup. */
   listbox = viewChild<Listbox<string>>(Listbox);
-  /** A reference to the ng aria combobox. */
   combobox = viewChild<Combobox<string>>(Combobox);
-  /** The icon that is displayed in the combobox. */
 
   constructor() {
     afterRenderEffect(() => {

@@ -1,7 +1,7 @@
 @for(option of options(); track option) {
-<button class="button" role="button" [class.active]="selected() === option" (click)="onSelectOption(option)">
-  <div class="button-content">
-    <span class="button-text text text-3-semi-b">{{ option | config: 'config' | async }}</span>
-  </div>
-</button>
+  <button class="button" role="button" [class.active]="selected() === option" (click)="onSelectOption(option)">
+    <div class="button-content">
+      <span class="button-text text text-3-semi-b">{{ option | config: 'config' | async }}</span>
+    </div>
+  </button>
 }

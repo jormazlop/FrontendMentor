@@ -8,7 +8,6 @@ import { PatternStar1 } from '@shared/patterns/pattern-star-1/pattern-star-1';
 import { PatternStar2 } from '@shared/patterns/pattern-star-2/pattern-star-2';
 import { AccuracyPipe } from '@shared/pipes/accuracy.pipe';
 import { ConfigService } from '@shared/services/config';
-import { PersonalBest } from '@shared/services/personal-best';
 import { Typing } from '@shared/services/typing';
 
 @Component({

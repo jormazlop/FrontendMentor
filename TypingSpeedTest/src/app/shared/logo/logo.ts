@@ -1,5 +1,5 @@
 import { BreakpointObserver, BreakpointState } from '@angular/cdk/layout';
-import { Component, computed, effect, inject, Signal } from '@angular/core';
+import { Component, computed, inject, Signal } from '@angular/core';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { LogoSmall } from './logo-small/logo-small';
 import { LogoLarge } from './logo-large/logo-large';

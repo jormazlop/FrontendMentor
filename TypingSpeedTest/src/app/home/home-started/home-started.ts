@@ -1,4 +1,4 @@
-import { Component, computed, effect, inject, model, OnDestroy, signal } from '@angular/core';
+import { Component, computed, effect, inject, model, OnDestroy } from '@angular/core';
 import { Router } from '@angular/router';
 import { TypeDirective } from '@shared/directives/type.directive';
 import { TextPipe } from '@shared/pipes/text-pipe';

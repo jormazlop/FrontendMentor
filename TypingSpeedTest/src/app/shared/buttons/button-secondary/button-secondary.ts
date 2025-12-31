@@ -1,4 +1,4 @@
-import { Component, computed, inject } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { IconRestart } from '../../icons/icon-restart/icon-restart';
 import { ConfigService } from '@shared/services/config';
 
