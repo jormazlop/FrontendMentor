@@ -1,0 +1,7 @@
+{
+  "name": "TypingSpeedTest",
+  "short_name": "TypingSpeedTest",
+  "display": "standalone",
+  "scope": "./",
+  "start_url": "./"
+}

@@ -8,7 +8,7 @@ export class PersonalBestPipe implements PipeTransform {
   transform(value?: number): string {
 
 
-    return value != undefined ? value + ' WPM' : '- WPM';
+    return value != undefined ? value.toString() : '-';
   }
 
 }
