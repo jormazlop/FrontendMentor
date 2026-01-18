@@ -1,0 +1,22 @@
+<input-filter
+  placeholder="Filter by title, companies, expertise…"
+  class="rounded-l-lg"
+  [field]="form.company"
+>
+  <image-search />
+</input-filter>
+<div class="separator"></div>
+<input-filter placeholder="Filter by location…" [field]="form.location" class="input-full">
+  <image-location />
+</input-filter>
+<div class="separator"></div>
+<input-search
+  class="justify-center gap-6 px-10 rounded-r-lg input-full"
+  [field]="form.full"
+  (search)="onSearch()"
+/>
+<input-search-responsive
+  class="justify-center gap-6 px-10 rounded-r-lg input-responsive"
+  (search)="onSearch()"
+  (filter)="onFilter()"
+/>

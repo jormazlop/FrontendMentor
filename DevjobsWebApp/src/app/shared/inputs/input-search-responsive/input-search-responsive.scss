@@ -1,0 +1,15 @@
+:host {
+  align-items: center;
+  background-color: var(--neutral-0);
+  color: var(--neutral-900);
+  display: flex;
+  gap: 2rem;
+  position: relative;
+  transition-duration: 0.25s;
+
+  .filter-button {
+    background: none;
+    border: none;
+    cursor: pointer ;
+  }
+}

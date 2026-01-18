@@ -1,0 +1,30 @@
+@let offer = job().postedAt + ' · ' + job().contract;
+
+<hgroup class="detail-body-title">
+  <h4 class="detail-body-time text-4-r">{{ offer }}</h4>
+  <div class="detail-body-apply">
+    <h1 class="text-1">{{ job().position }}</h1>
+    <h5 class="detail-body-location-responsive text-5">{{ job().location }}</h5>
+    <button-primary class="detail-body-apply-button">Apply Now</button-primary>
+  </div>
+  <h5 class="detail-body-location-full text-5">{{ job().location }}</h5>
+</hgroup>
+<p class="detail-body-description text-4-r">{{ job().description }}</p>
+<div class="detail-body-requirements">
+  <h3 class="detail-body-requirements-title text-3">Requirements</h3>
+  <p class="detail-body-description text-4-r">{{ job().requirements.content }}</p>
+  <ul class="detail-body-requirements-items">
+    @for (requirement of job().requirements.items; track requirement) {
+      <li class="detail-body-description text-4-r">{{ requirement }}</li>
+    }
+  </ul>
+</div>
+<div class="detail-body-features">
+  <h3 class="detail-body-features-title text-3">What You Will Do</h3>
+  <p class="detail-body-description text-4-r">{{ job().role.content }}</p>
+  <ul class="detail-body-features-items">
+    @for (role of job().role.items; track role) {
+      <li class="detail-body-description text-4-r">{{ role }}</li>
+    }
+  </ul>
+</div>

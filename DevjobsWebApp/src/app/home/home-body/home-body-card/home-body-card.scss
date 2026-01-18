@@ -1,0 +1,45 @@
+:host {
+  background-color: var(--neutral-0);
+  border-radius: 6px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  padding: 7.4rem 3.2rem 3.2rem 3.2rem;
+  position: relative;
+  transition-duration: 0.25s;
+
+  &:focus {
+    box-shadow:
+      0 0 0 2px var(--neutral-0),
+      0 0 0 4px var(--indigo-500);
+    outline: none;
+  }
+
+  &:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+
+    @media (width < 800px) {
+      transform: scale(1.05);
+    }
+  }
+
+  icon {
+    left: 3.2rem;
+    position: absolute;
+    top: -2.5rem;
+  }
+
+  span {
+    color: var(--slate-500);
+  }
+
+  h3 {
+    color: var(--slate-900);
+  }
+
+  h5 {
+    color: var(--indigo-500);
+    margin-top: 3rem;
+  }
+}

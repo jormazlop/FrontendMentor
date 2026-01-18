@@ -1,0 +1,6 @@
+<icon [logo]="job().logo" [logoBackground]="job().logoBackground" />
+@let offer = job().postedAt + ' · ' + job().contract;
+<span class="text-4-r">{{ offer }}</span>
+<h3 class="text-3">{{ job().position }}</h3>
+<span class="text-4-r">{{ job().company }}</span>
+<h5 class="text-5">{{ job().location }}</h5>

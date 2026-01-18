@@ -1,0 +1,34 @@
+:host {
+  display: contents;
+}
+
+.footer-container {
+  align-items: center;
+  background-color: var(--neutral-0);
+  display: flex;
+  justify-content: space-between;
+  padding: 2rem 4rem;
+
+  hgroup {
+    display: flex;
+    flex-direction: column;
+
+    @media (width < 800px) {
+      display: none;
+    }
+
+    h3 {
+      color: var(--slate-900);
+    }
+
+    h4 {
+      color: var(--slate-500);
+    }
+  }
+
+  @media (width < 800px) {
+    .footer-apply-button {
+      width: 100%;
+    }
+  }
+}

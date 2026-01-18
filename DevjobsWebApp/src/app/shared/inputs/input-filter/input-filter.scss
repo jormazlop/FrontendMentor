@@ -1,0 +1,27 @@
+:host {
+  align-items: center;
+  background-color: var(--neutral-0);
+  color: var(--neutral-900);
+  display: flex;
+  flex: 1;
+  gap: 1.5rem;
+  position: relative;
+  transition-duration: 0.25s;
+
+  .image-container {
+    position: absolute;
+    left: 2rem;
+  }
+
+  input {
+    border-radius: inherit;
+    padding: 2.5rem 6rem;
+    width: 100%;
+
+    &::placeholder {
+      color: var(--neutral-900);
+      opacity: 0.5;
+    }
+  }
+
+}

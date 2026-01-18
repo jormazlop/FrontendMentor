@@ -1,0 +1,23 @@
+:host {
+  display: contents;
+}
+
+.header-container {
+  align-items: center;
+  background-color: var(--indigo-500);
+  background-image: url('/desktop/bg-pattern-header.svg');
+  background-repeat: no-repeat;
+  background-size: 100%;
+  border-radius: 0 0 0 80px;
+  display: flex;
+  justify-content: space-between;
+  padding: 4.4rem 16rem 8.4rem;
+
+  @media(width < 1000px) {
+    padding: 4.4rem 4rem 8.4rem;
+  }
+
+  @media(width < 800px) {
+    padding: 4.4rem 2rem 8.4rem;
+  }
+}

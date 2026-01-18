@@ -1,0 +1,24 @@
+:host {
+  display: flex;
+  width: 100%;
+}
+
+.separator {
+  border-left: 1px solid var(--slate-300);
+
+  @media (width < 800px) {
+    display: none;
+  }
+}
+
+.input-full {
+  @media (width < 800px) {
+    display: none;
+  }
+}
+
+.input-responsive {
+  @media (width >= 800px) {
+    display: none;
+  }
+}

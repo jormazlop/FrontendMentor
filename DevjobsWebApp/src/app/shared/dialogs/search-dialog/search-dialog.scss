@@ -1,0 +1,15 @@
+.dialog-content {
+  background-color: var(--neutral-0);
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 2.5rem;
+  width: 100%;
+
+  .input-search {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 2rem;
+    width: 100%;
+  }
+}

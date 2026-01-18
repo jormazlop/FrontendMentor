@@ -1,0 +1,15 @@
+.button-container {
+  background-color: var(--slate-100);
+  color: var(--indigo-500);
+  padding: 1.2rem 3.2rem;
+  transition-duration: 0.25s;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  &:focus {
+    box-shadow: 0 0 0 2px var(--neutral-0), 0 0 0 4px var(--indigo-500);
+    outline: none;
+  }
+}

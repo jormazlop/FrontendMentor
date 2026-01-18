@@ -1,0 +1,4 @@
+@for(job of jobs(); track job.id; let idx = $index) {
+  @let tabIndex = 'tab-' + idx;
+  <app-home-body-card [job]="job" [tabindex]="tabIndex"/>
+}

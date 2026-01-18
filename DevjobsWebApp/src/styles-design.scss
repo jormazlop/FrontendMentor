@@ -1,0 +1,83 @@
+@use 'tailwindcss';
+
+@font-face {
+  font-family: 'KumbhSans';
+  src: url('/fonts/KumbhSans.ttf') format('opentype');
+}
+
+body {
+  &.light {
+    --neutral-900: #000000;
+    --neutral-0: #ffffff;
+
+    --slate-950: #121721;
+    --slate-900: #19202d;
+    --slate-500: #6e8098;
+    --slate-300: #9daec2;
+    --slate-100: #f4f6f8;
+
+    --indigo-500: #5964e0;
+    --indigo-300: #939bf4;
+  }
+  &.dark {
+    --neutral-900: #ffffff;
+    --neutral-0: #000000;
+
+    --slate-950: #f4f6f8;
+    --slate-900: #9daec2;
+    --slate-500: #6e8098;
+    --slate-300: #19202d;
+    --slate-100: #121721;
+
+    --indigo-500: #939bf4;
+    --indigo-300: #5964e0;
+  }
+}
+
+.text-1 {
+  font-family: 'KumbhSans';
+  font-size: 2.8rem;
+  font-weight: bold;
+  letter-spacing: 0;
+  line-height: 125%;
+}
+
+.text-2 {
+  font-family: 'KumbhSans';
+  font-size: 2.4rem;
+  font-weight: bold;
+  letter-spacing: 0;
+  line-height: 125%;
+}
+
+.text-3 {
+  font-family: 'KumbhSans';
+  font-size: 2rem;
+  font-weight: bold;
+  letter-spacing: 0;
+  line-height: 125%;
+}
+
+.text-4-b {
+  font-family: 'KumbhSans';
+  font-size: 1.6rem;
+  font-weight: bold;
+  letter-spacing: 0;
+  line-height: 125%;
+}
+
+.text-4-r {
+  font-family: 'KumbhSans';
+  font-size: 1.6rem;
+  font-weight: 500;
+  letter-spacing: 0;
+  line-height: 162.5%;
+}
+
+.text-5 {
+  font-family: 'KumbhSans';
+  font-size: 1.4rem;
+  font-weight: bold;
+  letter-spacing: 0;
+  line-height: 120%;
+}
