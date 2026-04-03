@@ -1,0 +1,38 @@
+:host {
+  align-items: center;
+  background-color: var(--slate-950);
+  background-image: url('/shared/desktop/bg-pattern-circle.svg');
+  background-position: -25% 125%;
+  background-repeat: no-repeat;
+  color: var(--slate-50);
+  display: flex;
+  justify-content: space-between;
+  padding: 9rem var(--padding);
+
+  @media (width < 1250px) {
+    flex-direction: column-reverse;
+    gap: 5rem;
+  }
+
+  .home-2-title {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    width: 40%;
+
+    @media (width < 1250px) {
+      text-align: center;
+      width: 100%;
+    }
+  }
+
+  .home-2-logos {
+    display: grid;
+    gap: 4rem;
+    grid-template-columns: 1fr 1fr 1fr;
+
+    @media (width < 750px) {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+}

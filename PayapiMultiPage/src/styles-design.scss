@@ -1,0 +1,133 @@
+@font-face {
+  font-family: "DMSerif";
+  src: url("/fonts/DMSerif/DMSerifDisplay-Regular.ttf") format("opentype");
+}
+
+@font-face {
+  font-family: "DMSerif";
+  src: url("/fonts/DMSerif/DMSerifDisplay-Italic.ttf") format("opentype");
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "PublicSans";
+  src: url("/fonts/PublicSans/PublicSans.ttf") format("opentype");
+}
+
+@font-face {
+  font-family: "PublicSans";
+  src: url("/fonts/PublicSans/PublicSans-Italic.ttf") format("opentype");
+  font-style: italic;
+}
+
+
+:root {
+  --neutral-950: #000000;
+  --neutral-300: #D8D8D8;
+  --neutral-0: #FFFFFF;
+
+  --slate-950: #1B262F;
+  --slate-900: #213648;
+  --slate-800: #2E3F4D;
+  --slate-700: #36536B;
+  --slate-600: #527695;
+  --slate-500: #6C8294;
+  --slate-100: #EDF3F8;
+  --slate-50: #FBFCFE;
+
+  --rose-600: #BA4270;
+  --rose-400: #DA6D97;
+
+  --red-600: #FF0000;
+  --green-900: #2E423C;
+
+  --grad-1: linear-gradient(180deg, #9CB6CD 0%, #9AB3CA 42%, #557496 71%, #475178 100%);
+  --grad-2: linear-gradient(180deg, #454545 0%, #999999 23%, #FFFFFF 100%);
+  --grad-3: linear-gradient(270deg, #FFFFFF00 0%, #BABABA 15%, #FFFFFF00 38%, #FFFFFF00 69%);
+
+  --padding: 15rem;
+
+  @media(width < 1250px) {
+    --padding: 5rem;
+  }
+
+  @media(width < 750px) {
+    --padding: 2rem;
+  }
+}
+
+ul {
+  margin: 0;
+}
+
+.text-1 {
+  font-family: "DMSerif";
+  font-size: 7.2rem;
+  font-weight: 500;
+  letter-spacing: -0.5px;
+  line-height: 100%;
+}
+
+.text-2 {
+  font-family: "DMSerif";
+  font-size: 5.6rem;
+  font-weight: 500;
+  letter-spacing: -0.4px;
+  line-height: 100%;
+}
+
+.text-3 {
+  font-family: "DMSerif";
+  font-size: 4.8rem;
+  font-weight: 500;
+  letter-spacing: -0.4px;
+  line-height: 115%;
+}
+
+.text-4 {
+  font-family: "DMSerif";
+  font-size: 3.2rem;
+  font-weight: 500;
+  letter-spacing: -0.25px;
+  line-height: 125%;
+}
+
+.text-5 {
+  font-family: "DMSerif";
+  font-size: 2.4rem;
+  font-weight: 500;
+  letter-spacing: -0.25px;
+  line-height: 135%;
+}
+
+.text-6 {
+  font-family: "DMSerif";
+  font-size: 1.8rem;
+  font-weight: bold;
+  letter-spacing: 0px;
+  line-height: 140%;
+}
+
+.text-7-b {
+  font-family: "PublicSans";
+  font-size: 1.5rem;
+  font-weight: bold;
+  letter-spacing: 0px;
+  line-height: 120%;
+}
+
+.text-7-r {
+  font-family: "PublicSans";
+  font-size: 1.5rem;
+  font-weight: 500;
+  letter-spacing: 0px;
+  line-height: 185%;
+}
+
+.text-9 {
+  font-family: "PublicSans";
+  font-size: 1.1rem;
+  font-weight: 500;
+  letter-spacing: 0px;
+  line-height: 120%;
+}

@@ -1,0 +1,46 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  padding: 9rem var(--padding);
+
+  @media (width < 750px) {
+    padding: 0 var(--padding);
+  }
+
+  .home-feature {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+
+    @media (width < 1250px) {
+      flex-direction: column-reverse;
+
+      &:first-of-type {
+        flex-direction: column;
+      }
+    }
+
+    hgroup {
+      width: 40%;
+
+      @media (width < 1250px) {
+        text-align: center;
+        width: 100%;
+      }
+
+      h3 {
+        color: var(--slate-700);
+      }
+
+      p {
+        color: var(--slate-500);
+      }
+    }
+
+    @media (width < 750px) {
+      img {
+        width: 100%;
+      }
+    }
+  }
+}

@@ -1,0 +1,11 @@
+:host {
+  background-color: var(--slate-100);
+  background-image: url('/shared/desktop/bg-pattern-circle.svg');
+  background-position: 125% -150%;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  height: fit-content;
+  min-height: 100%;
+  width: 100%;
+}

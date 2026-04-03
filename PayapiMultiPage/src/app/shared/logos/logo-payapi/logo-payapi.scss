@@ -1,0 +1,8 @@
+:host-context(footer) {
+  svg {
+    background-color: var(--slate-950);
+  }
+  path, g {
+    fill: var(--slate-50);
+  }
+}

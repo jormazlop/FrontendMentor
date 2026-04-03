@@ -1,0 +1,28 @@
+.button-container {
+  background-color: var(--rose-600);
+  border: none;
+  border-radius: 999px;
+  color: var(--slate-50);
+  padding: 1.6rem 2.4rem;
+  transition-duration: 0.25s;
+  white-space: nowrap;
+
+  @media (width < 750px) {
+    width: 100%;
+  }
+
+  &:hover {
+    background-color: var(--rose-400);
+  }
+
+  &:focus:not(:disabled) {
+    box-shadow:
+      0 0 0 3px var(--neutral-0),
+      0 0 0 5px var(--rose-600);
+  }
+
+  &:disabled {
+    background-color: var(--rose-400);
+    cursor: not-allowed;
+  }
+}

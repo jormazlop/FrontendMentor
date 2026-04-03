@@ -1,0 +1,26 @@
+<h2 class="text-2">Submit a help request and we’ll get in touch shortly.</h2>
+<div class="contact-body">
+  <form>
+    <payapi-input-text [field]="form.name" placeholder="Name" />
+    <payapi-input-text [field]="form.mail" placeholder="Email Address" />
+    <payapi-input-text [field]="form.company" placeholder="Company Name" />
+    <payapi-input-text [field]="form.title" placeholder="Title" />
+    <payapi-input-textarea [field]="form.message" placeholder="Message" />
+    <payapi-input-checkbox
+      [field]="form.subscription"
+      label="Stay up-to-date with company announcements and updates to our API"
+    />
+    <payapi-button-tertiary>Submit</payapi-button-tertiary>
+  </form>
+  <div class="contact-innovators">
+    <strong class="text-5"> Join the thousands of innovators already building with us </strong>
+    <div class="contact-2-logos">
+      <payapi-logo-tesla class="dark" />
+      <payapi-logo-microsoft class="dark" />
+      <payapi-logo-hewlett-packard class="dark" />
+      <payapi-logo-oracle class="dark" />
+      <payapi-logo-google class="dark" />
+      <payapi-logo-nvidia class="dark" />
+    </div>
+  </div>
+</div>

@@ -1,0 +1,3 @@
+<input type="text" [formField]="field()" class="text-7-r" [placeholder]="placeholder()">
+@let error = field()().dirty() ? field()().errors().at(0)?.message : '';
+<p>{{ error }}</p>

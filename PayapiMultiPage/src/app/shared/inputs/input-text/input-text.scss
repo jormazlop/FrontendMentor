@@ -1,0 +1,30 @@
+input {
+  background: none;
+  border: none;
+  border-bottom: 1px solid var(--slate-700);
+  padding: 1rem;
+  width: 100%;
+
+  &::placeholder {
+    opacity: 0.5;
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  &.ng-invalid:not(.ng-pristine) {
+    border-bottom: 1px solid var(--rose-600);
+    color: var(--rose-600);
+
+    &::placeholder {
+      color: var(--rose-600);
+    }
+  }
+}
+
+p {
+  color: var(--rose-600);
+  font-family: sans-serif;
+  padding: 0.5rem;
+}

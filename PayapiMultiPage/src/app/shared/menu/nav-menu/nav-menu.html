@@ -1,0 +1,14 @@
+<nav class="nav-menu">
+  <ul>
+    <li>
+      <button routerLink="home"><payapi-logo-payapi /></button>
+    </li>
+    @for (item of items(); track item.label) {
+      <li>
+        <a class="text-7-b" [routerLink]="item.route" routerLinkActive="active">{{
+          item.label
+        }}</a>
+      </li>
+    }
+  </ul>
+</nav>

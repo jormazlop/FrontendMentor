@@ -1,0 +1,37 @@
+<header class="header-container">
+  <payapi-nav-menu [items]="items()" />
+  <payapi-button-primary>Schedule a Demo</payapi-button-primary>
+
+  <button class="header-responsive-button" (click)="onClickMenu()">
+    @if (menu()) {
+      <img src="/shared/mobile/close.svg" alt="Close Menu" />
+    } @else {
+      <img src="/shared/mobile/menu.svg" alt="Open Menu" />
+    }
+  </button>
+</header>
+
+@if (menu()) {
+  <div class="header-responsive-menu">
+    <button class="header-responsive-button" (click)="onClickMenu()">
+      @if (menu()) {
+        <img src="/shared/mobile/close-light.svg" alt="Close Menu" />
+      } @else {
+        <img src="/shared/mobile/menu.svg" alt="Open Menu" />
+      }
+    </button>
+    <hr class="solid" />
+    <ul>
+      <li>
+        <a (click)="onClickMenu()" class="text-7-b" routerLink="pricing" routerLinkActive="active">Pricing</a>
+      </li>
+      <li>
+        <a (click)="onClickMenu()" class="text-7-b" routerLink="about" routerLinkActive="active">About</a>
+      </li>
+      <li>
+        <a (click)="onClickMenu()" class="text-7-b" routerLink="contact" routerLinkActive="active">Contact</a>
+      </li>
+    </ul>
+    <payapi-button-primary>Schedule a Demo</payapi-button-primary>
+  </div>
+}

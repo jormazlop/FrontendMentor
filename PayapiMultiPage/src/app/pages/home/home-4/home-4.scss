@@ -1,0 +1,40 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  padding: 9rem var(--padding);
+
+  @media (width < 750px) {
+    padding: 0 var(--padding);
+  }
+
+  .home-advantages {
+    display: flex;
+    gap: 3rem;
+    justify-content: space-between;
+    list-style: none;
+
+    @media (width < 750px) {
+      flex-direction: column;
+    }
+
+    li {
+      align-items: center;
+      display: flex;
+      flex-direction: column;
+      gap: 3rem;
+      text-align: center;
+
+      img {
+        width: 10.6rem;
+      }
+
+      strong {
+        color: var(--slate-700);
+      }
+
+      p {
+        color: var(--slate-500);
+      }
+    }
+  }
+}

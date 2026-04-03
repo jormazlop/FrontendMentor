@@ -1,0 +1,18 @@
+.footer-container {
+  align-items: center;
+  background-color: var(--slate-950);
+  display: flex;
+  justify-content: space-between;
+  padding: 4rem var(--padding);
+  width: 100%;
+
+  @media(width < 750px) {
+    flex-direction: column;
+    gap: 4rem;
+  }
+
+  .footer-icons {
+    display: flex;
+    gap: 2.4rem;
+  }
+}

@@ -1,0 +1,52 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  padding: 4rem var(--padding);
+
+  h2 {
+    color: var(--slate-700);
+    margin-bottom: 4rem;
+  }
+
+  .contact-body {
+    align-items: center;
+    display: flex;
+    gap: 12rem;
+
+    @media (width < 1250px) {
+      flex-direction: column;
+      gap: 4rem;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 2.4rem;
+      width: 50%;
+
+      @media (width < 1250px) {
+        width: 100%;
+      }
+    }
+
+    .contact-innovators {
+      display: flex;
+      flex-direction: column;
+      gap: 4rem;
+
+      strong {
+        color: var(--slate-700);
+      }
+
+      .contact-2-logos {
+        display: grid;
+        gap: 4rem;
+        grid-template-columns: 1fr 1fr 1fr;
+
+        @media (width < 750px) {
+          grid-template-columns: 1fr 1fr;
+        }
+      }
+    }
+  }
+}

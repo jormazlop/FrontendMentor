@@ -1,0 +1,36 @@
+<h2 class="text-2 pricing-title">Pricing</h2>
+<ul class="pricing-plans">
+  @for (plan of plans; track plan.title) {
+    <li class="pricing-plan">
+      <h3 class="text-4">{{ plan.title }}</h3>
+      <span class="text-7-r">{{ plan.description }}</span>
+      <strong class="text-2">${{ plan.price | number: '1.2-2' }}</strong>
+      <hr class="solid" />
+      <ul>
+        <li class="text-7-r" [class.disabled]="!plan.features.includes('transactions')">
+          <img src="/shared/desktop/icon-check.svg" alt="Check" /><span>Transactions</span>
+        </li>
+        <li class="text-7-r" [class.disabled]="!plan.features.includes('auth')">
+          <img src="/shared/desktop/icon-check.svg" alt="Check" /><span>Auth</span>
+        </li>
+        <li class="text-7-r" [class.disabled]="!plan.features.includes('identity')">
+          <img src="/shared/desktop/icon-check.svg" alt="Check" /><span>Identity</span>
+        </li>
+        <li class="text-7-r" [class.disabled]="!plan.features.includes('investments')">
+          <img src="/shared/desktop/icon-check.svg" alt="Check" /><span>Investments</span>
+        </li>
+        <li class="text-7-r" [class.disabled]="!plan.features.includes('assets')">
+          <img src="/shared/desktop/icon-check.svg" alt="Check" /><span>Assets</span>
+        </li>
+        <li class="text-7-r" [class.disabled]="!plan.features.includes('liabilities')">
+          <img src="/shared/desktop/icon-check.svg" alt="Check" /><span>Liabilities</span>
+        </li>
+        <li class="text-7-r" [class.disabled]="!plan.features.includes('income')">
+          <img src="/shared/desktop/icon-check.svg" alt="Check" /><span>Income</span>
+        </li>
+      </ul>
+      <hr class="solid" />
+      <payapi-button-tertiary>Request Access</payapi-button-tertiary>
+    </li>
+  }
+</ul>

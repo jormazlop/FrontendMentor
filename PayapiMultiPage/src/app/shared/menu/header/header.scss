@@ -1,0 +1,68 @@
+.header-container {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  padding: 4rem var(--padding);
+  width: 100%;
+
+  .header-responsive-button {
+    background: none;
+    border: none;
+  }
+
+  @media (width < 750px) {
+    payapi-button-primary {
+      display: none;
+    }
+  }
+
+  @media (width >= 750px) {
+    .header-responsive-button {
+      background: none;
+      border: none;
+      display: none;
+    }
+  }
+}
+
+.header-responsive-menu {
+  background-color: var(--slate-950);
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  height: 100%;
+  padding: 4rem 2rem;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 50%;
+
+  .header-responsive-button {
+    align-self: flex-end;
+    background: none;
+    border: none;
+  }
+
+  .solid {
+    border-top: 1px solid var(--slate-50);
+  }
+
+  ul {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    list-style: none;
+    padding: 0;
+
+    a {
+      color: var(--slate-50);
+      opacity: 0.7;
+      text-decoration: none;
+
+      &.active {
+        opacity: 1;
+      }
+    }
+  }
+}
