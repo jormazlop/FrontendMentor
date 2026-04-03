@@ -11,7 +11,20 @@ import { RouterLink } from '@angular/router';
   styleUrl: './header.scss',
 })
 export class Header {
-  items = signal<NavMenuModel[]>([]);
+  items = signal<NavMenuModel[]>([
+        {
+          label: 'Pricing',
+          route: 'pricing',
+        },
+        {
+          label: 'About',
+          route: 'about',
+        },
+        {
+          label: 'Contact',
+          route: 'contact',
+        },
+      ]);
 
   menu = signal(false);
 
