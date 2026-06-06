@@ -1,0 +1,11 @@
+:host {
+  display: contents;
+
+  path {
+    stroke: var(--neutral-900);
+  }
+
+  &.secondary path {
+    stroke: var(--neutral-0);
+  }
+}

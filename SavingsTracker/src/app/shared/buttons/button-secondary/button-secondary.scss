@@ -1,0 +1,22 @@
+.button-secondary {
+  align-items: center;
+  background-color: rgba(31, 31, 31, 0.3);
+  border: none;
+  border-radius: 999px;
+  color: var(--neutral-0);
+  display: flex;
+  gap: 1rem;
+  outline: 1px solid var(--neutral-600);
+  padding: 1.2rem 2rem;
+  transition-duration: 0.25s;
+
+  &:hover {
+    background-color: var(--neutral-600);
+  }
+
+  &:focus {
+    box-shadow:
+      0 0 0 2px var(--neutral-900),
+      0 0 0 4px var(--orange-400);
+  }
+}

@@ -1,0 +1,69 @@
+:host {
+  border: 1px solid var(--neutral-600);
+  border-radius: 8px;
+  background-color: rgba(31, 31, 31, 0.3);
+  color: var(--neutral-0);
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  justify-content: space-between;
+  padding: 2.4rem;
+
+  .progress-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+
+    .progress-percentage {
+      align-items: center;
+      display: flex;
+      justify-content: space-between;
+
+      .text-1 {
+        color: var(--orange-400);
+        width: fit-content;
+      }
+
+      .text-4 {
+        color: var(--neutral-300);
+        width: fit-content;
+      }
+    }
+
+    .progress {
+      --bs-progress-bar-bg: var(--orange-400);
+
+      background-color: rgba(49, 49, 49, 0.6);
+    }
+
+    .progress-deposit {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+
+      .progress-deposit-subtext {
+        color: var(--neutral-300);
+      }
+    }
+  }
+
+  &.orange-bg {
+    background: linear-gradient(180deg, var(--orange-400) 0%, var(--orange-700) 100%);
+
+    .progress-container {
+      .text-1 {
+        color: var(--neutral-0);
+      }
+
+      .progress {
+        --bs-progress-bar-bg: var(--neutral-0);
+
+        background-color: rgba(49, 49, 49, 0.6);
+      }
+
+      .progress-deposit .due-date {
+        opacity: 1;
+      }
+    }
+  }
+}

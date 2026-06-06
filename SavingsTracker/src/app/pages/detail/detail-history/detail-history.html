@@ -1,0 +1,17 @@
+<span class="text-4">Deposit history</span>
+
+<ul class="history-list">
+  @for (deposit of goal().deposits; track deposit.id) {
+    <li class="history-item">
+      <div class="history-item-header">
+        <img src="images/icon-arrow-down-full.svg" alt="Arrow icon" />
+
+        <span class="text-6 history-title-date">
+          <span class="history-title">{{ deposit.note }}</span>
+          <span class="history-date">{{ deposit.createdAt | date:'MMM dd, yyyy' }}</span>
+        </span>
+      </div>
+      <span class="text-5 history-amount">+${{ deposit.amount }}</span>
+    </li>
+  }
+</ul>

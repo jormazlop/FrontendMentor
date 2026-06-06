@@ -1,0 +1,25 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  gap: 3.2rem;
+
+  .content {
+    display: flex;
+    gap: 3.2rem;
+
+    @media (width < 700px) {
+      flex-direction: column;
+    }
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      gap: 3.2rem;
+    }
+  }
+}
+
+app-detail-delete-dialog,
+app-detail-edit-dialog {
+  display: contents;
+}

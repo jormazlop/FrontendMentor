@@ -1,0 +1,9 @@
+<app-logo />
+<app-button-primary (click)="onCreateClick()"><app-icon-plus icon/>New Goal</app-button-primary>
+
+<app-detail-create-dialog
+  [isOpen]="isCreateDialogOpen()"
+  (close)="onCreateClosed()"
+  (confirm)="onCreateClosed()"
+>
+</app-detail-create-dialog>

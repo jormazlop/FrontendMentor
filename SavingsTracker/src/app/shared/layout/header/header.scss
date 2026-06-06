@@ -1,0 +1,10 @@
+:host {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+app-detail-create-dialog {
+  display: contents;
+}

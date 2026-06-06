@@ -1,0 +1,28 @@
+<div class="grid-item total">
+  <span class="text-5">Total Savings</span>
+  <span class="text-1">{{ totalSavings() | currency }}</span>
+</div>
+<div class="grid-item goals">
+  <span class="text-5">Active goals</span>
+  <span class="text-1 goals-count">{{ goalsActive() }}</span>
+</div>
+<div class="grid-item completed">
+  <span class="text-5">Goals completed</span>
+  <span class="text-1 completed-count">{{ goalsCompleted() }}</span>
+</div>
+
+<div class="grid-item monthly">
+  <span class="text-5">Monthly deposits</span>
+  <div class="chart-container">
+    <div class="chart">
+      @for(saving of totalSavingsByMonth(); track saving.month) {
+        <div class="bar-wrapper">
+          <div class="bar" [style]="{ height: (saving.totalSavings / this.maxSavingsInMonth() * 100) + '%' }">
+          </div>
+          <span class="bar-label-saving text-6">{{ saving.totalSavings | currency: 'USD':'symbol':'1.0-0' }}</span>
+          <span class="bar-label-month text-5">{{ saving.month | date:'MMM' }}</span>
+        </div>
+      }
+    </div>
+  </div>
+</div>

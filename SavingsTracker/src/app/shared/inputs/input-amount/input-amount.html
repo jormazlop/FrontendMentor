@@ -1,0 +1,10 @@
+<label [for]="name" class="text-5 label">{{ label() }}</label>
+<img src="/images/icon-dollar.svg" alt="Dollar icon" class="input-amount-icon" />
+<input
+  type="text"
+  [formField]="field()"
+  [id]="name"
+  class="text-5 input-amount"
+  [placeholder]="placeholder()"
+  appNumericOnly
+/>

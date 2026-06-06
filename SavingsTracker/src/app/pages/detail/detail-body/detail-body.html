@@ -1,0 +1,22 @@
+<div class="progress-container" [class.completed]="completed()">
+  <div class="progress-percentage">
+    <span class="text-1">{{ percentage() | number: '1.0-0' }}%</span>
+    <span class="text-4">{{ remaining() | currency: 'USD' : 'symbol' : '1.2-2' }} remaining</span>
+  </div>
+
+  <div class="progress">
+    <div class="progress-bar" [style.width.%]="percentage()"></div>
+  </div>
+
+  <div class="text-6 progress-deposit">
+    <span>{{ monthlyDeposit() | currency: 'USD' : 'symbol' : '1.0-0' }}
+      <br />
+      <span class="progress-deposit-subtext">Saved so far</span>
+    </span>
+    <span> of {{ goal().target | currency: 'USD' : 'symbol' : '1.0-0' }}
+      <br />
+      <span class="progress-deposit-subtext">Target</span>
+    </span>
+
+  </div>
+</div>

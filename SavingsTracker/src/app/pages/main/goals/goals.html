@@ -1,0 +1,32 @@
+<hgroup class="goals-header">
+  <h1 class="text-2">Your goals</h1>
+  <div class="goals-header-actions">
+    <div class="dropdown">
+      <app-button-secondary type="button" data-bs-toggle="dropdown" aria-expanded="false"
+        >Filter</app-button-secondary
+      >
+      <div class="dropdown-menu">
+        <span class="text-6 dropdown-title">FILTER BY STATUS</span>
+        <hr />
+        <app-input-checkbox [options]="filterOptions" [field]="form.filter" />
+      </div>
+    </div>
+
+    <div class="dropdown">
+      <app-button-secondary type="button" data-bs-toggle="dropdown" aria-expanded="false"
+        ><app-icon-sort icon />Sort</app-button-secondary
+      >
+      <div class="dropdown-menu">
+        <span class="text-6 dropdown-title">SORT BY</span>
+        <hr />
+        <app-input-checkbox [options]="sortsFilter" [field]="form.sort" />
+      </div>
+    </div>
+  </div>
+</hgroup>
+
+<div class="goals-list">
+  @for (goal of goalsFiltered(); track goal.id; let index = $index) {
+    <app-goal-item (click)="onGoalClick(goal)" class="goal-item" [goal]="goal" [class.orange-bg]="index % 5 === 0" />
+  }
+</div>

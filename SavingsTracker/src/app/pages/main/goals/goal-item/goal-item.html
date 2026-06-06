@@ -1,0 +1,28 @@
+<hgroup class="goal-title">
+  <span class="text-4">{{ goal().name }}</span>
+  @if (completed()) {
+    <span class="text-7 goal-complete-tag">COMPLETE</span>
+  }
+</hgroup>
+
+<div class="progress-container" [class.completed]="completed()">
+  <span class="text-1">{{ percentage() | number: '1.0-0' }}%</span>
+
+  <div class="progress">
+    <div class="progress-bar" [style.width.%]="percentage()"></div>
+  </div>
+
+  <div class="text-6 progress-deposit">
+    <span>{{ monthlyDeposit() | currency: 'USD' : 'symbol' : '1.0-0' }}</span>
+    <span> of </span>
+    <span>{{ goal().target | currency: 'USD' : 'symbol' : '1.0-0' }}</span>
+    <span class="due-date"> &#8226; </span>
+
+    @let deadline = goal().deadline;
+    @if (deadline) {
+      <span class="due-date">Due {{ deadline | date: 'dd MMM yyyy' }}</span>
+    } @else {
+      <span class="due-date">No deadline</span>
+    }
+  </div>
+</div>

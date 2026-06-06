@@ -1,0 +1,23 @@
+<app-detail-header (back)="onBackClick()" (edit)="onEditClick()" (delete)="onDeleteClick()" />
+<div class="content">
+  <div class="container">
+    <app-detail-body [goal]="goal()!" />
+    <app-detail-deposit [goal]="goal()!" />
+  </div>
+  <app-detail-history [goal]="goal()!" />
+</div>
+
+<app-detail-delete-dialog
+  [isOpen]="isDeleteDialogOpen()"
+  (confirmed)="onDeleteConfirmed()"
+  (cancelled)="onDeleteCancelled()"
+  [goal]="goal()!">
+</app-detail-delete-dialog>
+
+
+<app-detail-edit-dialog
+  [isOpen]="isEditDialogOpen()"
+  (close)="onEditClosed()"
+  (confirm)="onEditConfirmed()"
+  [goal]="goal()!">
+</app-detail-edit-dialog>

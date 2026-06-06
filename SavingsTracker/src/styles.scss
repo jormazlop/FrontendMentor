@@ -1,0 +1,11 @@
+html,
+body {
+  font-size: 10px;
+  min-height: calc(100vh - 3.2rem);
+  background-color: var(--neutral-900);
+  padding: 1.6rem 4rem;
+
+  @media (width < 1200px) {
+    padding: 1.6rem 0;
+  }
+}

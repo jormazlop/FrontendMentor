@@ -1,0 +1,20 @@
+:host {
+  background-image:
+    repeating-linear-gradient(
+      90deg,
+      rgba(255, 0, 0, 0.1) 0px,
+      rgba(255, 0, 0, 0.1) 84px,
+      transparent 84px,
+      transparent 108px
+    );
+  background-repeat: repeat;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  height: 100%;
+  width: 100%;
+
+  @media (width < 1200px) {
+    padding: 0 2.4rem;
+  }
+}

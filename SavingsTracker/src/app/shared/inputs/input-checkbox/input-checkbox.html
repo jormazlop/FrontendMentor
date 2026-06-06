@@ -1,0 +1,9 @@
+@for (option of options(); track option) {
+  <div class="input-checkbox-item" [tabIndex]="$index + 1">
+    <input type="radio" [formField]="field()" [id]="option" [value]="option" class="radio-input" />
+    <label class="radio-label text-5" [for]="option">
+      <span class="radio-custom"></span>
+      {{ option }}
+    </label>
+  </div>
+}

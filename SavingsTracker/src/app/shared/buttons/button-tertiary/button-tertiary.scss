@@ -1,0 +1,55 @@
+.button-tertiary {
+  align-items: center;
+  background-color: transparent;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  color: var(--neutral-400);
+  display: flex;
+  gap: 1rem;
+  padding: 1.2rem 2rem;
+  transition-duration: 0.25s;
+
+  &:focus {
+    box-shadow:
+      0 0 0 1px var(--neutral-900),
+      0 0 0 3px var(--orange-400);
+  }
+}
+
+:host.white .button-tertiary {
+  color: var(--neutral-0);
+}
+
+:host.orange .button-tertiary {
+  color: var(--orange-400);
+}
+
+:host.no-icon {
+  background: transparent;
+  border: none;
+
+  &:focus,
+  &:active {
+    background: transparent;
+    border: none;
+  }
+
+  app-icon-filter {
+    display: none;
+  }
+
+  .button-tertiary {
+    justify-content: center;
+    width: 100%;
+  }
+}
+
+:host.red .button-tertiary {
+  background-color: var(--red-500);
+  color: var(--neutral-900);
+}
+
+:host.black .button-tertiary {
+  background-color: var(--neutral-700);
+  color: var(--neutral-0);
+}

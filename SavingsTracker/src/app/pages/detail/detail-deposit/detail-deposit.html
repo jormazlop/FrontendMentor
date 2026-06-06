@@ -1,0 +1,4 @@
+<span class="text-4">Add deposit</span>
+<app-input-amount name="amount" label="Amount" [field]="form.amount" placeholder="0.00"/>
+<app-input-text name="note" label="Note (optional)" [field]="form.note" placeholder="e.g. Monthly savings"/>
+<app-button-primary class="no-icon" (click)="onAddFunds()">Add Funds</app-button-primary>

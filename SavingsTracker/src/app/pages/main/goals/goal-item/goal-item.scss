@@ -1,0 +1,83 @@
+:host {
+  border: 1px solid var(--neutral-600);
+  border-radius: 8px;
+  background-color: rgba(31, 31, 31, 0.3);
+  color: var(--neutral-0);
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  justify-content: space-between;
+  padding: 2.4rem;
+
+  .goal-title {
+    display: flex;
+    justify-content: space-between;
+
+    .goal-complete-tag {
+      align-items: center;
+      border: 1px solid var(--green-500);
+      border-radius: 9999px;
+      color: var(--green-500);
+      display: flex;
+      justify-content: center;
+      line-height: 1;
+      padding: 0.4rem 1rem;
+    }
+  }
+
+  .progress-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+
+    .text-1 {
+      color: var(--orange-400);
+      width: fit-content;
+    }
+
+    .progress {
+      --bs-progress-bar-bg: var(--orange-400);
+
+      background-color: rgba(49, 49, 49, 0.6);
+    }
+
+    &.completed {
+      .text-1 {
+        color: var(--green-500);
+      }
+
+      .progress {
+        --bs-progress-bar-bg: var(--green-500);
+      }
+    }
+
+    .progress-deposit {
+      width: fit-content;
+
+      .due-date {
+        font-weight: 300;
+        opacity: 0.7;
+      }
+    }
+  }
+
+  &.orange-bg {
+    background: linear-gradient(180deg, var(--orange-400) 0%, var(--orange-700) 100%);
+
+    .progress-container {
+      .text-1 {
+        color: var(--neutral-0);
+      }
+
+      .progress {
+        --bs-progress-bar-bg: var(--neutral-0);
+
+        background-color: rgba(49, 49, 49, 0.6);
+      }
+
+      .progress-deposit .due-date {
+        opacity: 1;
+      }
+    }
+  }
+}

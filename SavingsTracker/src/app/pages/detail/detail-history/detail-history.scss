@@ -1,0 +1,57 @@
+:host {
+  color: var(--neutral-0);
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  width: 60%;
+
+  @media (width < 700px) {
+    align-items: center;
+    width: 100%;
+  }
+
+  .history-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    list-style: none;
+    padding: 0;
+
+    .history-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      @media (width < 700px) {
+        gap: 2rem;
+      }
+
+      .history-item-header {
+        display: flex;
+        align-items: center;
+        gap: 1.5rem;
+
+        img {
+          background-color: rgba(31, 31, 31, 0.3);
+          border: 1px solid var(--neutral-600);
+          border-radius: 50%;
+          padding: 1.5rem;
+        }
+
+        .history-title-date {
+          display: flex;
+          flex-direction: column;
+          gap: 0.25rem;
+
+          .history-date {
+            color: var(--neutral-300);
+          }
+        }
+      }
+
+      .history-amount {
+        color: var(--green-500);
+      }
+    }
+  }
+}
