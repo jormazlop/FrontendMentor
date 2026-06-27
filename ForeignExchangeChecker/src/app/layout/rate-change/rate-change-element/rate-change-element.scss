@@ -1,0 +1,41 @@
+:host {
+  background-color: var(--neutral-600);
+  border: 1px solid var(--neutral-500);
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 2rem;
+  width: 100%;
+
+  .rate-change-element-title {
+    color: var(--neutral-100);
+  }
+
+  .rate-change-element-body {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+
+    .rate-change-value {
+      appearance: textfield;
+      color: var(--neutral-50);
+      background: none;
+      border: none;
+      width: 20rem;
+
+      &:focus {
+        outline: none;
+      }
+
+      &::-webkit-outer-spin-button,
+      &::-webkit-inner-spin-button {
+        appearance: none;
+      }
+
+      &:disabled {
+        pointer-events: none;
+      }
+    }
+  }
+}

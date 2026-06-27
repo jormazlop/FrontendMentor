@@ -1,0 +1,12 @@
+<span class="text-4 rate-change-element-title">SEND</span>
+<div class="rate-change-element-body">
+  <input
+    type="number"
+    class="text-1 rate-change-value"
+    [(ngModel)]="rate"
+    [disabled]="readOnly()"
+    (input)="onRateInput($event)"
+  />
+
+  <foreign-currency-button [(modelOption)]="modelOption" />
+</div>

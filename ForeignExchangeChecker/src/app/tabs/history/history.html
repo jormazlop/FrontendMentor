@@ -1,0 +1,45 @@
+<div class="history-tab-header">
+  <ul class="history-conversion-list">
+    <li class="history-conversion-item">
+      <span class="text-4 history-conversion-item-title">OPEN</span>
+      <span class="text-2">{{ rateHistory().open | number: '1.4-4' }}</span>
+    </li>
+    <li class="history-conversion-item">
+      <span class="text-4 history-conversion-item-title">LAST</span>
+      <span class="text-2">{{ rateHistory().last | number: '1.4-4' }}</span>
+    </li>
+    @let changeSymbol = rateHistory().change < 0 ? '' : '+';
+    <li class="history-conversion-item">
+      <span class="text-4 history-conversion-item-title">CHANGE</span>
+      <span
+        class="text-2 history-conversion-item-change"
+        [class.decrease]="rateHistory().change < 0"
+        >{{ changeSymbol }}{{ rateHistory().change | number: '1.4-4' }}</span
+      >
+    </li>
+    @let changePercentageSymbol = rateHistory().change < 0 ? '▼ ' : '▲ +';
+    <li class="history-conversion-item">
+      <span class="text-4 history-conversion-item-title">% CHANGE</span>
+      <span
+        class="text-2 history-conversion-item-change"
+        [class.decrease]="rateHistory().percentageChange < 0"
+        >{{ changePercentageSymbol }}{{ rateHistory().percentageChange | number: '1.4-4' }}%</span
+      >
+    </li>
+  </ul>
+  <ul class="history-conversion-periods">
+    <li>
+      @for (period of periodOptions; track $index) {
+        <button
+          class="text-5 history-conversion-period-item"
+          [class.active]="periodSelected() === period"
+          (click)="periodSelected.set(period)"
+        >
+          {{ period }}
+        </button>
+      }
+    </li>
+  </ul>
+</div>
+
+<foreign-history-chart [historyData]="changeRateResource.value()" />

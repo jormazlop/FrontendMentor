@@ -1,0 +1,75 @@
+@font-face {
+  font-family: 'JetBrains';
+  src: url('/fonts/Jetbrains/Jetbrains.ttf') format('opentype');
+}
+
+:root {
+  /* Neutral */
+  --neutral-900: #0a0a0a;
+  --neutral-700: #171719;
+  --neutral-600: #202022;
+  --neutral-500: #2e2e2e;
+  --neutral-400: #3d3d3d;
+  --neutral-300: #454547;
+  --neutral-200: #9d9d9d;
+  --neutral-100: #c6c6c6;
+  --neutral-50: #ffffff;
+
+  /* Lime */
+  --lime-800: #283300;
+  --lime-500: #cef739;
+
+  /* Green */
+  --green-500: #42eb05;
+
+  /* Red */
+  --red-500: #ff4141;
+}
+
+.text-1 {
+  font-family: 'JetBrains';
+  font-size: 4rem;
+  font-weight: bold;
+  letter-spacing: -0.5px;
+  line-height: 100%;
+}
+
+.text-2 {
+  font-family: 'JetBrains';
+  font-size: 2rem;
+  font-weight: 400;
+  letter-spacing: -0.5px;
+  line-height: 120%;
+}
+
+.text-3 {
+  font-family: 'JetBrains';
+  font-size: 1.6rem;
+  font-weight: 400;
+  letter-spacing: 1px;
+  line-height: 120%;
+}
+
+.text-4 {
+  font-family: 'JetBrains';
+  font-size: 1.4rem;
+  font-weight: 400;
+  letter-spacing: 1px;
+  line-height: 120%;
+}
+
+.text-5 {
+  font-family: 'JetBrains';
+  font-size: 1.2rem;
+  font-weight: 400;
+  letter-spacing: 0.5px;
+  line-height: 120%;
+}
+
+.text-6 {
+  font-family: 'JetBrains';
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0px;
+  line-height: 100%;
+}

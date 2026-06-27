@@ -1,0 +1,89 @@
+:host {
+  position: relative;
+}
+
+@mixin image {
+  img {
+    border-radius: 50%;
+    height: 2rem;
+    width: 2rem;
+  }
+}
+
+.currency-button {
+  align-items: center;
+  background-color: var(--neutral-500);
+  border: 1px solid var(--neutral-400);
+  border-radius: 8px;
+  color: var(--neutral-50);
+  display: flex;
+  gap: 0.8rem;
+  padding: 1rem;
+  transition-duration: 0.25s;
+
+  &:hover {
+    background-color: var(--neutral-400);
+  }
+
+  &:focus {
+    box-shadow:
+      0 0 0 3px var(--neutral-500),
+      0 0 0 5px var(--lime-500);
+  }
+
+  @include image;
+}
+
+.currency-menu {
+  background-color: var(--neutral-600);
+  border: 1px solid var(--neutral-400);
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  margin-top: 1rem;
+  opacity: 0;
+  padding: 1rem;
+  position: absolute;
+  visibility: hidden;
+  right: -50%;
+  transform: translateY(1rem) scale(0.95);
+  transition: all 0.2s ease-out;
+  top: 100%;
+  width: fit-content;
+  z-index: 1;
+
+  @include image;
+
+  &.open {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0) scale(1);
+  }
+
+  .search-input {
+    padding-bottom: 2rem;
+  }
+
+  button {
+    align-items: center;
+    background: transparent;
+    color: var(--neutral-50);
+    display: flex;
+    gap: 1.2rem;
+    padding: 1.2rem 0.8rem;
+
+    .option-name {
+      color: var(--neutral-200);
+      flex: 1;
+      white-space: nowrap;
+    }
+  }
+
+  .currency-menu-title {
+    color: var(--neutral-200);
+    display: flex;
+    justify-content: space-between;
+    padding: 0rem 1rem 1rem 1rem;
+  }
+}

@@ -1,0 +1,16 @@
+<div class="text-6 livemarkets-banner">
+  <div class="livemarkets-banner-dot"></div>
+  LIVE MARKETS
+</div>
+<ul class="livemarkets-list">
+  @for (rateChange of ratesChange(); track rateChange.quote) {
+    <li class="text-5 livemarket-item">
+      <span class="livemarket-base">{{ rateChange.base }}/{{ rateChange.quote }}</span>
+      <span class="livemarket-today-rate">{{ rateChange.todayRate }}</span>
+      @let changeSymbol = rateChange.changeRate < 0 ? '▼ ' : '▲ +';
+      <span class="livemarket-change-rate" [class.decrease]="rateChange.changeRate < 0"
+        >{{ changeSymbol }}{{ rateChange.changeRate | number: '1.2-2' }}%</span
+      >
+    </li>
+  }
+</ul>

@@ -1,0 +1,19 @@
+<h2 class="text-2 rate-change-title">CHECK THE RATE</h2>
+<div class="rate-change-body">
+  <div class="rate-change-body-main">
+    <foreign-rate-change-element [(rate)]="rateBase" [(modelOption)]="modelBase" />
+    <button class="exchange-rates" (click)="onExchangeRate()">
+      <foreign-icon-exchange />
+    </button>
+    <foreign-rate-change-element
+      [readOnly]="true"
+      [rate]="rateQuote()"
+      [(modelOption)]="modelQuote"
+    />
+  </div>
+</div>
+<div class="rate-change-footer">
+  <span class="text-5 rate-change-conversion-rate">
+    1 {{ modelBase() }} = {{ changeRate() }} {{ modelQuote() }}
+  </span>
+</div>

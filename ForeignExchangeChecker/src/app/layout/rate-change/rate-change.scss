@@ -1,0 +1,40 @@
+:host {
+  background-color: var(--neutral-700);
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: 2rem;
+
+  .rate-change-title {
+    color: var(--neutral-50);
+  }
+
+  .rate-change-body {
+    .rate-change-body-main {
+      align-items: center;
+      display: flex;
+      gap: 2.4rem;
+      justify-content: space-between;
+
+      .exchange-rates {
+        background: none;
+        border: 1px solid var(--neutral-500);
+        border-radius: 8px;
+        padding: 1.5rem;
+      }
+    }
+  }
+
+  .rate-change-footer {
+    align-items: center;
+    border-top: 1px dashed var(--neutral-500);
+    display: flex;
+    justify-content: space-between;
+    padding: 2rem 2rem 0;
+
+    .rate-change-conversion-rate {
+      color: var(--neutral-50);
+    }
+  }
+}

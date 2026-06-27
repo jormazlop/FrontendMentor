@@ -1,0 +1,41 @@
+<button class="currency-button" (click)="onClickMenu($event)">
+  <img
+    src="/images/flags/{{ selectedOption()?.country_code }}.webp"
+    [alt]="selectedOption()?.name"
+  />
+  <span class="text-4">{{ selectedOption()?.iso_code }}</span>
+  <foreign-icon-chevron-down />
+</button>
+
+<menu class="currency-menu" [class.open]="isOpen()" (clickOutside)="onCloseMenu()">
+
+  <foreign-search-input class="search-input" [(search)]="search" />
+
+  <div class="text-5 currency-menu-title">
+    <span>POPULAR</span>
+    <span>{{ popularOptions().length }}</span>
+  </div>
+
+  @for (option of popularOptions(); track option.iso_code) {
+    <button (click)="onClickOption(option)">
+      <img src="/images/flags/{{ option.country_code }}.webp" [alt]="option.name" />
+      <span class="text-4">{{ option.iso_code }}</span>
+      <span class="text-4 option-name">{{ option.name }}</span>
+    </button>
+  }
+
+  <br>
+
+  <div class="text-5 currency-menu-title">
+    <span>OTHER CURRENCIES</span>
+    <span>{{ currencyOptions().length - popularOptions().length }}</span>
+  </div>
+
+  @for (option of otherOptions(); track option.iso_code) {
+    <button (click)="onClickOption(option)">
+      <img src="/images/flags/{{ option.country_code }}.webp" [alt]="option.name" />
+      <span class="text-4">{{ option.iso_code }}</span>
+      <span class="text-4 option-name">{{ option.name }}</span>
+    </button>
+  }
+</menu>

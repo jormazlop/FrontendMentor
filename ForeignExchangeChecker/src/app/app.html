@@ -1,0 +1,15 @@
+<foreign-header />
+<foreign-livemarkets />
+<main class="main">
+  <foreign-rate-change />
+  <div class="main-tabs">
+    <nav class="main-tabs-nav-menu">
+      @for (navItem of navMenu(); track navItem.route) {
+        <button class="tab-item" [routerLink]="navItem.route" routerLinkActive="tab-active">
+          <span class="text-3">{{ navItem.route | uppercase }}</span>
+        </button>
+      }
+    </nav>
+    <router-outlet />
+  </div>
+</main>

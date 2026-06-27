@@ -1,0 +1,71 @@
+:host {
+  display: flex;
+
+  .livemarkets-banner {
+    align-items: center;
+    background-color: var(--lime-500);
+    color: var(--neutral-900);
+    display: flex;
+    gap: 0.8rem;
+    padding: 1.2rem 1rem;
+    white-space: nowrap;
+
+    .livemarkets-banner-dot {
+      background-color: var(--neutral-900);
+      border-radius: 50%;
+      height: 0.6rem;
+      width: 0.6rem;
+    }
+  }
+
+  .livemarkets-list {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    overflow: hidden;
+    padding: 0;
+
+    &:hover .livemarket-item {
+      animation-play-state: paused;
+    }
+
+    .livemarket-item {
+      animation: slideshow 200s linear infinite;
+      align-items: center;
+      background-color: var(--neutral-500);
+      border-right: 1px solid var(--neutral-300);
+      display: flex;
+      gap: 1rem;
+      padding: 0 1.2rem;
+      position: relative;
+
+      .livemarket-base {
+        color: var(--neutral-200);
+      }
+
+      .livemarket-today-rate {
+        color: var(--neutral-50);
+      }
+
+      .livemarket-change-rate {
+        color: var(--green-500);
+        white-space: nowrap;
+
+        &.decrease {
+          color: var(--red-500);
+        }
+      }
+    }
+  }
+}
+
+
+@keyframes slideshow {
+  0% {
+    left: 0%;
+  }
+
+  100% {
+    left: -1000%;
+  }
+}

@@ -1,0 +1,70 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 2rem 0;
+
+  .history-tab-header {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+
+    .history-conversion-list {
+      display: flex;
+      gap: 1.5rem;
+      list-style: none;
+
+      .history-conversion-item {
+        background-color: var(--neutral-700);
+        border: 1px solid var(--neutral-600);
+        border-radius: 16px;
+        color: var(--neutral-50);
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+        padding: 1.2rem 2rem;
+        min-width: 14rem;
+
+        .history-conversion-item-title {
+          color: var(--neutral-50);
+          opacity: 0.7;
+        }
+
+        .history-conversion-item-change {
+          color: var(--green-500);
+
+          &.decrease {
+            color: var(--red-500);
+          }
+        }
+      }
+    }
+
+    .history-conversion-periods {
+      background-color: var(--neutral-700);
+      align-items: center;
+      border-radius: 8px;
+      display: flex;
+      height: fit-content;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+
+      .history-conversion-period-item {
+        background-color: transparent;
+        border: none;
+        color: var(--neutral-200);
+        opacity: 0.75;
+        padding: 1.4rem 1.6rem;
+        transition-duration: 0.25s;
+
+        &.active {
+          background-color: var(--neutral-500);
+          border-radius: 8px;
+          color: var(--neutral-50);
+          opacity: 1;
+        }
+      }
+    }
+  }
+}

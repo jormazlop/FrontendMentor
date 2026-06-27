@@ -1,0 +1,22 @@
+:host {
+  background-color: var(--neutral-700);
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+
+  .history-chart-header {
+    align-items: center;
+    color: var(--neutral-50);
+    display: flex;
+    justify-content: space-between;
+
+    .history-chart-info {
+      opacity: 0.7;
+    }
+  }
+
+  .history-chart-chart {
+    height: 40rem;
+  }
+}

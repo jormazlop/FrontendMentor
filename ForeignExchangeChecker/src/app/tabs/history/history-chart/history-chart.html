@@ -1,0 +1,5 @@
+<div class="history-chart-header">
+  <span class="text-3">{{ lastRate()?.base }}/{{ lastRate()?.quote }}</span>
+  <span class="text-5 history-chart-info">{{ lastRate()?.rate }} · {{ today | date: "MMM d HH:mm z" | uppercase  }}</span>
+</div>
+<div #chart class="history-chart-chart"></div>
