@@ -30,11 +30,12 @@
     align-items: center;
     border-top: 1px dashed var(--neutral-500);
     display: flex;
-    justify-content: space-between;
+    gap: 1.2rem;
     padding: 2rem 2rem 0;
 
     .rate-change-conversion-rate {
       color: var(--neutral-50);
+      flex: 1;
     }
   }
 }

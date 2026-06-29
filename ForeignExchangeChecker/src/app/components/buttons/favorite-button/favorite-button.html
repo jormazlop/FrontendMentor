@@ -1,0 +1,9 @@
+<button class="text-5-m favorite-button" [class.active]="active()" (click)="onClickedFavorite()">
+  @if (active()) {
+    <foreign-icon-star-filled class="icon" [filled]="active()" />
+    <span>FAVORITED</span>
+  } @else {
+    <foreign-icon-star class="icon" />
+    <span>FAVORITE</span>
+  }
+</button>

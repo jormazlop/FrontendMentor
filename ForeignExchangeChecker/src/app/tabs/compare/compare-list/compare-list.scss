@@ -1,0 +1,41 @@
+:host {
+  .compare-rate-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    .compare-rate-item {
+      align-items: center;
+      background-color: var(--neutral-600);
+      border: 1px solid var(--neutral-500);
+      border-radius: 10px;
+      display: flex;
+      gap: 2rem;
+      padding: 1.85rem 1.6rem;
+
+      .compare-rate-image {
+        border-radius: 50%;
+        height: 2rem;
+        width: 2rem;
+      }
+
+      .compare-rate-item-title {
+        color: var(--neutral-50);
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+        gap: 0.6rem;
+      }
+
+      .compare-rate-item-rates {
+        color: var(--neutral-50);
+        display: flex;
+        flex-direction: column;
+        gap: 0.6rem;
+      }
+    }
+  }
+}

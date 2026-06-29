@@ -1,4 +1,4 @@
-import { DecimalPipe } from '@angular/common';
+import { DecimalPipe, UpperCasePipe } from '@angular/common';
 import { httpResource } from '@angular/common/http';
 import { Component, computed, effect, inject, signal, untracked } from '@angular/core';
 import { Rate, RateHistory } from '@model/model';
@@ -7,7 +7,7 @@ import { HistoryChart } from './history-chart/history-chart';
 
 @Component({
   selector: 'foreign-history',
-  imports: [DecimalPipe, HistoryChart],
+  imports: [DecimalPipe, HistoryChart, UpperCasePipe],
   templateUrl: './history.html',
   styleUrl: './history.scss',
 })
@@ -15,7 +15,12 @@ export default class History {
   rateHistory = signal(new RateHistory());
 
   readonly periodOptions = ['1D', '1W', '1M', '3M', '1Y', '5Y'];
+  readonly chartOptions = ['area' , 'line' , 'bar' , 'step'];
+
+
   periodSelected = signal('1D');
+  chartSelected = signal('area');
+
   private readonly dateOffset = computed(() => {
     switch (this.periodSelected()) {
       case '1W':

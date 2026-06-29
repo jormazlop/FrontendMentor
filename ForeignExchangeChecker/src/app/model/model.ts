@@ -39,20 +39,15 @@ export type Rate = {
   base: string;
   quote: string;
   rate: number;
-};
-
-
-export type LiveMarketRate = {
-  base: string;
-  quote: string;
-  todayRate: number;
+  iso_code?: string;
+  name?: string;
   changeRate: number;
-}
+};
 
 export type NavMenu = {
   route: string;
   badge?: number;
-}
+};
 
 export class RateHistory {
   open: number;
@@ -66,6 +61,24 @@ export class RateHistory {
     this.change = 0;
     this.percentageChange = 0;
   }
+}
 
+export type Favorite = {
+  date: string;
+  base: string;
+  quote: string;
+  rate: number;
+  changeRate: number;
+  base_iso_code?: string;
+  quote_iso_code?: string;
+  name?: string;
+};
 
+export type LogConversion = {
+  id: number;
+  date: Date;
+  base: string;
+  quote: string;
+  baseValue: number;
+  quoteValue: number;
 }

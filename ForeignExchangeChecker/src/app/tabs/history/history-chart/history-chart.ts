@@ -1,13 +1,22 @@
-import { Component, effect, ElementRef, input, signal, untracked, viewChild } from '@angular/core';
+import {
+  Component,
+  effect,
+  ElementRef,
+  HostListener,
+  input,
+  signal,
+  untracked,
+  viewChild,
+} from '@angular/core';
 import * as echarts from 'echarts/core';
 import { CanvasRenderer } from 'echarts/renderers';
-import { LineChart } from 'echarts/charts';
+import { BarChart, LineChart } from 'echarts/charts';
 import type { EChartsOption } from 'echarts';
-import { GridComponent } from 'echarts/components';
+import { GridComponent, TooltipComponent } from 'echarts/components';
 import { Rate } from '@model/model';
 import { DatePipe, UpperCasePipe } from '@angular/common';
 
-echarts.use([CanvasRenderer, LineChart, GridComponent]);
+echarts.use([CanvasRenderer, LineChart, GridComponent, BarChart, TooltipComponent]);
 
 @Component({
   selector: 'foreign-history-chart',
@@ -21,8 +30,14 @@ export class HistoryChart {
 
   historyData = input<Rate[]>();
   lastRate = signal<Rate | undefined>(undefined);
-
   today = new Date();
+
+  chartType = input<string>('area');
+
+  @HostListener('window:resize')
+  onResize() {
+    this.chartInstance?.resize();
+  }
 
   constructor() {
     this.effectUpdateChart();
@@ -34,6 +49,8 @@ export class HistoryChart {
         ?.slice()
         .sort((a, b) => a.date.localeCompare(b.date));
 
+      const chartType = this.chartType();
+
       untracked(() => {
         if (!historyData) {
           return;
@@ -41,16 +58,22 @@ export class HistoryChart {
 
         this.lastRate.set(historyData[historyData.length - 1]);
 
-        const chartOptions = this.generateGradientOptions(historyData);
+        const base = this.generateBaseOptions(historyData);
 
-        this.updateChart(chartOptions);
+        const options = this.applyChartType(
+          base,
+          historyData.map((r) => r.rate),
+          chartType,
+        );
+
+        this.updateChart(options);
       });
     });
   }
 
-  private generateGradientOptions(data: Rate[]): EChartsOption {
-    const daysData = data.map((rate) => this.formatDateLabel(rate.date));
-    const rateData = data.map((rate) => rate.rate);
+  private generateBaseOptions(data: Rate[]): EChartsOption {
+    const daysData = data.map((r) => this.formatDateLabel(r.date));
+    const rateData = data.map((r) => r.rate);
 
     const min = Math.min(...rateData);
     const max = Math.max(...rateData);
@@ -58,85 +81,90 @@ export class HistoryChart {
     return {
       animation: false,
       color: ['#cef739'],
+      tooltip: {
+        trigger: 'axis',
+        backgroundColor: '#171719',
+        borderColor: '#3d3d3d',
+        borderWidth: 1,
+        textStyle: {
+          color: '#fff',
+        },
+        padding: 10,
+      },
       grid: {
         left: 30,
         right: 30,
         bottom: 10,
         top: 30,
       },
-      xAxis: [
-        {
-          type: 'category',
-          boundaryGap: false,
-          data: daysData,
-          axisLabel: {
-            color: '#9d9d9d',
-            formatter: (value: string, index: number) => {
-              return index === 0 ? `{first|${value}}` : value;
-            },
-            rich: {
-              first: {
-                padding: [0, 0, 0, 60],
-              },
-            },
-          },
-        },
-      ],
-      yAxis: [
-        {
-          type: 'value',
-          max,
-          min,
-          interval: (max - min) / 2,
-          axisLabel: {
-            color: '#9d9d9d',
-            formatter: (value: number) => `${value.toFixed(4)}`,
-          },
-          splitLine: {
-            show: true,
-            lineStyle: {
-              type: 'dashed',
-              color: '#454547',
-              width: 1,
-            },
-          },
-        },
-      ],
-      series: [
-        {
-          name: 'Rate history',
-          type: 'line',
-          stack: 'Total',
-          smooth: true,
-          lineStyle: {
-            width: 2,
-            color: '#cef739',
-          },
-          showSymbol: false,
-          areaStyle: {
-            opacity: 0.6,
-            color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
-              {
-                offset: 0,
-                color: 'rgba(206, 247, 57, 0.9)',
-              },
-              {
-                offset: 0.8,
-                color: 'rgba(206, 247, 57, 0.05)',
-              },
-              {
-                offset: 1,
-                color: 'rgba(40, 51, 0, 0.0)',
-              },
-            ]),
-          },
-          emphasis: {
-            focus: 'series',
-          },
 
-          data: rateData,
+      xAxis: {
+        type: 'category',
+        boundaryGap: false,
+        data: daysData,
+        axisLabel: {
+          color: '#9d9d9d',
+          formatter: (value: string, index: number) => {
+            return index === 0 ? `{first|${value}}` : value;
+          },
+          rich: {
+            first: {
+              padding: [0, 0, 0, 60],
+            },
+          },
         },
-      ],
+      },
+
+      yAxis: {
+        type: 'value',
+        min,
+        max,
+        interval: (max - min) / 2,
+        axisLabel: {
+          color: '#9d9d9d',
+          formatter: (v: number) => v.toFixed(4),
+        },
+        splitLine: {
+          show: true,
+          lineStyle: {
+            type: 'dashed',
+            color: '#454547',
+          },
+        },
+      },
+    };
+  }
+
+  private applyChartType(base: EChartsOption, data: number[], type: string): EChartsOption {
+    const series: any = {
+      type: type === 'area' ? 'line' : type,
+      data,
+      smooth: type !== 'bar',
+      showSymbol: false,
+      lineStyle: {
+        width: 2,
+        color: '#cef739',
+      },
+    };
+
+    if (type === 'area') {
+      series.areaStyle = {
+        opacity: 0.6,
+        color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
+          { offset: 0, color: 'rgba(206,247,57,0.9)' },
+          { offset: 1, color: 'rgba(40,51,0,0)' },
+        ]),
+      };
+    }
+
+    if (type === 'step') {
+      series.type = 'line';
+      series.step = 'middle';
+    }
+
+    return {
+      ...base,
+      series: [series],
     };
   }
 
@@ -157,7 +185,7 @@ export class HistoryChart {
     }
 
     this.chartInstance.setOption(options, {
-      notMerge: false,
+      notMerge: true,
       lazyUpdate: true,
       silent: true,
     });

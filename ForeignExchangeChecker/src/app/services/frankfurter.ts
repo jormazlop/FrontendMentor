@@ -4,6 +4,9 @@ import { Currency, Provider, Rate } from '../model/model';
 
 @Service()
 export class Frankfurter {
+  private readonly _rateBase = signal(0);
+  readonly rateBase = this._rateBase.asReadonly();
+
   private readonly _modelBase = signal('');
   readonly modelBase = this._modelBase.asReadonly();
 
@@ -20,14 +23,13 @@ export class Frankfurter {
   );
   readonly currencies = this._currencies.asReadonly();
 
-  private readonly _rates = httpResource<Rate[]>(
-    () =>
-      `${this.baseUrl}/rates?from=${new Date(Date.now() - 86400000).toISOString().split('T')[0]}&base=USD`,
-  );
-  readonly rates = this._rates.asReadonly();
-
   rateUrl(base: string, quote: string) {
-    return `${this.baseUrl}/rates?base=${base}&quotes=${quote}`;
+    const yesterday = new Date(Date.now() - 86400000 * 4).toISOString().split('T')[0];
+    return `${this.baseUrl}/rates?base=${base}&quotes=${quote}&from=${yesterday}`;
+  }
+
+  rateBaseUrl(base: string) {
+    return `${this.baseUrl}/rates?from=${new Date(Date.now() - 86400000 * 4).toISOString().split('T')[0]}&base=${base}`;
   }
 
   rateHistoryUrl(base: string, quote: string, start: Date, end: Date) {
@@ -35,6 +37,10 @@ export class Frankfurter {
     const toDate = end.toISOString().split('T')[0];
 
     return `${this.baseUrl}/rates?base=${base}&quotes=${quote}&from=${fromDate}&to=${toDate}`;
+  }
+
+  setRateBase(rate: number): void {
+    this._rateBase.set(rate);
   }
 
   setModelBase(base: string): void {

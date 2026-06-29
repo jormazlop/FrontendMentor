@@ -1,1 +1,9 @@
-<p>compare works!</p>
+<div class="compare-header">
+
+  <span class="text-4 compare-header-currency">
+    <span class="compare-header-title">MULTI-CURRENCY</span>
+    <span>{{ rateBase() }} FROM {{ modelBase() }}</span>
+  </span>
+  <span class="text-5 compare-header-pairs">{{ compareRates().length }} PAIRS</span>
+</div>
+<foreign-compare-list [compareRates]="compareRates()" [rateBase]="rateBase()" />

@@ -1,1 +1,6 @@
-<p>log works!</p>
+<div class="text-4 log-header">
+  <span class="log-header-title">CONVERSION LOG</span>
+  <span class="text-5 log-header-logged">{{ logs().length }} LOGGED</span>
+  <foreign-clear-log-button (clickedClearLog)="onClickClearAllLogs()" />
+</div>
+<foreign-log-list />

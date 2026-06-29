@@ -1,0 +1,21 @@
+.clear-log-button {
+  background-color: var(--neutral-500);
+  border: 1px solid var(--neutral-400);
+  border-radius: 8px;
+  color: var(--neutral-50);
+  padding: 1rem 1.3rem;
+  transition-duration: 0.25s;
+  transition-property: background, box-shadow;
+  width: 10rem;
+
+  &.active {
+    background-color: var(--lime-500);
+    color: var(--neutral-900);
+  }
+
+  &:focus {
+    box-shadow:
+      0 0 0 3px var(--neutral-500),
+      0 0 0 5px var(--lime-500);
+  }
+}

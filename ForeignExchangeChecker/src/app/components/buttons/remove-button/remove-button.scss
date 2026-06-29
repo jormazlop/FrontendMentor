@@ -1,0 +1,14 @@
+.remove-button {
+  background: var(--neutral-600);
+  border: 1px solid var(--neutral-500);
+  border-radius: 8px;
+  padding: 1rem;
+  transition-duration: 0.25s;
+
+  &:focus {
+    box-shadow:
+      0 0 0 3px var(--neutral-600),
+      0 0 0 5px var(--lime-500);
+    outline: none;
+  }
+}

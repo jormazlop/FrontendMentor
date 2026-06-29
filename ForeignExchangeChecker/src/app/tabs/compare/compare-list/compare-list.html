@@ -1,0 +1,20 @@
+<ul class="compare-rate-list">
+  @for (rate of compareRates(); track rate.quote) {
+    <li class="compare-rate-item">
+      <img
+        class="compare-rate-image"
+        src="/images/flags/{{ rate.iso_code }}.webp"
+        [alt]="rate.base"
+      />
+      <div class="compare-rate-item-title">
+        <span class="text-4"> {{ rate.quote }}</span>
+        <span class="text-5"> {{ rate.name }}</span>
+      </div>
+      <div class="compare-rate-item-rates">
+        <span class="text-4"> {{ (rateBase() * rate.rate).toFixed(2) }}</span>
+        <span class="text-5"> @ {{ rate.rate }}</span>
+      </div>
+      <foreign-star-button (clickStar)="onClickFavorite(rate)" [active]="isFavorite(rate)" />
+    </li>
+  }
+</ul>

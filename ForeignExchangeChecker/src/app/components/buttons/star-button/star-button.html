@@ -1,0 +1,7 @@
+<button class="star-button" [class.active]="active()" (click)="onClickStar()">
+  @if (active()) {
+    <foreign-icon-star-filled />
+  } @else {
+    <foreign-icon-star />
+  }
+</button>

@@ -1,7 +1,9 @@
 import { DecimalPipe } from '@angular/common';
+import { httpResource } from '@angular/common/http';
 import { Component, effect, inject, signal, untracked } from '@angular/core';
-import { LiveMarketRate } from '@model/model';
+import { Rate } from '@model/model';
 import { Frankfurter } from '@services/frankfurter';
+import { CURRENCY_TO_COUNTRY_MAP } from '@utils/mapper';
 
 @Component({
   selector: 'foreign-livemarkets',
@@ -10,8 +12,12 @@ import { Frankfurter } from '@services/frankfurter';
   styleUrl: './livemarkets.scss',
 })
 export class Livemarkets {
-  private readonly rates = inject(Frankfurter).rates;
-  readonly ratesChange = signal<LiveMarketRate[]>([]);
+  private readonly service = inject(Frankfurter);
+  readonly ratesChange = signal<Rate[]>([]);
+
+  rateResource = httpResource<Rate[]>(() =>
+    this.service.rateBaseUrl('USD'),
+  );
 
   constructor() {
     this.effectCalculateRatesChange();
@@ -19,32 +25,42 @@ export class Livemarkets {
 
   private effectCalculateRatesChange(): void {
     effect(() => {
-      const rates = this.rates.value();
+      const rates = this.rateResource.value();
 
       untracked(() => {
         if (!rates) {
           return;
         }
 
-        const today = new Date().toISOString().split('T')[0];
-        const todayRates = rates.filter((rate) => rate.date === today);
+        const ratesChange: Rate[] = [];
 
-        const ratesChange: LiveMarketRate[] = [];
+        const ratesByPair = new Map<string, Rate[]>();
+        const currencies = this.service.currencies.value();
 
-        todayRates.forEach((todayRate) => {
-          const yesterdayRate = rates.find(
-            (rate) =>
-              todayRate.base === rate.base &&
-              todayRate.quote === rate.quote &&
-              today !== rate.date,
+        rates
+          .filter((rate) => CURRENCY_TO_COUNTRY_MAP[rate.quote])
+          .forEach((rate) => {
+            const key = `${rate.base}-${rate.quote}`;
+            const existingRates = ratesByPair.get(key) ?? [];
+            existingRates.push(rate);
+            ratesByPair.set(key, existingRates);
+          });
+
+        const todayRates = Array.from(ratesByPair.values()).map((pairRates) => {
+          const sortedRates = [...pairRates].sort(
+            (a, b) => new Date(a.date).getTime() - new Date(b.date).getTime(),
           );
 
-          const rateChange: LiveMarketRate = {
-            base: todayRate.base,
-            quote: todayRate.quote,
-            todayRate: todayRate.rate,
-            changeRate: todayRate.rate - (yesterdayRate?.rate ?? todayRate.rate),
+          const latestRate = sortedRates[sortedRates.length - 1];
+          const previousRate = sortedRates[sortedRates.length - 2];
+
+          const rateChange: Rate = {
+            ...latestRate,
+            iso_code: CURRENCY_TO_COUNTRY_MAP[latestRate.quote],
+            name: currencies?.find((currency) => currency.iso_code === latestRate.quote)?.name,
+            changeRate: latestRate.rate - (previousRate?.rate ?? latestRate.rate),
           };
+
           ratesChange.push(rateChange);
         });
 

@@ -1,0 +1,8 @@
+<button class="text-5-m log-button" [class.active]="active()" (click)="onClickedLog()">
+  @if (active()) {
+    <foreign-icon-check />
+    <span> Logged</span>
+  } @else {
+    <span> LOG CONVERSION</span>
+  }
+</button>

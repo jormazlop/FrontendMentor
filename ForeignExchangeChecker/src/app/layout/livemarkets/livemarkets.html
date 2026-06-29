@@ -6,7 +6,7 @@
   @for (rateChange of ratesChange(); track rateChange.quote) {
     <li class="text-5 livemarket-item">
       <span class="livemarket-base">{{ rateChange.base }}/{{ rateChange.quote }}</span>
-      <span class="livemarket-today-rate">{{ rateChange.todayRate }}</span>
+      <span class="livemarket-today-rate">{{ rateChange.rate }}</span>
       @let changeSymbol = rateChange.changeRate < 0 ? '▼ ' : '▲ +';
       <span class="livemarket-change-rate" [class.decrease]="rateChange.changeRate < 0"
         >{{ changeSymbol }}{{ rateChange.changeRate | number: '1.2-2' }}%</span

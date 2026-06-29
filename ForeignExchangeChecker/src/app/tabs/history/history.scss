@@ -40,29 +40,37 @@
       }
     }
 
-    .history-conversion-periods {
-      background-color: var(--neutral-700);
-      align-items: center;
-      border-radius: 8px;
+    .history-conversion-options-list {
+
       display: flex;
-      height: fit-content;
-      list-style: none;
-      margin: 0;
-      padding: 0;
+      flex-direction: column;
+      gap: 2rem;
 
-      .history-conversion-period-item {
-        background-color: transparent;
-        border: none;
-        color: var(--neutral-200);
-        opacity: 0.75;
-        padding: 1.4rem 1.6rem;
-        transition-duration: 0.25s;
+      .history-conversion-options {
+        background-color: var(--neutral-700);
+        align-items: center;
+        border-radius: 8px;
+        display: flex;
+        height: fit-content;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        width: fit-content;
 
-        &.active {
-          background-color: var(--neutral-500);
-          border-radius: 8px;
-          color: var(--neutral-50);
-          opacity: 1;
+        .history-conversion-options-item {
+          background-color: transparent;
+          border: none;
+          color: var(--neutral-200);
+          opacity: 0.75;
+          padding: 1.4rem 1.6rem;
+          transition-duration: 0.25s;
+
+          &.active {
+            background-color: var(--neutral-500);
+            border-radius: 8px;
+            color: var(--neutral-50);
+            opacity: 1;
+          }
         }
       }
     }

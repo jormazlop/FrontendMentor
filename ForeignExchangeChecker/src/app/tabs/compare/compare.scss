@@ -1,0 +1,30 @@
+:host {
+  background-color: var(--neutral-700);
+  border: 1px solid var(--neutral-600);
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 2rem;
+  margin-top: 2rem;
+
+  .compare-header {
+    align-items: center;
+    color: var(--neutral-50);
+    display: flex;
+    justify-content: space-between;
+
+    .compare-header-currency {
+      display: flex;
+      gap: 1rem;
+
+      .compare-header-title {
+        color: var(--neutral-200);
+      }
+    }
+
+    .compare-header-pairs {
+      opacity: 0.7;
+    }
+  }
+}

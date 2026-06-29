@@ -1,0 +1,47 @@
+.favorites-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+
+  .favorites-item {
+    align-items: center;
+    background-color: var(--neutral-600);
+    border: 1px solid var(--neutral-500);
+    border-radius: 10px;
+    display: flex;
+    gap: 2rem;
+    padding: 1.85rem 1.6rem;
+
+    .favorite-item-pair {
+      align-items: center;
+      color: var(--neutral-50);
+      display: flex;
+      flex: 1;
+      gap: 0.8rem;
+
+      .favorites-image {
+        border-radius: 50%;
+        height: 2rem;
+        width: 2rem;
+      }
+    }
+
+    .favorites-item-rates {
+      color: var(--neutral-50);
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+
+      .favorites-item-change {
+        color: var(--green-500);
+
+        &.decrease {
+          color: var(--red-500);
+        }
+      }
+    }
+  }
+}

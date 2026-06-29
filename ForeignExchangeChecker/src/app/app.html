@@ -7,6 +7,9 @@
       @for (navItem of navMenu(); track navItem.route) {
         <button class="tab-item" [routerLink]="navItem.route" routerLinkActive="tab-active">
           <span class="text-3">{{ navItem.route | uppercase }}</span>
+          @if (navItem.badge != null) {
+            <div class="text-6 tab-item-badge">{{ navItem.badge }}</div>
+          }
         </button>
       }
     </nav>

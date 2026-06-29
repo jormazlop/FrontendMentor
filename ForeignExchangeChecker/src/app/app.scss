@@ -17,12 +17,26 @@
         gap: 0.8px;
 
         .tab-item {
+          align-items: center;
           position: relative;
           background: none;
           border: none;
           color: var(--neutral-50);
+          display: flex;
+          gap: 1rem;
           padding: 1rem 1.5rem;
           transition: background-color 0.25s ease;
+
+          .tab-item-badge {
+            align-items: center;
+            background-color: var(--lime-800);
+            border-radius: 50%;
+            color: var(--lime-500);
+            display: flex;
+            height: 2rem;
+            justify-content: center;
+            width: 2rem;
+          }
 
           &:hover {
             background-color: var(--neutral-600);

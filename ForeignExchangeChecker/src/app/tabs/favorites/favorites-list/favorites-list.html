@@ -1,0 +1,29 @@
+<ul class="favorites-list">
+  @for (favorite of favorites(); track favorite.quote_iso_code) {
+    <li class="favorites-item">
+      <div class="text-4 favorite-item-pair">
+        <img
+          class="favorites-image"
+          src="/images/flags/{{ favorite.base_iso_code }}.webp"
+          [alt]="favorite.base"
+        />
+        <span>{{ favorite.base }}</span>
+        <foreign-icon-arrow-right />
+        <img
+          class="favorites-image"
+          src="/images/flags/{{ favorite.quote_iso_code }}.webp"
+          [alt]="favorite.quote"
+        />
+        <span>{{ favorite.quote }}</span>
+      </div>
+      @let changePercentageSymbol = favorite.changeRate < 0 ? '▼ ' : '▲ +';
+      <div class="favorites-item-rates">
+        <span class="text-3"> {{ favorite.rate }}</span>
+        <span class="text-6 favorites-item-change" [class.decrease]="favorite.changeRate < 0">
+          {{ changePercentageSymbol }}{{ favorite.changeRate | number: '1.2-2' }}</span
+        >
+      </div>
+      <foreign-star-button (clickStar)="onClickFavorite(favorite)" [active]="true" />
+    </li>
+  }
+</ul>

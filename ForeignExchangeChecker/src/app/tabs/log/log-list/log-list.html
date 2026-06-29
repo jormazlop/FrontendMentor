@@ -1,0 +1,17 @@
+<ul class="log-list">
+  @for (log of logs(); track log.id) {
+    <li class="log-item">
+      <span class="text-4 log-item-date">{{ log.date | dateAgo }}</span>
+      <div class="text-4 log-item-pair">
+        <span>{{ log.base }}</span>
+        <foreign-icon-arrow-right />
+        <span>{{ log.quote }}</span>
+      </div>
+      <div class="log-item-rates">
+        <span class="text-3"> {{ log.baseValue }}</span>
+         <span class="text-3 log-item-rates-quote"> {{ log.quoteValue }}</span>
+      </div>
+      <foreign-remove-button (clickRemove)="onClickRemove(log.id)" />
+    </li>
+  }
+</ul>
