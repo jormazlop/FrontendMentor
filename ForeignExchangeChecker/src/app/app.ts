@@ -48,7 +48,6 @@ export class App {
   }
 
   onCloseMenu(): void {
-    console.log('AAA')
     this.isMenuOpen.set(false);
   }
 
