@@ -8,6 +8,7 @@ import {
   output,
   signal,
   untracked,
+  viewChild,
 } from '@angular/core';
 import { Frankfurter } from '@services/frankfurter';
 import { CURRENCY_TO_COUNTRY_MAP } from '@utils/mapper';
@@ -26,6 +27,8 @@ export class CurrencyButton {
   service = inject(Frankfurter);
   loading = computed(() => this.service.currencies.isLoading());
   modelOption = model<string>();
+
+  searchInput = viewChild(SearchInput);
 
   protected isOpen = signal(false);
   protected search = model('');
@@ -81,6 +84,12 @@ export class CurrencyButton {
   onClickMenu(event: Event): void {
     event.stopPropagation();
     this.isOpen.update((v) => !v);
+
+    if (this.isOpen()) {
+      setTimeout(() => {
+        this.searchInput()?.focus();
+      }, 100);
+    }
   }
 
   onClickOption(option: CurrencyOption): void {

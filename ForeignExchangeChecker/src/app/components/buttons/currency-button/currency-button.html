@@ -9,7 +9,7 @@
 
 <menu class="currency-menu" [class.open]="isOpen()" (clickOutside)="onCloseMenu()">
 
-  <foreign-search-input class="search-input" [(search)]="search" />
+  <foreign-search-input class="search-input" [(search)]="search" [class.open]="isOpen()" />
 
   <div class="text-5 currency-menu-title">
     <span>POPULAR</span>

@@ -22,11 +22,13 @@
       color: var(--neutral-50);
       background: none;
       border: none;
+      border-radius: 8px;
       width: 20rem;
 
       &:focus {
-        outline: none;
+        outline: 1px solid var(--lime-500);
       }
+
 
       &::-webkit-outer-spin-button,
       &::-webkit-inner-spin-button {
