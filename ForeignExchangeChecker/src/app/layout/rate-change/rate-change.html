@@ -17,6 +17,8 @@
   <span class="text-5 rate-change-conversion-rate">
     1 {{ modelBase() }} = {{ changeRate() }} {{ modelQuote() }}
   </span>
-  <foreign-favorite-button [active]="isFavorite()" (clickedFavorite)="onClickFavorite()" />
-  <foreign-log-button (clickedLog)="onClickLog()" [active]="logged()" />
+  <div class="rate-change-footer-buttons">
+    <foreign-favorite-button [active]="isFavorite()" (clickedFavorite)="onClickFavorite()" />
+    <foreign-log-button (clickedLog)="onClickLog()" [active]="logged()" />
+  </div>
 </div>

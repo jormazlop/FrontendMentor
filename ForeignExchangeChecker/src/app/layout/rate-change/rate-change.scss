@@ -46,12 +46,22 @@
     align-items: center;
     border-top: 1px dashed var(--neutral-500);
     display: flex;
-    gap: 1.2rem;
     padding: 2rem 2rem 0;
+
+    @media(width < 800px) {
+      flex-direction: column;
+      gap: 2rem;
+    }
 
     .rate-change-conversion-rate {
       color: var(--neutral-50);
       flex: 1;
+    }
+
+    .rate-change-footer-buttons {
+      align-items: center;
+      display: flex;
+      gap: 1.2rem;
     }
   }
 }
