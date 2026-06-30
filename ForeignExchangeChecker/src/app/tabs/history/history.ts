@@ -4,10 +4,11 @@ import { Component, computed, effect, inject, signal, untracked } from '@angular
 import { Rate, RateHistory } from '@model/model';
 import { Frankfurter } from '@services/frankfurter';
 import { HistoryChart } from './history-chart/history-chart';
+import { IconSpinner } from '@components/icons/icon-spinner/icon-spinner';
 
 @Component({
   selector: 'foreign-history',
-  imports: [DecimalPipe, HistoryChart, UpperCasePipe],
+  imports: [DecimalPipe, HistoryChart, UpperCasePipe, IconSpinner],
   templateUrl: './history.html',
   styleUrl: './history.scss',
 })

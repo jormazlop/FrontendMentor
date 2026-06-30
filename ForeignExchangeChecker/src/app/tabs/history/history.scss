@@ -99,19 +99,9 @@
   }
 }
 
-.history-no-data {
+.history-loading {
   align-items: center;
   display: flex;
   flex-direction: column;
-  gap: 1.6rem;
   justify-content: center;
-  padding: 4rem 0;
-
-  h2 {
-    color: var(--neutral-100);
-  }
-
-  span {
-    color: var(--neutral-200);
-  }
 }

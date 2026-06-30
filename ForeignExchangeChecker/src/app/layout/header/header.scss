@@ -1,8 +1,14 @@
 :host {
+  align-items: center;
   color: var(--neutral-200);
   display: flex;
+  gap: 1rem;
   justify-content: space-between;
   padding: 2rem 2.4rem;
+}
+
+.header-logo {
+  flex: 1;
 }
 
 .ecb-link {

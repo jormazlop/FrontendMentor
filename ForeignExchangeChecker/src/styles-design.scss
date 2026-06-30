@@ -26,6 +26,29 @@
   --red-500: #ff4141;
 }
 
+[data-theme='light'] {
+  /* Neutral */
+  --neutral-900: #ffffff;
+  --neutral-700: #f5f5f5;
+  --neutral-600: #ececec;
+  --neutral-500: #dddddd;
+  --neutral-400: #c9c9c9;
+  --neutral-300: #9b9b9b;
+  --neutral-200: #6d6d6d;
+  --neutral-100: #3d3d3d;
+  --neutral-50: #0a0a0a;
+
+  /* Lime */
+  --lime-800: #eff8d2;
+  --lime-500: #9ac600;
+
+  /* Green */
+  --green-500: #2bb300;
+
+  /* Red */
+  --red-500: #e53935;
+}
+
 .text-1 {
   font-family: 'JetBrains';
   font-size: 4rem;
