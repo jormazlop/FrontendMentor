@@ -1,6 +1,8 @@
 import { UpperCasePipe } from '@angular/common';
 import { Component, effect, inject, signal, untracked } from '@angular/core';
-import { RouterLinkActive, RouterOutlet, RouterLinkWithHref } from '@angular/router';
+import { RouterLinkActive, RouterOutlet, RouterLinkWithHref, Router } from '@angular/router';
+import { IconChevronDown } from '@components/icons/icon-chevron-down/icon-chevron-down';
+import { ClickOutside } from '@directives/click-outside';
 import { Header } from '@layout/header/header';
 import { Livemarkets } from '@layout/livemarkets/livemarkets';
 import { RateChange } from '@layout/rate-change/rate-change';
@@ -18,6 +20,9 @@ import { LogConversions } from '@services/log-conversions';
     RouterOutlet,
     RouterLinkActive,
     RouterLinkWithHref,
+    IconChevronDown,
+    ClickOutside,
+    UpperCasePipe
   ],
   templateUrl: './app.html',
   styleUrl: './app.scss',
@@ -26,6 +31,9 @@ export class App {
   protected readonly title = signal('ForeignExchangeChecker');
   private readonly favorites = inject(Favorites).favorites;
   private readonly logConversions = inject(LogConversions).logConversions;
+  readonly router = inject(Router);
+
+  protected isMenuOpen = signal(true);
 
   navMenu = signal<NavMenu[]>([
     { route: 'history' },
@@ -39,13 +47,20 @@ export class App {
     this.effectUpdateLogs();
   }
 
+  onCloseMenu(): void {
+    console.log('AAA')
+    this.isMenuOpen.set(false);
+  }
+
   private effectUpdateFavorites(): void {
     effect(() => {
       const favorites = this.favorites();
 
       untracked(() => {
         this.navMenu.update((menu) =>
-          menu.map((item) => (item.route === 'favorites' ? { ...item, badge: favorites.length } : item)),
+          menu.map((item) =>
+            item.route === 'favorites' ? { ...item, badge: favorites.length } : item,
+          ),
         );
       });
     });

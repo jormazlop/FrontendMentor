@@ -1,5 +1,14 @@
-<div class="text-4 favorites-header">
-  <span class="favorites-header-title">PINNED PAIRS</span>
-  <span class="text-5 favorites-header-pairs">{{ favorites().length }} FAVORITES</span>
-</div>
-<foreign-favorites-list />
+@if (favorites().length) {
+  <div class="text-4 favorites-header">
+    <span class="favorites-header-title">PINNED PAIRS</span>
+    <span class="text-5 favorites-header-pairs">{{ favorites().length }} FAVORITES</span>
+  </div>
+  <foreign-favorites-list />
+} @else {
+  <div class="favorites-no-data">
+    <h2 class="text-2">No pinned pairs yet</h2>
+    <span class="text-3">
+      Pin a pair to track its rate here. Tap the star icon on any conversion or comparison row.
+    </span>
+  </div>
+}

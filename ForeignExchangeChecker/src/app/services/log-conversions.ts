@@ -1,12 +1,29 @@
-import { computed, Service, signal } from '@angular/core';
+import { computed, effect, inject, Service, signal, untracked } from '@angular/core';
 import { LogConversion } from '@model/model';
+import { LocalStorage } from './local-storage';
 
 @Service()
 export class LogConversions {
+  private readonly localStorage = inject(LocalStorage);
+
   private readonly _logConversions = signal<LogConversion[]>([]);
   readonly logConversions = this._logConversions.asReadonly();
 
   private readonly maxId = computed(() => this._logConversions().length + 1);
+
+  constructor() {
+    const existingLogs = this.localStorage.getLogsLocalStorage();
+
+    this._logConversions.set(existingLogs ?? []);
+
+    effect(() => {
+      const logs = this._logConversions();
+
+      untracked(() => {
+        this.localStorage.setLogsLocalStorage(logs);
+      });
+    });
+  }
 
   addLog(base: string, quote: string, baseValue: number, quoteValue: number): void {
     const logConversion: LogConversion = {
@@ -25,9 +42,8 @@ export class LogConversions {
   }
 
   clearLog(id: number): void {
-
     this._logConversions.update((logs) => {
-      const logsFiltered = logs.filter(log => log.id != id);
+      const logsFiltered = logs.filter((log) => log.id != id);
       return [...logsFiltered];
     });
   }

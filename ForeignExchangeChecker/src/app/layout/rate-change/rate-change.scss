@@ -17,11 +17,27 @@
       gap: 2.4rem;
       justify-content: space-between;
 
+      @media (width < 1000px) {
+        flex-direction: column;
+      }
+
       .exchange-rates {
         background: none;
         border: 1px solid var(--neutral-500);
         border-radius: 8px;
         padding: 1.5rem;
+
+        @media (width < 1000px) {
+          foreign-icon-exchange {
+            display: none;
+          }
+        }
+
+        @media (width >= 1000px) {
+          foreign-icon-exchange-vertical {
+            display: none;
+          }
+        }
       }
     }
   }

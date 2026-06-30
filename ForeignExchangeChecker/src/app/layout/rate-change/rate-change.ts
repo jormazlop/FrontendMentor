@@ -9,10 +9,11 @@ import { Favorites } from '@services/favorites';
 import { CURRENCY_TO_COUNTRY_MAP } from '@utils/mapper';
 import { LogButton } from '@components/buttons/log-button/log-button';
 import { LogConversions } from '@services/log-conversions';
+import { IconExchangeVertical } from '@components/icons/icon-exchange-vertical/icon-exchange-vertical';
 
 @Component({
   selector: 'foreign-rate-change',
-  imports: [RateChangeElement, IconExchange, FavoriteButton, LogButton],
+  imports: [RateChangeElement, IconExchange, IconExchangeVertical, FavoriteButton, LogButton],
   templateUrl: './rate-change.html',
   styleUrl: './rate-change.scss',
 })
@@ -113,6 +114,7 @@ export class RateChange {
       const changeRate = this.changeRateResource.value();
 
       untracked(() => {
+        this.logged.set(false);
         if (changeRate?.[0]?.rate) {
           this.changeRate.set(changeRate?.[0].rate);
         }

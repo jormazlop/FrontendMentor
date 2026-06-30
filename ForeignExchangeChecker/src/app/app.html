@@ -13,6 +13,27 @@
         </button>
       }
     </nav>
+    <nav (clickOutside)="onCloseMenu()" class="main-tabs-nav-menu-mobile">
+      <button class="main-tabs-nav-menu-mobile-button" (click)="isMenuOpen.set(true)">
+        <span class="text-4">{{ router.url.slice(1) | uppercase}}</span>
+        <foreign-icon-chevron-down />
+      </button>
+      <menu class="main-tabs-mobile-menu" [class.open]="isMenuOpen()">
+        @for (navItem of navMenu(); track navItem.route) {
+          <button
+            class="tab-item"
+            [routerLink]="navItem.route"
+            routerLinkActive="tab-active"
+            (click)="onCloseMenu()"
+          >
+            <span class="text-3">{{ navItem.route | uppercase }}</span>
+            @if (navItem.badge != null) {
+              <div class="text-6 tab-item-badge">{{ navItem.badge }}</div>
+            }
+          </button>
+        }
+      </menu>
+    </nav>
     <router-outlet />
   </div>
 </main>
