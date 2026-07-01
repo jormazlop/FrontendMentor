@@ -14,11 +14,10 @@ export class ProvidersList {
     () =>
       this.service.providers
         .value()
+        ?.filter((provider) => CURRENCY_TO_COUNTRY_MAP[provider.pivot_currency] !== undefined)
         ?.map((provider) => ({
           ...provider,
           iso_code: CURRENCY_TO_COUNTRY_MAP[provider.pivot_currency],
-        }))
-        ?.filter((provider) => CURRENCY_TO_COUNTRY_MAP[provider.pivot_currency] !== undefined) ??
-      [],
+        })) ?? [],
   );
 }

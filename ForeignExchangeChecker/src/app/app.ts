@@ -41,6 +41,7 @@ export class App {
     { route: 'favorites', badge: 0 },
     { route: 'log', badge: 0 },
     { route: 'providers' },
+    { route: 'currencies' },
   ]);
 
   constructor() {

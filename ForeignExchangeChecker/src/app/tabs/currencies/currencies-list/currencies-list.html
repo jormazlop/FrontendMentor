@@ -1,0 +1,16 @@
+<ul class="currencies-list">
+  @for (currency of currencies(); track currency.iso_code) {
+    <li class="currencies-item">
+      <img
+        class="currencies-image"
+        src="/images/flags/{{ currency.iso_code }}.webp"
+        [alt]="currency.name"
+      />
+      <div class="text-4 currencies-name">
+        <span>{{ currency.name }}</span>
+        <span class="text-5">{{ currency.start_date }}</span>
+      </div>
+      <span class="text-4 currencies-symbol">SYMBOL: <span class="text-2 symbol">{{ currency.symbol }}</span></span>
+    </li>
+  }
+</ul>

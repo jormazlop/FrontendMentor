@@ -1,0 +1,44 @@
+.currencies-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+
+  .currencies-item {
+    align-items: center;
+    background-color: var(--neutral-600);
+    border: 1px solid var(--neutral-500);
+    border-radius: 10px;
+    display: flex;
+    gap: 2rem;
+    padding: 1.85rem 1.6rem;
+
+    .currencies-name {
+      align-items: flex-start;
+      color: var(--neutral-50);
+      display: flex;
+      flex: 1;
+      flex-direction: column;
+      gap: 0.8rem;
+    }
+
+    .currencies-image {
+      border-radius: 50%;
+      height: 2rem;
+      width: 2rem;
+    }
+
+    .currencies-symbol {
+      align-items: center;
+      color: var(--neutral-50);
+      display: flex;
+      gap: 0.8rem;
+
+      .symbol {
+        color: var(--lime-500);
+      }
+    }
+  }
+}
