@@ -20,6 +20,7 @@ export type Provider = {
   publish_cadence: PublishCadence | null;
   publishes_missed: number | null;
   currencies: string[];
+  iso_code?: string;
 };
 
 export enum PublishCadence {
@@ -81,4 +82,4 @@ export type LogConversion = {
   quote: string;
   baseValue: number;
   quoteValue: number;
-}
+};

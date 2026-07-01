@@ -54,6 +54,10 @@
             background-color: var(--neutral-600);
           }
 
+          &:focus {
+            outline: 1px solid var(--lime-500);
+          }
+
           &::after {
             content: '';
             position: absolute;

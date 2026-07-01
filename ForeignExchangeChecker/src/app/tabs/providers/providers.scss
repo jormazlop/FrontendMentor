@@ -1,0 +1,21 @@
+:host {
+  background-color: var(--neutral-700);
+  border: 1px solid var(--neutral-600);
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 2rem;
+  margin-top: 2rem;
+
+  .providers-header {
+    align-items: center;
+    color: var(--neutral-50);
+    display: flex;
+    justify-content: space-between;
+
+    .providers-header-title {
+      color: var(--neutral-200);
+    }
+  }
+}

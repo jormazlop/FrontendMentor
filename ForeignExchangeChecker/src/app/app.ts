@@ -40,6 +40,7 @@ export class App {
     { route: 'compare' },
     { route: 'favorites', badge: 0 },
     { route: 'log', badge: 0 },
+    { route: 'providers' },
   ]);
 
   constructor() {

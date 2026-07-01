@@ -1,0 +1,20 @@
+<ul class="providers-list">
+  @for (provider of providers(); track provider.name) {
+    <li class="providers-item">
+      <img
+        class="providers-image"
+        src="/images/flags/{{ provider.iso_code }}.webp"
+        [alt]="provider.name"
+      />
+      <div class="text-4 providers-name">
+        <span>{{ provider.name }}</span>
+        <span class="text-5">{{ provider.currencies.length }} currencies</span>
+      </div>
+      <div class="providers-url">
+        <a class="text-3" [href]="provider.data_url" target="_blank" rel="noopener noreferrer">
+          Visit provider
+        </a>
+      </div>
+    </li>
+  }
+</ul>

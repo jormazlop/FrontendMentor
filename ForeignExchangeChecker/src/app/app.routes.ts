@@ -6,4 +6,6 @@ export const routes: Routes = [
   { path: 'compare', loadComponent: () => import('./tabs/compare/compare')},
   { path: 'favorites', loadComponent: () => import('./tabs/favorites/favorites')},
   { path: 'log', loadComponent: () => import('./tabs/log/log')},
+  { path: 'providers', loadComponent: () => import('./tabs/providers/providers')},
+  { path: '**', redirectTo: 'compare' },
 ];
