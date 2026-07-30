@@ -1,0 +1,7 @@
+:host.secondary {
+  transform: scale(1.5);
+}
+
+:host.secondary g {
+  stroke: var(--terracotta-500);
+}

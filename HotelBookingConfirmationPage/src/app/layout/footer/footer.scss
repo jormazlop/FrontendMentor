@@ -1,0 +1,84 @@
+:host {
+  width: 100%;
+}
+
+.booking-card-list {
+  display: flex;
+  justify-content: space-between;
+
+  @media (width < 1100px) {
+    align-items: center;
+    flex-direction: column;
+    gap: 1.8rem;
+  }
+
+  .booking-card-container {
+    .booking-card-header {
+      align-items: center;
+      color: var(--terracotta-600);
+      display: flex;
+      justify-content: space-between;
+
+      .icon {
+        border-radius: 8px;
+        padding: 0.8rem 0.5rem;
+      }
+
+      &.key {
+        color: var(--terracotta-600);
+        .icon {
+          background-color: var(--terracotta-600);
+        }
+      }
+
+      &.wifi {
+        color: var(--blue-500);
+        .icon {
+          background-color: var(--blue-500);
+        }
+      }
+
+      &.breakfast {
+        color: var(--rose-500);
+        .icon {
+          background-color: var(--rose-500);
+        }
+      }
+    }
+
+    .booking-card-title {
+      display: flex;
+      flex-direction: column;
+      color: var(--neutral-900);
+
+      .booking-card-subtitle {
+        color: var(--neutral-600);
+      }
+    }
+
+    .booking-card-body {
+      color: var(--neutral-700);
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+
+      .booking-card-body-password {
+        background-color: var(--neutral-200);
+        border-radius: 8px;
+        display: flex;
+        justify-content: space-between;
+        padding: 1rem;
+
+        .password-right {
+          color: var(--neutral-900);
+        }
+
+        .password-copy-button {
+          border: 1px solid var(--neutral-400);
+          border-radius: 999px;
+          color: var(--neutral-600);
+        }
+      }
+    }
+  }
+}

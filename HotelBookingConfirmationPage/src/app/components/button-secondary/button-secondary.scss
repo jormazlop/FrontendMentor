@@ -1,0 +1,18 @@
+.button-secondary-container {
+  background-color: transparent;
+  border: 1px solid var(--neutral-400);
+  border-radius: 999px;
+  color: var(--neutral-900);
+  padding: 1rem 1.6rem;
+  transition-duration: 0.3s;
+
+  &:hover {
+    background-color: var(--neutral-200);
+  }
+
+  &:focus-visible {
+    box-shadow:
+      0 0 0 3px var(--sun-50),
+      0 0 0 5px var(--terracotta-600);
+  }
+}

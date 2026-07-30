@@ -1,0 +1,54 @@
+<ul class="booking-card-list">
+  <app-booking-card class="booking-card-container">
+    <div class="booking-card-header key" ngProjectAs="header">
+      <span class="text-6"><icon-key class="icon" /> ARRIVAL</span>
+      <span class="text-3">01</span>
+    </div>
+    <div class="booking-card-title" ngProjectAs="title">
+      <span class="text-3">Check-in from 15:00</span>
+      <span class="text-7 booking-card-subtitle">Sat, 25 April</span>
+    </div>
+    <div class="booking-card-body text-5" ngProjectAs="body">
+      Ring the brass bell by the blue door. If we're at the market, the key is in the terracotta pot
+      by the olive tree.
+    </div>
+  </app-booking-card>
+
+  <app-booking-card class="booking-card-container">
+    <div class="booking-card-header wifi" ngProjectAs="header">
+      <span class="text-6"><icon-wifi class="icon" /> WIFI</span>
+      <span class="text-3">02</span>
+    </div>
+    <div class="booking-card-title" ngProjectAs="title">
+      <span class="text-3">Le Soleil · Guest</span>
+      <span class="text-7 booking-card-subtitle">Password below</span>
+    </div>
+    <div class="booking-card-body text-5" ngProjectAs="body">
+      <div class="booking-card-body-password">
+        <span class="text-8">NETWORK</span>
+        <span class="text-7 password-right">Le Soleil · Guest</span>
+      </div>
+      <div class="booking-card-body-password">
+        <span class="text-8">PASSWORD</span>
+        <span class="text-7 password-right"
+          >soleil-2026 <button class="password-copy-button" (click)="copyPassword()">COPY</button></span
+        >
+      </div>
+    </div>
+  </app-booking-card>
+
+  <app-booking-card class="booking-card-container">
+    <div class="booking-card-header breakfast" ngProjectAs="header">
+      <span class="text-6"><icon-breakfast class="icon" /> ARRIVAL</span>
+      <span class="text-3">03</span>
+    </div>
+    <div class="booking-card-title" ngProjectAs="title">
+      <span class="text-3">Served 8 – 10:30</span>
+      <span class="text-7 booking-card-subtitle">On the terrace</span>
+    </div>
+    <div class="booking-card-body text-5" ngProjectAs="body">
+      Fresh figs, Marseille honey, pain au levain, and espresso. Gluten-free option? Leave a note
+      the night before.
+    </div>
+  </app-booking-card>
+</ul>

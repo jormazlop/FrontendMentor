@@ -1,0 +1,40 @@
+<div class="receipt-header text-9">
+  <span>RECEIPT</span>
+  <span class="receipt-number"
+    >Nº {{ receipt().numberLabel }} <br />
+    {{ receipt().numberValue }}</span
+  >
+</div>
+<span class="text-4">Your stay</span>
+<hr class="receipt-divider" />
+<ul class="receipt-checkin-checkout">
+  <li class="receipt-list-item">
+    <span class="text-10 receipt-label">CHECK-IN</span>
+    <span class="text-2">{{ receipt().dateEntry | date: 'dd MMM' }}</span>
+    <span class="text-7 receipt-date-label">{{ receipt().dateEntry | date: 'EEEE · HH:mm' }}</span>
+  </li>
+  <li class="receipt-list-item">
+    <span class="text-10 receipt-label">CHECK-OUT</span>
+    <span class="text-2">{{ receipt().dateExit | date: 'dd MMM' }}</span>
+    <span class="text-7 receipt-date-label">{{ receipt().dateExit | date: 'EEEE · HH:mm' }}</span>
+  </li>
+</ul>
+<hr class="receipt-divider" />
+<ul class="receipt-items">
+  @for (item of receipt().items; track item.label) {
+    <li class="receipt-list-item">
+      <span class="text-5">{{ item | receiptItem }}</span>
+      <span class="text-9">€ {{ item.amount | number:'1.2-2' }}</span>
+    </li>
+  }
+</ul>
+<hr class="receipt-divider-solid" />
+@let total = receipt().items.reduce((acc, item) => acc + item.amount, 0);
+<div class="receipt-total">
+  <span class="text-8">TOTAL PAID</span>
+  <span class="text-3">€ {{ total | number:'1.2-2' }}</span>
+</div>
+<div class="receipt-footer">
+  <span class="text-10">PAID · WISE · GBP</span>
+  <icon-barcode />
+</div>

@@ -1,0 +1,38 @@
+:host {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+
+  @media (width < 1100px) {
+    align-items: center;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .header-title {
+    display: flex;
+    flex-direction: column;
+
+    @media (width < 1100px) {
+      align-items: center;
+    }
+
+    .header-description {
+      color: var(--neutral-600);
+    }
+
+    .header-greeting {
+      color: var(--neutral-900);
+
+      span {
+        color: var(--terracotta-600);
+      }
+    }
+  }
+
+  .header-buttons {
+    display: flex;
+    gap: 1.6rem;
+  }
+}

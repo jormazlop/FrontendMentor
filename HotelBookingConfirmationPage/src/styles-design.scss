@@ -1,0 +1,148 @@
+@font-face {
+  font-family: 'Mono-Regular';
+  src: url('/fonts/dm-mono/DMMono-Regular.ttf') format('opentype');
+}
+
+@font-face {
+  font-family: 'Mono-Medium';
+  src: url('/fonts/dm-mono/DMMono-Medium.ttf') format('opentype');
+}
+
+@font-face {
+  font-family: 'DMSans';
+  src: url('/fonts/dm-sans/DMSans.ttf') format('opentype');
+}
+
+@font-face {
+  font-family: 'Fraunces';
+  src: url('/fonts/fraunces/Fraunces.ttf') format('opentype');
+}
+
+@font-face {
+  font-family: 'Fraunces-Italic';
+  src: url('/fonts/fraunces/Fraunces-Italic.ttf') format('opentype');
+}
+
+:root {
+  --neutral-900: #2b2620;
+  --neutral-800: #3e3428;
+  --neutral-700: #5a4c3c;
+  --neutral-600: #7a6a57;
+  --neutral-400: #e4ded5;
+  --neutral-200: #f2eeea;
+  --neutral-100: #fbf6ef;
+  --neutral-50: #fdfbf7;
+  --neutral-0: #ffffff;
+
+  --sun-500: #edb63a;
+  --sun-300: #f5d98a;
+  --sun-200: #ffde7a;
+  --sun-50: #fff4dc;
+
+  --blue-500: #5769c6;
+
+  --terracotta-700: #9f3e1d;
+  --terracotta-600: #b7411b;
+  --terracotta-500: #c25a2e;
+  --terracotta-400: #e07a3f;
+
+  --rose-500: #c04a72;
+}
+
+.text-1 {
+  font-family: 'Fraunces';
+  font-size: 4rem;
+  letter-spacing: -0.5px;
+  line-height: 120%;
+}
+
+.text-1-italic {
+  font-family: 'Fraunces-Italic';
+  font-size: 4rem;
+  letter-spacing: -0.5px;
+  line-height: 120%;
+}
+
+.text-2 {
+  font-family: 'Fraunces';
+  font-size: 3.2rem;
+  letter-spacing: -0.25px;
+  line-height: 120%;
+}
+
+.text-3 {
+  font-family: 'Fraunces';
+  font-size: 2.4rem;
+  letter-spacing: -0.2px;
+  line-height: 140%;
+}
+
+.text-4 {
+  font-family: 'Fraunces';
+  font-size: 2rem;
+  letter-spacing: -0.1px;
+  line-height: 140%;
+}
+
+.text-4-italic {
+  font-family: 'Fraunces-Italic';
+  font-size: 2rem;
+  letter-spacing: -0.1px;
+  line-height: 140%;
+}
+
+.text-5 {
+  font-family: 'Fraunces';
+  font-size: 1.4rem;
+  letter-spacing: 0px;
+  line-height: 140%;
+}
+
+.text-5-m {
+  font-family: 'DMSans';
+  font-size: 1.4rem;
+  letter-spacing: 0px;
+  line-height: 120%;
+}
+
+.text-6 {
+  font-family: 'Mono-Medium';
+  font-size: 1.4rem;
+  letter-spacing: 2px;
+  line-height: 140%;
+}
+
+.text-7 {
+  font-family: 'DMSans';
+  font-size: 1.2rem;
+  letter-spacing: 0.4px;
+  line-height: 140%;
+}
+
+.text-8 {
+  font-family: 'Mono-Regular';
+  font-size: 1.2rem;
+  letter-spacing: 2px;
+  line-height: 140%;
+}
+
+.text-9 {
+  font-family: 'Mono-Regular';
+  font-size: 1.2rem;
+  letter-spacing: 0px;
+  line-height: 140%;
+}
+
+.text-10 {
+  font-family: 'Mono-Regular';
+  font-size: 1rem;
+  letter-spacing: 1px;
+  line-height: 140%;
+}
+
+.text-11 {
+  font-family: 'Fraunces';
+  font-size: 1rem;
+  letter-spacing: 1px;
+  line-height: 140%;
+}

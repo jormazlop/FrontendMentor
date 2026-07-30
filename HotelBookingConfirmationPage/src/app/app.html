@@ -1,0 +1,23 @@
+<aside class="full-sidebar">
+  <app-sidebar />
+</aside>
+<aside class="responsive-sidebar" [class.closed]="!open()">
+  <app-sidebar [responsive]="true" />
+</aside>
+<main class="main-container" [class.overlay]="open()">
+  <nav class="responsive-header">
+    <div class="sidebar-header">
+      <icon-sun />
+      <div>
+        <span class="text-4-italic">Maison</span>
+        <span class="text-4">Soleil</span>
+      </div>
+    </div>
+    <button class="open-menu" (click)="changeMenu()">
+      <icon-menu />
+    </button>
+  </nav>
+  <app-header />
+  <app-body />
+  <app-footer />
+</main>

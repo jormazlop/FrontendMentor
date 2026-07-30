@@ -1,0 +1,47 @@
+<div class="sidebar-upper">
+  <div class="sidebar-header-container">
+    <div class="sidebar-header">
+      <icon-sun />
+      <div>
+        <span class="text-4-italic">Maison</span>
+        <span class="text-4">Soleil</span>
+      </div>
+    </div>
+    @if (responsive()) {
+      <button class="close-menu" (click)="changeMenu()"><icon-close /></button>
+    }
+  </div>
+  <hr class="sidebar-divider" />
+  <ul class="sidebar-list">
+    <li class="sidebar-list-item active">
+      <span class="text-5-m"><icon-bed /> Your stay</span>
+      <span class="text-11 badge">1</span>
+    </li>
+    <li class="sidebar-list-item">
+      <span class="text-5-m"><icon-house /> The house</span>
+    </li>
+    <li class="sidebar-list-item">
+      <span class="text-5-m"><icon-pin /> Around town</span>
+    </li>
+    <li class="sidebar-list-item">
+      <span class="text-5-m"><icon-breakfast-outline /> Breakfast</span>
+    </li>
+    <li class="sidebar-list-item">
+      <span class="text-5-m"><icon-mail /> Messages</span>
+    </li>
+  </ul>
+</div>
+
+<div class="sidebar-bottom">
+  <div class="sidebar-forecast">
+    <span class="text-10">TODAY IN CASSIS</span>
+    <span class="text-2">27°</span>
+    <span class="text-7">Sunny · light breeze</span>
+  </div>
+  <hr class="sidebar-divider" />
+  <div class="sidebar-copyright">
+    <span class="text-10">EST. 1987</span>
+    <span class="text-10"> MAISON SOLEIL · 12 RUE DES OLIVIERS · CASSIS </span>
+    <span class="text-10">© 2026 MAISON SOLEIL</span>
+  </div>
+</div>
