@@ -1,0 +1,8 @@
+<app-header [(menuOpened)]="menuOpened" />
+<main class="main" [class.menu-opened]="menuOpened()">
+  <app-body class="body" />
+  <app-footer />
+  @if (menuOpened()) {
+    <app-menu class="menu" animate.enter="menu-enter" animate.leave="menu-leave" />
+  }
+</main>

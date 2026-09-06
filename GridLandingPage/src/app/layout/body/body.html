@@ -1,0 +1,12 @@
+<div class="area-a">
+  <h1 class="text-1">A classroom for every child.</h1>
+  <span class="text-5"
+    >We fund the schools, train the teachers, and measure what works — so every child we reach today
+    becomes a graduate tomorrow.</span
+  >
+</div>
+
+@for(grid of grids; track $index; let i = $index) {
+  @let css = `area-${i + 1}`;
+  <app-grid-content [class]="css" [content]="grid"/>
+}

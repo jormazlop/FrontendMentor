@@ -1,0 +1,56 @@
+:host {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  grid-template-areas:
+    'a a area-1 area-2'
+    'a a area-3 area-4';
+
+  @media (--tablet) {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    grid-template-areas:
+      'a a'
+      'a a'
+      'area-1 area-2'
+      'area-3 area-4';
+  }
+
+  @media (--mobile) {
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+    grid-template-areas:
+      'a'
+      'a'
+      'area-1'
+      'area-2'
+      'area-3'
+      'area-4';
+  }
+
+  .area-a {
+    color: var(--neutral-0);
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+    grid-area: a;
+    justify-content: center;
+    padding: 4.8rem 20rem 4.8rem 4.8rem;
+
+    .text-5 {
+      color: var(--blue-200);
+    }
+  }
+  .area-1 {
+    grid-area: 'area-1';
+  }
+  .area-2 {
+    grid-area: 'area-2';
+  }
+  .area-3 {
+    grid-area: 'area-3';
+  }
+  .area-4 {
+    grid-area: 'area-4';
+  }
+}

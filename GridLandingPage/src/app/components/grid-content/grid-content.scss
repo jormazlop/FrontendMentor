@@ -1,0 +1,30 @@
+:host {
+  border: 1px solid var(--blue-400);
+  box-sizing: border-box;
+  color: var(--neutral-0);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  outline: 1px solid var(--blue-400);
+  padding: 3.2rem;
+
+  .grid-header {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+
+    .icon {
+      height: 2.6rem;
+      width: 2.6rem;
+    }
+  }
+
+  .grid-footer {
+    display: flex;
+    flex-direction: column;
+
+    .grid-description {
+      color: var(--blue-200);
+    }
+  }
+}
