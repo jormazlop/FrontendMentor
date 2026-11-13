@@ -1,0 +1,7 @@
+<button (click)="changeTheme()">
+  @if (theme() === 'dark') {
+    <img src="icons/icon-sun.svg" alt="Switch to light mode" />
+  } @else {
+    <img src="icons/icon-moon.svg" alt="Switch to dark mode" />
+  }
+</button>

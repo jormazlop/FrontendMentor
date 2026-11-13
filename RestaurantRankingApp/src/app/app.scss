@@ -1,0 +1,20 @@
+:host {
+  background-color: var(--color-bg-primary);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-height: 100vh;
+
+  .app-main {
+    display: flex;
+    flex: 1;
+
+    .app-sidepanel {
+      width: 40rem;
+    }
+
+    .app-map {
+      flex: 1;
+    }
+  }
+}

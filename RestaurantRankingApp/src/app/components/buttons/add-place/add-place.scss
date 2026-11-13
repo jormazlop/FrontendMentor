@@ -1,0 +1,19 @@
+button {
+  align-items: center;
+  background-color: var(--color-primary);
+  border: 1px solid var(--color-border);
+  border-radius: 999px;
+  color: var(--color-primary-subtle);
+  display: flex;
+  gap: 0.5rem;
+  padding: 0.6rem 1.5rem;
+
+  span {
+    font-size: 2rem;
+    line-height: 1rem;
+  }
+
+  &:hover {
+    background-color: var(--color-primary-hover);
+  }
+}

@@ -1,0 +1,13 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+
+  .title {
+    color: var(--color-text-primary);
+  }
+
+  .description {
+    color: var(--color-text-tertiary);
+  }
+}

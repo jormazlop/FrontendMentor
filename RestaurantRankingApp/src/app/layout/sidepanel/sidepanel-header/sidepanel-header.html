@@ -1,0 +1,5 @@
+<div class="sidepanel-place-summary">
+  @let city = meta()?.city;
+  <span class="city-badge text-4"><span class="badge-circle"></span>{{ city }}</span>
+  <span class="place-count text-4">{{ places().length }} places &#128900; {{ ranked().length }} ranked</span>
+</div>

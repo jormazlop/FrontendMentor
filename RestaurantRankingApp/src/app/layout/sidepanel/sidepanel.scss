@@ -1,0 +1,31 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 2rem;
+
+  .tabs {
+    .tab-buttons {
+      border-bottom: 1px solid var(--color-border);
+      display: flex;
+
+      button {
+        background: none;
+        border: none;
+        color: var(--color-text-tertiary);
+        display: flex;
+        gap: 1rem;
+        padding: 0.5rem 1rem;
+
+        &.active {
+          border-bottom: 2px solid var(--color-primary);
+          color: var(--color-text-primary);
+
+          span {
+            font-weight: bold;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,24 @@
+
+html,
+body {
+  font-size: 10px;
+  height: 100%;
+  margin: 0;
+  transition:
+    background-color 250ms ease,
+    color 250ms ease;
+}
+
+body,
+button,
+input,
+select,
+textarea,
+[class*='card'],
+[class*='panel'] {
+  transition:
+    background-color 250ms ease,
+    color 250ms ease,
+    border-color 250ms ease,
+    box-shadow 250ms ease;
+}

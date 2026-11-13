@@ -1,0 +1,11 @@
+<app-sidepanel-header />
+<app-sidepanel-title />
+<div class="tabs">
+  <div class="tab-buttons">
+    <button [class.active]="activeTab() === 'ranked'" class="text-4" (click)="onTabClick('ranked')"><span>Ranked</span> {{ rankedPlaces().length }}</button>
+    <button [class.active]="activeTab() === 'want'" class="text-4" (click)="onTabClick('want')"><span>Want to try</span> {{ wantPlaces().length }}</button>
+  </div>
+
+  <section class="tab-content">
+  </section>
+</div>
