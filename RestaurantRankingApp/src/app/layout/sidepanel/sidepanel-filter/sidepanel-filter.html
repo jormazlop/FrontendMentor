@@ -1,0 +1,9 @@
+@for(filter of filters(); track $index) {
+   <button
+     class="filter-button text-4"
+     [class.active]="filter === selectedFilter()"
+     (click)="setFilter(filter)"
+   >
+     {{ filter }}
+   </button>
+ }

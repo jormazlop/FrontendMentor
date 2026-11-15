@@ -2,10 +2,24 @@
 <app-sidepanel-title />
 <div class="tabs">
   <div class="tab-buttons">
-    <button [class.active]="activeTab() === 'ranked'" class="text-4" (click)="onTabClick('ranked')"><span>Ranked</span> {{ rankedPlaces().length }}</button>
-    <button [class.active]="activeTab() === 'want'" class="text-4" (click)="onTabClick('want')"><span>Want to try</span> {{ wantPlaces().length }}</button>
+    <button [class.active]="activeTab() === 'ranked'" class="text-4" (click)="onTabClick('ranked')">
+      <span>Ranked</span> {{ rankedPlaces().length }}
+    </button>
+    <button [class.active]="activeTab() === 'want'" class="text-4" (click)="onTabClick('want')">
+      <span>Want to try</span> {{ wantPlaces().length }}
+    </button>
   </div>
 
+  <app-sidepanel-filter />
+
   <section class="tab-content">
+    @for (place of places(); track place.id) {
+      <app-sidepanel-place
+        [place]="place"
+        [index]="$index + 1"
+        [class.active-place]="selectedPlace() === place"
+        (click)="onPlaceClick(place.id)"
+      />
+    }
   </section>
 </div>

@@ -1,0 +1,22 @@
+<strong class="text-1 place-index">{{ index() }}</strong>
+<img
+  [src]="faviconUrl(place()?.website ?? null)"
+  (load)="onFaviconLoad($event)"
+  [alt]="place()!.name"
+  class="place-image"
+/>
+<div class="place-info">
+  <span class="place-info-row">
+    <span class="text-3 place-name">{{ place()!.name }}</span>
+    <span class="text-4 place-cuisine">{{ place()!.cuisine | uppercase }}</span>
+    <span class="text-3 place-rating">
+      <span [class.rated]="place()!.priceLevel >= 1">£</span>
+      <span [class.rated]="place()!.priceLevel >= 2">£</span>
+      <span [class.rated]="place()!.priceLevel >= 3">£</span>
+      <span [class.rated]="place()!.priceLevel >= 4">£</span>
+    </span>
+  </span>
+  <span class="place-info-row">
+    <span class="text-4 place-area">{{ place()!.area }} • been {{ place()!.visits }}x</span>
+  </span>
+</div>

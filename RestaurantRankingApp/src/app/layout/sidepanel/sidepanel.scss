@@ -3,8 +3,14 @@
   flex-direction: column;
   gap: 1rem;
   padding: 2rem;
+  min-height: 0;
+  overflow: hidden;
 
   .tabs {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    min-height: 0;
     .tab-buttons {
       border-bottom: 1px solid var(--color-border);
       display: flex;
@@ -26,6 +32,15 @@
           }
         }
       }
+    }
+
+    .tab-content {
+      display: flex;
+      flex: 1;
+      flex-direction: column;
+      min-height: 0;
+      max-height: none;
+      overflow-y: auto;
     }
   }
 }

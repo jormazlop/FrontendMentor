@@ -5,6 +5,7 @@ import {
   ElementRef,
   inject,
   OnDestroy,
+  signal,
   untracked,
   viewChild,
 } from '@angular/core';
@@ -23,6 +24,8 @@ import Fill from 'ol/style/Fill.js';
 import Icon from 'ol/style/Icon.js';
 import Style from 'ol/style/Style.js';
 import Text from 'ol/style/Text.js';
+import { MapTooltip } from './map-tooltip/map-tooltip';
+import Overlay from 'ol/Overlay.js';
 
 const markerSvg = `
   <svg xmlns="http://www.w3.org/2000/svg" width="30" height="36" viewBox="0 0 30 36">
@@ -37,27 +40,37 @@ const markerSvg = `
 `;
 
 @Component({
-  imports: [],
+  imports: [MapTooltip],
   selector: 'app-map',
   styleUrl: './map.scss',
   templateUrl: './map.html',
 })
 export class Map implements OnDestroy {
   mapElement = viewChild<ElementRef<HTMLDivElement>>('map');
+  hoveredPlace = signal<Place | null>(null);
+  tooltipElement = viewChild<ElementRef<HTMLElement>>('tooltip');
 
-  places = inject(Places).places;
-  meta = inject(Places).meta;
+  private tooltipOverlay?: Overlay;
+
+  service = inject(Places);
+
+  places = this.service.places;
+  meta = this.service.meta;
+
+  selectedPlace = this.service.selectedPlace;
 
   private map?: OlMap;
   private markerSource = new VectorSource();
 
   private markerLayer = new VectorLayer({
     source: this.markerSource,
-    style: (feature) =>
-      new Style({
+    style: (feature) => {
+      const scale = feature.get('placeId') === this.selectedPlace()?.id ? 1.2 : 1;
+      return new Style({
         image: new Icon({
           src: `data:image/svg+xml;charset=utf-8,${encodeURIComponent(markerSvg)}`,
           anchor: [0.5, 1],
+          scale: scale,
         }),
         text: new Text({
           text: String(feature.get('position') ?? ''),
@@ -66,9 +79,10 @@ export class Map implements OnDestroy {
           textAlign: 'center',
           textBaseline: 'middle',
           justify: 'center',
-          offsetY: -21,
+          offsetY: -21 * scale,
         }),
-      }),
+      });
+    },
   });
 
   constructor() {
@@ -91,11 +105,38 @@ export class Map implements OnDestroy {
         this.updateMapMarkers(places);
       });
     });
+
+    effect(() => {
+      const selectedPlace = this.selectedPlace();
+      if (!selectedPlace) {
+        return;
+      }
+      untracked(() => {
+        const feature = this.markerSource
+          .getFeatures()
+          .find((f) => f.get('placeId') === selectedPlace.id);
+        if (feature) {
+          const geometry = feature.getGeometry() as Point;
+          const coordinates = geometry.getCoordinates();
+          this.map?.getView().animate({ center: coordinates, duration: 500 });
+        }
+      });
+    });
   }
 
   private initializeMap(meta: Meta): void {
+    const tooltipOverlay = new Overlay({
+      element: this.tooltipElement()!.nativeElement,
+      positioning: 'bottom-center',
+      offset: [0, -12],
+      stopEvent: false,
+    });
+
+    this.tooltipOverlay = tooltipOverlay;
+
     this.map = new OlMap({
       target: this.mapElement()!.nativeElement,
+      overlays: [tooltipOverlay],
       layers: [
         new TileLayer({
           source: new OSM(),
@@ -116,13 +157,37 @@ export class Map implements OnDestroy {
 
       if (event.dragging) {
         target.style.cursor = '';
+        this.hoveredPlace.set(null);
+        tooltipOverlay.setPosition(undefined);
         return;
       }
 
       const marker = this.map?.forEachFeatureAtPixel(event.pixel, (feature) => feature, {
         layerFilter: (layer) => layer === this.markerLayer,
+        hitTolerance: 8,
       });
+
       target.style.cursor = marker ? 'pointer' : '';
+
+      const placeId = marker?.get('placeId');
+      const place = this.places().find((item) => item.id === placeId);
+
+      this.hoveredPlace.set(place ?? null);
+
+      if (marker && place) {
+        const geometry = marker.getGeometry() as Point;
+        tooltipOverlay.setPosition(geometry.getCoordinates());
+      } else {
+        tooltipOverlay.setPosition(undefined);
+      }
+    });
+
+    this.map.on('singleclick', (event) => {
+      const feature = this.map?.forEachFeatureAtPixel(event.pixel, (feature) => feature, {
+        layerFilter: (layer) => layer === this.markerLayer,
+      });
+
+      this.service.selectPlace(feature?.get('placeId'));
     });
   }
 

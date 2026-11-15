@@ -2,12 +2,14 @@
   background-color: var(--color-bg-primary);
   display: flex;
   flex-direction: column;
-  height: 100%;
-  min-height: 100vh;
+  height: 100vh;
+  height: 100dvh;
+  min-height: 0;
 
   .app-main {
     display: flex;
     flex: 1;
+    min-height: 0;
 
     .app-sidepanel {
       width: 40rem;

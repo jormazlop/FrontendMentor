@@ -1,0 +1,21 @@
+:host {
+  display: flex;
+  gap: 1rem;
+  padding: 1rem 0;
+  overflow: auto;
+
+  .filter-button {
+    background-color: color-mix(in srgb, var(--color-primary) 15%, var(--color-surface));
+    border: 1px solid var(--color-primary);
+    color: var(--color-text-primary);
+    border-radius: 999px;
+    cursor: pointer;
+    padding: 0.5rem 1rem;
+    white-space: nowrap;
+
+    &.active, &:hover {
+      background-color: var(--color-primary);
+      color: var(--color-on-primary);
+    }
+  }
+}

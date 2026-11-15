@@ -1,0 +1,72 @@
+:host {
+  align-items: center;
+  border: 1px solid transparent;
+  cursor: pointer;
+  display: flex;
+  gap: 1rem;
+  padding: 1.5rem;
+
+  &.active-place,
+  &:hover {
+    background-color: color-mix(in srgb, var(--color-highlight) 40%, var(--color-surface));
+    border: 1px solid var(--color-highlight-strong);
+    border-radius: 0.5rem;
+    box-shadow: var(--shadow-sm);
+  }
+
+  .place-index {
+    color: var(--color-text-primary);
+    transform: translateY(-0.2rem);
+    width: 2.5rem;
+  }
+
+  .place-image {
+    border-radius: 0.5rem;
+    height: 3.5rem;
+    width: 3.5rem;
+  }
+
+  .place-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+    width: 100%;
+
+    .place-info-row {
+      align-items: center;
+      display: flex;
+      flex: 1;
+      gap: 0.5rem;
+
+      .place-name {
+        color: var(--color-text-primary);
+      }
+
+      .place-cuisine {
+        background-color: color-mix(in srgb, var(--color-primary) 10%, var(--color-surface));
+        border: 1px solid var(--color-primary);
+        border-radius: 0.5rem;
+        color: var(--color-text-secondary);
+        font-size: 1rem;
+        padding: 0.1rem 0.5rem;
+      }
+
+      .place-rating {
+        color: var(--color-text-tertiary);
+        display: flex;
+        flex: 1;
+        justify-content: flex-end;
+
+        span.rated {
+          color: var(--color-text-primary);
+          font-weight: var(--font-bold);
+        }
+      }
+
+      .place-area {
+        color: var(--color-text-tertiary);
+        font-weight: var(--font-regular);
+      }
+    }
+  }
+}

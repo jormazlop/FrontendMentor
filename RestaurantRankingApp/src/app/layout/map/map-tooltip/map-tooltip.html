@@ -1,0 +1,10 @@
+@if (place(); as place) {
+  <div class="map-tooltip" role="tooltip">
+    <div class="tooltip-heading">
+      <strong class="text-3">{{ place.name }}</strong>
+    </div>
+
+    <p class="details text-4">{{ place.cuisine }} · {{ place.area }}</p>
+    <p class="address text-4">{{ place.address }}</p>
+  </div>
+}
