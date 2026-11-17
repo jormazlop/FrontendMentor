@@ -6,4 +6,10 @@ import { Component } from '@angular/core';
   styleUrl: './add-place.scss',
   templateUrl: './add-place.html',
 })
-export class AddPlace {}
+export class AddPlace {
+  onAddPlace(): void {
+    window.alert(
+      'Not implemented! Sorry for the inconvenience, but this project was becoming too big for my taste.'
+    );
+  }
+}

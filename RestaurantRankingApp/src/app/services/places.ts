@@ -17,10 +17,14 @@ export class Places {
   private _selectedPlace = signal<Place | null>(null);
   readonly selectedPlace = this._selectedPlace.asReadonly();
 
+  private _search = signal<string>('');
+  readonly search = this._search.asReadonly();
+
   readonly rankedPlaces = computed(() =>
     this._places()
       .filter((place) => place.status === 'ranked' && place.rank)
       .filter((place) => this.filter() === 'All' || place.cuisine === this.filter())
+      .filter((place) => place.name.toLowerCase().includes(this.search().toLowerCase()))
       .sort((a, b) => Number(a.rank) - Number(b.rank)),
   );
 
@@ -28,6 +32,7 @@ export class Places {
     this._places()
       .filter((place) => place.status === 'want')
       .filter((place) => this.filter() === 'All' || place.cuisine === this.filter())
+      .filter((place) => place.name.toLowerCase().includes(this.search().toLowerCase()))
       .sort((a, b) => a.position - b.position),
   );
 
@@ -49,5 +54,9 @@ export class Places {
 
   setFilter(filter: string): void {
     this._filter.set(filter);
+  }
+
+  setSearch(search: string): void {
+    this._search.set(search);
   }
 }

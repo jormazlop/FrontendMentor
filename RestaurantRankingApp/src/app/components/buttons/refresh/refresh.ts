@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, output } from '@angular/core';
 import { Theme } from '@services/theme';
 
 @Component({
@@ -9,4 +9,10 @@ import { Theme } from '@services/theme';
 })
 export class Refresh {
   theme = inject(Theme).theme;
+
+  refresh = output<void>();
+
+  onRefresh(): void {
+    this.refresh.emit();
+  }
 }

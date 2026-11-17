@@ -1,5 +1,5 @@
 <h1 class="text-1 title">Tastemap.</h1>
-<app-search />
+<app-search [(search)]="search" />
 <app-mode />
-<app-refresh />
+<app-refresh (refresh)="onRefresh()"/>
 <app-add-place />
