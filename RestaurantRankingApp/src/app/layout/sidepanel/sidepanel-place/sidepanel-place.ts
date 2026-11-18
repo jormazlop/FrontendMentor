@@ -17,15 +17,4 @@ export class SidepanelPlace {
     const hostname = new URL(website).hostname;
     return `https://www.google.com/s2/favicons?domain=${encodeURIComponent(hostname)}&sz=64`;
   }
-
-  onFaviconLoad(event: Event): void {
-    const image = event.currentTarget;
-
-    if (
-      image instanceof HTMLImageElement &&
-      image.naturalWidth < 64
-    ) {
-      image.src = 'icons/restaurant-placeholder.svg';
-    }
-  }
 }

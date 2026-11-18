@@ -1,7 +1,6 @@
 <strong class="text-1 place-index">{{ index() }}</strong>
 <img
   [src]="faviconUrl(place()?.website ?? null)"
-  (load)="onFaviconLoad($event)"
   [alt]="place()!.name"
   class="place-image"
 />
